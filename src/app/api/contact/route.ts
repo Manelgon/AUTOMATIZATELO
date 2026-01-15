@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const webhookUrl = "https://ssllmwebhookn8nss.automatizatelo.com/webhook/c56b39d2-e70d-4c34-ac9e-610440ac1068";
+        const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
 
         if (!webhookUrl) {
             console.error('CONTACT_WEBHOOK_URL is not defined');
@@ -22,6 +22,8 @@ export async function POST(request: Request) {
         });
 
         if (!response.ok) {
+            const errorText = await response.text();
+            console.error(`Webhook error: Status ${response.status}, Body: ${errorText}`);
             throw new Error(`Webhook responded with status: ${response.status}`);
         }
 

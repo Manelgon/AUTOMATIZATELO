@@ -84,7 +84,9 @@ export default function ContactForm() {
                     setStatusMessage("");
                 }, 30000);
             } else {
-                throw new Error("Webhook returned error");
+                const errorData = await response.json().catch(() => ({}));
+                console.error("API Error Details:", errorData);
+                throw new Error(errorData.error || "Webhook returned error");
             }
         } catch (error) {
             console.error(error);
