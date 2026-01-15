@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const webhookUrl = "https://ssllmwebhookn8nss.automatizatelo.com/webhook/8e57e3d9-c35c-4246-a2ee-04fde9897ded/chat";
+        const webhookUrl = process.env.CHAT_WEBHOOK_URL;
 
         if (!webhookUrl) {
             console.error('CHAT_WEBHOOK_URL is not defined');
