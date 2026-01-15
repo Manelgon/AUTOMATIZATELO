@@ -1,3 +1,5 @@
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
+
 export default function Footer() {
     return (
         <footer className="footer">
@@ -38,12 +40,23 @@ export default function Footer() {
                                 <i className="fa-solid fa-phone"></i> +34 694 26 48 40
                             </li>
                             <li>
-                                <i className="fa-solid fa-envelope"></i> info@automatizalo.com
+                                <i className="fa-solid fa-envelope"></i> info@automatizatelo.com
                             </li>
                             <li>
                                 <i className="fa-solid fa-location-dot"></i> España
                             </li>
                         </ul>
+                    </div>
+                    <div className="footer-col">
+                        <h4>Redes</h4>
+                        <div style={{ display: "flex", gap: "1rem" }}>
+                            <a href="https://www.linkedin.com/in/automatizatelo-automatizaciones-de-procesos-con-ia-4422523a6/" style={{ fontSize: "1.5rem", color: "white" }} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin />
+                            </a>
+                            <a href="https://www.instagram.com/automatizatelo.ia?igsh=NWE1eW8xa2VieTlh&utm_source=qr" style={{ fontSize: "1.5rem", color: "white" }} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <FaInstagram />
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className="footer-bottom" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
