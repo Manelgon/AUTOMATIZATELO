@@ -1,0 +1,44 @@
+:root {
+    /* Colors - Corporate Palette: Orange, Gray, White */
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f3f4f6;
+    /* Light Gray */
+    --color-text-main: #1f2937;
+    /* Dark Gray for text */
+    --color-text-muted: #6b7280;
+    /* Medium Gray */
+
+    --color-primary: #f97316;
+    /* Orange Main */
+    --color-primary-glow: #fb923c;
+    /* Lighter Orange */
+    --color-accent: #4b5563;
+    /* Gray Accent */
+    --color-accent-glow: #9ca3af;
+
+    --color-surface: #ffffff;
+    --color-surface-hover: #f9fafb;
+    --border-color: #e5e7eb;
+    /* Light Gray Border */
+
+    /* Typography */
+    --font-main: 'Outfit', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Effects */
+    --shadow-glow: 0 4px 20px rgba(249, 115, 22, 0.15);
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+}

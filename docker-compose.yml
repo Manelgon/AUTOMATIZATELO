@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: automatizatelo-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      # - CHAT_WEBHOOK_URL=${CHAT_WEBHOOK_URL} # Pass env var if needed
+    env_file:
+      - .env.local
+    networks:
+      - automatizatelo-network
+
+networks:
+  automatizatelo-network:
+    driver: bridge
