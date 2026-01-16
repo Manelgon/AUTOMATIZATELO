@@ -360,10 +360,10 @@ export default function ContactForm() {
                                 onChange={handleChange}
                             >
                                 <option value="">Selecciona un servicio</option>
+                                <option value="servicios_integrales">Servicios Digitales Integrales</option>
+                                <option value="web_design">Diseño y Desarrollo Web</option>
                                 <option value="autom_flujos">Automatización de Flujos</option>
-                                <option value="integraciones">Integración de Sistemas</option>
-                                <option value="chatbots_ia">IA & Chatbots</option>
-                                <option value="mantenimiento">Mantenimiento Mensual</option>
+                                <option value="ia_chatbots">Soluciones de IA & Chatbots</option>
                             </select>
                         </div>
                     </div>

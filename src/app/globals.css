@@ -759,7 +759,11 @@ section {
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    padding: 0 1rem;
   }
 
 
