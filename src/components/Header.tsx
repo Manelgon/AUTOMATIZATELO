@@ -32,7 +32,7 @@ export default function Header() {
                         closeMobile();
                     }}
                 >
-                    <Image src="/logo.png" alt="Automatizatelo" width={32} height={32} style={{ marginRight: '0.5rem' }} />
+                    <Image src="/logo.png" alt="Automatizatelo" width={32} height={32} style={{ marginRight: '0.5rem' }} priority />
                     Automatizatelo<span>.</span>
                 </Link>
                 <div className="mobile-toggle" onClick={toggleMobile}>
