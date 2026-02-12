@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import styles from "./FAQ.module.css";
 
 const faqs = [
     {
@@ -12,7 +13,7 @@ const faqs = [
         answer: (
             <>
                 <p>Se pueden automatizar muchas tareas habituales, por ejemplo:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
+                <ul>
                     <li>Respuestas automáticas por WhatsApp o email</li>
                     <li>Registro automático de clientes o pedidos</li>
                     <li>Generación de PDFs o informes</li>
@@ -21,7 +22,7 @@ const faqs = [
                     <li>Notificaciones y recordatorios</li>
                     <li>Paneles de control con datos en tiempo real</li>
                 </ul>
-                <p className="mt-2">Si una tarea se repite, normalmente se puede automatizar.</p>
+                <p style={{ marginTop: '0.5rem' }}>Si una tarea se repite, normalmente se puede automatizar.</p>
             </>
         )
     },
@@ -30,7 +31,7 @@ const faqs = [
         answer: (
             <>
                 <p>Sí, porque cada automatización se adapta al negocio. Trabajamos con:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
+                <ul>
                     <li>Restaurantes y comida para llevar</li>
                     <li>Hoteles y alojamientos</li>
                     <li>Clínicas y profesionales sanitarios</li>
@@ -38,7 +39,7 @@ const faqs = [
                     <li>Empresas de servicios</li>
                     <li>Negocios online</li>
                 </ul>
-                <p className="mt-2">Cada solución se ajusta a lo que realmente necesitas.</p>
+                <p style={{ marginTop: '0.5rem' }}>Cada solución se ajusta a lo que realmente necesitas.</p>
             </>
         )
     },
@@ -47,12 +48,12 @@ const faqs = [
         answer: (
             <>
                 <p>No. Las automatizaciones están pensadas para que tú solo uses:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
+                <ul>
                     <li>WhatsApp</li>
                     <li>Un panel sencillo</li>
                     <li>Formularios fáciles</li>
                 </ul>
-                <p className="mt-2">Todo lo complejo funciona en segundo plano.</p>
+                <p style={{ marginTop: '0.5rem' }}>Todo lo complejo funciona en segundo plano.</p>
             </>
         )
     },
@@ -61,11 +62,11 @@ const faqs = [
         answer: (
             <>
                 <p>Depende del tipo de automatización y del tiempo que se necesite para desarrollarla. Hay dos modelos habituales:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
+                <ul>
                     <li>Pago por proyecto</li>
                     <li>Mantenimiento mensual opcional</li>
                 </ul>
-                <p className="mt-2">Antes de empezar siempre se explica el coste y el alcance.</p>
+                <p style={{ marginTop: '0.5rem' }}>Antes de empezar siempre se explica el coste y el alcance.</p>
             </>
         )
     },
@@ -78,7 +79,7 @@ const faqs = [
         answer: (
             <>
                 <p>No necesariamente. En la mayoría de casos se integran las herramientas que ya utilizas:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
+                <ul>
                     <li>WhatsApp</li>
                     <li>Excel</li>
                     <li>Google Drive</li>
@@ -87,7 +88,7 @@ const faqs = [
                     <li>Formularios</li>
                     <li>Apps web</li>
                 </ul>
-                <p className="mt-2">La idea es adaptar la automatización a tu sistema, no al revés.</p>
+                <p style={{ marginTop: '0.5rem' }}>La idea es adaptar la automatización a tu sistema, no al revés.</p>
             </>
         )
     },
@@ -104,12 +105,12 @@ const faqs = [
         answer: (
             <>
                 <p>Sí. La mayoría de sistemas están pensados para crecer:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
+                <ul>
                     <li>añadir nuevas funciones</li>
                     <li>conectar nuevas herramientas</li>
                     <li>automatizar más procesos</li>
                 </ul>
-                <p className="mt-2">Muchas empresas empiezan con algo pequeño y lo amplían después.</p>
+                <p style={{ marginTop: '0.5rem' }}>Muchas empresas empiezan con algo pequeño y lo amplían después.</p>
             </>
         )
     },
@@ -126,12 +127,12 @@ const faqs = [
         answer: (
             <>
                 <p>Si realizas tareas repetitivas todos los días, casi seguro que sí. Las automatizaciones suelen ahorrar:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
+                <ul>
                     <li>tiempo</li>
                     <li>errores</li>
                     <li>trabajo manual</li>
                 </ul>
-                <p className="mt-2">Y permiten atender más clientes sin aumentar el esfuerzo.</p>
+                <p style={{ marginTop: '0.5rem' }}>Y permiten atender más clientes sin aumentar el esfuerzo.</p>
             </>
         )
     }
@@ -145,32 +146,30 @@ export default function FAQ() {
     };
 
     return (
-        <section className="py-20 bg-secondary" id="faq">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary inline-block">
+        <section className={styles.section} id="faq">
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <h2 className={styles.title}>
                         Preguntas Frecuentes
                     </h2>
-                    <p className="text-text-muted text-lg">
+                    <p className={styles.subtitle}>
                         Resolvemos tus dudas sobre la automatización
                     </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className={styles.faqList}>
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="bg-card-bg border border-border-color rounded-lg overflow-hidden transition-colors hover:border-primary/50"
+                            className={styles.faqItem}
                         >
                             <button
-                                className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
+                                className={styles.questionButton}
                                 onClick={() => toggleFAQ(index)}
                                 aria-expanded={activeIndex === index}
                             >
-                                <span className="text-lg font-medium text-text-main pr-8">
-                                    {faq.question}
-                                </span>
-                                <span className={`transform transition-transform duration-300 text-primary ${activeIndex === index ? 'rotate-180' : ''}`}>
+                                <span>{faq.question}</span>
+                                <span className={`${styles.icon} ${activeIndex === index ? styles.open : ''}`}>
                                     <i className="fas fa-chevron-down"></i>
                                 </span>
                             </button>
@@ -181,8 +180,9 @@ export default function FAQ() {
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3 }}
+                                        className={styles.answerWrapper}
                                     >
-                                        <div className="px-6 pb-4 text-text-muted border-t border-border-color pt-4">
+                                        <div className={styles.answer}>
                                             {faq.answer}
                                         </div>
                                     </motion.div>
