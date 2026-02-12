@@ -6,6 +6,7 @@ import Opportunity from "@/components/Opportunity";
 import Benefits from "@/components/Benefits";
 import Services from "@/components/Services";
 import HowWeWork from "@/components/HowWeWork";
+import TrustedClients from "@/components/TrustedClients";
 
 import Pricing from "@/components/Pricing";
 import ContactForm from "@/components/ContactForm";
@@ -20,6 +21,7 @@ export default function Home() {
       <Benefits />
       <Services />
       <HowWeWork />
+      <TrustedClients />
 
       <Pricing />
       <ContactForm />
