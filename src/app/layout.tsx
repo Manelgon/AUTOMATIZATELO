@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import dynamic from "next/dynamic";
-
-const ChatWidget = dynamic(() => import("@/components/ChatWidget"), {
-  ssr: false,
-});
+import ClientChatWrapper from "@/components/ClientChatWrapper";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -131,7 +127,7 @@ export default function RootLayout({
           precedence="default"
         />
         {children}
-        <ChatWidget />
+        <ClientChatWrapper />
       </body>
     </html>
   );
