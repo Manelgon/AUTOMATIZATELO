@@ -98,7 +98,7 @@ const faqs = [
     },
     {
         question: "¿Qué pasa si algo falla?",
-        answer: "Tienes soporte. Si algo deja de funcionar o necesitas hacer cambios, se revisa y se soluciona. Las automatizaciones se monitorizan para detectar problemas lo antes posible."
+        answer: "Si has contratado el proyecto Suscripción de Mantenimiento y Mejora, Tienes soporte. Si algo deja de funcionar o necesitas hacer cambios, se revisa y se soluciona. Las automatizaciones se monitorizan para detectar problemas lo antes posible."
     },
     {
         question: "¿Puedo ampliar la automatización en el futuro?",
