@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://automatizatelo.com"),
   alternates: {
     canonical: "/",
+    languages: {
+      "es-ES": "/",
+    },
+  },
+  verification: {
+    google: "process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION", // Placeholder
+    other: {
+      "msvalidate.01": ["process.env.NEXT_PUBLIC_BING_VERIFICATION"], // Placeholder for Bing
+    },
   },
   openGraph: {
     title: "Automatizatelo | Automatización con IA en Barcelona",
