@@ -29,7 +29,7 @@ export default function TrustedClients() {
     }, []);
 
     return (
-        <section className={styles.section}>
+        <section id="trusted-clients" className={styles.section}>
             <div className={styles.container}>
                 {/* Left Column: Carousel */}
                 <div className={styles.carouselContainer}>

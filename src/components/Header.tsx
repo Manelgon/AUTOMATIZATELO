@@ -51,6 +51,9 @@ export default function Header() {
                     <Link href="/#how-we-work" onClick={closeMobile}>
                         Metodología
                     </Link>
+                    <Link href="/#trusted-clients" onClick={closeMobile}>
+                        Casos de Éxito
+                    </Link>
                     <Link href="/#contact" className="btn btn-primary" onClick={closeMobile}>
                         Empieza Ahora
                     </Link>

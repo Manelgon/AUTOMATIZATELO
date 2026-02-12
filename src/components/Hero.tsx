@@ -27,7 +27,7 @@ export default function Hero() {
                     variants={fadeInUp}
                     transition={{ delay: 0.3 }}
                 >
-                    Escala tu negocio sin contratar más personal. Unificamos tus sistemas, creamos tu web y automatizamos tus procesos con tecnología de grandes empresas, adaptada a tu realidad.
+                    Escala tu negocio en Barcelona y toda España. Unificamos tus sistemas, creamos tu web y automatizamos tus procesos con tecnología de grandes empresas.
                 </motion.p>
 
                 <motion.div
