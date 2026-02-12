@@ -157,41 +157,56 @@ export default function FAQ() {
                     </p>
                 </div>
 
-                <div className={styles.faqList}>
-                    {faqs.map((faq, index) => (
-                        <div
-                            key={index}
-                            className={styles.faqItem}
-                        >
-                            <button
-                                className={styles.questionButton}
-                                onClick={() => toggleFAQ(index)}
-                                aria-expanded={activeIndex === index}
-                            >
-                                <span>{faq.question}</span>
-                                <span className={`${styles.icon} ${activeIndex === index ? styles.open : ''}`}>
-                                    <i className="fas fa-chevron-down"></i>
-                                </span>
-                            </button>
-                            <AnimatePresence>
-                                {activeIndex === index && (
-                                    <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: "auto", opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className={styles.answerWrapper}
-                                    >
-                                        <div className={styles.answer}>
-                                            {faq.answer}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    ))}
+                <div className={styles.layout}>
+                    {/* First item full width */}
+                    <div className={styles.fullWidthItem}>
+                        <FAQItem faq={faqs[0]} index={0} activeIndex={activeIndex} toggleFAQ={toggleFAQ} />
+                    </div>
+
+                    {/* Remaining items in grid */}
+                    <div className={styles.gridContainer}>
+                        {faqs.slice(1).map((faq, originalIndex) => (
+                            <FAQItem
+                                key={originalIndex + 1}
+                                faq={faq}
+                                index={originalIndex + 1}
+                                activeIndex={activeIndex}
+                                toggleFAQ={toggleFAQ}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
     );
 }
+
+const FAQItem = ({ faq, index, activeIndex, toggleFAQ }: { faq: any, index: number, activeIndex: number | null, toggleFAQ: (index: number) => void }) => (
+    <div className={styles.faqItem}>
+        <button
+            className={styles.questionButton}
+            onClick={() => toggleFAQ(index)}
+            aria-expanded={activeIndex === index}
+        >
+            <span>{faq.question}</span>
+            <span className={`${styles.icon} ${activeIndex === index ? styles.open : ''}`}>
+                <i className="fas fa-chevron-down"></i>
+            </span>
+        </button>
+        <AnimatePresence>
+            {activeIndex === index && (
+                <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className={styles.answerWrapper}
+                >
+                    <div className={styles.answer}>
+                        {faq.answer}
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+    </div>
+);
