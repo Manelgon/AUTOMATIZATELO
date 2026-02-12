@@ -163,17 +163,30 @@ export default function FAQ() {
                         <FAQItem faq={faqs[0]} index={0} activeIndex={activeIndex} toggleFAQ={toggleFAQ} />
                     </div>
 
-                    {/* Remaining items in grid */}
+                    {/* Remaining items in two independent columns */}
                     <div className={styles.gridContainer}>
-                        {faqs.slice(1).map((faq, originalIndex) => (
-                            <FAQItem
-                                key={originalIndex + 1}
-                                faq={faq}
-                                index={originalIndex + 1}
-                                activeIndex={activeIndex}
-                                toggleFAQ={toggleFAQ}
-                            />
-                        ))}
+                        <div className={styles.column}>
+                            {faqs.slice(1, 7).map((faq, index) => (
+                                <FAQItem
+                                    key={index + 1}
+                                    faq={faq}
+                                    index={index + 1}
+                                    activeIndex={activeIndex}
+                                    toggleFAQ={toggleFAQ}
+                                />
+                            ))}
+                        </div>
+                        <div className={styles.column}>
+                            {faqs.slice(7).map((faq, index) => (
+                                <FAQItem
+                                    key={index + 7}
+                                    faq={faq}
+                                    index={index + 7}
+                                    activeIndex={activeIndex}
+                                    toggleFAQ={toggleFAQ}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
