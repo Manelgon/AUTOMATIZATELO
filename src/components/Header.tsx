@@ -57,6 +57,9 @@ export default function Header() {
                     <Link href="/#contact" className="btn btn-primary" onClick={closeMobile}>
                         Empieza Ahora
                     </Link>
+                    <Link href="/#faq" onClick={closeMobile}>
+                        FAQ
+                    </Link>
                 </nav>
             </div>
         </header>
