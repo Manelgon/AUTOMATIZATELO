@@ -7,6 +7,7 @@ import Benefits from "@/components/Benefits";
 import Services from "@/components/Services";
 import HowWeWork from "@/components/HowWeWork";
 import TrustedClients from "@/components/TrustedClients";
+import FAQ from "@/components/FAQ";
 
 import Pricing from "@/components/Pricing";
 import ContactForm from "@/components/ContactForm";
@@ -22,6 +23,7 @@ export default function Home() {
       <Services />
       <HowWeWork />
       <TrustedClients />
+      <FAQ />
 
       <Pricing />
       <ContactForm />
