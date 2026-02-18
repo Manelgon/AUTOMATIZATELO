@@ -1,9 +1,27 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function HowWeWork() {
     const [activeStep, setActiveStep] = useState<number>(0);
+    const [isMobile, setIsMobile] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    const handleStepClick = (index: number) => {
+        setActiveStep(index);
+        if (isMobile) {
+            setShowModal(true);
+        }
+    };
 
     const steps = [
         {
@@ -94,7 +112,7 @@ export default function HowWeWork() {
                         >
                             <motion.div
                                 className="step-icon-wrapper"
-                                onClick={() => setActiveStep(index)}
+                                onClick={() => handleStepClick(index)}
                                 whileHover={{ scale: 1.05 }}
                             >
                                 <div className="step-icon" style={{
@@ -110,27 +128,62 @@ export default function HowWeWork() {
                     ))}
                 </div>
 
-                {/* Central Content Card */}
-                <div className="step-content-container">
-                    <AnimatePresence mode="wait">
+                {/* Mobile Modal */}
+                <AnimatePresence>
+                    {showModal && isMobile && (
                         <motion.div
-                            key={activeStep}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.3 }}
-                            className="step-content-card glass"
+                            className="mobile-modal-overlay"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setShowModal(false)}
                         >
-                            <div className="step-card-header">
-                                <span className="step-number">Paso {activeStep + 1}</span>
-                                <h3>{steps[activeStep].title}</h3>
-                            </div>
-                            <div className="step-card-body">
-                                {steps[activeStep].content}
-                            </div>
+                            <motion.div
+                                className="mobile-modal-content"
+                                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                                animate={{ scale: 1, opacity: 1, y: 0 }}
+                                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <button className="mobile-modal-close" onClick={() => setShowModal(false)}>
+                                    <i className="fa-solid fa-xmark"></i>
+                                </button>
+                                <div className="mobile-modal-icon">
+                                    <i className={steps[activeStep].icon}></i>
+                                </div>
+                                <span className="step-number" style={{ color: 'var(--color-primary)', fontWeight: 700, fontSize: '0.8rem' }}>PASO {activeStep + 1}</span>
+                                <h3 style={{ margin: '0.5rem 0 1rem', fontSize: '1.5rem' }}>{steps[activeStep].title}</h3>
+                                <div className="step-card-body" style={{ textAlign: 'center' }}>
+                                    {steps[activeStep].content}
+                                </div>
+                            </motion.div>
                         </motion.div>
-                    </AnimatePresence>
-                </div>
+                    )}
+                </AnimatePresence>
+
+                {/* Desktop Central Content Card - Hidden on Mobile */}
+                {!isMobile && (
+                    <div className="step-content-container">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeStep}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.3 }}
+                                className="step-content-card glass"
+                            >
+                                <div className="step-card-header">
+                                    <span className="step-number">Paso {activeStep + 1}</span>
+                                    <h3>{steps[activeStep].title}</h3>
+                                </div>
+                                <div className="step-card-body">
+                                    {steps[activeStep].content}
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
+                )}
             </div>
         </section>
     );

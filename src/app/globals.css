@@ -361,7 +361,7 @@ img {
   /* Dark background for Corporate Look */
   backdrop-filter: blur(10px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* border-bottom removed */
 }
 
 .nav {
@@ -382,7 +382,7 @@ img {
 }
 
 .logo span {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Underline removed */
 }
 
 .logo span {
@@ -519,10 +519,6 @@ section {
 @media (max-width: 768px) {
   .opportunity-grid {
     grid-template-columns: 1fr;
-  }
-
-  .opportunity-image {
-    order: -1;
   }
 }
 
@@ -829,14 +825,18 @@ section {
   .nav-links {
     display: none;
     position: absolute;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
+    top: calc(100% - 1px);
+    /* Position right at the bottom edge of header */
+    left: -1px;
+    /* Align with header border */
+    width: calc(100% + 2px);
     background: #111827;
-    /* Mobile menu also dark */
     flex-direction: column;
     padding: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 
   .nav-links.active {

@@ -163,6 +163,16 @@ const cardGradients = [
 export default function Services() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState(1);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const goToNext = useCallback(() => {
         setDirection(1);
@@ -192,15 +202,375 @@ export default function Services() {
         return services[idx];
     });
 
+    const headerContent = (
+        <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            style={{ textAlign: isMobile ? "center" : "left" }}
+        >
+            <h2 style={{
+                fontSize: "clamp(2rem, 3.5vw, 3rem)",
+                fontWeight: 800,
+                lineHeight: 1.1,
+                marginBottom: "1.5rem",
+            }}>
+                <span style={{
+                    backgroundImage: "linear-gradient(to right, var(--color-text-main), var(--color-primary))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    display: "inline-block",
+                }}>
+                    Nuestro Portafolio
+                </span>
+                <br />
+                <span style={{ color: "var(--color-text-main)" }}>de Servicios</span>
+            </h2>
+
+            <p style={{
+                color: "var(--color-text-muted)",
+                fontSize: "1.1rem",
+                lineHeight: 1.7,
+                marginBottom: isMobile ? "2rem" : "3rem",
+                maxWidth: isMobile ? "100%" : "420px",
+                margin: isMobile ? "0 auto 2rem" : "0 0 3rem",
+            }}>
+                Explora nuestra gama de soluciones digitales diseñadas para escalar tu negocio, mejorar la eficiencia y deleitar a tus clientes.
+            </p>
+        </motion.div>
+    );
+
+    const serviceInfoContent = (
+        <AnimatePresence mode="wait">
+            <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+                style={{
+                    marginBottom: isMobile ? "1rem" : "2.5rem",
+                    textAlign: isMobile ? "center" : "left"
+                }}
+            >
+                <div style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    background: "rgba(249, 115, 22, 0.1)",
+                    border: "1px solid rgba(249, 115, 22, 0.25)",
+                    borderRadius: "50px",
+                    padding: "0.4rem 1rem",
+                    marginBottom: "1rem",
+                }}>
+                    <span style={{ color: "var(--color-primary)", fontSize: "0.8rem", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase" }}>
+                        {activeService.id} / {String(services.length).padStart(2, "0")}
+                    </span>
+                </div>
+                <h3 style={{
+                    color: "var(--color-text-main)",
+                    fontSize: "1.4rem",
+                    fontWeight: 700,
+                    marginBottom: "0.5rem",
+                    lineHeight: 1.3,
+                }}>
+                    {activeService.title}
+                </h3>
+                <p style={{
+                    color: "var(--color-primary)",
+                    fontStyle: "italic",
+                    marginBottom: "0.5rem",
+                    fontSize: "1rem",
+                }}>
+                    {activeService.subtitle}
+                </p>
+                <p style={{ color: "var(--color-text-muted)", fontSize: "0.95rem", lineHeight: 1.6, maxWidth: isMobile ? "100%" : "420px" }}>
+                    {activeService.description}
+                </p>
+            </motion.div>
+        </AnimatePresence>
+    );
+
+    const navigationContent = (
+        <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: isMobile ? "center" : "flex-start",
+            gap: "1rem",
+            marginBottom: isMobile ? "1.5rem" : "0"
+        }}>
+            <button
+                onClick={goToPrev}
+                style={{
+                    width: "44px",
+                    height: "44px",
+                    borderRadius: "50%",
+                    border: "1px solid var(--color-border)",
+                    background: "white",
+                    color: "var(--color-text-main)",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "all 0.3s ease",
+                    fontSize: "1.1rem",
+                    boxShadow: "var(--shadow-card)",
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--color-primary)";
+                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.borderColor = "var(--color-primary)";
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "white";
+                    e.currentTarget.style.color = "var(--color-text-main)";
+                    e.currentTarget.style.borderColor = "var(--color-border)";
+                }}
+            >
+                ←
+            </button>
+
+            <div style={{ display: "flex", gap: "0.5rem" }}>
+                {services.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => goTo(i)}
+                        style={{
+                            width: i === activeIndex ? "28px" : "8px",
+                            height: "8px",
+                            borderRadius: "50px",
+                            border: "none",
+                            background: i === activeIndex ? "var(--color-primary)" : "var(--color-border)",
+                            cursor: "pointer",
+                            transition: "all 0.3s ease",
+                            padding: 0,
+                        }}
+                    />
+                ))}
+            </div>
+
+            <button
+                onClick={goToNext}
+                style={{
+                    width: "44px",
+                    height: "44px",
+                    borderRadius: "50%",
+                    border: "1px solid var(--color-border)",
+                    background: "white",
+                    color: "var(--color-text-main)",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "all 0.3s ease",
+                    fontSize: "1.1rem",
+                    boxShadow: "var(--shadow-card)",
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--color-primary)";
+                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.borderColor = "var(--color-primary)";
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "white";
+                    e.currentTarget.style.color = "var(--color-text-main)";
+                    e.currentTarget.style.borderColor = "var(--color-border)";
+                }}
+            >
+                →
+            </button>
+        </div>
+    );
+
+    const deckContent = (
+        <div style={{
+            position: "relative",
+            width: isMobile ? "280px" : "300px",
+            height: isMobile ? "360px" : "400px",
+            margin: isMobile ? "0 auto 2rem" : "0",
+        }}>
+            {/* The Stack (Cards behind the active one) */}
+            {[1, 2, 3, 4].map((pos) => {
+                const idx = (activeIndex + pos) % services.length;
+                const service = services[idx];
+                const stackPos = pos;
+
+                return (
+                    <motion.div
+                        key={`stack-${service.id}`}
+                        layout
+                        initial={false}
+                        animate={{
+                            x: stackPos * (isMobile ? 10 : 14),
+                            y: stackPos * -10,
+                            rotate: stackPos * 4,
+                            scale: 1 - stackPos * 0.06,
+                            opacity: 1 - stackPos * 0.18,
+                            zIndex: 5 - stackPos,
+                        }}
+                        transition={{
+                            duration: 0.6,
+                            ease: "easeOut",
+                        }}
+                        style={{
+                            position: "absolute",
+                            width: "100%",
+                            height: "100%",
+                            borderRadius: "24px",
+                            background: cardGradients[(stackPos - 1) % cardGradients.length] || cardGradients[0],
+                            border: "1px solid rgba(0,0,0,0.05)",
+                            boxShadow: "0 15px 35px rgba(0,0,0,0.05)",
+                            pointerEvents: "none",
+                        }}
+                    />
+                );
+            })}
+
+            {/* The Active Card (Front) with directional deck animation */}
+            <AnimatePresence mode="popLayout" initial={false} custom={direction}>
+                <motion.div
+                    key={activeService.id}
+                    custom={direction}
+                    initial={{
+                        x: direction === -1 ? -350 : 30,
+                        y: direction === -1 ? 0 : -10,
+                        opacity: 0,
+                        scale: direction === -1 ? 1 : 0.95,
+                        rotate: direction === -1 ? -15 : 0,
+                        zIndex: 10
+                    }}
+                    animate={{
+                        x: 0,
+                        y: 0,
+                        opacity: 1,
+                        scale: 1,
+                        rotate: 0,
+                        zIndex: 10
+                    }}
+                    exit={{
+                        x: direction === 1 ? 350 : 20,
+                        y: direction === 1 ? 0 : 20,
+                        rotate: direction === 1 ? 15 : 5,
+                        opacity: 0,
+                        scale: direction === 1 ? 1 : 0.9,
+                        transition: { duration: 0.5, ease: "easeIn" }
+                    }}
+                    transition={{
+                        duration: 0.6,
+                        ease: [0.23, 1, 0.32, 1]
+                    }}
+                    style={{
+                        position: "absolute",
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "24px",
+                        background: "linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)",
+                        border: "1px solid rgba(249, 115, 22, 0.2)",
+                        boxShadow: "0 30px 60px rgba(0,0,0,0.1), 0 0 40px rgba(249, 115, 22, 0.05)",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        padding: "2rem 1.5rem",
+                        cursor: "pointer",
+                        overflow: "hidden",
+                    }}
+                    whileHover={{
+                        scale: 1.02,
+                        boxShadow: "0 40px 100px rgba(0,0,0,0.3), 0 0 60px rgba(249, 115, 22, 0.2)",
+                        transition: { duration: 0.2 }
+                    }}
+                    onClick={goToNext}
+                >
+                    {/* Shimmer */}
+                    <div style={{
+                        position: "absolute",
+                        top: 0, left: 0, right: 0,
+                        height: "50%",
+                        background: "linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%)",
+                        borderRadius: "24px 24px 0 0",
+                        pointerEvents: "none",
+                    }} />
+                    {/* Orange accent line */}
+                    <div style={{
+                        position: "absolute",
+                        top: 0,
+                        left: "20%", right: "20%",
+                        height: "3px",
+                        background: "linear-gradient(90deg, transparent, #f97316, transparent)",
+                        borderRadius: "0 0 4px 4px",
+                    }} />
+                    {/* Icon */}
+                    <div style={{
+                        color: "#f97316",
+                        marginBottom: "1.5rem",
+                        filter: "drop-shadow(0 0 10px rgba(249, 115, 22, 0.4))",
+                    }}>
+                        {activeService.icon}
+                    </div>
+                    {/* Title */}
+                    <h3 style={{
+                        color: "#1f2937",
+                        fontSize: "1.05rem",
+                        fontWeight: 700,
+                        textAlign: "center",
+                        marginBottom: "0.75rem",
+                        lineHeight: 1.3,
+                    }}>
+                        {activeService.title}
+                    </h3>
+                    {/* Description */}
+                    <p style={{
+                        color: "#4b5563",
+                        fontSize: "0.85rem",
+                        textAlign: "center",
+                        lineHeight: 1.5,
+                        maxWidth: "220px",
+                    }}>
+                        {activeService.description}
+                    </p>
+                    {/* Watermark */}
+                    <div style={{
+                        position: "absolute",
+                        bottom: "1.2rem",
+                        left: "1.2rem", right: "1.2rem",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}>
+                        <span style={{
+                            color: "rgba(249, 115, 22, 0.5)",
+                            fontSize: "0.6rem",
+                            fontWeight: 700,
+                            letterSpacing: "2px",
+                            textTransform: "uppercase",
+                        }}>
+                            AUTOMATIZALO
+                        </span>
+                        <span style={{
+                            color: "rgba(0,0,0,0.15)",
+                            fontSize: "0.75rem",
+                            fontWeight: 700,
+                        }}>
+                            {activeService.id}
+                        </span>
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+        </div>
+    );
+
     return (
         <section
             id="services"
             style={{
                 background: "var(--color-bg-secondary)",
-                padding: "6rem 0",
+                padding: isMobile ? "4rem 0" : "6rem 0",
                 position: "relative",
                 overflow: "hidden",
-                minHeight: "90vh",
+                minHeight: isMobile ? "auto" : "90vh",
                 display: "flex",
                 alignItems: "center",
             }}
@@ -228,383 +598,51 @@ export default function Services() {
             }} />
 
             <div className="container" style={{ position: "relative", zIndex: 1, width: "100%" }}>
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "4rem",
-                    alignItems: "center",
-                }}>
-                    {/* LEFT SIDE */}
-                    <div>
-                        <motion.div
-                            initial={{ opacity: 0, x: -40 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.7 }}
-                        >
-                            <h2 style={{
-                                fontSize: "clamp(2rem, 3.5vw, 3rem)",
-                                fontWeight: 800,
-                                lineHeight: 1.1,
-                                marginBottom: "1.5rem",
-                            }}>
-                                <span style={{
-                                    backgroundImage: "linear-gradient(to right, var(--color-text-main), var(--color-primary))",
-                                    WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent",
-                                    backgroundClip: "text",
-                                    display: "inline-block",
-                                }}>
-                                    Nuestro Portafolio
-                                </span>
-                                <br />
-                                <span style={{ color: "var(--color-text-main)" }}>de Servicios</span>
-                            </h2>
-
-                            <p style={{
-                                color: "var(--color-text-muted)",
-                                fontSize: "1.1rem",
-                                lineHeight: 1.7,
-                                marginBottom: "3rem",
-                                maxWidth: "420px",
-                            }}>
-                                Explora nuestra gama de soluciones digitales diseñadas para escalar tu negocio, mejorar la eficiencia y deleitar a tus clientes.
-                            </p>
-
-                            {/* Current service info */}
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={activeIndex}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -20 }}
-                                    transition={{ duration: 0.4 }}
-                                    style={{ marginBottom: "2.5rem" }}
-                                >
-                                    <div style={{
-                                        display: "inline-flex",
-                                        alignItems: "center",
-                                        gap: "0.5rem",
-                                        background: "rgba(249, 115, 22, 0.1)",
-                                        border: "1px solid rgba(249, 115, 22, 0.25)",
-                                        borderRadius: "50px",
-                                        padding: "0.4rem 1rem",
-                                        marginBottom: "1rem",
-                                    }}>
-                                        <span style={{ color: "var(--color-primary)", fontSize: "0.8rem", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase" }}>
-                                            {activeService.id} / {String(services.length).padStart(2, "0")}
-                                        </span>
-                                    </div>
-                                    <h3 style={{
-                                        color: "var(--color-text-main)",
-                                        fontSize: "1.4rem",
-                                        fontWeight: 700,
-                                        marginBottom: "0.5rem",
-                                        lineHeight: 1.3,
-                                    }}>
-                                        {activeService.title}
-                                    </h3>
-                                    <p style={{
-                                        color: "var(--color-primary)",
-                                        fontStyle: "italic",
-                                        marginBottom: "0.5rem",
-                                        fontSize: "1rem",
-                                    }}>
-                                        {activeService.subtitle}
-                                    </p>
-                                    <p style={{ color: "var(--color-text-muted)", fontSize: "0.95rem", lineHeight: 1.6 }}>
-                                        {activeService.description}
-                                    </p>
-                                </motion.div>
-                            </AnimatePresence>
-
-                            {/* Navigation */}
-                            <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                                {/* Prev button */}
-                                <button
-                                    onClick={goToPrev}
-                                    style={{
-                                        width: "44px",
-                                        height: "44px",
-                                        borderRadius: "50%",
-                                        border: "1px solid var(--color-border)",
-                                        background: "white",
-                                        color: "var(--color-text-main)",
-                                        cursor: "pointer",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        transition: "all 0.3s ease",
-                                        fontSize: "1.1rem",
-                                        boxShadow: "var(--shadow-card)",
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.background = "var(--color-primary)";
-                                        e.currentTarget.style.color = "white";
-                                        e.currentTarget.style.borderColor = "var(--color-primary)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.background = "white";
-                                        e.currentTarget.style.color = "var(--color-text-main)";
-                                        e.currentTarget.style.borderColor = "var(--color-border)";
-                                    }}
-                                >
-                                    ←
-                                </button>
-
-                                {/* Dots */}
-                                <div style={{ display: "flex", gap: "0.5rem" }}>
-                                    {services.map((_, i) => (
-                                        <button
-                                            key={i}
-                                            onClick={() => goTo(i)}
-                                            style={{
-                                                width: i === activeIndex ? "28px" : "8px",
-                                                height: "8px",
-                                                borderRadius: "50px",
-                                                border: "none",
-                                                background: i === activeIndex ? "var(--color-primary)" : "var(--color-border)",
-                                                cursor: "pointer",
-                                                transition: "all 0.3s ease",
-                                                padding: 0,
-                                            }}
-                                        />
-                                    ))}
-                                </div>
-
-                                {/* Next button */}
-                                <button
-                                    onClick={goToNext}
-                                    style={{
-                                        width: "44px",
-                                        height: "44px",
-                                        borderRadius: "50%",
-                                        border: "1px solid var(--color-border)",
-                                        background: "white",
-                                        color: "var(--color-text-main)",
-                                        cursor: "pointer",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        transition: "all 0.3s ease",
-                                        fontSize: "1.1rem",
-                                        boxShadow: "var(--shadow-card)",
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.background = "var(--color-primary)";
-                                        e.currentTarget.style.color = "white";
-                                        e.currentTarget.style.borderColor = "var(--color-primary)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.background = "white";
-                                        e.currentTarget.style.color = "var(--color-text-main)";
-                                        e.currentTarget.style.borderColor = "var(--color-border)";
-                                    }}
-                                >
-                                    →
-                                </button>
-                            </div>
-                        </motion.div>
+                {isMobile ? (
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                        {headerContent}
+                        <div style={{ height: "400px", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "2rem" }}>
+                            {deckContent}
+                        </div>
+                        {navigationContent}
+                        {serviceInfoContent}
                     </div>
-
-                    {/* RIGHT SIDE - Stacked Card Carousel — true deck effect */}
+                ) : (
                     <div style={{
-                        position: "relative",
-                        height: "520px",
-                        display: "flex",
+                        display: "grid",
+                        gridTemplateColumns: "1fr 1fr",
+                        gap: "4rem",
                         alignItems: "center",
-                        justifyContent: "center",
                     }}>
-                        {/* Glow behind cards */}
-                        <div style={{
-                            position: "absolute",
-                            width: "320px",
-                            height: "420px",
-                            background: "radial-gradient(ellipse, rgba(249, 115, 22, 0.12) 0%, transparent 70%)",
-                            borderRadius: "24px",
-                            filter: "blur(40px)",
-                            zIndex: 0,
-                        }} />
+                        {/* LEFT SIDE */}
+                        <div>
+                            {headerContent}
+                            {serviceInfoContent}
+                            {navigationContent}
+                        </div>
 
-                        {/* RIGHT SIDE - Stacked Card Carousel — Slide-out deck effect */}
-                        {/* We use a container that defines the pile, and the active card is managed by AnimatePresence */}
+                        {/* RIGHT SIDE - Stacked Card Carousel */}
                         <div style={{
                             position: "relative",
-                            width: "300px",
-                            height: "400px",
+                            height: "520px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
                         }}>
-                            {/* The Stack (Cards behind the active one) */}
-                            {/* We show 4 cards behind the front one */}
-                            {[1, 2, 3, 4].map((pos) => {
-                                const idx = (activeIndex + pos) % services.length;
-                                const service = services[idx];
-                                const stackPos = pos;
-
-                                return (
-                                    <motion.div
-                                        key={`stack-${service.id}`}
-                                        layout
-                                        initial={false}
-                                        animate={{
-                                            x: stackPos * 14,
-                                            y: stackPos * -10,
-                                            rotate: stackPos * 4,
-                                            scale: 1 - stackPos * 0.06,
-                                            opacity: 1 - stackPos * 0.18,
-                                            zIndex: 5 - stackPos,
-                                        }}
-                                        transition={{
-                                            duration: 0.6,
-                                            ease: "easeOut",
-                                        }}
-                                        style={{
-                                            position: "absolute",
-                                            width: "100%",
-                                            height: "100%",
-                                            borderRadius: "24px",
-                                            background: cardGradients[(stackPos - 1) % cardGradients.length] || cardGradients[0],
-                                            border: "1px solid rgba(0,0,0,0.05)",
-                                            boxShadow: "0 15px 35px rgba(0,0,0,0.05)",
-                                            pointerEvents: "none",
-                                        }}
-                                    />
-                                );
-                            })}
-
-                            {/* The Active Card (Front) with directional deck animation */}
-                            <AnimatePresence mode="popLayout" initial={false} custom={direction}>
-                                <motion.div
-                                    key={activeService.id}
-                                    custom={direction}
-                                    initial={{
-                                        x: direction === -1 ? -350 : 30,
-                                        y: direction === -1 ? 0 : -10,
-                                        opacity: 0,
-                                        scale: direction === -1 ? 1 : 0.95,
-                                        rotate: direction === -1 ? -15 : 0,
-                                        zIndex: 10
-                                    }}
-                                    animate={{
-                                        x: 0,
-                                        y: 0,
-                                        opacity: 1,
-                                        scale: 1,
-                                        rotate: 0,
-                                        zIndex: 10
-                                    }}
-                                    exit={{
-                                        x: direction === 1 ? 350 : 20,
-                                        y: direction === 1 ? 0 : 20,
-                                        rotate: direction === 1 ? 15 : 5,
-                                        opacity: 0,
-                                        scale: direction === 1 ? 1 : 0.9,
-                                        transition: { duration: 0.5, ease: "easeIn" }
-                                    }}
-                                    transition={{
-                                        duration: 0.6,
-                                        ease: [0.23, 1, 0.32, 1]
-                                    }}
-                                    style={{
-                                        position: "absolute",
-                                        width: "100%",
-                                        height: "100%",
-                                        borderRadius: "24px",
-                                        background: "linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)",
-                                        border: "1px solid rgba(249, 115, 22, 0.2)",
-                                        boxShadow: "0 30px 60px rgba(0,0,0,0.1), 0 0 40px rgba(249, 115, 22, 0.05)",
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        padding: "2rem 1.5rem",
-                                        cursor: "pointer",
-                                        overflow: "hidden",
-                                    }}
-                                    whileHover={{
-                                        scale: 1.02,
-                                        boxShadow: "0 40px 100px rgba(0,0,0,0.3), 0 0 60px rgba(249, 115, 22, 0.2)",
-                                        transition: { duration: 0.2 }
-                                    }}
-                                    onClick={goToNext}
-                                >
-                                    {/* Shimmer */}
-                                    <div style={{
-                                        position: "absolute",
-                                        top: 0, left: 0, right: 0,
-                                        height: "50%",
-                                        background: "linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%)",
-                                        borderRadius: "24px 24px 0 0",
-                                        pointerEvents: "none",
-                                    }} />
-                                    {/* Orange accent line */}
-                                    <div style={{
-                                        position: "absolute",
-                                        top: 0,
-                                        left: "20%", right: "20%",
-                                        height: "3px",
-                                        background: "linear-gradient(90deg, transparent, #f97316, transparent)",
-                                        borderRadius: "0 0 4px 4px",
-                                    }} />
-                                    {/* Icon */}
-                                    <div style={{
-                                        color: "#f97316",
-                                        marginBottom: "1.5rem",
-                                        filter: "drop-shadow(0 0 10px rgba(249, 115, 22, 0.4))",
-                                    }}>
-                                        {activeService.icon}
-                                    </div>
-                                    {/* Title */}
-                                    <h3 style={{
-                                        color: "#1f2937",
-                                        fontSize: "1.05rem",
-                                        fontWeight: 700,
-                                        textAlign: "center",
-                                        marginBottom: "0.75rem",
-                                        lineHeight: 1.3,
-                                    }}>
-                                        {activeService.title}
-                                    </h3>
-                                    {/* Description */}
-                                    <p style={{
-                                        color: "#4b5563",
-                                        fontSize: "0.85rem",
-                                        textAlign: "center",
-                                        lineHeight: 1.5,
-                                        maxWidth: "220px",
-                                    }}>
-                                        {activeService.description}
-                                    </p>
-                                    {/* Watermark */}
-                                    <div style={{
-                                        position: "absolute",
-                                        bottom: "1.2rem",
-                                        left: "1.2rem", right: "1.2rem",
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        alignItems: "center",
-                                    }}>
-                                        <span style={{
-                                            color: "rgba(249, 115, 22, 0.5)",
-                                            fontSize: "0.6rem",
-                                            fontWeight: 700,
-                                            letterSpacing: "2px",
-                                            textTransform: "uppercase",
-                                        }}>
-                                            AUTOMATIZALO
-                                        </span>
-                                        <span style={{
-                                            color: "rgba(0,0,0,0.15)",
-                                            fontSize: "0.75rem",
-                                            fontWeight: 700,
-                                        }}>
-                                            {activeService.id}
-                                        </span>
-                                    </div>
-                                </motion.div>
-                            </AnimatePresence>
+                            {/* Glow behind cards */}
+                            <div style={{
+                                position: "absolute",
+                                width: "320px",
+                                height: "420px",
+                                background: "radial-gradient(ellipse, rgba(249, 115, 22, 0.12) 0%, transparent 70%)",
+                                borderRadius: "24px",
+                                filter: "blur(40px)",
+                                zIndex: 0,
+                            }} />
+                            {deckContent}
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         </section>
     );

@@ -17,15 +17,17 @@ export default function Header() {
 
     return (
         <header className="header" style={{
-            background: 'rgba(17, 24, 39, 0.7)',
-            backdropFilter: 'blur(24px)',
-            WebkitBackdropFilter: 'blur(24px)',
+            background: isMobileOpen ? '#111827' : 'rgba(17, 24, 39, 0.8)',
+            backdropFilter: isMobileOpen ? 'none' : 'blur(24px)',
+            WebkitBackdropFilter: isMobileOpen ? 'none' : 'blur(24px)',
             margin: '1rem',
             width: 'calc(100% - 2rem)',
-            borderRadius: '16px',
+            borderRadius: isMobileOpen ? '16px 16px 0 0' : '16px',
             top: '0',
             border: '1px solid rgba(255,255,255,0.1)',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+            borderBottom: 'none', // Always none to avoid the "line" issue, we'll rely on the menu's border
+            boxShadow: isMobileOpen ? '0 20px 40px rgba(0,0,0,0.4)' : '0 10px 30px rgba(0,0,0,0.2)',
+            zIndex: 1000
         }}>
             <div className="container nav">
                 <Link
