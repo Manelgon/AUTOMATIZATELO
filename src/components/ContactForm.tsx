@@ -346,7 +346,7 @@ export default function ContactForm() {
                         </div>
                         <div>
                             <label htmlFor="telefono" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Teléfono de contacto</label>
-                            <div style={{ display: 'flex', gap: '10px' }} ref={phoneDropdownRef}>
+                            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }} ref={phoneDropdownRef}>
                                 <div style={{ position: 'relative' }}>
                                     <button
                                         type="button"
@@ -447,7 +447,7 @@ export default function ContactForm() {
                                     required
                                     value={formData.telefono}
                                     onChange={handleChange}
-                                    style={{ flexGrow: 1, background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
+                                    style={{ flexGrow: 1, minWidth: '200px', background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
                                 />
                             </div>
                         </div>

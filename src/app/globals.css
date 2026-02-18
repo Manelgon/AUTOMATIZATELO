@@ -270,6 +270,12 @@ img {
   padding: 0 var(--spacing-md);
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 .btn {
   display: inline-block;
   padding: 12px 32px;
@@ -331,13 +337,14 @@ img {
 }
 
 .section-title {
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: var(--spacing-sm);
   /* Gradient with Orange */
   background: linear-gradient(to right, var(--color-text-main), var(--color-primary));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
@@ -431,7 +438,7 @@ img {
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: clamp(2.2rem, 8vw, 4rem);
   line-height: 1.1;
   margin-bottom: var(--spacing-md);
   /* Orange Gradient Text */
@@ -452,6 +459,19 @@ img {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Stats Sticky Bar */
@@ -1627,5 +1647,56 @@ section {
 
   .data-card .label {
     margin-bottom: 0;
+  }
+}
+
+/* Specific fixes for ultra-small screens or enlarged text */
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 1.1rem !important;
+  }
+
+  .nav {
+    padding: 0 0.5rem;
+  }
+
+  .header {
+    margin: 0.5rem !important;
+    width: calc(100% - 1rem) !important;
+  }
+
+  .hero p {
+    font-size: 1.1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .hero-actions {
+    gap: 0.8rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo span {
+    font-size: 0.95rem !important;
+  }
+
+  .section-title {
+    font-size: 1.6rem !important;
+  }
+}
+
+/* Hide scrollbar on mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  body {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }
