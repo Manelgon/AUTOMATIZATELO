@@ -196,36 +196,26 @@ export default function ContactForm() {
         const emailInput = form.elements.namedItem('email') as HTMLInputElement;
         const phoneInput = form.elements.namedItem('telefono') as HTMLInputElement;
 
-        // Conditional Validation: Email OR Phone required
-        if (!formData.email && !formData.telefono) {
-            if (emailInput) {
-                emailInput.setCustomValidity("Por favor, introduce al menos un email o un teléfono.");
-                emailInput.reportValidity();
+        // All fields are now required except message, handled by HTML5 validation.
+        // We still keep specific validation for format.
+
+        // Validate Phone (9 digits)
+        const cleanPhone = formData.telefono.replace(/\D/g, '');
+        if (!/^\d{9}$/.test(cleanPhone)) {
+            if (phoneInput) {
+                phoneInput.setCustomValidity("Por favor, introduce un número de teléfono válido de 9 dígitos.");
+                phoneInput.reportValidity();
             }
             return;
         }
 
-        // Validate Phone (9 digits) - Only if provided
-        if (formData.telefono) {
-            const cleanPhone = formData.telefono.replace(/\D/g, '');
-            if (!/^\d{9}$/.test(cleanPhone)) {
-                if (phoneInput) {
-                    phoneInput.setCustomValidity("Por favor, introduce un número de teléfono válido de 9 dígitos.");
-                    phoneInput.reportValidity();
-                }
-                return;
+        // Validate Email
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            if (emailInput) {
+                emailInput.setCustomValidity("Por favor, introduce un correo electrónico válido (ej: usuario@dominio.com).");
+                emailInput.reportValidity();
             }
-        }
-
-        // Validate Email - Only if provided
-        if (formData.email) {
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-                if (emailInput) {
-                    emailInput.setCustomValidity("Por favor, introduce un correo electrónico válido (ej: usuario@dominio.com).");
-                    emailInput.reportValidity();
-                }
-                return;
-            }
+            return;
         }
 
         if (status === "sending") return;
@@ -454,6 +444,7 @@ export default function ContactForm() {
                                     name="telefono"
                                     className="glass"
                                     placeholder="Número (9 dígitos)"
+                                    required
                                     value={formData.telefono}
                                     onChange={handleChange}
                                     style={{ flexGrow: 1, background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
@@ -469,6 +460,7 @@ export default function ContactForm() {
                                 name="email"
                                 className="glass"
                                 placeholder="Ej: info@empresa.com"
+                                required
                                 value={formData.email}
                                 onChange={handleChange}
                                 style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
@@ -499,10 +491,16 @@ export default function ContactForm() {
                                 placeholder="Selecciona un servicio"
                                 required
                                 options={[
-                                    { value: 'servicios_integrales', label: 'Servicios Digitales Integrales' },
+                                    { value: 'ecosistemas_digitales', label: 'Ecosistemas Digitales Integrales' },
+                                    { value: 'software_medida', label: 'Desarrollo de Software a Medida' },
+                                    { value: 'bi_dashboards', label: 'Paneles de Control & Business Intelligence' },
                                     { value: 'web_design', label: 'Diseño y Desarrollo Web' },
-                                    { value: 'autom_flujos', label: 'Automatización de Flujos' },
-                                    { value: 'ia_chatbots', label: 'Soluciones de IA & Chatbots' }
+                                    { value: 'ecommerce', label: 'E-commerce & Plataformas de Venta' },
+                                    { value: 'process_autom', label: 'Automatización de Procesos' },
+                                    { value: 'integracion_sistemas', label: 'Integración de Sistemas (CRM · ERP · APIs)' },
+                                    { value: 'ia_chatbots', label: 'IA & Chatbots Conversacionales' },
+                                    { value: 'ocr_ia', label: 'Procesamiento Inteligente de Documentos (OCR + IA)' },
+                                    { value: 'otros', label: 'Otros' }
                                 ]}
                             />
                         </div>
