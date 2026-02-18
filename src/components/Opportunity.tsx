@@ -13,6 +13,9 @@ export default function Opportunity() {
             <div className="container opportunity-grid">
                 <motion.div
                     initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={reveal}
                     transition={{ delay: 0.2 }}
                     className="opportunity-content"
                 >
@@ -26,7 +29,7 @@ export default function Opportunity() {
                     >
                         La Oportunidad
                     </h4>
-                    <h2>¿Por qué digitalizar y automatizar ahora?</h2>
+                    <h2 className="section-title" style={{ textAlign: "left", marginBottom: "1.5rem" }}>¿Por qué digitalizar y automatizar ahora?</h2>
                     <p>
                         Ya no es una opción, es la clave para la supervivencia y el crecimiento. Mientras las grandes corporaciones multiplican su productividad, muchas PYMEs se quedan atrás por no saber &quot;por dónde empezar&quot;.
                     </p>

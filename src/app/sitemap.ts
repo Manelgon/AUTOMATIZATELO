@@ -1,38 +1,30 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://automatizatelo.com' // Replace with your actual domain
-
     return [
         {
-            url: baseUrl,
+            url: 'https://automatizatelo.com',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 1,
         },
         {
-            url: `${baseUrl}/aviso-legal`,
+            url: 'https://automatizatelo.com/aviso-legal',
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
+            changeFrequency: 'yearly',
+            priority: 0.3,
         },
         {
-            url: `${baseUrl}/proteccion-datos`,
+            url: 'https://automatizatelo.com/proteccion-datos',
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
+            changeFrequency: 'yearly',
+            priority: 0.3,
         },
         {
-            url: `${baseUrl}/politica-cookies`,
+            url: 'https://automatizatelo.com/politica-cookies',
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/declaracion-accesibilidad`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
+            changeFrequency: 'yearly',
+            priority: 0.3,
         },
     ]
 }

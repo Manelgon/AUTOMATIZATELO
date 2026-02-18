@@ -51,21 +51,29 @@ const Counter = ({
 
 export default function StatsBar() {
     return (
-        <div className="stats-bar">
-            <div className="container stats-grid" id="stats-counter">
-                <div className="stat-item">
-                    <Counter target={55} suffix="%" />
-                    <p>de PYMEs ahorran +10h/semana con nosotros.</p>
+        <div className="stats-bar" style={{ background: 'var(--color-bg-secondary)', borderTop: '1px solid var(--color-border)', borderBottom: '1px solid var(--color-border)' }}>
+            <div className="container stats-grid" id="stats-counter" style={{ gap: '2rem', padding: 'var(--spacing-xl) var(--spacing-md)' }}>
+                <div className="stat-item" style={{ textAlign: 'center' }}>
+                    <div style={{ color: 'var(--color-primary)', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                        <Counter target={55} suffix="%" />
+                    </div>
+                    <p style={{ color: 'var(--color-text-main)', fontWeight: 500 }}>de PYMEs ahorran +10h/semana con nosotros.</p>
                 </div>
-                <div className="stat-item">
-                    <Counter target={40} suffix="%" />
-                    <p>de reducción en errores operativos.</p>
+                <div className="stat-item" style={{ textAlign: 'center' }}>
+                    <div style={{ color: 'var(--color-primary)', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                        <Counter target={40} suffix="%" />
+                    </div>
+                    <p style={{ color: 'var(--color-text-main)', fontWeight: 500 }}>de reducción en errores operativos.</p>
                 </div>
-                <div className="stat-item">
-                    <Counter target={30} suffix="%" prefix="+" />
-                    <p>de tiempo liberado para generar valor real.</p>
+                <div className="stat-item" style={{ textAlign: 'center' }}>
+                    <div style={{ color: 'var(--color-primary)', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                        <Counter target={30} suffix="%" prefix="+" />
+                    </div>
+                    <p style={{ color: 'var(--color-text-main)', fontWeight: 500 }}>de tiempo liberado para generar valor real.</p>
                 </div>
             </div>
         </div>
+
+
     );
 }

@@ -16,15 +16,22 @@ export default function Header() {
     };
 
     return (
-        <header className="header">
+        <header className="header" style={{
+            background: 'rgba(17, 24, 39, 0.7)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
+            margin: '1rem',
+            width: 'calc(100% - 2rem)',
+            borderRadius: '16px',
+            top: '0',
+            border: '1px solid rgba(255,255,255,0.1)',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+        }}>
             <div className="container nav">
                 <Link
                     href="/"
                     className="logo"
                     onClick={(e) => {
-                        // Prevent default only if we want custom scroll behavior on the same page,
-                        // but for "/" standard navigation is usually safer across pages.
-                        // However, keeping smooth scroll logic for home page consistency:
                         if (window.location.pathname === '/') {
                             e.preventDefault();
                             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -33,35 +40,37 @@ export default function Header() {
                     }}
                 >
                     <Image src="/logo.png" alt="Automatizatelo" width={32} height={32} style={{ marginRight: '0.5rem' }} priority />
-                    Automatizatelo<span>.</span>
+                    <span className="premium-gradient" style={{ fontWeight: 'bold' }}>Automatizatelo.</span>
                 </Link>
-                <div className="mobile-toggle" onClick={toggleMobile}>
+
+                <div className="mobile-toggle" onClick={toggleMobile} style={{ color: 'white' }}>
                     <i className={`fa-solid ${isMobileOpen ? "fa-xmark" : "fa-bars"}`}></i>
                 </div>
                 <nav className={`nav-links ${isMobileOpen ? "active" : ""}`}>
-                    <Link href="/#opportunity" onClick={closeMobile}>
+                    <Link href="/#opportunity" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
                         La Oportunidad
                     </Link>
-                    <Link href="/#benefits" onClick={closeMobile}>
+                    <Link href="/#benefits" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
                         Beneficios
                     </Link>
-                    <Link href="/#services" onClick={closeMobile}>
+                    <Link href="/#services" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
                         Servicios
                     </Link>
-                    <Link href="/#how-we-work" onClick={closeMobile}>
+                    <Link href="/#how-we-work" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
                         Metodología
                     </Link>
-                    <Link href="/#trusted-clients" onClick={closeMobile}>
+                    <Link href="/#trusted-clients" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
                         Casos de Éxito
                     </Link>
-                    <Link href="/#contact" className="btn btn-primary" onClick={closeMobile}>
+                    <Link href="/#contact" className="btn btn-primary" onClick={closeMobile} style={{ background: 'var(--color-primary)', border: 'none' }}>
                         Empieza Ahora
                     </Link>
-                    <Link href="/#faq" onClick={closeMobile}>
+                    <Link href="/#faq" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
                         FAQ
                     </Link>
                 </nav>
             </div>
         </header>
+
     );
 }

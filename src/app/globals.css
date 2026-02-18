@@ -2,32 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Scrollbar Global */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-text-muted);
+}
+
 /* Legacy Variables */
 :root {
-  /* Colors - Corporate Palette: Orange, Gray, White */
+  /* Brand Palette: Orange & Corporate Grey (Light Theme Base) */
   --color-bg: #ffffff;
   --color-bg-secondary: #f3f4f6;
-  /* Light Gray */
+  --color-surface: rgba(255, 255, 255, 0.8);
+  --color-surface-hover: rgba(249, 115, 22, 0.05);
+
   --color-text-main: #1f2937;
-  /* Dark Gray for text */
   --color-text-muted: #6b7280;
-  /* Medium Gray */
+  --color-text-on-dark: #f8fafc;
 
   --color-primary: #f97316;
-  /* Orange Main */
   --color-primary-glow: #fb923c;
-  /* Lighter Orange */
   --color-accent: #4b5563;
-  /* Gray Accent */
   --color-accent-glow: #9ca3af;
 
-  --color-surface: #ffffff;
-  --color-surface-hover: #f9fafb;
-  --border-color: #e5e7eb;
-  /* Light Gray Border */
+  --color-corporate-dark: #111827;
+  --color-border: #e5e7eb;
 
-  /* Typography */
-  /* --font-main is set via layout.tsx using next/font */
+  --color-glass: rgba(255, 255, 255, 0.7);
+  --color-glass-border: rgba(229, 231, 235, 0.5);
+  --border-color: #e5e7eb;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -35,10 +50,11 @@
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
   --spacing-xl: 8rem;
+  --spacing-xxl: 8rem;
 
   /* Effects */
-  --shadow-glow: 0 4px 20px rgba(249, 115, 22, 0.15);
-  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 4px 25px rgba(249, 115, 22, 0.15);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -47,6 +63,8 @@
   --container-width: 1200px;
   --header-height: 80px;
 }
+
+
 
 /* Reset & Base */
 * {
@@ -154,6 +172,31 @@ img {
   }
 }
 
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+
+  20%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Scroll Reveal Classes */
 .reveal {
   opacity: 0;
@@ -201,6 +244,26 @@ img {
   animation-delay: 0.5s;
 }
 
+/* Glassmorphism utility */
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-glow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -221,10 +284,28 @@ img {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-glow));
   color: white;
   box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(30deg);
+  transition: none;
+}
+
+.btn-primary:hover::after {
+  animation: shine 3s infinite;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 8px 25px rgba(249, 115, 22, 0.6);
 }
 
@@ -250,8 +331,9 @@ img {
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
   margin-bottom: var(--spacing-sm);
   /* Gradient with Orange */
   background: linear-gradient(to right, var(--color-text-main), var(--color-primary));
@@ -326,6 +408,10 @@ img {
 
 .nav-links a:hover {
   color: var(--color-primary);
+}
+
+.nav-links a.btn-primary:hover {
+  color: white;
 }
 
 .mobile-toggle {
@@ -482,7 +568,7 @@ section {
   transform: translateY(-8px);
   /* Lift */
   border-color: var(--color-primary);
-  box-shadow: 0 15px 35px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 15px 35px rgba(249, 115, 22, 0.15), 0 0 15px rgba(249, 115, 22, 0.1);
   /* Orange glow shadow */
 }
 
@@ -539,48 +625,55 @@ section {
   }
 }
 
-/* How We Work - Tooltip Styles */
-.step-icon-wrapper {
+/* How We Work - New Card Styles */
+.step-content-container {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  perspective: 1000px;
+}
+
+.step-content-card {
+  padding: 2.5rem;
+  text-align: left;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1px solid var(--color-glass-border);
   position: relative;
-  display: inline-block;
+  overflow: hidden;
 }
 
-.step-tooltip {
-  position: absolute;
-  top: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  color: var(--color-text-main);
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius-md);
+.step-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.step-number {
   font-size: 0.9rem;
-  line-height: 1.5;
-  width: 280px;
-  max-width: 90vw;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-  z-index: 100;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border: 1px solid var(--border-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  opacity: 0.8;
 }
 
-.step-tooltip::after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-bottom-color: white;
+.step-card-header h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0;
 }
 
-.step-icon-wrapper:hover .step-tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(5px);
+.step-card-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.step-card-body strong {
+  color: var(--color-primary);
 }
 
 /* Use Cases */
@@ -686,11 +779,7 @@ section {
   gap: 0.5rem;
 }
 
-.pricing-card li::before {
-  content: '✓';
-  color: var(--color-primary);
-  font-weight: bold;
-}
+
 
 /* Footer */
 .footer {
@@ -837,20 +926,37 @@ section {
   gap: 1rem;
 }
 
+.step-icon-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .step-icon {
   width: 60px;
   height: 60px;
-  background: white;
+  background: var(--color-bg);
   border: 2px solid var(--color-primary);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  color: var(--color-primary);
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
+
+.flow-step.active {
+  z-index: 50;
+}
+
+/* Step tooltips removed in favor of central card */
+
+/* Removed Tooltip Arrow */
 
 .flow-step:hover .step-icon {
   transform: scale(1.1);

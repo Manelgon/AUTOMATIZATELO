@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 export default function HowWeWork() {
-    const [activeStep, setActiveStep] = useState<number | null>(null);
+    const [activeStep, setActiveStep] = useState<number>(0);
 
     const steps = [
         {
@@ -80,7 +80,7 @@ export default function HowWeWork() {
                 </motion.p>
 
                 <div className="flow-container">
-                    <div className="flow-line"></div>
+                    <div className="flow-line" style={{ background: 'linear-gradient(90deg, transparent, var(--color-primary), transparent)' }}></div>
 
                     {steps.map((step, index) => (
                         <motion.div
@@ -92,52 +92,46 @@ export default function HowWeWork() {
                             variants={item}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <div
+                            <motion.div
                                 className="step-icon-wrapper"
                                 onClick={() => setActiveStep(index)}
+                                whileHover={{ scale: 1.05 }}
                             >
-                                <div className="step-icon">
+                                <div className="step-icon" style={{
+                                    background: activeStep === index ? 'var(--color-primary)' : 'white',
+                                    color: activeStep === index ? 'white' : 'var(--color-primary)',
+                                    borderColor: activeStep === index ? 'var(--color-primary)' : 'var(--color-border)'
+                                }}>
                                     <i className={step.icon}></i>
                                 </div>
-                                <div className="step-tooltip">
-                                    {step.content}
-                                </div>
-                            </div>
-                            <h4>{step.title}</h4>
+                            </motion.div>
+                            <h4 style={{ color: activeStep === index ? 'var(--color-primary)' : 'var(--color-text-main)', marginTop: '1rem', fontWeight: 600 }}>{step.title}</h4>
                         </motion.div>
                     ))}
                 </div>
-            </div>
 
-            {/* Mobile Modal */}
-            <AnimatePresence>
-                {activeStep !== null && (
-                    <motion.div
-                        className="mobile-modal-overlay"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setActiveStep(null)}
-                    >
+                {/* Central Content Card */}
+                <div className="step-content-container">
+                    <AnimatePresence mode="wait">
                         <motion.div
-                            className="mobile-modal-content"
-                            initial={{ scale: 0.8, opacity: 0, y: 20 }}
-                            animate={{ scale: 1, opacity: 1, y: 0 }}
-                            exit={{ scale: 0.8, opacity: 0, y: 20 }}
-                            onClick={(e) => e.stopPropagation()}
+                            key={activeStep}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.3 }}
+                            className="step-content-card glass"
                         >
-                            <button className="mobile-modal-close" onClick={() => setActiveStep(null)}>
-                                <i className="fa-solid fa-xmark"></i>
-                            </button>
-                            <div className="mobile-modal-icon">
-                                <i className={steps[activeStep].icon}></i>
+                            <div className="step-card-header">
+                                <span className="step-number">Paso {activeStep + 1}</span>
+                                <h3>{steps[activeStep].title}</h3>
                             </div>
-                            <h4>{steps[activeStep].title}</h4>
-                            <p>{steps[activeStep].content}</p>
+                            <div className="step-card-body">
+                                {steps[activeStep].content}
+                            </div>
                         </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                    </AnimatePresence>
+                </div>
+            </div>
         </section>
     );
 }

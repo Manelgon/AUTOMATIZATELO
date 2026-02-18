@@ -75,12 +75,11 @@ const jsonLd = {
   "image": "https://automatizatelo.com/og-image.jpg",
   "@id": "https://automatizatelo.com",
   "url": "https://automatizatelo.com",
-  "telephone": "+34600000000", // Placeholder, needs actual phone if available
+  "telephone": "+34694264840",
+  "email": "info@automatizatelo.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Carrer de l'Example, 123", // Placeholder
     "addressLocality": "Barcelona",
-    "postalCode": "08001",
     "addressCountry": "ES"
   },
   "geo": {
@@ -101,8 +100,8 @@ const jsonLd = {
     "closes": "18:00"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/automatizatelo", // Placeholder
-    "https://twitter.com/automatizatelo" // Placeholder
+    "https://www.linkedin.com/in/automatizatelo-automatizaciones-de-procesos-con-ia-4422523a6/",
+    "https://www.instagram.com/automatizatelo.ia"
   ]
 };
 

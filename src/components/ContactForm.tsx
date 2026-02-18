@@ -3,9 +3,122 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { countryCodes } from "../data/countryCodes";
 
+interface CustomDropdownProps {
+    label: string;
+    name: string;
+    value: string;
+    onChange: (name: string, value: string) => void;
+    options: { value: string; label: string }[];
+    placeholder: string;
+    required?: boolean;
+}
+
+const CustomDropdown = ({ label, name, value, onChange, options, placeholder, required }: CustomDropdownProps) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (ref.current && !ref.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    const selectedLabel = options.find(opt => opt.value === value)?.label;
+
+    return (
+        <div ref={ref} style={{ position: 'relative' }}>
+            <label htmlFor={name} style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>
+                {label}
+            </label>
+            <div
+                onClick={() => setIsOpen(!isOpen)}
+                className="glass"
+                style={{
+                    padding: '12px',
+                    background: 'var(--color-bg-secondary)',
+                    color: value ? 'var(--color-text-main)' : 'var(--color-text-muted)',
+                    border: '1px solid var(--color-border)',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    minHeight: '50px'
+                }}
+            >
+                <span>{selectedLabel || placeholder}</span>
+                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', transform: isOpen ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}>▼</span>
+            </div>
+
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="glass"
+                        style={{
+                            position: 'absolute',
+                            top: 'calc(100% + 10px)',
+                            left: 0,
+                            right: 0,
+                            maxHeight: '250px',
+                            overflowY: 'auto',
+                            backgroundColor: 'var(--color-bg-secondary)',
+                            zIndex: 1000,
+                            boxShadow: 'var(--shadow-card)',
+                            border: '1px solid var(--color-primary)',
+                            borderRadius: 'var(--radius-md)',
+                            padding: '5px 0'
+                        }}
+                    >
+                        <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                            {options.map((option) => (
+                                <li
+                                    key={option.value}
+                                    onClick={() => {
+                                        onChange(name, option.value);
+                                        setIsOpen(false);
+                                    }}
+                                    style={{
+                                        padding: '12px',
+                                        cursor: 'pointer',
+                                        borderBottom: '1px solid var(--color-glass-border)',
+                                        color: 'var(--color-text-main)',
+                                        background: value === option.value ? 'rgba(249, 115, 22, 0.1)' : 'transparent',
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249, 115, 22, 0.15)'; e.currentTarget.style.color = 'var(--color-primary)'; }}
+                                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = value === option.value ? 'rgba(249, 115, 22, 0.1)' : 'transparent'; e.currentTarget.style.color = 'var(--color-text-main)'; }}
+                                >
+                                    {option.label}
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+            {/* Hidden native input for validaton if needed, though we handle form data manually */}
+            <input
+                type="text"
+                name={name}
+                value={value}
+                required={required}
+                style={{ position: 'absolute', opacity: 0, height: 0, padding: 0, margin: 0, border: 0 }}
+                onChange={() => { }} // dummy
+                tabIndex={-1}
+            />
+        </div>
+    );
+};
+
 export default function ContactForm() {
     const [formData, setFormData] = useState({
         nombre: "",
+        apellido: "",
         email: "",
         prefijo: "+34",
         telefono: "",
@@ -16,15 +129,15 @@ export default function ContactForm() {
     });
     const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
     const [statusMessage, setStatusMessage] = useState("");
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isPhoneDropdownOpen, setIsPhoneDropdownOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-    const dropdownRef = useRef<HTMLDivElement>(null);
+    const phoneDropdownRef = useRef<HTMLDivElement>(null);
 
-    // Close dropdown on outside click
+    // Close phone dropdown on outside click
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsDropdownOpen(false);
+            if (phoneDropdownRef.current && !phoneDropdownRef.current.contains(event.target as Node)) {
+                setIsPhoneDropdownOpen(false);
             }
         }
         document.addEventListener("mousedown", handleClickOutside);
@@ -38,8 +151,15 @@ export default function ContactForm() {
 
     const handleSelectPrefix = (code: string) => {
         setFormData(prev => ({ ...prev, prefijo: code }));
-        setIsDropdownOpen(false);
+        setIsPhoneDropdownOpen(false);
         setSearchTerm("");
+    };
+
+    const handleCustomChange = (name: string, value: string) => {
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -151,6 +271,7 @@ export default function ContactForm() {
                 setStatusMessage("¡Enviado con éxito! Te contactaremos muy pronto.");
                 setFormData({
                     nombre: "",
+                    apellido: "",
                     email: "",
                     prefijo: "+34",
                     telefono: "",
@@ -191,7 +312,7 @@ export default function ContactForm() {
                     viewport={{ once: true }}
                     className="section-title"
                 >
-                    Contacta con Nosotros
+                    Contacta con <span className="premium-gradient">Nosotros</span>
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -203,122 +324,126 @@ export default function ContactForm() {
                     Cuéntanos tu proyecto y te ayudaremos a automatizarlo.
                 </motion.p>
 
-                <form id="form-automatizatelo" onSubmit={handleSubmit}>
+                <form id="form-automatizatelo" onSubmit={handleSubmit} className="glass" style={{ padding: '3rem', marginTop: '3rem', background: 'var(--color-bg)', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-card)' }}>
                     <div className="form-grid">
                         <div>
-                            <label htmlFor="nombre" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: '#374151' }}>Nombre completo</label>
+                            <label htmlFor="nombre" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Nombre</label>
                             <input
                                 id="nombre"
                                 type="text"
                                 name="nombre"
-                                placeholder="Ej: Juan Pérez"
+                                className="glass"
+                                placeholder="Ej: Juan"
                                 required
                                 value={formData.nombre}
                                 onChange={handleChange}
+                                style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: '#374151' }}>Correo electrónico</label>
+                            <label htmlFor="apellido" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Apellido</label>
                             <input
-                                id="email"
-                                type="email"
-                                name="email"
-                                placeholder="Ej: info@empresa.com"
-                                value={formData.email}
+                                id="apellido"
+                                type="text"
+                                name="apellido"
+                                className="glass"
+                                placeholder="Ej: Pérez"
+                                required
+                                value={formData.apellido}
                                 onChange={handleChange}
+                                style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
                             />
                         </div>
                         <div>
-                            <label htmlFor="telefono" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: '#374151' }}>Teléfono de contacto</label>
-                            <div style={{ display: 'flex', gap: '10px' }} ref={dropdownRef}>
+                            <label htmlFor="telefono" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Teléfono de contacto</label>
+                            <div style={{ display: 'flex', gap: '10px' }} ref={phoneDropdownRef}>
                                 <div style={{ position: 'relative' }}>
                                     <button
                                         type="button"
-                                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                        onClick={() => setIsPhoneDropdownOpen(!isPhoneDropdownOpen)}
+                                        className="glass"
                                         style={{
                                             width: '100px',
                                             height: '100%',
                                             padding: '0 10px',
-                                            border: '1px solid #ccc',
-                                            borderRadius: '4px',
-                                            backgroundColor: 'white',
+                                            backgroundColor: 'var(--color-bg-secondary)',
                                             textAlign: 'left',
                                             cursor: 'pointer',
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'space-between',
-                                            color: '#333'
+                                            color: 'var(--color-text-main)',
+                                            border: '1px solid var(--color-border)'
                                         }}
                                     >
                                         <span>{formData.prefijo}</span>
-                                        <span style={{ fontSize: '0.8rem' }}>▼</span>
+                                        <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>▼</span>
                                     </button>
 
                                     <AnimatePresence>
-                                        {isDropdownOpen && (
+                                        {isPhoneDropdownOpen && (
                                             <motion.div
                                                 initial={{ opacity: 0, y: -10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0, y: -10 }}
+                                                className="glass"
                                                 style={{
                                                     position: 'absolute',
-                                                    top: '100%',
+                                                    top: 'calc(100% + 10px)',
                                                     left: 0,
-                                                    width: '280px',
-                                                    maxHeight: '300px',
-                                                    overflowY: 'auto',
-                                                    backgroundColor: 'white',
-                                                    border: '1px solid #ccc',
-                                                    borderRadius: '4px',
+                                                    width: '320px',
+                                                    backgroundColor: 'var(--color-bg-secondary)',
                                                     zIndex: 1000,
-                                                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                                                    boxShadow: 'var(--shadow-card)',
+                                                    border: '1px solid var(--color-primary)',
+                                                    borderRadius: 'var(--radius-md)',
+                                                    overflow: 'hidden',
                                                 }}
                                             >
-                                                <div style={{ padding: '8px', position: 'sticky', top: 0, background: 'white', borderBottom: '1px solid #eee' }}>
+                                                <div style={{ padding: '8px', position: 'sticky', top: 0, background: 'var(--color-bg-secondary)', borderBottom: '1px solid var(--color-border)', zIndex: 1 }}>
                                                     <input
                                                         type="text"
                                                         placeholder="Buscar país..."
                                                         value={searchTerm}
                                                         onChange={(e) => setSearchTerm(e.target.value)}
                                                         autoFocus
+                                                        className="glass"
                                                         style={{
                                                             width: '100%',
                                                             padding: '6px',
-                                                            border: '1px solid #ddd',
-                                                            borderRadius: '4px',
+                                                            background: 'var(--color-bg)',
+                                                            color: 'var(--color-text-main)',
+                                                            border: '1px solid var(--color-border)',
                                                             marginBottom: 0
                                                         }}
                                                         onClick={(e) => e.stopPropagation()}
                                                     />
                                                 </div>
-                                                <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-                                                    {filteredCountries.map((country) => (
-                                                        <li
-                                                            key={country.code + country.name}
-                                                            onClick={() => handleSelectPrefix(country.code)}
-                                                            style={{
-                                                                padding: '8px 12px',
-                                                                cursor: 'pointer',
-                                                                borderBottom: '1px solid #f0f0f0',
-                                                                display: 'flex',
-                                                                alignItems: 'center',
-                                                                gap: '8px',
-                                                                color: '#333'
-                                                            }}
-                                                            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f9f9f9')}
-                                                            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'white')}
-                                                        >
-                                                            <span style={{ fontSize: '1.2rem' }}>{country.flag}</span>
-                                                            <span style={{ fontWeight: 'bold', minWidth: '45px' }}>{country.code}</span>
-                                                            <span style={{ fontSize: '0.9rem', color: '#666' }}>{country.name}</span>
-                                                        </li>
-                                                    ))}
-                                                    {filteredCountries.length === 0 && (
-                                                        <li style={{ padding: '12px', textAlign: 'center', color: '#999' }}>
-                                                            No se encontraron resultados
-                                                        </li>
-                                                    )}
-                                                </ul>
+                                                <div style={{ maxHeight: '250px', overflowY: 'auto' }}>
+                                                    <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                                                        {filteredCountries.map((country) => (
+                                                            <li
+                                                                key={country.code + country.name}
+                                                                onClick={() => handleSelectPrefix(country.code)}
+                                                                style={{
+                                                                    padding: '8px 12px',
+                                                                    cursor: 'pointer',
+                                                                    borderBottom: '1px solid var(--color-border)',
+                                                                    display: 'flex',
+                                                                    alignItems: 'center',
+                                                                    gap: '8px',
+                                                                    color: 'var(--color-text-main)'
+                                                                }}
+                                                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249, 115, 22, 0.15)'; e.currentTarget.style.color = 'var(--color-primary)'; const mutedSpan = e.currentTarget.querySelector('span:last-child') as HTMLElement; if (mutedSpan) mutedSpan.style.color = 'var(--color-primary)'; }}
+                                                                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--color-text-main)'; const mutedSpan = e.currentTarget.querySelector('span:last-child') as HTMLElement; if (mutedSpan) mutedSpan.style.color = 'var(--color-text-muted)'; }}
+                                                            >
+                                                                <span style={{ fontSize: '1.2rem' }}>{country.flag}</span>
+                                                                <span style={{ fontWeight: 'bold', minWidth: '45px' }}>{country.code}</span>
+                                                                <span style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>{country.name}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
@@ -327,63 +452,79 @@ export default function ContactForm() {
                                     id="telefono"
                                     type="tel"
                                     name="telefono"
+                                    className="glass"
                                     placeholder="Número (9 dígitos)"
                                     value={formData.telefono}
                                     onChange={handleChange}
-                                    style={{ flexGrow: 1 }}
+                                    style={{ flexGrow: 1, background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
                                 />
                             </div>
                         </div>
 
                         <div>
-                            <label htmlFor="tipo_cliente" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: '#374151' }}>Tipo de Cliente</label>
-                            <select
-                                id="tipo_cliente"
-                                name="tipo_cliente"
-                                required
-                                value={formData.tipo_cliente}
+                            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Correo electrónico</label>
+                            <input
+                                id="email"
+                                type="email"
+                                name="email"
+                                className="glass"
+                                placeholder="Ej: info@empresa.com"
+                                value={formData.email}
                                 onChange={handleChange}
-                            >
-                                <option value="">Selecciona una opción</option>
-                                <option value="empresa">Empresa</option>
-                                <option value="particular">Particular</option>
-                            </select>
+                                style={{ background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
+                            />
                         </div>
 
-                        <div style={{ gridColumn: '1 / -1' }}>
-                            <label htmlFor="servicio" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: '#374151' }}>Servicio de interés</label>
-                            <select
-                                id="servicio"
-                                name="servicio"
+                        <div>
+                            <CustomDropdown
+                                label="Tipo de Cliente"
+                                name="tipo_cliente"
+                                value={formData.tipo_cliente}
+                                onChange={handleCustomChange}
+                                placeholder="Selecciona una opción"
                                 required
+                                options={[
+                                    { value: 'empresa', label: 'Empresa' },
+                                    { value: 'particular', label: 'Particular' }
+                                ]}
+                            />
+                        </div>
+
+                        <div>
+                            <CustomDropdown
+                                label="Servicio de interés"
+                                name="servicio"
                                 value={formData.servicio}
-                                onChange={handleChange}
-                            >
-                                <option value="">Selecciona un servicio</option>
-                                <option value="servicios_integrales">Servicios Digitales Integrales</option>
-                                <option value="web_design">Diseño y Desarrollo Web</option>
-                                <option value="autom_flujos">Automatización de Flujos</option>
-                                <option value="ia_chatbots">Soluciones de IA & Chatbots</option>
-                            </select>
+                                onChange={handleCustomChange}
+                                placeholder="Selecciona un servicio"
+                                required
+                                options={[
+                                    { value: 'servicios_integrales', label: 'Servicios Digitales Integrales' },
+                                    { value: 'web_design', label: 'Diseño y Desarrollo Web' },
+                                    { value: 'autom_flujos', label: 'Automatización de Flujos' },
+                                    { value: 'ia_chatbots', label: 'Soluciones de IA & Chatbots' }
+                                ]}
+                            />
                         </div>
                     </div>
 
-                    <div style={{ marginBottom: '0.5rem' }}>
-                        <label htmlFor="mensaje" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: '#374151' }}>Tu mensaje (Opcional)</label>
+                    <div style={{ marginBottom: '1.5rem', marginTop: '1.5rem' }}>
+                        <label htmlFor="mensaje" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Tu mensaje (Opcional)</label>
                         <textarea
                             id="mensaje"
                             name="mensaje"
+                            className="glass"
                             placeholder="Cuéntanos brevemente qué necesitas..."
                             value={formData.mensaje}
                             onChange={handleChange}
-                            style={{ resize: 'none', height: '150px', overflowY: 'auto' }}
+                            style={{ resize: 'none', height: '150px', overflowY: 'auto', background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
                         ></textarea>
                     </div>
 
-                    <label className="checkbox">
+                    <label className="checkbox" style={{ color: 'var(--color-text-muted)' }}>
                         <input
                             type="checkbox"
-                            name="acepto" // Add name attribute for handleChange
+                            name="acepto"
                             id="acepto"
                             required
                             checked={formData.acepto}
@@ -397,9 +538,11 @@ export default function ContactForm() {
                         id="btn-enviar"
                         className={`btn btn-primary ${status === "sending" ? "bloqueado" : ""}`}
                         disabled={status === "sending" || status === "success"}
+                        style={{ marginTop: '2rem', width: '100%', fontSize: '1.2rem', padding: '1rem' }}
                     >
                         {status === "sending" ? "Enviando..." : "Enviar Solicitud"}
                     </button>
+
 
                     <p
                         id="estado-envio"
