@@ -78,8 +78,8 @@ export default function TrustedClients() {
                     className={styles.content}
                 >
                     <div className={styles.accentLine}></div>
-                    <h2 className="section-title" style={{ textAlign: 'right', margin: 0 }}>PROYECTOS DE ÉXITO</h2>
-                    <p className="section-subtitle" style={{ textAlign: 'right', marginTop: '1rem' }}>Clientes que han confiado en nosotros</p>
+                    <h2 className="section-title" style={{ textAlign: 'right', margin: 0, width: '100%' }}>PROYECTOS DE ÉXITO</h2>
+                    <p className="section-subtitle" style={{ textAlign: 'right', marginTop: '1rem', width: '100%', maxWidth: 'none', marginInline: 0 }}>Clientes que han confiado en nosotros</p>
                 </motion.div>
             </div>
         </section>
