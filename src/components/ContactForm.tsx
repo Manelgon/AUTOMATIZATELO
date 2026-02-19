@@ -1,7 +1,7 @@
-"use client";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { countryCodes } from "../data/countryCodes";
+import { supabase } from "@/lib/supabase";
 
 interface CustomDropdownProps {
     label: string;
@@ -131,7 +131,47 @@ export default function ContactForm() {
     const [statusMessage, setStatusMessage] = useState("");
     const [isPhoneDropdownOpen, setIsPhoneDropdownOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
+    const [serviceOptions, setServiceOptions] = useState<{ value: string; label: string }[]>([
+        { value: 'ecosistemas_digitales', label: 'Ecosistemas Digitales Integrales' },
+        { value: 'software_medida', label: 'Desarrollo de Software a Medida' },
+        { value: 'bi_dashboards', label: 'Paneles de Control & Business Intelligence' },
+        { value: 'web_design', label: 'Diseño y Desarrollo Web' },
+        { value: 'ecommerce', label: 'E-commerce & Plataformas de Venta' },
+        { value: 'process_autom', label: 'Automatización de Procesos' },
+        { value: 'integracion_sistemas', label: 'Integración de Sistemas (CRM · ERP · APIs)' },
+        { value: 'ia_chatbots', label: 'IA & Chatbots Conversacionales' },
+        { value: 'ocr_ia', label: 'Procesamiento Inteligente de Documentos (OCR + IA)' },
+        { value: 'otros', label: 'Otros' }
+    ]);
     const phoneDropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('services')
+                    .select('name')
+                    .eq('is_active', true);
+
+                if (error) throw error;
+
+                if (data && data.length > 0) {
+                    const mappedOptions = data.map((item: any) => ({
+                        value: item.name.toLowerCase().replace(/[^a-z0-9]/g, '_'),
+                        label: item.name
+                    }));
+                    if (!mappedOptions.find(opt => opt.label.toLowerCase() === 'otros')) {
+                        mappedOptions.push({ value: 'otros', label: 'Otros' });
+                    }
+                    setServiceOptions(mappedOptions);
+                }
+            } catch (err) {
+                console.error("Error fetching services for dropdown:", err);
+            }
+        };
+
+        fetchServices();
+    }, []);
 
     // Close phone dropdown on outside click
     useEffect(() => {
@@ -494,18 +534,7 @@ export default function ContactForm() {
                                 onChange={handleCustomChange}
                                 placeholder="Selecciona un servicio"
                                 required
-                                options={[
-                                    { value: 'ecosistemas_digitales', label: 'Ecosistemas Digitales Integrales' },
-                                    { value: 'software_medida', label: 'Desarrollo de Software a Medida' },
-                                    { value: 'bi_dashboards', label: 'Paneles de Control & Business Intelligence' },
-                                    { value: 'web_design', label: 'Diseño y Desarrollo Web' },
-                                    { value: 'ecommerce', label: 'E-commerce & Plataformas de Venta' },
-                                    { value: 'process_autom', label: 'Automatización de Procesos' },
-                                    { value: 'integracion_sistemas', label: 'Integración de Sistemas (CRM · ERP · APIs)' },
-                                    { value: 'ia_chatbots', label: 'IA & Chatbots Conversacionales' },
-                                    { value: 'ocr_ia', label: 'Procesamiento Inteligente de Documentos (OCR + IA)' },
-                                    { value: 'otros', label: 'Otros' }
-                                ]}
+                                options={serviceOptions}
                             />
                         </div>
                     </div>

@@ -1,150 +1,179 @@
-"use client";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { supabase } from "@/lib/supabase";
 
-const services = [
+const iconMap: Record<string, React.ReactNode> = {
+    "Ecosistemas Digitales Integrales": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
+            <rect x="28" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
+            <rect x="4" y="28" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
+            <rect x="28" y="28" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
+            <line x1="20" y1="12" x2="28" y2="12" stroke="currentColor" strokeWidth="2" />
+            <line x1="20" y1="36" x2="28" y2="36" stroke="currentColor" strokeWidth="2" />
+            <line x1="12" y1="20" x2="12" y2="28" stroke="currentColor" strokeWidth="2" />
+            <line x1="36" y1="20" x2="36" y2="28" stroke="currentColor" strokeWidth="2" />
+        </svg>
+    ),
+    "Desarrollo de Software a Medida": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="40" height="32" rx="4" stroke="currentColor" strokeWidth="2" />
+            <path d="M16 20L20 24L16 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <line x1="22" y1="28" x2="32" y2="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+    ),
+    "Paneles de Control & Business Intelligence": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="40" height="30" rx="4" stroke="currentColor" strokeWidth="2" />
+            <path d="M10 28L18 18L24 24L32 14L38 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <line x1="16" y1="38" x2="32" y2="38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <line x1="24" y1="34" x2="24" y2="38" stroke="currentColor" strokeWidth="2" />
+        </svg>
+    ),
+    "Diseño y Desarrollo Web": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="18" stroke="currentColor" strokeWidth="2" />
+            <ellipse cx="24" cy="24" rx="8" ry="18" stroke="currentColor" strokeWidth="2" />
+            <line x1="6" y1="24" x2="42" y2="24" stroke="currentColor" strokeWidth="2" />
+            <line x1="9" y1="14" x2="39" y2="14" stroke="currentColor" strokeWidth="2" />
+            <line x1="9" y1="34" x2="39" y2="34" stroke="currentColor" strokeWidth="2" />
+        </svg>
+    ),
+    "E-commerce & Plataformas de Venta": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 12H42L38 32H10L6 12Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+            <circle cx="16" cy="40" r="3" stroke="currentColor" strokeWidth="2" />
+            <circle cx="32" cy="40" r="3" stroke="currentColor" strokeWidth="2" />
+            <path d="M6 12L4 6H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <line x1="18" y1="20" x2="30" y2="20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <line x1="24" y1="16" x2="24" y2="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+    ),
+    "Automatización de Procesos": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2" />
+            <circle cx="36" cy="12" r="6" stroke="currentColor" strokeWidth="2" />
+            <circle cx="12" cy="36" r="6" stroke="currentColor" strokeWidth="2" />
+            <circle cx="36" cy="36" r="6" stroke="currentColor" strokeWidth="2" />
+            <path d="M18 12H30" stroke="currentColor" strokeWidth="2" />
+            <path d="M12 18V30" stroke="currentColor" strokeWidth="2" />
+            <path d="M18 36H30" stroke="currentColor" strokeWidth="2" />
+            <path d="M36 18V30" stroke="currentColor" strokeWidth="2" />
+        </svg>
+    ),
+    "Integración de Sistemas (CRM · ERP · APIs)": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="16" width="14" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
+            <rect x="30" y="16" width="14" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
+            <path d="M18 24H30" stroke="currentColor" strokeWidth="2" strokeDasharray="3 2" />
+            <circle cx="24" cy="24" r="3" fill="currentColor" />
+            <path d="M11 10V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M37 10V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M11 32V38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M37 32V38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+    ),
+    "IA & Chatbots Conversacionales": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="8" width="28" height="24" rx="4" stroke="currentColor" strokeWidth="2" />
+            <circle cx="18" cy="18" r="2" fill="currentColor" />
+            <circle cx="24" cy="18" r="2" fill="currentColor" />
+            <circle cx="30" cy="18" r="2" fill="currentColor" />
+            <path d="M24 32V38" stroke="currentColor" strokeWidth="2" />
+            <path d="M16 38H32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M14 24H10L8 40H16" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+            <path d="M34 24H38L40 40H32" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        </svg>
+    ),
+    "Procesamiento Inteligente de Documentos (OCR + IA)": (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="4" width="28" height="36" rx="3" stroke="currentColor" strokeWidth="2" />
+            <line x1="14" y1="14" x2="30" y2="14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <line x1="14" y1="20" x2="30" y2="20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <line x1="14" y1="26" x2="22" y2="26" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="34" cy="34" r="8" stroke="currentColor" strokeWidth="2" />
+            <path d="M30 34L33 37L38 31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    ),
+};
+
+const defaultIcon = (
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4L4 14V34L24 44L44 34V14L24 4Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M24 4V44" stroke="currentColor" strokeWidth="2" />
+        <path d="M4 14L44 34" stroke="currentColor" strokeWidth="2" />
+        <path d="M44 14L4 34" stroke="currentColor" strokeWidth="2" />
+    </svg>
+);
+
+interface Service {
+    id: string;
+    icon: React.ReactNode;
+    title: string;
+    subtitle: string;
+    description: string;
+}
+
+const initialServices: Service[] = [
     {
         id: "01",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
-                <rect x="28" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
-                <rect x="4" y="28" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
-                <rect x="28" y="28" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
-                <line x1="20" y1="12" x2="28" y2="12" stroke="currentColor" strokeWidth="2" />
-                <line x1="20" y1="36" x2="28" y2="36" stroke="currentColor" strokeWidth="2" />
-                <line x1="12" y1="20" x2="12" y2="28" stroke="currentColor" strokeWidth="2" />
-                <line x1="36" y1="20" x2="36" y2="28" stroke="currentColor" strokeWidth="2" />
-            </svg>
-        ),
+        icon: iconMap["Ecosistemas Digitales Integrales"],
         title: "Ecosistemas Digitales Integrales",
         subtitle: "El sistema operativo de tu negocio.",
         description: "Centralizamos tu información y conectamos toda tu operativa en un solo entorno.",
     },
     {
         id: "02",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="8" width="40" height="32" rx="4" stroke="currentColor" strokeWidth="2" />
-                <path d="M16 20L20 24L16 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <line x1="22" y1="28" x2="32" y2="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-        ),
+        icon: iconMap["Desarrollo de Software a Medida"],
         title: "Desarrollo de Software a Medida",
         subtitle: "Soluciones diseñadas para tu realidad.",
         description: "Creamos aplicaciones internas, herramientas de gestión y plataformas personalizadas.",
     },
     {
         id: "03",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="40" height="30" rx="4" stroke="currentColor" strokeWidth="2" />
-                <path d="M10 28L18 18L24 24L32 14L38 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <line x1="16" y1="38" x2="32" y2="38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <line x1="24" y1="34" x2="24" y2="38" stroke="currentColor" strokeWidth="2" />
-            </svg>
-        ),
+        icon: iconMap["Paneles de Control & Business Intelligence"],
         title: "Paneles de Control & Business Intelligence",
         subtitle: "Decisiones basadas en datos reales.",
         description: "Dashboards estratégicos con métricas clave en tiempo real.",
     },
     {
         id: "04",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="24" cy="24" r="18" stroke="currentColor" strokeWidth="2" />
-                <ellipse cx="24" cy="24" rx="8" ry="18" stroke="currentColor" strokeWidth="2" />
-                <line x1="6" y1="24" x2="42" y2="24" stroke="currentColor" strokeWidth="2" />
-                <line x1="9" y1="14" x2="39" y2="14" stroke="currentColor" strokeWidth="2" />
-                <line x1="9" y1="34" x2="39" y2="34" stroke="currentColor" strokeWidth="2" />
-            </svg>
-        ),
+        icon: iconMap["Diseño y Desarrollo Web"],
         title: "Diseño y Desarrollo Web",
         subtitle: "Tu mejor comercial, activo 24/7.",
         description: "Webs corporativas, landing pages y plataformas optimizadas para convertir.",
     },
     {
         id: "05",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 12H42L38 32H10L6 12Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                <circle cx="16" cy="40" r="3" stroke="currentColor" strokeWidth="2" />
-                <circle cx="32" cy="40" r="3" stroke="currentColor" strokeWidth="2" />
-                <path d="M6 12L4 6H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <line x1="18" y1="20" x2="30" y2="20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <line x1="24" y1="16" x2="24" y2="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-        ),
+        icon: iconMap["E-commerce & Plataformas de Venta"],
         title: "E-commerce & Plataformas de Venta",
         subtitle: "Convierte visitas en ventas.",
         description: "Tiendas online escalables integradas con pagos, inventario y logística.",
     },
     {
         id: "06",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2" />
-                <circle cx="36" cy="12" r="6" stroke="currentColor" strokeWidth="2" />
-                <circle cx="12" cy="36" r="6" stroke="currentColor" strokeWidth="2" />
-                <circle cx="36" cy="36" r="6" stroke="currentColor" strokeWidth="2" />
-                <path d="M18 12H30" stroke="currentColor" strokeWidth="2" />
-                <path d="M12 18V30" stroke="currentColor" strokeWidth="2" />
-                <path d="M18 36H30" stroke="currentColor" strokeWidth="2" />
-                <path d="M36 18V30" stroke="currentColor" strokeWidth="2" />
-            </svg>
-        ),
+        icon: iconMap["Automatización de Procesos"],
         title: "Automatización de Procesos",
         subtitle: "Menos tareas manuales. Más crecimiento.",
         description: "Automatizamos facturación, seguimiento comercial, inventarios y flujos internos.",
     },
     {
         id: "07",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="16" width="14" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
-                <rect x="30" y="16" width="14" height="16" rx="3" stroke="currentColor" strokeWidth="2" />
-                <path d="M18 24H30" stroke="currentColor" strokeWidth="2" strokeDasharray="3 2" />
-                <circle cx="24" cy="24" r="3" fill="currentColor" />
-                <path d="M11 10V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <path d="M37 10V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <path d="M11 32V38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <path d="M37 32V38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-        ),
+        icon: iconMap["Integración de Sistemas (CRM · ERP · APIs)"],
         title: "Integración de Sistemas (CRM · ERP · APIs)",
         subtitle: "Tus herramientas trabajando como una sola.",
         description: "Conectamos plataformas para eliminar duplicidad y errores.",
     },
     {
         id: "08",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10" y="8" width="28" height="24" rx="4" stroke="currentColor" strokeWidth="2" />
-                <circle cx="18" cy="18" r="2" fill="currentColor" />
-                <circle cx="24" cy="18" r="2" fill="currentColor" />
-                <circle cx="30" cy="18" r="2" fill="currentColor" />
-                <path d="M24 32V38" stroke="currentColor" strokeWidth="2" />
-                <path d="M16 38H32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <path d="M14 24H10L8 40H16" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M34 24H38L40 40H32" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-            </svg>
-        ),
+        icon: iconMap["IA & Chatbots Conversacionales"],
         title: "IA & Chatbots Conversacionales",
         subtitle: "Atención inteligente 24/7.",
         description: "Asistentes virtuales personalizados para ventas y soporte.",
     },
     {
         id: "09",
-        icon: (
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="8" y="4" width="28" height="36" rx="3" stroke="currentColor" strokeWidth="2" />
-                <line x1="14" y1="14" x2="30" y2="14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <line x1="14" y1="20" x2="30" y2="20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <line x1="14" y1="26" x2="22" y2="26" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <circle cx="34" cy="34" r="8" stroke="currentColor" strokeWidth="2" />
-                <path d="M30 34L33 37L38 31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        ),
+        icon: iconMap["Procesamiento Inteligente de Documentos (OCR + IA)"],
         title: "Procesamiento Inteligente de Documentos (OCR + IA)",
         subtitle: "Digitaliza y entiende tus documentos automáticamente.",
         description: "Lectura y clasificación automática de contratos, facturas y formularios.",
@@ -161,9 +190,41 @@ const cardGradients = [
 ];
 
 export default function Services() {
+    const [services, setServices] = useState<Service[]>(initialServices);
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState(1);
     const [isMobile, setIsMobile] = useState(false);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('services')
+                    .select('*')
+                    .eq('is_active', true);
+
+                if (error) throw error;
+
+                if (data && data.length > 0) {
+                    const mappedServices: Service[] = data.map((item: any, index: number) => ({
+                        id: String(index + 1).padStart(2, "0"),
+                        icon: iconMap[item.name] || defaultIcon,
+                        title: item.name,
+                        subtitle: item.name,
+                        description: item.description || "",
+                    }));
+                    setServices(mappedServices);
+                }
+            } catch (err) {
+                console.error("Error fetching services:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchServices();
+    }, []);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -177,12 +238,12 @@ export default function Services() {
     const goToNext = useCallback(() => {
         setDirection(1);
         setActiveIndex((prev) => (prev + 1) % services.length);
-    }, []);
+    }, [services.length]);
 
     const goToPrev = useCallback(() => {
         setDirection(-1);
         setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
-    }, []);
+    }, [services.length]);
 
     const goTo = useCallback((index: number) => {
         setDirection(index > activeIndex ? 1 : -1);
@@ -194,13 +255,14 @@ export default function Services() {
         return () => clearInterval(interval);
     }, [goToNext]);
 
-    const activeService = services[activeIndex];
+    const activeService = services[activeIndex] || services[0];
 
     // Get the cards to show in the stack (next 4 after active)
     const stackCards = [0, 1, 2, 3].map((offset) => {
         const idx = (activeIndex + offset + 1) % services.length;
         return services[idx];
     });
+
 
     const headerContent = (
         <motion.div
