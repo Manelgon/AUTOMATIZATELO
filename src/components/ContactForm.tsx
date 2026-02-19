@@ -192,12 +192,22 @@ export default function ContactForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        // Check for cooldown (5 minutes)
+        const lastSubmission = localStorage.getItem('last_submission_time');
+        if (lastSubmission) {
+            const timePassed = Date.now() - parseInt(lastSubmission);
+            const cooldownMs = 5 * 60 * 1000; // 5 minutes
+            if (timePassed < cooldownMs) {
+                const minutesLeft = Math.ceil((cooldownMs - timePassed) / 60000);
+                setStatus("error");
+                setStatusMessage(`Ya has enviado una solicitud recientemente. Por favor, espera ${minutesLeft} minutos.`);
+                return;
+            }
+        }
+
         const form = e.currentTarget as HTMLFormElement;
         const emailInput = form.elements.namedItem('email') as HTMLInputElement;
         const phoneInput = form.elements.namedItem('telefono') as HTMLInputElement;
-
-        // All fields are now required except message, handled by HTML5 validation.
-        // We still keep specific validation for format.
 
         // Validate Phone (9 digits)
         const cleanPhone = formData.telefono.replace(/\D/g, '');
@@ -224,17 +234,6 @@ export default function ContactForm() {
         setStatusMessage("Procesando información y enviando solicitud...");
 
         try {
-            // Get IP + GEO + Browser Info
-            let ipInfo: any = {};
-            try {
-                const ipResponse = await fetch("https://ipapi.co/json/");
-                if (ipResponse.ok) {
-                    ipInfo = await ipResponse.json();
-                }
-            } catch (error) {
-                console.warn("Could not fetch IP info", error);
-            }
-
             const payload = {
                 ...formData,
                 telefono: `${formData.prefijo.replace('+', '')}${formData.telefono}`,
@@ -242,13 +241,15 @@ export default function ContactForm() {
                 navegador: navigator.userAgent,
                 idioma: navigator.language,
                 pantalla: `${window.screen.width}x${window.screen.height}`,
-                ip: ipInfo?.ip || "Desconocida",
-                ciudad: ipInfo?.city || "Desconocida",
-                region: ipInfo?.region || "Desconocida",
-                pais: ipInfo?.country_name || "Desconocido",
-                lat: ipInfo?.latitude || null,
-                lon: ipInfo?.longitude || null,
+                // Let the server-side handle IP and location
+                ip: "Pendiente",
+                ciudad: "Pendiente",
+                region: "Pendiente",
+                pais: "Pendiente",
+                lat: null,
+                lon: null,
             };
+
 
             const response = await fetch("/api/contact", {
                 method: "POST",
@@ -257,6 +258,9 @@ export default function ContactForm() {
             });
 
             if (response.ok) {
+                // Save submission time to localStorage
+                localStorage.setItem('last_submission_time', Date.now().toString());
+
                 setStatus("success");
                 setStatusMessage("¡Enviado con éxito! Te contactaremos muy pronto.");
                 setFormData({
@@ -270,12 +274,12 @@ export default function ContactForm() {
                     mensaje: "",
                     acepto: false
                 });
-                // Anti-spam Block (30s) logic is handled by just showing success state, 
-                // but we can enforce a timeout to reset status to idle if we want.
+
+                // Allow a new submission after 5 minutes in UI state
                 setTimeout(() => {
                     setStatus("idle");
                     setStatusMessage("");
-                }, 30000);
+                }, 5 * 60 * 1000);
             } else {
                 const errorData = await response.json().catch(() => ({}));
                 console.error("API Error Details:", errorData);

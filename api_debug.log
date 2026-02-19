@@ -1,0 +1,124 @@
+[2026-02-19T09:41:48.697Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "test",
+    "apellido": "apellido",
+    "email": "manelgon92@gmail.com",
+    "prefijo": "+34",
+    "telefono": "34678399182",
+    "tipo_cliente": "empresa",
+    "servicio": "ecosistemas_digitales",
+    "mensaje": "",
+    "acepto": true,
+    "fecha_envio": "2026-02-19T09:41:47.274Z",
+    "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "idioma": "es-ES",
+    "pantalla": "1920x1080",
+    "ip": "Desconocida",
+    "ciudad": "Desconocida",
+    "region": "Desconocida",
+    "pais": "Desconocido",
+    "lat": null,
+    "lon": null
+  }
+}
+---
+[2026-02-19T09:41:48.700Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "test",
+    "last_name": "apellido",
+    "email": "manelgon92@gmail.com",
+    "phone": "34678399182",
+    "client_type": "empresa",
+    "service_interest": "ecosistemas_digitales",
+    "message": "",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "score": 0
+  }
+}
+---
+[2026-02-19T09:41:49.040Z] {
+  "type": "SUPABASE_SUCCESS",
+  "supabaseData": [
+    {
+      "id": "f1716e2f-89be-4ea5-abe9-02b2a0ba0dab",
+      "first_name": "test",
+      "last_name": "apellido",
+      "phone": "34678399182",
+      "email": "manelgon92@gmail.com",
+      "client_type": "empresa",
+      "service_interest": "ecosistemas_digitales",
+      "message": "",
+      "privacy_accepted": true,
+      "source": "web_form",
+      "score": 0,
+      "created_at": "2026-02-19T09:41:49.620748+00:00",
+      "updated_at": "2026-02-19T09:41:49.620748+00:00"
+    }
+  ]
+}
+---
+[2026-02-19T09:44:38.560Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "automatizatelo",
+    "apellido": "apellido",
+    "email": "manelgon92@gmail.com",
+    "prefijo": "+34",
+    "telefono": "34678399182",
+    "tipo_cliente": "empresa",
+    "servicio": "ecosistemas_digitales",
+    "mensaje": "",
+    "acepto": true,
+    "fecha_envio": "2026-02-19T09:44:38.140Z",
+    "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "idioma": "es-ES",
+    "pantalla": "1920x1080",
+    "ip": "Desconocida",
+    "ciudad": "Desconocida",
+    "region": "Desconocida",
+    "pais": "Desconocido",
+    "lat": null,
+    "lon": null
+  }
+}
+---
+[2026-02-19T09:44:38.573Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "automatizatelo",
+    "last_name": "apellido",
+    "email": "manelgon92@gmail.com",
+    "phone": "34678399182",
+    "client_type": "empresa",
+    "service_interest": "ecosistemas_digitales",
+    "message": "",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "score": 0
+  }
+}
+---
+[2026-02-19T09:44:38.864Z] {
+  "type": "SUPABASE_SUCCESS",
+  "supabaseData": [
+    {
+      "id": "495335a3-a680-4d4e-a365-8e208fb38004",
+      "first_name": "automatizatelo",
+      "last_name": "apellido",
+      "phone": "34678399182",
+      "email": "manelgon92@gmail.com",
+      "client_type": "empresa",
+      "service_interest": "ecosistemas_digitales",
+      "message": "",
+      "privacy_accepted": true,
+      "source": "web_form",
+      "score": 0,
+      "created_at": "2026-02-19T09:44:39.444812+00:00",
+      "updated_at": "2026-02-19T09:44:39.444812+00:00"
+    }
+  ]
+}
+---

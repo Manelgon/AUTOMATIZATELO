@@ -24,27 +24,15 @@ export default function ChatWidget() {
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const [metadata, setMetadata] = useState<any>({});
 
-    // Fetch metadata on mount
+    // Simplified metadata (Browser only)
     useEffect(() => {
-        const fetchMetadata = async () => {
-            try {
-                const ipResponse = await fetch("https://ipapi.co/json/");
-                const ipData = await ipResponse.json();
-                setMetadata({
-                    ip: ipData.ip,
-                    city: ipData.city,
-                    region: ipData.region,
-                    country: ipData.country_name,
-                    userAgent: navigator.userAgent,
-                    screenSize: `${window.screen.width}x${window.screen.height}`,
-                    language: navigator.language
-                });
-            } catch (e) {
-                console.warn("Failed to load user metadata");
-            }
-        };
-        fetchMetadata();
+        setMetadata({
+            userAgent: navigator.userAgent,
+            screenSize: `${window.screen.width}x${window.screen.height}`,
+            language: navigator.language
+        });
     }, []);
+
 
     // Auto-scroll to bottom
     useEffect(() => {

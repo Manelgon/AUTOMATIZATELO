@@ -7,4 +7,6 @@ if (!supabaseUrl || !supabaseServiceKey) {
     console.warn('Supabase credentials missing in environment variables');
 }
 
+console.log('Initializing Supabase client with URL:', supabaseUrl);
 export const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
