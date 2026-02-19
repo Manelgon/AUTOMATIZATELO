@@ -457,7 +457,7 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Correo electrónico</label>
+                            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Correo<br />electrónico</label>
                             <input
                                 id="email"
                                 type="email"
