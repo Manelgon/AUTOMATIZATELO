@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { supabase } from "@/lib/supabase";
 
 const iconMap: Record<string, React.ReactNode> = {
     "Ecosistemas Digitales Integrales": (
@@ -115,7 +114,71 @@ interface Service {
     description: string;
 }
 
-
+const initialServices: Service[] = [
+    {
+        id: "01",
+        icon: iconMap["Ecosistemas Digitales Integrales"],
+        title: "Ecosistemas Digitales Integrales",
+        subtitle: "El sistema operativo de tu negocio.",
+        description: "Centralizamos tu información y conectamos toda tu operativa en un solo entorno.",
+    },
+    {
+        id: "02",
+        icon: iconMap["Desarrollo de Software a Medida"],
+        title: "Desarrollo de Software a Medida",
+        subtitle: "Soluciones diseñadas para tu realidad.",
+        description: "Creamos aplicaciones internas, herramientas de gestión y plataformas personalizadas.",
+    },
+    {
+        id: "03",
+        icon: iconMap["Paneles de Control & Business Intelligence"],
+        title: "Paneles de Control & Business Intelligence",
+        subtitle: "Decisiones basadas en datos reales.",
+        description: "Dashboards estratégicos con métricas clave en tiempo real.",
+    },
+    {
+        id: "04",
+        icon: iconMap["Diseño y Desarrollo Web"],
+        title: "Diseño y Desarrollo Web",
+        subtitle: "Tu mejor comercial, activo 24/7.",
+        description: "Webs corporativas, landing pages y plataformas optimizadas para convertir.",
+    },
+    {
+        id: "05",
+        icon: iconMap["E-commerce & Plataformas de Venta"],
+        title: "E-commerce & Plataformas de Venta",
+        subtitle: "Convierte visitas en ventas.",
+        description: "Tiendas online escalables integradas con pagos, inventario y logística.",
+    },
+    {
+        id: "06",
+        icon: iconMap["Automatización de Procesos"],
+        title: "Automatización de Procesos",
+        subtitle: "Menos tareas manuales. Más crecimiento.",
+        description: "Automatizamos facturación, seguimiento comercial, inventarios y flujos internos.",
+    },
+    {
+        id: "07",
+        icon: iconMap["Integración de Sistemas (CRM · ERP · APIs)"],
+        title: "Integración de Sistemas (CRM · ERP · APIs)",
+        subtitle: "Tus herramientas trabajando como una sola.",
+        description: "Conectamos plataformas para eliminar duplicidad y errores.",
+    },
+    {
+        id: "08",
+        icon: iconMap["IA & Chatbots Conversacionales"],
+        title: "IA & Chatbots Conversacionales",
+        subtitle: "Atención inteligente 24/7.",
+        description: "Asistentes virtuales personalizados para ventas y soporte.",
+    },
+    {
+        id: "09",
+        icon: iconMap["Procesamiento Inteligente de Documentos (OCR + IA)"],
+        title: "Procesamiento Inteligente de Documentos (OCR + IA)",
+        subtitle: "Digitaliza y entiende tus documentos automáticamente.",
+        description: "Lectura y clasificación automática de contratos, facturas y formularios.",
+    },
+];
 
 // Light, soft card backgrounds for a cleaner look
 const cardGradients = [
@@ -127,43 +190,10 @@ const cardGradients = [
 ];
 
 export default function Services() {
-    const [services, setServices] = useState<Service[]>([]);
+    const [services, setServices] = useState<Service[]>(initialServices);
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState(1);
     const [isMobile, setIsMobile] = useState(false);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchServices = async () => {
-            try {
-                const { data, error } = await supabase
-                    .from('services')
-                    .select('*')
-                    .eq('is_active', true);
-
-                if (error) throw error;
-
-                if (data && data.length > 0) {
-                    const mappedServices: Service[] = data.map((item: any, index: number) => ({
-                        id: String(index + 1).padStart(2, "0"),
-                        icon: iconMap[item.name] || defaultIcon,
-                        title: item.name,
-                        subtitle: item.name,
-                        description: item.description || "",
-                    }));
-                    setServices(mappedServices);
-                } else {
-                    setServices([]);
-                }
-            } catch (err) {
-                console.error("Error fetching services:", err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchServices();
-    }, []);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -196,16 +226,6 @@ export default function Services() {
         const interval = setInterval(goToNext, 3500);
         return () => clearInterval(interval);
     }, [goToNext, services.length]);
-
-    if (loading || services.length === 0) {
-        return (
-            <section id="services" style={{ background: "var(--color-bg-secondary)", padding: "10rem 0", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <div style={{ color: "var(--color-text-muted)" }}>
-                    {loading ? "Cargando servicios..." : null}
-                </div>
-            </section>
-        );
-    }
 
     const activeService = services[activeIndex];
 
