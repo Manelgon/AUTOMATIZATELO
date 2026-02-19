@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabaseServer } from '@/lib/supabase';
 import fs from 'fs';
 import path from 'path';
 
@@ -57,7 +57,8 @@ export async function POST(request: Request) {
 
         logToFile({ type: 'INSERTING_DATA', leadData });
 
-        const { data: supabaseData, error: supabaseError } = await supabase
+        const supabaseServer = getSupabaseServer();
+        const { data: supabaseData, error: supabaseError } = await supabaseServer
             .from('leads')
             .insert([leadData])
             .select();
