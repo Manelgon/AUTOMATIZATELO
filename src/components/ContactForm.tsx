@@ -282,13 +282,7 @@ export default function ContactForm() {
                 navegador: navigator.userAgent,
                 idioma: navigator.language,
                 pantalla: `${window.screen.width}x${window.screen.height}`,
-                // Let the server-side handle IP and location
-                ip: "Pendiente",
-                ciudad: "Pendiente",
-                region: "Pendiente",
-                pais: "Pendiente",
-                lat: null,
-                lon: null,
+
             };
 
 

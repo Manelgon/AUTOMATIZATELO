@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
+import { headers } from 'next/headers';
 import fs from 'fs';
 import path from 'path';
 
@@ -15,6 +16,15 @@ function logToFile(data: any) {
     }
 }
 
+// Fields that are safe to forward to the webhook/database
+const ALLOWED_FIELDS = [
+    'nombre', 'email', 'prefijo', 'telefono',
+    'tipo_cliente', 'servicio', 'mensaje', 'acepto',
+    'first_name', 'last_name', 'phone', 'client_type',
+    'service_interest', 'message', 'privacy_accepted',
+    'company', 'source', 'fecha_envio',
+];
+
 export async function POST(request: Request) {
     console.log('POST /api/contact request received');
     console.log('SUPABASE_URL:', process.env.NEXT_PUBLIC_SUPABASE_URL ? 'Defined' : 'UNDEFINED');
@@ -22,10 +32,7 @@ export async function POST(request: Request) {
 
     try {
         const body = await request.json();
-
         logToFile({ type: 'PAYLOAD_RECEIVED', body });
-
-        const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
 
         // 1. Save to Supabase Leads Table
         const {
@@ -50,10 +57,9 @@ export async function POST(request: Request) {
             message: mensaje || '',
             privacy_accepted: !!acepto,
             source: source,
-            ip: ip, // Use server-detected IP
+            // ip field removed because it doesn't exist in the leads table schema
             score: 0
         };
-
 
         logToFile({ type: 'INSERTING_DATA', leadData });
 
@@ -76,15 +82,32 @@ export async function POST(request: Request) {
 
         logToFile({ type: 'SUPABASE_SUCCESS', supabaseData });
 
-        // 2. Original Webhook Notification
+        // 2. Notification to Webhook
         const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
 
         if (webhookUrl) {
+            // Strip fields that shouldn't go to the webhook or aren't allowed
+            const cleanBody: Record<string, any> = {};
+            for (const key of ALLOWED_FIELDS) {
+                if (body[key] !== undefined) {
+                    cleanBody[key] = body[key];
+                }
+            }
+
+            // Capture IP server-side from request headers if needed for the webhook only
+            const headersList = await headers();
+            const clientIp = headersList.get('x-forwarded-for')?.split(',')[0]?.trim()
+                || headersList.get('x-real-ip')
+                || 'unknown';
+
+            cleanBody.ip = clientIp;
+            cleanBody.source = cleanBody.source || 'web_form';
+
             try {
                 const response = await fetch(webhookUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(body),
+                    body: JSON.stringify(cleanBody),
                 });
 
                 if (!response.ok) {
