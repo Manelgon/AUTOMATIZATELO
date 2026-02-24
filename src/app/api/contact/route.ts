@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabaseServer as supabase } from '@/lib/supabase-server';
 import { headers } from 'next/headers';
 import fs from 'fs';
 import path from 'path';
