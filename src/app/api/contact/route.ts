@@ -57,9 +57,16 @@ export async function POST(request: Request) {
             message: mensaje || '',
             privacy_accepted: !!acepto,
             source: source,
-            // ip field removed because it doesn't exist in the leads table schema
+            ip_address: 'Desconocida', // Gets overwritten later if IP is found
+            status: 'pendiente',
             score: 0
         };
+
+        const headersList = await headers();
+        const clientIp = headersList.get('x-forwarded-for')?.split(',')[0]?.trim()
+            || headersList.get('x-real-ip')
+            || 'unknown';
+        leadData.ip_address = clientIp;
 
         logToFile({ type: 'INSERTING_DATA', leadData });
 
@@ -82,6 +89,26 @@ export async function POST(request: Request) {
 
         logToFile({ type: 'SUPABASE_SUCCESS', supabaseData });
 
+        const leadId = supabaseData?.[0]?.id;
+
+        // Create the secondary modular tables immediately
+        if (leadId) {
+            await supabase.from('service_segmentation').insert([{
+                lead_id: leadId,
+                company_size: 'N/A',
+                automation_goal: ''
+            }]);
+
+            await supabase.from('funnel_flows').insert([{
+                lead_id: leadId,
+                flow_name: 'web', // Enforced strict mode compatibility
+                current_status: 'nuevo',
+                activity: 'lead_inactivo'
+            }]);
+
+            logToFile({ type: 'CRM_MODULES_CREATED', leadId });
+        }
+
         // 2. Notification to Webhook
         const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
 
@@ -93,12 +120,6 @@ export async function POST(request: Request) {
                     cleanBody[key] = body[key];
                 }
             }
-
-            // Capture IP server-side from request headers if needed for the webhook only
-            const headersList = await headers();
-            const clientIp = headersList.get('x-forwarded-for')?.split(',')[0]?.trim()
-                || headersList.get('x-real-ip')
-                || 'unknown';
 
             cleanBody.ip = clientIp;
             cleanBody.source = cleanBody.source || 'web_form';
