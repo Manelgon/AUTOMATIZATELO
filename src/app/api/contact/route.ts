@@ -101,9 +101,10 @@ export async function POST(request: Request) {
 
             await supabase.from('funnel_flows').insert([{
                 lead_id: leadId,
-                flow_name: 'web', // Enforced strict mode compatibility
+                flow_name: 'web',
                 current_status: 'nuevo',
-                activity: 'lead_inactivo'
+                activity: 'lead_inactivo',
+                process_tags: ['nuevo']
             }]);
 
             logToFile({ type: 'CRM_MODULES_CREATED', leadId });
