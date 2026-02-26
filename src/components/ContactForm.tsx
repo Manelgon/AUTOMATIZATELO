@@ -275,6 +275,19 @@ export default function ContactForm() {
         setStatusMessage("Procesando información y enviando solicitud...");
 
         try {
+            // Fetch geolocation data from free API
+            let geoData = { city: 'Desconocida', country: 'Desconocido' };
+            try {
+                const geoRes = await fetch('https://ipapi.co/json/');
+                if (geoRes.ok) {
+                    const geo = await geoRes.json();
+                    geoData = {
+                        city: geo.city || 'Desconocida',
+                        country: geo.country_name || 'Desconocido'
+                    };
+                }
+            } catch { /* Geolocation is optional, continue without it */ }
+
             const payload = {
                 ...formData,
                 telefono: `${formData.prefijo.replace('+', '')}${formData.telefono}`,
@@ -282,7 +295,8 @@ export default function ContactForm() {
                 navegador: navigator.userAgent,
                 idioma: navigator.language,
                 pantalla: `${window.screen.width}x${window.screen.height}`,
-
+                ciudad: geoData.city,
+                pais: geoData.country,
             };
 
 

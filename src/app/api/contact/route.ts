@@ -44,10 +44,22 @@ export async function POST(request: Request) {
             servicio,
             mensaje,
             acepto,
-            source = 'web_form'
+            source = 'web_form',
+            navegador,
+            ciudad,
+            pais
         } = body;
 
-        const leadData = {
+        // Parse device type from User-Agent
+        const ua = (navegador || '').toLowerCase();
+        let deviceType = 'desktop';
+        if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/i.test(ua)) {
+            deviceType = 'mobile';
+        } else if (/tablet|ipad/i.test(ua)) {
+            deviceType = 'tablet';
+        }
+
+        const leadData: Record<string, any> = {
             first_name: nombre || '',
             last_name: apellido || '',
             email: email || '',
@@ -57,7 +69,10 @@ export async function POST(request: Request) {
             message: mensaje || '',
             privacy_accepted: !!acepto,
             source: source,
-            ip_address: 'Desconocida', // Gets overwritten later if IP is found
+            ip_address: 'Desconocida',
+            city: ciudad || 'Desconocida',
+            country: pais || 'Desconocido',
+            device_type: deviceType,
             status: 'pendiente',
             score: 0
         };
