@@ -122,3 +122,130 @@
   ]
 }
 ---
+[2026-02-26T11:15:26.267Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "test",
+    "apellido": "test",
+    "email": "test@test.com",
+    "telefono": "123456789",
+    "tipo_cliente": "empresa",
+    "servicio": "web",
+    "mensaje": "test",
+    "acepto": true
+  }
+}
+---
+[2026-02-26T11:15:26.274Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "test",
+    "last_name": "test",
+    "email": "test@test.com",
+    "phone": "123456789",
+    "client_type": "empresa",
+    "service_interest": "web",
+    "message": "test",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "ip_address": "::1",
+    "status": "pendiente",
+    "score": 0
+  }
+}
+---
+[2026-02-26T11:15:26.561Z] {
+  "type": "SUPABASE_SUCCESS",
+  "supabaseData": [
+    {
+      "id": "779517a5-e312-41c5-96cd-8225692867bb",
+      "first_name": "test",
+      "last_name": "test",
+      "phone": "123456789",
+      "email": "test@test.com",
+      "client_type": "empresa",
+      "service_interest": "web",
+      "message": "test",
+      "privacy_accepted": true,
+      "source": "web_form",
+      "score": 0,
+      "created_at": "2026-02-26T11:15:26.69375+00:00",
+      "updated_at": "2026-02-26T11:15:26.69375+00:00",
+      "status": "pendiente",
+      "company": null,
+      "ip_address": "::1"
+    }
+  ]
+}
+---
+[2026-02-26T11:15:26.810Z] {
+  "type": "CRM_MODULES_CREATED",
+  "leadId": "779517a5-e312-41c5-96cd-8225692867bb"
+}
+---
+[2026-02-26T11:17:57.671Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "Jasson",
+    "apellido": "apellido",
+    "email": "facultativo@sania.com",
+    "prefijo": "+34",
+    "telefono": "34678399182",
+    "tipo_cliente": "empresa",
+    "servicio": "dise_o_y_desarrollo_web",
+    "mensaje": "",
+    "acepto": true,
+    "fecha_envio": "2026-02-26T11:17:57.582Z",
+    "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "idioma": "es-ES",
+    "pantalla": "1920x1080"
+  }
+}
+---
+[2026-02-26T11:17:57.676Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "Jasson",
+    "last_name": "apellido",
+    "email": "facultativo@sania.com",
+    "phone": "34678399182",
+    "client_type": "empresa",
+    "service_interest": "dise_o_y_desarrollo_web",
+    "message": "",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "ip_address": "::1",
+    "status": "pendiente",
+    "score": 0
+  }
+}
+---
+[2026-02-26T11:17:57.871Z] {
+  "type": "SUPABASE_SUCCESS",
+  "supabaseData": [
+    {
+      "id": "ade79e67-37cd-463f-98e5-635a98b00dc1",
+      "first_name": "Jasson",
+      "last_name": "apellido",
+      "phone": "34678399182",
+      "email": "facultativo@sania.com",
+      "client_type": "empresa",
+      "service_interest": "dise_o_y_desarrollo_web",
+      "message": "",
+      "privacy_accepted": true,
+      "source": "web_form",
+      "score": 0,
+      "created_at": "2026-02-26T11:17:58.018971+00:00",
+      "updated_at": "2026-02-26T11:17:58.018971+00:00",
+      "status": "pendiente",
+      "company": null,
+      "ip_address": "::1"
+    }
+  ]
+}
+---
+[2026-02-26T11:17:58.143Z] {
+  "type": "CRM_MODULES_CREATED",
+  "leadId": "ade79e67-37cd-463f-98e5-635a98b00dc1"
+}
+---
