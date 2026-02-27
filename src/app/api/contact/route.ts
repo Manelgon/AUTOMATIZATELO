@@ -19,7 +19,7 @@ function logToFile(data: any) {
 // Fields that are safe to forward to the webhook/database
 const ALLOWED_FIELDS = [
     'nombre', 'email', 'prefijo', 'telefono',
-    'tipo_cliente', 'servicio', 'mensaje', 'acepto',
+    'tipo_cliente', 'servicio', 'sector', 'sector_otro', 'tamano_empresa', 'mensaje', 'acepto',
     'first_name', 'last_name', 'phone', 'client_type',
     'service_interest', 'message', 'privacy_accepted',
     'company', 'source', 'fecha_envio',
@@ -42,6 +42,9 @@ export async function POST(request: Request) {
             telefono,
             tipo_cliente,
             servicio,
+            sector,
+            sector_otro,
+            tamano_empresa,
             mensaje,
             acepto,
             source = 'web_form',
@@ -108,9 +111,13 @@ export async function POST(request: Request) {
 
         // Create the secondary modular tables immediately
         if (leadId) {
+            // sector_otro overrides sector when 'otro' is selected
+            const finalSector = sector === 'otro' ? (sector_otro || 'otro') : (sector || null);
+
             await supabase.from('service_segmentation').insert([{
                 lead_id: leadId,
-                company_size: 'N/A',
+                company_size: tamano_empresa || null,
+                sector: finalSector,
                 automation_goal: ''
             }]);
 

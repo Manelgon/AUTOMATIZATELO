@@ -125,9 +125,36 @@ export default function ContactForm() {
         telefono: "",
         tipo_cliente: "",
         servicio: "",
+        sector: "",
+        sector_otro: "",
+        tamano_empresa: "",
         mensaje: "",
         acepto: false,
     });
+
+    const sectorOptions = [
+        { value: 'logistica', label: 'Logística y Transporte' },
+        { value: 'retail', label: 'Retail y Comercio' },
+        { value: 'salud', label: 'Salud y Farmacia' },
+        { value: 'legal', label: 'Legal y Consultoría' },
+        { value: 'inmobiliaria', label: 'Inmobiliaria y Construcción' },
+        { value: 'educacion', label: 'Educación y Formación' },
+        { value: 'hosteleria', label: 'Hostelería y Restauración' },
+        { value: 'ecommerce', label: 'E-commerce y Marketplace' },
+        { value: 'fintech', label: 'Fintech y Seguros' },
+        { value: 'marketing', label: 'Marketing y Publicidad' },
+        { value: 'industria', label: 'Industria y Manufactura' },
+        { value: 'tecnologia', label: 'Tecnología y Software' },
+        { value: 'otro', label: 'Otro' },
+    ];
+
+    const tamanoOptions = [
+        { value: '1', label: 'Autónomo / Freelance (1 persona)' },
+        { value: '2-10', label: 'Microempresa (2 – 10 personas)' },
+        { value: '11-50', label: 'Pequeña empresa (11 – 50 personas)' },
+        { value: '51-200', label: 'Mediana empresa (51 – 200 personas)' },
+        { value: '200+', label: 'Gran empresa (200+ personas)' },
+    ];
     const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
     const [statusMessage, setStatusMessage] = useState("");
     const [isPhoneDropdownOpen, setIsPhoneDropdownOpen] = useState(false);
@@ -320,6 +347,9 @@ export default function ContactForm() {
                     telefono: "",
                     tipo_cliente: "",
                     servicio: "",
+                    sector: "",
+                    sector_otro: "",
+                    tamano_empresa: "",
                     mensaje: "",
                     acepto: false
                 });
@@ -544,6 +574,39 @@ export default function ContactForm() {
                                 placeholder="Selecciona un servicio"
                                 required
                                 options={serviceOptions}
+                            />
+                        </div>
+
+                        <div>
+                            <CustomDropdown
+                                label="Sector de tu empresa"
+                                name="sector"
+                                value={formData.sector}
+                                onChange={handleCustomChange}
+                                placeholder="Selecciona tu sector"
+                                options={sectorOptions}
+                            />
+                            {formData.sector === 'otro' && (
+                                <input
+                                    type="text"
+                                    name="sector_otro"
+                                    className="glass"
+                                    placeholder="Indica tu sector"
+                                    value={formData.sector_otro}
+                                    onChange={handleChange}
+                                    style={{ marginTop: '0.5rem', background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)', width: '100%' }}
+                                />
+                            )}
+                        </div>
+
+                        <div>
+                            <CustomDropdown
+                                label="Tamaño de empresa"
+                                name="tamano_empresa"
+                                value={formData.tamano_empresa}
+                                onChange={handleCustomChange}
+                                placeholder="Número aproximado de personas"
+                                options={tamanoOptions}
                             />
                         </div>
                     </div>
