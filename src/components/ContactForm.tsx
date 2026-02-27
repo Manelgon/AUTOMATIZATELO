@@ -33,7 +33,9 @@ const CustomDropdown = ({ label, name, value, onChange, options, placeholder, re
     return (
         <div ref={ref} style={{ position: 'relative' }}>
             <label htmlFor={name} style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>
-                {label}
+                {label.endsWith(' *') ? (
+                    <>{label.slice(0, -2)} <span style={{ color: 'var(--color-primary)' }}>*</span></>
+                ) : label}
             </label>
             <div
                 onClick={() => setIsOpen(!isOpen)}
