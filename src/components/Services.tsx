@@ -288,21 +288,17 @@ export default function Services() {
                 </div>
                 <h3 style={{
                     color: "var(--color-text-main)",
-                    fontSize: "1.4rem",
+                    fontSize: "1.1rem",
                     fontWeight: 700,
                     marginBottom: "0.5rem",
-                    lineHeight: 1.3,
+                    lineHeight: 1.2,
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxWidth: isMobile ? "100%" : "420px",
                 }}>
                     {activeService.title}
                 </h3>
-                <p style={{
-                    color: "var(--color-primary)",
-                    fontStyle: "italic",
-                    marginBottom: "0.5rem",
-                    fontSize: "1rem",
-                }}>
-                    {activeService.subtitle}
-                </p>
                 <p style={{ color: "var(--color-text-muted)", fontSize: "0.95rem", lineHeight: 1.6, maxWidth: isMobile ? "100%" : "420px" }}>
                     {activeService.description}
                 </p>
