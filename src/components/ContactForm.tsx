@@ -400,7 +400,7 @@ export default function ContactForm() {
                 <form id="form-automatizatelo" onSubmit={handleSubmit} className="glass" style={{ padding: '3rem', marginTop: '3rem', background: 'var(--color-bg)', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-card)' }}>
                     <div className="form-grid">
                         <div>
-                            <label htmlFor="nombre" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Nombre</label>
+                            <label htmlFor="nombre" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Nombre <span style={{ color: 'var(--color-primary)' }}>*</span></label>
                             <input
                                 id="nombre"
                                 type="text"
@@ -414,7 +414,7 @@ export default function ContactForm() {
                             />
                         </div>
                         <div>
-                            <label htmlFor="apellido" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Apellido</label>
+                            <label htmlFor="apellido" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Apellido <span style={{ color: 'var(--color-primary)' }}>*</span></label>
                             <input
                                 id="apellido"
                                 type="text"
@@ -428,7 +428,7 @@ export default function ContactForm() {
                             />
                         </div>
                         <div>
-                            <label htmlFor="telefono" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Teléfono de contacto</label>
+                            <label htmlFor="telefono" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Teléfono de contacto <span style={{ color: 'var(--color-primary)' }}>*</span></label>
                             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }} ref={phoneDropdownRef}>
                                 <div style={{ position: 'relative' }}>
                                     <button
@@ -536,7 +536,7 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Correo<br />electrónico</label>
+                            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Correo<br />electrónico <span style={{ color: 'var(--color-primary)' }}>*</span></label>
                             <input
                                 id="email"
                                 type="email"
@@ -552,7 +552,7 @@ export default function ContactForm() {
 
                         <div>
                             <CustomDropdown
-                                label="Tipo de Cliente"
+                                label="Tipo de Cliente *"
                                 name="tipo_cliente"
                                 value={formData.tipo_cliente}
                                 onChange={handleCustomChange}
@@ -567,7 +567,7 @@ export default function ContactForm() {
 
                         <div>
                             <CustomDropdown
-                                label="Servicio de interés"
+                                label="Servicio de interés *"
                                 name="servicio"
                                 value={formData.servicio}
                                 onChange={handleCustomChange}
