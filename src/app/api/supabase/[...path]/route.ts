@@ -4,23 +4,23 @@ const getSupabaseUrl = () => {
     return (process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ssdbss.automatizatelo.com').replace(/\/$/, '');
 };
 
-export async function GET(request: NextRequest, { params }: { params: { path: string[] } }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
     return handleRequest(request, params);
 }
 
-export async function POST(request: NextRequest, { params }: { params: { path: string[] } }) {
+export async function POST(request: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
     return handleRequest(request, params);
 }
 
-export async function PUT(request: NextRequest, { params }: { params: { path: string[] } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
     return handleRequest(request, params);
 }
 
-export async function PATCH(request: NextRequest, { params }: { params: { path: string[] } }) {
+export async function PATCH(request: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
     return handleRequest(request, params);
 }
 
-export async function DELETE(request: NextRequest, { params }: { params: { path: string[] } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
     return handleRequest(request, params);
 }
 
@@ -35,7 +35,7 @@ export async function OPTIONS() {
     });
 }
 
-async function handleRequest(request: NextRequest, params: { path: string[] }) {
+async function handleRequest(request: NextRequest, params: Promise<{ path: string[] }>) {
     const SUPABASE_URL = getSupabaseUrl();
 
     try {
