@@ -249,3 +249,340 @@
   "leadId": "ade79e67-37cd-463f-98e5-635a98b00dc1"
 }
 ---
+[2026-03-05T15:18:49.464Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "Manel",
+    "apellido": "Mendez",
+    "email": "manelgon92@gmail.com",
+    "prefijo": "+34",
+    "telefono": "34678399182",
+    "tipo_cliente": "particular",
+    "servicio": "dise_o_y_desarrollo_web",
+    "sector": "legal",
+    "sector_otro": "",
+    "tamano_empresa": "1",
+    "mensaje": "",
+    "acepto": true,
+    "fecha_envio": "2026-03-05T15:18:47.682Z",
+    "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "idioma": "es-ES",
+    "pantalla": "1920x1080",
+    "ciudad": "Montcada i Reixac",
+    "pais": "Spain"
+  }
+}
+---
+[2026-03-05T15:18:49.474Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "Manel",
+    "last_name": "Mendez",
+    "email": "manelgon92@gmail.com",
+    "phone": "34678399182",
+    "client_type": "particular",
+    "service_interest": "dise_o_y_desarrollo_web",
+    "message": "",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "ip_address": "::1",
+    "city": "Montcada i Reixac",
+    "country": "Spain",
+    "device_type": "desktop",
+    "status": "pendiente",
+    "score": 0
+  }
+}
+---
+[2026-03-05T15:18:49.703Z] {
+  "type": "SUPABASE_ERROR",
+  "supabaseError": {
+    "message": "Invalid API key",
+    "hint": "Double check your Supabase `anon` or `service_role` API key."
+  }
+}
+---
+[2026-03-05T15:21:12.312Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "Manel",
+    "apellido": "Mendez Gonzalez",
+    "email": "Manelgon92@gmail.com",
+    "prefijo": "+34",
+    "telefono": "34678399182",
+    "tipo_cliente": "particular",
+    "servicio": "dise_o_y_desarrollo_web",
+    "sector": "",
+    "sector_otro": "",
+    "tamano_empresa": "",
+    "mensaje": "",
+    "acepto": true,
+    "fecha_envio": "2026-03-05T15:21:12.285Z",
+    "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "idioma": "es-ES",
+    "pantalla": "1536x864",
+    "ciudad": "Montcada i Reixac",
+    "pais": "Spain"
+  }
+}
+---
+[2026-03-05T15:21:12.317Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "Manel",
+    "last_name": "Mendez Gonzalez",
+    "email": "Manelgon92@gmail.com",
+    "phone": "34678399182",
+    "client_type": "particular",
+    "service_interest": "dise_o_y_desarrollo_web",
+    "message": "",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "ip_address": "::1",
+    "city": "Montcada i Reixac",
+    "country": "Spain",
+    "device_type": "desktop",
+    "status": "pendiente",
+    "score": 0
+  }
+}
+---
+[2026-03-05T15:21:12.431Z] {
+  "type": "SUPABASE_ERROR",
+  "supabaseError": {
+    "message": "Invalid API key",
+    "hint": "Double check your Supabase `anon` or `service_role` API key."
+  }
+}
+---
+[2026-03-05T15:24:00.802Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "Nombre",
+    "apellido": "apellido",
+    "email": "manelgon92@gmail.com",
+    "prefijo": "+34",
+    "telefono": "34654789654",
+    "tipo_cliente": "empresa",
+    "servicio": "dise_o_y_desarrollo_web",
+    "sector": "",
+    "sector_otro": "",
+    "tamano_empresa": "",
+    "mensaje": "",
+    "acepto": true,
+    "fecha_envio": "2026-03-05T15:24:00.579Z",
+    "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "idioma": "es-ES",
+    "pantalla": "1920x1080",
+    "ciudad": "Montcada i Reixac",
+    "pais": "Spain"
+  }
+}
+---
+[2026-03-05T15:24:00.821Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "Nombre",
+    "last_name": "apellido",
+    "email": "manelgon92@gmail.com",
+    "phone": "34654789654",
+    "client_type": "empresa",
+    "service_interest": "dise_o_y_desarrollo_web",
+    "message": "",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "ip_address": "::1",
+    "city": "Montcada i Reixac",
+    "country": "Spain",
+    "device_type": "desktop",
+    "status": "pendiente",
+    "score": 0
+  }
+}
+---
+[2026-03-05T15:24:01.110Z] {
+  "type": "SUPABASE_SUCCESS",
+  "supabaseData": [
+    {
+      "id": "a7adc53c-e1e4-49e8-b368-9c1696b883f3",
+      "first_name": "Nombre",
+      "last_name": "apellido",
+      "phone": "34654789654",
+      "email": "manelgon92@gmail.com",
+      "client_type": "empresa",
+      "service_interest": "dise_o_y_desarrollo_web",
+      "message": "",
+      "privacy_accepted": true,
+      "company": null,
+      "status": "pendiente",
+      "source": "web_form",
+      "score": 0,
+      "created_at": "2026-03-05T15:24:08.382582+00:00",
+      "updated_at": "2026-03-05T15:24:08.382582+00:00",
+      "ip_address": "::1",
+      "city": "Montcada i Reixac",
+      "country": "Spain",
+      "device_type": "desktop"
+    }
+  ]
+}
+---
+[2026-03-05T15:24:01.379Z] {
+  "type": "CRM_MODULES_CREATED",
+  "leadId": "a7adc53c-e1e4-49e8-b368-9c1696b883f3"
+}
+---
+[2026-03-05T15:34:29.620Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "Nombre",
+    "apellido": "apellido",
+    "email": "info@automatizatelo.com",
+    "prefijo": "+34",
+    "telefono": "34656565651",
+    "tipo_cliente": "empresa",
+    "servicio": "dise_o_y_desarrollo_web",
+    "sector": "",
+    "sector_otro": "",
+    "tamano_empresa": "",
+    "mensaje": "",
+    "acepto": true,
+    "fecha_envio": "2026-03-05T15:34:29.304Z",
+    "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "idioma": "es-ES",
+    "pantalla": "1920x1080",
+    "ciudad": "Montcada i Reixac",
+    "pais": "Spain"
+  }
+}
+---
+[2026-03-05T15:34:29.653Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "Nombre",
+    "last_name": "apellido",
+    "email": "info@automatizatelo.com",
+    "phone": "34656565651",
+    "client_type": "empresa",
+    "service_interest": "dise_o_y_desarrollo_web",
+    "message": "",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "ip_address": "::1",
+    "city": "Montcada i Reixac",
+    "country": "Spain",
+    "device_type": "desktop",
+    "status": "pendiente",
+    "score": 0
+  }
+}
+---
+[2026-03-05T15:34:30.182Z] {
+  "type": "SUPABASE_SUCCESS",
+  "supabaseData": [
+    {
+      "id": "dc1d8195-36d1-4dd2-9557-cf84ecb7da6d",
+      "first_name": "Nombre",
+      "last_name": "apellido",
+      "phone": "34656565651",
+      "email": "info@automatizatelo.com",
+      "client_type": "empresa",
+      "service_interest": "dise_o_y_desarrollo_web",
+      "message": "",
+      "privacy_accepted": true,
+      "company": null,
+      "status": "pendiente",
+      "source": "web_form",
+      "score": 0,
+      "created_at": "2026-03-05T15:34:37.445031+00:00",
+      "updated_at": "2026-03-05T15:34:37.445031+00:00",
+      "ip_address": "::1",
+      "city": "Montcada i Reixac",
+      "country": "Spain",
+      "device_type": "desktop"
+    }
+  ]
+}
+---
+[2026-03-05T15:34:30.465Z] {
+  "type": "CRM_MODULES_CREATED",
+  "leadId": "dc1d8195-36d1-4dd2-9557-cf84ecb7da6d"
+}
+---
+[2026-03-05T17:12:54.950Z] {
+  "type": "PAYLOAD_RECEIVED",
+  "body": {
+    "nombre": "Manel",
+    "apellido": "Mendez",
+    "email": "manelgon92@gmail.com",
+    "prefijo": "+34",
+    "telefono": "34678399182",
+    "tipo_cliente": "empresa",
+    "servicio": "dise_o_y_desarrollo_web",
+    "sector": "logistica",
+    "sector_otro": "",
+    "tamano_empresa": "",
+    "mensaje": "",
+    "acepto": true,
+    "fecha_envio": "2026-03-05T17:12:54.802Z",
+    "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "idioma": "es-ES",
+    "pantalla": "1920x1080",
+    "ciudad": "Montcada i Reixac",
+    "pais": "Spain"
+  }
+}
+---
+[2026-03-05T17:12:54.956Z] {
+  "type": "INSERTING_DATA",
+  "leadData": {
+    "first_name": "Manel",
+    "last_name": "Mendez",
+    "email": "manelgon92@gmail.com",
+    "phone": "34678399182",
+    "client_type": "empresa",
+    "service_interest": "dise_o_y_desarrollo_web",
+    "message": "",
+    "privacy_accepted": true,
+    "source": "web_form",
+    "ip_address": "::1",
+    "city": "Montcada i Reixac",
+    "country": "Spain",
+    "device_type": "desktop",
+    "status": "pendiente",
+    "score": 0
+  }
+}
+---
+[2026-03-05T17:12:55.754Z] {
+  "type": "SUPABASE_SUCCESS",
+  "supabaseData": [
+    {
+      "id": "a9021707-a01f-43b9-971b-bb20155dc65a",
+      "first_name": "Manel",
+      "last_name": "Mendez",
+      "phone": "34678399182",
+      "email": "manelgon92@gmail.com",
+      "client_type": "empresa",
+      "service_interest": "dise_o_y_desarrollo_web",
+      "message": "",
+      "privacy_accepted": true,
+      "company": null,
+      "status": "pendiente",
+      "source": "web_form",
+      "score": 0,
+      "created_at": "2026-03-05T17:13:03.053834+00:00",
+      "updated_at": "2026-03-05T17:13:03.053834+00:00",
+      "ip_address": "::1",
+      "city": "Montcada i Reixac",
+      "country": "Spain",
+      "device_type": "desktop"
+    }
+  ]
+}
+---
+[2026-03-05T17:12:56.119Z] {
+  "type": "CRM_MODULES_CREATED",
+  "leadId": "a9021707-a01f-43b9-971b-bb20155dc65a"
+}
+---

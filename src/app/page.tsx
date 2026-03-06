@@ -10,6 +10,7 @@ import TrustedClients from "@/components/TrustedClients";
 import FAQ from "@/components/FAQ";
 
 import Pricing from "@/components/Pricing";
+import BlogSection from "@/components/BlogSection";
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <TrustedClients />
 
       <Pricing />
+      <BlogSection />
       <ContactForm />
       <FAQ />
       <Footer />

@@ -71,7 +71,7 @@ export default function Footer() {
                         <h4 style={{ color: 'white', marginBottom: '1.5rem' }}>Contacto</h4>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'rgba(255,255,255,0.7)' }}>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <i className="fa-solid fa-phone" style={{ color: 'var(--color-primary)' }}></i> +34 694 26 48 40
+                                <i className="fa-solid fa-phone" style={{ color: 'var(--color-primary)' }}></i> +34 678 39 91 82
                             </li>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                 <i className="fa-solid fa-envelope" style={{ color: 'var(--color-primary)' }}></i> info@automatizatelo.com

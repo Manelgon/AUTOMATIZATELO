@@ -67,6 +67,9 @@ export default function Header() {
                     <Link href="/#contact" className="btn btn-primary" onClick={closeMobile} style={{ background: 'var(--color-primary)', border: 'none' }}>
                         Empieza Ahora
                     </Link>
+                    <Link href="/#blog" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
+                        Blog
+                    </Link>
                     <Link href="/#faq" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
                         FAQ
                     </Link>
