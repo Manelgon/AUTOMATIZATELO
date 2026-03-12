@@ -27,12 +27,14 @@ export const metadata: Metadata = {
       "es-ES": "/",
     },
   },
-  verification: {
-    google: "process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION", // Placeholder
-    other: {
-      "msvalidate.01": ["process.env.NEXT_PUBLIC_BING_VERIFICATION"], // Placeholder for Bing
+  ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION && {
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+      ...(process.env.NEXT_PUBLIC_BING_VERIFICATION && {
+        other: { "msvalidate.01": [process.env.NEXT_PUBLIC_BING_VERIFICATION] },
+      }),
     },
-  },
+  }),
   openGraph: {
     title: "Automatizatelo | Automatización con IA en Barcelona",
     description: "Expertos en automatización de procesos e Inteligencia Artificial en Barcelona. Transforma tu negocio hoy.",

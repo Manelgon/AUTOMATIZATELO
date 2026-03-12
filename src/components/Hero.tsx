@@ -43,6 +43,22 @@ export default function Hero() {
                     <span className="premium-gradient">aumenta tu Productividad</span>
                 </motion.h1>
 
+                <motion.h2
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInUp}
+                    transition={{ delay: 0.2 }}
+                    style={{
+                        fontSize: '1.15rem',
+                        fontWeight: 500,
+                        color: 'var(--color-text-muted)',
+                        marginBottom: '0.75rem',
+                        letterSpacing: '0.01em',
+                    }}
+                >
+                    Consultoría de automatización e inteligencia artificial para empresas en Barcelona
+                </motion.h2>
+
                 <motion.p
                     initial="hidden"
                     animate="visible"

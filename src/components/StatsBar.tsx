@@ -13,7 +13,7 @@ const Counter = ({
     suffix?: string;
     prefix?: string;
 }) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(target);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.5 });
 
@@ -22,6 +22,7 @@ const Counter = ({
 
         let startTime: number | null = null;
         let requestFrameId: number;
+        setCount(0);
 
         const animate = (timestamp: number) => {
             if (!startTime) startTime = timestamp;
