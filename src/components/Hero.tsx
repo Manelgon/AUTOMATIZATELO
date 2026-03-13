@@ -7,6 +7,12 @@ export default function Hero() {
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
     };
 
+    const benefits = [
+        "Reduce trabajo manual",
+        "Responde a clientes 24/7",
+        "Toma decisiones con datos reales",
+    ];
+
     return (
         <section className="hero" style={{
             background: 'linear-gradient(-45deg, #ffffff, #f3f4f6, #f9731610, #ffffff)',
@@ -39,8 +45,8 @@ export default function Hero() {
                     transition={{ delay: 0.1 }}
                     style={{ color: 'var(--color-text-main)' }}
                 >
-                    Automatiza procesos y <br />
-                    <span className="premium-gradient">aumenta tu Productividad</span>
+                    Automatiza procesos y ahorra <br />
+                    <span className="premium-gradient">hasta 10 horas cada semana</span>
                 </motion.h1>
 
                 <motion.h2
@@ -64,11 +70,39 @@ export default function Hero() {
                     animate="visible"
                     variants={fadeInUp}
                     transition={{ delay: 0.3 }}
-                    style={{ fontSize: '1.5rem', maxWidth: '800px', margin: '0 auto 3rem', color: 'var(--color-text-muted)' }}
+                    style={{ fontSize: '1.3rem', maxWidth: '700px', margin: '0 auto 2rem', color: 'var(--color-text-muted)' }}
                 >
-                    Automatización Inteligente y Soluciones Digitales para PYMEs. <br />
-                    Escala tu negocio sin contratar más personal.
+                    Ayudamos a PYMEs y negocios digitales a automatizar tareas repetitivas,
+                    reducir errores y conectar sus herramientas para funcionar de forma más eficiente.
                 </motion.p>
+
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeInUp}
+                    transition={{ delay: 0.4 }}
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        gap: '1.5rem',
+                        flexWrap: 'wrap',
+                        marginBottom: '2.5rem'
+                    }}
+                >
+                    {benefits.map((b) => (
+                        <span key={b} style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            color: 'var(--color-text-main)',
+                            fontWeight: 500,
+                            fontSize: '0.95rem',
+                        }}>
+                            <i className="fa-solid fa-check" style={{ color: 'var(--color-primary)', fontSize: '0.85rem' }}></i>
+                            {b}
+                        </span>
+                    ))}
+                </motion.div>
 
                 <motion.div
                     initial="hidden"
@@ -78,19 +112,14 @@ export default function Hero() {
                 >
                     <div className="hero-actions" style={{ gap: '1.5rem' }}>
                         <a href="#contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 2.5rem', boxShadow: 'var(--shadow-glow)' }}>
-                            Solicitar Consulta Gratuita
+                            Solicitar Auditoría Gratuita
                         </a>
                         <a href="#services" className="btn glass" style={{ color: 'var(--color-text-main)', padding: '1rem 2.5rem', border: '1px solid var(--color-border)' }}>
                             Ver Servicios
                         </a>
                     </div>
-                    <p style={{ marginTop: "2rem", fontSize: "1rem", color: "var(--color-text-muted)" }}>
-                        Reduce errores, libera tiempo y toma el control de tus datos.
-                    </p>
                 </motion.div>
             </div>
         </section>
-
-
     );
 }

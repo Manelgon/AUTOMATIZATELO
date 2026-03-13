@@ -1,154 +1,120 @@
 "use client";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+
+const painPoints = [
+    { icon: "fa-envelope-open-text", text: "Responder mensajes y consultas uno a uno" },
+    { icon: "fa-copy", text: "Copiar datos entre herramientas manualmente" },
+    { icon: "fa-file-invoice", text: "Crear facturas y documentos a mano" },
+    { icon: "fa-chart-bar", text: "Generar reportes e informes cada semana" },
+    { icon: "fa-calendar-check", text: "Gestionar reservas o pedidos manualmente" },
+    { icon: "fa-user-clock", text: "Hacer seguimiento a clientes sin sistema" },
+];
 
 export default function Opportunity() {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 1024);
-        };
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
-    }, []);
-
     const reveal = {
         hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
     };
 
-    const titleContent = (
-        <div className="opportunity-header">
-            <h4
-                style={{
-                    color: "var(--color-accent)",
-                    textTransform: "uppercase",
-                    letterSpacing: "2px",
-                    marginBottom: "0.5rem",
-                    textAlign: isMobile ? "center" : "left"
-                }}
-            >
-                La Oportunidad
-            </h4>
-            <h2 className="section-title" style={{
-                textAlign: isMobile ? "center" : "left",
-                marginBottom: "1.5rem"
-            }}>
-                ¿Por qué digitalizar y automatizar ahora?
-            </h2>
-        </div>
-    );
-
-    const textContent = (
-        <div className="opportunity-body">
-            <p style={{ textAlign: isMobile ? "center" : "justify" }}>
-                Ya no es una opción, es la clave para la supervivencia y el crecimiento. Mientras las grandes corporaciones multiplican su productividad, muchas PYMEs se quedan atrás por no saber &quot;por dónde empezar&quot;.
-            </p>
-            <p style={{ textAlign: isMobile ? "center" : "justify" }}>
-                La falta de personal técnico frena al 33% de las empresas.{" "}
-                <strong>Automatizatelo</strong> rompe esa barrera. No necesitas un departamento de IT; nos necesitas a nosotros. Somos tu aliado estratégico para diseñar soluciones a medida que funcionan desde el primer día.
-            </p>
-            <ul style={{ marginBottom: "2rem", listStyle: "none", padding: 0 }}>
-                <li style={{ marginBottom: "1rem", display: "flex", alignItems: "flex-start", gap: "1rem", justifyContent: isMobile ? "center" : "flex-start" }}>
-                    <i
-                        className="fa-solid fa-check"
-                        style={{ color: "var(--color-primary)", marginTop: "0.4rem" }}
-                    ></i>{" "}
-                    <div>
-                        <strong>Accesible:</strong> Soluciones de alto impacto sin la inversión de una multinacional.
-                    </div>
-                </li>
-                <li style={{ marginBottom: "1rem", display: "flex", alignItems: "flex-start", gap: "1rem", justifyContent: isMobile ? "center" : "flex-start" }}>
-                    <i
-                        className="fa-solid fa-check"
-                        style={{ color: "var(--color-primary)", marginTop: "0.4rem" }}
-                    ></i>{" "}
-                    <div>
-                        <strong>Experto:</strong> Entendemos el mercado local español y sus necesidades.
-                    </div>
-                </li>
-                <li style={{ marginBottom: "1rem", display: "flex", alignItems: "flex-start", gap: "1rem", justifyContent: isMobile ? "center" : "flex-start" }}>
-                    <i
-                        className="fa-solid fa-check"
-                        style={{ color: "var(--color-primary)", marginTop: "0.4rem" }}
-                    ></i>{" "}
-                    <div>
-                        <strong>Avanzado:</strong> Tecnología puntera (IA y Low-Code) aplicada a problemas reales.
-                    </div>
-                </li>
-            </ul>
-        </div>
-    );
-
-    const imageContent = (
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={reveal}
-            className="opportunity-image"
-            style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                margin: isMobile ? "2rem 0" : "0"
-            }}
-        >
-            <Image
-                src="/logo.png"
-                alt="Automatizatelo Logo"
-                width={400}
-                height={400}
-                style={{ maxWidth: isMobile ? "250px" : "100%", height: "auto" }}
-            />
-        </motion.div>
-    );
-
     return (
-        <section id="opportunity" className="opportunity" style={{ padding: isMobile ? "4rem 0" : "8rem 0" }}>
+        <section id="problema" style={{
+            background: 'var(--color-bg-secondary)',
+            padding: '6rem 0',
+            borderTop: '1px solid var(--color-border)',
+            borderBottom: '1px solid var(--color-border)',
+        }}>
             <div className="container">
-                {isMobile ? (
-                    <div style={{ display: "flex", flexDirection: "column" }}>
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={reveal}
-                        >
-                            {titleContent}
-                        </motion.div>
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={reveal}
+                    style={{ textAlign: 'center', marginBottom: '3rem' }}
+                >
+                    <span style={{
+                        display: 'inline-block',
+                        background: 'rgba(249,115,22,0.1)',
+                        color: 'var(--color-primary)',
+                        padding: '0.3rem 1rem',
+                        borderRadius: '50px',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        letterSpacing: '2px',
+                        textTransform: 'uppercase',
+                        marginBottom: '1rem',
+                    }}>
+                        El Problema
+                    </span>
+                    <h2 className="section-title" style={{ marginBottom: '1rem' }}>
+                        Muchas empresas pierden horas cada semana en tareas repetitivas
+                    </h2>
+                    <p className="section-subtitle" style={{ maxWidth: '600px', margin: '0 auto' }}>
+                        Todo esto consume tiempo y dinero que podrías invertir en hacer crecer tu negocio.
+                    </p>
+                </motion.div>
 
-                        {imageContent}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '1.25rem',
+                    marginBottom: '3.5rem',
+                }}>
+                    {painPoints.map((item, i) => (
+                        <motion.div
+                            key={item.text}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={reveal}
+                            transition={{ delay: i * 0.08 }}
+                            className="glass"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '1rem',
+                                padding: '1.1rem 1.5rem',
+                                border: '1px solid var(--color-border)',
+                                borderRadius: 'var(--radius-md)',
+                            }}
+                        >
+                            <i
+                                className={`fa-solid ${item.icon}`}
+                                style={{
+                                    color: 'var(--color-primary)',
+                                    fontSize: '1.2rem',
+                                    flexShrink: 0,
+                                    width: '24px',
+                                    textAlign: 'center',
+                                }}
+                            ></i>
+                            <span style={{ color: 'var(--color-text-main)', fontWeight: 500, fontSize: '0.95rem' }}>
+                                {item.text}
+                            </span>
+                        </motion.div>
+                    ))}
+                </div>
 
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={reveal}
-                            transition={{ delay: 0.2 }}
-                        >
-                            {textContent}
-                        </motion.div>
-                    </div>
-                ) : (
-                    <div className="opportunity-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={reveal}
-                            transition={{ delay: 0.2 }}
-                            className="opportunity-content"
-                        >
-                            {titleContent}
-                            {textContent}
-                        </motion.div>
-                        {imageContent}
-                    </div>
-                )}
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={reveal}
+                    style={{
+                        background: 'linear-gradient(135deg, rgba(249,115,22,0.08) 0%, rgba(249,115,22,0.03) 100%)',
+                        border: '1px solid rgba(249,115,22,0.25)',
+                        borderRadius: 'var(--radius-lg)',
+                        padding: '2rem 2.5rem',
+                        textAlign: 'center',
+                        maxWidth: '700px',
+                        margin: '0 auto',
+                    }}
+                >
+                    <p style={{ fontSize: '1.15rem', color: 'var(--color-text-main)', lineHeight: 1.7, marginBottom: 0 }}>
+                        <strong style={{ color: 'var(--color-primary)' }}>Más del 50% de las empresas</strong> ahorran más de 10 horas semanales
+                        gracias a la automatización. La automatización permite que tu negocio funcione
+                        como un sistema, no como una lista interminable de tareas.
+                    </p>
+                </motion.div>
             </div>
         </section>
     );
