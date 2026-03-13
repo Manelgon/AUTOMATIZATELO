@@ -5,10 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
-    { href: "/#problema", label: "El Problema" },
-    { href: "/#que-automatizamos", label: "Qué Automatizamos" },
     { href: "/#services", label: "Servicios" },
-    { href: "/#how-we-work", label: "Cómo Trabajamos" },
+    { href: "/#que-automatizamos", label: "Automatizamos" },
     { href: "/#casos", label: "Casos de Uso" },
     { href: "/#model", label: "Precios" },
     { href: "/#blog", label: "Blog" },

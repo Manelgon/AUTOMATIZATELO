@@ -158,18 +158,42 @@ export default function WhatWeAutomate() {
                             <div
                                 className="glass"
                                 style={{
+                                    position: 'relative',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     gap: '0.75rem',
-                                    padding: '1.75rem 1.5rem',
+                                    padding: '1.75rem 1.5rem 1.5rem',
                                     borderRadius: '16px',
-                                    border: '1px solid var(--color-border)',
+                                    borderTop: `3px solid ${activeFlow.color}`,
+                                    borderLeft: '1px solid var(--color-border)',
+                                    borderRight: '1px solid var(--color-border)',
+                                    borderBottom: '1px solid var(--color-border)',
                                     minWidth: '160px',
                                     textAlign: 'center',
                                     background: 'var(--color-bg)',
                                 }}
                             >
+                                {/* Número en el borde superior */}
+                                <span style={{
+                                    position: 'absolute',
+                                    top: '-12px',
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    background: activeFlow.color,
+                                    color: '#fff',
+                                    fontSize: '0.7rem',
+                                    fontWeight: 700,
+                                    width: '22px',
+                                    height: '22px',
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}>
+                                    {i + 1}
+                                </span>
+
                                 <div style={{
                                     width: '52px',
                                     height: '52px',
@@ -183,22 +207,6 @@ export default function WhatWeAutomate() {
                                         className={`fa-solid ${step.icon}`}
                                         style={{ color: activeFlow.color, fontSize: '1.2rem' }}
                                     ></i>
-                                </div>
-                                <div style={{
-                                    width: '22px',
-                                    height: '22px',
-                                    borderRadius: '50%',
-                                    background: activeFlow.color,
-                                    color: '#fff',
-                                    fontSize: '0.7rem',
-                                    fontWeight: 700,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    position: 'relative',
-                                    marginTop: '-0.25rem',
-                                }}>
-                                    {i + 1}
                                 </div>
                                 <span style={{
                                     color: 'var(--color-text-main)',
