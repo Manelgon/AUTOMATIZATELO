@@ -200,12 +200,9 @@ export default function HowWeWork() {
                         border: '1px solid rgba(249,115,22,0.2)',
                     }}
                 >
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '0.75rem' }}>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '1.5rem' }}>
                         Descubre qué procesos puedes automatizar en tu empresa
                     </h3>
-                    <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '480px', margin: '0 auto 1.5rem' }}>
-                        Te ofrecemos una auditoría gratuita de 30 minutos donde analizamos tu negocio y te mostramos qué procesos puedes automatizar.
-                    </p>
                     <a
                         href="#contact"
                         className="btn btn-primary"
