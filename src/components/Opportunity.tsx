@@ -105,14 +105,14 @@ export default function Opportunity() {
                         borderRadius: 'var(--radius-lg)',
                         padding: 'clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 4vw, 3rem)',
                         textAlign: 'center',
-                        maxWidth: '920px',
+                        maxWidth: '1080px',
                         margin: '0 auto',
                     }}
                 >
                     <p style={{ fontSize: '1.15rem', color: 'var(--color-text-main)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                        Más del 50% de las empresas ahorran más de 10 horas semanales gracias a la automatización.
+                        Más del <strong style={{ color: 'var(--color-primary)' }}>50%</strong> de las empresas ahorran más de <strong style={{ color: 'var(--color-primary)' }}>10 horas semanales</strong> gracias a la <strong style={{ color: 'var(--color-primary)' }}>automatización</strong>.
                         <br />
-                        La automatización permite que tu negocio funcione como un sistema, no como una lista interminable de tareas.
+                        La <strong style={{ color: 'var(--color-primary)' }}>automatización</strong> permite que tu negocio funcione como un <strong style={{ color: 'var(--color-primary)' }}>sistema</strong>, no como una lista interminable de tareas.
                     </p>
                     <a href="#contact" className="btn btn-primary" style={{ fontSize: '1rem', padding: '0.75rem 2rem', display: 'inline-block' }}>
                         Solicitar auditoría gratuita
