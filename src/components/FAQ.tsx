@@ -115,36 +115,15 @@ export default function FAQ() {
                 </div>
 
                 <div className={styles.layout}>
-                    {/* First item full width */}
-                    <div className={styles.fullWidthItem}>
-                        <FAQItem faq={faqs[0]} index={0} activeIndex={activeIndex} toggleFAQ={toggleFAQ} />
-                    </div>
-
-                    {/* Remaining items in two independent columns */}
-                    <div className={styles.gridContainer}>
-                        <div className={styles.column}>
-                            {faqs.slice(1, 7).map((faq, index) => (
-                                <FAQItem
-                                    key={index + 1}
-                                    faq={faq}
-                                    index={index + 1}
-                                    activeIndex={activeIndex}
-                                    toggleFAQ={toggleFAQ}
-                                />
-                            ))}
-                        </div>
-                        <div className={styles.column}>
-                            {faqs.slice(7).map((faq, index) => (
-                                <FAQItem
-                                    key={index + 7}
-                                    faq={faq}
-                                    index={index + 7}
-                                    activeIndex={activeIndex}
-                                    toggleFAQ={toggleFAQ}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                    {faqs.map((faq, index) => (
+                        <FAQItem
+                            key={index}
+                            faq={faq}
+                            index={index}
+                            activeIndex={activeIndex}
+                            toggleFAQ={toggleFAQ}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
