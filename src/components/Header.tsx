@@ -4,16 +4,21 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const navLinks = [
+    { href: "/#problema", label: "El Problema" },
+    { href: "/#que-automatizamos", label: "Qué Automatizamos" },
+    { href: "/#how-we-work", label: "Cómo Trabajamos" },
+    { href: "/#casos", label: "Casos de Uso" },
+    { href: "/#model", label: "Precios" },
+    { href: "/#blog", label: "Blog" },
+    { href: "/#faq", label: "FAQ" },
+];
+
 export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-    const toggleMobile = () => {
-        setIsMobileOpen(!isMobileOpen);
-    };
-
-    const closeMobile = () => {
-        setIsMobileOpen(false);
-    };
+    const toggleMobile = () => setIsMobileOpen(!isMobileOpen);
+    const closeMobile = () => setIsMobileOpen(false);
 
     return (
         <header className="header" style={{
@@ -25,7 +30,7 @@ export default function Header() {
             borderRadius: isMobileOpen ? '16px 16px 0 0' : '16px',
             top: '0',
             border: '1px solid rgba(255,255,255,0.1)',
-            borderBottom: 'none', // Always none to avoid the "line" issue, we'll rely on the menu's border
+            borderBottom: 'none',
             boxShadow: isMobileOpen ? '0 20px 40px rgba(0,0,0,0.4)' : '0 10px 30px rgba(0,0,0,0.2)',
             zIndex: 1000
         }}>
@@ -48,34 +53,28 @@ export default function Header() {
                 <div className="mobile-toggle" onClick={toggleMobile} style={{ color: 'white' }}>
                     <i className={`fa-solid ${isMobileOpen ? "fa-xmark" : "fa-bars"}`}></i>
                 </div>
+
                 <nav className={`nav-links ${isMobileOpen ? "active" : ""}`}>
-                    <Link href="/#opportunity" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        La Oportunidad
-                    </Link>
-                    <Link href="/#benefits" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        Beneficios
-                    </Link>
-                    <Link href="/#services" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        Servicios
-                    </Link>
-                    <Link href="/#how-we-work" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        Metodología
-                    </Link>
-                    <Link href="/#trusted-clients" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        Casos de Éxito
-                    </Link>
-                    <Link href="/#contact" className="btn btn-primary" onClick={closeMobile} style={{ background: 'var(--color-primary)', border: 'none' }}>
-                        Empieza Ahora
-                    </Link>
-                    <Link href="/#blog" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        Blog
-                    </Link>
-                    <Link href="/#faq" onClick={closeMobile} style={{ color: 'rgba(255,255,255,0.8)' }}>
-                        FAQ
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={closeMobile}
+                            style={{ color: 'rgba(255,255,255,0.8)' }}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                    <Link
+                        href="/#contact"
+                        className="btn btn-primary"
+                        onClick={closeMobile}
+                        style={{ background: 'var(--color-primary)', border: 'none' }}
+                    >
+                        Auditoría Gratuita
                     </Link>
                 </nav>
             </div>
         </header>
-
     );
 }
