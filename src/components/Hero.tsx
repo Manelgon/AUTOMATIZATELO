@@ -71,9 +71,9 @@ export default function Hero() {
                     animate="visible"
                     variants={fadeInUp}
                     transition={{ delay: 0.3 }}
-                    style={{ fontSize: '1.3rem', maxWidth: '700px', margin: '0 auto 2rem', color: 'var(--color-text-muted)' }}
+                    style={{ fontSize: '1.3rem', maxWidth: '820px', margin: '0 auto 2rem', color: 'var(--color-text-muted)' }}
                 >
-                    Ayudamos a PYMEs y negocios digitales a automatizar tareas repetitivas,<br />
+                    Ayudamos a PYMEs en Barcelona y negocios digitales a automatizar tareas repetitivas,<br />
                     reducir errores y conectar sus herramientas para funcionar de forma más eficiente.
                 </motion.p>
 

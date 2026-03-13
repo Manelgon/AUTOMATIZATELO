@@ -262,7 +262,7 @@ export default function WhatWeAutomate() {
                         fontSize: '1rem',
                     }}
                 >
-                    Todo esto ocurre automáticamente, en segundos, sin intervención humana.
+                    Todo esto ocurre automáticamente, en segundos, sin intervención humana. Desarrollamos integraciones totalmente personalizadas, adaptadas a tu entorno.
                 </motion.p>
             </div>
         </section>

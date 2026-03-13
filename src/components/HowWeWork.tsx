@@ -94,7 +94,7 @@ export default function HowWeWork() {
                     transition={{ delay: 0.1 }}
                     className="section-subtitle"
                 >
-                    Un proceso fluido y transparente.
+                    Análisis, desarrollo y optimización continua. Automatizar sin estrategia es como poner un robot a correr sin mapa.
                 </motion.p>
 
                 <div className="flow-container">
