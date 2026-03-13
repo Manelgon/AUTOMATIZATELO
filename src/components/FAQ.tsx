@@ -5,137 +5,94 @@ import styles from "./FAQ.module.css";
 
 const faqs = [
     {
-        question: "¿Qué es exactamente Automatízatelo?",
-        answer: "Automatízatelo es un servicio que conecta y automatiza procesos de tu negocio para que tareas repetitivas se hagan solas: responder clientes, registrar datos, generar documentos, gestionar pedidos, enviar avisos o integrar herramientas. El objetivo es que ahorres tiempo, reduzcas errores y puedas centrarte en lo importante."
+        question: "¿Qué es la automatización de procesos?",
+        answer: "La automatización consiste en crear sistemas que realizan tareas de forma automática. Esto puede incluir desde enviar respuestas a clientes hasta generar documentos o conectar diferentes herramientas de tu empresa. El objetivo es reducir tareas manuales, evitar errores y ahorrar tiempo."
     },
     {
-        question: "¿Qué cosas se pueden automatizar?",
+        question: "¿Qué tipo de empresas pueden beneficiarse?",
         answer: (
             <>
-                <p>Se pueden automatizar muchas tareas habituales, por ejemplo:</p>
+                <p>La automatización es útil para prácticamente cualquier negocio. Trabajamos especialmente con:</p>
                 <ul>
-                    <li>Respuestas automáticas por WhatsApp o email</li>
-                    <li>Registro automático de clientes o pedidos</li>
-                    <li>Generación de PDFs o informes</li>
-                    <li>Integración entre apps y herramientas</li>
-                    <li>Gestión de citas o reservas</li>
-                    <li>Notificaciones y recordatorios</li>
-                    <li>Paneles de control con datos en tiempo real</li>
-                </ul>
-                <p style={{ marginTop: '0.5rem' }}>Si una tarea se repite, normalmente se puede automatizar.</p>
-            </>
-        )
-    },
-    {
-        question: "¿Esto sirve para mi negocio?",
-        answer: (
-            <>
-                <p>Sí, porque cada automatización se adapta al negocio. Trabajamos con:</p>
-                <ul>
-                    <li>Restaurantes y comida para llevar</li>
-                    <li>Hoteles y alojamientos</li>
-                    <li>Clínicas y profesionales sanitarios</li>
-                    <li>Academias y colegios</li>
+                    <li>PYMEs y negocios locales</li>
                     <li>Empresas de servicios</li>
-                    <li>Negocios online</li>
+                    <li>E-commerce</li>
+                    <li>Academias</li>
+                    <li>Clínicas</li>
+                    <li>Hoteles y restaurantes</li>
                 </ul>
-                <p style={{ marginTop: '0.5rem' }}>Cada solución se ajusta a lo que realmente necesitas.</p>
+                <p style={{ marginTop: '0.5rem' }}>Cualquier empresa que tenga procesos repetitivos puede beneficiarse.</p>
             </>
         )
     },
     {
-        question: "¿Es difícil de usar?",
+        question: "¿Qué tipo de procesos se pueden automatizar?",
         answer: (
             <>
-                <p>No. Las automatizaciones están pensadas para que tú solo uses:</p>
+                <p>Muchísimos procesos del día a día pueden automatizarse, por ejemplo:</p>
                 <ul>
+                    <li>Captación de clientes desde formularios</li>
+                    <li>Seguimiento automático de leads</li>
+                    <li>Respuestas automáticas a consultas</li>
+                    <li>Generación de facturas o documentos</li>
+                    <li>Envío de notificaciones internas</li>
+                    <li>Reportes automáticos semanales</li>
+                </ul>
+                <p style={{ marginTop: '0.5rem' }}>Cada empresa tiene procesos diferentes, por eso diseñamos soluciones a medida.</p>
+            </>
+        )
+    },
+    {
+        question: "¿Necesito conocimientos técnicos?",
+        answer: "No. Nosotros nos encargamos de todo el diseño, implementación y configuración. Tú solo tendrás que utilizar el sistema una vez esté funcionando."
+    },
+    {
+        question: "¿Cuánto cuesta automatizar mi negocio?",
+        answer: (
+            <>
+                <p>El coste depende del tipo de automatización y la complejidad del proceso. Ofrecemos desde soluciones sencillas hasta sistemas más avanzados:</p>
+                <ul>
+                    <li>Automatización Inicio — desde 500€</li>
+                    <li>Automatización Negocio — desde 2.000€</li>
+                    <li>Automatización Completa — desde 8.000€</li>
+                </ul>
+                <p style={{ marginTop: '0.5rem' }}>Lo mejor es analizar tu caso y ver qué automatizaciones pueden aportar más valor.</p>
+            </>
+        )
+    },
+    {
+        question: "¿Cuánto tiempo tarda una automatización?",
+        answer: "Depende del proyecto. Algunas automatizaciones pueden estar listas en pocos días, mientras que sistemas más complejos pueden requerir más tiempo. Siempre informamos del plazo antes de empezar."
+    },
+    {
+        question: "¿Las automatizaciones funcionan con mis herramientas actuales?",
+        answer: (
+            <>
+                <p>En la mayoría de casos sí. Podemos integrar herramientas como:</p>
+                <ul>
+                    <li>CRM y bases de datos</li>
+                    <li>Email y email marketing</li>
+                    <li>Formularios web</li>
                     <li>WhatsApp</li>
-                    <li>Un panel sencillo</li>
-                    <li>Formularios fáciles</li>
+                    <li>Google Sheets</li>
+                    <li>Plataformas de pago</li>
                 </ul>
-                <p style={{ marginTop: '0.5rem' }}>Todo lo complejo funciona en segundo plano.</p>
+                <p style={{ marginTop: '0.5rem' }}>Si ya utilizas herramientas digitales, normalmente podemos conectarlas.</p>
             </>
         )
     },
     {
-        question: "¿Cuánto cuesta?",
-        answer: (
-            <>
-                <p>Depende del tipo de automatización y del tiempo que se necesite para desarrollarla. Hay dos modelos habituales:</p>
-                <ul>
-                    <li>Pago por proyecto</li>
-                    <li>Mantenimiento mensual opcional</li>
-                </ul>
-                <p style={{ marginTop: '0.5rem' }}>Antes de empezar siempre se explica el coste y el alcance.</p>
-            </>
-        )
+        question: "¿Qué pasa si algo deja de funcionar?",
+        answer: "Ofrecemos soporte y mantenimiento para asegurarnos de que las automatizaciones sigan funcionando correctamente. Además, monitorizamos los sistemas para detectar posibles problemas antes de que te afecten."
     },
     {
-        question: "¿Cuánto tarda en estar funcionando?",
-        answer: "Las automatizaciones sencillas pueden estar listas en pocos días. Los proyectos más completos suelen tardar entre una y tres semanas, dependiendo de la complejidad. Primero se crea una versión funcional y después se mejora si hace falta."
+        question: "¿La automatización sustituye a las personas?",
+        answer: "No. La automatización elimina tareas repetitivas para que tu equipo pueda centrarse en tareas más importantes como ventas, atención al cliente o crecimiento del negocio."
     },
     {
-        question: "¿Tengo que cambiar mis herramientas?",
-        answer: (
-            <>
-                <p>No necesariamente. En la mayoría de casos se integran las herramientas que ya utilizas:</p>
-                <ul>
-                    <li>WhatsApp</li>
-                    <li>Excel</li>
-                    <li>Google Drive</li>
-                    <li>Email</li>
-                    <li>CRM</li>
-                    <li>Formularios</li>
-                    <li>Apps web</li>
-                </ul>
-                <p style={{ marginTop: '0.5rem' }}>La idea es adaptar la automatización a tu sistema, no al revés.</p>
-            </>
-        )
+        question: "¿Cómo puedo empezar?",
+        answer: "El primer paso es analizar cómo funciona tu negocio actualmente. A partir de ahí identificamos qué procesos se pueden automatizar y diseñamos una solución adaptada a tu empresa. Puedes solicitar un análisis gratuito sin compromiso."
     },
-    {
-        question: "¿Es seguro?",
-        answer: "Sí. Los datos se almacenan en sistemas seguros y se siguen buenas prácticas de protección de datos y RGPD cuando es necesario. Además, cada proyecto se configura para que solo las personas autorizadas puedan acceder a la información."
-    },
-    {
-        question: "¿Qué pasa si algo falla?",
-        answer: "Si has contratado el proyecto Suscripción de Mantenimiento y Mejora, Tienes soporte. Si algo deja de funcionar o necesitas hacer cambios, se revisa y se soluciona. Las automatizaciones se monitorizan para detectar problemas lo antes posible."
-    },
-    {
-        question: "¿Puedo ampliar la automatización en el futuro?",
-        answer: (
-            <>
-                <p>Sí. La mayoría de sistemas están pensados para crecer:</p>
-                <ul>
-                    <li>añadir nuevas funciones</li>
-                    <li>conectar nuevas herramientas</li>
-                    <li>automatizar más procesos</li>
-                </ul>
-                <p style={{ marginTop: '0.5rem' }}>Muchas empresas empiezan con algo pequeño y lo amplían después.</p>
-            </>
-        )
-    },
-    {
-        question: "¿Voy a depender siempre de vosotros?",
-        answer: "No. Tendrás acceso a tus datos y a tus herramientas. Si en algún momento quieres cambiar o evolucionar el sistema, se puede hacer sin problemas."
-    },
-    {
-        question: "¿Necesito servidores o conocimientos técnicos?",
-        answer: "No. Nosotros nos encargamos de la parte técnica, servidores e integraciones si hace falta. Tú solo usas la solución final."
-    },
-    {
-        question: "¿Realmente merece la pena automatizar?",
-        answer: (
-            <>
-                <p>Si realizas tareas repetitivas todos los días, casi seguro que sí. Las automatizaciones suelen ahorrar:</p>
-                <ul>
-                    <li>tiempo</li>
-                    <li>errores</li>
-                    <li>trabajo manual</li>
-                </ul>
-                <p style={{ marginTop: '0.5rem' }}>Y permiten atender más clientes sin aumentar el esfuerzo.</p>
-            </>
-        )
-    }
 ];
 
 export default function FAQ() {
