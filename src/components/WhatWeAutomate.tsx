@@ -138,6 +138,7 @@ export default function WhatWeAutomate() {
                 </div>
 
                 {/* Flujo visual */}
+                <div style={{ overflowX: 'auto', paddingBottom: '0.5rem' }}>
                 <motion.div
                     key={active}
                     initial={{ opacity: 0, y: 15 }}
@@ -147,9 +148,9 @@ export default function WhatWeAutomate() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        flexWrap: 'wrap',
+                        flexWrap: 'nowrap',
                         gap: '0',
-                        maxWidth: '900px',
+                        minWidth: 'max-content',
                         margin: '0 auto',
                     }}
                 >
@@ -163,13 +164,13 @@ export default function WhatWeAutomate() {
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     gap: '0.75rem',
-                                    padding: '1.75rem 1.5rem 1.5rem',
+                                    padding: '1.75rem 1.25rem 1.25rem',
                                     borderRadius: '16px',
                                     borderTop: `3px solid ${activeFlow.color}`,
                                     borderLeft: '1px solid var(--color-border)',
                                     borderRight: '1px solid var(--color-border)',
                                     borderBottom: '1px solid var(--color-border)',
-                                    minWidth: '160px',
+                                    width: '155px',
                                     textAlign: 'center',
                                     background: 'var(--color-bg)',
                                 }}
@@ -210,8 +211,8 @@ export default function WhatWeAutomate() {
                                 </div>
                                 <span style={{
                                     color: 'var(--color-text-main)',
-                                    fontSize: '0.88rem',
-                                    fontWeight: 500,
+                                    fontSize: '0.85rem',
+                                    fontWeight: 700,
                                     lineHeight: 1.4,
                                 }}>
                                     {step.text}
@@ -233,6 +234,7 @@ export default function WhatWeAutomate() {
                         </div>
                     ))}
                 </motion.div>
+                </div>
 
                 <motion.p
                     initial="hidden"
