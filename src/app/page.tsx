@@ -5,6 +5,7 @@ import StatsBar from "@/components/StatsBar";
 import Opportunity from "@/components/Opportunity";
 import WhatWeAutomate from "@/components/WhatWeAutomate";
 import Benefits from "@/components/Benefits";
+import Services from "@/components/Services";
 import HowWeWork from "@/components/HowWeWork";
 import UseCases from "@/components/UseCases";
 import TrustedClients from "@/components/TrustedClients";
@@ -33,7 +34,10 @@ export default function Home() {
       {/* 5. Beneficios / Resultados */}
       <Benefits />
 
-      {/* 6. Cómo trabajamos */}
+      {/* 6. Servicios */}
+      <Services />
+
+      {/* 7. Cómo trabajamos */}
       <HowWeWork />
 
       {/* 8. Casos de uso por sector */}
