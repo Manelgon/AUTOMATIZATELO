@@ -1687,7 +1687,7 @@ section {
   }
 }
 
-/* Hide scrollbar on mobile */
+/* Hide scrollbar on mobile + section padding reducido */
 @media (max-width: 768px) {
   ::-webkit-scrollbar {
     display: none;
@@ -1700,5 +1700,10 @@ section {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+  }
+
+  #problema, #que-automatizamos, #benefits, #how-we-work, #casos, #model {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
   }
 }

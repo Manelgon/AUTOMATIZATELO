@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const flows = [
@@ -55,6 +55,14 @@ const flows = [
 
 export default function WhatWeAutomate() {
     const [active, setActive] = useState("clientes");
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth < 768);
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
 
     const reveal = {
         hidden: { opacity: 0, y: 30 },
@@ -137,7 +145,7 @@ export default function WhatWeAutomate() {
                     ))}
                 </div>
 
-                {/* Flujo visual — tarjetas en una sola fila */}
+                {/* Flujo visual — horizontal en desktop, vertical en móvil */}
                 <motion.div
                     key={active}
                     initial={{ opacity: 0, y: 15 }}
@@ -145,6 +153,7 @@ export default function WhatWeAutomate() {
                     transition={{ duration: 0.4 }}
                     style={{
                         display: 'flex',
+                        flexDirection: isMobile ? 'column' : 'row',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexWrap: 'nowrap',
@@ -154,7 +163,14 @@ export default function WhatWeAutomate() {
                     }}
                 >
                     {activeFlow.steps.map((step, i) => (
-                        <div key={step.text} style={{ display: 'flex', alignItems: 'center' }}>
+                        <div
+                            key={step.text}
+                            style={{
+                                display: 'flex',
+                                flexDirection: isMobile ? 'column' : 'row',
+                                alignItems: 'center',
+                            }}
+                        >
                             <div
                                 className="glass"
                                 style={{
@@ -163,13 +179,15 @@ export default function WhatWeAutomate() {
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     gap: '0.75rem',
-                                    padding: '1.75rem 1.25rem 1.25rem',
+                                    padding: isMobile ? '1.25rem 1rem' : '1.75rem 1.25rem 1.25rem',
                                     borderRadius: '16px',
                                     borderTop: `3px solid ${activeFlow.color}`,
                                     borderLeft: '1px solid var(--color-border)',
                                     borderRight: '1px solid var(--color-border)',
                                     borderBottom: '1px solid var(--color-border)',
-                                    minWidth: '155px',
+                                    minWidth: isMobile ? undefined : '155px',
+                                    width: isMobile ? '100%' : undefined,
+                                    maxWidth: isMobile ? '280px' : undefined,
                                     textAlign: 'center',
                                     background: 'var(--color-bg)',
                                 }}
@@ -219,12 +237,13 @@ export default function WhatWeAutomate() {
                                 <div style={{
                                     display: 'flex',
                                     alignItems: 'center',
-                                    padding: '0 0.5rem',
+                                    justifyContent: 'center',
+                                    padding: isMobile ? '0.5rem 0' : '0 0.5rem',
                                     color: activeFlow.color,
                                     fontSize: '1.3rem',
                                     opacity: 0.7,
                                 }}>
-                                    <i className="fa-solid fa-arrow-right"></i>
+                                    <i className={`fa-solid fa-arrow-${isMobile ? 'down' : 'right'}`}></i>
                                 </div>
                             )}
                         </div>

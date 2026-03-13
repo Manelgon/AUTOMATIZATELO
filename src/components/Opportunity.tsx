@@ -103,9 +103,9 @@ export default function Opportunity() {
                         background: 'linear-gradient(135deg, rgba(249,115,22,0.08) 0%, rgba(249,115,22,0.03) 100%)',
                         border: '1px solid rgba(249,115,22,0.25)',
                         borderRadius: 'var(--radius-lg)',
-                        padding: '2rem 2.5rem',
+                        padding: 'clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 4vw, 3rem)',
                         textAlign: 'center',
-                        maxWidth: '700px',
+                        maxWidth: '920px',
                         margin: '0 auto',
                     }}
                 >
