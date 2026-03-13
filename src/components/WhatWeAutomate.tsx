@@ -1,6 +1,6 @@
 "use client";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const flows = [
     {
@@ -137,104 +137,110 @@ export default function WhatWeAutomate() {
                     ))}
                 </div>
 
-                {/* Flujo visual */}
-                <div style={{ overflowX: 'auto', paddingBottom: '0.5rem' }}>
+                {/* Flujo visual — grid 2×2 */}
                 <motion.div
                     key={active}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4 }}
                     style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexWrap: 'nowrap',
-                        gap: '0',
-                        minWidth: 'max-content',
+                        display: 'grid',
+                        gridTemplateColumns: '1fr auto 1fr',
+                        gridTemplateRows: 'auto auto',
+                        gap: '1rem 0',
+                        maxWidth: '640px',
                         margin: '0 auto',
                     }}
                 >
-                    {activeFlow.steps.map((step, i) => (
-                        <div key={step.text} style={{ display: 'flex', alignItems: 'center' }}>
-                            <div
-                                className="glass"
-                                style={{
-                                    position: 'relative',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    gap: '0.75rem',
-                                    padding: '1.75rem 1.25rem 1.25rem',
-                                    borderRadius: '16px',
-                                    borderTop: `3px solid ${activeFlow.color}`,
-                                    borderLeft: '1px solid var(--color-border)',
-                                    borderRight: '1px solid var(--color-border)',
-                                    borderBottom: '1px solid var(--color-border)',
-                                    width: '155px',
-                                    textAlign: 'center',
-                                    background: 'var(--color-bg)',
-                                }}
-                            >
-                                {/* Número en el borde superior */}
-                                <span style={{
-                                    position: 'absolute',
-                                    top: '-12px',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                    background: activeFlow.color,
-                                    color: '#fff',
-                                    fontSize: '0.7rem',
-                                    fontWeight: 700,
-                                    width: '22px',
-                                    height: '22px',
-                                    borderRadius: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}>
-                                    {i + 1}
-                                </span>
+                    {activeFlow.steps.map((step, i) => {
+                        const col = i % 2; // 0 = izquierda, 1 = derecha
+                        const row = Math.floor(i / 2); // 0 = fila 1, 1 = fila 2
+                        const isLastInRow = col === 1 || i === activeFlow.steps.length - 1;
 
-                                <div style={{
-                                    width: '52px',
-                                    height: '52px',
-                                    borderRadius: '50%',
-                                    background: `${activeFlow.color}18`,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}>
-                                    <i
-                                        className={`fa-solid ${step.icon}`}
-                                        style={{ color: activeFlow.color, fontSize: '1.2rem' }}
-                                    ></i>
-                                </div>
-                                <span style={{
-                                    color: 'var(--color-text-main)',
-                                    fontSize: '0.85rem',
-                                    fontWeight: 700,
-                                    lineHeight: 1.4,
-                                }}>
-                                    {step.text}
-                                </span>
-                            </div>
+                        return (
+                            <React.Fragment key={step.text}>
+                                {/* Tarjeta */}
+                                <div
+                                    className="glass"
+                                    style={{
+                                        position: 'relative',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        gap: '0.75rem',
+                                        padding: '1.75rem 1.25rem 1.25rem',
+                                        borderRadius: '16px',
+                                        borderTop: `3px solid ${activeFlow.color}`,
+                                        borderLeft: '1px solid var(--color-border)',
+                                        borderRight: '1px solid var(--color-border)',
+                                        borderBottom: '1px solid var(--color-border)',
+                                        textAlign: 'center',
+                                        background: 'var(--color-bg)',
+                                        gridColumn: col === 0 ? 1 : 3,
+                                        gridRow: row + 1,
+                                    }}
+                                >
+                                    <span style={{
+                                        position: 'absolute',
+                                        top: '-12px',
+                                        left: '50%',
+                                        transform: 'translateX(-50%)',
+                                        background: activeFlow.color,
+                                        color: '#fff',
+                                        fontSize: '0.7rem',
+                                        fontWeight: 700,
+                                        width: '22px',
+                                        height: '22px',
+                                        borderRadius: '50%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}>
+                                        {i + 1}
+                                    </span>
 
-                            {i < activeFlow.steps.length - 1 && (
-                                <div style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    padding: '0 0.5rem',
-                                    color: activeFlow.color,
-                                    fontSize: '1.3rem',
-                                    opacity: 0.7,
-                                }}>
-                                    <i className="fa-solid fa-arrow-right"></i>
+                                    <div style={{
+                                        width: '52px',
+                                        height: '52px',
+                                        borderRadius: '50%',
+                                        background: `${activeFlow.color}18`,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}>
+                                        <i className={`fa-solid ${step.icon}`} style={{ color: activeFlow.color, fontSize: '1.2rem' }}></i>
+                                    </div>
+
+                                    <span style={{
+                                        color: 'var(--color-text-main)',
+                                        fontSize: '0.85rem',
+                                        fontWeight: 700,
+                                        lineHeight: 1.4,
+                                    }}>
+                                        {step.text}
+                                    </span>
                                 </div>
-                            )}
-                        </div>
-                    ))}
+
+                                {/* Flecha horizontal entre col 1 y col 2 de la misma fila */}
+                                {col === 0 && i + 1 < activeFlow.steps.length && (
+                                    <div style={{
+                                        gridColumn: 2,
+                                        gridRow: row + 1,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        padding: '0 0.75rem',
+                                        color: activeFlow.color,
+                                        fontSize: '1.2rem',
+                                        opacity: 0.7,
+                                    }}>
+                                        <i className="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                )}
+                            </React.Fragment>
+                        );
+                    })}
                 </motion.div>
-                </div>
 
                 <motion.p
                     initial="hidden"
