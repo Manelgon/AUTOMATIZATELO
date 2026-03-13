@@ -184,6 +184,36 @@ export default function HowWeWork() {
                         </AnimatePresence>
                     </div>
                 )}
+
+                {/* CTA Consultoría Gratuita */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    style={{
+                        marginTop: '4rem',
+                        textAlign: 'center',
+                        padding: '2.5rem',
+                        background: 'linear-gradient(135deg, rgba(249,115,22,0.08) 0%, rgba(249,115,22,0.03) 100%)',
+                        borderRadius: '20px',
+                        border: '1px solid rgba(249,115,22,0.2)',
+                    }}
+                >
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '0.75rem' }}>
+                        Descubre qué procesos puedes automatizar en tu empresa
+                    </h3>
+                    <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem', maxWidth: '480px', margin: '0 auto 1.5rem' }}>
+                        Te ofrecemos una auditoría gratuita de 30 minutos donde analizamos tu negocio y te mostramos qué procesos puedes automatizar.
+                    </p>
+                    <a
+                        href="#contact"
+                        className="btn btn-primary"
+                        style={{ padding: '1rem 2rem', fontSize: '1.1rem', boxShadow: 'var(--shadow-glow)' }}
+                    >
+                        Solicitar auditoría gratuita
+                    </a>
+                </motion.div>
             </div>
         </section>
     );
