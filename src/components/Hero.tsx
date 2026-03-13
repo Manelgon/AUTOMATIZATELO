@@ -73,7 +73,7 @@ export default function Hero() {
                     transition={{ delay: 0.3 }}
                     style={{ fontSize: '1.3rem', maxWidth: '700px', margin: '0 auto 2rem', color: 'var(--color-text-muted)' }}
                 >
-                    Ayudamos a PYMEs y negocios digitales a automatizar tareas repetitivas,
+                    Ayudamos a PYMEs y negocios digitales a automatizar tareas repetitivas,<br />
                     reducir errores y conectar sus herramientas para funcionar de forma más eficiente.
                 </motion.p>
 
