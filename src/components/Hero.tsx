@@ -113,7 +113,7 @@ export default function Hero() {
                 >
                     <div className="hero-actions" style={{ gap: '1.5rem' }}>
                         <a href="#contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 2.5rem', boxShadow: 'var(--shadow-glow)' }}>
-                            Automatiza tu CRM Hoy - Consulta Gratis 30min
+                            Consulta Gratis
                         </a>
                         <a href="#que-automatizamos" className="btn glass" style={{ color: 'var(--color-text-main)', padding: '1rem 2.5rem', border: '1px solid var(--color-border)' }}>
                             Ver Servicios
