@@ -12,19 +12,20 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Automatizatelo | Automatización con IA y Procesos en Barcelona",
+    default: "Automatización de Procesos con IA para Pequeñas Empresas | Chatbots y CRM",
     template: "%s | Automatizatelo"
   },
-  description: "Consultora de automatización de procesos e Inteligencia Artificial en Barcelona. Ahorra tiempo y costes implementando soluciones digitales para tu PYME.",
+  description: "Automatización de procesos con IA para pequeñas empresas. Implementamos chatbots, CRM automation y marketing automatizado. Ahorra hasta 20h/semana. Consultoría gratis.",
   keywords: ["automatización de procesos", "IA Barcelona", "inteligencia artificial empresas", "consultoría digital", "n8n expertos", "chatbots IA", "digitalización PYMEs", "Barcelona"],
   authors: [{ name: "Automatizatelo Team" }],
   creator: "Automatizatelo",
   publisher: "Automatizatelo",
   metadataBase: new URL("https://automatizatelo.com"),
   alternates: {
-    canonical: "/",
+    canonical: "https://automatizatelo.com/",
     languages: {
-      "es-ES": "/",
+      "es-ES": "https://automatizatelo.com/",
+      "es-MX": "https://automatizatelo.com/mx/",
     },
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION && {
@@ -72,8 +73,10 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Automatizatelo",
+  "@type": "ProfessionalService",
+  "name": "Automatízatelo",
+  "priceRange": "$$",
+  "areaServed": "ES",
   "image": "https://automatizatelo.com/og-image.jpg",
   "@id": "https://automatizatelo.com",
   "url": "https://automatizatelo.com",

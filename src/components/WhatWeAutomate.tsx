@@ -262,7 +262,7 @@ export default function WhatWeAutomate() {
                         fontSize: '1rem',
                     }}
                 >
-                    Todo esto ocurre automáticamente, en segundos, sin intervención humana. Desarrollamos integraciones totalmente personalizadas, adaptadas a tu entorno.
+                    Todo esto ocurre mediante <strong style={{ color: 'var(--color-primary)' }}>workflows automatizados</strong> que funcionan en segundos, sin intervención humana. Desarrollamos integraciones totalmente personalizadas para tu empresa.
                 </motion.p>
             </div>
         </section>

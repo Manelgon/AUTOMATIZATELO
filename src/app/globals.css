@@ -221,10 +221,7 @@ img {
   transition-delay: 0.3s;
 }
 
-/* Stagger Children */
-.stagger-container .reveal {
-  /* Controlled by JS or basic delays */
-}
+
 
 /* Sequential Entry Classes (Hero) */
 .animate-entry {
@@ -352,7 +349,7 @@ img {
 .section-subtitle {
   text-align: center;
   color: var(--color-text-muted);
-  max-width: 600px;
+  max-width: 850px;
   margin: 0 auto var(--spacing-lg);
   font-size: 1.1rem;
 }
@@ -388,9 +385,7 @@ img {
   gap: 0.5rem;
 }
 
-.logo span {
-  /* Underline removed */
-}
+
 
 .logo span {
   color: var(--color-primary);

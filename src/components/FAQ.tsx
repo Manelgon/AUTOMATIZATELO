@@ -107,7 +107,7 @@ export default function FAQ() {
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h2 className={styles.title}>
-                        Preguntas Frecuentes
+                        ¿Qué procesos puedes automatizar con IA?
                     </h2>
                     <p className={styles.subtitle}>
                         Resolvemos tus dudas sobre la automatización

@@ -62,8 +62,8 @@ export default function Hero() {
                     transition={{ delay: 0.2 }}
                     style={{ color: 'var(--color-text-main)' }}
                 >
-                    Automatiza procesos y ahorra <br />
-                    <span className="premium-gradient">hasta 10 horas cada semana</span>
+                    Automatización de Procesos con IA <br />
+                    <span className="premium-gradient">Chatbots y CRM para Pequeñas Empresas</span>
                 </motion.h1>
 
                 <motion.p
@@ -113,7 +113,7 @@ export default function Hero() {
                 >
                     <div className="hero-actions" style={{ gap: '1.5rem' }}>
                         <a href="#contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 2.5rem', boxShadow: 'var(--shadow-glow)' }}>
-                            Solicitar Auditoría Gratuita
+                            Automatiza tu CRM Hoy - Consulta Gratis 30min
                         </a>
                         <a href="#que-automatizamos" className="btn glass" style={{ color: 'var(--color-text-main)', padding: '1rem 2.5rem', border: '1px solid var(--color-border)' }}>
                             Ver Servicios

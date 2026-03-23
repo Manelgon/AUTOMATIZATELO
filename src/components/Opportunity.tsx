@@ -46,9 +46,9 @@ export default function Opportunity() {
                         El Problema
                     </span>
                     <h2 className="section-title" style={{ marginBottom: '1rem' }}>
-                        Muchas empresas pierden horas cada semana en tareas repetitivas
+                        ¿Cómo automatizar procesos con IA en pequeñas empresas?
                     </h2>
-                    <p className="section-subtitle" style={{ maxWidth: '600px', margin: '0 auto' }}>
+                    <p className="section-subtitle" style={{ margin: '0 auto' }}>
                         Todo esto consume tiempo y dinero que podrías invertir en hacer crecer tu negocio.
                     </p>
                 </motion.div>
@@ -105,14 +105,14 @@ export default function Opportunity() {
                         borderRadius: 'var(--radius-lg)',
                         padding: 'clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 4vw, 3rem)',
                         textAlign: 'center',
-                        maxWidth: '1080px',
+                        maxWidth: '100%',
                         margin: '0 auto',
                     }}
                 >
                     <p style={{ fontSize: '1.15rem', color: 'var(--color-text-main)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                        Más del <strong style={{ color: 'var(--color-primary)' }}>50%</strong> de las empresas ahorran más de <strong style={{ color: 'var(--color-primary)' }}>10 horas semanales</strong> gracias a la <strong style={{ color: 'var(--color-primary)' }}>automatización</strong>.
+                        Más del <strong style={{ color: 'var(--color-primary)' }}>50%</strong> de las empresas alcanzan una <strong style={{ color: 'var(--color-primary)' }}>eficiencia operativa</strong> superior ahorrando hasta <strong style={{ color: 'var(--color-primary)' }}>20 horas semanales</strong>.
                         <br />
-                        La <strong style={{ color: 'var(--color-primary)' }}>automatización</strong> permite que tu negocio funcione como un <strong style={{ color: 'var(--color-primary)' }}>sistema</strong>, no como una lista interminable de tareas.
+                        La <strong style={{ color: 'var(--color-primary)' }}>automatización de procesos</strong> permite una <strong style={{ color: 'var(--color-primary)' }}>reducción de costes</strong> inmediata, haciendo que tu negocio funcione como un <strong style={{ color: 'var(--color-primary)' }}>sistema</strong> inteligente.
                     </p>
                     <a href="#contact" className="btn btn-primary" style={{ fontSize: '1rem', padding: '0.75rem 2rem', display: 'inline-block' }}>
                         Solicitar auditoría gratuita
