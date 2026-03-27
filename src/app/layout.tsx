@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import ClientChatWrapper from "@/components/ClientChatWrapper";
 
 const outfit = Outfit({
@@ -131,6 +132,19 @@ export default function RootLayout({
           precedence="default"
         />
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18013693770"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18013693770');
+          `}
+        </Script>
         <ClientChatWrapper />
       </body>
     </html>
