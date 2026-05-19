@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -23,12 +24,39 @@ const sectorLinks = [
 export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const [sectorsOpen, setSectorsOpen] = useState(false);
+    const sectorsRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
 
     const toggleMobile = () => setIsMobileOpen(!isMobileOpen);
     const closeMobile = () => {
         setIsMobileOpen(false);
         setSectorsOpen(false);
     };
+
+    // Cerrar al cambiar de ruta
+    useEffect(() => {
+        setSectorsOpen(false);
+        setIsMobileOpen(false);
+    }, [pathname]);
+
+    // Cerrar al hacer click fuera
+    useEffect(() => {
+        if (!sectorsOpen) return;
+        const handleClickOutside = (e: MouseEvent) => {
+            if (sectorsRef.current && !sectorsRef.current.contains(e.target as Node)) {
+                setSectorsOpen(false);
+            }
+        };
+        const handleEsc = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setSectorsOpen(false);
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("keydown", handleEsc);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("keydown", handleEsc);
+        };
+    }, [sectorsOpen]);
 
     return (
         <header className="header" style={{
@@ -76,46 +104,56 @@ export default function Header() {
                         </Link>
                     ))}
 
-                    {/* Sectores dropdown */}
-                    <div
-                        onMouseEnter={() => setSectorsOpen(true)}
-                        onMouseLeave={() => setSectorsOpen(false)}
-                        style={{ position: 'relative' }}
-                    >
+                    {/* Sectores dropdown - click + click-outside + reset on route change */}
+                    <div ref={sectorsRef} style={{ position: 'relative' }}>
                         <button
-                            onClick={() => setSectorsOpen(!sectorsOpen)}
+                            type="button"
+                            onClick={(e) => { e.stopPropagation(); setSectorsOpen((v) => !v); }}
+                            aria-expanded={sectorsOpen}
+                            aria-haspopup="menu"
                             style={{
                                 background: 'none',
                                 border: 'none',
                                 color: 'rgba(255,255,255,0.8)',
                                 cursor: 'pointer',
                                 font: 'inherit',
-                                padding: 0,
+                                padding: '0.25rem 0',
                                 display: 'inline-flex',
                                 alignItems: 'center',
                                 gap: '0.3rem',
                             }}
                         >
-                            Sectores <i className="fa-solid fa-chevron-down" style={{ fontSize: '0.7rem' }}></i>
+                            Sectores
+                            <i
+                                className="fa-solid fa-chevron-down"
+                                style={{
+                                    fontSize: '0.7rem',
+                                    transition: 'transform 0.2s ease',
+                                    transform: sectorsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                                }}
+                            />
                         </button>
                         {sectorsOpen && (
-                            <div style={{
-                                position: 'absolute',
-                                top: '100%',
-                                left: 0,
-                                background: '#111827',
-                                border: '1px solid rgba(255,255,255,0.1)',
-                                borderRadius: '12px',
-                                padding: '0.5rem',
-                                minWidth: '220px',
-                                boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
-                                zIndex: 1001,
-                                marginTop: '0.5rem',
-                            }}>
+                            <div
+                                role="menu"
+                                style={{
+                                    position: 'absolute',
+                                    top: 'calc(100% + 0.25rem)',
+                                    left: 0,
+                                    background: '#111827',
+                                    border: '1px solid rgba(255,255,255,0.1)',
+                                    borderRadius: '12px',
+                                    padding: '0.5rem',
+                                    minWidth: '220px',
+                                    boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
+                                    zIndex: 1001,
+                                }}
+                            >
                                 {sectorLinks.map((s) => (
                                     <Link
                                         key={s.href}
                                         href={s.href}
+                                        role="menuitem"
                                         onClick={closeMobile}
                                         style={{
                                             display: 'block',
