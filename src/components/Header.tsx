@@ -105,23 +105,13 @@ export default function Header() {
                     ))}
 
                     {/* Sectores dropdown - click + click-outside + reset on route change */}
-                    <div ref={sectorsRef} style={{ position: 'relative' }}>
+                    <div ref={sectorsRef} className="sectors-dropdown">
                         <button
                             type="button"
                             onClick={(e) => { e.stopPropagation(); setSectorsOpen((v) => !v); }}
                             aria-expanded={sectorsOpen}
                             aria-haspopup="menu"
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                color: 'rgba(255,255,255,0.8)',
-                                cursor: 'pointer',
-                                font: 'inherit',
-                                padding: '0.25rem 0',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '0.3rem',
-                            }}
+                            className="sectors-dropdown-trigger"
                         >
                             Sectores
                             <i
@@ -134,35 +124,14 @@ export default function Header() {
                             />
                         </button>
                         {sectorsOpen && (
-                            <div
-                                role="menu"
-                                style={{
-                                    position: 'absolute',
-                                    top: 'calc(100% + 0.25rem)',
-                                    left: 0,
-                                    background: '#111827',
-                                    border: '1px solid rgba(255,255,255,0.1)',
-                                    borderRadius: '12px',
-                                    padding: '0.5rem',
-                                    minWidth: '220px',
-                                    boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
-                                    zIndex: 1001,
-                                }}
-                            >
+                            <div role="menu" className="sectors-dropdown-menu">
                                 {sectorLinks.map((s) => (
                                     <Link
                                         key={s.href}
                                         href={s.href}
                                         role="menuitem"
                                         onClick={closeMobile}
-                                        style={{
-                                            display: 'block',
-                                            padding: '0.6rem 0.9rem',
-                                            color: 'rgba(255,255,255,0.85)',
-                                            borderRadius: '8px',
-                                            textDecoration: 'none',
-                                            fontSize: '0.92rem',
-                                        }}
+                                        className="sectors-dropdown-item"
                                     >
                                         {s.label}
                                     </Link>

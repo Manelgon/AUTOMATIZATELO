@@ -241,6 +241,78 @@ img {
   animation-delay: 0.5s;
 }
 
+/* Sectores dropdown — desktop (absolute), mobile (inline accordion) */
+.sectors-dropdown {
+  position: relative;
+}
+
+.sectors-dropdown-trigger {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.25rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.sectors-dropdown-trigger:hover {
+  color: var(--color-primary);
+}
+
+.sectors-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 220px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 1001;
+}
+
+.sectors-dropdown-item {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.sectors-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-primary);
+}
+
+/* En mobile: dropdown inline (acordeón) en vez de absolute */
+@media (max-width: 768px) {
+  .sectors-dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sectors-dropdown-menu {
+    position: static;
+    margin-top: 0.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sectors-dropdown-item {
+    text-align: center;
+  }
+}
+
 /* Glassmorphism utility - más sutil, 2026 */
 .glass {
   background: var(--color-glass);
