@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CookiePreferencesButton from "@/components/CookiePreferencesButton";
 
 export default function PoliticaCookies() {
     return (
@@ -11,8 +12,11 @@ export default function PoliticaCookies() {
                     <p>
                         <strong>Información sobre el uso de cookies en nuestro sitio web</strong>
                         <br />
-                        Última actualización: Enero 2025
+                        Última actualización: Mayo 2026
                     </p>
+                    <div style={{ marginTop: "1.5rem" }}>
+                        <CookiePreferencesButton />
+                    </div>
                 </div>
 
                 <section className="legal-section">
