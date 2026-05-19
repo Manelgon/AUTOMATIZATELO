@@ -11,40 +11,48 @@ export default function AvisoLegal() {
                     <p>
                         <strong>Información legal y condiciones de uso del sitio web</strong>
                         <br />
-                        Última actualización: Enero 2025
+                        Última actualización: Mayo 2026
                     </p>
                 </div>
 
                 <section className="legal-section">
                     <h2>1. Información legal y aceptación</h2>
                     <p className="mb-4">
-                        En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico, a continuación se exponen los datos identificativos de la empresa:
+                        En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), a continuación se exponen los datos identificativos del titular de este sitio web:
                     </p>
 
                     <div className="legal-data-list">
                         <div className="data-item">
-                            <span className="label">Denominación Social:</span>
+                            <span className="label">Titular:</span>
+                            <span className="value">Manuel Méndez González</span>
+                        </div>
+                        <div className="data-item">
+                            <span className="label">Nombre comercial:</span>
                             <span className="value">Automatizatelo</span>
                         </div>
                         <div className="data-item">
-                            <span className="label">C.I.F.:</span>
-                            <span className="value">[Por completar]</span>
+                            <span className="label">N.I.F.:</span>
+                            <span className="value">47839053L</span>
                         </div>
                         <div className="data-item">
-                            <span className="label">Domicilio Social:</span>
-                            <span className="value">Barcelona, España</span>
+                            <span className="label">Actividad:</span>
+                            <span className="value">Servicios profesionales de automatización de procesos con IA (persona física en régimen de autónomo)</span>
+                        </div>
+                        <div className="data-item">
+                            <span className="label">Domicilio profesional:</span>
+                            <span className="value">C/ Àngel Guimerà 3, 08812 Les Roquetes (Sant Pere de Ribes), Barcelona, España</span>
                         </div>
                         <div className="data-item">
                             <span className="label">Teléfono:</span>
-                            <span className="value">+34 694 26 48 40</span>
+                            <span className="value">+34 678 399 182</span>
                         </div>
                         <div className="data-item">
-                            <span className="label">Email:</span>
-                            <span className="value">info@automatizalo.com</span>
+                            <span className="label">Email de contacto:</span>
+                            <span className="value">manelgon92@gmail.com</span>
                         </div>
                         <div className="data-item">
-                            <span className="label">Datos registrales:</span>
-                            <span className="value">[Por completar]</span>
+                            <span className="label">Sitio web:</span>
+                            <span className="value">https://automatizatelo.com</span>
                         </div>
                     </div>
 
