@@ -35,7 +35,7 @@ export default function Benefits() {
     };
 
     return (
-        <section id="benefits" style={{ padding: '6rem 0' }}>
+        <section id="benefits" style={{ padding: '4.5rem 0' }}>
             <div className="container">
                 <motion.div
                     initial="hidden"
@@ -62,7 +62,7 @@ export default function Benefits() {
                         Lo que consiguen nuestros clientes
                     </h2>
                     <p className="section-subtitle">
-                        La automatización no es solo tecnología: es productividad y rentabilidad.
+                        Más tiempo, menos errores y mejores decisiones — sin contratar a nadie más.
                     </p>
                 </motion.div>
 

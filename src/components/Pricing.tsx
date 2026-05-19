@@ -58,7 +58,7 @@ export default function Pricing() {
     };
 
     return (
-        <section id="model" style={{ padding: '6rem 0' }}>
+        <section id="model" style={{ padding: '4.5rem 0' }}>
             <div className="container">
                 <motion.div
                     initial="hidden"
@@ -82,7 +82,7 @@ export default function Pricing() {
                         Servicios
                     </span>
                     <h2 className="section-title" style={{ marginBottom: '0.75rem' }}>
-                        Soluciones adaptadas a tu negocio
+                        Precio cerrado. Plazo cerrado. Sin permanencia.
                     </h2>
                     <p className="section-subtitle">
                         Desde una automatización puntual hasta un sistema completo para toda la empresa.
@@ -196,6 +196,34 @@ export default function Pricing() {
                         </motion.div>
                     ))}
                 </div>
+
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={reveal}
+                    style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        gap: '1.25rem 2rem',
+                        marginTop: '2.5rem',
+                        color: 'var(--color-text-muted)',
+                        fontSize: '0.92rem',
+                    }}
+                >
+                    {[
+                        'Sin permanencia',
+                        'Pago por hitos',
+                        'Código y datos tuyos',
+                        'Soporte humano en español',
+                    ].map((g) => (
+                        <span key={g} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                            <i className="fa-solid fa-check" style={{ color: 'var(--color-primary)', fontSize: '0.85rem' }}></i>
+                            {g}
+                        </span>
+                    ))}
+                </motion.div>
 
                 <motion.p
                     initial="hidden"

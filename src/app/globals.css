@@ -40,8 +40,8 @@
   --color-corporate-dark: #111827;
   --color-border: #e5e7eb;
 
-  --color-glass: rgba(255, 255, 255, 0.7);
-  --color-glass-border: rgba(229, 231, 235, 0.5);
+  --color-glass: rgba(255, 255, 255, 0.55);
+  --color-glass-border: rgba(0, 0, 0, 0.04);
   --border-color: #e5e7eb;
 
   /* Spacing */
@@ -241,13 +241,13 @@ img {
   animation-delay: 0.5s;
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism utility - más sutil, 2026 */
 .glass {
   background: var(--color-glass);
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--color-glass-border);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
   border-radius: var(--radius-md);
 }
 
@@ -275,11 +275,12 @@ img {
 
 .btn {
   display: inline-block;
-  padding: 12px 32px;
+  padding: 12px 28px;
   border-radius: 50px;
   font-weight: 600;
+  letter-spacing: -0.01em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   border: none;
 }
 
@@ -334,24 +335,22 @@ img {
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 800;
-  line-height: 1.1;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin-bottom: var(--spacing-sm);
-  /* Gradient with Orange */
-  background: linear-gradient(to right, var(--color-text-main), var(--color-primary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-text-main);
   text-align: center;
 }
 
 .section-subtitle {
   text-align: center;
   color: var(--color-text-muted);
-  max-width: 850px;
-  margin: 0 auto var(--spacing-lg);
-  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto var(--spacing-md);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -435,21 +434,20 @@ img {
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 8vw, 4rem);
+  font-size: clamp(2rem, 6vw, 3.25rem);
   line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 800;
   margin-bottom: var(--spacing-md);
-  /* Orange Gradient Text */
-  background: linear-gradient(135deg, var(--color-text-main) 30%, var(--color-primary) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-text-main);
 }
 
 .hero p {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--color-text-muted);
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto var(--spacing-md);
+  line-height: 1.6;
 }
 
 .hero-actions {
@@ -568,26 +566,23 @@ section {
 .card {
   background: white;
   border: 1px solid var(--border-color);
-  padding: 2rem;
+  padding: 1.75rem;
   border-radius: var(--radius-md);
-  transition: all 0.4s ease;
-  /* More fluid transition */
-  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  /* Lift */
-  border-color: var(--color-primary);
-  box-shadow: 0 15px 35px rgba(249, 115, 22, 0.15), 0 0 15px rgba(249, 115, 22, 0.1);
-  /* Orange glow shadow */
+  transform: translateY(-3px);
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* Hover dynamic effects */
+/* Hover dynamic effects más sutiles */
 .card:hover .card-icon {
-  transform: scale(1.15) rotate(5deg);
+  transform: scale(1.05);
   color: var(--color-primary-glow);
 }
 

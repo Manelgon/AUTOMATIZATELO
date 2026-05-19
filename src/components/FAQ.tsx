@@ -6,7 +6,8 @@ import styles from "./FAQ.module.css";
 const faqs = [
     {
         question: "¿Qué es la automatización de procesos?",
-        answer: "La automatización consiste en crear sistemas que realizan tareas de forma automática. Esto puede incluir desde enviar respuestas a clientes hasta generar documentos o conectar diferentes herramientas de tu empresa. El objetivo es reducir tareas manuales, evitar errores y ahorrar tiempo."
+        answer: "La automatización consiste en crear sistemas que realizan tareas de forma automática. Esto puede incluir desde enviar respuestas a clientes hasta generar documentos o conectar diferentes herramientas de tu empresa. El objetivo es reducir tareas manuales, evitar errores y ahorrar tiempo.",
+        plain: "La automatización consiste en crear sistemas que realizan tareas de forma automática. Esto puede incluir desde enviar respuestas a clientes hasta generar documentos o conectar diferentes herramientas de tu empresa. El objetivo es reducir tareas manuales, evitar errores y ahorrar tiempo."
     },
     {
         question: "¿Qué tipo de empresas pueden beneficiarse?",
@@ -23,7 +24,8 @@ const faqs = [
                 </ul>
                 <p style={{ marginTop: '0.5rem' }}>Cualquier empresa que tenga procesos repetitivos puede beneficiarse.</p>
             </>
-        )
+        ),
+        plain: "La automatización es útil para prácticamente cualquier negocio. Trabajamos especialmente con PYMEs, negocios locales, empresas de servicios, e-commerce, academias, clínicas, hoteles y restaurantes. Cualquier empresa con procesos repetitivos puede beneficiarse."
     },
     {
         question: "¿Qué tipo de procesos se pueden automatizar?",
@@ -40,11 +42,13 @@ const faqs = [
                 </ul>
                 <p style={{ marginTop: '0.5rem' }}>Cada empresa tiene procesos diferentes, por eso diseñamos soluciones a medida.</p>
             </>
-        )
+        ),
+        plain: "Se pueden automatizar la captación de clientes desde formularios, seguimiento automático de leads, respuestas automáticas a consultas, generación de facturas o documentos, envío de notificaciones internas y reportes automáticos semanales. Cada empresa tiene procesos diferentes, por eso diseñamos soluciones a medida."
     },
     {
         question: "¿Necesito conocimientos técnicos?",
-        answer: "No. Nosotros nos encargamos de todo el diseño, implementación y configuración. Tú solo tendrás que utilizar el sistema una vez esté funcionando."
+        answer: "No. Nosotros nos encargamos de todo el diseño, implementación y configuración. Tú solo tendrás que utilizar el sistema una vez esté funcionando.",
+        plain: "No. Nosotros nos encargamos de todo el diseño, implementación y configuración. Tú solo tendrás que utilizar el sistema una vez esté funcionando."
     },
     {
         question: "¿Cuánto cuesta automatizar mi negocio?",
@@ -58,11 +62,13 @@ const faqs = [
                 </ul>
                 <p style={{ marginTop: '0.5rem' }}>Lo mejor es analizar tu caso y ver qué automatizaciones pueden aportar más valor.</p>
             </>
-        )
+        ),
+        plain: "Automatización Inicio desde 500€, Automatización Negocio desde 2.000€ y Automatización Completa desde 8.000€. Lo mejor es analizar tu caso y ver qué automatizaciones pueden aportar más valor."
     },
     {
         question: "¿Cuánto tiempo tarda una automatización?",
-        answer: "Depende del proyecto. Algunas automatizaciones pueden estar listas en pocos días, mientras que sistemas más complejos pueden requerir más tiempo. Siempre informamos del plazo antes de empezar."
+        answer: "Depende del proyecto. Algunas automatizaciones pueden estar listas en pocos días, mientras que sistemas más complejos pueden requerir más tiempo. Siempre informamos del plazo antes de empezar.",
+        plain: "Depende del proyecto. Algunas automatizaciones pueden estar listas en pocos días, mientras que sistemas más complejos pueden requerir más tiempo. Siempre informamos del plazo antes de empezar."
     },
     {
         question: "¿Las automatizaciones funcionan con mis herramientas actuales?",
@@ -79,31 +85,55 @@ const faqs = [
                 </ul>
                 <p style={{ marginTop: '0.5rem' }}>Si ya utilizas herramientas digitales, normalmente podemos conectarlas.</p>
             </>
-        )
+        ),
+        plain: "En la mayoría de casos sí. Integramos herramientas como CRM, bases de datos, email marketing, formularios web, WhatsApp, Google Sheets y plataformas de pago. Si ya utilizas herramientas digitales, normalmente podemos conectarlas."
     },
     {
         question: "¿Qué pasa si algo deja de funcionar?",
-        answer: "Ofrecemos soporte y mantenimiento para asegurarnos de que las automatizaciones sigan funcionando correctamente. Además, monitorizamos los sistemas para detectar posibles problemas antes de que te afecten."
+        answer: "Ofrecemos soporte y mantenimiento para asegurarnos de que las automatizaciones sigan funcionando correctamente. Además, monitorizamos los sistemas para detectar posibles problemas antes de que te afecten.",
+        plain: "Ofrecemos soporte y mantenimiento para asegurarnos de que las automatizaciones sigan funcionando correctamente. Además, monitorizamos los sistemas para detectar posibles problemas antes de que te afecten."
     },
     {
         question: "¿La automatización sustituye a las personas?",
-        answer: "No. La automatización elimina tareas repetitivas para que tu equipo pueda centrarse en tareas más importantes como ventas, atención al cliente o crecimiento del negocio."
+        answer: "No. La automatización elimina tareas repetitivas para que tu equipo pueda centrarse en tareas más importantes como ventas, atención al cliente o crecimiento del negocio.",
+        plain: "No. La automatización elimina tareas repetitivas para que tu equipo pueda centrarse en tareas más importantes como ventas, atención al cliente o crecimiento del negocio."
     },
     {
         question: "¿Cómo puedo empezar?",
-        answer: "El primer paso es analizar cómo funciona tu negocio actualmente. A partir de ahí identificamos qué procesos se pueden automatizar y diseñamos una solución adaptada a tu empresa. Puedes solicitar un análisis gratuito sin compromiso."
+        answer: "El primer paso es analizar cómo funciona tu negocio actualmente. A partir de ahí identificamos qué procesos se pueden automatizar y diseñamos una solución adaptada a tu empresa. Puedes solicitar un análisis gratuito sin compromiso.",
+        plain: "El primer paso es analizar cómo funciona tu negocio actualmente. A partir de ahí identificamos qué procesos se pueden automatizar y diseñamos una solución adaptada a tu empresa. Puedes solicitar un análisis gratuito sin compromiso."
     },
 ];
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((f) => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.plain
+        }
+    }))
+};
+
 export default function FAQ() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [showAll, setShowAll] = useState(false);
 
     const toggleFAQ = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
+    const visibleFaqs = showAll ? faqs : faqs.slice(0, 5);
+
     return (
         <section className={styles.section} id="faq">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h2 className={styles.title}>
@@ -115,7 +145,7 @@ export default function FAQ() {
                 </div>
 
                 <div className={styles.layout}>
-                    {faqs.map((faq, index) => (
+                    {visibleFaqs.map((faq, index) => (
                         <FAQItem
                             key={index}
                             faq={faq}
@@ -125,6 +155,26 @@ export default function FAQ() {
                         />
                     ))}
                 </div>
+
+                {!showAll && faqs.length > 5 && (
+                    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                        <button
+                            onClick={() => setShowAll(true)}
+                            style={{
+                                background: 'transparent',
+                                border: '1px solid var(--color-primary)',
+                                color: 'var(--color-primary)',
+                                padding: '0.75rem 1.75rem',
+                                borderRadius: '50px',
+                                fontWeight: 600,
+                                cursor: 'pointer',
+                                fontSize: '0.95rem',
+                            }}
+                        >
+                            Ver más preguntas ({faqs.length - 5})
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );

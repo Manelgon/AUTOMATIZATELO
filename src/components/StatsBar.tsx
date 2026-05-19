@@ -58,7 +58,7 @@ export default function StatsBar() {
                     <div style={{ color: 'var(--color-primary)', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
                         <Counter target={55} suffix="%" />
                     </div>
-                    <p style={{ color: 'var(--color-text-main)', fontWeight: 500 }}>de PYMEs ahorran +10h/semana con nosotros.</p>
+                    <p style={{ color: 'var(--color-text-main)', fontWeight: 500 }}>de PYMEs ahorran +10h/semana al automatizar procesos.</p>
                 </div>
                 <div className="stat-item" style={{ textAlign: 'center' }}>
                     <div style={{ color: 'var(--color-primary)', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>

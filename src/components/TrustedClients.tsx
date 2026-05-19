@@ -16,6 +16,12 @@ const clients = [
         logo: '/clients/afcademia.png',
         url: 'https://afcademia.com/',
         scale: 1.5
+    },
+    {
+        name: 'Henkoaching',
+        logo: '/clients/henkoaching.png',
+        url: 'https://henkoaching.com/',
+        scale: 1
     }
 ];
 

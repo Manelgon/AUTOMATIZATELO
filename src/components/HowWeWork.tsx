@@ -27,6 +27,7 @@ export default function HowWeWork() {
         {
             title: "Analizamos",
             icon: "fa-solid fa-magnifying-glass",
+            plain: "Auditamos tu operativa actual para identificar cuellos de botella, tareas repetitivas y fugas de tiempo. Entendemos tu negocio antes de tocar una sola línea de código.",
             content: (
                 <>
                     No empezamos a ciegas. <strong style={{ color: 'var(--color-primary)' }}>Auditamos tu operativa actual</strong> para identificar cuellos de botella, tareas repetitivas y fugas de tiempo. <strong style={{ color: 'var(--color-primary)' }}>Entendemos tu negocio</strong> antes de tocar una sola línea de código.
@@ -36,6 +37,7 @@ export default function HowWeWork() {
         {
             title: "Diseñamos",
             icon: "fa-solid fa-pen-ruler",
+            plain: "Creamos el plano de tu solución. Definimos qué herramientas usaremos y diseñamos la arquitectura de datos perfecta para que tu sistema sea escalable y seguro desde el primer día.",
             content: (
                 <>
                     Creamos el <strong style={{ color: 'var(--color-primary)' }}>plano de tu solución</strong>. Definimos qué herramientas usaremos y diseñamos la <strong style={{ color: 'var(--color-primary)' }}>arquitectura de datos perfecta</strong> para que tu sistema sea <strong style={{ color: 'var(--color-primary)' }}>escalable y seguro</strong> desde el primer día.
@@ -45,6 +47,7 @@ export default function HowWeWork() {
         {
             title: "Automatizamos",
             icon: "fa-solid fa-robot",
+            plain: "Desarrollamos el proyecto, conectamos tus aplicaciones y configuramos los robots de software. Construimos el sistema completo y realizamos pruebas de estrés para asegurar cero errores.",
             content: (
                 <>
                     Manos a la obra. <strong style={{ color: 'var(--color-primary)' }}>Desarrollamos el proyecto</strong>, conectamos tus aplicaciones y configuramos los 'robots' de software. Construimos el sistema completo y realizamos <strong style={{ color: 'var(--color-primary)' }}>pruebas de estrés</strong> para asegurar <strong style={{ color: 'var(--color-primary)' }}>cero errores</strong>.
@@ -54,6 +57,7 @@ export default function HowWeWork() {
         {
             title: "Medimos",
             icon: "fa-solid fa-chart-pie",
+            plain: "Monitorizamos el rendimiento de la solución para confirmarte el ahorro de tiempo y el retorno de inversión (ROI) real conseguido.",
             content: (
                 <>
                     Lo que no se mide, no se mejora. Monitorizamos el rendimiento de la solución para confirmarte el <strong style={{ color: 'var(--color-primary)' }}>ahorro de tiempo</strong> y el <strong style={{ color: 'var(--color-primary)' }}>retorno de inversión (ROI)</strong> real conseguido.
@@ -63,6 +67,7 @@ export default function HowWeWork() {
         {
             title: "Optimizamos",
             icon: "fa-solid fa-sliders",
+            plain: "Realizamos ajustes continuos basados en datos reales para que tu sistema sea cada vez más rápido, más inteligente y más rentable.",
             content: (
                 <>
                     Tu negocio evoluciona, y tu tecnología también. Realizamos <strong style={{ color: 'var(--color-primary)' }}>ajustes continuos</strong> basados en datos reales para que tu sistema sea cada vez <strong style={{ color: 'var(--color-primary)' }}>más rápido, más inteligente y más rentable</strong>.
@@ -71,6 +76,20 @@ export default function HowWeWork() {
         }
     ];
 
+    const howToSchema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Cómo automatizamos tu negocio con IA",
+        "description": "5 pasos para que tu negocio funcione solo. Sin sorpresas, sin sobrecostes, sin jerga técnica.",
+        "totalTime": "P14D",
+        "step": steps.map((s, i) => ({
+            "@type": "HowToStep",
+            "position": i + 1,
+            "name": s.title,
+            "text": s.plain
+        }))
+    };
+
     const item = {
         hidden: { opacity: 0, y: 20 },
         show: { opacity: 1, y: 0 },
@@ -78,6 +97,10 @@ export default function HowWeWork() {
 
     return (
         <section id="how-we-work" className="how-we-work">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+            />
             <div className="container">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -94,7 +117,7 @@ export default function HowWeWork() {
                     transition={{ delay: 0.1 }}
                     className="section-subtitle"
                 >
-                    Análisis, desarrollo y optimización continua. Automatizar sin estrategia es como poner un robot a correr sin mapa.
+                    5 pasos para que tu negocio funcione solo. Sin sorpresas, sin sobrecostes, sin jerga técnica.
                 </motion.p>
 
                 <div className="flow-container">
@@ -201,7 +224,7 @@ export default function HowWeWork() {
                     }}
                 >
                     <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '1.5rem' }}>
-                        Descubre qué procesos puedes automatizar en tu empresa
+                        Te decimos qué automatizar en tu empresa — en 30 minutos, gratis
                     </h3>
                     <a
                         href="#contact"

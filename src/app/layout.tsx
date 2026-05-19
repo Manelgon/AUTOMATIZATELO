@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import ClientChatWrapper from "@/components/ClientChatWrapper";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -13,11 +13,10 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Automatización de Procesos con IA para Pequeñas Empresas | Chatbots y CRM",
+    default: "Automatización IA Barcelona | +20h/semana ahorradas | Automatizatelo",
     template: "%s | Automatizatelo"
   },
-  description: "Automatización de procesos con IA para pequeñas empresas. Implementamos chatbots, CRM automation y marketing automatizado. Ahorra hasta 20h/semana. Consultoría gratis.",
-  keywords: ["automatización de procesos", "IA Barcelona", "inteligencia artificial empresas", "consultoría digital", "n8n expertos", "chatbots IA", "digitalización PYMEs", "Barcelona"],
+  description: "Automatización con IA para PYMEs en Barcelona. Chatbots, CRM y flujos n8n que recuperan +20h/semana. Precio cerrado, sin permanencia. Auditoría gratis en 30 min.",
   authors: [{ name: "Automatizatelo Team" }],
   creator: "Automatizatelo",
   publisher: "Automatizatelo",
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
     canonical: "https://automatizatelo.com/",
     languages: {
       "es-ES": "https://automatizatelo.com/",
-      "es-MX": "https://automatizatelo.com/mx/",
     },
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION && {
@@ -81,7 +79,7 @@ const jsonLd = {
   "image": "https://automatizatelo.com/og-image.jpg",
   "@id": "https://automatizatelo.com",
   "url": "https://automatizatelo.com",
-  "telephone": "+34694264840",
+  "telephone": "+34678399182",
   "email": "info@automatizatelo.com",
   "address": {
     "@type": "PostalAddress",
@@ -145,7 +143,7 @@ export default function RootLayout({
             gtag('config', 'AW-18013693770');
           `}
         </Script>
-        <ClientChatWrapper />
+        <WhatsAppFloat />
       </body>
     </html>
   );

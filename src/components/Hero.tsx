@@ -7,12 +7,6 @@ export default function Hero() {
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
     };
 
-    const benefits = [
-        "Reduce trabajo manual",
-        "Responde a clientes 24/7",
-        "Toma decisiones con datos reales",
-    ];
-
     return (
         <section className="hero" style={{
             background: 'linear-gradient(-45deg, #ffffff, #f3f4f6, #f9731610, #ffffff)',
@@ -38,7 +32,7 @@ export default function Hero() {
                     }}
                 />
 
-                <motion.h2
+                <motion.p
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}
@@ -52,8 +46,8 @@ export default function Hero() {
                         textTransform: 'uppercase',
                     }}
                 >
-                    Consultoría de automatización e inteligencia artificial para empresas en Barcelona
-                </motion.h2>
+                    Automatización con IA para PYMEs en Barcelona
+                </motion.p>
 
                 <motion.h1
                     initial="hidden"
@@ -62,8 +56,8 @@ export default function Hero() {
                     transition={{ delay: 0.2 }}
                     style={{ color: 'var(--color-text-main)' }}
                 >
-                    Automatización de Procesos con IA <br />
-                    <span className="premium-gradient">Chatbots y CRM para Pequeñas Empresas</span>
+                    Recupera <span className="premium-gradient">+20 horas a la semana</span><br />
+                    automatizando tu negocio con IA
                 </motion.h1>
 
                 <motion.p
@@ -73,37 +67,9 @@ export default function Hero() {
                     transition={{ delay: 0.3 }}
                     style={{ fontSize: '1.3rem', maxWidth: '820px', margin: '0 auto 2rem', color: 'var(--color-text-muted)' }}
                 >
-                    Ayudamos a PYMEs en Barcelona y negocios digitales a automatizar tareas repetitivas,<br />
-                    reducir errores y conectar sus herramientas para funcionar de forma más eficiente.
+                    Chatbots, CRM y flujos automatizados que dejan de hacerte perder clientes por emails sin contestar,
+                    tareas manuales y procesos rotos. Auditoría gratis en 30 minutos.
                 </motion.p>
-
-                <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    variants={fadeInUp}
-                    transition={{ delay: 0.4 }}
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        gap: '1.5rem',
-                        flexWrap: 'wrap',
-                        marginBottom: '2.5rem'
-                    }}
-                >
-                    {benefits.map((b) => (
-                        <span key={b} style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem',
-                            color: 'var(--color-text-main)',
-                            fontWeight: 500,
-                            fontSize: '0.95rem',
-                        }}>
-                            <i className="fa-solid fa-check" style={{ color: 'var(--color-primary)', fontSize: '0.85rem' }}></i>
-                            {b}
-                        </span>
-                    ))}
-                </motion.div>
 
                 <motion.div
                     initial="hidden"
@@ -113,10 +79,17 @@ export default function Hero() {
                 >
                     <div className="hero-actions" style={{ gap: '1.5rem' }}>
                         <a href="#contact" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 2.5rem', boxShadow: 'var(--shadow-glow)' }}>
-                            Consulta Gratis
+                            Auditoría Gratis
                         </a>
-                        <a href="#que-automatizamos" className="btn glass" style={{ color: 'var(--color-text-main)', padding: '1rem 2.5rem', border: '1px solid var(--color-border)' }}>
-                            Ver Servicios
+                        <a
+                            href="https://wa.me/34678399182?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20automatizaci%C3%B3n%20con%20IA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn glass"
+                            style={{ color: 'var(--color-text-main)', padding: '1rem 2.5rem', border: '1px solid var(--color-border)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+                        >
+                            <i className="fa-brands fa-whatsapp" style={{ color: '#25D366' }}></i>
+                            Hablar por WhatsApp
                         </a>
                     </div>
                 </motion.div>

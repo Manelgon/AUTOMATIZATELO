@@ -2,121 +2,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { countryCodes } from "../data/countryCodes";
-import { supabase } from "@/lib/supabase";
-
-interface CustomDropdownProps {
-    label: string;
-    name: string;
-    value: string;
-    onChange: (name: string, value: string) => void;
-    options: { value: string; label: string }[];
-    placeholder: string;
-    required?: boolean;
-}
-
-const CustomDropdown = ({ label, name, value, onChange, options, placeholder, required }: CustomDropdownProps) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (ref.current && !ref.current.contains(event.target as Node)) {
-                setIsOpen(false);
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
-    const selectedLabel = options.find(opt => opt.value === value)?.label;
-
-    return (
-        <div ref={ref} style={{ position: 'relative' }}>
-            <label htmlFor={name} style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>
-                {label.endsWith(' *') ? (
-                    <>{label.slice(0, -2)} <span style={{ color: 'var(--color-primary)' }}>*</span></>
-                ) : label}
-            </label>
-            <div
-                onClick={() => setIsOpen(!isOpen)}
-                className="glass"
-                style={{
-                    padding: '12px',
-                    background: 'var(--color-bg-secondary)',
-                    color: value ? 'var(--color-text-main)' : 'var(--color-text-muted)',
-                    border: '1px solid var(--color-border)',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    minHeight: '50px'
-                }}
-            >
-                <span>{selectedLabel || placeholder}</span>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', transform: isOpen ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}>▼</span>
-            </div>
-
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="glass"
-                        style={{
-                            position: 'absolute',
-                            top: 'calc(100% + 10px)',
-                            left: 0,
-                            right: 0,
-                            maxHeight: '250px',
-                            overflowY: 'auto',
-                            backgroundColor: 'var(--color-bg-secondary)',
-                            zIndex: 1000,
-                            boxShadow: 'var(--shadow-card)',
-                            border: '1px solid var(--color-primary)',
-                            borderRadius: 'var(--radius-md)',
-                            padding: '5px 0'
-                        }}
-                    >
-                        <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-                            {options.map((option) => (
-                                <li
-                                    key={option.value}
-                                    onClick={() => {
-                                        onChange(name, option.value);
-                                        setIsOpen(false);
-                                    }}
-                                    style={{
-                                        padding: '12px',
-                                        cursor: 'pointer',
-                                        borderBottom: '1px solid var(--color-glass-border)',
-                                        color: 'var(--color-text-main)',
-                                        background: value === option.value ? 'rgba(249, 115, 22, 0.1)' : 'transparent',
-                                        transition: 'background 0.2s'
-                                    }}
-                                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249, 115, 22, 0.15)'; e.currentTarget.style.color = 'var(--color-primary)'; }}
-                                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = value === option.value ? 'rgba(249, 115, 22, 0.1)' : 'transparent'; e.currentTarget.style.color = 'var(--color-text-main)'; }}
-                                >
-                                    {option.label}
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-            {/* Hidden native input for validaton if needed, though we handle form data manually */}
-            <input
-                type="text"
-                name={name}
-                value={value}
-                required={required}
-                style={{ position: 'absolute', opacity: 0, height: 0, padding: 0, margin: 0, border: 0 }}
-                onChange={() => { }} // dummy
-                tabIndex={-1}
-            />
-        </div>
-    );
-};
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -134,74 +19,11 @@ export default function ContactForm() {
         acepto: false,
     });
 
-    const sectorOptions = [
-        { value: 'logistica', label: 'Logística y Transporte' },
-        { value: 'retail', label: 'Retail y Comercio' },
-        { value: 'salud', label: 'Salud y Farmacia' },
-        { value: 'legal', label: 'Legal y Consultoría' },
-        { value: 'inmobiliaria', label: 'Inmobiliaria y Construcción' },
-        { value: 'educacion', label: 'Educación y Formación' },
-        { value: 'hosteleria', label: 'Hostelería y Restauración' },
-        { value: 'ecommerce', label: 'E-commerce y Marketplace' },
-        { value: 'fintech', label: 'Fintech y Seguros' },
-        { value: 'marketing', label: 'Marketing y Publicidad' },
-        { value: 'industria', label: 'Industria y Manufactura' },
-        { value: 'tecnologia', label: 'Tecnología y Software' },
-        { value: 'otro', label: 'Otro' },
-    ];
-
-    const tamanoOptions = [
-        { value: '1', label: 'Autónomo / Freelance (1 persona)' },
-        { value: '2-10', label: 'Microempresa (2 – 10 personas)' },
-        { value: '11-50', label: 'Pequeña empresa (11 – 50 personas)' },
-        { value: '51-200', label: 'Mediana empresa (51 – 200 personas)' },
-        { value: '200+', label: 'Gran empresa (200+ personas)' },
-    ];
     const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
     const [statusMessage, setStatusMessage] = useState("");
     const [isPhoneDropdownOpen, setIsPhoneDropdownOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-    const [serviceOptions, setServiceOptions] = useState<{ value: string; label: string }[]>([
-        { value: 'ecosistemas_digitales', label: 'Ecosistemas Digitales Integrales' },
-        { value: 'software_medida', label: 'Desarrollo de Software a Medida' },
-        { value: 'bi_dashboards', label: 'Paneles de Control & Business Intelligence' },
-        { value: 'web_design', label: 'Diseño y Desarrollo Web' },
-        { value: 'ecommerce', label: 'E-commerce & Plataformas de Venta' },
-        { value: 'process_autom', label: 'Automatización de Procesos' },
-        { value: 'integracion_sistemas', label: 'Integración de Sistemas (CRM · ERP · APIs)' },
-        { value: 'ia_chatbots', label: 'IA & Chatbots Conversacionales' },
-        { value: 'ocr_ia', label: 'Procesamiento Inteligente de Documentos (OCR + IA)' },
-        { value: 'otros', label: 'Otros' }
-    ]);
     const phoneDropdownRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const fetchServices = async () => {
-            try {
-                const { data, error } = await supabase
-                    .from('services')
-                    .select('name')
-                    .eq('is_active', true);
-
-                if (error) throw error;
-
-                if (data && data.length > 0) {
-                    const mappedOptions = data.map((item: any) => ({
-                        value: item.name.toLowerCase().replace(/[^a-z0-9]/g, '_'),
-                        label: item.name
-                    }));
-                    if (!mappedOptions.find(opt => opt.label.toLowerCase() === 'otros')) {
-                        mappedOptions.push({ value: 'otros', label: 'Otros' });
-                    }
-                    setServiceOptions(mappedOptions);
-                }
-            } catch (err) {
-                console.error("Error fetching services for dropdown:", err);
-            }
-        };
-
-        fetchServices();
-    }, []);
 
     // Close phone dropdown on outside click
     useEffect(() => {
@@ -223,13 +45,6 @@ export default function ContactForm() {
         setFormData(prev => ({ ...prev, prefijo: code }));
         setIsPhoneDropdownOpen(false);
         setSearchTerm("");
-    };
-
-    const handleCustomChange = (name: string, value: string) => {
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -339,6 +154,13 @@ export default function ContactForm() {
                 // Save submission time to localStorage
                 localStorage.setItem('last_submission_time', Date.now().toString());
 
+                if (typeof window !== "undefined" && (window as any).gtag) {
+                    (window as any).gtag("event", "generate_lead", {
+                        event_category: "form",
+                        event_label: "contact_form",
+                    });
+                }
+
                 setStatus("success");
                 setStatusMessage("¡Enviado con éxito! Te contactaremos muy pronto.");
                 setFormData({
@@ -396,7 +218,7 @@ export default function ContactForm() {
                     transition={{ delay: 0.1 }}
                     className="section-subtitle"
                 >
-                    Cuéntanos tu proyecto y te ayudaremos a automatizarlo.
+                    Auditoría gratuita de 30 minutos. Te decimos qué automatizar primero y qué retorno esperar — sin compromiso.
                 </motion.p>
 
                 <form id="form-automatizatelo" onSubmit={handleSubmit} className="glass" style={{ padding: '3rem', marginTop: '3rem', background: 'var(--color-bg)', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-card)' }}>
@@ -552,65 +374,6 @@ export default function ContactForm() {
                             />
                         </div>
 
-                        <div>
-                            <CustomDropdown
-                                label="Tipo de Cliente *"
-                                name="tipo_cliente"
-                                value={formData.tipo_cliente}
-                                onChange={handleCustomChange}
-                                placeholder="Selecciona una opción"
-                                required
-                                options={[
-                                    { value: 'empresa', label: 'Empresa' },
-                                    { value: 'particular', label: 'Particular' }
-                                ]}
-                            />
-                        </div>
-
-                        <div>
-                            <CustomDropdown
-                                label="Servicio de interés *"
-                                name="servicio"
-                                value={formData.servicio}
-                                onChange={handleCustomChange}
-                                placeholder="Selecciona un servicio"
-                                required
-                                options={serviceOptions}
-                            />
-                        </div>
-
-                        <div>
-                            <CustomDropdown
-                                label="Sector de tu empresa"
-                                name="sector"
-                                value={formData.sector}
-                                onChange={handleCustomChange}
-                                placeholder="Selecciona tu sector"
-                                options={sectorOptions}
-                            />
-                            {formData.sector === 'otro' && (
-                                <input
-                                    type="text"
-                                    name="sector_otro"
-                                    className="glass"
-                                    placeholder="Indica tu sector"
-                                    value={formData.sector_otro}
-                                    onChange={handleChange}
-                                    style={{ marginTop: '0.5rem', background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)', width: '100%' }}
-                                />
-                            )}
-                        </div>
-
-                        <div>
-                            <CustomDropdown
-                                label="Tamaño de empresa"
-                                name="tamano_empresa"
-                                value={formData.tamano_empresa}
-                                onChange={handleCustomChange}
-                                placeholder="Número aproximado de personas"
-                                options={tamanoOptions}
-                            />
-                        </div>
                     </div>
 
                     <div style={{ marginBottom: '1.5rem', marginTop: '1.5rem' }}>

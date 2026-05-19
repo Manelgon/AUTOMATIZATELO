@@ -74,7 +74,7 @@ export default function WhatWeAutomate() {
     return (
         <section id="que-automatizamos" style={{
             background: 'var(--color-bg-secondary)',
-            padding: '6rem 0',
+            padding: '4.5rem 0',
             borderTop: '1px solid var(--color-border)',
             borderBottom: '1px solid var(--color-border)',
         }}>

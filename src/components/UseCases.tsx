@@ -1,9 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const cases = [
     {
         sector: "Restauración",
+        href: "/automatizacion-restaurantes",
         icon: "fa-utensils",
         color: "#f97316",
         problem: "Gestión manual de reservas y pedidos.",
@@ -16,6 +18,7 @@ const cases = [
     },
     {
         sector: "Clínicas y Salud",
+        href: "/automatizacion-clinicas",
         icon: "fa-stethoscope",
         color: "#6366f1",
         problem: "Citas gestionadas a mano, recordatorios olvidados.",
@@ -28,6 +31,7 @@ const cases = [
     },
     {
         sector: "E-commerce",
+        href: "/automatizacion-ecommerce",
         icon: "fa-bag-shopping",
         color: "#0ea5e9",
         problem: "Seguimiento de pedidos manual y soporte repetitivo.",
@@ -40,6 +44,7 @@ const cases = [
     },
     {
         sector: "Empresas de Servicios",
+        href: "/automatizacion-empresas-servicios",
         icon: "fa-briefcase",
         color: "#22c55e",
         problem: "Captación de leads sin seguimiento sistemático.",
@@ -59,14 +64,14 @@ export default function UseCases() {
     };
 
     return (
-        <section id="casos" style={{ padding: '6rem 0' }}>
+        <section id="casos" style={{ padding: '4.5rem 0' }}>
             <div className="container">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={reveal}
-                    style={{ textAlign: 'center', marginBottom: '3rem' }}
+                    style={{ textAlign: 'center', marginBottom: '2.5rem' }}
                 >
                     <span style={{
                         display: 'inline-block',
@@ -95,6 +100,7 @@ export default function UseCases() {
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
                     gap: '1.5rem',
+                    alignItems: 'stretch',
                 }}>
                     {cases.map((c, i) => (
                         <motion.div
@@ -110,6 +116,9 @@ export default function UseCases() {
                                 borderTop: `3px solid ${c.color}`,
                                 borderRadius: 'var(--radius-lg)',
                                 overflow: 'hidden',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                height: '100%',
                             }}
                         >
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -146,7 +155,7 @@ export default function UseCases() {
                                 <strong style={{ color: 'var(--color-text-main)' }}>Solución:</strong> {c.solution}
                             </p>
 
-                            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                            <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: '1.25rem', flex: 1 }}>
                                 {c.results.map((r) => (
                                     <li key={r} style={{
                                         display: 'flex',
@@ -161,6 +170,20 @@ export default function UseCases() {
                                     </li>
                                 ))}
                             </ul>
+                            <Link href={c.href} style={{
+                                color: c.color,
+                                fontWeight: 600,
+                                fontSize: '0.9rem',
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.4rem',
+                                marginTop: 'auto',
+                                paddingTop: '0.75rem',
+                                borderTop: '1px solid var(--color-border)',
+                            }}>
+                                Ver soluciones para {c.sector.toLowerCase()} <i className="fa-solid fa-arrow-right" style={{ fontSize: '0.75rem' }}></i>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

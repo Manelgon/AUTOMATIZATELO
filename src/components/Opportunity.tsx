@@ -10,6 +10,13 @@ const painPoints = [
     { icon: "fa-user-clock", text: "Hacer seguimiento a clientes sin sistema" },
 ];
 
+const outcomes = [
+    { icon: "fa-clock", stat: "+10h", label: "ahorradas a la semana" },
+    { icon: "fa-shield-halved", stat: "−40%", label: "errores operativos" },
+    { icon: "fa-arrow-trend-up", stat: "×2", label: "capacidad sin contratar" },
+    { icon: "fa-chart-pie", stat: "100%", label: "visibilidad con datos" },
+];
+
 export default function Opportunity() {
     const reveal = {
         hidden: { opacity: 0, y: 30 },
@@ -19,7 +26,7 @@ export default function Opportunity() {
     return (
         <section id="problema" style={{
             background: 'var(--color-bg-secondary)',
-            padding: '6rem 0',
+            padding: '4.5rem 0',
             borderTop: '1px solid var(--color-border)',
             borderBottom: '1px solid var(--color-border)',
         }}>
@@ -46,10 +53,10 @@ export default function Opportunity() {
                         El Problema
                     </span>
                     <h2 className="section-title" style={{ marginBottom: '1rem' }}>
-                        ¿Cómo automatizar procesos con IA en pequeñas empresas?
+                        Estas tareas te están costando clientes (y no lo sabes)
                     </h2>
                     <p className="section-subtitle" style={{ margin: '0 auto' }}>
-                        Todo esto consume tiempo y dinero que podrías invertir en hacer crecer tu negocio.
+                        Cada hora perdida en procesos manuales es una hora menos vendiendo. Cada mensaje sin contestar, un cliente que se va a la competencia.
                     </p>
                 </motion.div>
 
@@ -94,27 +101,63 @@ export default function Opportunity() {
                     ))}
                 </div>
 
+                {/* Transición: problema → resultado */}
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={reveal}
-                    style={{
-                        background: 'linear-gradient(135deg, rgba(249,115,22,0.08) 0%, rgba(249,115,22,0.03) 100%)',
-                        border: '1px solid rgba(249,115,22,0.25)',
-                        borderRadius: 'var(--radius-lg)',
-                        padding: 'clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 4vw, 3rem)',
-                        textAlign: 'center',
-                        maxWidth: '100%',
-                        margin: '0 auto',
-                    }}
+                    style={{ textAlign: 'center', marginBottom: '2rem' }}
                 >
-                    <p style={{ fontSize: '1.15rem', color: 'var(--color-text-main)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                        Más del <strong style={{ color: 'var(--color-primary)' }}>50%</strong> de las empresas alcanzan una <strong style={{ color: 'var(--color-primary)' }}>eficiencia operativa</strong> superior ahorrando hasta <strong style={{ color: 'var(--color-primary)' }}>20 horas semanales</strong>.
-                        <br />
-                        La <strong style={{ color: 'var(--color-primary)' }}>automatización de procesos</strong> permite una <strong style={{ color: 'var(--color-primary)' }}>reducción de costes</strong> inmediata, haciendo que tu negocio funcione como un <strong style={{ color: 'var(--color-primary)' }}>sistema</strong> inteligente.
-                    </p>
-                    <a href="#contact" className="btn btn-primary" style={{ fontSize: '1rem', padding: '0.75rem 2rem', display: 'inline-block' }}>
+                    <h3 style={{
+                        fontSize: '1.5rem',
+                        fontWeight: 700,
+                        color: 'var(--color-text-main)',
+                        marginBottom: '0.5rem',
+                    }}>
+                        Cuando lo automatizas:
+                    </h3>
+                </motion.div>
+
+                {/* Outcomes / stats compactas */}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                    gap: '1rem',
+                    marginBottom: '3rem',
+                }}>
+                    {outcomes.map((o, i) => (
+                        <motion.div
+                            key={o.label}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={reveal}
+                            transition={{ delay: i * 0.08 }}
+                            className="glass"
+                            style={{
+                                padding: '1.5rem 1rem',
+                                textAlign: 'center',
+                                border: '1px solid rgba(249,115,22,0.2)',
+                                borderRadius: 'var(--radius-md)',
+                            }}
+                        >
+                            <i className={`fa-solid ${o.icon}`} style={{ color: 'var(--color-primary)', fontSize: '1.4rem', marginBottom: '0.5rem' }}></i>
+                            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--color-primary)', lineHeight: 1.1 }}>{o.stat}</div>
+                            <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', marginTop: '0.25rem' }}>{o.label}</div>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* CTA */}
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={reveal}
+                    style={{ textAlign: 'center' }}
+                >
+                    <a href="#contact" className="btn btn-primary" style={{ fontSize: '1rem', padding: '0.85rem 2rem', display: 'inline-block' }}>
                         Solicitar auditoría gratuita
                     </a>
                 </motion.div>

@@ -9,16 +9,26 @@ const navLinks = [
     { href: "/#que-automatizamos", label: "Automatizamos" },
     { href: "/#benefits", label: "Beneficios" },
     { href: "/#how-we-work", label: "Cómo Trabajamos" },
-    { href: "/#casos", label: "Casos de Uso" },
     { href: "/#model", label: "Precios" },
     { href: "/#faq", label: "FAQ" },
 ];
 
+const sectorLinks = [
+    { href: "/automatizacion-restaurantes", label: "Restaurantes" },
+    { href: "/automatizacion-clinicas", label: "Clínicas y Salud" },
+    { href: "/automatizacion-ecommerce", label: "E-commerce" },
+    { href: "/automatizacion-empresas-servicios", label: "Empresas de Servicios" },
+];
+
 export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+    const [sectorsOpen, setSectorsOpen] = useState(false);
 
     const toggleMobile = () => setIsMobileOpen(!isMobileOpen);
-    const closeMobile = () => setIsMobileOpen(false);
+    const closeMobile = () => {
+        setIsMobileOpen(false);
+        setSectorsOpen(false);
+    };
 
     return (
         <header className="header" style={{
@@ -65,6 +75,64 @@ export default function Header() {
                             {link.label}
                         </Link>
                     ))}
+
+                    {/* Sectores dropdown */}
+                    <div
+                        onMouseEnter={() => setSectorsOpen(true)}
+                        onMouseLeave={() => setSectorsOpen(false)}
+                        style={{ position: 'relative' }}
+                    >
+                        <button
+                            onClick={() => setSectorsOpen(!sectorsOpen)}
+                            style={{
+                                background: 'none',
+                                border: 'none',
+                                color: 'rgba(255,255,255,0.8)',
+                                cursor: 'pointer',
+                                font: 'inherit',
+                                padding: 0,
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.3rem',
+                            }}
+                        >
+                            Sectores <i className="fa-solid fa-chevron-down" style={{ fontSize: '0.7rem' }}></i>
+                        </button>
+                        {sectorsOpen && (
+                            <div style={{
+                                position: 'absolute',
+                                top: '100%',
+                                left: 0,
+                                background: '#111827',
+                                border: '1px solid rgba(255,255,255,0.1)',
+                                borderRadius: '12px',
+                                padding: '0.5rem',
+                                minWidth: '220px',
+                                boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
+                                zIndex: 1001,
+                                marginTop: '0.5rem',
+                            }}>
+                                {sectorLinks.map((s) => (
+                                    <Link
+                                        key={s.href}
+                                        href={s.href}
+                                        onClick={closeMobile}
+                                        style={{
+                                            display: 'block',
+                                            padding: '0.6rem 0.9rem',
+                                            color: 'rgba(255,255,255,0.85)',
+                                            borderRadius: '8px',
+                                            textDecoration: 'none',
+                                            fontSize: '0.92rem',
+                                        }}
+                                    >
+                                        {s.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
                     <Link
                         href="/#contact"
                         className="btn btn-primary"
