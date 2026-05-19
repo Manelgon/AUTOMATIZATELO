@@ -84,6 +84,8 @@ const jsonLd = {
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Barcelona",
+    "addressRegion": "Cataluña",
+    "postalCode": "08001",
     "addressCountry": "ES"
   },
   "geo": {
