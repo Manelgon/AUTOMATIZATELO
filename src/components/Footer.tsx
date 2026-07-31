@@ -29,16 +29,16 @@ export default function Footer() {
                         <h4 style={{ color: 'white', marginBottom: '1.5rem' }}>Enlaces</h4>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                             <li>
-                                <a href="/#opportunity" style={{ color: 'rgba(255,255,255,0.7)' }}>La Oportunidad</a>
+                                <a href="/#problema" style={{ color: 'rgba(255,255,255,0.7)' }}>El problema</a>
                             </li>
                             <li>
-                                <a href="/#benefits" style={{ color: 'rgba(255,255,255,0.7)' }}>Beneficios</a>
+                                <a href="/#que-automatizamos" style={{ color: 'rgba(255,255,255,0.7)' }}>Qué automatizamos</a>
                             </li>
                             <li>
-                                <a href="/#services" style={{ color: 'rgba(255,255,255,0.7)' }}>Servicios</a>
+                                <a href="/#model" style={{ color: 'rgba(255,255,255,0.7)' }}>Precios</a>
                             </li>
                             <li>
-                                <a href="/#how-we-work" style={{ color: 'rgba(255,255,255,0.7)' }}>Metodología</a>
+                                <a href="/#how-we-work" style={{ color: 'rgba(255,255,255,0.7)' }}>Cómo trabajo</a>
                             </li>
                             <li>
                                 <a href="/casos-de-exito" style={{ color: 'rgba(255,255,255,0.7)' }}>Casos de Éxito</a>

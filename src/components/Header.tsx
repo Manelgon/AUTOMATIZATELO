@@ -14,7 +14,7 @@ const sectorLinks = [
 
 const comoTrabajoLinks = [
     { href: "/#how-we-work", num: "01", title: "Auditoría", desc: "Antes de construir, el criterio." },
-    { href: "/#services", num: "02", title: "Implementación", desc: "Construimos el sistema." },
+    { href: "/#que-automatizamos", num: "02", title: "Implementación", desc: "Construimos el sistema." },
     { href: "/servicios/formacion-ia-empresas", num: "03", title: "Formación", desc: "Tu equipo aprende a usarlo." },
 ];
 

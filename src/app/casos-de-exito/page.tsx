@@ -101,85 +101,171 @@ export default function CasosDeExitoPage() {
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <Header />
 
-            <div className="container" style={{ marginTop: "8rem", paddingBottom: "5rem", maxWidth: 980, flexGrow: 1 }}>
-                <h1 className="section-title" style={{ marginBottom: "0.5rem" }}>
-                    Casos de <span className="premium-gradient">éxito</span>
-                </h1>
-                <p className="section-subtitle" style={{ marginBottom: "3rem" }}>
-                    Sistemas funcionando en producción, no promesas. Esto es lo que hemos construido
-                    para negocios reales.
-                </p>
+            {/* Encabezado editorial */}
+            <section style={{
+                paddingTop: "9rem",
+                paddingBottom: "1rem",
+                background: "radial-gradient(circle at 20% 20%, rgba(234, 88, 12, 0.06) 0%, transparent 50%)",
+            }}>
+                <div className="container">
+                    <span className="kicker-mono">Casos de éxito</span>
+                    <h1 style={{
+                        fontFamily: "var(--font-display, serif)",
+                        fontSize: "clamp(2.2rem, 5vw, 3.4rem)",
+                        fontWeight: 600,
+                        lineHeight: 1.1,
+                        letterSpacing: "-0.02em",
+                        color: "var(--color-text-main)",
+                        margin: "1rem 0 1rem",
+                    }}>
+                        Sistemas en producción, <span style={{ color: "var(--color-primary)" }}>no promesas</span>
+                    </h1>
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, fontSize: "1.1rem", maxWidth: 600, margin: 0 }}>
+                        Esto es lo que he construido para negocios reales — con lo que hacía daño,
+                        lo que montamos y lo que se puede comprobar.
+                    </p>
+                </div>
+            </section>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-                    {casos.map((caso) => (
-                        <article
-                            key={caso.titulo}
-                            style={{
-                                background: "var(--color-card-bg)",
-                                border: "1px solid var(--color-border)",
-                                borderRadius: "var(--radius-lg)",
-                                boxShadow: "var(--shadow-card)",
-                                padding: "2rem",
-                            }}
-                        >
-                            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.8rem", marginBottom: "1rem" }}>
-                                <span style={{
-                                    fontSize: "0.75rem", fontWeight: 700,
-                                    padding: "0.25rem 0.7rem", borderRadius: 999,
-                                    background: "rgba(249,115,22,0.1)", color: "var(--color-primary)",
-                                    textTransform: "uppercase", letterSpacing: "0.04em",
-                                }}>
+            {/* Casos como bloques editoriales */}
+            <section style={{ padding: "2.5rem 0 4rem", flexGrow: 1 }}>
+                <div className="container">
+                    {casos.map((caso, i) => (
+                        <article key={caso.titulo} className="ce-bloque">
+                            <div className="ce-meta">
+                                <span className="mono-label" style={{ color: "var(--color-text-muted)" }}>
+                                    {String(i + 1).padStart(2, "0")} / {String(casos.length).padStart(2, "0")}
+                                </span>
+                                <span className="mono-label" style={{ color: "var(--color-primary)" }}>
                                     {caso.sector}
                                 </span>
                                 {caso.url ? (
-                                    <a href={caso.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--color-text-muted)", textDecoration: "none" }}>
+                                    <a href={caso.url} target="_blank" rel="noopener noreferrer" className="ce-cliente">
                                         {caso.cliente} ↗
                                     </a>
                                 ) : (
-                                    <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--color-text-muted)" }}>
-                                        {caso.cliente}
-                                    </span>
+                                    <span className="ce-cliente" style={{ cursor: "default" }}>{caso.cliente}</span>
                                 )}
                             </div>
 
-                            <h2 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--color-text-main)", margin: "0 0 1.2rem" }}>
+                            <h2 style={{
+                                fontFamily: "var(--font-display, serif)",
+                                fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
+                                fontWeight: 600,
+                                lineHeight: 1.2,
+                                color: "var(--color-text-main)",
+                                margin: "1rem 0 1.6rem",
+                                maxWidth: 820,
+                            }}>
                                 {caso.titulo}
                             </h2>
 
-                            <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "0.8rem" }}>
-                                <strong style={{ color: "var(--color-text-main)" }}>El problema:</strong> {caso.problema}
-                            </p>
-                            <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "1.2rem" }}>
-                                <strong style={{ color: "var(--color-text-main)" }}>La solución:</strong> {caso.solucion}
-                            </p>
-
-                            <ul style={{ paddingLeft: 0, margin: 0, listStyle: "none" }}>
-                                {caso.resultados.map((r) => (
-                                    <li key={r} style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "0.4rem" }}>
-                                        <i className="fa-solid fa-check" style={{ color: "var(--color-primary)", marginRight: "0.6rem" }} />
-                                        {r}
-                                    </li>
-                                ))}
-                            </ul>
+                            <div className="ce-cuerpo">
+                                <div>
+                                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "1rem" }}>
+                                        <strong style={{ color: "var(--color-text-main)" }}>El problema:</strong> {caso.problema}
+                                    </p>
+                                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, margin: 0 }}>
+                                        <strong style={{ color: "var(--color-text-main)" }}>La solución:</strong> {caso.solucion}
+                                    </p>
+                                </div>
+                                <ul className="ce-resultados">
+                                    {caso.resultados.map((r) => (
+                                        <li key={r}>
+                                            <i className="fa-solid fa-check"></i>
+                                            {r}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </article>
                     ))}
                 </div>
+            </section>
 
-                <div style={{ textAlign: "center", marginTop: "3rem" }}>
-                    <p style={{ color: "var(--color-text-muted)", marginBottom: "1.2rem", fontSize: "1.05rem" }}>
+            {/* CTA final en melocotón */}
+            <section style={{ padding: "4.5rem 0", background: "#f8dfc6" }}>
+                <div className="container" style={{ textAlign: "center" }}>
+                    <p style={{
+                        fontFamily: "var(--font-display, serif)",
+                        fontSize: "clamp(1.7rem, 3.5vw, 2.6rem)",
+                        fontWeight: 600,
+                        color: "#1c1917",
+                        lineHeight: 1.2,
+                        margin: "0 0 1.8rem",
+                        letterSpacing: "-0.02em",
+                    }}>
                         ¿Quieres saber qué automatizaríamos en tu negocio?
                     </p>
-                    <Link
-                        href="/#contact"
-                        className="btn btn-primary"
-                        style={{ background: "var(--color-primary)", color: "#fff", textDecoration: "none", padding: "0.9rem 1.8rem", borderRadius: 12, fontWeight: 700, display: "inline-block" }}
-                    >
+                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.4rem" }}>
                         Pide tu auditoría gratuita de 30 minutos
                     </Link>
                 </div>
-            </div>
+            </section>
 
             <Footer />
+
+            <style>{`
+                .ce-bloque {
+                    border-top: 1px solid var(--color-border);
+                    padding: 2.6rem 0;
+                }
+                .ce-bloque:last-of-type {
+                    border-bottom: 1px solid var(--color-border);
+                }
+                .ce-meta {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 0.8rem 1.5rem;
+                }
+                .ce-cliente {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.05rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                }
+                a.ce-cliente:hover {
+                    color: var(--color-primary);
+                }
+                .ce-cuerpo {
+                    display: grid;
+                    grid-template-columns: 1.1fr 0.9fr;
+                    gap: 2.5rem;
+                    align-items: start;
+                }
+                .ce-resultados {
+                    list-style: none;
+                    padding: 1.4rem 1.6rem;
+                    margin: 0;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-md);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.7rem;
+                }
+                .ce-resultados li {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.7rem;
+                    color: var(--color-text-muted);
+                    line-height: 1.55;
+                    font-size: 0.95rem;
+                }
+                .ce-resultados i {
+                    color: var(--color-primary);
+                    margin-top: 0.25rem;
+                    font-size: 0.8rem;
+                    flex-shrink: 0;
+                }
+                @media (max-width: 900px) {
+                    .ce-cuerpo {
+                        grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                    }
+                }
+            `}</style>
         </main>
     );
 }
