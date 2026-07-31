@@ -226,6 +226,12 @@ export default function UseCases() {
                     .uc-ancho { grid-column: span 2; }
                     .uc-normal { grid-column: span 1; }
                 }
+                @media (max-width: 900px) {
+                    #casos {
+                        margin-top: 0 !important;
+                        padding: 2.5rem 0 3.5rem !important;
+                    }
+                }
                 @media (max-width: 600px) {
                     .uc-mosaico {
                         grid-template-columns: 1fr;

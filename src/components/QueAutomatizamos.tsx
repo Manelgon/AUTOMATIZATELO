@@ -148,8 +148,21 @@ export default function QueAutomatizamos() {
                     transform: translateX(6px);
                 }
                 @media (max-width: 900px) {
+                    #que-automatizamos {
+                        margin-bottom: 0 !important;
+                        padding: 3.5rem 0 2rem !important;
+                    }
                     .qa-fila-apagada { opacity: 1; }
                     .qa-fila:hover { padding-left: 0.5rem; }
+                }
+                @media (max-width: 600px) {
+                    .qa-fila {
+                        grid-template-columns: auto 1fr auto;
+                        gap: 0.9rem;
+                        padding: 1.2rem 0.2rem;
+                    }
+                    .qa-num { display: none; }
+                    .qa-icono { font-size: 1.2rem; width: 1.6rem; }
                 }
             `}</style>
         </section>

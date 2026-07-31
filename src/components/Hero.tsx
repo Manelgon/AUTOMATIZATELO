@@ -169,10 +169,15 @@ export default function Hero() {
                 }
                 @media (max-width: 900px) {
                     .hero-foto { min-height: 86vh; }
+                    .hero-foto-bg { object-position: 66% top; }
                     .hero-foto .hero-foto-contenido { text-align: center; }
                     .hero-foto .hero-actions { justify-content: center !important; }
                     .hero-foto-contenido p, .hero-foto-contenido h1 { margin-left: auto !important; margin-right: auto !important; }
                     .hero-foto .hero-giant-name { bottom: 1rem; }
+                }
+                @media (max-width: 600px) {
+                    /* En móvil el titular rompe línea de forma natural */
+                    .hero-foto h1 br { display: none; }
                 }
             `}</style>
         </section>
