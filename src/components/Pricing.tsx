@@ -51,145 +51,64 @@ const plans = [
     },
 ];
 
-export default function Pricing() {
-    const reveal = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
-    };
+const garantias = [
+    "Sin permanencia",
+    "Pago por hitos",
+    "Código y datos tuyos",
+    "Soporte humano en español",
+];
 
+export default function Pricing() {
     return (
-        <section id="model" style={{ padding: '4.5rem 0' }}>
+        <section id="model" style={{ padding: "4.5rem 0" }}>
             <div className="container">
                 <motion.div
-                    initial="hidden"
-                    whileInView="visible"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    variants={reveal}
-                    style={{ textAlign: 'center', marginBottom: '3rem' }}
+                    transition={{ duration: 0.6 }}
+                    style={{ marginBottom: "2.5rem" }}
                 >
-                    <span style={{
-                        display: 'inline-block',
-                        background: 'rgba(249,115,22,0.1)',
-                        color: 'var(--color-primary)',
-                        padding: '0.3rem 1rem',
-                        borderRadius: '50px',
-                        fontSize: '0.8rem',
-                        fontWeight: 700,
-                        letterSpacing: '2px',
-                        textTransform: 'uppercase',
-                        marginBottom: '1rem',
-                    }}>
-                        Servicios
-                    </span>
-                    <h2 className="section-title" style={{ marginBottom: '0.75rem' }}>
+                    <span className="kicker-mono">Servicios y precios</span>
+                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
                         Precio cerrado. Plazo cerrado. Sin permanencia.
                     </h2>
-                    <p className="section-subtitle">
+                    <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 620 }}>
                         Desde una automatización puntual hasta un sistema completo para toda la empresa.
+                        Los precios están aquí, a la vista — como debe ser.
                     </p>
                 </motion.div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: '1.5rem',
-                    alignItems: 'stretch',
-                }}>
+                <div className="pr-grid">
                     {plans.map((plan, i) => (
                         <motion.div
                             key={plan.name}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={reveal}
-                            transition={{ delay: i * 0.1 }}
-                            className={`glass ${plan.highlight ? '' : ''}`}
-                            style={{
-                                position: 'relative',
-                                padding: '2rem',
-                                borderRadius: 'var(--radius-lg)',
-                                border: plan.highlight
-                                    ? '2px solid var(--color-primary)'
-                                    : '1px solid var(--color-border)',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '1rem',
-                                ...(plan.highlight && {
-                                    background: 'linear-gradient(135deg, rgba(249,115,22,0.04) 0%, rgba(249,115,22,0.01) 100%)',
-                                }),
-                            }}
+                            className={`pr-card ${plan.highlight ? "pr-destacado" : ""}`}
+                            initial={{ opacity: 0, y: 28 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-60px" }}
+                            transition={{ delay: i * 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                         >
                             {plan.badge && (
-                                <span style={{
-                                    position: 'absolute',
-                                    top: '-14px',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                    background: 'var(--color-primary)',
-                                    color: '#fff',
-                                    borderRadius: '50px',
-                                    padding: '4px 16px',
-                                    fontSize: '0.78rem',
-                                    fontWeight: 700,
-                                    whiteSpace: 'nowrap',
-                                }}>
-                                    {plan.badge}
-                                </span>
+                                <span className="mono-label pr-badge">· {plan.badge} ·</span>
                             )}
-
-                            <div>
-                                <h3 style={{
-                                    color: plan.highlight ? 'var(--color-primary)' : 'var(--color-text-main)',
-                                    fontSize: '1.2rem',
-                                    fontWeight: 700,
-                                    marginBottom: '0.5rem',
-                                }}>
-                                    {plan.name}
-                                </h3>
-                                <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', lineHeight: 1.5 }}>
-                                    {plan.description}
-                                </p>
+                            <h3 className="pr-nombre">{plan.name}</h3>
+                            <p className="pr-desc">{plan.description}</p>
+                            <div className="pr-precio">
+                                <span className="mono-label pr-desde">Desde</span>
+                                <span className="pr-cifra">{plan.price}€</span>
                             </div>
-
-                            <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem' }}>
-                                <span style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>Desde</span>
-                                <span style={{
-                                    fontSize: '2.2rem',
-                                    fontWeight: 800,
-                                    color: plan.highlight ? 'var(--color-primary)' : 'var(--color-text-main)',
-                                }}>
-                                    {plan.price}€
-                                </span>
-                            </div>
-
-                            <ul style={{ listStyle: 'none', padding: 0, margin: 0, flex: 1 }}>
+                            <ul className="pr-lista">
                                 {plan.features.map((f) => (
-                                    <li key={f} style={{
-                                        display: 'flex',
-                                        alignItems: 'flex-start',
-                                        gap: '0.6rem',
-                                        marginBottom: '0.6rem',
-                                        color: 'var(--color-text-muted)',
-                                        fontSize: '0.9rem',
-                                    }}>
-                                        <i className="fa-solid fa-check" style={{
-                                            color: 'var(--color-primary)',
-                                            marginTop: '0.2rem',
-                                            flexShrink: 0,
-                                        }}></i>
+                                    <li key={f}>
+                                        <i className="fa-solid fa-check"></i>
                                         {f}
                                     </li>
                                 ))}
                             </ul>
-
                             <a
                                 href="#contact"
-                                className={`btn ${plan.highlight ? 'btn-primary' : 'btn-secondary glass'}`}
-                                style={{
-                                    textAlign: 'center',
-                                    color: plan.highlight ? '#fff' : 'var(--color-text-main)',
-                                    marginTop: 'auto',
-                                }}
+                                className={plan.highlight ? "btn btn-primary pr-cta" : "btn pr-cta pr-cta-borde"}
                             >
                                 {plan.cta}
                             </a>
@@ -198,52 +117,141 @@ export default function Pricing() {
                 </div>
 
                 <motion.div
-                    initial="hidden"
-                    whileInView="visible"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    variants={reveal}
-                    style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        justifyContent: 'center',
-                        gap: '1.25rem 2rem',
-                        marginTop: '2.5rem',
-                        color: 'var(--color-text-muted)',
-                        fontSize: '0.92rem',
-                    }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    className="pr-garantias"
                 >
-                    {[
-                        'Sin permanencia',
-                        'Pago por hitos',
-                        'Código y datos tuyos',
-                        'Soporte humano en español',
-                    ].map((g) => (
-                        <span key={g} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-                            <i className="fa-solid fa-check" style={{ color: 'var(--color-primary)', fontSize: '0.85rem' }}></i>
+                    {garantias.map((g) => (
+                        <span key={g} className="mono-label pr-garantia">
+                            <i className="fa-solid fa-check" style={{ marginRight: "0.5rem", color: "var(--color-primary)" }}></i>
                             {g}
                         </span>
                     ))}
                 </motion.div>
 
-                <motion.p
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={reveal}
-                    style={{
-                        textAlign: 'center',
-                        marginTop: '2rem',
-                        color: 'var(--color-text-muted)',
-                        fontSize: '0.9rem',
-                    }}
-                >
+                <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem" }}>
                     ¿No sabes qué plan necesitas?{" "}
-                    <a href="#contact" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none' }}>
-                        Solicita una auditoría gratuita
+                    <a href="#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        Pide la auditoría gratuita
                     </a>{" "}
-                    y te lo decimos en 30 minutos.
-                </motion.p>
+                    y te lo digo en 30 minutos.
+                </p>
             </div>
+
+            <style>{`
+                .pr-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.2rem;
+                    align-items: stretch;
+                }
+                .pr-card {
+                    display: flex;
+                    flex-direction: column;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-lg);
+                    padding: 2.2rem 2rem;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .pr-card:hover {
+                    transform: translateY(-5px);
+                    border-color: rgba(234, 88, 12, 0.4);
+                }
+                .pr-destacado {
+                    background: linear-gradient(135deg, #b45309 0%, #7c2d12 55%, #431407 100%);
+                    border: none;
+                    box-shadow: 0 25px 55px rgba(28, 25, 23, 0.22);
+                }
+                .pr-badge {
+                    color: #f6c39c;
+                    margin-bottom: 1rem;
+                }
+                .pr-nombre {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.45rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    margin-bottom: 0.5rem;
+                    line-height: 1.2;
+                }
+                .pr-destacado .pr-nombre { color: #faf6ef; }
+                .pr-desc {
+                    font-size: 0.92rem;
+                    color: var(--color-text-muted);
+                    line-height: 1.55;
+                    margin-bottom: 1.4rem;
+                }
+                .pr-destacado .pr-desc { color: rgba(250,246,239,0.8); }
+                .pr-precio {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 0.7rem;
+                    margin-bottom: 1.4rem;
+                }
+                .pr-desde { color: var(--color-text-muted); }
+                .pr-destacado .pr-desde { color: rgba(250,246,239,0.75); }
+                .pr-cifra {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(2.4rem, 4vw, 3.2rem);
+                    font-weight: 600;
+                    line-height: 1;
+                    color: var(--color-primary);
+                    letter-spacing: -0.02em;
+                }
+                .pr-destacado .pr-cifra { color: #f6c39c; }
+                .pr-lista {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 1.8rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.6rem;
+                    flex-grow: 1;
+                }
+                .pr-lista li {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.6rem;
+                    font-size: 0.92rem;
+                    line-height: 1.5;
+                    color: var(--color-text-muted);
+                }
+                .pr-destacado .pr-lista li { color: rgba(250,246,239,0.88); }
+                .pr-lista i {
+                    color: var(--color-primary);
+                    margin-top: 0.25rem;
+                    font-size: 0.8rem;
+                    flex-shrink: 0;
+                }
+                .pr-destacado .pr-lista i { color: #f6c39c; }
+                .pr-cta {
+                    text-align: center;
+                    font-size: 0.95rem;
+                }
+                .pr-cta-borde {
+                    border: 1px solid var(--color-border);
+                    color: var(--color-text-main);
+                    background: transparent;
+                }
+                .pr-cta-borde:hover {
+                    border-color: var(--color-primary);
+                    color: var(--color-primary);
+                }
+                .pr-garantias {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 0.8rem 2rem;
+                    margin-top: 2.5rem;
+                    color: var(--color-text-muted);
+                }
+                @media (max-width: 950px) {
+                    .pr-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+                }
+            `}</style>
         </section>
     );
 }

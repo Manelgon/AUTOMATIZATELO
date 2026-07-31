@@ -7,8 +7,7 @@ export default function Footer() {
             width: '100%',
             borderTop: '1px solid rgba(250,246,239,0.08)',
             color: 'white',
-            padding: '4rem 0 2rem',
-            marginTop: '4rem'
+            padding: '4rem 0 2rem'
         }}>
             <div className="container">
                 <div className="footer-grid">

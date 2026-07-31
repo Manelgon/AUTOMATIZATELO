@@ -1,98 +1,154 @@
-"use client";
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import styles from './TrustedClients.module.css';
+import Link from "next/link";
 
-const clients = [
+const casos = [
     {
-        name: 'Serincosol',
-        logo: '/clients/serincosol.png',
-        url: 'https://serincosol.com/',
-        scale: 1
+        logo: "/clients/serincosol.png",
+        nombre: "Serincosol",
+        resultado: "Panel de fincas en uso diario desde enero de 2026",
     },
     {
-        name: 'Afcademia',
-        logo: '/clients/afcademia.png',
-        url: 'https://afcademia.com/',
-        scale: 1.5
+        icono: "fa-stethoscope",
+        nombre: "Clínica estética · Ibiza",
+        resultado: "Bot de citas por WhatsApp 24/7 con RGPD sanitario",
     },
     {
-        name: 'Henkoaching',
-        logo: '/clients/henkoaching.png',
-        url: 'https://henkoaching.com/',
-        scale: 1
-    }
+        logo: "/clients/henkoaching.png",
+        nombre: "Henkoaching",
+        resultado: "SaaS completo con portal de empleo propio",
+    },
+    {
+        icono: "fa-school",
+        nombre: "Comedores escolares · Cataluña",
+        resultado: "Ausencias de cientos de familias, por WhatsApp",
+    },
+    {
+        logo: "/clients/afcademia.png",
+        nombre: "AFCademia",
+        resultado: "Panel de academia y cursos e-learning",
+    },
 ];
 
 export default function TrustedClients() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % clients.length);
-        }, 3000); // Change every 3 seconds
-
-        return () => clearInterval(interval);
-    }, []);
-
     return (
-        <section id="trusted-clients" className={styles.section}>
-            <div className={styles.container}>
-                {/* Left Column: Carousel (Logos) */}
-                <div className={styles.carouselWrapper}>
-                    <div className={styles.carouselContainer}>
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={currentIndex}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 1.05 }}
-                                transition={{ duration: 0.6 }}
-                                className={styles.clientSlide}
-                            >
-                                <a
-                                    href={clients[currentIndex].url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles.clientLink}
-                                >
-                                    <div className={styles.logoWrapper}>
-                                        <Image
-                                            src={clients[currentIndex].logo}
-                                            alt={`${clients[currentIndex].name} logo`}
-                                            fill
-                                            className="object-contain"
-                                            sizes="(max-width: 768px) 100vw, 50vw"
-                                            style={{
-                                                objectFit: 'contain',
-                                                transform: `scale(${clients[currentIndex].scale})`
-                                            }}
-                                        />
-                                    </div>
-                                </a>
-                            </motion.div>
-                        </AnimatePresence>
+        <section id="trusted-clients" style={{ padding: "4.5rem 0" }}>
+            <div className="container">
+                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "baseline", justifyContent: "space-between", gap: "1rem", marginBottom: "2.5rem" }}>
+                    <div>
+                        <span className="kicker-mono">Proyectos de éxito</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: 0 }}>
+                            Sistemas que ya funcionan, y quién los usa
+                        </h2>
                     </div>
+                    <Link href="/casos-de-exito" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        Ver los casos completos →
+                    </Link>
                 </div>
-
-                {/* Right Column: Text (Title & Subtitle) */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className={styles.content}
-                >
-                    <div className={styles.accentLine}></div>
-                    <h2 className="section-title" style={{ textAlign: 'right', margin: 0, width: '100%' }}>PROYECTOS DE ÉXITO</h2>
-                    <p className="section-subtitle" style={{ textAlign: 'right', marginTop: '1rem', width: '100%', maxWidth: 'none', marginInline: 0 }}>Clientes que han confiado en nosotros</p>
-                    <p style={{ textAlign: 'right', marginTop: '1rem', width: '100%' }}>
-                        <a href="/casos-de-exito" style={{ color: 'var(--color-primary)', fontWeight: 700, textDecoration: 'none' }}>
-                            Ver los casos completos →
-                        </a>
-                    </p>
-                </motion.div>
             </div>
+
+            {/* Cinta de casos en movimiento (pausa al pasar el ratón) */}
+            <div className="casos-marquee">
+                <div className="casos-marquee-track">
+                    {[...casos, ...casos].map((c, i) => (
+                        <Link
+                            key={`${c.nombre}-${i}`}
+                            href="/casos-de-exito"
+                            className="caso-chip"
+                            aria-hidden={i >= casos.length}
+                            tabIndex={i >= casos.length ? -1 : undefined}
+                        >
+                            <div className="caso-chip-marca">
+                                {"logo" in c && c.logo ? (
+                                    // eslint-disable-next-line @next/next/no-img-element
+                                    <img src={c.logo} alt={c.nombre} loading="lazy" />
+                                ) : (
+                                    <span className="caso-chip-icono">
+                                        <i className={`fa-solid ${"icono" in c ? c.icono : ""}`}></i>
+                                    </span>
+                                )}
+                                <span className="caso-chip-nombre">{c.nombre}</span>
+                            </div>
+                            <span className="mono-label" style={{ color: "var(--color-text-muted)" }}>
+                                {c.resultado}
+                            </span>
+                        </Link>
+                    ))}
+                </div>
+            </div>
+
+            <style>{`
+                .casos-marquee {
+                    overflow: hidden;
+                    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+                    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+                    padding: 0.5rem 0 1rem;
+                }
+                .casos-marquee-track {
+                    display: flex;
+                    gap: 1.2rem;
+                    width: max-content;
+                    animation: marquee 45s linear infinite;
+                }
+                .casos-marquee:hover .casos-marquee-track {
+                    animation-play-state: paused;
+                }
+                .caso-chip {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    width: 340px;
+                    padding: 1.5rem 1.7rem;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-md);
+                    box-shadow: var(--shadow-card);
+                    color: inherit;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .caso-chip:hover {
+                    transform: translateY(-4px);
+                    border-color: rgba(234, 88, 12, 0.4);
+                }
+                .caso-chip-marca {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.9rem;
+                }
+                .caso-chip-marca img {
+                    height: 34px;
+                    width: auto;
+                    max-width: 130px;
+                    object-fit: contain;
+                }
+                .caso-chip-icono {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 10px;
+                    background: rgba(234, 88, 12, 0.12);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--color-primary);
+                    font-size: 1.1rem;
+                    flex-shrink: 0;
+                }
+                .caso-chip-nombre {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    line-height: 1.2;
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    .casos-marquee-track {
+                        animation: none;
+                        flex-wrap: wrap;
+                        width: 100%;
+                    }
+                }
+                @media (max-width: 600px) {
+                    .caso-chip { width: 280px; padding: 1.2rem 1.4rem; }
+                }
+            `}</style>
         </section>
     );
 }

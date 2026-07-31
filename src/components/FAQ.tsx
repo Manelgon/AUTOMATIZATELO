@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./FAQ.module.css";
 
 const faqs = [
     {
@@ -129,25 +128,32 @@ export default function FAQ() {
     const visibleFaqs = showAll ? faqs : faqs.slice(0, 5);
 
     return (
-        <section className={styles.section} id="faq">
+        <section id="faq" style={{ padding: "4.5rem 0" }}>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
-            <div className={styles.container}>
-                <div className={styles.header}>
-                    <h2 className={styles.title}>
+            <div className="container">
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    style={{ marginBottom: "2.5rem" }}
+                >
+                    <span className="kicker-mono">FAQ</span>
+                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
                         ¿Qué procesos puedes automatizar con IA?
                     </h2>
-                    <p className={styles.subtitle}>
-                        Resolvemos tus dudas sobre la automatización
+                    <p className="section-subtitle" style={{ textAlign: "left", margin: 0 }}>
+                        Las dudas que me preguntan siempre, respondidas sin jerga.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className={styles.layout}>
+                <div>
                     {visibleFaqs.map((faq, index) => (
                         <FAQItem
-                            key={index}
+                            key={faq.question}
                             faq={faq}
                             index={index}
                             activeIndex={activeIndex}
@@ -157,38 +163,102 @@ export default function FAQ() {
                 </div>
 
                 {!showAll && faqs.length > 5 && (
-                    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                    <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
                         <button
                             onClick={() => setShowAll(true)}
-                            style={{
-                                background: 'transparent',
-                                border: '1px solid var(--color-primary)',
-                                color: 'var(--color-primary)',
-                                padding: '0.75rem 1.75rem',
-                                borderRadius: '50px',
-                                fontWeight: 600,
-                                cursor: 'pointer',
-                                fontSize: '0.95rem',
-                            }}
+                            className="faq-vermas"
                         >
                             Ver más preguntas ({faqs.length - 5})
                         </button>
                     </div>
                 )}
             </div>
+
+            <style>{`
+                .faq-item {
+                    border-top: 1px solid var(--color-border);
+                }
+                .faq-item:last-of-type, div:last-child > .faq-item {
+                    border-bottom: 1px solid var(--color-border);
+                }
+                .faq-pregunta {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    padding: 1.4rem 0.4rem;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    text-align: left;
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.1rem, 2vw, 1.35rem);
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    line-height: 1.3;
+                    transition: color 0.2s ease, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+                .faq-pregunta:hover {
+                    color: var(--color-primary);
+                    padding-left: 1rem;
+                }
+                .faq-chevron {
+                    color: var(--color-primary);
+                    font-size: 0.85rem;
+                    flex-shrink: 0;
+                    transition: transform 0.3s ease;
+                }
+                .faq-chevron-abierto {
+                    transform: rotate(180deg);
+                }
+                .faq-respuesta {
+                    overflow: hidden;
+                }
+                .faq-respuesta-inner {
+                    padding: 0 0.4rem 1.6rem;
+                    color: var(--color-text-muted);
+                    line-height: 1.7;
+                    font-size: 0.98rem;
+                    max-width: 720px;
+                }
+                .faq-respuesta-inner ul {
+                    list-style: disc;
+                    padding-left: 1.4rem;
+                    margin: 0.6rem 0;
+                }
+                .faq-respuesta-inner li {
+                    margin-bottom: 0.3rem;
+                }
+                .faq-vermas {
+                    background: transparent;
+                    border: 1px solid var(--color-border);
+                    color: var(--color-text-main);
+                    padding: 0.75rem 1.75rem;
+                    border-radius: 50px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    font-size: 0.95rem;
+                    transition: border-color 0.2s ease, color 0.2s ease;
+                }
+                .faq-vermas:hover {
+                    border-color: var(--color-primary);
+                    color: var(--color-primary);
+                }
+            `}</style>
         </section>
     );
 }
 
-const FAQItem = ({ faq, index, activeIndex, toggleFAQ }: { faq: any, index: number, activeIndex: number | null, toggleFAQ: (index: number) => void }) => (
-    <div className={styles.faqItem}>
+const FAQItem = ({ faq, index, activeIndex, toggleFAQ }: { faq: { question: string; answer: React.ReactNode }, index: number, activeIndex: number | null, toggleFAQ: (index: number) => void }) => (
+    <div className="faq-item">
         <button
-            className={styles.questionButton}
+            className="faq-pregunta"
             onClick={() => toggleFAQ(index)}
             aria-expanded={activeIndex === index}
         >
             <span>{faq.question}</span>
-            <span className={`${styles.icon} ${activeIndex === index ? styles.open : ''}`}>
+            <span className={`faq-chevron ${activeIndex === index ? 'faq-chevron-abierto' : ''}`}>
                 <i className="fas fa-chevron-down"></i>
             </span>
         </button>
@@ -199,9 +269,9 @@ const FAQItem = ({ faq, index, activeIndex, toggleFAQ }: { faq: any, index: numb
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className={styles.answerWrapper}
+                    className="faq-respuesta"
                 >
-                    <div className={styles.answer}>
+                    <div className="faq-respuesta-inner">
                         {faq.answer}
                     </div>
                 </motion.div>

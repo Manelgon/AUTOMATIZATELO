@@ -203,25 +203,22 @@ export default function ContactForm() {
     return (
         <section id="contact" className="contact-section">
             <div className="container">
-                <motion.h2
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="section-title"
                 >
-                    Contacta con <span className="premium-gradient">Nosotros</span>
-                </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="section-subtitle"
-                >
-                    Auditoría gratuita de 30 minutos. Te decimos qué automatizar primero y qué retorno esperar — sin compromiso.
-                </motion.p>
+                    <span className="kicker-mono">Contacto</span>
+                    <h2 className="section-title" style={{ textAlign: 'left', marginTop: '0.8rem', marginBottom: '0.5rem' }}>
+                        Cuéntame cómo trabajas
+                    </h2>
+                    <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 620 }}>
+                        Auditoría gratuita de 30 minutos. Te digo qué automatizar primero
+                        y qué retorno esperar — sin compromiso y sin jerga.
+                    </p>
+                </motion.div>
 
-                <form id="form-automatizatelo" onSubmit={handleSubmit} className="glass" style={{ padding: '3rem', marginTop: '3rem', background: 'var(--color-bg)', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-card)' }}>
+                <form id="form-automatizatelo" onSubmit={handleSubmit} style={{ padding: '2.8rem', marginTop: '2.5rem', background: 'var(--color-card-bg)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-card)', maxWidth: 880 }}>
                     <div className="form-grid">
                         <div>
                             <label htmlFor="nombre" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Nombre <span style={{ color: 'var(--color-primary)' }}>*</span></label>
@@ -360,7 +357,7 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Correo<br />electrónico <span style={{ color: 'var(--color-primary)' }}>*</span></label>
+                            <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Correo electrónico <span style={{ color: 'var(--color-primary)' }}>*</span></label>
                             <input
                                 id="email"
                                 type="email"
@@ -398,7 +395,12 @@ export default function ContactForm() {
                             checked={formData.acepto}
                             onChange={handleChange}
                         />
-                        Acepto la Política de Privacidad.
+                        <span>
+                            Acepto la{" "}
+                            <a href="/proteccion-datos" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>
+                                Política de Privacidad
+                            </a>.
+                        </span>
                     </label>
 
                     <button

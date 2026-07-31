@@ -6,12 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const sectorLinks = [
-    { href: "/automatizacion-clinicas", label: "Clínicas y Salud" },
-    { href: "/automatizacion-administradores-fincas", label: "Administradores de Fincas" },
-    { href: "/automatizacion-reclutamiento-rrhh", label: "Reclutamiento y RRHH", disabled: true },
-    { href: "/automatizacion-ecommerce", label: "E-commerce" },
-    { href: "/automatizacion-empresas-servicios", label: "Empresas de Servicios" },
-].filter((s) => !s.disabled);
+    { href: "/automatizacion-clinicas", num: "01", label: "Clínicas y Salud", desc: "Citas y recordatorios automáticos." },
+    { href: "/automatizacion-administradores-fincas", num: "02", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
+    { href: "/automatizacion-ecommerce", num: "03", label: "E-commerce", desc: "Soporte y tareas de tienda." },
+    { href: "/automatizacion-empresas-servicios", num: "04", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
+];
 
 const comoTrabajoLinks = [
     { href: "/#how-we-work", num: "01", title: "Auditoría", desc: "Antes de construir, el criterio." },
@@ -90,6 +89,9 @@ export default function Header() {
                 </div>
 
                 <nav className={`nav-links ${isMobileOpen ? "active" : ""}`}>
+                    {/* Inicio: solo visible en el menú móvil (en escritorio, el logo hace de inicio) */}
+                    <Link href="/" className="nav-solo-movil" onClick={closeAll}>Inicio</Link>
+
                     {/* Soluciones (sectores) */}
                     <div className="sectors-dropdown">
                         <button
@@ -110,16 +112,21 @@ export default function Header() {
                             />
                         </button>
                         {openMenu === "soluciones" && (
-                            <div role="menu" className="sectors-dropdown-menu">
+                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 320 }}>
                                 {sectorLinks.map((s) => (
                                     <Link
                                         key={s.href}
                                         href={s.href}
                                         role="menuitem"
                                         onClick={closeAll}
-                                        className="sectors-dropdown-item"
+                                        className="dropdown-item-num"
                                     >
-                                        {s.label}
+                                        <span className="num">{s.num}</span>
+                                        <span>
+                                            <span className="item-title">{s.label}</span>
+                                            <span className="item-desc">{s.desc}</span>
+                                        </span>
+                                        <span className="arrow">→</span>
                                     </Link>
                                 ))}
                             </div>
@@ -167,6 +174,7 @@ export default function Header() {
                         )}
                     </div>
 
+                    <Link href="/#model" onClick={closeAll}>Precios</Link>
                     <Link href="/casos-de-exito" onClick={closeAll}>Casos</Link>
                     <Link href="/blog" onClick={closeAll}>Blog</Link>
                     <Link href="/sobre-mi" onClick={closeAll}>Sobre mí</Link>

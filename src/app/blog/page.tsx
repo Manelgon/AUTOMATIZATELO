@@ -43,13 +43,14 @@ export default async function BlogListingPage() {
             <Header />
 
             {/* Hero */}
-            <div className="blog-list-hero" style={{ marginTop: "6rem" }}>
+            <div className="blog-list-hero" style={{ marginTop: "7rem" }}>
                 <div className="container">
-                    <h1 className="section-title" style={{ marginBottom: "0.5rem" }}>
-                        Nuestro <span className="premium-gradient">Blog</span>
+                    <span className="kicker-mono">Blog</span>
+                    <h1 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                        Automatización e IA para pymes, sin jerga
                     </h1>
-                    <p className="section-subtitle" style={{ marginBottom: 0 }}>
-                        Todos los artículos sobre automatización, IA y transformación digital.
+                    <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 620 }}>
+                        Lo que aprendo automatizando negocios reales, contado para que puedas aplicarlo en el tuyo.
                     </p>
                 </div>
             </div>
@@ -98,10 +99,8 @@ export default async function BlogListingPage() {
                                         {post.tags && post.tags.length > 0 && (
                                             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "0.5rem", marginBottom: "1rem" }}>
                                                 {post.tags.slice(0, 3).map((tag) => (
-                                                    <span key={tag} style={{
-                                                        fontSize: "0.85rem", fontWeight: 700,
-                                                        color: "#8A2BE2",
-                                                        textTransform: "uppercase", letterSpacing: "0.05em",
+                                                    <span key={tag} className="mono-label" style={{
+                                                        color: "var(--color-primary)",
                                                     }}>{tag}</span>
                                                 ))}
                                             </div>
