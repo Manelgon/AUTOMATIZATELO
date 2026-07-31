@@ -19,7 +19,8 @@ const props: SectorPageProps = {
     icon: "fa-building",
     color: "#0ea5e9",
     heroKicker: "Administración de fincas",
-    heroTitle: <>Tu despacho de fincas, <span className="premium-gradient">sin ahogarse en llamadas y emails</span></>,
+    heroImagen: "/fincas-hero.webp",
+    heroTitle: <>Tu despacho de fincas, <span className="premium-gradient">sin<br />ahogarse en llamadas y emails</span></>,
     heroSubtitle: "Panel de gestión a medida para incidencias, comunicaciones con vecinos y documentación de cada comunidad. No es teoría: despachos reales lo usan a diario desde enero de 2026.",
     painPoints: [
         { icon: "fa-phone-volume", text: "El teléfono no para: vecinos llamando por cualquier incidencia" },

@@ -19,7 +19,9 @@ const props: SectorPageProps = {
     icon: "fa-stethoscope",
     color: "#6366f1",
     heroKicker: "Clínicas y centros de salud",
-    heroTitle: <>Automatiza tu clínica: <span className="premium-gradient">cero ausencias, cero huecos vacíos</span></>,
+    heroImagen: "/clinicas-hero.webp",
+    heroPosicion: "65% 18%",
+    heroTitle: <>Automatiza tu clínica: <span className="premium-gradient">cero<br />ausencias, cero huecos vacíos</span></>,
     heroSubtitle: "Citas que se confirman solas, recordatorios automáticos por SMS o WhatsApp y encuestas post-visita. Cumple con LOPD-GDD desde el primer día.",
     painPoints: [
         { icon: "fa-calendar-times", text: "Pacientes que no aparecen y dejan hueco vacío" },

@@ -1,4 +1,34 @@
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
+
+const explora = [
+    { href: "/", label: "Inicio" },
+    { href: "/#problema", label: "El problema" },
+    { href: "/#que-automatizamos", label: "Qué automatizamos" },
+    { href: "/#model", label: "Precios" },
+    { href: "/casos-de-exito", label: "Casos de éxito" },
+    { href: "/blog", label: "Blog" },
+    { href: "/sobre-mi", label: "Sobre mí" },
+    { href: "/#faq", label: "FAQ" },
+];
+
+const soluciones = [
+    { href: "/automatizacion-clinicas", label: "Clínicas y Salud" },
+    { href: "/automatizacion-administradores-fincas", label: "Administradores de Fincas" },
+    { href: "/automatizacion-ecommerce", label: "E-commerce" },
+    { href: "/automatizacion-empresas-servicios", label: "Empresas de Servicios" },
+    { href: "/servicios/formacion-ia-empresas", label: "Formación en IA" },
+];
+
+const linkStyle = { color: "rgba(250,246,239,0.7)" } as const;
+const tituloCol = {
+    fontFamily: "var(--font-mono, monospace)",
+    fontSize: "0.72rem",
+    fontWeight: 600,
+    letterSpacing: "0.16em",
+    textTransform: "uppercase" as const,
+    color: "#f6c39c",
+    marginBottom: "1.4rem",
+};
 
 export default function Footer() {
     return (
@@ -11,88 +41,83 @@ export default function Footer() {
         }}>
             <div className="container">
                 <div className="footer-grid">
+                    {/* Marca + redes */}
                     <div className="footer-col">
                         <a
-                            href="#"
+                            href="/"
                             className="logo"
-                            style={{ marginBottom: "1.5rem", display: "flex", alignItems: 'center', gap: '0.5rem' }}
+                            style={{ marginBottom: "1.2rem", display: "flex", alignItems: 'center', gap: '0.5rem' }}
                         >
                             <span className="premium-gradient" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Automatizatelo.</span>
                         </a>
-                        <p style={{ color: "rgba(255,255,255,0.7)", lineHeight: '1.6' }}>
-                            Transformamos tu negocio con <span style={{ color: 'var(--color-primary)' }}>IA y automatización</span>.
-                            <br />
-                            Tu socio en eficiencia operativa.
+                        <p style={{ color: "rgba(250,246,239,0.7)", lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                            Chatbots, paneles y automatizaciones que ya funcionan
+                            en negocios reales. Barcelona y toda España.
                         </p>
+                        <div style={{ display: "flex", gap: "1.1rem" }}>
+                            <a href="https://www.linkedin.com/company/automatizatelo" style={{ fontSize: "1.4rem", color: '#f6c39c' }} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin />
+                            </a>
+                            <a href="https://www.instagram.com/automatizatelo.ia?igsh=NWE1eW8xa2VieTlh&utm_source=qr" style={{ fontSize: "1.4rem", color: '#f6c39c' }} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <FaInstagram />
+                            </a>
+                            <a href="https://wa.me/34678399182" style={{ fontSize: "1.4rem", color: '#f6c39c' }} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <FaWhatsapp />
+                            </a>
+                        </div>
                     </div>
+
+                    {/* Explora */}
                     <div className="footer-col">
-                        <h4 style={{ color: 'white', marginBottom: '1.5rem' }}>Enlaces</h4>
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                            <li>
-                                <a href="/#problema" style={{ color: 'rgba(255,255,255,0.7)' }}>El problema</a>
+                        <h4 style={tituloCol}>Explora</h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                            {explora.map((l) => (
+                                <li key={l.href}>
+                                    <a href={l.href} style={linkStyle}>{l.label}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Soluciones */}
+                    <div className="footer-col">
+                        <h4 style={tituloCol}>Soluciones</h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                            {soluciones.map((l) => (
+                                <li key={l.href}>
+                                    <a href={l.href} style={linkStyle}>{l.label}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Contacto */}
+                    <div className="footer-col">
+                        <h4 style={tituloCol}>Contacto</h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'rgba(250,246,239,0.7)' }}>
+                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                                <i className="fa-solid fa-phone" style={{ color: '#f6c39c' }}></i>
+                                <a href="tel:+34678399182" style={linkStyle}>+34 678 39 91 82</a>
                             </li>
-                            <li>
-                                <a href="/#que-automatizamos" style={{ color: 'rgba(255,255,255,0.7)' }}>Qué automatizamos</a>
+                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                                <i className="fa-solid fa-envelope" style={{ color: '#f6c39c' }}></i>
+                                <a href="mailto:info@automatizatelo.com" style={linkStyle}>info@automatizatelo.com</a>
                             </li>
-                            <li>
-                                <a href="/#model" style={{ color: 'rgba(255,255,255,0.7)' }}>Precios</a>
+                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                                <i className="fa-solid fa-location-dot" style={{ color: '#f6c39c' }}></i>
+                                Barcelona · toda España
                             </li>
-                            <li>
-                                <a href="/#how-we-work" style={{ color: 'rgba(255,255,255,0.7)' }}>Cómo trabajo</a>
-                            </li>
-                            <li>
-                                <a href="/casos-de-exito" style={{ color: 'rgba(255,255,255,0.7)' }}>Casos de Éxito</a>
-                            </li>
-                            <li>
-                                <a href="/automatizacion-administradores-fincas" style={{ color: 'rgba(255,255,255,0.7)' }}>Administradores de Fincas</a>
-                            </li>
-                            <li>
-                                <a href="/servicios/formacion-ia-empresas" style={{ color: 'rgba(255,255,255,0.7)' }}>Formación en IA</a>
-                            </li>
-                            <li>
-                                <a href="/#faq" style={{ color: 'rgba(255,255,255,0.7)' }}>FAQ</a>
-                            </li>
-                            <li style={{ marginTop: '0.5rem' }}>
-                                <a href="#contact" className="btn btn-primary" style={{
-                                    background: 'var(--color-primary)',
-                                    border: 'none',
-                                    padding: '0.5rem 1.4rem',
+                            <li style={{ marginTop: '0.6rem' }}>
+                                <a href="/#contact" className="btn btn-primary" style={{
+                                    padding: '0.6rem 1.5rem',
                                     fontSize: '0.9rem',
                                     fontWeight: '600',
                                     borderRadius: '50px',
                                     color: '#fff',
-                                    textDecoration: 'none',
                                     display: 'inline-block',
-                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                                    boxShadow: '0 4px 20px rgba(255, 140, 50, 0.3)',
-                                }}>Empieza Ahora</a>
+                                }}>Auditoría gratuita</a>
                             </li>
                         </ul>
-                    </div>
-                    <div className="footer-col">
-                        <h4 style={{ color: 'white', marginBottom: '1.5rem' }}>Contacto</h4>
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'rgba(255,255,255,0.7)' }}>
-                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <i className="fa-solid fa-phone" style={{ color: 'var(--color-primary)' }}></i> +34 678 39 91 82
-                            </li>
-                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <i className="fa-solid fa-envelope" style={{ color: 'var(--color-primary)' }}></i> info@automatizatelo.com
-                            </li>
-                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <i className="fa-solid fa-location-dot" style={{ color: 'var(--color-primary)' }}></i> España
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="footer-col">
-                        <h4 style={{ color: 'white', marginBottom: '1.5rem' }}>Redes</h4>
-                        <div style={{ display: "flex", gap: "1.2rem" }}>
-                            <a href="https://www.linkedin.com/company/automatizatelo" style={{ fontSize: "1.5rem", color: 'var(--color-primary)', transition: 'transform 0.3s ease' }} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                                <FaLinkedin />
-                            </a>
-                            <a href="https://www.instagram.com/automatizatelo.ia?igsh=NWE1eW8xa2VieTlh&utm_source=qr" style={{ fontSize: "1.5rem", color: 'var(--color-primary)', transition: 'transform 0.3s ease' }} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                                <FaInstagram />
-                            </a>
-                        </div>
                     </div>
                 </div>
 
@@ -123,17 +148,15 @@ export default function Footer() {
                     }}>
                         Esta web está hecha con Next.js, Supabase e IA — las mismas herramientas que uso en tus proyectos.
                     </p>
-                    <p style={{ color: 'rgba(255,255,255,0.5)' }}>&copy; 2026 Automatizatelo. Todos los derechos reservados.</p>
                     <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center', fontSize: '0.85rem' }}>
-                        <a href="/aviso-legal" style={{ color: 'rgba(255,255,255,0.5)', opacity: 0.7 }}>Aviso Legal</a>
-                        <a href="/proteccion-datos" style={{ color: 'rgba(255,255,255,0.5)', opacity: 0.7 }}>Protección de Datos</a>
-                        <a href="/politica-cookies" style={{ color: 'rgba(255,255,255,0.5)', opacity: 0.7 }}>Política de Cookies</a>
-                        <a href="/declaracion-accesibilidad" style={{ color: 'rgba(255,255,255,0.5)', opacity: 0.7 }}>Accesibilidad</a>
+                        <a href="/aviso-legal" style={{ color: 'rgba(250,246,239,0.5)' }}>Aviso Legal</a>
+                        <a href="/proteccion-datos" style={{ color: 'rgba(250,246,239,0.5)' }}>Protección de Datos</a>
+                        <a href="/politica-cookies" style={{ color: 'rgba(250,246,239,0.5)' }}>Política de Cookies</a>
+                        <a href="/declaracion-accesibilidad" style={{ color: 'rgba(250,246,239,0.5)' }}>Accesibilidad</a>
                     </div>
+                    <p style={{ color: 'rgba(250,246,239,0.5)' }}>&copy; 2026 Automatizatelo. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>
-
-
     );
 }
