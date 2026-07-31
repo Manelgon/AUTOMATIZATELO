@@ -8,7 +8,7 @@ Datos clave:
 - Contacto: info@automatizatelo.com · +34 678 39 91 82
 - Precios públicos: automatización puntual desde 500 €, sistema de negocio desde 2.000 €, automatización completa desde 8.000 €
 - El cliente conserva el código y los datos de todo lo que construimos
-- Herramientas según el caso (n8n, Make u otras): no dependemos de una sola plataforma
+- Herramientas según el caso: no dependemos de una sola plataforma
 
 ## Páginas principales
 
@@ -24,6 +24,7 @@ Datos clave:
 
 ## Servicios
 
+- [Automatización de procesos](https://automatizatelo.com/servicios/automatizacion): facturas y documentos sin picar datos (y generación automática de los tuyos), seguimiento de clientes, avisos y reportes automáticos
 - [Formación en IA para empresas](https://automatizatelo.com/servicios/formacion-ia-empresas): talleres in-company, gobernanza y cursos e-learning (SCORM); cubre la alfabetización en IA que exige el art. 4 del Reglamento Europeo de IA
 - [Casos de éxito](https://automatizatelo.com/casos-de-exito): sistemas reales en producción, con detalle de problema, solución y resultados
 

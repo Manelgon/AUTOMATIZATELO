@@ -42,12 +42,17 @@ const sectores = [
 
 const EXTENSIONES = ["jpg", "webp", "png"];
 
+// Interruptor: el mosaico del index va con degradado terracota + icono.
+// Ponlo a true si algún día quieres fotos propias en las celdas (public/sectores/).
+const CON_FOTOS = false;
+
 function FotoSector({ nombre, icon }: { nombre: string; icon: string }) {
     // El degradado se muestra siempre; la foto solo se pone encima si
     // comprobamos en segundo plano que el archivo existe (evita imágenes rotas).
     const [src, setSrc] = useState<string | null>(null);
 
     useEffect(() => {
+        if (!CON_FOTOS) return;
         let vivo = true;
         (async () => {
             for (const ext of EXTENSIONES) {

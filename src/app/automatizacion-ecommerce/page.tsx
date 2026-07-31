@@ -19,7 +19,8 @@ const props: SectorPageProps = {
     icon: "fa-bag-shopping",
     color: "#0ea5e9",
     heroKicker: "Tiendas online",
-    heroTitle: <>Automatiza tu tienda online: <span className="premium-gradient">+ventas, –tickets de soporte</span></>,
+    heroImagen: "/ecommerce-hero.webp",
+    heroTitle: <>Automatiza tu tienda online:<br /><span className="premium-gradient">+ventas, –tickets de soporte</span></>,
     heroSubtitle: "Recupera carritos abandonados con IA, responde dudas de pedidos en segundos y conecta tu tienda con tu CRM sin que se pierda un solo cliente.",
     painPoints: [
         { icon: "fa-cart-arrow-down", text: "Carritos abandonados que no recuperas" },

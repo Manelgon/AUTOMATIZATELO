@@ -140,8 +140,8 @@ export default function Hero() {
                     inset: 0;
                     z-index: 1;
                     background:
-                        linear-gradient(180deg, rgba(28,25,23,0.42) 0%, rgba(28,25,23,0.18) 45%, rgba(120,53,15,0.38) 100%),
-                        radial-gradient(circle at 75% 30%, rgba(234,88,12,0.16), transparent 60%);
+                        linear-gradient(180deg, rgba(28,25,23,0.42) 0%, rgba(28,25,23,0.18) 45%, rgba(120,53,15,0.22) 100%),
+                        radial-gradient(circle at 75% 30%, rgba(234,88,12,0.08), transparent 60%);
                 }
                 .hero-foto .hero-foto-contenido {
                     position: relative;

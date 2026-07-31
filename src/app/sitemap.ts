@@ -62,6 +62,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: 'https://automatizatelo.com/servicios/automatizacion',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: 'https://automatizatelo.com/aviso-legal',
             lastModified: now,
             changeFrequency: 'yearly',

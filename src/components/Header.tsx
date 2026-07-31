@@ -15,7 +15,12 @@ const sectorLinks = [
 const comoTrabajoLinks = [
     { href: "/#how-we-work", num: "01", title: "Auditoría", desc: "Antes de construir, el criterio." },
     { href: "/#que-automatizamos", num: "02", title: "Implementación", desc: "Construimos el sistema." },
-    { href: "/servicios/formacion-ia-empresas", num: "03", title: "Formación", desc: "Tu equipo aprende a usarlo." },
+    { href: "/#model", num: "03", title: "Acompañamiento", desc: "Soporte y mejora continua." },
+];
+
+const serviciosLinks = [
+    { href: "/servicios/automatizacion", num: "01", title: "Automatización de procesos", desc: "Facturas, seguimiento, avisos y reportes." },
+    { href: "/servicios/formacion-ia-empresas", num: "02", title: "Formación en IA", desc: "Talleres, gobernanza y cursos a medida." },
 ];
 
 export default function Header() {
@@ -112,7 +117,8 @@ export default function Header() {
                             />
                         </button>
                         {openMenu === "soluciones" && (
-                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 320 }}>
+                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 340 }}>
+                                <span className="dropdown-grupo">Por sector</span>
                                 {sectorLinks.map((s) => (
                                     <Link
                                         key={s.href}
@@ -124,6 +130,23 @@ export default function Header() {
                                         <span className="num">{s.num}</span>
                                         <span>
                                             <span className="item-title">{s.label}</span>
+                                            <span className="item-desc">{s.desc}</span>
+                                        </span>
+                                        <span className="arrow">→</span>
+                                    </Link>
+                                ))}
+                                <span className="dropdown-grupo" style={{ marginTop: '0.6rem' }}>Servicios</span>
+                                {serviciosLinks.map((s) => (
+                                    <Link
+                                        key={s.href}
+                                        href={s.href}
+                                        role="menuitem"
+                                        onClick={closeAll}
+                                        className="dropdown-item-num"
+                                    >
+                                        <span className="num">{s.num}</span>
+                                        <span>
+                                            <span className="item-title">{s.title}</span>
                                             <span className="item-desc">{s.desc}</span>
                                         </span>
                                         <span className="arrow">→</span>

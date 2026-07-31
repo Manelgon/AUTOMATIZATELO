@@ -53,7 +53,7 @@ const casos: Caso[] = [
     },
     {
         sector: "Clínicas y salud",
-        cliente: "Clínica estética en Ibiza",
+        cliente: "Clínica estética",
         titulo: "Asistente de WhatsApp con IA que agenda las citas de la clínica él solo",
         problema:
             "Recepción saturada al teléfono, citas perdidas por no contestar a tiempo y recordatorios manuales.",

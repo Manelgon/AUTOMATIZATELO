@@ -250,14 +250,15 @@ export default function ContactForm() {
                         </div>
                         <div>
                             <label htmlFor="telefono" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Teléfono de contacto <span style={{ color: 'var(--color-primary)' }}>*</span></label>
-                            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }} ref={phoneDropdownRef}>
+                            <div style={{ display: 'flex', gap: '10px', flexWrap: 'nowrap' }} ref={phoneDropdownRef}>
                                 <div style={{ position: 'relative' }}>
                                     <button
                                         type="button"
                                         onClick={() => setIsPhoneDropdownOpen(!isPhoneDropdownOpen)}
                                         className="glass"
                                         style={{
-                                            width: '100px',
+                                            width: '82px',
+                                            flexShrink: 0,
                                             height: '100%',
                                             padding: '0 10px',
                                             backgroundColor: 'var(--color-bg-secondary)',
@@ -286,15 +287,15 @@ export default function ContactForm() {
                                                     top: 'calc(100% + 10px)',
                                                     left: 0,
                                                     width: '320px',
-                                                    backgroundColor: 'var(--color-bg-secondary)',
+                                                    backgroundColor: 'var(--color-card-bg)',
                                                     zIndex: 1000,
-                                                    boxShadow: 'var(--shadow-card)',
-                                                    border: '1px solid var(--color-primary)',
-                                                    borderRadius: 'var(--radius-md)',
+                                                    boxShadow: '0 24px 60px rgba(28, 25, 23, 0.16)',
+                                                    border: '1px solid var(--color-border)',
+                                                    borderRadius: '18px',
                                                     overflow: 'hidden',
                                                 }}
                                             >
-                                                <div style={{ padding: '8px', position: 'sticky', top: 0, background: 'var(--color-bg-secondary)', borderBottom: '1px solid var(--color-border)', zIndex: 1 }}>
+                                                <div style={{ padding: '8px', position: 'sticky', top: 0, background: 'var(--color-card-bg)', borderBottom: '1px solid var(--color-border)', zIndex: 1 }}>
                                                     <input
                                                         type="text"
                                                         placeholder="Buscar país..."
@@ -328,8 +329,8 @@ export default function ContactForm() {
                                                                     gap: '8px',
                                                                     color: 'var(--color-text-main)'
                                                                 }}
-                                                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249, 115, 22, 0.15)'; e.currentTarget.style.color = 'var(--color-primary)'; const mutedSpan = e.currentTarget.querySelector('span:last-child') as HTMLElement; if (mutedSpan) mutedSpan.style.color = 'var(--color-primary)'; }}
-                                                                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--color-text-main)'; const mutedSpan = e.currentTarget.querySelector('span:last-child') as HTMLElement; if (mutedSpan) mutedSpan.style.color = 'var(--color-text-muted)'; }}
+                                                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f8dfc6'; }}
+                                                                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
                                                             >
                                                                 <span style={{ fontSize: '1.2rem' }}>{country.flag}</span>
                                                                 <span style={{ fontWeight: 'bold', minWidth: '45px' }}>{country.code}</span>
@@ -351,7 +352,7 @@ export default function ContactForm() {
                                     required
                                     value={formData.telefono}
                                     onChange={handleChange}
-                                    style={{ flexGrow: 1, minWidth: '200px', background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
+                                    style={{ flexGrow: 1, minWidth: 0, background: 'var(--color-bg-secondary)', color: 'var(--color-text-main)', border: '1px solid var(--color-border)' }}
                                 />
                             </div>
                         </div>
@@ -373,7 +374,7 @@ export default function ContactForm() {
 
                     </div>
 
-                    <div style={{ marginBottom: '1.5rem', marginTop: '1.5rem' }}>
+                    <div style={{ marginBottom: '0.75rem', marginTop: '1.5rem' }}>
                         <label htmlFor="mensaje" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Tu mensaje (Opcional)</label>
                         <textarea
                             id="mensaje"
@@ -419,13 +420,43 @@ export default function ContactForm() {
                         style={{
                             marginTop: "1rem",
                             textAlign: "center",
-                            color: status === "success" ? "green" : status === "error" ? "red" : "inherit"
+                            color: status === "success" ? "#15803d" : status === "error" ? "#b91c1c" : "rgba(28,25,23,0.75)"
                         }}
                     >
                         {statusMessage}
                     </p>
                 </form>
             </div>
+
+            <style>{`
+                /* Tarjeta del formulario al estilo de la casa: melocotón claro + campos crema */
+                #form-automatizatelo {
+                    background: #f8dfc6 !important;
+                    border: none !important;
+                    box-shadow: 0 25px 60px rgba(28, 25, 23, 0.12) !important;
+                }
+                #form-automatizatelo label {
+                    color: #1c1917 !important;
+                }
+                #form-automatizatelo input,
+                #form-automatizatelo textarea {
+                    background: #fffdf8 !important;
+                    color: #1c1917 !important;
+                    border: none !important;
+                }
+                #form-automatizatelo input::placeholder,
+                #form-automatizatelo textarea::placeholder {
+                    color: #a8a29e;
+                }
+                #form-automatizatelo button[type="button"] {
+                    background: #fffdf8 !important;
+                    color: #1c1917 !important;
+                    border: none !important;
+                }
+                #form-automatizatelo .checkbox {
+                    color: rgba(28, 25, 23, 0.75) !important;
+                }
+            `}</style>
         </section>
     );
 }

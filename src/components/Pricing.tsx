@@ -5,13 +5,13 @@ const plans = [
     {
         name: "Automatización Inicio",
         price: "500",
-        description: "Para negocios que quieren empezar a automatizar procesos concretos.",
+        description: "Para empezar: uno o dos procesos concretos que te quiten trabajo ya.",
         badge: null,
         highlight: false,
         features: [
             "Automatización de 1–2 procesos",
             "Integración entre 2 herramientas",
-            "Bot básico de respuestas automáticas",
+            "Avisos automáticos por email o WhatsApp",
             "Entrega en 2 semanas",
             "1 mes de soporte incluido",
         ],
@@ -20,7 +20,7 @@ const plans = [
     {
         name: "Automatización Negocio",
         price: "2.000",
-        description: "Para empresas que quieren automatizar ventas, clientes y operaciones.",
+        description: "Para automatizar un área completa: ventas, clientes u operaciones.",
         badge: "Más popular",
         highlight: true,
         features: [
@@ -98,6 +98,9 @@ export default function Pricing() {
                                 <span className="mono-label pr-desde">Desde</span>
                                 <span className="pr-cifra">{plan.price}€</span>
                             </div>
+                            <span className="mono-label" style={{ display: "block", color: plan.highlight ? "rgba(250,246,239,0.7)" : "var(--color-text-muted)", marginBottom: "0.7rem" }}>
+                                Ejemplos de lo que suele incluir
+                            </span>
                             <ul className="pr-lista">
                                 {plan.features.map((f) => (
                                     <li key={f}>
@@ -131,12 +134,14 @@ export default function Pricing() {
                     ))}
                 </motion.div>
 
-                <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem" }}>
-                    ¿No sabes qué plan necesitas?{" "}
+                <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
+                    Cada proyecto se compone a medida — panel, web, chatbot o automatizaciones,
+                    en la combinación que tu negocio necesite. El precio y el plazo se cierran
+                    antes de empezar.{" "}
                     <a href="#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                         Pide la auditoría gratuita
                     </a>{" "}
-                    y te lo digo en 30 minutos.
+                    y te digo qué combinación te toca.
                 </p>
             </div>
 

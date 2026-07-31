@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     default: "Automatización IA Barcelona | +20h/semana ahorradas | Automatizatelo",
     template: "%s | Automatizatelo"
   },
-  description: "Automatización con IA para PYMEs en Barcelona. Chatbots, CRM y flujos n8n que recuperan +20h/semana. Precio cerrado, sin permanencia. Auditoría gratis en 30 min.",
+  description: "Automatización con IA para PYMEs en Barcelona. Chatbots, CRM y flujos automatizados que recuperan +20h/semana. Precio cerrado, sin permanencia. Auditoría gratis en 30 min.",
   authors: [{ name: "Automatizatelo Team" }],
   creator: "Automatizatelo",
   publisher: "Automatizatelo",

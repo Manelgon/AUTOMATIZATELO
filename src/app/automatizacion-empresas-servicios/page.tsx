@@ -19,6 +19,8 @@ const props: SectorPageProps = {
     icon: "fa-briefcase",
     color: "#22c55e",
     heroKicker: "Servicios profesionales y B2B",
+    heroImagen: "/servicios-hero.webp",
+    heroPosicion: "65% 30%",
     heroTitle: <>Automatiza tu empresa de servicios: <span className="premium-gradient">cierra más leads sin contratar a nadie</span></>,
     heroSubtitle: "Captación, calificación, propuesta, seguimiento y facturación — todo conectado y automático. Cada lead recibe respuesta en menos de 5 minutos, 24/7.",
     painPoints: [

@@ -18,18 +18,18 @@ const fases = [
         titulo: "Implementación",
         lema: "Después del criterio, el sistema.",
         texto:
-            "Construyo la solución: chatbots que atienden solos, paneles de gestión a medida, flujos que eliminan el trabajo repetitivo. Precio cerrado, pago por hitos, sin permanencia — y el código y los datos son tuyos.",
+            "Construyo la solución: chatbots que atienden solos, paneles de gestión a medida y flujos que eliminan el trabajo repetitivo del día a día.",
         linkHref: "/casos-de-exito",
         linkLabel: "Ver sistemas que ya funcionan",
     },
     {
         num: "03",
-        titulo: "Formación",
-        lema: "Tu equipo aprende a usarlo.",
+        titulo: "Acompañamiento",
+        lema: "Puesta en marcha y mejora continua.",
         texto:
-            "De nada sirve un sistema que nadie usa. Formo a tu equipo para trabajar con IA con criterio y seguridad — y de paso cumples la formación en IA que ya exige el Reglamento Europeo.",
-        linkHref: "/servicios/formacion-ia-empresas",
-        linkLabel: "Conocer la formación",
+            "El sistema se entrega funcionando y con soporte incluido: medimos el tiempo que recupera, ajustamos lo que haga falta y tu equipo no se queda solo en ningún momento.",
+        linkHref: "/#model",
+        linkLabel: "Ver qué incluye cada plan",
     },
 ];
 

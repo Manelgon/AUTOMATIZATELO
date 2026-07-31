@@ -8,7 +8,7 @@ const casos = [
     },
     {
         icono: "fa-stethoscope",
-        nombre: "Clínica estética · Ibiza",
+        nombre: "Clínica estética",
         resultado: "Bot de citas por WhatsApp 24/7 con RGPD sanitario",
     },
     {

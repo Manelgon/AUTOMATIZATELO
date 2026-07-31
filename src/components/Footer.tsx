@@ -16,6 +16,7 @@ const soluciones = [
     { href: "/automatizacion-administradores-fincas", label: "Administradores de Fincas" },
     { href: "/automatizacion-ecommerce", label: "E-commerce" },
     { href: "/automatizacion-empresas-servicios", label: "Empresas de Servicios" },
+    { href: "/servicios/automatizacion", label: "Automatización de procesos" },
     { href: "/servicios/formacion-ia-empresas", label: "Formación en IA" },
 ];
 

@@ -26,9 +26,9 @@ const servicios = [
     },
     {
         icon: "fa-file-invoice",
-        titulo: "Facturas sin picar datos",
-        desc: "La información de facturas, albaranes y PDFs entra sola en tu sistema.",
-        href: "/#contact",
+        titulo: "Facturas y documentos automáticos",
+        desc: "Los que llegan se leen solos, y tus facturas, albaranes e informes se generan solos.",
+        href: "/servicios/automatizacion#facturas",
     },
     {
         icon: "fa-graduation-cap",
@@ -39,8 +39,8 @@ const servicios = [
     {
         icon: "fa-gears",
         titulo: "Automatización de procesos",
-        desc: "Los flujos repetitivos de tu pyme, funcionando solos con n8n, Make o a medida.",
-        href: "/#contact",
+        desc: "Los flujos repetitivos de tu pyme, funcionando solos de principio a fin.",
+        href: "/servicios/automatizacion",
     },
 ];
 

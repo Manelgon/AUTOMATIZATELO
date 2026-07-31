@@ -185,8 +185,8 @@ export default function SobreMiPage() {
                         margin: "1rem 0 1.5rem",
                         letterSpacing: "-0.01em",
                     }}>
-                        No me caso con ninguna herramienta: uso n8n, Make o desarrollo a medida
-                        según lo que tu caso necesite — no lo que a mí me convenga vender.
+                        No me caso con ninguna herramienta: elijo la tecnología — o el desarrollo
+                        a medida — según lo que tu caso necesite, no lo que a mí me convenga vender.
                     </p>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem 2rem", color: "var(--color-text-muted)" }}>
                         {garantias.map((g) => (
@@ -244,8 +244,8 @@ export default function SobreMiPage() {
                     inset: 0;
                     z-index: 1;
                     background:
-                        linear-gradient(180deg, rgba(28,25,23,0.42) 0%, rgba(28,25,23,0.2) 45%, rgba(120,53,15,0.38) 100%),
-                        radial-gradient(circle at 75% 30%, rgba(234,88,12,0.16), transparent 60%);
+                        linear-gradient(180deg, rgba(28,25,23,0.42) 0%, rgba(28,25,23,0.2) 45%, rgba(120,53,15,0.22) 100%),
+                        radial-gradient(circle at 75% 30%, rgba(234,88,12,0.08), transparent 60%);
                 }
                 .sm-hero-contenido {
                     position: relative;
