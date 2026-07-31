@@ -20,12 +20,12 @@ const faqs = [
                     <li>E-commerce</li>
                     <li>Academias</li>
                     <li>Clínicas</li>
-                    <li>Hoteles y restaurantes</li>
+                    <li>Administradores de fincas</li>
                 </ul>
                 <p style={{ marginTop: '0.5rem' }}>Cualquier empresa que tenga procesos repetitivos puede beneficiarse.</p>
             </>
         ),
-        plain: "La automatización es útil para prácticamente cualquier negocio. Trabajamos especialmente con PYMEs, negocios locales, empresas de servicios, e-commerce, academias, clínicas, hoteles y restaurantes. Cualquier empresa con procesos repetitivos puede beneficiarse."
+        plain: "La automatización es útil para prácticamente cualquier negocio. Trabajamos especialmente con PYMEs, negocios locales, empresas de servicios, e-commerce, academias, clínicas y administradores de fincas. Cualquier empresa con procesos repetitivos puede beneficiarse."
     },
     {
         question: "¿Qué tipo de procesos se pueden automatizar?",

@@ -1,19 +1,17 @@
 import { MetadataRoute } from 'next'
+import { supabaseServer } from '@/lib/supabase-server'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const revalidate = 3600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const now = new Date();
-    return [
+
+    const staticPages: MetadataRoute.Sitemap = [
         {
             url: 'https://automatizatelo.com',
             lastModified: now,
             changeFrequency: 'weekly',
             priority: 1,
-        },
-        {
-            url: 'https://automatizatelo.com/automatizacion-restaurantes',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
         },
         {
             url: 'https://automatizatelo.com/automatizacion-clinicas',
@@ -40,6 +38,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
+            url: 'https://automatizatelo.com/sobre-mi',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: 'https://automatizatelo.com/casos-de-exito',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://automatizatelo.com/automatizacion-administradores-fincas',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://automatizatelo.com/servicios/formacion-ia-empresas',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: 'https://automatizatelo.com/aviso-legal',
             lastModified: now,
             changeFrequency: 'yearly',
@@ -57,5 +79,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'yearly',
             priority: 0.1,
         },
-    ]
+    ];
+
+    let blogPages: MetadataRoute.Sitemap = [];
+    try {
+        const { data } = await supabaseServer
+            .from('blog_posts')
+            .select('slug,published_at,updated_at,created_at')
+            .eq('status', 'published')
+            .eq('is_visible', true);
+        if (data) {
+            blogPages = data.map((p) => ({
+                url: `https://automatizatelo.com/blog/${p.slug}`,
+                lastModified: new Date(p.updated_at || p.published_at || p.created_at),
+                changeFrequency: 'monthly' as const,
+                priority: 0.6,
+            }));
+        }
+    } catch {
+        // Sin conexión a la BD el sitemap sigue sirviendo las páginas estáticas
+    }
+
+    return [...staticPages, ...blogPages];
 }

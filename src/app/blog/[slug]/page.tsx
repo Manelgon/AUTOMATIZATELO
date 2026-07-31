@@ -1,10 +1,11 @@
-"use client";
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import type { Metadata } from "next";
+import { cache } from "react";
+import { notFound } from "next/navigation";
+import { supabaseServer } from "@/lib/supabase-server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const revalidate = 3600;
 
 interface BlogPostFull {
     id: string;
@@ -18,6 +19,54 @@ interface BlogPostFull {
     meta_description: string | null;
     published_at: string | null;
     created_at: string;
+    updated_at?: string | null;
+}
+
+const getPost = cache(async (slug: string): Promise<BlogPostFull | null> => {
+    const { data, error } = await supabaseServer
+        .from("blog_posts")
+        .select("*")
+        .eq("slug", slug)
+        .eq("status", "published")
+        .eq("is_visible", true)
+        .single();
+    if (error || !data) return null;
+    return data;
+});
+
+export async function generateMetadata(
+    { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+    const { slug } = await params;
+    const post = await getPost(slug);
+    if (!post) return { title: "Artículo no encontrado" };
+
+    const title = post.meta_title || post.title;
+    const description = post.meta_description || post.excerpt || undefined;
+    const url = `https://automatizatelo.com/blog/${post.slug}`;
+
+    return {
+        title,
+        description,
+        alternates: { canonical: url },
+        openGraph: {
+            title,
+            description,
+            url,
+            type: "article",
+            siteName: "Automatizatelo",
+            locale: "es_ES",
+            publishedTime: post.published_at || post.created_at,
+            authors: ["Manel Méndez González"],
+            ...(post.cover_image && { images: [{ url: post.cover_image }] }),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            ...(post.cover_image && { images: [post.cover_image] }),
+        },
+    };
 }
 
 function formatDate(dateStr: string | null): string {
@@ -30,93 +79,45 @@ function formatDate(dateStr: string | null): string {
     return `${d.getDate()} de ${months[d.getMonth()]}, ${d.getFullYear()}`;
 }
 
-export default function BlogPostPage() {
-    const params = useParams();
-    const slug = params?.slug as string;
-    const [post, setPost] = useState<BlogPostFull | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [notFound, setNotFound] = useState(false);
+export default async function BlogPostPage(
+    { params }: { params: Promise<{ slug: string }> }
+) {
+    const { slug } = await params;
+    const post = await getPost(slug);
+    if (!post) notFound();
 
-    useEffect(() => {
-        if (!slug) return;
-        async function fetchPost() {
-            try {
-                const { data, error } = await supabase
-                    .from("blog_posts")
-                    .select("*")
-                    .eq("slug", slug)
-                    .eq("status", "published")
-                    .eq("is_visible", true)
-                    .single();
-
-                if (error || !data) {
-                    setNotFound(true);
-                } else {
-                    setPost(data);
-                    // Update page title
-                    document.title = (data.meta_title || data.title) + " — Automatizatelo Blog";
-                }
-            } catch {
-                setNotFound(true);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchPost();
-    }, [slug]);
-
-    if (loading) {
-        return (
-            <div style={{
-                minHeight: "100vh",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "var(--color-bg)",
-            }}>
-                <div style={{
-                    width: 48, height: 48,
-                    border: "4px solid rgba(249,115,22,0.2)",
-                    borderTop: "4px solid var(--color-primary)",
-                    borderRadius: "50%",
-                    animation: "spin 1s linear infinite",
-                }} />
-                <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-            </div>
-        );
-    }
-
-    if (notFound || !post) {
-        return (
-            <div style={{
-                minHeight: "100vh",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "var(--color-bg)",
-                padding: "2rem",
-                textAlign: "center",
-            }}>
-                <h2 style={{ fontSize: "2rem", marginBottom: "1rem", color: "var(--color-text-main)" }}>
-                    Artículo no encontrado
-                </h2>
-                <p style={{ color: "var(--color-text-muted)", marginBottom: "2rem" }}>
-                    El artículo que buscas no existe o ha sido retirado.
-                </p>
-                <Link href="/blog" className="btn btn-primary" style={{
-                    background: "var(--color-primary)",
-                    color: "#fff",
-                    textDecoration: "none",
-                }}>
-                    Volver al blog
-                </Link>
-            </div>
-        );
-    }
+    const articleJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "description": post.meta_description || post.excerpt || undefined,
+        "image": post.cover_image || "https://automatizatelo.com/og-image.jpg",
+        "datePublished": post.published_at || post.created_at,
+        "dateModified": post.updated_at || post.published_at || post.created_at,
+        "inLanguage": "es-ES",
+        "mainEntityOfPage": `https://automatizatelo.com/blog/${post.slug}`,
+        "author": {
+            "@type": "Person",
+            "name": "Manel Méndez González",
+            "url": "https://automatizatelo.com/sobre-mi",
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Automatizatelo",
+            "url": "https://automatizatelo.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://automatizatelo.com/og-image.jpg",
+            },
+        },
+    };
 
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+            />
             <Header />
 
             {/* Article */}
@@ -161,6 +162,12 @@ export default function BlogPostPage() {
                         <i className="fa-regular fa-calendar" style={{ marginRight: "0.4rem" }} />
                         {formatDate(post.published_at || post.created_at)}
                     </span>
+                    <span>
+                        Por{" "}
+                        <a href="/sobre-mi" style={{ color: "var(--color-primary)", fontWeight: 600, textDecoration: "none" }}>
+                            Manel Méndez González
+                        </a>
+                    </span>
                     {post.tags?.map((t) => (
                         <span key={t} style={{
                             fontSize: "0.7rem",
@@ -197,8 +204,7 @@ export default function BlogPostPage() {
             {/* Footer */}
             <Footer />
 
-            <style jsx global>{`
-                @keyframes spin { to { transform: rotate(360deg); } }
+            <style>{`
                 .article-body h1 { font-size: 2rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--color-primary); }
                 .article-body h2 { font-size: 1.6rem; font-weight: 600; margin: 1.8rem 0 0.8rem; color: var(--color-text-main); }
                 .article-body h3 { font-size: 1.3rem; font-weight: 500; margin: 1.5rem 0 0.6rem; color: var(--color-text-main); }

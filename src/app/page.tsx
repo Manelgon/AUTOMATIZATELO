@@ -1,6 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import TechMarquee from "@/components/TechMarquee";
+import QueAutomatizamos from "@/components/QueAutomatizamos";
+import Razones from "@/components/Razones";
+import DelBlog from "@/components/DelBlog";
+
+export const revalidate = 3600;
 import Opportunity from "@/components/Opportunity";
 import HowWeWork from "@/components/HowWeWork";
 import UseCases from "@/components/UseCases";
@@ -17,14 +23,23 @@ export default function Home() {
       {/* 1. Hero */}
       <Hero />
 
-      {/* 2. Problema + Resultados (fusión) */}
+      {/* 1b. Marquee de tecnologías */}
+      <TechMarquee />
+
+      {/* 2. Problema + Resultados (bento) */}
       <Opportunity />
+
+      {/* 2b. Hub de servicios con enlaces internos */}
+      <QueAutomatizamos />
 
       {/* 3. Cómo trabajamos */}
       <HowWeWork />
 
       {/* 4. Casos de uso por sector (con links a landings) */}
       <UseCases />
+
+      {/* 4b. Por qué trabajar conmigo */}
+      <Razones />
 
       {/* 5. Clientes de confianza */}
       <TrustedClients />
@@ -37,6 +52,9 @@ export default function Home() {
 
       {/* 8. FAQ */}
       <FAQ />
+
+      {/* 9. Últimos artículos del blog */}
+      <DelBlog />
 
       <Footer />
     </main>

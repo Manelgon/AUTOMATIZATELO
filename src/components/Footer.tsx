@@ -3,14 +3,11 @@ import { FaLinkedin, FaInstagram } from "react-icons/fa";
 export default function Footer() {
     return (
         <footer className="footer" style={{
-            background: 'rgba(17, 24, 39, 0.95)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
+            background: '#1c1917',
             width: '100%',
-            borderTop: '1px solid rgba(255,255,255,0.1)',
-            boxShadow: '0 -10px 40px rgba(0,0,0,0.3)',
+            borderTop: '1px solid rgba(250,246,239,0.08)',
             color: 'white',
-            padding: '4rem 0',
+            padding: '4rem 0 2rem',
             marginTop: '4rem'
         }}>
             <div className="container">
@@ -45,7 +42,13 @@ export default function Footer() {
                                 <a href="/#how-we-work" style={{ color: 'rgba(255,255,255,0.7)' }}>Metodología</a>
                             </li>
                             <li>
-                                <a href="/#trusted-clients" style={{ color: 'rgba(255,255,255,0.7)' }}>Casos de Éxito</a>
+                                <a href="/casos-de-exito" style={{ color: 'rgba(255,255,255,0.7)' }}>Casos de Éxito</a>
+                            </li>
+                            <li>
+                                <a href="/automatizacion-administradores-fincas" style={{ color: 'rgba(255,255,255,0.7)' }}>Administradores de Fincas</a>
+                            </li>
+                            <li>
+                                <a href="/servicios/formacion-ia-empresas" style={{ color: 'rgba(255,255,255,0.7)' }}>Formación en IA</a>
                             </li>
                             <li>
                                 <a href="/#faq" style={{ color: 'rgba(255,255,255,0.7)' }}>FAQ</a>
@@ -94,8 +97,34 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '4rem', paddingTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.2rem' }}>
-                    <p style={{ color: 'rgba(255,255,255,0.5)' }}>&copy; 2024 Automatizatelo. Todos los derechos reservados.</p>
+                {/* Logo XXL — cierre editorial */}
+                <div aria-hidden="true" style={{ marginTop: '4rem', overflow: 'hidden' }}>
+                    <p style={{
+                        fontFamily: 'var(--font-display, serif)',
+                        fontSize: 'clamp(3rem, 11vw, 9.5rem)',
+                        fontWeight: 600,
+                        lineHeight: 0.95,
+                        letterSpacing: '-0.03em',
+                        color: 'rgba(250,246,239,0.12)',
+                        margin: 0,
+                        whiteSpace: 'nowrap',
+                        userSelect: 'none',
+                    }}>
+                        Automatizatelo.
+                    </p>
+                </div>
+
+                <div className="footer-bottom" style={{ borderTop: '1px solid rgba(250,246,239,0.08)', marginTop: '2rem', paddingTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.2rem' }}>
+                    <p style={{
+                        fontFamily: 'var(--font-mono, monospace)',
+                        fontSize: '0.75rem',
+                        letterSpacing: '0.06em',
+                        color: 'rgba(250,246,239,0.45)',
+                        textAlign: 'center',
+                    }}>
+                        Esta web está hecha con Next.js, Supabase e IA — las mismas herramientas que uso en tus proyectos.
+                    </p>
+                    <p style={{ color: 'rgba(255,255,255,0.5)' }}>&copy; 2026 Automatizatelo. Todos los derechos reservados.</p>
                     <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center', fontSize: '0.85rem' }}>
                         <a href="/aviso-legal" style={{ color: 'rgba(255,255,255,0.5)', opacity: 0.7 }}>Aviso Legal</a>
                         <a href="/proteccion-datos" style={{ color: 'rgba(255,255,255,0.5)', opacity: 0.7 }}>Protección de Datos</a>

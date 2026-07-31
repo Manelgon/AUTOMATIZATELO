@@ -1,7 +1,17 @@
-"use client";
-import { useEffect, useState } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import { supabaseServer } from "@/lib/supabase-server";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+    title: "Blog de Automatización e IA para Pymes",
+    description:
+        "Guías prácticas sobre automatización, chatbots e IA para pymes: qué automatizar, cuánto cuesta y casos reales de negocios en España.",
+    alternates: { canonical: "https://automatizatelo.com/blog" },
+};
 
 interface BlogPost {
     id: string;
@@ -14,42 +24,19 @@ interface BlogPost {
     created_at: string;
 }
 
-function formatDate(dateStr: string | null): string {
-    if (!dateStr) return "";
-    const d = new Date(dateStr);
-    const months = [
-        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
-    ];
-    return `${d.getDate()} de ${months[d.getMonth()]}, ${d.getFullYear()}`;
+async function getPosts(): Promise<BlogPost[]> {
+    const { data, error } = await supabaseServer
+        .from("blog_posts")
+        .select("id,title,slug,excerpt,cover_image,tags,published_at,created_at")
+        .eq("status", "published")
+        .eq("is_visible", true)
+        .order("published_at", { ascending: false });
+    if (error || !data) return [];
+    return data;
 }
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
-export default function BlogListingPage() {
-    const [posts, setPosts] = useState<BlogPost[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function fetchPosts() {
-            try {
-                const { data, error } = await supabase
-                    .from("blog_posts")
-                    .select("id,title,slug,excerpt,cover_image,tags,published_at,created_at")
-                    .eq("status", "published")
-                    .eq("is_visible", true)
-                    .order("published_at", { ascending: false });
-
-                if (!error && data) setPosts(data);
-            } catch (err) {
-                console.error("Error loading blog posts:", err);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchPosts();
-    }, []);
+export default async function BlogListingPage() {
+    const posts = await getPosts();
 
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
@@ -69,17 +56,7 @@ export default function BlogListingPage() {
 
             {/* Articles grid */}
             <div className="container" style={{ paddingBottom: "5rem", flexGrow: 1 }}>
-                {loading ? (
-                    <div style={{ display: "flex", justifyContent: "center", padding: "4rem" }}>
-                        <div style={{
-                            width: 48, height: 48,
-                            border: "4px solid rgba(249,115,22,0.2)",
-                            borderTop: "4px solid var(--color-primary)",
-                            borderRadius: "50%",
-                            animation: "spin 1s linear infinite",
-                        }} />
-                    </div>
-                ) : posts.length === 0 ? (
+                {posts.length === 0 ? (
                     <div style={{ textAlign: "center", padding: "4rem 2rem", color: "var(--color-text-muted)" }}>
                         <i className="fa-solid fa-newspaper" style={{ fontSize: "3rem", color: "rgba(249,115,22,0.2)", marginBottom: "1rem", display: "block" }} />
                         <p style={{ fontSize: "1.1rem" }}>Próximamente publicaremos artículos aquí. ¡Vuelve pronto!</p>
@@ -141,29 +118,7 @@ export default function BlogListingPage() {
 
             <Footer />
 
-            <style jsx global>{`
-                @keyframes spin { to { transform: rotate(360deg); } }
-
-                .blog-list-header {
-                    position: sticky; top: 0; z-index: 100;
-                    background: rgba(255,255,255,0.92);
-                    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-                    border-bottom: 1px solid var(--color-border);
-                    padding: 1rem 2rem;
-                    display: flex; align-items: center; justify-content: space-between;
-                }
-                .blog-list-logo {
-                    font-size: 1.1rem; font-weight: 700;
-                    color: var(--color-text-main); text-decoration: none;
-                    display: flex; align-items: center; gap: 0.5rem;
-                }
-                .blog-list-back {
-                    color: var(--color-primary); font-weight: 600;
-                    font-size: 0.9rem; display: flex; align-items: center;
-                    gap: 0.4rem; text-decoration: none; transition: gap 0.3s;
-                }
-                .blog-list-back:hover { gap: 0.7rem; }
-
+            <style>{`
                 .blog-list-hero {
                     padding: 3rem 0 2rem;
                     background: radial-gradient(circle at top center, rgba(249,115,22,0.06) 0%, transparent 70%);
@@ -177,7 +132,7 @@ export default function BlogListingPage() {
                 }
 
                 .blog-list-card {
-                    background: white;
+                    background: var(--color-card-bg);
                     border: 1px solid var(--color-border);
                     border-radius: var(--radius-lg);
                     overflow: hidden;
@@ -213,13 +168,6 @@ export default function BlogListingPage() {
                     -webkit-box-orient: vertical; overflow: hidden;
                     margin: 0; line-clamp: 3;
                 }
-                .blog-list-readmore {
-                    font-size: 0.85rem; font-weight: 600;
-                    color: var(--color-primary);
-                    display: flex; align-items: center;
-                    gap: 0.3rem; transition: gap 0.3s ease;
-                }
-                .blog-list-card:hover .blog-list-readmore { gap: 0.6rem; }
 
                 @media (max-width: 768px) {
                     .blog-list-grid { grid-template-columns: 1fr; }

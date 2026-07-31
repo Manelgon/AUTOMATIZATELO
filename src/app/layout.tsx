@@ -1,14 +1,29 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Outfit, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieBanner from "@/components/CookieBanner";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-main",
   weight: ["400", "600", "700"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "600"],
   display: "swap",
 });
 
@@ -122,7 +137,7 @@ export default function RootLayout({
       <head>
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </head>
-      <body className={outfit.variable}>
+      <body className={`${outfit.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -163,6 +178,7 @@ export default function RootLayout({
             gtag('config', 'AW-18013693770');
           `}
         </Script>
+        <SmoothScroll />
         <CookieBanner />
         <WhatsAppFloat />
       </body>

@@ -300,7 +300,7 @@ export default function BlogSection() {
                     width: 340px;
                     min-width: 340px;
                     scroll-snap-align: center;
-                    background: white;
+                    background: var(--color-card-bg);
                     border: 1px solid var(--color-border);
                     border-radius: var(--radius-lg);
                     overflow: hidden;
@@ -381,7 +381,7 @@ export default function BlogSection() {
                     height: 44px;
                     border-radius: 50%;
                     border: 1px solid var(--color-border);
-                    background: white;
+                    background: var(--color-card-bg);
                     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                     cursor: pointer;
                     display: flex;
