@@ -57,7 +57,7 @@ export default function Opportunity() {
     return (
         <section id="problema" style={{
             background: 'var(--color-bg-secondary)',
-            padding: '4.5rem 0',
+            padding: '4rem 0 2rem',
             borderTop: '1px solid var(--color-border)',
             borderBottom: '1px solid var(--color-border)',
         }}>

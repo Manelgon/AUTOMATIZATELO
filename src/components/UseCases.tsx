@@ -82,7 +82,7 @@ function FotoSector({ nombre, icon }: { nombre: string; icon: string }) {
 
 export default function UseCases() {
     return (
-        <section id="casos" style={{ padding: "4.5rem 0" }}>
+        <section id="casos" style={{ padding: "1.5rem 0 6rem", marginTop: "-6rem" }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}

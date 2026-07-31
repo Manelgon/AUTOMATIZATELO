@@ -134,7 +134,7 @@ export default function HowWeWork() {
             <style>{`
                 .hww-seccion {
                     position: relative;
-                    height: 220vh;
+                    height: 180vh;
                 }
                 .hww-escenario {
                     position: sticky;

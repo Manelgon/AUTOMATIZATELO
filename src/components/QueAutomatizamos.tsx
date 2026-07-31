@@ -48,7 +48,7 @@ export default function QueAutomatizamos() {
     const [activo, setActivo] = useState<number | null>(null);
 
     return (
-        <section id="que-automatizamos" style={{ padding: "5rem 0 3rem" }}>
+        <section id="que-automatizamos" style={{ padding: "6.5rem 0 0", marginBottom: "-6rem" }}>
             <div className="container">
                 <div style={{ marginBottom: "2rem" }}>
                     <span className="kicker-mono">Qué automatizamos</span>
