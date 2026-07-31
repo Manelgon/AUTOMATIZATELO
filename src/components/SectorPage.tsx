@@ -341,6 +341,13 @@ export default function SectorPage(p: SectorPageProps) {
                         grid-template-columns: 1fr;
                     }
                 }
+                @media (max-width: 600px) {
+                    /* En móvil los titulares rompen línea de forma natural */
+                    .sp-hero-foto h1 br,
+                    .sp-hero-plano h1 br {
+                        display: none;
+                    }
+                }
             `}</style>
         </main>
     );

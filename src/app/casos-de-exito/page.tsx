@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Casos de Éxito Reales de Automatización con IA",
+    title: "Casos de Éxito en Automatización con IA",
     description:
-        "Sistemas de automatización con IA funcionando en producción: panel de administración de fincas, bot de citas para clínica, SaaS con portal de empleo y más. Casos reales, no promesas.",
+        "Sistemas de automatización con IA en producción: panel de fincas, bot de citas para clínica, SaaS con portal de empleo. Casos reales, no promesas.",
     alternates: { canonical: "https://automatizatelo.com/casos-de-exito" },
 };
 

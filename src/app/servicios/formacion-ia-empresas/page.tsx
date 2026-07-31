@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Formación en IA para Empresas: Cursos y Talleres | AI Act",
+    title: "Formación en IA para Empresas | AI Act",
     description:
-        "Forma a tu equipo en IA y cumple el Art. 4 del Reglamento Europeo: talleres in-company, gobernanza y cursos e-learning (SCORM) a medida. Barcelona y toda España.",
+        "Forma a tu equipo y cumple el Art. 4 del Reglamento Europeo de IA: talleres in-company, gobernanza y cursos e-learning a medida. Toda España.",
     alternates: { canonical: "https://automatizatelo.com/servicios/formacion-ia-empresas" },
     openGraph: {
         title: "Formación en IA para Empresas y Equipos",

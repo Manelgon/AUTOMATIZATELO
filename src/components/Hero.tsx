@@ -66,7 +66,7 @@ export default function Hero() {
                     transition={{ delay: 0.2 }}
                     style={{ color: '#faf6ef', marginBottom: '1.5rem', textShadow: '0 2px 30px rgba(28,25,23,0.45)' }}
                 >
-                    Recupera <span style={{ color: '#f6c39c' }}>+20 horas a la<br />semana</span> automatizando<br />tu negocio con IA
+                    Recupera <span style={{ color: '#f6c39c' }}>+20 horas a la{" "}<br />semana</span> automatizando{" "}<br />tu negocio con IA
                 </motion.h1>
 
                 <motion.p

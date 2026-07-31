@@ -1,6 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+    title: "Declaración de Accesibilidad",
+    description: "Compromiso de accesibilidad de automatizatelo.com: medidas implementadas y cómo contactar si encuentras barreras.",
+    alternates: { canonical: "https://automatizatelo.com/declaracion-accesibilidad" },
+};
+
 export default function Accesibilidad() {
     return (
         <main>

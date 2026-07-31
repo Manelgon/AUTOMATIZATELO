@@ -46,7 +46,7 @@ export async function generateMetadata(
     const url = `https://automatizatelo.com/blog/${post.slug}`;
 
     return {
-        title,
+        title: { absolute: title },
         description,
         alternates: { canonical: url },
         openGraph: {

@@ -3,7 +3,7 @@ import SectorPage, { SectorPageProps } from "@/components/SectorPage";
 import { buildSectorSchema } from "@/lib/sectorSchema";
 
 export const metadata: Metadata = {
-    title: "Automatización para Clínicas y Centros de Salud | Citas y recordatorios IA",
+    title: "Automatización para Clínicas y Salud",
     description: "Automatiza citas, recordatorios SMS/WhatsApp, encuestas post-visita y reportes para tu clínica. Reduce ausencias hasta un 70%. Auditoría gratis.",
     alternates: { canonical: "https://automatizatelo.com/automatizacion-clinicas" },
     openGraph: {
@@ -21,7 +21,7 @@ const props: SectorPageProps = {
     heroKicker: "Clínicas y centros de salud",
     heroImagen: "/clinicas-hero.webp",
     heroPosicion: "65% 18%",
-    heroTitle: <>Automatiza tu clínica: <span className="premium-gradient">cero<br />ausencias, cero huecos vacíos</span></>,
+    heroTitle: <>Automatiza tu clínica: <span className="premium-gradient">cero{" "}<br />ausencias, cero huecos vacíos</span></>,
     heroSubtitle: "Citas que se confirman solas, recordatorios automáticos por SMS o WhatsApp y encuestas post-visita. Cumple con LOPD-GDD desde el primer día.",
     painPoints: [
         { icon: "fa-calendar-times", text: "Pacientes que no aparecen y dejan hueco vacío" },

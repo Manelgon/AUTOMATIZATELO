@@ -3,8 +3,8 @@ import SectorPage, { SectorPageProps } from "@/components/SectorPage";
 import { buildSectorSchema } from "@/lib/sectorSchema";
 
 export const metadata: Metadata = {
-    title: "Automatización para Empresas de Servicios | CRM, leads y seguimiento IA",
-    description: "Automatiza captación, seguimiento de leads, propuestas y facturación para tu empresa de servicios. Cada lead respondido en menos de 5 minutos. Auditoría gratis.",
+    title: "Automatización para Empresas de Servicios",
+    description: "Automatiza captación, seguimiento de leads, propuestas y facturación en tu empresa de servicios. Cada lead, respondido en minutos. Auditoría gratis.",
     alternates: { canonical: "https://automatizatelo.com/automatizacion-empresas-servicios" },
     openGraph: {
         title: "Automatización para Empresas de Servicios B2B",

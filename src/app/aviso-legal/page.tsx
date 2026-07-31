@@ -1,6 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+    title: "Aviso Legal",
+    description: "Aviso legal de Automatizatelo: datos identificativos, condiciones de uso y propiedad intelectual del sitio.",
+    alternates: { canonical: "https://automatizatelo.com/aviso-legal" },
+};
+
 export default function AvisoLegal() {
     return (
         <main>

@@ -3,8 +3,8 @@ import SectorPage, { SectorPageProps } from "@/components/SectorPage";
 import { buildSectorSchema } from "@/lib/sectorSchema";
 
 export const metadata: Metadata = {
-    title: "Automatización para E-commerce | Seguimiento, soporte IA y recuperación de carritos",
-    description: "Automatiza seguimiento de pedidos, soporte al cliente con IA, recuperación de carritos y emails post-venta. Más ventas con menos personal. Auditoría gratis.",
+    title: "Automatización para E-commerce con IA",
+    description: "Automatiza el soporte al cliente con IA, los avisos post-venta y las tareas repetitivas de tu tienda online. Auditoría gratis de 30 minutos.",
     alternates: { canonical: "https://automatizatelo.com/automatizacion-ecommerce" },
     openGraph: {
         title: "Automatización para E-commerce con IA",
@@ -20,7 +20,7 @@ const props: SectorPageProps = {
     color: "#0ea5e9",
     heroKicker: "Tiendas online",
     heroImagen: "/ecommerce-hero.webp",
-    heroTitle: <>Automatiza tu tienda online:<br /><span className="premium-gradient">+ventas, –tickets de soporte</span></>,
+    heroTitle: <>Automatiza tu tienda online:{" "}<br /><span className="premium-gradient">+ventas, –tickets de soporte</span></>,
     heroSubtitle: "Recupera carritos abandonados con IA, responde dudas de pedidos en segundos y conecta tu tienda con tu CRM sin que se pierda un solo cliente.",
     painPoints: [
         { icon: "fa-cart-arrow-down", text: "Carritos abandonados que no recuperas" },

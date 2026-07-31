@@ -29,20 +29,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Automatización IA Barcelona | +20h/semana ahorradas | Automatizatelo",
+    default: "Automatización IA para Pymes en Barcelona | Automatizatelo",
     template: "%s | Automatizatelo"
   },
-  description: "Automatización con IA para PYMEs en Barcelona. Chatbots, CRM y flujos automatizados que recuperan +20h/semana. Precio cerrado, sin permanencia. Auditoría gratis en 30 min.",
+  description: "Automatización con IA para pymes en Barcelona: chatbots, CRM y flujos que recuperan +20h/semana. Precio cerrado, sin permanencia. Auditoría gratis.",
   authors: [{ name: "Automatizatelo Team" }],
   creator: "Automatizatelo",
   publisher: "Automatizatelo",
   metadataBase: new URL("https://automatizatelo.com"),
-  alternates: {
-    canonical: "https://automatizatelo.com/",
-    languages: {
-      "es-ES": "https://automatizatelo.com/",
-    },
-  },
   ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION && {
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,

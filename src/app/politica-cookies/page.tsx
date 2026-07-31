@@ -2,6 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookiePreferencesButton from "@/components/CookiePreferencesButton";
 
+export const metadata = {
+    title: "Política de Cookies",
+    description: "Qué cookies usa automatizatelo.com, con qué finalidad y cómo configurarlas o rechazarlas.",
+    alternates: { canonical: "https://automatizatelo.com/politica-cookies" },
+};
+
 export default function PoliticaCookies() {
     return (
         <main>

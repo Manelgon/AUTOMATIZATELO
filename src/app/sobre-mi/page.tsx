@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Manel Méndez González — Fundador de Automatizatelo",
+    title: { absolute: "Manel Méndez González · Automatizatelo" },
     description:
-        "Manel Méndez González construye sistemas de automatización con IA para pymes: chatbots de WhatsApp, paneles de gestión y flujos que funcionan en producción. Barcelona.",
+        "Manel Méndez González construye sistemas de automatización con IA para pymes: chatbots de WhatsApp, paneles y flujos en producción. Barcelona.",
     alternates: { canonical: "https://automatizatelo.com/sobre-mi" },
 };
 

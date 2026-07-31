@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Automatización de Procesos para Pymes | Precio Cerrado",
+    title: "Automatización de Procesos para Pymes",
     description:
-        "Automatizamos las tareas repetitivas de tu pyme: facturas, documentos, seguimiento de clientes y reportes. Con la herramienta adecuada o a medida. Sin permanencia, precio cerrado.",
+        "Automatizamos facturas, documentos, seguimiento de clientes y reportes de tu pyme. Precio cerrado, sin permanencia y auditoría gratis de 30 minutos.",
     alternates: { canonical: "https://automatizatelo.com/servicios/automatizacion" },
     openGraph: {
         title: "Automatización de Procesos para Pymes",
@@ -134,7 +134,7 @@ export default function AutomatizacionPage() {
                         color: "var(--color-text-main)",
                         margin: "1rem 0 1.2rem",
                     }}>
-                        Automatización de procesos:<br />
+                        Automatización de procesos:{" "}<br />
                         <span style={{ color: "var(--color-primary)" }}>recupera +10 horas a la semana</span>
                     </h1>
                     <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 600 }}>

@@ -3,8 +3,8 @@ import SectorPage, { SectorPageProps } from "@/components/SectorPage";
 import { buildSectorSchema } from "@/lib/sectorSchema";
 
 export const metadata: Metadata = {
-    title: "Automatización para Administradores de Fincas | Panel e IA",
-    description: "Panel de gestión e IA para administradores de fincas: incidencias, comunicaciones con vecinos y documentación en un solo sitio. En uso diario en despachos reales.",
+    title: { absolute: "Automatización para Administradores de Fincas | Panel e IA" },
+    description: "Panel de gestión e IA para administradores de fincas: incidencias, vecinos y documentación en un solo sitio. En uso diario en despachos reales.",
     alternates: { canonical: "https://automatizatelo.com/automatizacion-administradores-fincas" },
     openGraph: {
         title: "Automatización para Administradores de Fincas",
@@ -20,7 +20,7 @@ const props: SectorPageProps = {
     color: "#0ea5e9",
     heroKicker: "Administración de fincas",
     heroImagen: "/fincas-hero.webp",
-    heroTitle: <>Tu despacho de fincas, <span className="premium-gradient">sin<br />ahogarse en llamadas y emails</span></>,
+    heroTitle: <>Tu despacho de fincas, <span className="premium-gradient">sin{" "}<br />ahogarse en llamadas y emails</span></>,
     heroSubtitle: "Panel de gestión a medida para incidencias, comunicaciones con vecinos y documentación de cada comunidad. No es teoría: despachos reales lo usan a diario desde enero de 2026.",
     painPoints: [
         { icon: "fa-phone-volume", text: "El teléfono no para: vecinos llamando por cualquier incidencia" },

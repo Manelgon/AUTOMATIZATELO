@@ -70,7 +70,7 @@ export default function Footer() {
 
                     {/* Explora */}
                     <div className="footer-col">
-                        <h4 style={tituloCol}>Explora</h4>
+                        <p style={tituloCol}>Explora</p>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                             {explora.map((l) => (
                                 <li key={l.href}>
@@ -82,7 +82,7 @@ export default function Footer() {
 
                     {/* Soluciones */}
                     <div className="footer-col">
-                        <h4 style={tituloCol}>Soluciones</h4>
+                        <p style={tituloCol}>Soluciones</p>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                             {soluciones.map((l) => (
                                 <li key={l.href}>
@@ -94,7 +94,7 @@ export default function Footer() {
 
                     {/* Contacto */}
                     <div className="footer-col">
-                        <h4 style={tituloCol}>Contacto</h4>
+                        <p style={tituloCol}>Contacto</p>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'rgba(250,246,239,0.7)' }}>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                                 <i className="fa-solid fa-phone" style={{ color: '#f6c39c' }}></i>

@@ -7,6 +7,10 @@ import Razones from "@/components/Razones";
 import DelBlog from "@/components/DelBlog";
 
 export const revalidate = 3600;
+
+export const metadata = {
+  alternates: { canonical: "https://automatizatelo.com/" },
+};
 import Opportunity from "@/components/Opportunity";
 import HowWeWork from "@/components/HowWeWork";
 import UseCases from "@/components/UseCases";
