@@ -481,14 +481,8 @@ img {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .tech-marquee-track {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-}
+/* El marquee se mueve siempre, también en móvil y con "reducir movimiento" activo
+   (decisión de diseño: es ambiental y lento, no interfiere con la lectura). */
 
 /* Glassmorphism utility - más sutil, 2026 */
 .glass {
@@ -1113,6 +1107,10 @@ section {
     border-top: none;
     border-radius: 0 0 16px 16px;
     box-shadow: 0 20px 40px rgba(28, 25, 23, 0.15);
+    max-height: calc(100vh - var(--header-height) - 3rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .nav-links.active {

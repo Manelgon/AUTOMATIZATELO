@@ -138,13 +138,6 @@ export default function TrustedClients() {
                     color: var(--color-text-main);
                     line-height: 1.2;
                 }
-                @media (prefers-reduced-motion: reduce) {
-                    .casos-marquee-track {
-                        animation: none;
-                        flex-wrap: wrap;
-                        width: 100%;
-                    }
-                }
                 @media (max-width: 600px) {
                     .caso-chip { width: 280px; padding: 1.2rem 1.4rem; }
                 }
