@@ -6,10 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const sectorLinks = [
-    { href: "/automatizacion-clinicas", num: "01", label: "Clínicas y Salud", desc: "Citas y recordatorios automáticos." },
-    { href: "/automatizacion-administradores-fincas", num: "02", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
-    { href: "/automatizacion-ecommerce", num: "03", label: "E-commerce", desc: "Soporte y tareas de tienda." },
-    { href: "/automatizacion-empresas-servicios", num: "04", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
+    { href: "/automatizacion-administradores-fincas", num: "01", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
+    { href: "/formacion-ia-centros-educativos", num: "02", label: "Centros Educativos", desc: "Formación del claustro en IA." },
+    { href: "/automatizacion-empresas-servicios", num: "03", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
+    { href: "/automatizacion-clinicas", num: "04", label: "Clínicas y Salud", desc: "Citas y recordatorios automáticos." },
+    { href: "/automatizacion-ecommerce", num: "05", label: "E-commerce", desc: "Soporte y tareas de tienda." },
 ];
 
 const comoTrabajoLinks = [
@@ -118,24 +119,7 @@ export default function Header() {
                         </button>
                         {openMenu === "soluciones" && (
                             <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 340 }}>
-                                <span className="dropdown-grupo">Por sector</span>
-                                {sectorLinks.map((s) => (
-                                    <Link
-                                        key={s.href}
-                                        href={s.href}
-                                        role="menuitem"
-                                        onClick={closeAll}
-                                        className="dropdown-item-num"
-                                    >
-                                        <span className="num">{s.num}</span>
-                                        <span>
-                                            <span className="item-title">{s.label}</span>
-                                            <span className="item-desc">{s.desc}</span>
-                                        </span>
-                                        <span className="arrow">→</span>
-                                    </Link>
-                                ))}
-                                <span className="dropdown-grupo" style={{ marginTop: '0.6rem' }}>Servicios</span>
+                                <span className="dropdown-grupo">Servicios</span>
                                 {serviciosLinks.map((s) => (
                                     <Link
                                         key={s.href}
@@ -147,6 +131,23 @@ export default function Header() {
                                         <span className="num">{s.num}</span>
                                         <span>
                                             <span className="item-title">{s.title}</span>
+                                            <span className="item-desc">{s.desc}</span>
+                                        </span>
+                                        <span className="arrow">→</span>
+                                    </Link>
+                                ))}
+                                <span className="dropdown-grupo" style={{ marginTop: '0.6rem' }}>Sectores</span>
+                                {sectorLinks.map((s) => (
+                                    <Link
+                                        key={s.href}
+                                        href={s.href}
+                                        role="menuitem"
+                                        onClick={closeAll}
+                                        className="dropdown-item-num"
+                                    >
+                                        <span className="num">{s.num}</span>
+                                        <span>
+                                            <span className="item-title">{s.label}</span>
                                             <span className="item-desc">{s.desc}</span>
                                         </span>
                                         <span className="arrow">→</span>
@@ -197,7 +198,7 @@ export default function Header() {
                         )}
                     </div>
 
-                    <Link href="/#model" onClick={closeAll}>Precios</Link>
+                    <Link href="/precios" onClick={closeAll}>Precios</Link>
                     <Link href="/casos-de-exito" onClick={closeAll}>Casos</Link>
                     <Link href="/blog" onClick={closeAll}>Blog</Link>
                     <Link href="/sobre-mi" onClick={closeAll}>Sobre mí</Link>

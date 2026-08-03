@@ -50,6 +50,16 @@ const faqs = [
         plain: "No. Nosotros nos encargamos de todo el diseño, implementación y configuración. Tú solo tendrás que utilizar el sistema una vez esté funcionando."
     },
     {
+        question: "Ya intentamos automatizar algo y lo acabamos abandonando. ¿Por qué esto sería distinto?",
+        answer: "Casi siempre pasa por lo mismo: se montó una herramienta sin auditar antes el proceso, y al final era más rápido seguir haciéndolo a mano. Por eso mi método empieza siempre por la auditoría: primero entendemos cómo trabajas de verdad, después construimos sobre tu proceso real, y el sistema se entrega documentado, con soporte y con tu equipo sabiendo usarlo. Los sistemas que construyo llevan meses funcionando a diario en negocios reales — puedes verlos en los casos de éxito.",
+        plain: "Casi siempre se abandonó porque se montó una herramienta sin auditar antes el proceso. Mi método empieza por la auditoría: primero entendemos cómo trabajas, después construimos sobre tu proceso real, y el sistema se entrega documentado, con soporte y con tu equipo formado. Los sistemas que construyo llevan meses funcionando a diario en negocios reales."
+    },
+    {
+        question: "¿Mi empresa es demasiado pequeña para automatizar?",
+        answer: "Al contrario: las pymes y los despachos pequeños son justo donde más se nota. Con una sola automatización desde 500€ ya se recuperan horas cada semana, y no necesitas departamento técnico ni cambiar tus herramientas. Lo único que hace falta es tener procesos repetitivos — y eso lo tiene cualquier negocio.",
+        plain: "Al contrario: las pymes y los despachos pequeños son donde más se nota. Con una automatización desde 500€ ya se recuperan horas cada semana, sin departamento técnico ni cambiar de herramientas. Solo hace falta tener procesos repetitivos."
+    },
+    {
         question: "¿Cuánto cuesta automatizar mi negocio?",
         answer: (
             <>
@@ -91,6 +101,11 @@ const faqs = [
         question: "¿Qué pasa si algo deja de funcionar?",
         answer: "Ofrecemos soporte y mantenimiento para asegurarnos de que las automatizaciones sigan funcionando correctamente. Además, monitorizamos los sistemas para detectar posibles problemas antes de que te afecten.",
         plain: "Ofrecemos soporte y mantenimiento para asegurarnos de que las automatizaciones sigan funcionando correctamente. Además, monitorizamos los sistemas para detectar posibles problemas antes de que te afecten."
+    },
+    {
+        question: "¿Y si tú desapareces mañana? ¿Me quedo colgado?",
+        answer: "No, y es una diferencia importante: el código, los datos y las cuentas son tuyos desde el primer día, y todo se entrega documentado. No hay licencias mías por medio ni dependencia de mi servidor — cualquier desarrollador podría continuar el sistema si hiciera falta. Ese es el trato: construyo para ti, no te alquilo.",
+        plain: "No: el código, los datos y las cuentas son tuyos desde el primer día, y todo se entrega documentado. No hay licencias del proveedor ni dependencia de su servidor — cualquier desarrollador podría continuar el sistema. Construyo para ti, no te alquilo."
     },
     {
         question: "¿La automatización sustituye a las personas?",

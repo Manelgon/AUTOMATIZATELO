@@ -33,8 +33,12 @@ const faqs = [
         answer: "Sí. Además del uso práctico, cubrimos la política interna de uso de IA: qué datos no se pueden pegar en una IA, cómo revisar resultados, qué herramientas están aprobadas y cómo documentarlo para cumplir con el RGPD y el Reglamento de IA.",
     },
     {
-        question: "¿Cuánto cuesta?",
-        answer: "Depende de las horas, el formato y el tamaño del equipo. Pide la consulta gratuita de 30 minutos y te preparamos una propuesta cerrada, sin sorpresas.",
+        question: "¿Cuánto cuesta formar a mi equipo?",
+        answer: "Un taller intensivo de un día (8 horas) cuesta entre 900€ y 1.400€. Un programa in-company de 16 horas repartidas en varias semanas, desde 2.400€. El bloque de alfabetización del Art. 4 (4-8 horas), desde 600€. Y un curso e-learning a medida en SCORM para tu plataforma, desde 1.900€. El precio final depende del número de participantes y la modalidad, y se cierra en la propuesta.",
+    },
+    {
+        question: "¿Qué evidencia queda para acreditar el Art. 4?",
+        answer: "Cada participante recibe un certificado nominal de aprovechamiento, y la empresa se queda con el registro formativo fechado (contenidos, horas y asistentes) y el material del curso. No existe una certificación oficial del artículo 4 — lo que se acredita ante una inspección es exactamente ese expediente.",
     },
 ];
 
@@ -183,6 +187,70 @@ export default function FormacionIaPage() {
                 </div>
             </section>
 
+            {/* Formatos y precios */}
+            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container" style={{ maxWidth: 900 }}>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="kicker-mono">Formatos y precios</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            Los precios, a la vista
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            Publico las tarifas porque es la primera pregunta de todo el mundo.
+                            El precio final depende de participantes y modalidad, y se cierra en la propuesta.
+                        </p>
+                    </div>
+
+                    <div className="fp-tabla-wrap">
+                        <table className="fp-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Formato</th>
+                                    <th>Duración</th>
+                                    <th>Para quién</th>
+                                    <th>Inversión</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Taller intensivo</strong><span>Un día, un tema, saliendo con algo montado.</span></td>
+                                    <td>1 día · 8 h</td>
+                                    <td>Un equipo o departamento</td>
+                                    <td>900 – 1.400 €</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Programa in-company</strong><span>Sesiones en varias semanas, con trabajo real aplicado al puesto entre una y otra.</span></td>
+                                    <td>16 h · 4 semanas</td>
+                                    <td>Mandos y equipos</td>
+                                    <td>Desde 2.400 €</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Alfabetización en IA (Art. 4)</strong><span>El bloque de cumplimiento: qué es la IA, riesgos, uso responsable y obligaciones.</span></td>
+                                    <td>4 – 8 h</td>
+                                    <td>Toda la plantilla</td>
+                                    <td>Desde 600 €</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Curso e-learning a medida (SCORM)</strong><span>Tu formación producida como curso, instalada en tu plataforma para siempre.</span></td>
+                                    <td>A medida</td>
+                                    <td>Empresas con plataforma propia</td>
+                                    <td>Desde 1.900 €</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: 720 }}>
+                        Toda la formación deja <strong style={{ color: "var(--color-text-main)" }}>evidencia documental</strong>:
+                        certificado nominal por participante y registro formativo fechado — el expediente con el que
+                        la empresa acredita la{" "}
+                        <Link href="/formacion-obligatoria-ai-act" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            alfabetización obligatoria del Art. 4 del AI Act
+                        </Link>.
+                    </p>
+                </div>
+            </section>
+
             {/* Quién lo imparte — franja terracota */}
             <section style={{ padding: "4rem 0", background: "linear-gradient(135deg, #b45309 0%, #7c2d12 55%, #431407 100%)" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
@@ -204,6 +272,28 @@ export default function FormacionIaPage() {
                         fundador de Automatizatelo. He publicado cursos completos de IA en plataformas
                         e-learning y formo a equipos con los casos de{" "}
                         <Link href="/casos-de-exito" style={{ color: "#f6c39c", fontWeight: 600 }}>sistemas que ya funcionan</Link>.
+                    </p>
+                </div>
+            </section>
+
+            {/* Para entidades de formación — producción white-label */}
+            <section style={{ padding: "4.5rem 0", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container" style={{ maxWidth: 900 }}>
+                    <span className="kicker-mono">Para entidades de formación</span>
+                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "1rem" }}>
+                        ¿Eres una academia o entidad de formación?
+                    </h2>
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 720, marginBottom: "1rem" }}>
+                        También produzco cursos <strong style={{ color: "var(--color-text-main)" }}>con tu marca</strong>:
+                        tú pones el catálogo y la certificación, yo produzco el contenido de IA — guion, materiales,
+                        vídeo y empaquetado SCORM listo para tu plataforma. Tu alumno nunca sabe que existo.
+                    </p>
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 720, margin: 0 }}>
+                        Es lo que ya hago con plataformas e-learning reales: cursos completos de IA publicados y en venta.
+                        Producción desde 1.900€ por curso, o licencia de contenido ya producido.{" "}
+                        <Link href="/#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            Cuéntame qué necesita tu catálogo
+                        </Link>.
                     </p>
                 </div>
             </section>
@@ -252,6 +342,50 @@ export default function FormacionIaPage() {
             <Footer />
 
             <style>{`
+                .fp-tabla-wrap {
+                    overflow-x: auto;
+                }
+                .fp-tabla {
+                    width: 100%;
+                    border-collapse: collapse;
+                    min-width: 640px;
+                }
+                .fp-tabla th {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    letter-spacing: 0.14em;
+                    text-transform: uppercase;
+                    color: var(--color-text-muted);
+                    text-align: left;
+                    padding: 0.8rem 1rem;
+                    border-bottom: 1px solid var(--color-border);
+                }
+                .fp-tabla td {
+                    padding: 1.2rem 1rem;
+                    border-bottom: 1px solid var(--color-border);
+                    color: var(--color-text-muted);
+                    vertical-align: top;
+                    line-height: 1.5;
+                    font-size: 0.95rem;
+                }
+                .fp-tabla td strong {
+                    display: block;
+                    font-family: var(--font-display, serif);
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    margin-bottom: 0.25rem;
+                }
+                .fp-tabla td span {
+                    display: block;
+                    font-size: 0.85rem;
+                }
+                .fp-tabla td:last-child {
+                    font-weight: 700;
+                    color: var(--color-primary);
+                    white-space: nowrap;
+                }
                 .fi-fila {
                     display: grid;
                     grid-template-columns: 3rem 2.4rem 1fr;

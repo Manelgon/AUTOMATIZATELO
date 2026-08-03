@@ -67,11 +67,10 @@ export default function Opportunity() {
                     <div className="op-sticky">
                         <span className="kicker-mono">El problema</span>
                         <h2 className="section-title" style={{ textAlign: 'left', marginTop: '0.8rem', marginBottom: '1rem' }}>
-                            Estas tareas te están costando clientes (y no lo sabes)
+                            Estas tareas te están{" "}<br />costando clientes{" "}<br />(y no lo sabes)
                         </h2>
                         <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.7, maxWidth: 420, marginBottom: '1.5rem' }}>
                             Cada hora en tareas manuales es una hora menos vendiendo.
-                            Sigue bajando — seguro que alguna te suena.
                         </p>
                         <a href="#contact" className="btn btn-primary" style={{ fontSize: '0.95rem', padding: '0.8rem 1.8rem', display: 'inline-block' }}>
                             Te lo digo en 30 minutos, gratis
@@ -164,7 +163,7 @@ export default function Opportunity() {
                     height: 300px;
                 }
                 .op-card + .op-card {
-                    margin-top: 20vh;
+                    margin-top: 24vh;
                 }
                 .op-card-final {
                     background: var(--color-primary);
@@ -174,6 +173,10 @@ export default function Opportunity() {
                     .op-layout {
                         grid-template-columns: 1fr;
                         gap: 2rem;
+                    }
+                    /* En móvil el titular rompe línea de forma natural */
+                    .op-sticky h2 br {
+                        display: none;
                     }
                     .op-sticky {
                         position: static;

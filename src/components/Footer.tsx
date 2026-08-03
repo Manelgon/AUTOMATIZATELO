@@ -4,7 +4,7 @@ const explora = [
     { href: "/", label: "Inicio" },
     { href: "/#problema", label: "El problema" },
     { href: "/#que-automatizamos", label: "Qué automatizamos" },
-    { href: "/#model", label: "Precios" },
+    { href: "/precios", label: "Precios" },
     { href: "/casos-de-exito", label: "Casos de éxito" },
     { href: "/blog", label: "Blog" },
     { href: "/sobre-mi", label: "Sobre mí" },
@@ -12,12 +12,14 @@ const explora = [
 ];
 
 const soluciones = [
-    { href: "/automatizacion-clinicas", label: "Clínicas y Salud" },
-    { href: "/automatizacion-administradores-fincas", label: "Administradores de Fincas" },
-    { href: "/automatizacion-ecommerce", label: "E-commerce" },
-    { href: "/automatizacion-empresas-servicios", label: "Empresas de Servicios" },
     { href: "/servicios/automatizacion", label: "Automatización de procesos" },
     { href: "/servicios/formacion-ia-empresas", label: "Formación en IA" },
+    { href: "/automatizacion-administradores-fincas", label: "Administradores de Fincas" },
+    { href: "/formacion-ia-centros-educativos", label: "Centros Educativos" },
+    { href: "/automatizacion-empresas-servicios", label: "Empresas de Servicios" },
+    { href: "/automatizacion-clinicas", label: "Clínicas y Salud" },
+    { href: "/automatizacion-ecommerce", label: "E-commerce" },
+    { href: "/formacion-obligatoria-ai-act", label: "Formación obligatoria (AI Act)" },
 ];
 
 const linkStyle = { color: "rgba(250,246,239,0.7)" } as const;

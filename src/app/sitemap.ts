@@ -68,6 +68,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: 'https://automatizatelo.com/formacion-obligatoria-ai-act',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://automatizatelo.com/formacion-ia-centros-educativos',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://automatizatelo.com/precios',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
             url: 'https://automatizatelo.com/aviso-legal',
             lastModified: now,
             changeFrequency: 'yearly',

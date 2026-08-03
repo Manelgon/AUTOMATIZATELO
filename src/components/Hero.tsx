@@ -77,8 +77,9 @@ export default function Hero() {
                     style={{ fontSize: '1.15rem', maxWidth: '540px', margin: '0 0 2.2rem', color: 'rgba(250,246,239,0.88)', lineHeight: 1.7, textShadow: '0 1px 20px rgba(28,25,23,0.4)' }}
                 >
                     Soy Manel. Construyo chatbots, CRM y automatizaciones que ya funcionan
-                    cada día en clínicas, despachos y academias reales. Sin jerga: me cuentas
-                    cómo trabajas y te digo qué automatizaría primero, gratis, en 30 minutos.
+                    cada día en clínicas, despachos y academias reales. Sin complicaciones:
+                    me cuentas cómo trabajas y te digo qué automatizaría primero, gratis,
+                    en 30 minutos.
                 </motion.p>
 
                 <motion.div
@@ -173,7 +174,10 @@ export default function Hero() {
                     .hero-foto .hero-foto-contenido { text-align: center; }
                     .hero-foto .hero-actions { justify-content: center !important; }
                     .hero-foto-contenido p, .hero-foto-contenido h1 { margin-left: auto !important; margin-right: auto !important; }
-                    .hero-foto .hero-giant-name { bottom: 1rem; }
+                    .hero-foto .hero-giant-name {
+                        bottom: 1rem;
+                        font-size: clamp(2.4rem, 12vw, 6rem);
+                    }
                 }
                 @media (max-width: 600px) {
                     /* En móvil el titular rompe línea de forma natural */

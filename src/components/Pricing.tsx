@@ -1,10 +1,12 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
-const plans = [
+const planesProyectos = [
     {
         name: "Automatización Inicio",
         price: "500",
+        desde: true,
         description: "Para empezar: uno o dos procesos concretos que te quiten trabajo ya.",
         badge: null,
         highlight: false,
@@ -16,10 +18,12 @@ const plans = [
             "1 mes de soporte incluido",
         ],
         cta: "Solicitar Presupuesto",
+        ctaHref: "#contact",
     },
     {
         name: "Automatización Negocio",
         price: "2.000",
+        desde: true,
         description: "Para automatizar un área completa: ventas, clientes u operaciones.",
         badge: "Más popular",
         highlight: true,
@@ -32,10 +36,12 @@ const plans = [
             "3 meses de soporte incluido",
         ],
         cta: "Empezar Ahora",
+        ctaHref: "#contact",
     },
     {
         name: "Automatización Completa",
         price: "8.000",
+        desde: true,
         description: "Sistema automático integral para toda la empresa.",
         badge: null,
         highlight: false,
@@ -48,17 +54,96 @@ const plans = [
             "6 meses de soporte y mantenimiento",
         ],
         cta: "Solicitar Presupuesto",
+        ctaHref: "#contact",
     },
 ];
 
-const garantias = [
+const planesFormacion = [
+    {
+        name: "Alfabetización en IA (Art. 4)",
+        price: "600",
+        desde: true,
+        description: "El bloque de cumplimiento del AI Act, para toda la plantilla.",
+        badge: null,
+        highlight: false,
+        features: [
+            "4–8 horas, presencial o en remoto",
+            "Qué es la IA, riesgos y uso responsable",
+            "Certificado nominal por participante",
+            "Registro formativo fechado (la evidencia)",
+        ],
+        cta: "Solicitar Propuesta",
+        ctaHref: "#contact",
+    },
+    {
+        name: "Taller intensivo",
+        price: "900",
+        desde: true,
+        description: "Un día, un tema, saliendo con cosas montadas para tu trabajo.",
+        badge: "Más popular",
+        highlight: true,
+        features: [
+            "1 día completo (8 horas)",
+            "Práctico: cada equipo con sus casos",
+            "Herramientas de IA aplicadas al puesto",
+            "Material y certificado incluidos",
+        ],
+        cta: "Solicitar Propuesta",
+        ctaHref: "#contact",
+    },
+    {
+        name: "Programa in-company",
+        price: "2.400",
+        desde: true,
+        description: "Varias semanas, con trabajo real aplicado entre sesiones.",
+        badge: null,
+        highlight: false,
+        features: [
+            "16 horas en 4 semanas",
+            "Para mandos y equipos completos",
+            "Trabajo aplicado entre sesión y sesión",
+            "Evidencia documental completa",
+        ],
+        cta: "Solicitar Propuesta",
+        ctaHref: "#contact",
+    },
+    {
+        name: "Curso e-learning (SCORM)",
+        price: "1.900",
+        desde: true,
+        description: "Tu formación producida como curso, en tu plataforma para siempre.",
+        badge: null,
+        highlight: false,
+        features: [
+            "Producción a medida en formato SCORM",
+            "Instalado en la plataforma de tu empresa",
+            "Registro individual de cada alumno",
+            "Se queda en tu propiedad",
+        ],
+        cta: "Solicitar Propuesta",
+        ctaHref: "#contact",
+    },
+];
+
+const garantiasProyectos = [
     "Sin permanencia",
     "Pago por hitos",
     "Código y datos tuyos",
     "Soporte humano en español",
 ];
 
+const garantiasFormacion = [
+    "Certificado nominal",
+    "Registro formativo fechado",
+    "Presencial o en remoto",
+    "Material incluido",
+];
+
 export default function Pricing() {
+    const [tab, setTab] = useState<"proyectos" | "formacion">("proyectos");
+    const planes = tab === "proyectos" ? planesProyectos : planesFormacion;
+    const garantias = tab === "proyectos" ? garantiasProyectos : garantiasFormacion;
+
     return (
         <section id="model" style={{ padding: "4.5rem 0" }}>
             <div className="container">
@@ -67,27 +152,53 @@ export default function Pricing() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    style={{ marginBottom: "2.5rem" }}
+                    style={{ marginBottom: "2rem" }}
                 >
                     <span className="kicker-mono">Servicios y precios</span>
                     <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
                         Precio cerrado. Plazo cerrado. Sin permanencia.
                     </h2>
                     <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 620 }}>
-                        Desde una automatización puntual hasta un sistema completo para toda la empresa.
-                        Los precios están aquí, a la vista — como debe ser.
+                        Desde una automatización puntual hasta un sistema completo — y la formación
+                        de tu equipo. Los precios están aquí, a la vista, como debe ser.
                     </p>
                 </motion.div>
 
-                <div className="pr-grid">
-                    {plans.map((plan, i) => (
-                        <motion.div
+                {/* Selector Proyectos / Formación */}
+                <div className="pr-tabs" role="tablist" aria-label="Tipo de servicio">
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected={tab === "proyectos"}
+                        className={`pr-tab ${tab === "proyectos" ? "pr-tab-activa" : ""}`}
+                        onClick={() => setTab("proyectos")}
+                    >
+                        <i className="fa-solid fa-gears" style={{ marginRight: "0.55rem" }}></i>
+                        Proyectos a medida
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected={tab === "formacion"}
+                        className={`pr-tab ${tab === "formacion" ? "pr-tab-activa" : ""}`}
+                        onClick={() => setTab("formacion")}
+                    >
+                        <i className="fa-solid fa-graduation-cap" style={{ marginRight: "0.55rem" }}></i>
+                        Formación en IA
+                    </button>
+                </div>
+
+                <motion.div
+                    key={tab}
+                    className={tab === "proyectos" ? "pr-grid" : "pr-grid pr-grid-4"}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                >
+                    {planes.map((plan) => (
+                        <div
                             key={plan.name}
                             className={`pr-card ${plan.highlight ? "pr-destacado" : ""}`}
-                            initial={{ opacity: 0, y: 28 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-60px" }}
-                            transition={{ delay: i * 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                         >
                             {plan.badge && (
                                 <span className="mono-label pr-badge">· {plan.badge} ·</span>
@@ -99,7 +210,7 @@ export default function Pricing() {
                                 <span className="pr-cifra">{plan.price}€</span>
                             </div>
                             <span className="mono-label" style={{ display: "block", color: plan.highlight ? "rgba(250,246,239,0.7)" : "var(--color-text-muted)", marginBottom: "0.7rem" }}>
-                                Ejemplos de lo que suele incluir
+                                {tab === "proyectos" ? "Ejemplos de lo que suele incluir" : "Qué incluye"}
                             </span>
                             <ul className="pr-lista">
                                 {plan.features.map((f) => (
@@ -110,14 +221,14 @@ export default function Pricing() {
                                 ))}
                             </ul>
                             <a
-                                href="#contact"
+                                href={plan.ctaHref}
                                 className={plan.highlight ? "btn btn-primary pr-cta" : "btn pr-cta pr-cta-borde"}
                             >
                                 {plan.cta}
                             </a>
-                        </motion.div>
+                        </div>
                     ))}
-                </div>
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -134,23 +245,76 @@ export default function Pricing() {
                     ))}
                 </motion.div>
 
-                <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
-                    Cada proyecto se compone a medida — panel, web, chatbot o automatizaciones,
-                    en la combinación que tu negocio necesite. El precio y el plazo se cierran
-                    antes de empezar.{" "}
-                    <a href="#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                        Pide la auditoría gratuita
-                    </a>{" "}
-                    y te digo qué combinación te toca.
-                </p>
+                {tab === "proyectos" ? (
+                    <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
+                        Cada proyecto se compone a medida — panel, web, chatbot o automatizaciones,
+                        en la combinación que tu negocio necesite. El precio y el plazo se cierran
+                        antes de empezar.{" "}
+                        <a href="#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            Pide la auditoría gratuita
+                        </a>{" "}
+                        y te digo qué combinación te toca.
+                    </p>
+                ) : (
+                    <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
+                        El precio final depende del número de participantes y la modalidad, y se
+                        cierra en la propuesta. Todo el detalle — itinerarios, Art. 4 y evidencia
+                        documental — está en la{" "}
+                        <a href="/servicios/formacion-ia-empresas" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            página de formación
+                        </a>.
+                    </p>
+                )}
+
+                <div style={{ textAlign: "center", marginTop: "2rem" }}>
+                    <a href="/precios" className="btn pr-cta-borde" style={{ fontSize: "0.95rem", padding: "0.85rem 2rem" }}>
+                        Ver todos los precios →
+                    </a>
+                </div>
             </div>
 
             <style>{`
+                .pr-tabs {
+                    display: inline-flex;
+                    gap: 0.3rem;
+                    padding: 0.3rem;
+                    border: 1px solid var(--color-border);
+                    border-radius: 50px;
+                    background: var(--color-bg-secondary);
+                    margin-bottom: 2rem;
+                }
+                .pr-tab {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: var(--color-text-muted);
+                    background: transparent;
+                    border: none;
+                    border-radius: 50px;
+                    padding: 0.65rem 1.4rem;
+                    cursor: pointer;
+                    transition: background 0.25s ease, color 0.25s ease;
+                }
+                .pr-tab:hover {
+                    color: var(--color-text-main);
+                }
+                .pr-tab-activa {
+                    background: linear-gradient(135deg, #b45309 0%, #7c2d12 55%, #431407 100%);
+                    color: #faf6ef;
+                }
+                .pr-tab-activa:hover {
+                    color: #faf6ef;
+                }
                 .pr-grid {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 1.2rem;
                     align-items: stretch;
+                }
+                .pr-grid-4 {
+                    grid-template-columns: repeat(4, 1fr);
                 }
                 .pr-card {
                     display: flex;
@@ -160,6 +324,9 @@ export default function Pricing() {
                     border-radius: var(--radius-lg);
                     padding: 2.2rem 2rem;
                     transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .pr-grid-4 .pr-card {
+                    padding: 1.8rem 1.5rem;
                 }
                 .pr-card:hover {
                     transform: translateY(-5px);
@@ -181,6 +348,9 @@ export default function Pricing() {
                     color: var(--color-text-main);
                     margin-bottom: 0.5rem;
                     line-height: 1.2;
+                }
+                .pr-grid-4 .pr-nombre {
+                    font-size: 1.25rem;
                 }
                 .pr-destacado .pr-nombre { color: #faf6ef; }
                 .pr-desc {
@@ -206,6 +376,9 @@ export default function Pricing() {
                     color: var(--color-primary);
                     letter-spacing: -0.02em;
                 }
+                .pr-grid-4 .pr-cifra {
+                    font-size: clamp(2rem, 3vw, 2.6rem);
+                }
                 .pr-destacado .pr-cifra { color: #f6c39c; }
                 .pr-lista {
                     list-style: none;
@@ -223,6 +396,9 @@ export default function Pricing() {
                     font-size: 0.92rem;
                     line-height: 1.5;
                     color: var(--color-text-muted);
+                }
+                .pr-grid-4 .pr-lista li {
+                    font-size: 0.88rem;
                 }
                 .pr-destacado .pr-lista li { color: rgba(250,246,239,0.88); }
                 .pr-lista i {
@@ -253,8 +429,21 @@ export default function Pricing() {
                     margin-top: 2.5rem;
                     color: var(--color-text-muted);
                 }
+                @media (max-width: 1100px) {
+                    .pr-grid-4 { grid-template-columns: repeat(2, 1fr); }
+                }
                 @media (max-width: 950px) {
                     .pr-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+                    .pr-grid-4 { grid-template-columns: 1fr; }
+                    .pr-tabs {
+                        display: flex;
+                        width: 100%;
+                    }
+                    .pr-tab {
+                        flex: 1;
+                        text-align: center;
+                        padding: 0.65rem 0.6rem;
+                    }
                 }
             `}</style>
         </section>
