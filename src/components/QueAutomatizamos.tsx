@@ -3,33 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-// TODO: cuando existan las páginas de paneles, reservas y automatización,
-// actualizar los href provisionales (/#contact) por sus URLs definitivas.
 const servicios = [
-    {
-        icon: "fa-robot",
-        titulo: "Chatbots que atienden solos",
-        desc: "Atención por WhatsApp y web, 24/7, conectada a tu agenda o tu sistema.",
-        href: "/#contact",
-    },
-    {
-        icon: "fa-chart-line",
-        titulo: "Paneles y dashboards a medida",
-        desc: "Toda la gestión de tu negocio en un solo sitio: clientes, incidencias, métricas.",
-        href: "/#contact",
-    },
-    {
-        icon: "fa-calendar-check",
-        titulo: "Reservas y citas automáticas",
-        desc: "Reservas online con confirmaciones, recordatorios y lista de espera.",
-        href: "/#contact",
-    },
-    {
-        icon: "fa-file-invoice",
-        titulo: "Facturas y documentos automáticos",
-        desc: "Los que llegan se leen solos, y tus facturas, albaranes e informes se generan solos.",
-        href: "/servicios/automatizacion#facturas",
-    },
     {
         icon: "fa-graduation-cap",
         titulo: "Formación en IA para tu equipo",
@@ -37,10 +11,40 @@ const servicios = [
         href: "/servicios/formacion-ia-empresas",
     },
     {
+        icon: "fa-clipboard-check",
+        titulo: "Auditoría de cumplimiento (AI Act)",
+        desc: "¿Cumples el Reglamento de IA? Informe, plan de acción y política de uso.",
+        href: "/servicios/auditoria-ia",
+    },
+    {
+        icon: "fa-rocket",
+        titulo: "ChatGPT o Copilot en tu empresa",
+        desc: "Elección sin comisiones, configuración segura y casos de uso por puesto.",
+        href: "/servicios/implantacion-ia",
+    },
+    {
         icon: "fa-gears",
         titulo: "Automatización de procesos",
         desc: "Los flujos repetitivos de tu pyme, funcionando solos de principio a fin.",
         href: "/servicios/automatizacion",
+    },
+    {
+        icon: "fa-robot",
+        titulo: "Chatbots que atienden solos",
+        desc: "Atención por WhatsApp y web, 24/7, conectada a tu agenda o tu sistema.",
+        href: "/servicios/chatbots",
+    },
+    {
+        icon: "fa-chart-line",
+        titulo: "Paneles y dashboards a medida",
+        desc: "Toda la gestión de tu negocio en un solo sitio: clientes, incidencias, métricas.",
+        href: "/servicios/paneles",
+    },
+    {
+        icon: "fa-file-invoice",
+        titulo: "Facturas y documentos automáticos",
+        desc: "Los que llegan se leen solos, y tus facturas, albaranes e informes se generan solos.",
+        href: "/servicios/automatizacion#facturas",
     },
 ];
 
@@ -51,9 +55,9 @@ export default function QueAutomatizamos() {
         <section id="que-automatizamos" style={{ padding: "6.5rem 0 0", marginBottom: "-6rem" }}>
             <div className="container">
                 <div style={{ marginBottom: "2rem" }}>
-                    <span className="kicker-mono">Qué automatizamos</span>
+                    <span className="kicker-mono">Qué implanto</span>
                     <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                        Lo que puedo construir para tu negocio
+                        Lo que puedo implantar en tu negocio
                     </h2>
                     <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
                         Todo con precio cerrado, sin permanencia, y el código y los datos siempre tuyos.

@@ -7,18 +7,18 @@ const fases = [
     {
         num: "01",
         titulo: "Auditoría",
-        lema: "Antes de construir, el criterio.",
+        lema: "Antes de implantar, el criterio.",
         texto:
-            "Me cuentas cómo trabajas y te digo qué automatizaría primero, qué retorno puedes esperar y qué no merece la pena automatizar. 30 minutos, gratis, sin compromiso y sin jerga.",
+            "Me cuentas cómo trabajáis y qué IA usáis ya, y te digo por dónde empezar: qué formar, qué poner en regla y qué automatizar primero — y qué no merece la pena. 30 minutos, gratis, sin compromiso y sin jerga.",
         linkHref: "/#contact",
         linkLabel: "Pedir mi auditoría gratuita",
     },
     {
         num: "02",
         titulo: "Implementación",
-        lema: "Después del criterio, el sistema.",
+        lema: "Después del criterio, la ejecución.",
         texto:
-            "Construyo la solución: chatbots que atienden solos, paneles de gestión a medida y flujos que eliminan el trabajo repetitivo del día a día.",
+            "Ejecuto el plan: formo a tu equipo, dejo el cumplimiento con su evidencia documental, y construyo los sistemas — chatbots, paneles y flujos — que eliminan el trabajo repetitivo.",
         linkHref: "/casos-de-exito",
         linkLabel: "Ver sistemas que ya funcionan",
     },
@@ -27,9 +27,9 @@ const fases = [
         titulo: "Acompañamiento",
         lema: "Puesta en marcha y mejora continua.",
         texto:
-            "El sistema se entrega funcionando y con soporte incluido: medimos el tiempo que recupera, ajustamos lo que haga falta y tu equipo no se queda solo en ningún momento.",
-        linkHref: "/#model",
-        linkLabel: "Ver qué incluye cada plan",
+            "Todo se entrega funcionando y con soporte incluido: medimos el tiempo que recupera, ajustamos lo que haga falta y tu equipo no se queda solo en ningún momento.",
+        linkHref: "/como-trabajo",
+        linkLabel: "Ver el método completo",
     },
 ];
 
@@ -38,8 +38,8 @@ const T = fases.length;
 const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "Cómo automatizamos tu negocio con IA",
-    "description": "Auditoría gratuita, implementación con precio cerrado y formación del equipo.",
+    "name": "Cómo implanto la IA en tu negocio",
+    "description": "Auditoría gratuita, implementación por hitos y acompañamiento: formación, cumplimiento del AI Act y automatización con precio cerrado.",
     "step": fases.map((f, i) => ({
         "@type": "HowToStep",
         "position": i + 1,

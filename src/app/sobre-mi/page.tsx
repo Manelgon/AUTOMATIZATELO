@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
     title: { absolute: "Manel Méndez González · Automatizatelo" },
     description:
-        "Manel Méndez González construye sistemas de automatización con IA para pymes: chatbots de WhatsApp, paneles y flujos en producción. Barcelona.",
+        "Manel Méndez González implanta la IA en pymes: forma equipos, deja el cumplimiento del AI Act en regla y construye los sistemas que ya usan despachos y academias.",
     alternates: { canonical: "https://automatizatelo.com/sobre-mi" },
 };
 
@@ -22,11 +22,12 @@ const personJsonLd = {
         "url": "https://automatizatelo.com",
     },
     "knowsAbout": [
+        "Implantación de IA en pymes",
+        "Formación en IA y gobernanza",
+        "Cumplimiento del Reglamento Europeo de IA (AI Act)",
         "Automatización de procesos",
-        "Inteligencia Artificial aplicada a pymes",
         "Chatbots de WhatsApp",
         "CRM y paneles de gestión a medida",
-        "Formación en IA y gobernanza",
     ],
     "sameAs": [
         "https://www.linkedin.com/company/automatizatelo",
@@ -37,8 +38,8 @@ const personJsonLd = {
 const construido = [
     {
         num: "01",
-        titulo: "Asistente de WhatsApp para una clínica estética",
-        desc: "Agenda citas él solo: propone huecos reales, envía recordatorios, gestiona lista de espera y cumple el RGPD sanitario con registro de auditoría.",
+        titulo: "Cursos de IA producidos y en venta",
+        desc: "Cursos e-learning completos publicados en plataformas estándar (SCORM) y formación in-company en uso de IA y gobernanza — la alfabetización que exige el Art. 4 del Reglamento Europeo, con su evidencia documental.",
     },
     {
         num: "02",
@@ -47,18 +48,18 @@ const construido = [
     },
     {
         num: "03",
+        titulo: "Asistente de WhatsApp para una clínica estética",
+        desc: "Agenda citas él solo: propone huecos reales, envía recordatorios, gestiona lista de espera y cumple el RGPD sanitario con registro de auditoría.",
+    },
+    {
+        num: "04",
         titulo: "SaaS completo con portal de empleo propio",
         desc: "Para Henkoaching (Jennifer Cervera): plataforma de coaching y selección con portal de empleo, dashboard e informes. Y su web y SEO.",
     },
     {
-        num: "04",
+        num: "05",
         titulo: "Bot de comedores escolares por WhatsApp",
         desc: "Cientos de familias avisan ausencias y resuelven dudas por WhatsApp, sin colapsar a la administración de la empresa.",
-    },
-    {
-        num: "05",
-        titulo: "Cursos de IA y formación de equipos",
-        desc: "Cursos e-learning publicados en plataformas estándar (SCORM) y formación in-company en uso de IA y gobernanza — la que exige el Reglamento Europeo.",
     },
 ];
 
@@ -105,12 +106,12 @@ export default function SobreMiPage() {
                         Hola, soy <span style={{ color: "#f6c39c" }}>Manel Méndez</span>
                     </h1>
                     <p style={{ color: "rgba(250,246,239,0.88)", lineHeight: 1.8, fontSize: "1.12rem", maxWidth: 560, marginBottom: "2rem", textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
-                        Llevo 3 años metido de lleno en la automatización y la IA aplicada a
-                        negocios reales. En ese tiempo he puesto en producción asistentes de
-                        WhatsApp, paneles de gestión y plataformas completas que hoy usan a diario
-                        clínicas, despachos de fincas, consultoras y academias. Automatizatelo nace
-                        de ahí: de comprobar, sistema a sistema, cuánto tiempo recupera una pyme
-                        cuando deja de hacer a mano lo que una máquina hace mejor.
+                        Llevo 3 años metido de lleno en la IA aplicada a negocios reales. En ese
+                        tiempo he puesto en producción asistentes de WhatsApp, paneles y plataformas
+                        que hoy usan a diario despachos, consultoras y academias — y he producido
+                        cursos de IA que se venden en plataformas e-learning. Automatizatelo hoy es
+                        eso, junto: implanto la IA en tu pyme — formo a tu equipo, dejo el
+                        cumplimiento en regla y construyo los sistemas que trabajan solos.
                     </p>
                     <div className="sm-hero-ctas" style={{ display: "flex", gap: "1.2rem", flexWrap: "wrap" }}>
                         <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1rem", padding: "0.95rem 2rem" }}>

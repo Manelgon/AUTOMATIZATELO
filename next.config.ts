@@ -10,6 +10,17 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      // Giro a implantación de IA (ago-2026): sectores retirados del foco
+      {
+        source: '/automatizacion-clinicas',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/automatizacion-ecommerce',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
   images: {

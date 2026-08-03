@@ -29,10 +29,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Automatización IA para Pymes en Barcelona | Automatizatelo",
+    default: "Implantación de IA para Pymes en Barcelona | Automatizatelo",
     template: "%s | Automatizatelo"
   },
-  description: "Automatización con IA para pymes en Barcelona: chatbots, CRM y flujos que recuperan +20h/semana. Precio cerrado, sin permanencia. Auditoría gratis.",
+  description: "Implantación de IA para pymes: formación de equipos, cumplimiento del AI Act y automatizaciones con precio cerrado. Barcelona y toda España. Auditoría gratis.",
   authors: [{ name: "Automatizatelo Team" }],
   creator: "Automatizatelo",
   publisher: "Automatizatelo",
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     },
   }),
   openGraph: {
-    title: "Automatizatelo | Automatización con IA en Barcelona",
-    description: "Expertos en automatización de procesos e Inteligencia Artificial en Barcelona. Transforma tu negocio hoy.",
+    title: "Automatizatelo | Implantación de IA en Barcelona",
+    description: "Formación, cumplimiento del AI Act y automatización: la IA implantada en tu empresa, con precio cerrado.",
     url: "https://automatizatelo.com",
     siteName: "Automatizatelo",
     locale: "es_ES",
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Automatizatelo | Automatización con IA en Barcelona",
-    description: "Automatiza tu negocio con IA y flujos de trabajo inteligentes. Consultoría en Barcelona.",
+    title: "Automatizatelo | Implantación de IA en Barcelona",
+    description: "Formación, cumplimiento del AI Act y automatización para pymes. Barcelona y toda España.",
     images: ["/og-image.jpg"],
   },
   robots: {

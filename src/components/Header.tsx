@@ -9,19 +9,16 @@ const sectorLinks = [
     { href: "/automatizacion-administradores-fincas", num: "01", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
     { href: "/formacion-ia-centros-educativos", num: "02", label: "Centros Educativos", desc: "Formación del claustro en IA." },
     { href: "/automatizacion-empresas-servicios", num: "03", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
-    { href: "/automatizacion-clinicas", num: "04", label: "Clínicas y Salud", desc: "Citas y recordatorios automáticos." },
-    { href: "/automatizacion-ecommerce", num: "05", label: "E-commerce", desc: "Soporte y tareas de tienda." },
-];
-
-const comoTrabajoLinks = [
-    { href: "/#how-we-work", num: "01", title: "Auditoría", desc: "Antes de construir, el criterio." },
-    { href: "/#que-automatizamos", num: "02", title: "Implementación", desc: "Construimos el sistema." },
-    { href: "/#model", num: "03", title: "Acompañamiento", desc: "Soporte y mejora continua." },
+    { href: "/formacion-ia-despachos", num: "04", label: "Despachos Profesionales", desc: "IA sin jugarse los datos de nadie." },
 ];
 
 const serviciosLinks = [
-    { href: "/servicios/automatizacion", num: "01", title: "Automatización de procesos", desc: "Facturas, seguimiento, avisos y reportes." },
-    { href: "/servicios/formacion-ia-empresas", num: "02", title: "Formación en IA", desc: "Talleres, gobernanza y cursos a medida." },
+    { href: "/servicios/formacion-ia-empresas", num: "01", title: "Formación en IA", desc: "Talleres, gobernanza y cursos a medida." },
+    { href: "/servicios/auditoria-ia", num: "02", title: "Auditoría IA (AI Act)", desc: "¿Tu empresa cumple? Informe y plan." },
+    { href: "/servicios/implantacion-ia", num: "03", title: "Implantación de herramientas", desc: "ChatGPT, Copilot o Gemini, en marcha." },
+    { href: "/servicios/automatizacion", num: "04", title: "Automatización de procesos", desc: "Facturas, seguimiento, avisos y reportes." },
+    { href: "/servicios/chatbots", num: "05", title: "Chatbots", desc: "WhatsApp y web, conectados a tu sistema." },
+    { href: "/servicios/paneles", num: "06", title: "Paneles a medida", desc: "Tu negocio entero, en un solo sitio." },
 ];
 
 export default function Header() {
@@ -94,7 +91,7 @@ export default function Header() {
                     <i className={`fa-solid ${isMobileOpen ? "fa-xmark" : "fa-bars"}`}></i>
                 </div>
 
-                <nav className={`nav-links ${isMobileOpen ? "active" : ""}`}>
+                <nav className={`nav-links ${isMobileOpen ? "active" : ""}`} data-lenis-prevent>
                     {/* Inicio: solo visible en el menú móvil (en escritorio, el logo hace de inicio) */}
                     <Link href="/" className="nav-solo-movil" onClick={closeAll}>Inicio</Link>
 
@@ -118,7 +115,7 @@ export default function Header() {
                             />
                         </button>
                         {openMenu === "soluciones" && (
-                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 340 }}>
+                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 340 }} data-lenis-prevent>
                                 <span className="dropdown-grupo">Servicios</span>
                                 {serviciosLinks.map((s) => (
                                     <Link
@@ -157,49 +154,10 @@ export default function Header() {
                         )}
                     </div>
 
-                    {/* Cómo trabajo (01/02/03) */}
-                    <div className="sectors-dropdown">
-                        <button
-                            type="button"
-                            onClick={(e) => { e.stopPropagation(); setOpenMenu(openMenu === "trabajo" ? null : "trabajo"); }}
-                            aria-expanded={openMenu === "trabajo"}
-                            aria-haspopup="menu"
-                            className="sectors-dropdown-trigger"
-                        >
-                            Cómo trabajo
-                            <i
-                                className="fa-solid fa-chevron-down"
-                                style={{
-                                    fontSize: '0.7rem',
-                                    transition: 'transform 0.2s ease',
-                                    transform: openMenu === "trabajo" ? 'rotate(180deg)' : 'rotate(0deg)',
-                                }}
-                            />
-                        </button>
-                        {openMenu === "trabajo" && (
-                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 320 }}>
-                                {comoTrabajoLinks.map((item) => (
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
-                                        role="menuitem"
-                                        onClick={closeAll}
-                                        className="dropdown-item-num"
-                                    >
-                                        <span className="num">{item.num}</span>
-                                        <span>
-                                            <span className="item-title">{item.title}</span>
-                                            <span className="item-desc">{item.desc}</span>
-                                        </span>
-                                        <span className="arrow">→</span>
-                                    </Link>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-
+                    <Link href="/como-trabajo" onClick={closeAll}>Cómo trabajo</Link>
                     <Link href="/precios" onClick={closeAll}>Precios</Link>
                     <Link href="/casos-de-exito" onClick={closeAll}>Casos</Link>
+                    <Link href="/recursos" onClick={closeAll}>Recursos</Link>
                     <Link href="/blog" onClick={closeAll}>Blog</Link>
                     <Link href="/sobre-mi" onClick={closeAll}>Sobre mí</Link>
 

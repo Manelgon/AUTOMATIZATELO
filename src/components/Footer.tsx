@@ -3,22 +3,27 @@ import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 const explora = [
     { href: "/", label: "Inicio" },
     { href: "/#problema", label: "El problema" },
-    { href: "/#que-automatizamos", label: "Qué automatizamos" },
+    { href: "/#que-automatizamos", label: "Qué implanto" },
+    { href: "/como-trabajo", label: "Cómo trabajo" },
     { href: "/precios", label: "Precios" },
     { href: "/casos-de-exito", label: "Casos de éxito" },
+    { href: "/recursos", label: "Recursos gratis" },
     { href: "/blog", label: "Blog" },
     { href: "/sobre-mi", label: "Sobre mí" },
     { href: "/#faq", label: "FAQ" },
 ];
 
 const soluciones = [
-    { href: "/servicios/automatizacion", label: "Automatización de procesos" },
     { href: "/servicios/formacion-ia-empresas", label: "Formación en IA" },
+    { href: "/servicios/auditoria-ia", label: "Auditoría IA (AI Act)" },
+    { href: "/servicios/implantacion-ia", label: "Implantación de herramientas IA" },
+    { href: "/servicios/automatizacion", label: "Automatización de procesos" },
+    { href: "/servicios/chatbots", label: "Chatbots" },
+    { href: "/servicios/paneles", label: "Paneles a medida" },
     { href: "/automatizacion-administradores-fincas", label: "Administradores de Fincas" },
+    { href: "/formacion-ia-despachos", label: "Despachos Profesionales" },
     { href: "/formacion-ia-centros-educativos", label: "Centros Educativos" },
     { href: "/automatizacion-empresas-servicios", label: "Empresas de Servicios" },
-    { href: "/automatizacion-clinicas", label: "Clínicas y Salud" },
-    { href: "/automatizacion-ecommerce", label: "E-commerce" },
     { href: "/formacion-obligatoria-ai-act", label: "Formación obligatoria (AI Act)" },
 ];
 

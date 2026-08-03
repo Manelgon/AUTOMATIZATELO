@@ -9,29 +9,24 @@ const dolores = [
         detalle: "Mientras respondes al décimo, el undécimo ya se ha ido a la competencia.",
     },
     {
+        icon: "fa-user-secret",
+        titulo: "Tu equipo ya usa ChatGPT — cada uno a su manera",
+        detalle: "Sin criterio común ni política de uso, cada chat con datos de clientes es un riesgo.",
+    },
+    {
         icon: "fa-copy",
         titulo: "Copiar datos de una herramienta a otra, a mano",
         detalle: "Cada copia-pega es un error esperando su momento.",
     },
     {
         icon: "fa-file-invoice",
-        titulo: "Hacer facturas y documentos uno por uno",
+        titulo: "Facturas, informes y documentos, uno por uno",
         detalle: "Horas de administración que no facturas a nadie.",
     },
     {
-        icon: "fa-calendar-check",
-        titulo: "Apuntar reservas y pedidos por teléfono",
-        detalle: "Si no llegas a cogerlo, esa reserva nunca existió.",
-    },
-    {
-        icon: "fa-chart-bar",
-        titulo: "Montar el mismo informe cada semana",
-        detalle: "El lunes se va en contar lo que pasó, no en mejorarlo.",
-    },
-    {
-        icon: "fa-user-clock",
-        titulo: "Perder clientes por no hacer seguimiento a tiempo",
-        detalle: "Un lead sin respuesta en 5 minutos pierde la mitad del interés.",
+        icon: "fa-scale-balanced",
+        titulo: "La ley de IA ya aplica — y no tienes ni un papel que lo demuestre",
+        detalle: "El régimen sancionador del Reglamento Europeo de IA rige desde agosto de 2026.",
     },
 ];
 
@@ -116,7 +111,7 @@ export default function Opportunity() {
                                 lineHeight: 1.25,
                                 margin: '1.1rem 0 1.2rem',
                             }}>
-                                Cuando lo automatizas:
+                                Cuando implantas la IA con cabeza:
                             </h3>
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                                 {[

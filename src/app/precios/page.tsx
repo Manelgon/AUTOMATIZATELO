@@ -110,6 +110,33 @@ const formacion = [
     },
 ];
 
+const auditoria = [
+    {
+        name: "Diagnóstico AI Act",
+        price: "750",
+        description: "¿Tu empresa cumple el Reglamento Europeo de IA? Te lo digo con un informe.",
+        highlight: false,
+        features: [
+            "Inventario de la IA en uso real",
+            "Clasificación de riesgos según el Reglamento",
+            "Informe + plan de acción priorizado",
+            "Entrega en 1–2 semanas",
+        ],
+    },
+    {
+        name: "Pack cumplimiento",
+        price: "1.800",
+        description: "El diagnóstico + lo que hace falta para dejarlo cerrado.",
+        highlight: true,
+        features: [
+            "Todo el diagnóstico AI Act",
+            "Política de uso de IA redactada para tu empresa",
+            "Formación Art. 4 con certificados nominales",
+            "Evidencia documental completa",
+        ],
+    },
+];
+
 const variables = [
     {
         icon: "fa-diagram-project",
@@ -155,6 +182,10 @@ const faqs = [
         answer: "El bloque de alfabetización del Art. 4 del AI Act (4-8 horas), desde 600€. Un taller intensivo de un día (8 horas), entre 900€ y 1.400€. Un programa in-company de 16 horas en varias semanas, desde 2.400€. Y un curso e-learning a medida en SCORM para tu plataforma, desde 1.900€. Siempre con certificado nominal y registro formativo.",
     },
     {
+        question: "¿Cuánto cuesta la auditoría de cumplimiento del AI Act?",
+        answer: "El diagnóstico — inventario de la IA en uso, clasificación de riesgos, informe y plan de acción — desde 750€. El pack completo, que añade la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados, desde 1.800€. El precio final depende del tamaño de la empresa y de las herramientas en uso.",
+    },
+    {
         question: "¿El código y los datos son míos?",
         answer: "Sí, siempre. Todo lo que se construye para tu empresa — paneles, bots, automatizaciones — queda en tu propiedad, con sus datos y su código. Si mañana quieres cambiar de proveedor, te lo llevas todo.",
     },
@@ -170,9 +201,9 @@ const faqJsonLd = {
     })),
 };
 
-function Parrilla({ planes, cols4 }: { planes: typeof proyectos; cols4?: boolean }) {
+function Parrilla({ planes, cols4, cols2 }: { planes: typeof proyectos; cols4?: boolean; cols2?: boolean }) {
     return (
-        <div className={`pp-grid ${cols4 ? "pp-grid-4" : ""}`}>
+        <div className={`pp-grid ${cols4 ? "pp-grid-4" : ""} ${cols2 ? "pp-grid-2" : ""}`}>
             {planes.map((plan) => (
                 <div key={plan.name} className={`pp-card ${plan.highlight ? "pp-destacado" : ""}`}>
                     <h3 className="pp-nombre">{plan.name}</h3>
@@ -228,9 +259,10 @@ export default function PreciosPage() {
                     </h1>
                     <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: 0, maxWidth: 680 }}>
                         Aquí están todos los precios, a la vista: una automatización puntual desde 500€,
-                        un sistema de negocio desde 2.000€, la empresa completa desde 8.000€ — y la
-                        formación del equipo en IA desde 600€. El precio final se cierra por escrito
-                        antes de empezar, se paga por hitos y no hay permanencia.
+                        un sistema de negocio desde 2.000€ y la empresa completa desde 8.000€; la
+                        formación del equipo en IA desde 600€; y la auditoría de cumplimiento del
+                        AI Act desde 750€. El precio final se cierra por escrito antes de empezar,
+                        se paga por hitos y no hay permanencia.
                     </p>
                 </div>
             </section>
@@ -281,6 +313,29 @@ export default function PreciosPage() {
                         y en la guía de{" "}
                         <Link href="/formacion-obligatoria-ai-act" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             formación obligatoria del AI Act
+                        </Link>.
+                    </p>
+                </div>
+            </section>
+
+            {/* Auditoría IA */}
+            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container">
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="kicker-mono">Auditoría IA</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            Cumplimiento del AI Act
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            Para saber dónde está tu empresa y qué le falta — con evidencia documental,
+                            no con miedo.
+                        </p>
+                    </div>
+                    <Parrilla planes={auditoria} cols2 />
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: 720 }}>
+                        El detalle del servicio, en la página de{" "}
+                        <Link href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            auditoría IA
                         </Link>.
                     </p>
                 </div>
@@ -378,6 +433,10 @@ export default function PreciosPage() {
                 }
                 .pp-grid-4 {
                     grid-template-columns: repeat(4, 1fr);
+                }
+                .pp-grid-2 {
+                    grid-template-columns: repeat(2, 1fr);
+                    max-width: 760px;
                 }
                 .pp-card {
                     display: flex;

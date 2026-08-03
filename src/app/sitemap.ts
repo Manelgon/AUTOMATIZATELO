@@ -14,16 +14,46 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 1,
         },
         {
-            url: 'https://automatizatelo.com/automatizacion-clinicas',
+            url: 'https://automatizatelo.com/servicios/auditoria-ia',
             lastModified: now,
             changeFrequency: 'monthly',
             priority: 0.9,
         },
         {
-            url: 'https://automatizatelo.com/automatizacion-ecommerce',
+            url: 'https://automatizatelo.com/servicios/implantacion-ia',
             lastModified: now,
             changeFrequency: 'monthly',
             priority: 0.9,
+        },
+        {
+            url: 'https://automatizatelo.com/servicios/chatbots',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://automatizatelo.com/servicios/paneles',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://automatizatelo.com/formacion-ia-despachos',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://automatizatelo.com/formacion-ia-directivos',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://automatizatelo.com/recursos',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.7,
         },
         {
             url: 'https://automatizatelo.com/automatizacion-empresas-servicios',
@@ -84,6 +114,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             lastModified: now,
             changeFrequency: 'monthly',
             priority: 0.9,
+        },
+        {
+            url: 'https://automatizatelo.com/como-trabajo',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.7,
         },
         {
             url: 'https://automatizatelo.com/aviso-legal',

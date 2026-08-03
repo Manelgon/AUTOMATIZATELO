@@ -125,6 +125,41 @@ const planesFormacion = [
     },
 ];
 
+const planesAuditoria = [
+    {
+        name: "Diagnóstico AI Act",
+        price: "750",
+        desde: true,
+        description: "¿Tu empresa cumple el Reglamento Europeo de IA? Te lo digo con un informe.",
+        badge: null,
+        highlight: false,
+        features: [
+            "Inventario de la IA en uso real",
+            "Clasificación de riesgos según el Reglamento",
+            "Informe + plan de acción priorizado",
+            "Entrega en 1–2 semanas",
+        ],
+        cta: "Solicitar Propuesta",
+        ctaHref: "#contact",
+    },
+    {
+        name: "Pack cumplimiento",
+        price: "1.800",
+        desde: true,
+        description: "El diagnóstico + lo que hace falta para dejarlo cerrado.",
+        badge: "Recomendado",
+        highlight: true,
+        features: [
+            "Todo el diagnóstico AI Act",
+            "Política de uso de IA redactada a medida",
+            "Formación Art. 4 con certificados nominales",
+            "Evidencia documental completa",
+        ],
+        cta: "Solicitar Propuesta",
+        ctaHref: "#contact",
+    },
+];
+
 const garantiasProyectos = [
     "Sin permanencia",
     "Pago por hitos",
@@ -139,10 +174,19 @@ const garantiasFormacion = [
     "Material incluido",
 ];
 
+const garantiasAuditoria = [
+    "Informe que gerencia entiende",
+    "Plan de acción priorizado",
+    "Evidencia documental",
+    "Precio cerrado por escrito",
+];
+
+type Tab = "proyectos" | "formacion" | "auditoria";
+
 export default function Pricing() {
-    const [tab, setTab] = useState<"proyectos" | "formacion">("proyectos");
-    const planes = tab === "proyectos" ? planesProyectos : planesFormacion;
-    const garantias = tab === "proyectos" ? garantiasProyectos : garantiasFormacion;
+    const [tab, setTab] = useState<Tab>("proyectos");
+    const planes = tab === "proyectos" ? planesProyectos : tab === "formacion" ? planesFormacion : planesAuditoria;
+    const garantias = tab === "proyectos" ? garantiasProyectos : tab === "formacion" ? garantiasFormacion : garantiasAuditoria;
 
     return (
         <section id="model" style={{ padding: "4.5rem 0" }}>
@@ -186,11 +230,21 @@ export default function Pricing() {
                         <i className="fa-solid fa-graduation-cap" style={{ marginRight: "0.55rem" }}></i>
                         Formación en IA
                     </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected={tab === "auditoria"}
+                        className={`pr-tab ${tab === "auditoria" ? "pr-tab-activa" : ""}`}
+                        onClick={() => setTab("auditoria")}
+                    >
+                        <i className="fa-solid fa-clipboard-check" style={{ marginRight: "0.55rem" }}></i>
+                        Auditoría IA
+                    </button>
                 </div>
 
                 <motion.div
                     key={tab}
-                    className={tab === "proyectos" ? "pr-grid" : "pr-grid pr-grid-4"}
+                    className={`pr-grid ${tab === "formacion" ? "pr-grid-4" : ""} ${tab === "auditoria" ? "pr-grid-2" : ""}`}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -245,7 +299,7 @@ export default function Pricing() {
                     ))}
                 </motion.div>
 
-                {tab === "proyectos" ? (
+                {tab === "proyectos" && (
                     <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
                         Cada proyecto se compone a medida — panel, web, chatbot o automatizaciones,
                         en la combinación que tu negocio necesite. El precio y el plazo se cierran
@@ -255,13 +309,23 @@ export default function Pricing() {
                         </a>{" "}
                         y te digo qué combinación te toca.
                     </p>
-                ) : (
+                )}
+                {tab === "formacion" && (
                     <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
                         El precio final depende del número de participantes y la modalidad, y se
                         cierra en la propuesta. Todo el detalle — itinerarios, Art. 4 y evidencia
                         documental — está en la{" "}
                         <a href="/servicios/formacion-ia-empresas" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             página de formación
+                        </a>.
+                    </p>
+                )}
+                {tab === "auditoria" && (
+                    <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
+                        El precio final depende del tamaño de la empresa y las herramientas en uso.
+                        Qué revisa y qué te llevas, en la página de{" "}
+                        <a href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            auditoría IA
                         </a>.
                     </p>
                 )}
@@ -315,6 +379,11 @@ export default function Pricing() {
                 }
                 .pr-grid-4 {
                     grid-template-columns: repeat(4, 1fr);
+                }
+                .pr-grid-2 {
+                    grid-template-columns: repeat(2, 1fr);
+                    max-width: 780px;
+                    margin: 0 auto;
                 }
                 .pr-card {
                     display: flex;

@@ -7,28 +7,20 @@ import Link from "next/link";
 // Si no existe, muestra el degradado cálido con icono de marca de agua.
 const sectores = [
     {
-        sector: "Clínicas y Salud",
-        href: "/automatizacion-clinicas",
-        icon: "fa-stethoscope",
-        imagen: "clinicas",
-        frase: "Citas que se confirman solas, recordatorios automáticos y lista de espera.",
-        span: "grande",
-    },
-    {
         sector: "Administradores de Fincas",
         href: "/automatizacion-administradores-fincas",
         icon: "fa-building",
         imagen: "fincas",
         frase: "Panel en uso diario en despachos reales desde enero de 2026.",
-        span: "ancho",
+        span: "grande",
     },
     {
-        sector: "E-commerce",
-        href: "/automatizacion-ecommerce",
-        icon: "fa-bag-shopping",
-        imagen: "ecommerce",
-        frase: "Soporte automático y tareas de tienda sin picar datos.",
-        span: "normal",
+        sector: "Centros Educativos",
+        href: "/formacion-ia-centros-educativos",
+        icon: "fa-graduation-cap",
+        imagen: "educacion",
+        frase: "Formación del claustro, política de uso de IA y cumplimiento del Art. 4.",
+        span: "ancho",
     },
     {
         sector: "Empresas de Servicios",
@@ -36,7 +28,7 @@ const sectores = [
         icon: "fa-briefcase",
         imagen: "servicios",
         frase: "CRM y seguimiento de leads en menos de 5 minutos.",
-        span: "normal",
+        span: "ancho",
     },
 ];
 
@@ -98,10 +90,10 @@ export default function UseCases() {
                 >
                     <span className="kicker-mono">Casos de uso</span>
                     <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                        Sectores donde la automatización genera más impacto
+                        Sectores donde la IA ya está funcionando
                     </h2>
                     <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 620 }}>
-                        Donde hay procesos repetitivos, hay horas por recuperar. En estos sectores lo hemos comprobado.
+                        Implantar IA no es dar una charla: es dejarla trabajando dentro del negocio. En estos sectores ya lo hace.
                     </p>
                 </motion.div>
 

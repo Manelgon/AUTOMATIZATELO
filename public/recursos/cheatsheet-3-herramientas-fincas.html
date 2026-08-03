@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cheatsheet · Las 3 Herramientas de IA para Administradores de Fincas · Automatizatelo</title>
+<meta name="robots" content="noindex"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--tinta:#1C1917;--naranja:#EA580C;--crema:#FAF6EF;--melocoton:#f6c39c;--gris:#57534e;--borde:#e7e0d2;}
+*{box-sizing:border-box;margin:0;padding:0;}
+@media print{
+  body{background:white;padding:0;}
+  .page{box-shadow:none;border-radius:0;}
+  .no-print{display:none;}
+  @page{margin:10mm;size:A4 landscape;}
+}
+body{font-family:'Outfit',sans-serif;background:var(--crema);padding:24px 16px;color:var(--tinta);}
+.page{max-width:1050px;margin:0 auto;background:#fffdf8;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(28,25,23,.08);}
+
+/* TOP */
+.top{display:flex;align-items:center;justify-content:space-between;background:var(--tinta);padding:16px 28px;border-bottom:3px solid var(--naranja);gap:12px;}
+.logo{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--crema);white-space:nowrap;}
+.top-center{text-align:center;}
+.top-center h1{font-size:.95rem;font-weight:700;color:white;}
+.top-center p{font-size:.68rem;color:rgba(250,246,239,.6);}
+.top-right{font-size:.68rem;color:rgba(250,246,239,.5);text-align:right;white-space:nowrap;}
+
+/* GRID 3 COLS */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.col{padding:20px 22px;border-right:1px solid var(--borde);}
+.col:last-child{border-right:none;}
+
+.col-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:14px;border-bottom:2px solid var(--borde);}
+.col-num{background:var(--naranja);color:white;font-size:.72rem;font-weight:700;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.col-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;color:var(--tinta);}
+.col-sub{font-size:.68rem;color:var(--gris);margin-top:1px;}
+
+.col-label{font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--naranja);margin-bottom:6px;margin-top:14px;}
+.col-label:first-of-type{margin-top:0;}
+
+.use-list{list-style:none;}
+.use-list li{font-size:.75rem;color:var(--gris);line-height:1.5;padding:4px 0;border-bottom:1px solid #f1ece0;display:flex;gap:7px;}
+.use-list li:last-child{border-bottom:none;}
+.use-list li::before{content:"→";color:var(--naranja);flex-shrink:0;font-weight:700;}
+.use-list li strong{color:var(--tinta);}
+
+.step-list{list-style:none;counter-reset:steps;}
+.step-list li{font-size:.74rem;color:var(--gris);line-height:1.5;padding:5px 0 5px 26px;border-bottom:1px solid #f1ece0;position:relative;counter-increment:steps;}
+.step-list li::before{content:counter(steps);position:absolute;left:0;top:5px;background:var(--borde);color:var(--tinta);width:18px;height:18px;border-radius:4px;font-size:.64rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.step-list li:last-child{border-bottom:none;}
+.step-list li strong{color:var(--tinta);}
+
+.shortcut-grid{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;}
+.sc-key{background:var(--crema);border:1px solid var(--borde);border-radius:4px;padding:3px 7px;font-size:.65rem;font-family:'JetBrains Mono','Consolas',monospace;color:var(--tinta);white-space:nowrap;}
+.sc-desc{font-size:.72rem;color:var(--gris);}
+
+.tip-box{background:rgba(234,88,12,.05);border:1px solid rgba(234,88,12,.22);border-radius:6px;padding:8px 10px;margin-top:10px;}
+.tip-box p{font-size:.72rem;color:var(--gris);line-height:1.5;}
+.tip-box strong{color:var(--naranja);}
+.tip-box .var{color:var(--naranja);font-weight:600;}
+
+/* BOTTOM */
+.bottom{background:var(--tinta);padding:10px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px;}
+.bottom p{font-size:.65rem;color:rgba(250,246,239,.5);}
+.bottom a{color:var(--melocoton);text-decoration:none;}
+
+.print-btn{position:fixed;bottom:24px;right:24px;background:var(--naranja);color:white;border:none;border-radius:999px;padding:10px 22px;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(234,88,12,.35);}
+
+@media (max-width:800px){
+  .grid{grid-template-columns:1fr;}
+  .col{border-right:none;border-bottom:1px solid var(--borde);}
+  .col:last-child{border-bottom:none;}
+  .top{flex-direction:column;text-align:center;}
+  .top-right{text-align:center;}
+}
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Guardar PDF</button>
+<div class="page">
+
+  <div class="top">
+    <span class="logo">Automatizatelo.</span>
+    <div class="top-center">
+      <h1>Las 3 Herramientas de IA para Administradores de Fincas</h1>
+      <p>Cheatsheet · Recurso gratuito de automatizatelo.com</p>
+    </div>
+    <div class="top-right">info@automatizatelo.com<br/>automatizatelo.com</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- COL 1: TEXTEXPANDER -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-num">1</div>
+        <div>
+          <div class="col-name">TextExpander</div>
+          <div class="col-sub">textexpander.com · desde 3,33€/mes</div>
+        </div>
+      </div>
+
+      <div class="col-label">Para qué sirve</div>
+      <ul class="use-list">
+        <li>Escribir circulares completas con 2-3 letras</li>
+        <li>Respuestas tipo a emails frecuentes</li>
+        <li>Firmas, saludos y despedidas profesionales</li>
+        <li>Datos de la comunidad sin tener que buscarlos</li>
+        <li>Fechas y referencias automáticas</li>
+      </ul>
+
+      <div class="col-label">Cómo funciona</div>
+      <ol class="step-list">
+        <li>Instala la app en Mac / Windows</li>
+        <li>Crea un "snippet" con el texto completo</li>
+        <li>Asigna un atajo corto (ej. <span style="color:#EA580C;">;conv</span>)</li>
+        <li>Escribe el atajo en cualquier app</li>
+        <li>El texto se expande automáticamente</li>
+      </ol>
+
+      <div class="col-label">Atajos de ejemplo</div>
+      <div class="shortcut-grid">
+        <span class="sc-key">;conv</span><span class="sc-desc">Convocatoria de junta</span>
+        <span class="sc-key">;ack</span><span class="sc-desc">Acuse de recibo genérico</span>
+        <span class="sc-key">;firma</span><span class="sc-desc">Firma profesional completa</span>
+        <span class="sc-key">;inci</span><span class="sc-desc">Formulario de incidencia</span>
+        <span class="sc-key">;datos</span><span class="sc-desc">Datos de la comunidad</span>
+      </div>
+
+      <div class="tip-box">
+        <p><strong>Truco:</strong> Usa <span class="var">{cursor}</span> en el snippet para que el cursor salte al punto donde debes rellenar el dato variable.</p>
+      </div>
+    </div>
+
+    <!-- COL 2: ASISTENTE DE IA -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-num">2</div>
+        <div>
+          <div class="col-name">Asistente de IA</div>
+          <div class="col-sub">Claude, ChatGPT o Gemini · versión gratuita disponible</div>
+        </div>
+      </div>
+
+      <div class="col-label">Para qué sirve</div>
+      <ul class="use-list">
+        <li>Redactar actas desde notas desordenadas</li>
+        <li>Contestar reclamaciones con tono profesional</li>
+        <li>Generar burofax y requerimientos formales</li>
+        <li>Resumir documentos largos</li>
+        <li>Revisar ortografía y estilo de textos propios</li>
+      </ul>
+
+      <div class="col-label">Anatomía de un buen prompt</div>
+      <ol class="step-list">
+        <li><strong>Rol:</strong> "Eres un administrador de fincas en España"</li>
+        <li><strong>Tarea:</strong> qué quieres que haga exactamente</li>
+        <li><strong>Contexto:</strong> datos del caso (comunidad, propietario...)</li>
+        <li><strong>Tono:</strong> formal / cercano / jurídico</li>
+        <li><strong>Límite:</strong> "máximo 150 palabras" o "en 5 puntos"</li>
+      </ol>
+
+      <div class="col-label">Comandos rápidos</div>
+      <ul class="use-list">
+        <li>«Hazlo más formal» → sube el tono</li>
+        <li>«Acórtalo a la mitad» → versión resumida</li>
+        <li>«Versión para WhatsApp» → sin formalidades</li>
+        <li>«Revisa errores y mejora el estilo» → corrector</li>
+        <li>«Añade un párrafo sobre [tema]» → amplía</li>
+      </ul>
+
+      <div class="tip-box">
+        <p><strong>Truco:</strong> Si el resultado no te convence, escribe "Inténtalo de nuevo, esta vez [indicación concreta]". El asistente aprende de tu feedback en la misma conversación. Y nunca pegues datos personales reales: anonimiza antes.</p>
+      </div>
+    </div>
+
+    <!-- COL 3: AUTOMATIZADOR -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-num">3</div>
+        <div>
+          <div class="col-name">Automatizador de flujos</div>
+          <div class="col-sub">Make, Zapier o similar · plan gratuito disponible</div>
+        </div>
+      </div>
+
+      <div class="col-label">Para qué sirve</div>
+      <ul class="use-list">
+        <li>Automatizar gestión de incidencias de inicio a fin</li>
+        <li>Registrar solicitudes en una hoja de cálculo solo</li>
+        <li>Enviar emails automáticos a propietarios y proveedores</li>
+        <li>Notificarte cuando llega algo urgente</li>
+        <li>Conectar formularios, email, IA y hojas de cálculo</li>
+      </ul>
+
+      <div class="col-label">Ejemplo de flujo real</div>
+      <ol class="step-list">
+        <li>Vecino rellena formulario de incidencia</li>
+        <li>Se registra en la hoja de cálculo automáticamente</li>
+        <li>Se busca el proveedor asignado según tipo</li>
+        <li>La IA redacta el email al proveedor</li>
+        <li>Se envía email al propietario, proveedor y admin</li>
+        <li>Se marca como "enviado" en la hoja</li>
+      </ol>
+
+      <div class="col-label">Conceptos clave</div>
+      <ul class="use-list">
+        <li><strong>Módulo:</strong> cada app conectada (email, hojas, IA…)</li>
+        <li><strong>Trigger:</strong> qué inicia el flujo</li>
+        <li><strong>Filtro:</strong> condición para que siga o pare</li>
+        <li><strong>Variables:</strong> datos que pasan de un módulo al siguiente</li>
+      </ul>
+
+      <div class="tip-box">
+        <p><strong>Truco:</strong> Empieza por UN solo flujo (el de incidencias es el que más tiempo devuelve) y no lo actives hasta haberlo probado con datos de mentira. Si prefieres que te lo deje montado, eso es justo <strong>lo que hago</strong>.</p>
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+
+  <div class="bottom">
+    <p>© 2026 Automatizatelo · Recurso gratuito — compártelo si te sirve</p>
+    <p>info@automatizatelo.com · <a href="https://automatizatelo.com">automatizatelo.com</a></p>
+  </div>
+
+</div>
+</body>
+</html>

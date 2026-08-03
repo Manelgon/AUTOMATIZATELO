@@ -278,6 +278,11 @@ img {
   box-shadow: 0 24px 60px rgba(28, 25, 23, 0.16);
   z-index: 1001;
   animation: dropdownIn 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  /* Con 10+ entradas el menú puede superar el alto de la ventana:
+     se limita y hace scroll interno sin arrastrar la página. */
+  max-height: calc(100vh - var(--header-height) - 5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 @keyframes dropdownIn {

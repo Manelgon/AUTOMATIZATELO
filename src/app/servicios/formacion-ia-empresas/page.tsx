@@ -248,6 +248,20 @@ export default function FormacionIaPage() {
                             alfabetización obligatoria del Art. 4 del AI Act
                         </Link>.
                     </p>
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1rem", maxWidth: 720 }}>
+                        ¿Tu caso es específico? Hay versión propia para{" "}
+                        <Link href="/formacion-ia-centros-educativos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            centros educativos
+                        </Link>
+                        ,{" "}
+                        <Link href="/formacion-ia-despachos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            despachos profesionales
+                        </Link>{" "}
+                        y{" "}
+                        <Link href="/formacion-ia-directivos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            equipos directivos
+                        </Link>.
+                    </p>
                 </div>
             </section>
 

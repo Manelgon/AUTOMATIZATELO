@@ -5,8 +5,8 @@ import Link from "next/link";
 const razones = [
     {
         num: "01",
-        titulo: "Lo que vendo ya existe",
-        texto: "No enseño diapositivas: enseño bots y paneles que llevan meses funcionando en negocios reales.",
+        titulo: "Construyo lo que enseño",
+        texto: "No vivo de diapositivas: los bots, paneles y cursos que enseño y audito llevan meses funcionando en negocios reales.",
         link: { href: "/casos-de-exito", label: "Ver los casos" },
     },
     {

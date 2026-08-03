@@ -56,7 +56,7 @@ export default function Hero() {
                     className="kicker-mono"
                     style={{ display: 'block', marginBottom: '1.2rem', color: '#f6c39c' }}
                 >
-                    Automatización con IA · Barcelona y toda España
+                    Implantación de IA · Barcelona y toda España
                 </motion.p>
 
                 <motion.h1
@@ -66,7 +66,7 @@ export default function Hero() {
                     transition={{ delay: 0.2 }}
                     style={{ color: '#faf6ef', marginBottom: '1.5rem', textShadow: '0 2px 30px rgba(28,25,23,0.45)' }}
                 >
-                    Recupera <span style={{ color: '#f6c39c' }}>+20 horas a la{" "}<br />semana</span> automatizando{" "}<br />tu negocio con IA
+                    Implanto la IA en tu empresa:{" "}<br /><span style={{ color: '#f6c39c' }}>con cabeza, cumpliendo la ley</span>{" "}<br />y con sistemas que trabajan solos
                 </motion.h1>
 
                 <motion.p
@@ -76,10 +76,10 @@ export default function Hero() {
                     transition={{ delay: 0.3 }}
                     style={{ fontSize: '1.15rem', maxWidth: '540px', margin: '0 0 2.2rem', color: 'rgba(250,246,239,0.88)', lineHeight: 1.7, textShadow: '0 1px 20px rgba(28,25,23,0.4)' }}
                 >
-                    Soy Manel. Construyo chatbots, CRM y automatizaciones que ya funcionan
-                    cada día en clínicas, despachos y academias reales. Sin complicaciones:
-                    me cuentas cómo trabajas y te digo qué automatizaría primero, gratis,
-                    en 30 minutos.
+                    Soy Manel. Formo a tu equipo, te pongo en regla con el Reglamento
+                    Europeo de IA y construyo los sistemas que ya trabajan cada día en
+                    despachos, academias y pymes reales. Sin complicaciones: empezamos
+                    con 30 minutos gratis.
                 </motion.p>
 
                 <motion.div
