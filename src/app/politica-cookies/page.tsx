@@ -70,7 +70,7 @@ export default function PoliticaCookies() {
                             <span className="label" style={{ color: '#E66000' }}>Mozilla Firefox</span>
                             <span className="value">Ver instrucciones &rarr;</span>
                         </a>
-                        <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c23d-4fa8-e48063958838" target="_blank" className="data-item" style={{ textDecoration: 'none' }}>
+                        <a href="https://support.microsoft.com/es-es/windows/administrar-cookies-en-microsoft-edge-ver-permitir-bloquear-eliminar-y-usar-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" className="data-item" style={{ textDecoration: 'none' }}>
                             <span className="label" style={{ color: '#0078D7' }}>Microsoft Edge</span>
                             <span className="value">Ver instrucciones &rarr;</span>
                         </a>

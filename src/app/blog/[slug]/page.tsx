@@ -22,6 +22,18 @@ interface BlogPostFull {
     updated_at?: string | null;
 }
 
+// El contenido de la BD a veces trae su propio <h1>, que duplicaría el de la
+// plantilla (malo para SEO). Si el primero repite el título se elimina; el
+// resto de h1 se degradan a h2 para mantener una jerarquía única.
+function sanearEncabezados(html: string, titulo: string): string {
+    let out = html.replace(/^\s*<h1[^>]*>([\s\S]*?)<\/h1>/i, (coincidencia, interior: string) => {
+        const texto = interior.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+        return texto === titulo.replace(/\s+/g, " ").trim().toLowerCase() ? "" : coincidencia;
+    });
+    out = out.replace(/<h1(\s[^>]*)?>/gi, "<h2$1>").replace(/<\/h1>/gi, "</h2>");
+    return out;
+}
+
 const getPost = cache(async (slug: string): Promise<BlogPostFull | null> => {
     const { data, error } = await supabaseServer
         .from("blog_posts")
@@ -194,10 +206,11 @@ export default async function BlogPostPage(
                     {post.title}
                 </h1>
 
-                {/* Content */}
+                {/* Content — el H1 lo pone la plantilla; los del contenido se sanean
+                    para no duplicar (el primero se quita si repite el título, el resto baja a H2) */}
                 <div
                     className="article-body"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
+                    dangerouslySetInnerHTML={{ __html: sanearEncabezados(post.content, post.title) }}
                 />
             </article>
 
