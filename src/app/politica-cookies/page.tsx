@@ -18,7 +18,7 @@ export default function PoliticaCookies() {
                     <p>
                         <strong>Información sobre el uso de cookies en nuestro sitio web</strong>
                         <br />
-                        Última actualización: Mayo 2026
+                        Última actualización: agosto de 2026
                     </p>
                     <div style={{ marginTop: "1.5rem" }}>
                         <CookiePreferencesButton />
@@ -52,11 +52,68 @@ export default function PoliticaCookies() {
                             <span className="label">Propias</span>
                             <span className="value">Técnicas (navegación) y Personalización (preferencias).</span>
                         </div>
+                        <div className="data-item">
+                            <span className="label">De terceros</span>
+                            <span className="value">Analíticas y publicitarias de Google, detalladas en el apartado siguiente.</span>
+                        </div>
                     </div>
                 </section>
 
                 <section className="legal-section">
-                    <h2>3. Gestión y Desactivación</h2>
+                    <h2>3. Cookies de terceros que utilizamos</h2>
+                    <p>
+                        Estas cookies <strong>solo se instalan si aceptas</strong> las categorías
+                        correspondientes en el aviso de cookies. Por defecto están bloqueadas
+                        mediante el Modo de Consentimiento de Google: hasta que das tu
+                        consentimiento no se almacena información en tu dispositivo.
+                    </p>
+                    <div className="legal-data-list">
+                        <div className="data-item">
+                            <span className="label">_ga / _ga_*</span>
+                            <span className="value">
+                                <strong>Google Analytics (analítica)</strong> — distingue usuarios y sesiones
+                                para saber qué páginas se visitan y cómo se navega el sitio. No se usa para
+                                publicidad. Caducidad: hasta 2 años. Proveedor: Google Ireland Limited.
+                            </span>
+                        </div>
+                        <div className="data-item">
+                            <span className="label">_gcl_au</span>
+                            <span className="value">
+                                <strong>Google Ads (publicitaria)</strong> — mide la eficacia de los anuncios,
+                                atribuyendo si una visita procede de una campaña. Caducidad: 90 días.
+                                Proveedor: Google Ireland Limited.
+                            </span>
+                        </div>
+                        <div className="data-item">
+                            <span className="label">Consentimiento</span>
+                            <span className="value">
+                                Guardamos tu elección (aceptar, rechazar o personalizar) en tu navegador para
+                                no volver a preguntarte en cada visita. Es una cookie técnica y no requiere
+                                consentimiento.
+                            </span>
+                        </div>
+                        <div className="data-item">
+                            <span className="label">Cambiar de opinión</span>
+                            <span className="value">
+                                Puedes revocar tu consentimiento cuando quieras borrando las cookies del
+                                navegador (instrucciones abajo) o desde la configuración de tu navegador.
+                            </span>
+                        </div>
+                    </div>
+                    <p>
+                        Puedes consultar cómo trata Google estos datos en su{" "}
+                        <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer">
+                            política de cookies
+                        </a>{" "}
+                        y en su{" "}
+                        <a href="https://business.safety.google/privacy/" target="_blank" rel="noopener noreferrer">
+                            página de privacidad para empresas
+                        </a>.
+                    </p>
+                </section>
+
+                <section className="legal-section">
+                    <h2>4. Gestión y Desactivación</h2>
                     <div className="legal-data-list">
                         <div className="data-item">
                             <span className="label">Instrucciones</span>
@@ -90,7 +147,7 @@ export default function PoliticaCookies() {
                 </section>
 
                 <section className="legal-section">
-                    <h2>4. Actualizaciones</h2>
+                    <h2>5. Actualizaciones</h2>
                     <div className="legal-data-list">
                         <div className="data-item">
                             <span className="label">Modificaciones</span>

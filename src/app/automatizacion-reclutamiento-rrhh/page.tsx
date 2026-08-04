@@ -46,6 +46,14 @@ const props: SectorPageProps = {
         { question: "¿Qué pasa con los datos de los candidatos y el RGPD?", answer: "Consentimientos, plazos de conservación y derechos del candidato integrados en el flujo desde el diseño. Y como todo lo que construyo, los datos y el código son tuyos — no de una plataforma de alquiler." },
         { question: "¿Cuánto cuesta?", answer: "Una automatización concreta (por ejemplo, las respuestas automáticas a candidatos), desde 500€. Un sistema de selección con portal y panel, desde 2.000€. Pide la auditoría gratuita y te digo por dónde empezar." },
     ],
+    relacionados: [
+        { href: "/servicios/auditoria-ia", icon: "fa-clipboard-check", titulo: "Auditoría IA (AI Act)", desc: "La selección de personal es ámbito sensible del Reglamento: conviene tenerlo por escrito. Desde 750€." },
+        { href: "/servicios/paneles", icon: "fa-chart-line", titulo: "Paneles a medida", desc: "El panel de procesos y candidatos por dentro, con informes para tus clientes." },
+        { href: "/servicios/implantacion-crm", icon: "fa-address-book", titulo: "Implantación de CRM", desc: "Para la parte comercial: clientes y ofertas sin vivir en un Excel." },
+        { href: "/servicios/formacion-ia-empresas", icon: "fa-graduation-cap", titulo: "Formación en IA", desc: "Que tu equipo use la IA con criterio — y con los datos de los candidatos a salvo." },
+        { href: "/casos-de-exito", icon: "fa-trophy", titulo: "Casos de éxito", desc: "La plataforma de Henkoaching y el resto de sistemas en producción." },
+        { href: "/servicios/extraccion-datos-documentos", icon: "fa-file-import", titulo: "Extracción de datos", desc: "CVs y documentación leídos por IA, sin picar nada a mano." },
+    ],
 };
 
 const schema = buildSectorSchema(props);

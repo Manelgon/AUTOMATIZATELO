@@ -263,6 +263,57 @@ export default function AutomatizacionPage() {
                 </div>
             </section>
 
+            {/* Hub: las piezas de la automatización, cada una con su página */}
+            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container">
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="kicker-mono">Las piezas</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            De qué se compone una automatización
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            Cada proyecto usa las que hagan falta — ni una más. Aquí tienes cada pieza por dentro, con su precio.
+                        </p>
+                    </div>
+                    <div className="au-hub">
+                        {[
+                            { href: "/servicios/chatbots", icon: "fa-robot", t: "Chatbots", d: "Atención por web y WhatsApp conectada a tus sistemas, con escalado a persona." },
+                            { href: "/servicios/chatbots-whatsapp", icon: "fa-comment-dots", t: "Chatbot de WhatsApp", d: "El canal rey en España, con API oficial y sin riesgo de número bloqueado." },
+                            { href: "/servicios/paneles", icon: "fa-chart-line", t: "Paneles a medida", d: "Tu negocio entero en una pantalla, integrado con lo que ya usas." },
+                            { href: "/servicios/implantacion-crm", icon: "fa-address-book", t: "Implantación de CRM", d: "El CRM elegido sin comisiones, migrado y alimentándose solo." },
+                            { href: "/servicios/extraccion-datos-documentos", icon: "fa-file-import", t: "Extracción de datos", d: "Facturas y albaranes leídos con IA y registrados sin picar nada." },
+                            { href: "/servicios/automatizacion-ventas", icon: "fa-arrow-trend-up", t: "Automatización de ventas", d: "Del lead al cobro: respuesta inmediata, seguimiento y facturación solos." },
+                            { href: "/servicios/implantacion-ia", icon: "fa-rocket", t: "Implantación de herramientas IA", d: "ChatGPT, Copilot o Gemini configurados y con el equipo arrancado." },
+                            { href: "/servicios/auditoria-ia", icon: "fa-clipboard-check", t: "Auditoría IA (AI Act)", d: "Antes de automatizar con IA, saber si tu empresa cumple." },
+                        ].map((p) => (
+                            <Link key={p.href} href={p.href} className="au-hub-item">
+                                <i className={`fa-solid ${p.icon}`}></i>
+                                <span>
+                                    <span className="au-hub-t">{p.t}</span>
+                                    <span className="au-hub-d">{p.d}</span>
+                                </span>
+                                <span className="au-hub-f">→</span>
+                            </Link>
+                        ))}
+                    </div>
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: 720 }}>
+                        ¿No sabes cuáles te tocan a ti? Para eso está la{" "}
+                        <Link href="/#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            auditoría gratuita de 30 minutos
+                        </Link>
+                        : miro tus procesos y te digo qué automatizar primero — y qué no merece la pena.
+                        Los precios de todo están en{" "}
+                        <Link href="/precios" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            la página de precios
+                        </Link>
+                        , y los sistemas ya entregados en{" "}
+                        <Link href="/casos-de-exito" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            casos de éxito
+                        </Link>.
+                    </p>
+                </div>
+            </section>
+
             {/* FAQ */}
             <section style={{ padding: "4.5rem 0" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
@@ -354,6 +405,62 @@ export default function AutomatizacionPage() {
                         grid-template-columns: 1fr;
                         gap: 2rem;
                     }
+                }
+                .au-hub {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.9rem;
+                }
+                .au-hub-item {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    height: 100%;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-lg);
+                    padding: 1.2rem 1.3rem;
+                    color: inherit;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .au-hub-item:hover {
+                    transform: translateY(-3px);
+                    border-color: rgba(234, 88, 12, 0.4);
+                }
+                .au-hub-item > i {
+                    color: var(--color-primary);
+                    font-size: 1.15rem;
+                    margin-top: 0.2rem;
+                    flex-shrink: 0;
+                    width: 1.5rem;
+                    text-align: center;
+                }
+                .au-hub-t {
+                    display: block;
+                    font-family: var(--font-display, serif);
+                    font-size: 1.05rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    line-height: 1.3;
+                }
+                .au-hub-d {
+                    display: block;
+                    font-size: 0.86rem;
+                    color: var(--color-text-muted);
+                    line-height: 1.5;
+                    margin-top: 0.2rem;
+                }
+                .au-hub-f {
+                    margin-left: auto;
+                    color: var(--color-primary);
+                    font-weight: 700;
+                    transition: transform 0.2s ease;
+                }
+                .au-hub-item:hover .au-hub-f {
+                    transform: translateX(4px);
+                }
+                @media (max-width: 800px) {
+                    .au-hub { grid-template-columns: 1fr; }
                 }
                 .au-faq {
                     border-top: 1px solid var(--color-border);

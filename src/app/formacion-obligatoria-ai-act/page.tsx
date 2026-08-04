@@ -192,12 +192,50 @@ export default function AiActPage() {
                         </div>
                     ))}
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.8rem", maxWidth: 720 }}>
-                        Los pasos 3 y 4 son exactamente lo que cubre nuestra{" "}
+                        Los pasos 1 y 2 son el trabajo de la{" "}
+                        <Link href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            auditoría IA
+                        </Link>{" "}
+                        (inventario, riesgos, informe y plan, desde 750€); los pasos 3 y 4, el de la{" "}
                         <Link href="/servicios/formacion-ia-empresas" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             formación en IA para empresas
                         </Link>
                         : el bloque de alfabetización desde 600€, con certificado nominal y registro formativo fechado.
                     </p>
+                </div>
+            </section>
+
+            {/* Cómo cumplirlo — enlazado de la página pilar */}
+            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)" }}>
+                <div className="container" style={{ maxWidth: 1000 }}>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="kicker-mono">Cómo se cumple</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            Lo que necesitas, según dónde estés
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            Cada pieza con su página y su precio — sin packs opacos ni certificaciones inventadas.
+                        </p>
+                    </div>
+                    <div className="aa-rutas">
+                        {[
+                            { href: "/servicios/auditoria-ia", icon: "fa-clipboard-check", t: "Auditoría IA (AI Act)", d: "«No sé ni por dónde empezar»: inventario, riesgos, informe y plan de acción. Desde 750€." },
+                            { href: "/servicios/formacion-ia-empresas", icon: "fa-graduation-cap", t: "Formación en IA para empresas", d: "«Sé que tengo que formar»: alfabetización del Art. 4 con certificado nominal. Desde 600€." },
+                            { href: "/formacion-ia-directivos", icon: "fa-chess-king", t: "Formación para directivos", d: "«Decido yo»: qué implantar, qué exige la ley y cómo gobernarla. Media jornada, desde 600€." },
+                            { href: "/formacion-ia-despachos", icon: "fa-briefcase", t: "Despachos profesionales", d: "«Manejo datos de clientes»: secreto profesional y IA, con los casos de tu despacho." },
+                            { href: "/formacion-ia-centros-educativos", icon: "fa-school", t: "Centros educativos", d: "«Soy un colegio»: formación de claustro, política de uso del centro y evidencia." },
+                            { href: "/servicios/implantacion-ia", icon: "fa-rocket", t: "Implantación de herramientas", d: "«Quiero usarla bien desde el principio»: configuración segura y política de uso. Desde 900€." },
+                        ].map((r) => (
+                            <Link key={r.href} href={r.href} className="aa-ruta">
+                                <i className={`fa-solid ${r.icon}`}></i>
+                                <span>
+                                    <span className="aa-ruta-t">{r.t}</span>
+                                    <span className="aa-ruta-d">{r.d}</span>
+                                </span>
+                                <span className="aa-ruta-f">→</span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </section>
 
@@ -258,6 +296,62 @@ export default function AiActPage() {
                 }
                 .aa-fila:last-of-type {
                     border-bottom: 1px solid var(--color-border);
+                }
+                .aa-rutas {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.9rem;
+                }
+                .aa-ruta {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    height: 100%;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-lg);
+                    padding: 1.2rem 1.3rem;
+                    color: inherit;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .aa-ruta:hover {
+                    transform: translateY(-3px);
+                    border-color: rgba(234, 88, 12, 0.4);
+                }
+                .aa-ruta > i {
+                    color: var(--color-primary);
+                    font-size: 1.15rem;
+                    margin-top: 0.2rem;
+                    flex-shrink: 0;
+                    width: 1.5rem;
+                    text-align: center;
+                }
+                .aa-ruta-t {
+                    display: block;
+                    font-family: var(--font-display, serif);
+                    font-size: 1.05rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    line-height: 1.3;
+                }
+                .aa-ruta-d {
+                    display: block;
+                    font-size: 0.86rem;
+                    color: var(--color-text-muted);
+                    line-height: 1.5;
+                    margin-top: 0.2rem;
+                }
+                .aa-ruta-f {
+                    margin-left: auto;
+                    color: var(--color-primary);
+                    font-weight: 700;
+                    transition: transform 0.2s ease;
+                }
+                .aa-ruta:hover .aa-ruta-f {
+                    transform: translateX(4px);
+                }
+                @media (max-width: 800px) {
+                    .aa-rutas { grid-template-columns: 1fr; }
                 }
                 .aa-faq {
                     border-top: 1px solid var(--color-border);

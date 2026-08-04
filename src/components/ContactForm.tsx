@@ -158,6 +158,11 @@ export default function ContactForm() {
                     (window as any).gtag("event", "generate_lead", {
                         event_category: "form",
                         event_label: "contact_form",
+                        // Qué pedían y desde dónde: para saber qué páginas y qué
+                        // servicios traen clientes, no solo visitas
+                        servicio: formData.servicio || "sin_especificar",
+                        sector: formData.sector || "sin_especificar",
+                        pagina: window.location.pathname,
                     });
                 }
 

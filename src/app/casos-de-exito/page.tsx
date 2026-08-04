@@ -18,6 +18,8 @@ interface Caso {
     solucion: string;
     resultados: string[];
     url?: string;
+    /** "¿Quieres algo parecido?" — el servicio o sector de este caso */
+    siguiente?: { href: string; texto: string }[];
 }
 
 const casos: Caso[] = [
@@ -35,6 +37,11 @@ const casos: Caso[] = [
             "Todas las incidencias registradas y con seguimiento — nada se pierde en un email",
             "El equipo gestiona su día a día completo desde el panel",
         ],
+        siguiente: [
+            { href: "/automatizacion-administradores-fincas", texto: "Automatización para administradores de fincas" },
+            { href: "/servicios/paneles", texto: "Paneles a medida" },
+            { href: "/formacion-ia-despachos", texto: "Formación en IA para despachos" },
+        ],
     },
     {
         sector: "Coaching y selección de personal",
@@ -49,6 +56,10 @@ const casos: Caso[] = [
             "Portal de empleo propio sin pagar licencias de software genérico",
             "Candidatos, ofertas y procesos centralizados en su plataforma",
             "El código y los datos son suyos, como en todos nuestros proyectos",
+        ],
+        siguiente: [
+            { href: "/automatizacion-reclutamiento-rrhh", texto: "Automatización para selección y RRHH" },
+            { href: "/servicios/paneles", texto: "Paneles a medida" },
         ],
     },
     {
@@ -65,6 +76,10 @@ const casos: Caso[] = [
             "Lista de espera automática: si se libera un hueco, se ofrece a quien esperaba",
             "Cumplimiento RGPD sanitario: consentimientos, registro de auditoría y derechos ARCO",
         ],
+        siguiente: [
+            { href: "/servicios/chatbots-whatsapp", texto: "Chatbot de WhatsApp" },
+            { href: "/servicios/paneles", texto: "Paneles a medida" },
+        ],
     },
     {
         sector: "Educación y comedores escolares",
@@ -79,6 +94,10 @@ const casos: Caso[] = [
             "Ausencias registradas automáticamente en el sistema",
             "Preguntas frecuentes respondidas al momento, sin colapsar a la administración",
         ],
+        siguiente: [
+            { href: "/servicios/chatbots-whatsapp", texto: "Chatbot de WhatsApp" },
+            { href: "/formacion-ia-centros-educativos", texto: "Formación en IA para centros educativos" },
+        ],
     },
     {
         sector: "Formación online",
@@ -92,6 +111,10 @@ const casos: Caso[] = [
         resultados: [
             "Gestión de la academia centralizada en su propio panel",
             "Cursos publicados en plataformas e-learning estándar",
+        ],
+        siguiente: [
+            { href: "/automatizacion-academias", texto: "Automatización para academias" },
+            { href: "/servicios/produccion-cursos-scorm", texto: "Producción de cursos SCORM" },
         ],
     },
 ];
@@ -178,6 +201,19 @@ export default function CasosDeExitoPage() {
                                     ))}
                                 </ul>
                             </div>
+
+                            {caso.siguiente && caso.siguiente.length > 0 && (
+                                <div className="ce-siguiente">
+                                    <span className="mono-label">¿Quieres algo parecido?</span>
+                                    <div className="ce-siguiente-enlaces">
+                                        {caso.siguiente.map((s) => (
+                                            <Link key={s.href} href={s.href}>
+                                                {s.texto} <span aria-hidden="true">→</span>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                         </article>
                     ))}
                 </div>
@@ -218,6 +254,31 @@ export default function CasosDeExitoPage() {
                     flex-wrap: wrap;
                     align-items: center;
                     gap: 0.8rem 1.5rem;
+                }
+                .ce-siguiente {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 1rem 1.6rem;
+                    flex-wrap: wrap;
+                    margin-top: 1.6rem;
+                    padding-top: 1.2rem;
+                    border-top: 1px solid var(--color-border);
+                }
+                .ce-siguiente .mono-label {
+                    color: var(--color-text-muted);
+                }
+                .ce-siguiente-enlaces {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.6rem 1.6rem;
+                }
+                .ce-siguiente-enlaces a {
+                    color: var(--color-primary);
+                    font-weight: 600;
+                    font-size: 0.92rem;
+                }
+                .ce-siguiente-enlaces a:hover {
+                    text-decoration: underline;
                 }
                 .ce-cliente {
                     font-family: var(--font-display, serif);

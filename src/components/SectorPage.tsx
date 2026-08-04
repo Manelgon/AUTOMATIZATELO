@@ -18,6 +18,8 @@ export interface SectorPageProps {
     solutions: { icon: string; title: string; description: string }[];
     results: { stat: string; label: string }[];
     faqs: { question: string; answer: string }[];
+    /** Siguiente paso: servicios y pruebas que le tocan a este sector */
+    relacionados?: { href: string; icon: string; titulo: string; desc: string }[];
 }
 
 export default function SectorPage(p: SectorPageProps) {
@@ -183,6 +185,37 @@ export default function SectorPage(p: SectorPageProps) {
                 </div>
             </section>
 
+            {/* Siguiente paso — enlazado contextual del sector */}
+            {p.relacionados && p.relacionados.length > 0 && (
+                <section style={{ padding: '4.5rem 0', background: 'var(--color-bg-secondary)', borderTop: '1px solid var(--color-border)' }}>
+                    <div className="container">
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal} style={{ marginBottom: '2rem' }}>
+                            <span className="kicker-mono">Siguiente paso</span>
+                            <h2 className="section-title" style={{ textAlign: 'left', marginTop: '0.8rem', marginBottom: '0.5rem' }}>
+                                Lo que suele venir después
+                            </h2>
+                            <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 620 }}>
+                                Las piezas que mejor encajan con {p.sector.toLowerCase()} — cada una con su página y su precio.
+                            </p>
+                        </motion.div>
+                        <div className="sp-relacionados">
+                            {p.relacionados.map((r, i) => (
+                                <motion.div key={r.href} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal} transition={{ delay: i * 0.06 }}>
+                                    <Link href={r.href} className="sp-relacionado">
+                                        <i className={`fa-solid ${r.icon}`}></i>
+                                        <span>
+                                            <span className="sp-rel-titulo">{r.titulo}</span>
+                                            <span className="sp-rel-desc">{r.desc}</span>
+                                        </span>
+                                        <span className="sp-rel-flecha">→</span>
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* CTA final en melocotón */}
             <section style={{ padding: '4.5rem 0', background: '#f8dfc6', textAlign: 'center' }}>
                 <div className="container">
@@ -299,6 +332,59 @@ export default function SectorPage(p: SectorPageProps) {
                     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                     gap: 2rem;
                 }
+                .sp-relacionados {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.9rem;
+                }
+                .sp-relacionado {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    height: 100%;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-lg);
+                    padding: 1.3rem 1.4rem;
+                    color: inherit;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .sp-relacionado:hover {
+                    transform: translateY(-3px);
+                    border-color: rgba(234, 88, 12, 0.4);
+                }
+                .sp-relacionado > i {
+                    color: var(--color-primary);
+                    font-size: 1.2rem;
+                    margin-top: 0.2rem;
+                    flex-shrink: 0;
+                    width: 1.5rem;
+                    text-align: center;
+                }
+                .sp-rel-titulo {
+                    display: block;
+                    font-family: var(--font-display, serif);
+                    font-size: 1.08rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    line-height: 1.3;
+                }
+                .sp-rel-desc {
+                    display: block;
+                    font-size: 0.88rem;
+                    color: var(--color-text-muted);
+                    line-height: 1.5;
+                    margin-top: 0.2rem;
+                }
+                .sp-rel-flecha {
+                    margin-left: auto;
+                    color: var(--color-primary);
+                    font-weight: 700;
+                    transition: transform 0.2s ease;
+                }
+                .sp-relacionado:hover .sp-rel-flecha {
+                    transform: translateX(4px);
+                }
                 .sp-faq {
                     border-top: 1px solid var(--color-border);
                 }
@@ -337,7 +423,7 @@ export default function SectorPage(p: SectorPageProps) {
                     transform: rotate(180deg);
                 }
                 @media (max-width: 800px) {
-                    .sp-pains, .sp-soluciones {
+                    .sp-pains, .sp-soluciones, .sp-relacionados {
                         grid-template-columns: 1fr;
                     }
                 }

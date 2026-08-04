@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cache } from "react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseServer } from "@/lib/supabase-server";
 import Header from "@/components/Header";
@@ -212,12 +213,104 @@ export default async function BlogPostPage(
                     className="article-body"
                     dangerouslySetInnerHTML={{ __html: sanearEncabezados(post.content, post.title) }}
                 />
+
+                {/* Un artículo nunca es un callejón: siguiente paso hacia servicio,
+                    prueba y recursos */}
+                <aside className="post-siguiente">
+                    <span className="mono-label">Y ahora, ¿por dónde sigo?</span>
+                    <div className="post-siguiente-grid">
+                        <Link href="/servicios/formacion-ia-empresas">
+                            <strong>Formación en IA</strong>
+                            <span>Que tu equipo la use con criterio — desde 600€</span>
+                        </Link>
+                        <Link href="/servicios/auditoria-ia">
+                            <strong>Auditoría IA (AI Act)</strong>
+                            <span>¿Tu empresa cumple? Informe y plan desde 750€</span>
+                        </Link>
+                        <Link href="/servicios/automatizacion">
+                            <strong>Automatización de procesos</strong>
+                            <span>Que el trabajo repetitivo se haga solo</span>
+                        </Link>
+                        <Link href="/casos-de-exito">
+                            <strong>Casos de éxito</strong>
+                            <span>Sistemas reales en producción, con sus resultados</span>
+                        </Link>
+                        <Link href="/recursos">
+                            <strong>Recursos gratis</strong>
+                            <span>Guías y prompts descargables, sin pedirte el email</span>
+                        </Link>
+                        <Link href="/blog">
+                            <strong>Más artículos</strong>
+                            <span>Todo el blog sobre IA aplicada a pymes</span>
+                        </Link>
+                    </div>
+                    <p className="post-cta">
+                        ¿Prefieres que lo miremos sobre tu caso?{" "}
+                        <Link href="/#contact">Pide la auditoría gratuita de 30 minutos →</Link>
+                    </p>
+                </aside>
             </article>
 
             {/* Footer */}
             <Footer />
 
             <style>{`
+                .post-siguiente {
+                    margin-top: 3.5rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid var(--color-border);
+                }
+                .post-siguiente > .mono-label {
+                    display: block;
+                    color: var(--color-text-muted);
+                    margin-bottom: 1.2rem;
+                }
+                .post-siguiente-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 0.8rem;
+                }
+                .post-siguiente-grid a {
+                    display: block;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-lg);
+                    padding: 1rem 1.1rem;
+                    color: inherit;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .post-siguiente-grid a:hover {
+                    transform: translateY(-3px);
+                    border-color: rgba(234, 88, 12, 0.4);
+                }
+                .post-siguiente-grid strong {
+                    display: block;
+                    font-family: var(--font-display, serif);
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    margin-bottom: 0.2rem;
+                }
+                .post-siguiente-grid span {
+                    display: block;
+                    font-size: 0.85rem;
+                    color: var(--color-text-muted);
+                    line-height: 1.5;
+                }
+                .post-cta {
+                    margin-top: 1.4rem;
+                    color: var(--color-text-muted);
+                }
+                .post-cta a {
+                    color: var(--color-primary);
+                    font-weight: 600;
+                }
+                @media (max-width: 900px) {
+                    .post-siguiente-grid { grid-template-columns: repeat(2, 1fr); }
+                }
+                @media (max-width: 600px) {
+                    .post-siguiente-grid { grid-template-columns: 1fr; }
+                }
                 .article-body h1 { font-size: 2rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--color-primary); }
                 .article-body h2 { font-size: 1.6rem; font-weight: 600; margin: 1.8rem 0 0.8rem; color: var(--color-text-main); }
                 .article-body h3 { font-size: 1.3rem; font-weight: 500; margin: 1.5rem 0 0.6rem; color: var(--color-text-main); }

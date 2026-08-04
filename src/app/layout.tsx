@@ -80,6 +80,33 @@ export const metadata: Metadata = {
   },
 };
 
+// Identidad del sitio: nombre, editor y a quién pertenece. Ayuda a que Google
+// muestre "Automatizatelo" como nombre del sitio en los resultados.
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://automatizatelo.com/#website",
+  "url": "https://automatizatelo.com",
+  "name": "Automatizatelo",
+  "alternateName": "Automatizatelo · Implantación de IA",
+  "description": "Implantación de IA para pymes: formación de equipos, cumplimiento del AI Act y automatización de procesos.",
+  "inLanguage": "es-ES",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Automatizatelo",
+    "url": "https://automatizatelo.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Manel Méndez González",
+      "url": "https://automatizatelo.com/sobre-mi",
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/automatizatelo",
+      "https://www.instagram.com/automatizatelo.ia",
+    ],
+  },
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -136,6 +163,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -170,6 +201,22 @@ export default function RootLayout({
           {`
             gtag('js', new Date());
             gtag('config', 'AW-18013693770');
+            ${process.env.NEXT_PUBLIC_GA_ID ? `gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');` : ""}
+          `}
+        </Script>
+        {/* Clic en cualquier enlace de WhatsApp = contacto. Se escucha por
+            delegación para cubrir los de ahora y los que se añadan después. */}
+        <Script id="track-whatsapp" strategy="afterInteractive">
+          {`
+            document.addEventListener('click', function (e) {
+              var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+              if (!a || typeof window.gtag !== 'function') return;
+              window.gtag('event', 'contacto_whatsapp', {
+                event_category: 'contacto',
+                event_label: a.getAttribute('aria-label') || a.textContent.trim().slice(0, 40) || 'whatsapp',
+                pagina: window.location.pathname
+              });
+            }, true);
           `}
         </Script>
         <SmoothScroll />

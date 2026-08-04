@@ -46,6 +46,14 @@ const props: SectorPageProps = {
         { question: "¿También me producís los cursos?", answer: "Sí — es de lo que más hago. Producción completa de cursos e-learning a medida en formato SCORM (guion, materiales y empaquetado), desde 1.900€ por curso. Y si eres entidad de formación, también en marca blanca." },
         { question: "¿Cuánto cuesta?", answer: "Una automatización concreta (por ejemplo, las dudas frecuentes o los certificados automáticos), desde 500€. El panel de gestión completo para la academia, desde 2.000€. Pide la auditoría gratuita y te digo qué te recuperaría más horas primero." },
     ],
+    relacionados: [
+        { href: "/servicios/produccion-cursos-scorm", icon: "fa-clapperboard", titulo: "Producción de cursos SCORM", desc: "Amplía catálogo sin producirlo tú: guion, materiales y empaquetado, desde 1.900€." },
+        { href: "/servicios/chatbots-whatsapp", icon: "fa-comment-dots", titulo: "Chatbot de WhatsApp", desc: "Dudas y matrículas atendidas 24/7 en el canal donde ya te escriben." },
+        { href: "/servicios/paneles", icon: "fa-chart-line", titulo: "Paneles a medida", desc: "El panel de gestión académica por dentro: alumnos, pagos y seguimiento." },
+        { href: "/servicios/auditoria-ia", icon: "fa-clipboard-check", titulo: "Auditoría IA (AI Act)", desc: "Si formas con IA o la usas con datos de alumnos, esto te toca. Desde 750€." },
+        { href: "/casos-de-exito", icon: "fa-trophy", titulo: "Casos de éxito", desc: "El panel de AFCademIA y el resto de sistemas, con problema y resultados." },
+        { href: "/recursos", icon: "fa-gift", titulo: "Recursos gratis", desc: "Guías y prompts descargables, sin pedirte el email." },
+    ],
 };
 
 const schema = buildSectorSchema(props);

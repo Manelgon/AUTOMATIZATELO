@@ -47,6 +47,14 @@ const props: SectorPageProps = {
         { question: "¿Qué pasa con los datos de los vecinos y el RGPD?", answer: "El panel se diseña cumpliendo RGPD desde el primer día: datos en servidores europeos, accesos por roles y trazabilidad de acciones. Y el código y los datos son siempre del despacho." },
         { question: "¿Cuánto cuesta?", answer: "Una automatización concreta (por ejemplo, el registro de incidencias) desde 500€. Un panel de gestión completo para el despacho, desde 2.000€. Pide la auditoría gratuita y te decimos qué recuperarías primero." },
     ],
+    relacionados: [
+        { href: "/formacion-ia-despachos", icon: "fa-briefcase", titulo: "Formación en IA para despachos", desc: "Que el equipo use la IA sin jugarse los datos de los propietarios. Desde 600€." },
+        { href: "/servicios/paneles", icon: "fa-chart-line", titulo: "Paneles a medida", desc: "El panel de incidencias por dentro: cómo se construye y qué incluye." },
+        { href: "/servicios/chatbots-whatsapp", icon: "fa-comment-dots", titulo: "Chatbot de WhatsApp", desc: "Que los vecinos pregunten al bot y no al teléfono del despacho." },
+        { href: "/servicios/extraccion-datos-documentos", icon: "fa-file-import", titulo: "Extracción de datos", desc: "Facturas de proveedores y albaranes registrados solos, sin picar nada." },
+        { href: "/servicios/auditoria-ia", icon: "fa-clipboard-check", titulo: "Auditoría IA (AI Act)", desc: "Un despacho que asesora en cumplimiento no puede incumplir. Desde 750€." },
+        { href: "/casos-de-exito", icon: "fa-trophy", titulo: "Casos de éxito", desc: "Serincosol y otros despachos, con problema, solución y resultados." },
+    ],
 };
 
 const schema = buildSectorSchema(props);

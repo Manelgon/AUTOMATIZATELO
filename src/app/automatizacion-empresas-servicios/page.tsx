@@ -48,6 +48,14 @@ const props: SectorPageProps = {
         { question: "¿Funciona para autónomos o solo empresas grandes?", answer: "Funciona para ambos. Para autónomos lo simplificamos: 1 flujo, 1 herramienta CRM, 1 secuencia. Para empresas, integraciones más complejas." },
         { question: "¿Cuánto cuesta?", answer: "Desde 500€ para flujo de captación + respuesta automática. Sistema CRM completo desde 2.000€. Auditoría gratis para tu caso." },
     ],
+    relacionados: [
+        { href: "/servicios/implantacion-crm", icon: "fa-address-book", titulo: "Implantación de CRM", desc: "El CRM elegido sin comisiones, migrado y alimentándose solo. Desde 900€." },
+        { href: "/servicios/automatizacion-ventas", icon: "fa-chart-line", titulo: "Automatización de ventas", desc: "Del lead al cobro sin picar datos: seguimiento, propuestas y facturas." },
+        { href: "/servicios/chatbots-whatsapp", icon: "fa-comment-dots", titulo: "Chatbot de WhatsApp", desc: "Responder al momento en el canal donde ya te escriben tus clientes." },
+        { href: "/servicios/formacion-ia-empresas", icon: "fa-graduation-cap", titulo: "Formación en IA", desc: "Que el equipo use la IA con criterio en su día a día. Desde 600€." },
+        { href: "/servicios/auditoria-ia", icon: "fa-clipboard-check", titulo: "Auditoría IA (AI Act)", desc: "¿Tu empresa cumple el Reglamento Europeo de IA? Informe y plan desde 750€." },
+        { href: "/casos-de-exito", icon: "fa-trophy", titulo: "Casos de éxito", desc: "Sistemas reales en producción, con sus resultados." },
+    ],
 };
 
 const schema = buildSectorSchema(props);
