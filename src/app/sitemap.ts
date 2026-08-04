@@ -181,6 +181,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'yearly',
             priority: 0.1,
         },
+        {
+            url: 'https://automatizatelo.com/declaracion-accesibilidad',
+            lastModified: now,
+            changeFrequency: 'yearly',
+            priority: 0.1,
+        },
     ];
 
     let blogPages: MetadataRoute.Sitemap = [];

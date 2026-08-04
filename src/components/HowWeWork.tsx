@@ -3,33 +3,37 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Link from "next/link";
 
+// Las tres puertas de entrada — las mismas de precios, el navbar y /como-trabajo.
 const fases = [
     {
         num: "01",
-        titulo: "Auditoría",
-        lema: "Antes de implantar, el criterio.",
+        titulo: "Formar",
+        lema: "Que tu equipo use la IA con criterio.",
         texto:
-            "Me cuentas cómo trabajáis y qué IA usáis ya, y te digo por dónde empezar: qué formar, qué poner en regla y qué automatizar primero — y qué no merece la pena. 30 minutos, gratis, sin compromiso y sin jerga.",
-        linkHref: "/#contact",
-        linkLabel: "Pedir mi auditoría gratuita",
+            "Talleres prácticos con vuestros casos reales, no diapositivas genéricas: cada persona sale sabiendo qué pedirle a la IA en su puesto — y qué no. Con certificado nominal y registro formativo, la evidencia que exige el Art. 4.",
+        precio: "desde 600€",
+        linkHref: "/servicios/formacion-ia-empresas",
+        linkLabel: "Ver formatos y tarifas",
     },
     {
         num: "02",
-        titulo: "Implementación",
-        lema: "Después del criterio, la ejecución.",
+        titulo: "Cumplir",
+        lema: "Que la ley no te pille a contrapié.",
         texto:
-            "Ejecuto el plan: formo a tu equipo, dejo el cumplimiento con su evidencia documental, y construyo los sistemas — chatbots, paneles y flujos — que eliminan el trabajo repetitivo.",
-        linkHref: "/casos-de-exito",
-        linkLabel: "Ver sistemas que ya funcionan",
+            "Reviso qué IA usa tu empresa de verdad, clasifico los riesgos según el Reglamento Europeo y te entrego el informe con el plan de acción. Y si quieres cerrarlo: política de uso redactada y formación del Art. 4.",
+        precio: "desde 750€",
+        linkHref: "/servicios/auditoria-ia",
+        linkLabel: "Ver qué incluye la auditoría",
     },
     {
         num: "03",
-        titulo: "Acompañamiento",
-        lema: "Puesta en marcha y mejora continua.",
+        titulo: "Automatizar",
+        lema: "Que el trabajo repetitivo se haga solo.",
         texto:
-            "Todo se entrega funcionando y con soporte incluido: medimos el tiempo que recupera, ajustamos lo que haga falta y tu equipo no se queda solo en ningún momento.",
-        linkHref: "/como-trabajo",
-        linkLabel: "Ver el método completo",
+            "Chatbots, paneles a medida y flujos que eliminan el trabajo manual — construidos por hitos, probados con tus datos y entregados funcionando. El código y los datos, siempre tuyos.",
+        precio: "desde 900€",
+        linkHref: "/casos-de-exito",
+        linkLabel: "Ver sistemas que ya funcionan",
     },
 ];
 
@@ -39,7 +43,7 @@ const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "Cómo implanto la IA en tu negocio",
-    "description": "Auditoría gratuita, implementación por hitos y acompañamiento: formación, cumplimiento del AI Act y automatización con precio cerrado.",
+    "description": "Tres líneas: formar al equipo, cumplir el Reglamento Europeo de IA y automatizar el trabajo. Todo empieza con una auditoría gratuita de 30 minutos, con precio y plazo cerrados por escrito.",
     "step": fases.map((f, i) => ({
         "@type": "HowToStep",
         "position": i + 1,
@@ -90,13 +94,16 @@ function Fase({ index, progress, fase }: {
                 <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 520, marginBottom: "1.2rem" }}>
                     {fase.texto}
                 </p>
-                <Link
-                    href={fase.linkHref}
-                    className="hww-link"
-                    style={{ color: "var(--color-primary)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.4rem", pointerEvents: "auto" }}
-                >
-                    {fase.linkLabel} <span className="hww-arrow" style={{ transition: "transform 0.2s ease", display: "inline-block" }}>→</span>
-                </Link>
+                <div className="hww-pie">
+                    <span className="hww-precio">{fase.precio}</span>
+                    <Link
+                        href={fase.linkHref}
+                        className="hww-link"
+                        style={{ color: "var(--color-primary)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.4rem", pointerEvents: "auto" }}
+                    >
+                        {fase.linkLabel} <span className="hww-arrow" style={{ transition: "transform 0.2s ease", display: "inline-block" }}>→</span>
+                    </Link>
+                </div>
             </div>
         </motion.div>
     );
@@ -118,10 +125,16 @@ export default function HowWeWork() {
 
             <div className="hww-escenario">
                 <div className="container" style={{ width: "100%" }}>
-                    <span className="kicker-mono">Cómo trabajo</span>
-                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "2.5rem" }}>
-                        Tres pasos. Sin sorpresas, sin jerga.
+                    <span className="kicker-mono">Por dónde empezar</span>
+                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.6rem" }}>
+                        Tres puertas. Entra por la que te pique.
                     </h2>
+                    <p className="hww-intro">
+                        Todas empiezan igual: 30 minutos gratis para ver tu caso.{" "}
+                        <Link href="/como-trabajo" style={{ color: "var(--color-primary)", fontWeight: 600, pointerEvents: "auto" }}>
+                            Así trabajo →
+                        </Link>
+                    </p>
 
                     <div className="hww-fases">
                         {fases.map((f, i) => (
@@ -168,6 +181,30 @@ export default function HowWeWork() {
                 }
                 .hww-link:hover .hww-arrow {
                     transform: translateX(5px);
+                }
+                .hww-intro {
+                    color: var(--color-text-muted);
+                    margin-bottom: 2.2rem;
+                    max-width: 520px;
+                }
+                /* Precio y enlace comparten línea: la puerta se lee entera de un vistazo */
+                .hww-pie {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 1.4rem;
+                    flex-wrap: wrap;
+                }
+                .hww-precio {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    color: var(--color-text-main);
+                    background: #f8dfc6;
+                    padding: 0.35rem 0.8rem;
+                    border-radius: 999px;
+                    white-space: nowrap;
                 }
                 @media (max-width: 900px) {
                     .hww-seccion {
