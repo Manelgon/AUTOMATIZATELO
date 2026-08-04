@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
     title: "Formación en IA para Despachos Profesionales",
     description:
-        "Formación en IA para administradores de fincas, gestorías y asesorías: talleres prácticos con casos del despacho, protección de datos de clientes y cumplimiento del Art. 4.",
+        "Formación en IA para administradores de fincas, gestorías, asesorías y abogados: talleres con casos del despacho, secreto profesional a salvo y el Art. 4 cumplido.",
     alternates: { canonical: "https://automatizatelo.com/formacion-ia-despachos" },
     openGraph: {
         title: "IA para tu despacho: formación práctica con tus casos reales",
@@ -22,7 +22,7 @@ const faqs = [
     },
     {
         question: "¿La formación es genérica o adaptada al despacho?",
-        answer: "Adaptada — y esa es la gracia. Los ejercicios se hacen con los casos del despacho: redactar comunicaciones a clientes o comunidades, resumir documentación, preparar reuniones, plantillas de respuesta. Conozco el sector desde dentro: construyo paneles que despachos de administración de fincas usan a diario desde enero de 2026, y he producido la formación de AFCademIA para administradores de fincas.",
+        answer: "Adaptada — y esa es la gracia. Los ejercicios se hacen con los casos del despacho: redactar comunicaciones a clientes o comunidades, resumir documentación, preparar reuniones, plantillas de respuesta. Conozco el sector desde dentro: construyo paneles que despachos de administración de fincas usan a diario desde enero de 2026, y he producido la formación de AFCademIA para administradores de fincas. Y para un despacho de abogados aplica igual: mismos riesgos de confidencialidad, mismos flujos de documentación — con sus escritos y su jerga.",
     },
     {
         question: "¿Cuánto cuesta?",
@@ -75,7 +75,7 @@ const bloques = [
     {
         num: "01",
         titulo: "Taller práctico con los casos del despacho",
-        desc: "Un día trabajando con lo vuestro: comunicaciones, resúmenes de documentación, plantillas por tipo de cliente y preparación de reuniones. Cada persona sale con sus flujos montados.",
+        desc: "Un día trabajando con lo vuestro: comunicaciones, resúmenes de documentación, redacción de escritos y plantillas por tipo de cliente. Cada persona sale con sus flujos montados y una librería de prompts propia del despacho.",
     },
     {
         num: "02",
@@ -123,9 +123,9 @@ export default function DespachosPage() {
                         <span style={{ color: "var(--color-primary)" }}>sin jugarte los datos de nadie</span>
                     </h1>
                     <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
-                        Formación práctica para administradores de fincas, gestorías y asesorías:
-                        con vuestros casos reales, con el secreto profesional por delante y con
-                        la evidencia del Art. 4 que un despacho debe poder enseñar.
+                        Formación práctica para administradores de fincas, gestorías, asesorías
+                        y abogados: con vuestros casos reales, con el secreto profesional por
+                        delante y con la evidencia del Art. 4 que un despacho debe poder enseñar.
                     </p>
                     <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
                         Consulta gratuita para tu despacho

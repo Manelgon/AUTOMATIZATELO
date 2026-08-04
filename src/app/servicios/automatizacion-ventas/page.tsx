@@ -4,37 +4,37 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Paneles y Dashboards a Medida para Pymes",
+    title: "Automatización de Ventas para Pymes | Del Lead al Cobro",
     description:
-        "Paneles de gestión a medida: clientes, incidencias, agenda y métricas de tu negocio en un solo sitio. En uso diario en despachos reales. Desde 2.000€, el código es tuyo.",
-    alternates: { canonical: "https://automatizatelo.com/servicios/paneles" },
+        "Automatiza tu ciclo de ventas: leads respondidos en minutos, seguimiento que no se olvida, propuestas en un clic y facturas que se emiten solas. Desde 500€.",
+    alternates: { canonical: "https://automatizatelo.com/servicios/automatizacion-ventas" },
     openGraph: {
-        title: "Tu negocio entero, en un panel hecho para ti",
-        description: "Sin licencias por usuario, sin adaptarte tú al software: el panel se adapta a tu negocio. El código es tuyo.",
-        url: "https://automatizatelo.com/servicios/paneles",
+        title: "Automatización de ventas: menos picar datos, más cerrar",
+        description: "Del lead al cobro sin trabajo manual: respuesta inmediata, seguimiento automático y facturación sola.",
+        url: "https://automatizatelo.com/servicios/automatizacion-ventas",
     },
 };
 
 const faqs = [
     {
-        question: "¿Por qué un panel a medida en vez de un software del mercado?",
-        answer: "Porque el software del mercado te obliga a trabajar como él quiere, cobra por usuario para siempre y trae cien funciones que no usas. Un panel a medida hace exactamente lo que tu negocio necesita, lo pagas una vez, y el código y los datos son tuyos. Cuando el genérico te encaja, te lo digo y te ahorras el proyecto — pero cuando no encaja, adaptarte tú al software sale más caro que hacerlo a tu medida.",
+        question: "¿Qué partes del ciclo de ventas se pueden automatizar?",
+        answer: "Casi todas las que no son hablar con el cliente: la respuesta inicial al lead (en minutos, no al día siguiente), la calificación con reglas que tú defines, los recordatorios de seguimiento, la generación de propuestas desde plantillas, la factura al cerrar y el aviso si un cliente se enfría. Lo que no automatizo es la conversación de venta en sí — esa es tuya, y ahora tendrás tiempo para tenerla.",
     },
     {
-        question: "¿Esto está probado en negocios reales?",
-        answer: "Sí — es de lo que más construyo. Despachos de administración de fincas gestionan su día a día (incidencias, comunicaciones con vecinos, documentación) en paneles míos desde enero de 2026; una academia online gestiona su operación en otro; y una clínica estética lleva agenda, historia clínica y cumplimiento RGPD sanitario en el suyo. Los tienes en casos de éxito.",
+        question: "¿Necesito un CRM para automatizar las ventas?",
+        answer: "Ayuda mucho, pero no es requisito de entrada: se puede empezar automatizando sobre lo que uses hoy (email, hojas de cálculo, WhatsApp) y dar el salto al CRM cuando tenga sentido. Si toca elegirlo e implantarlo, eso tiene página propia — y va sin comisiones de ningún proveedor.",
     },
     {
-        question: "¿Cuánto cuesta un panel a medida?",
-        answer: "Un panel de gestión entra normalmente en el proyecto de automatización de área, desde 2.000€; uno que cubra toda la operación de la empresa, en el rango del proyecto integral desde 8.000€. Precio y plazo cerrados por escrito antes de empezar, pago por hitos y sin cuotas por usuario.",
+        question: "¿Cuánto cuesta automatizar las ventas?",
+        answer: "Una automatización concreta — por ejemplo, la respuesta inmediata a leads o los recordatorios de seguimiento — desde 500€. El ciclo comercial completo (captación, seguimiento, propuestas y facturación funcionando solos) es un proyecto de área desde 2.000€. Precio cerrado por escrito antes de empezar.",
     },
     {
-        question: "¿Y cuando quiera cambiar algo dentro de un año?",
-        answer: "El panel es tuyo: código, datos y accesos. Puedes evolucionarlo conmigo (mantenimiento opcional), con tu equipo o con cualquier otro desarrollador — está documentado para eso. Sin rehenes: esa es la diferencia con el software de alquiler.",
+        question: "¿Los mensajes automáticos no espantan al cliente?",
+        answer: "Los mensajes malos espantan, sean automáticos o no. Los flujos se redactan con tu tono y se disparan cuando aportan (confirmar recepción, recordar una propuesta, avisar de un vencimiento) — y en cuanto el cliente responde algo que necesita criterio, entra tu equipo. El cliente nota que le contestan rápido, no que le contesta una máquina.",
     },
     {
-        question: "¿Se conecta con lo que ya usamos?",
-        answer: "Esa es la gracia: el panel se integra con tu facturación, tu agenda, tu WhatsApp o tu web para que los datos entren solos y no haya que picar nada dos veces. Un panel donde hay que meter todo a mano es una hoja de cálculo con pretensiones.",
+        question: "¿Esto vale para mi sector?",
+        answer: "Si vendes con presupuestos, seguimiento y facturas, sí — da igual que seas gestoría, empresa de servicios, academia o consultora. Los flujos se montan sobre tu proceso real, no sobre una plantilla; por eso el primer paso es la auditoría gratuita de 30 minutos.",
     },
 ];
 
@@ -51,47 +51,46 @@ const faqJsonLd = {
 const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Paneles y dashboards de gestión a medida",
+    "name": "Automatización de ventas para pymes",
     "provider": {
         "@type": "ProfessionalService",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Paneles de gestión a medida para pymes: clientes, incidencias, agenda, documentación y métricas en un solo sitio, integrados con las herramientas existentes. Desde 2.000€, propiedad del cliente.",
+    "description": "Automatización del ciclo comercial: respuesta inmediata a leads, calificación, seguimiento automático, propuestas y facturación. Desde 500€ por flujo; ciclo completo desde 2.000€.",
 };
 
-const capacidades = [
+const pasos = [
     {
         num: "01",
-        titulo: "Todo tu negocio en un sitio",
-        desc: "Clientes, incidencias, agenda, documentos y tareas — se acabó saltar entre cinco herramientas y tres hojas de cálculo para saber qué está pasando.",
+        titulo: "El lead, respondido en minutos",
+        desc: "Entra por la web, el email o WhatsApp y recibe respuesta al momento — con sus datos ya registrados. Un lead sin respuesta rápida se enfría o se va a la competencia.",
     },
     {
         num: "02",
-        titulo: "Los datos entran solos",
-        desc: "Integrado con tu facturación, tu email, tu WhatsApp o tu web: lo que llega se registra sin que nadie lo pique. La IA clasifica y prioriza por ti.",
+        titulo: "Seguimiento que no se olvida",
+        desc: "Recordatorios y toques automáticos con tu tono: la propuesta que lleva una semana sin respuesta, el cliente que se enfría, el vencimiento que se acerca. Nada depende de la memoria de nadie.",
     },
     {
         num: "03",
-        titulo: "Métricas que se entienden",
-        desc: "Lo que necesitas ver para decidir — facturación, carga de trabajo, incidencias abiertas — en tiempo real y sin montar informes a mano.",
+        titulo: "Propuestas y facturas sin picar datos",
+        desc: "La propuesta sale de una plantilla con los datos del cliente ya puestos; al cerrar, la factura se emite y se envía sola. Del sí al cobro sin administración manual.",
     },
     {
         num: "04",
-        titulo: "Tuyo, con sus papeles en regla",
-        desc: "Código y datos en tu propiedad, accesos por rol y cumplimiento RGPD desde el diseño. Sin licencias por usuario ni letra pequeña.",
+        titulo: "Y tú viendo el embudo entero",
+        desc: "Qué hay abierto, qué se ha enfriado y qué está a punto de cerrar — visible sin montar informes a mano. Para dirigir la venta con datos, no con sensaciones.",
     },
 ];
 
-export default function PanelesPage() {
+export default function AutomatizacionVentasPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
             <Header />
 
-            {/* Hero editorial */}
             <section style={{
                 padding: "9rem 0 3.5rem",
                 background: "radial-gradient(circle at 20% 20%, rgba(234, 88, 12, 0.07) 0%, transparent 55%)",
@@ -99,7 +98,7 @@ export default function PanelesPage() {
                 <div className="container">
                     <span className="kicker-mono">
                         <i className="fa-solid fa-chart-line" style={{ marginRight: "0.6rem" }}></i>
-                        Paneles y dashboards a medida
+                        Automatización de ventas
                     </span>
                     <h1 style={{
                         fontFamily: "var(--font-display, serif)",
@@ -110,21 +109,20 @@ export default function PanelesPage() {
                         color: "var(--color-text-main)",
                         margin: "1rem 0 1.2rem",
                     }}>
-                        Tu negocio entero,{" "}<br />
-                        <span style={{ color: "var(--color-primary)" }}>en un panel hecho para ti</span>
+                        Menos picar datos,{" "}<br />
+                        <span style={{ color: "var(--color-primary)" }}>más cerrar ventas</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
-                        No te adaptes tú al software: que el software se adapte a tu negocio.
-                        Paneles de gestión a medida que ya usan a diario despachos, academias
-                        y clínicas — y que son propiedad de quien los paga.
+                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 660 }}>
+                        Tu equipo comercial no está para copiar datos ni perseguir recordatorios:
+                        está para vender. Automatizo el ciclo entero — del lead que entra al cobro
+                        que sale — para que las horas se vayan en conversaciones, no en administración.
                     </p>
                     <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
-                        Contarte mi caso — 30 min gratis
+                        Ver mi ciclo de ventas — 30 min gratis
                     </Link>
                 </div>
             </section>
 
-            {/* Answer capsule */}
             <section style={{ padding: "4rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
                     <span className="kicker-mono">En corto</span>
@@ -137,22 +135,21 @@ export default function PanelesPage() {
                         margin: "1rem 0 1.2rem",
                         letterSpacing: "-0.01em",
                     }}>
-                        Paneles de control y dashboards personalizados desde 2.000€: clientes,
-                        incidencias, agenda y métricas de tu negocio en un solo sitio, integrados
-                        con lo que ya usas. Sin licencias por usuario, y el código y los datos son tuyos.
+                        Automatización de ventas para pymes: leads respondidos en minutos,
+                        seguimiento automático, propuestas en un clic y facturación sola — desde
+                        500€ el flujo concreto, desde 2.000€ el ciclo comercial completo.
                     </p>
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.8, margin: 0, maxWidth: 720 }}>
-                        En producción real: despachos de administración de fincas los usan a diario
-                        desde enero de 2026, y también una academia online y una clínica estética
-                        con su historia clínica y su RGPD sanitario.
+                        Sobre tus herramientas de hoy o sobre un CRM bien implantado — y siempre
+                        con tu tono en cada mensaje: el cliente nota que le contestan rápido,
+                        no que le contesta una máquina.
                     </p>
                 </div>
             </section>
 
-            {/* Qué hace — franja terracota */}
             <section style={{ padding: "4.5rem 0", background: "linear-gradient(135deg, #b45309 0%, #7c2d12 55%, #431407 100%)" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <span className="mono-label" style={{ color: "#f6c39c" }}>Qué hace</span>
+                <div className="container" style={{ maxWidth: 1000 }}>
+                    <span className="mono-label" style={{ color: "#f6c39c" }}>Cómo queda tu ciclo</span>
                     <h2 style={{
                         fontFamily: "var(--font-display, serif)",
                         fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
@@ -161,42 +158,46 @@ export default function PanelesPage() {
                         margin: "0.8rem 0 2rem",
                         lineHeight: 1.2,
                     }}>
-                        El centro de mando de tu pyme
+                        Del lead al cobro, sin trabajo manual
                     </h2>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem" }}>
-                        {capacidades.map((c) => (
-                            <div key={c.num}>
-                                <span className="mono-label" style={{ color: "#f6c39c" }}>{c.num}</span>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "2rem" }}>
+                        {pasos.map((p) => (
+                            <div key={p.num}>
+                                <span className="mono-label" style={{ color: "#f6c39c" }}>{p.num}</span>
                                 <h3 style={{
                                     fontFamily: "var(--font-display, serif)",
-                                    fontSize: "1.25rem",
+                                    fontSize: "1.2rem",
                                     fontWeight: 600,
                                     color: "#faf6ef",
                                     margin: "0.5rem 0 0.5rem",
                                     lineHeight: 1.3,
                                 }}>
-                                    {c.titulo}
+                                    {p.titulo}
                                 </h3>
                                 <p style={{ color: "rgba(250,246,239,0.85)", lineHeight: 1.6, margin: 0, fontSize: "0.95rem" }}>
-                                    {c.desc}
+                                    {p.desc}
                                 </p>
                             </div>
                         ))}
                     </div>
                     <p style={{ color: "rgba(250,246,239,0.85)", lineHeight: 1.7, marginTop: "2rem", maxWidth: 720 }}>
-                        Los paneles reales, con problema y resultados, en{" "}
-                        <Link href="/casos-de-exito" style={{ color: "#f6c39c", fontWeight: 600 }}>
-                            casos de éxito
+                        Las piezas de este ciclo viven en{" "}
+                        <Link href="/servicios/automatizacion" style={{ color: "#f6c39c", fontWeight: 600 }}>
+                            automatización de procesos
                         </Link>
-                        — y el ejemplo más completo, en el{" "}
-                        <Link href="/automatizacion-administradores-fincas" style={{ color: "#f6c39c", fontWeight: 600 }}>
-                            panel para administradores de fincas
-                        </Link>.
+                        ,{" "}
+                        <Link href="/servicios/implantacion-crm" style={{ color: "#f6c39c", fontWeight: 600 }}>
+                            implantación de CRM
+                        </Link>{" "}
+                        y{" "}
+                        <Link href="/servicios/chatbots-whatsapp" style={{ color: "#f6c39c", fontWeight: 600 }}>
+                            chatbots de WhatsApp
+                        </Link>{" "}
+                        — aquí se montan juntas para vender.
                     </p>
                 </div>
             </section>
 
-            {/* FAQ */}
             <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
                     <div style={{ marginBottom: "2rem" }}>
@@ -206,7 +207,7 @@ export default function PanelesPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="pn-faq">
+                        <details key={f.question} className="av-faq">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>
@@ -217,7 +218,6 @@ export default function PanelesPage() {
                 </div>
             </section>
 
-            {/* CTA final en melocotón */}
             <section style={{ padding: "4.5rem 0", background: "#f8dfc6", textAlign: "center" }}>
                 <div className="container">
                     <p style={{
@@ -229,10 +229,10 @@ export default function PanelesPage() {
                         margin: "0 0 1rem",
                         letterSpacing: "-0.02em",
                     }}>
-                        ¿Cómo sería el panel de tu negocio?
+                        ¿Cuántas ventas se te enfrían por no llegar a tiempo?
                     </p>
                     <p style={{ color: "rgba(28,25,23,0.7)", marginBottom: "1.8rem", fontSize: "1.05rem" }}>
-                        30 minutos gratis: me cuentas cómo trabajáis y te digo qué debería tener — y si te compensa.
+                        30 minutos gratis: repasamos tu ciclo de ventas y te digo qué automatizar primero.
                     </p>
                     <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.4rem" }}>
                         Pedir mis 30 minutos
@@ -243,13 +243,9 @@ export default function PanelesPage() {
             <Footer />
 
             <style>{`
-                .pn-faq {
-                    border-top: 1px solid var(--color-border);
-                }
-                .pn-faq:last-of-type {
-                    border-bottom: 1px solid var(--color-border);
-                }
-                .pn-faq summary {
+                .av-faq { border-top: 1px solid var(--color-border); }
+                .av-faq:last-of-type { border-bottom: 1px solid var(--color-border); }
+                .av-faq summary {
                     list-style: none;
                     display: flex;
                     align-items: center;
@@ -264,25 +260,16 @@ export default function PanelesPage() {
                     line-height: 1.3;
                     transition: color 0.2s ease, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
                 }
-                .pn-faq summary::-webkit-details-marker {
-                    display: none;
-                }
-                .pn-faq summary:hover {
-                    color: var(--color-primary);
-                    padding-left: 1rem;
-                }
-                .pn-faq summary i {
+                .av-faq summary::-webkit-details-marker { display: none; }
+                .av-faq summary:hover { color: var(--color-primary); padding-left: 1rem; }
+                .av-faq summary i {
                     color: var(--color-primary);
                     font-size: 0.8rem;
                     flex-shrink: 0;
                     transition: transform 0.3s ease;
                 }
-                .pn-faq[open] summary i {
-                    transform: rotate(180deg);
-                }
-                @media (max-width: 600px) {
-                    h1 br { display: none; }
-                }
+                .av-faq[open] summary i { transform: rotate(180deg); }
+                @media (max-width: 600px) { h1 br { display: none; } }
             `}</style>
         </main>
     );

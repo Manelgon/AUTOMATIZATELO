@@ -79,7 +79,7 @@ const bloques = [
     {
         num: "01",
         titulo: "Taller de claustro: IA práctica para docentes",
-        desc: "Un día de trabajo con las herramientas de verdad: preparar clases, generar materiales y rúbricas, adaptar actividades por niveles y quitarse de encima la parte mecánica de la corrección. Cada docente sale con cosas montadas para su asignatura.",
+        desc: "Un día de trabajo con las herramientas de verdad — los asistentes generalistas bien usados y las pensadas para docentes: preparar clases, generar materiales y rúbricas, adaptar actividades por niveles y quitarse de encima la parte mecánica de la corrección. Cada docente sale con cosas montadas para su asignatura.",
     },
     {
         num: "02",

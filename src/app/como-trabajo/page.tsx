@@ -4,69 +4,143 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Cómo Trabajo: Auditoría, Implementación y Acompañamiento",
+    title: "Cómo Trabajo: Mi Método para Implantar IA en tu Pyme",
     description:
-        "Mi método en 3 fases para automatizar tu pyme: auditoría gratuita de 30 minutos, implementación por hitos con precio cerrado y acompañamiento con soporte incluido.",
+        "Todo empieza con 30 minutos gratis. Después: formar al equipo, cumplir el AI Act o automatizar el trabajo — con precio y plazo cerrados y sin permanencia.",
     alternates: { canonical: "https://automatizatelo.com/como-trabajo" },
     openGraph: {
-        title: "Cómo trabajo: de tareas manuales a sistema que trabaja solo",
-        description: "Auditoría gratuita → implementación por hitos → acompañamiento. Precio cerrado, sin permanencia, código tuyo.",
+        title: "Cómo trabajo: sin sorpresas y sin ataduras",
+        description: "Diagnóstico gratuito y tres caminos: formar, cumplir y automatizar. Precio cerrado, pago por hitos, código tuyo.",
         url: "https://automatizatelo.com/como-trabajo",
     },
 };
 
-const fases = [
+const lineas = [
     {
         num: "01",
-        titulo: "Auditoría",
-        lema: "Antes de construir, el criterio.",
-        parrafos: [
-            "Empezamos con 30 minutos gratis, sin compromiso: me cuentas cómo trabajáis y yo miro dónde se va el tiempo — los mensajes que contestáis a mano, los datos que se copian de una herramienta a otra, los documentos que se hacen uno a uno.",
-            "Sales con un diagnóstico honesto: qué automatizar primero, qué puede esperar y qué no te compensa automatizar. Sí, a veces la respuesta es \"esto no lo automatices\" — y también te lo digo gratis.",
-            "Si seguimos, recibes una propuesta por escrito con el alcance, el precio y el plazo cerrados. Nada arranca sin que sepas exactamente qué se construye, cuánto cuesta y cuándo se entrega.",
+        titulo: "Formar",
+        lema: "Que tu equipo use la IA con criterio.",
+        oscuro: false,
+        pasos: [
+            {
+                n: "a",
+                t: "Ajuste",
+                d: "Hablamos de qué necesita tu equipo: nivel real, herramientas que ya usáis y casos de tu sector. De ahí sale la propuesta con formato, fechas y precio cerrado.",
+            },
+            {
+                n: "b",
+                t: "Impartición",
+                d: "Sesiones prácticas con vuestros casos reales, no diapositivas genéricas. Presencial en Barcelona, en remoto para toda España, o como curso en vuestra plataforma.",
+            },
+            {
+                n: "c",
+                t: "Evidencia",
+                d: "Certificado nominal por participante, registro formativo fechado y el material — el expediente que acredita la alfabetización del Art. 4 y se queda en tu empresa.",
+            },
         ],
-        enlace: { href: "/#contact", texto: "Pedir la auditoría gratuita" },
+        enlaces: [
+            { href: "/servicios/formacion-ia-empresas", texto: "Formatos y tarifas de formación" },
+        ],
     },
     {
         num: "02",
-        titulo: "Implementación",
-        lema: "Construimos el sistema.",
-        parrafos: [
-            "Construyo el sistema por hitos: entregas parciales que vas viendo funcionar, no un misterio de meses que aparece al final. Cada hito se paga cuando está entregado — por eso el pago es por hitos y no por adelantado.",
-            "Se prueba con tus datos y tus casos reales antes de darlo por bueno, y se integra con las herramientas que ya usáis: agenda, facturación, WhatsApp, lo que haya. Tu equipo no tiene que aprender un mundo nuevo.",
-            "Todo lo que construyo queda en tu propiedad: el código, los datos y los accesos son tuyos desde el primer día. Si mañana quieres seguir con otro proveedor, te lo llevas todo.",
+        titulo: "Cumplir",
+        lema: "Que la ley no te pille a contrapié.",
+        oscuro: true,
+        pasos: [
+            {
+                n: "a",
+                t: "Revisión",
+                d: "Una sesión para entender cómo trabajáis y un inventario de la IA que la empresa usa de verdad — incluida la que nadie ha 'aprobado'. Con su clasificación de riesgos según el Reglamento.",
+            },
+            {
+                n: "b",
+                t: "Informe y plan",
+                d: "Qué cumples, qué no, y qué hacer en qué orden — con esfuerzo y coste de cada paso. Escrito para gerencia, no para abogados, y explicado en una reunión final.",
+            },
+            {
+                n: "c",
+                t: "Cierre",
+                d: "Si quieres dejarlo cerrado: política de uso de IA redactada para tu empresa y formación del Art. 4 con certificados. La evidencia documental completa, en tu poder.",
+            },
         ],
-        enlace: { href: "/casos-de-exito", texto: "Ver sistemas ya entregados" },
+        enlaces: [
+            { href: "/servicios/auditoria-ia", texto: "Alcance y precios de la auditoría" },
+            { href: "/formacion-obligatoria-ai-act", texto: "Qué exige el Art. 4" },
+        ],
     },
     {
         num: "03",
-        titulo: "Acompañamiento",
-        lema: "Soporte y mejora continua.",
-        parrafos: [
-            "Todos los proyectos incluyen un periodo de soporte — de 1 a 6 meses según el tamaño — en el que resuelvo dudas, ajusto lo que la realidad pida ajustar y vigilo que todo funcione como debe.",
-            "Después, tú decides: mantenimiento opcional si quieres que siga al lado, o autonomía total — sin permanencia y con documentación para que cualquiera pueda continuar.",
-            "Y si tu equipo necesita aprender a sacarle partido a la IA, la formación existe como servicio propio, con sus formatos y tarifas públicas.",
+        titulo: "Automatizar",
+        lema: "Que el trabajo repetitivo se haga solo.",
+        oscuro: false,
+        pasos: [
+            {
+                n: "a",
+                t: "Propuesta cerrada",
+                d: "Antes de tocar nada: alcance, precio y plazo por escrito. Nada arranca sin que sepas exactamente qué se construye, cuánto cuesta y cuándo se entrega.",
+            },
+            {
+                n: "b",
+                t: "Construcción por hitos",
+                d: "Entregas parciales que vas viendo funcionar, no un misterio de meses. Cada hito se paga cuando está entregado, se prueba con tus datos reales y se integra con lo que ya usáis.",
+            },
+            {
+                n: "c",
+                t: "Acompañamiento",
+                d: "De 1 a 6 meses de soporte según el tamaño: resuelvo dudas, ajusto lo que la realidad pida y vigilo que todo funcione. Después, mantenimiento opcional o autonomía total.",
+            },
         ],
-        enlace: { href: "/servicios/formacion-ia-empresas", texto: "Ver la formación en IA" },
+        enlaces: [
+            { href: "/casos-de-exito", texto: "Ver sistemas ya entregados" },
+            { href: "/precios", texto: "Precios de los proyectos" },
+        ],
+    },
+];
+
+const garantias = [
+    {
+        icon: "fa-file-signature",
+        t: "Precio y plazo cerrados",
+        d: "Por escrito antes de empezar. Sin sorpresas a mitad de proyecto ni horas que aparecen al final.",
+    },
+    {
+        icon: "fa-flag-checkered",
+        t: "Pago por hitos",
+        d: "Se paga lo entregado, cuando está entregado. Si no avanzo, no cobro.",
+    },
+    {
+        icon: "fa-lock-open",
+        t: "Sin permanencia",
+        d: "Ni cuotas obligatorias ni contratos que atan. Te quedas porque funciona.",
+    },
+    {
+        icon: "fa-key",
+        t: "El código y los datos, tuyos",
+        d: "Todo queda en tu propiedad y documentado, para que puedas continuar con quien quieras.",
     },
 ];
 
 const faqs = [
     {
-        question: "¿Cuánto tarda un proyecto de automatización?",
-        answer: "Una automatización puntual, unas 2 semanas. Un área completa, entre uno y tres meses según el alcance. El plazo exacto se cierra por escrito en la propuesta, antes de empezar, junto con el precio.",
+        question: "¿La auditoría gratuita es lo mismo que la Auditoría IA que vendes?",
+        answer: "No, y conviene distinguirlo: la auditoría gratuita son los 30 minutos iniciales en los que miramos tu caso y te digo por dónde empezar — sin coste ni compromiso. La Auditoría IA (AI Act) es un servicio con entregables: inventario, clasificación de riesgos, informe y plan de acción, desde 750€. La gratuita puede acabar recomendándote la de pago… o diciéndote que no te hace falta.",
+    },
+    {
+        question: "¿Cuánto tarda cada cosa?",
+        answer: "La formación se agenda en semanas y se imparte en días. La auditoría de cumplimiento, una o dos semanas desde la primera reunión. Un proyecto de automatización puntual, unas 2 semanas; un área completa, entre uno y tres meses según alcance. El plazo exacto se cierra por escrito en la propuesta.",
+    },
+    {
+        question: "¿Tengo que hacer las tres cosas?",
+        answer: "No. Cada línea funciona sola y se contrata sola: hay clientes que solo forman a su equipo, otros que solo quieren el cumplimiento en regla y otros que van directos a automatizar. Si has hecho una, las siguientes se abaratan — no se paga dos veces lo mismo.",
     },
     {
         question: "¿Necesito saber de tecnología para trabajar contigo?",
-        answer: "No. Tú explicas cómo trabaja tu negocio y de la parte técnica me encargo yo. El sistema se entrega funcionando, integrado con tus herramientas y explicado a tu equipo en su idioma, sin jerga.",
+        answer: "No. Tú explicas cómo trabaja tu negocio y de la parte técnica me encargo yo. Todo se entrega funcionando, integrado con tus herramientas y explicado a tu equipo en su idioma, sin jerga.",
     },
     {
-        question: "¿Trabajas en presencial o en remoto?",
+        question: "¿Trabajas presencial o en remoto?",
         answer: "Las dos cosas: presencial en Barcelona y alrededores, y en remoto para toda España. La mayoría de proyectos se llevan perfectamente en remoto, con reuniones cortas en los hitos.",
-    },
-    {
-        question: "¿Qué pasa cuando se acaba el periodo de soporte?",
-        answer: "Decides tú: puedes contratar mantenimiento opcional o seguir por tu cuenta. Como el código y los datos son tuyos y todo queda documentado, no dependes de mí para continuar — esa es la idea.",
     },
 ];
 
@@ -109,164 +183,145 @@ export default function ComoTrabajoPage() {
                         <span style={{ color: "var(--color-primary)" }}>sin sorpresas y sin ataduras</span>
                     </h1>
                     <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 660 }}>
-                        Tres fases para los proyectos — auditoría gratuita, implementación por hitos
-                        y acompañamiento — y procesos propios para la formación y la auditoría de
-                        cumplimiento. En todos los casos, lo mismo: precio y plazo cerrados antes
-                        de empezar, y el resultado en tu propiedad.
+                        Todo empieza igual — 30 minutos gratis — y a partir de ahí hay tres caminos:
+                        formar a tu equipo, poner el cumplimiento en regla o automatizar el trabajo.
+                        En los tres, lo mismo: precio y plazo cerrados antes de empezar, y el
+                        resultado en tu propiedad.
                     </p>
                     <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
-                        Empezar por la auditoría gratuita
+                        Empezar por los 30 minutos
                     </Link>
                 </div>
             </section>
 
-            {/* Las 3 fases */}
-            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 1000 }}>
-                    {fases.map((f, i) => (
-                        <div key={f.num} className="ct-fase" style={i === 0 ? { borderTop: "none", paddingTop: 0 } : undefined}>
-                            <div className="ct-fase-num">
-                                <span>{f.num}</span>
-                            </div>
+            {/* Paso 0 — la puerta común */}
+            <section style={{ padding: "3.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container" style={{ maxWidth: 900 }}>
+                    <div className="ct-cero">
+                        <div className="ct-cero-num" aria-hidden="true">00</div>
+                        <div>
+                            <span className="kicker-mono">Siempre empieza igual</span>
+                            <h2 style={{
+                                fontFamily: "var(--font-display, serif)",
+                                fontSize: "clamp(1.5rem, 3vw, 2.1rem)",
+                                fontWeight: 600,
+                                color: "var(--color-text-main)",
+                                margin: "0.6rem 0 0.8rem",
+                                lineHeight: 1.25,
+                            }}>
+                                30 minutos gratis, sin compromiso
+                            </h2>
+                            <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, marginBottom: "0.9rem", maxWidth: 620 }}>
+                                Me cuentas cómo trabajáis y yo miro dónde se va el tiempo y dónde hay
+                                riesgo: los mensajes que contestáis a mano, los datos que se copian de
+                                una herramienta a otra, la IA que ya usa tu equipo sin criterio común.
+                            </p>
+                            <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, margin: 0, maxWidth: 620 }}>
+                                Sales con un diagnóstico honesto: <strong style={{ color: "var(--color-text-main)" }}>qué formar,
+                                qué poner en regla y qué automatizar primero</strong> — y qué no te compensa
+                                hacer. Sí, a veces la respuesta es «esto déjalo como está», y también te
+                                lo digo gratis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Las tres líneas */}
+            {lineas.map((l) => (
+                <section
+                    key={l.num}
+                    style={l.oscuro
+                        ? { padding: "4.5rem 0", background: "linear-gradient(135deg, #b45309 0%, #7c2d12 55%, #431407 100%)" }
+                        : { padding: "4.5rem 0" }}
+                >
+                    <div className="container" style={{ maxWidth: 1000 }}>
+                        <div className="ct-linea-head">
+                            <span className="ct-linea-num" aria-hidden="true">{l.num}</span>
                             <div>
                                 <h2 style={{
                                     fontFamily: "var(--font-display, serif)",
-                                    fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+                                    fontSize: "clamp(1.7rem, 3.5vw, 2.5rem)",
                                     fontWeight: 600,
-                                    color: "var(--color-text-main)",
-                                    margin: "0 0 0.3rem",
-                                    lineHeight: 1.2,
+                                    color: l.oscuro ? "#faf6ef" : "var(--color-text-main)",
+                                    margin: 0,
+                                    lineHeight: 1.15,
                                 }}>
-                                    {f.titulo}
+                                    {l.titulo}
                                 </h2>
-                                <p className="mono-label" style={{ color: "var(--color-primary)", marginBottom: "1.2rem" }}>{f.lema}</p>
-                                {f.parrafos.map((p) => (
-                                    <p key={p.slice(0, 30)} style={{ color: "var(--color-text-muted)", lineHeight: 1.75, marginBottom: "1rem", maxWidth: 640 }}>
-                                        {p}
-                                    </p>
-                                ))}
-                                <Link href={f.enlace.href} style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                                    {f.enlace.texto} →
-                                </Link>
+                                <p className="mono-label" style={{ color: l.oscuro ? "#f6c39c" : "var(--color-primary)", marginTop: "0.4rem" }}>
+                                    {l.lema}
+                                </p>
                             </div>
                         </div>
-                    ))}
-                </div>
-            </section>
 
-            {/* Y en formación — proceso propio, compacto */}
-            <section style={{ padding: "4.5rem 0" }}>
+                        <div className="ct-pasos">
+                            {l.pasos.map((p) => (
+                                <div key={p.n} className={`ct-paso ${l.oscuro ? "ct-paso-oscuro" : ""}`}>
+                                    <span className="ct-paso-letra">{l.num}{p.n}</span>
+                                    <h3 style={{
+                                        fontFamily: "var(--font-display, serif)",
+                                        fontSize: "1.2rem",
+                                        fontWeight: 600,
+                                        color: l.oscuro ? "#faf6ef" : "var(--color-text-main)",
+                                        margin: "0.4rem 0 0.5rem",
+                                        lineHeight: 1.3,
+                                    }}>
+                                        {p.t}
+                                    </h3>
+                                    <p style={{
+                                        color: l.oscuro ? "rgba(250,246,239,0.85)" : "var(--color-text-muted)",
+                                        lineHeight: 1.65,
+                                        margin: 0,
+                                        fontSize: "0.95rem",
+                                    }}>
+                                        {p.d}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="ct-linea-enlaces">
+                            {l.enlaces.map((e) => (
+                                <Link
+                                    key={e.href}
+                                    href={e.href}
+                                    style={{ color: l.oscuro ? "#f6c39c" : "var(--color-primary)", fontWeight: 600, fontSize: "0.95rem" }}
+                                >
+                                    {e.texto} →
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            ))}
+
+            {/* Lo que no cambia nunca */}
+            <section style={{ padding: "4.5rem 0", background: "#f8dfc6" }}>
                 <div className="container" style={{ maxWidth: 1000 }}>
-                    <span className="kicker-mono">¿Y en formación?</span>
-                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                        La formación trabaja distinto
-                    </h2>
-                    <p className="section-subtitle" style={{ textAlign: "left", margin: "0 0 2rem", maxWidth: 640 }}>
-                        Aquí no se construye un sistema: se forma a un equipo. El proceso es más corto
-                        y con otros entregables.
-                    </p>
-                    <div className="ct-form-pasos">
-                        {[
-                            {
-                                num: "01",
-                                titulo: "Ajuste",
-                                desc: "Hablamos de qué necesita tu equipo: nivel real, herramientas que ya usáis y casos de tu sector. De ahí sale la propuesta con formato, fechas y precio cerrado.",
-                            },
-                            {
-                                num: "02",
-                                titulo: "Impartición",
-                                desc: "Sesiones prácticas con vuestros casos reales, no diapositivas genéricas. Presencial en Barcelona, en remoto para toda España, o como curso en vuestra plataforma.",
-                            },
-                            {
-                                num: "03",
-                                titulo: "Evidencia",
-                                desc: "Certificado nominal por participante, registro formativo fechado y el material — el expediente que acredita la alfabetización del Art. 4, y que se queda en tu empresa.",
-                            },
-                        ].map((p) => (
-                            <div key={p.num} className="ct-form-paso">
-                                <span className="mono-label" style={{ color: "var(--color-primary)" }}>{p.num}</span>
-                                <h3 style={{
-                                    fontFamily: "var(--font-display, serif)",
-                                    fontSize: "1.25rem",
-                                    fontWeight: 600,
-                                    color: "var(--color-text-main)",
-                                    margin: "0.5rem 0 0.5rem",
-                                    lineHeight: 1.3,
-                                }}>
-                                    {p.titulo}
-                                </h3>
-                                <p style={{ color: "var(--color-text-muted)", lineHeight: 1.65, margin: 0, fontSize: "0.95rem" }}>
-                                    {p.desc}
-                                </p>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="mono-label" style={{ color: "rgba(28,25,23,0.6)" }}>Da igual el camino</span>
+                        <h2 style={{
+                            fontFamily: "var(--font-display, serif)",
+                            fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+                            fontWeight: 600,
+                            color: "#1c1917",
+                            margin: "0.7rem 0 0",
+                            lineHeight: 1.2,
+                            letterSpacing: "-0.01em",
+                        }}>
+                            Lo que no cambia nunca
+                        </h2>
+                    </div>
+                    <div className="ct-garantias">
+                        {garantias.map((g) => (
+                            <div key={g.t} className="ct-garantia">
+                                <i className={`fa-solid ${g.icon}`}></i>
+                                <h3>{g.t}</h3>
+                                <p>{g.d}</p>
                             </div>
                         ))}
                     </div>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.8rem", maxWidth: 720 }}>
-                        Formatos, tarifas y contenidos, en la página de{" "}
-                        <Link href="/servicios/formacion-ia-empresas" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            formación en IA para empresas
-                        </Link>{" "}
-                        — y su versión para{" "}
-                        <Link href="/formacion-ia-centros-educativos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            centros educativos
-                        </Link>.
-                    </p>
-                </div>
-            </section>
-
-            {/* Y en auditoría — proceso propio, compacto */}
-            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 1000 }}>
-                    <span className="kicker-mono">¿Y la auditoría IA?</span>
-                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                        Del "¿cumplimos?" al plan de acción
-                    </h2>
-                    <p className="section-subtitle" style={{ textAlign: "left", margin: "0 0 2rem", maxWidth: 640 }}>
-                        Para el cumplimiento del Reglamento Europeo de IA el proceso es aún más corto:
-                        una o dos semanas.
-                    </p>
-                    <div className="ct-form-pasos">
-                        {[
-                            {
-                                num: "01",
-                                titulo: "Revisión",
-                                desc: "Una sesión para entender cómo trabajáis y un inventario de la IA que la empresa usa de verdad — incluida la que nadie ha 'aprobado'. Con su clasificación de riesgos según el Reglamento.",
-                            },
-                            {
-                                num: "02",
-                                titulo: "Informe y plan",
-                                desc: "Qué cumples, qué no, y qué hacer en qué orden — con esfuerzo y coste de cada paso. Escrito para gerencia, no para abogados, y explicado en una reunión final.",
-                            },
-                            {
-                                num: "03",
-                                titulo: "Cierre",
-                                desc: "Si quieres dejarlo cerrado: política de uso de IA redactada para tu empresa y formación del Art. 4 con certificados. La evidencia documental completa, en tu poder.",
-                            },
-                        ].map((p) => (
-                            <div key={p.num} className="ct-form-paso">
-                                <span className="mono-label" style={{ color: "var(--color-primary)" }}>{p.num}</span>
-                                <h3 style={{
-                                    fontFamily: "var(--font-display, serif)",
-                                    fontSize: "1.25rem",
-                                    fontWeight: 600,
-                                    color: "var(--color-text-main)",
-                                    margin: "0.5rem 0 0.5rem",
-                                    lineHeight: 1.3,
-                                }}>
-                                    {p.titulo}
-                                </h3>
-                                <p style={{ color: "var(--color-text-muted)", lineHeight: 1.65, margin: 0, fontSize: "0.95rem" }}>
-                                    {p.desc}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.8rem", maxWidth: 720 }}>
-                        Alcance, entregables y precios, en la página de{" "}
-                        <Link href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            auditoría IA
-                        </Link>.
-                    </p>
                 </div>
             </section>
 
@@ -291,25 +346,25 @@ export default function ComoTrabajoPage() {
                 </div>
             </section>
 
-            {/* CTA final en melocotón */}
-            <section style={{ padding: "4.5rem 0", background: "#f8dfc6", textAlign: "center" }}>
+            {/* CTA final */}
+            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", textAlign: "center" }}>
                 <div className="container">
                     <p style={{
                         fontFamily: "var(--font-display, serif)",
                         fontSize: "clamp(1.7rem, 3.5vw, 2.6rem)",
                         fontWeight: 600,
-                        color: "#1c1917",
+                        color: "var(--color-text-main)",
                         lineHeight: 1.2,
                         margin: "0 0 1rem",
                         letterSpacing: "-0.02em",
                     }}>
-                        La fase 01 es gratis. Empecemos por ahí.
+                        El paso 00 es gratis. Empecemos por ahí.
                     </p>
-                    <p style={{ color: "rgba(28,25,23,0.7)", marginBottom: "1.8rem", fontSize: "1.05rem" }}>
-                        30 minutos, sin compromiso: te digo qué automatizar primero — o si no te compensa.
+                    <p style={{ color: "var(--color-text-muted)", marginBottom: "1.8rem", fontSize: "1.05rem" }}>
+                        30 minutos, sin compromiso: te digo qué camino te toca — o si no te hace falta ninguno.
                     </p>
                     <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.4rem" }}>
-                        Pedir la auditoría gratuita
+                        Pedir mis 30 minutos
                     </Link>
                 </div>
             </section>
@@ -317,36 +372,101 @@ export default function ComoTrabajoPage() {
             <Footer />
 
             <style>{`
-                .ct-fase {
+                /* Paso 0 */
+                .ct-cero {
                     display: grid;
-                    grid-template-columns: 8rem 1fr;
+                    grid-template-columns: auto 1fr;
                     gap: 2rem;
-                    padding: 3rem 0;
-                    border-top: 1px solid var(--color-border);
+                    align-items: start;
                 }
-                .ct-fase-num span {
+                .ct-cero-num {
                     font-family: var(--font-display, serif);
-                    font-size: clamp(3.5rem, 7vw, 5.5rem);
+                    font-size: clamp(3.5rem, 8vw, 6rem);
+                    font-weight: 600;
+                    line-height: 0.9;
+                    color: transparent;
+                    -webkit-text-stroke: 2px rgba(234, 88, 12, 0.4);
+                    user-select: none;
+                }
+
+                /* Cabecera de cada línea */
+                .ct-linea-head {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.4rem;
+                    margin-bottom: 2rem;
+                }
+                .ct-linea-num {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(2.6rem, 5vw, 4rem);
                     font-weight: 600;
                     line-height: 1;
                     color: transparent;
                     -webkit-text-stroke: 2px rgba(234, 88, 12, 0.45);
+                    user-select: none;
                 }
-                .ct-form-pasos {
+                section[style*="linear-gradient"] .ct-linea-num {
+                    -webkit-text-stroke-color: rgba(246, 195, 156, 0.6);
+                }
+
+                /* Pasos de cada línea */
+                .ct-pasos {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
+                    gap: 1.2rem;
+                }
+                .ct-paso {
+                    border-top: 2px solid var(--color-border);
+                    padding-top: 1.1rem;
+                }
+                .ct-paso-oscuro {
+                    border-top-color: rgba(246, 195, 156, 0.35);
+                }
+                .ct-paso-letra {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    letter-spacing: 0.12em;
+                    text-transform: uppercase;
+                    color: var(--color-primary);
+                }
+                .ct-paso-oscuro .ct-paso-letra {
+                    color: #f6c39c;
+                }
+
+                .ct-linea-enlaces {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.8rem 2rem;
+                    margin-top: 1.8rem;
+                }
+
+                /* Garantías */
+                .ct-garantias {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
                     gap: 2rem;
                 }
-                .ct-form-paso {
-                    border-top: 1px solid var(--color-border);
-                    padding-top: 1.2rem;
+                .ct-garantia i {
+                    color: var(--color-primary);
+                    font-size: 1.4rem;
                 }
-                @media (max-width: 800px) {
-                    .ct-form-pasos {
-                        grid-template-columns: 1fr;
-                        gap: 1.4rem;
-                    }
+                .ct-garantia h3 {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: #1c1917;
+                    margin: 0.7rem 0 0.4rem;
+                    line-height: 1.3;
                 }
+                .ct-garantia p {
+                    color: rgba(28,25,23,0.72);
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+
+                /* FAQ */
                 .ct-faq {
                     border-top: 1px solid var(--color-border);
                 }
@@ -384,15 +504,15 @@ export default function ComoTrabajoPage() {
                 .ct-faq[open] summary i {
                     transform: rotate(180deg);
                 }
-                @media (max-width: 700px) {
-                    .ct-fase {
-                        grid-template-columns: 1fr;
-                        gap: 0.8rem;
-                        padding: 2.2rem 0;
-                    }
+
+                @media (max-width: 900px) {
+                    .ct-pasos { grid-template-columns: 1fr; gap: 1.4rem; }
+                    .ct-garantias { grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
                 }
                 @media (max-width: 600px) {
                     h1 br { display: none; }
+                    .ct-cero { grid-template-columns: 1fr; gap: 0.6rem; }
+                    .ct-garantias { grid-template-columns: 1fr; }
                 }
             `}</style>
         </main>

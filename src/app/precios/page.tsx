@@ -17,41 +17,38 @@ export const metadata: Metadata = {
 
 const proyectos = [
     {
-        name: "Automatización Inicio",
-        price: "500",
-        description: "Para empezar: uno o dos procesos concretos que te quiten trabajo ya.",
+        name: "Poner en marcha",
+        price: "900",
+        description: "La primera pieza funcionando: las herramientas de IA, un CRM o los flujos que más tiempo te comen.",
         highlight: false,
         features: [
-            "Automatización de 1–2 procesos",
-            "Integración entre 2 herramientas",
-            "Avisos automáticos por email o WhatsApp",
-            "Entrega en 2 semanas",
-            "1 mes de soporte incluido",
+            "Herramientas de IA elegidas y configuradas",
+            "O el CRM implantado y migrado",
+            "Casos de uso por puesto y arranque del equipo",
+            "Una automatización suelta, desde 500€",
         ],
     },
     {
-        name: "Automatización Negocio",
+        name: "Un área completa",
         price: "2.000",
-        description: "Para automatizar un área completa: ventas, clientes u operaciones.",
+        description: "Ventas, clientes u operaciones funcionando solos, de principio a fin.",
         highlight: true,
         features: [
-            "Automatización de hasta 5 procesos",
-            "CRM + seguimiento de leads automático",
-            "Bot de atención al cliente (WhatsApp/web)",
-            "Generación automática de facturas",
-            "Reportes semanales automáticos",
+            "Hasta 5 procesos automatizados",
+            "Chatbot de WhatsApp o web conectado a tus sistemas",
+            "Panel de gestión a medida",
+            "Facturas y documentos, en los dos sentidos",
             "3 meses de soporte incluido",
         ],
     },
     {
-        name: "Automatización Completa",
+        name: "La empresa entera",
         price: "8.000",
-        description: "Sistema automático integral para toda la empresa.",
+        description: "El sistema completo: todo conectado, todo trabajando solo.",
         highlight: false,
         features: [
-            "Automatización completa de la empresa",
+            "Automatización integral de la operativa",
             "Integraciones ilimitadas entre sistemas",
-            "IA conversacional personalizada",
             "Panel de control y métricas en tiempo real",
             "Formación del equipo incluida",
             "6 meses de soporte y mantenimiento",
@@ -163,7 +160,7 @@ const variables = [
 const faqs = [
     {
         question: "¿Cuánto cuesta automatizar un proceso en una pyme?",
-        answer: "Una automatización puntual — uno o dos procesos concretos, como avisos automáticos o el volcado de datos entre dos herramientas — parte de 500€ con entrega en unas dos semanas. Automatizar un área completa (ventas, clientes u operaciones) parte de 2.000€, y un sistema integral para toda la empresa, de 8.000€.",
+        answer: "Poner en marcha la primera pieza — las herramientas de IA configuradas, un CRM implantado o los flujos que más tiempo te comen — parte de 900€; una automatización suelta y concreta (por ejemplo, unos avisos automáticos), desde 500€ con entrega en unas dos semanas. Automatizar un área completa (ventas, clientes u operaciones) parte de 2.000€, y el sistema integral para toda la empresa, de 8.000€.",
     },
     {
         question: "¿Cuánto cuesta un chatbot de atención al cliente?",
@@ -258,50 +255,27 @@ export default function PreciosPage() {
                         <span style={{ color: "var(--color-primary)" }}>automatizar tu negocio?</span>
                     </h1>
                     <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: 0, maxWidth: 680 }}>
-                        Aquí están todos los precios, a la vista: una automatización puntual desde 500€,
-                        un sistema de negocio desde 2.000€ y la empresa completa desde 8.000€; la
-                        formación del equipo en IA desde 600€; y la auditoría de cumplimiento del
-                        AI Act desde 750€. El precio final se cierra por escrito antes de empezar,
-                        se paga por hitos y no hay permanencia.
+                        Implantar la IA son tres cosas, y aquí está lo que cuesta cada una:
+                        <strong style={{ color: "var(--color-text-main)" }}> formar</strong> a tu equipo desde 600€,
+                        <strong style={{ color: "var(--color-text-main)" }}> cumplir</strong> el AI Act desde 750€ y
+                        <strong style={{ color: "var(--color-text-main)" }}> automatizar</strong> el trabajo desde 900€
+                        (un área completa desde 2.000€, la empresa entera desde 8.000€). El precio
+                        final se cierra por escrito antes de empezar, se paga por hitos y no hay permanencia.
                     </p>
                 </div>
             </section>
 
-            {/* Proyectos */}
+            {/* 01 · Formar */}
             <section style={{ padding: "4rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
                 <div className="container">
                     <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">Proyectos a medida</span>
+                        <span className="kicker-mono">01 · Formar</span>
                         <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                            Automatización y sistemas
+                            Que tu equipo use la IA con criterio
                         </h2>
                         <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
-                            Cada proyecto se compone a medida — panel, web, chatbot o automatizaciones —
-                            en la combinación que tu negocio necesite. Las listas son ejemplos de lo que suele incluir.
-                        </p>
-                    </div>
-                    <Parrilla planes={proyectos} />
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: 720 }}>
-                        El detalle de cada servicio está en{" "}
-                        <Link href="/servicios/automatizacion" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            automatización de procesos
-                        </Link>{" "}
-                        y en las páginas de cada sector.
-                    </p>
-                </div>
-            </section>
-
-            {/* Formación */}
-            <section style={{ padding: "4.5rem 0" }}>
-                <div className="container">
-                    <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">Formación en IA</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                            Talleres, programas y cursos
-                        </h2>
-                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
-                            Para empresas y centros educativos. El precio final depende del número de
-                            participantes y la modalidad, y se cierra en la propuesta.
+                            Para empresas, despachos y centros educativos. El precio final depende del
+                            número de participantes y la modalidad, y se cierra en la propuesta.
                         </p>
                     </div>
                     <Parrilla planes={formacion} cols4 />
@@ -318,13 +292,13 @@ export default function PreciosPage() {
                 </div>
             </section>
 
-            {/* Auditoría IA */}
-            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+            {/* 02 · Cumplir */}
+            <section style={{ padding: "4.5rem 0" }}>
                 <div className="container">
                     <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">Auditoría IA</span>
+                        <span className="kicker-mono">02 · Cumplir</span>
                         <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                            Cumplimiento del AI Act
+                            Que la ley no te pille a contrapié
                         </h2>
                         <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
                             Para saber dónde está tu empresa y qué le falta — con evidencia documental,
@@ -337,6 +311,38 @@ export default function PreciosPage() {
                         <Link href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             auditoría IA
                         </Link>.
+                    </p>
+                </div>
+            </section>
+
+            {/* 03 · Automatizar */}
+            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container">
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="kicker-mono">03 · Automatizar</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            Que el trabajo repetitivo se haga solo
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            Cada proyecto se compone a medida — panel, chatbot, CRM o automatizaciones —
+                            en la combinación que tu negocio necesite. Las listas son ejemplos de lo que suele incluir.
+                        </p>
+                    </div>
+                    <Parrilla planes={proyectos} />
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: 720 }}>
+                        El detalle de cada pieza está en{" "}
+                        <Link href="/servicios/automatizacion" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            automatización de procesos
+                        </Link>
+                        ,{" "}
+                        <Link href="/servicios/chatbots" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            chatbots
+                        </Link>
+                        ,{" "}
+                        <Link href="/servicios/paneles" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            paneles a medida
+                        </Link>{" "}
+                        y en las páginas de cada sector.
                     </p>
                 </div>
             </section>

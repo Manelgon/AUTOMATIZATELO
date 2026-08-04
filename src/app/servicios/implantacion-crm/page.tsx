@@ -4,41 +4,41 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Implantar ChatGPT, Copilot o Gemini en tu Empresa",
+    title: "Implantación de CRM para Pymes | Sin Comisiones",
     description:
-        "Puesta en marcha de herramientas de IA en tu pyme: elección, configuración segura, casos de uso por puesto, política y formación. Desde 900€, sin comisiones de nadie.",
-    alternates: { canonical: "https://automatizatelo.com/servicios/implantacion-ia" },
+        "Implanto el CRM adecuado en tu pyme: elección sin comisiones, configuración, migración de datos y automatizaciones para que se rellene solo. Desde 900€.",
+    alternates: { canonical: "https://automatizatelo.com/servicios/implantacion-crm" },
     openGraph: {
-        title: "ChatGPT, Copilot o Gemini en marcha en tu empresa — con cabeza",
-        description: "Elección sin comisiones, configuración segura, casos de uso por puesto, política y formación. Desde 900€.",
-        url: "https://automatizatelo.com/servicios/implantacion-ia",
+        title: "Implantación de CRM: que tu equipo lo use de verdad",
+        description: "Elección sin comisiones, migración, automatizaciones y formación. El CRM que se rellena solo no muere en un cajón.",
+        url: "https://automatizatelo.com/servicios/implantacion-crm",
     },
 };
 
 const faqs = [
     {
-        question: "¿Qué herramienta es mejor: ChatGPT, Copilot o Gemini?",
-        answer: "La que encaje con lo que ya usáis. Si vivís en Microsoft 365, Copilot juega en casa; si trabajáis en Google Workspace, Gemini; si queréis el asistente más versátil sin casaros con una suite, ChatGPT. No cobro comisión de ningún proveedor, así que la respuesta sale de tu caso, no de mi bolsillo. En la sesión inicial se decide con criterio y por escrito.",
+        question: "¿Qué CRM me recomiendas: HubSpot, Pipedrive, Zoho…?",
+        answer: "El más barato que cumpla con lo que tu negocio necesita — y lo digo en serio porque no cobro comisión de ninguno. Si trabajáis simple, a veces basta un Pipedrive o incluso Notion bien montado; si hay equipo comercial y marketing, un HubSpot o Zoho. Y si ya usáis uno, lo primero es ver si se puede aprovechar antes de cambiar nada. La recomendación sale de tu caso, no de mi bolsillo.",
     },
     {
-        question: "¿Qué incluye la implantación exactamente?",
-        answer: "Cuatro cosas: elección y contratación de la herramienta adecuada (plan de empresa, no cuentas gratuitas), configuración segura (cuentas, permisos, y que el proveedor no entrene con vuestros datos), casos de uso por puesto (qué le pide cada rol para ahorrar tiempo de verdad, con plantillas de prompts propias) y el arranque con el equipo. Con el pack completo se añaden la política de uso y la formación del Art. 4.",
+        question: "¿Cuánto cuesta implantar un CRM?",
+        answer: "La puesta en marcha — elección, configuración, migración de tus datos y formación básica del equipo — desde 900€. Con la automatización comercial completa (leads entrando solos, seguimiento automático, avisos y reportes), desde 2.000€ como proyecto de área. Las licencias del CRM las pagas directamente al proveedor, sin sobreprecio. Precio cerrado por escrito antes de empezar.",
     },
     {
-        question: "¿Cuánto cuesta?",
-        answer: "La puesta en marcha, desde 900€ para un equipo pequeño: herramienta elegida, configurada de forma segura y equipo arrancado con sus casos de uso. Con política de uso y formación de alfabetización incluidas, la mayoría de proyectos queda entre 1.500€ y 3.000€ según plantilla. Las licencias de la herramienta las pagas directamente al proveedor — sin sobreprecio ni comisión mía.",
+        question: "¿Podéis migrar mis datos desde Excel u otro CRM?",
+        answer: "Sí — es parte del trabajo, no un extra. Clientes, contactos, historial y oportunidades pasan al sistema nuevo ordenados y sin duplicados. Un CRM que empieza vacío, o con los datos sucios, nace muerto: la migración bien hecha es la mitad de la adopción.",
     },
     {
-        question: "¿Es seguro meter la IA en la empresa? ¿Y nuestros datos?",
-        answer: "Depende de cómo se haga — que es justo el sentido de este servicio. Con planes de empresa bien configurados, los proveedores serios no entrenan sus modelos con tus datos y ofrecen garantías contractuales. Lo peligroso es lo que probablemente ya pasa hoy: cuentas gratuitas personales con datos de clientes dentro. La implantación ordena eso.",
+        question: "Ya compramos un CRM una vez y nadie lo usaba. ¿Por qué esta vez sería distinto?",
+        answer: "Porque el problema casi nunca es el software: es que el CRM del montón hay que rellenarlo a mano, y a las dos semanas el equipo vuelve al Excel. Mi implantación ataca justo eso: los leads y los emails entran solos, el seguimiento se dispara solo y el equipo recibe formación con sus casos reales. Un CRM que se alimenta solo sí se usa — porque da más de lo que pide.",
     },
     {
-        question: "¿Necesito el plan Enterprise o me vale uno más barato?",
-        answer: "Casi ninguna pyme necesita Enterprise. Los planes de equipo (ChatGPT Team, Copilot para M365, Gemini para Workspace) ya incluyen lo esencial: los datos no entrenan modelos y hay gestión centralizada. Te recomendaré el plan más barato que cumpla — pagar de más al proveedor no me da nada.",
+        question: "¿Y si ningún CRM del mercado encaja con mi negocio?",
+        answer: "Entonces te lo digo — y existe el plan B: un CRM o panel a medida, tuyo en código y datos, sin licencias por usuario. Es lo que construí para una consultora de selección (con portal de empleo incluido) y lo que uso cuando el negocio tiene procesos que el software genérico no contempla. Lo tienes en la página de paneles a medida.",
     },
     {
-        question: "¿Cuánto se tarda en tenerlo funcionando?",
-        answer: "La puesta en marcha básica, una o dos semanas: sesión inicial, configuración, y arranque con el equipo. Con formación y política, según el calendario que se acuerde — normalmente todo queda rodando en menos de un mes.",
+        question: "¿De quién son los datos?",
+        answer: "Tuyos, siempre. Configuro el CRM con tu cuenta de empresa, te dejo los accesos de administrador y documento lo montado. Si mañana quieres cambiar de herramienta o de proveedor, te llevas todo — esa es la regla de la casa.",
     },
 ];
 
@@ -55,52 +55,51 @@ const faqJsonLd = {
 const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Implantación de herramientas de IA en empresas",
+    "name": "Implantación de CRM para pymes",
     "provider": {
         "@type": "ProfessionalService",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Puesta en marcha de ChatGPT, Microsoft Copilot, Gemini y otras herramientas de IA en pymes: elección sin comisiones, configuración segura, casos de uso por puesto, política de uso y formación.",
+    "description": "Implantación de CRM en pymes: elección sin comisiones, configuración, migración de datos, automatizaciones que lo alimentan solo y formación del equipo. Desde 900€.",
     "offers": [
-        { "@type": "Offer", "name": "Puesta en marcha", "price": "900", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
+        { "@type": "Offer", "name": "Puesta en marcha de CRM", "price": "900", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
     ],
 };
 
 const herramientas = [
-    { nombre: "ChatGPT", detalle: "El asistente más versátil: asistentes a medida para cada puesto y tareas programadas que se ejecutan solas cada día. Plan Team para que tus datos no entrenen modelos." },
-    { nombre: "Microsoft Copilot", detalle: "Si vivís en Word, Excel y Outlook, la IA juega en casa: resume tus reuniones de Teams, redacta en Word, analiza datos en Excel y te deja el correo medio contestado." },
-    { nombre: "Google Gemini", detalle: "La opción natural en Google Workspace: redacta en Gmail y Docs, cruza datos en Sheets y toma las notas de tus reuniones de Meet — sin salir de las herramientas de siempre." },
-    { nombre: "Claude", detalle: "Excelente redactando y analizando documentos largos — y con agentes capaces de trabajar como un compañero más: les das una tarea completa y la sacan de principio a fin." },
-    { nombre: "NotebookLM", detalle: "Tu documentación interna, convertida en un experto al que preguntar: le subes manuales, contratos o temarios y responde citando de dónde lo saca. Ideal para formar y para no depender de la memoria de nadie." },
-    { nombre: "n8n / Make", detalle: "Plataformas de automatización, montadas y con tu equipo formado para crear sus propios flujos. Y si prefieres que los construya yo, eso es la automatización de procesos." },
+    { nombre: "HubSpot", detalle: "El completo: comercial + marketing en uno. Su versión gratuita da para empezar más de lo que parece." },
+    { nombre: "Pipedrive", detalle: "El favorito de los equipos comerciales pequeños: pipeline visual y cero grasa." },
+    { nombre: "Zoho CRM", detalle: "Mucha función por poco dinero — si ya usáis otras apps de Zoho, juega en casa." },
+    { nombre: "Notion como CRM", detalle: "Para operaciones simples: flexible, barato y suficiente más veces de las que se cree." },
+    { nombre: "CRM a medida", detalle: "Cuando el genérico no encaja: tuyo en código y datos, sin licencias por usuario. Es la página de paneles a medida." },
 ];
 
 const pasos = [
     {
         num: "01",
         titulo: "Elección con criterio",
-        desc: "Miro qué usáis ya (Microsoft, Google, nada) y qué necesita cada puesto, y te digo qué herramienta y qué plan — el más barato que cumpla. Sin comisiones de ningún proveedor.",
+        desc: "Miro cómo vendéis y gestionáis clientes hoy, y te digo qué CRM encaja — el más barato que cumpla. Sin comisiones de ningún proveedor, y aprovechando el que ya tengas si se puede.",
     },
     {
         num: "02",
-        titulo: "Configuración segura",
-        desc: "Cuentas de empresa, permisos, y la configuración que garantiza que el proveedor no entrena con vuestros datos. Se acaban las cuentas gratuitas personales con datos de clientes.",
+        titulo: "Configuración y migración",
+        desc: "Pipeline a tu medida, campos que tu negocio usa de verdad, y tus datos migrados desde Excel o el CRM anterior — ordenados y sin duplicados.",
     },
     {
         num: "03",
-        titulo: "Casos de uso por puesto",
-        desc: "Cada rol sale sabiendo qué pedirle a la IA en SU trabajo: administración, comercial, atención al cliente… Con plantillas de prompts propias de tu empresa, no genéricas.",
+        titulo: "Automatizaciones que lo alimentan",
+        desc: "La clave de que se use: los leads de la web y el email entran solos, el seguimiento se dispara solo, los avisos llegan solos. Un CRM que hay que rellenar a mano muere en dos semanas.",
     },
     {
         num: "04",
-        titulo: "Política y formación (pack)",
-        desc: "La política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados — para que la implantación además te deje cumpliendo la ley.",
+        titulo: "Formación del equipo",
+        desc: "Tu equipo aprende con sus casos reales, no con un manual. Y queda documentado, para que las nuevas incorporaciones no dependan de la memoria de nadie.",
     },
 ];
 
-export default function ImplantacionIAPage() {
+export default function ImplantacionCrmPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
@@ -114,8 +113,8 @@ export default function ImplantacionIAPage() {
             }}>
                 <div className="container">
                     <span className="kicker-mono">
-                        <i className="fa-solid fa-rocket" style={{ marginRight: "0.6rem" }}></i>
-                        Implantación de herramientas IA
+                        <i className="fa-solid fa-address-book" style={{ marginRight: "0.6rem" }}></i>
+                        Implantación de CRM
                     </span>
                     <h1 style={{
                         fontFamily: "var(--font-display, serif)",
@@ -126,13 +125,13 @@ export default function ImplantacionIAPage() {
                         color: "var(--color-text-main)",
                         margin: "1rem 0 1.2rem",
                     }}>
-                        ChatGPT, Copilot o Gemini{" "}<br />
-                        <span style={{ color: "var(--color-primary)" }}>en marcha en tu empresa</span>
+                        Implantación de CRM:{" "}<br />
+                        <span style={{ color: "var(--color-primary)" }}>que tu equipo lo use de verdad</span>
                     </h1>
                     <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 660 }}>
-                        Comprar licencias es fácil; que el equipo las use bien, con datos seguros y
-                        cumpliendo la ley, es lo difícil. Yo me encargo de todo el camino: elección,
-                        configuración, casos de uso por puesto y arranque del equipo.
+                        Comprar un CRM es fácil; que no muera en un cajón, es lo difícil. Yo me
+                        encargo del camino entero: elegirlo sin comisiones, configurarlo, migrar
+                        tus datos y — la clave — automatizarlo para que se rellene solo.
                     </p>
                     <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
                         Empezar con 30 minutos gratis
@@ -153,34 +152,33 @@ export default function ImplantacionIAPage() {
                         margin: "1rem 0 1.2rem",
                         letterSpacing: "-0.01em",
                     }}>
-                        Implantar inteligencia artificial en tu pyme, sin líos: la herramienta
-                        adecuada — elegida sin comisiones, configurada de forma segura y con el
-                        equipo formado en sus casos de uso — desde 900€. Con política de uso y
-                        formación del Art. 4, entre 1.500€ y 3.000€.
+                        Implantación de CRM en tu pyme desde 900€: elección sin comisiones,
+                        configuración, migración de datos y formación. Con la automatización
+                        comercial completa — leads y seguimiento entrando solos — desde 2.000€.
                     </p>
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.8, margin: 0, maxWidth: 720 }}>
-                        Las licencias las pagas directamente al proveedor, sin sobreprecio. Yo no vendo
-                        herramientas: vendo que funcionen en tu empresa.
+                        Las licencias las pagas directamente al proveedor, sin sobreprecio. Yo no
+                        vendo software: vendo que tu equipo deje de gestionar clientes en Excel.
                     </p>
                 </div>
             </section>
 
-            {/* Herramientas */}
+            {/* Con qué trabajo */}
             <section style={{ padding: "4.5rem 0" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
                     <div style={{ marginBottom: "2rem" }}>
                         <span className="kicker-mono">Con qué trabajo</span>
                         <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                            Las herramientas — elegidas por tu caso, no por moda
+                            Los CRM — elegidos por tu caso, no por moda
                         </h2>
                         <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
-                            No cobro comisión de ninguna: la recomendación sale de lo que ya usáis y de lo que necesita cada puesto.
+                            No cobro comisión de ninguno: la recomendación sale de cómo vende tu negocio y de lo que ya usáis.
                         </p>
                     </div>
                     {herramientas.map((h) => (
-                        <div key={h.nombre} className="ii-fila">
-                            <span className="ii-nombre">{h.nombre}</span>
-                            <span className="ii-detalle">{h.detalle}</span>
+                        <div key={h.nombre} className="ic-fila">
+                            <span className="ic-nombre">{h.nombre}</span>
+                            <span className="ic-detalle">{h.detalle}</span>
                         </div>
                     ))}
                 </div>
@@ -198,7 +196,7 @@ export default function ImplantacionIAPage() {
                         margin: "0.8rem 0 2rem",
                         lineHeight: 1.2,
                     }}>
-                        De cero a equipo usando IA, en cuatro pasos
+                        Del Excel al CRM que se alimenta solo, en cuatro pasos
                     </h2>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "2rem" }}>
                         {pasos.map((p) => (
@@ -221,19 +219,15 @@ export default function ImplantacionIAPage() {
                         ))}
                     </div>
                     <p style={{ color: "rgba(250,246,239,0.85)", lineHeight: 1.7, marginTop: "2rem", maxWidth: 720 }}>
-                        El paso 04 conecta con la{" "}
-                        <Link href="/servicios/auditoria-ia" style={{ color: "#f6c39c", fontWeight: 600 }}>
-                            auditoría IA
-                        </Link>{" "}
-                        y la{" "}
-                        <Link href="/servicios/formacion-ia-empresas" style={{ color: "#f6c39c", fontWeight: 600 }}>
-                            formación
+                        El paso 03 es la diferencia con "instalar un CRM": conecta con la{" "}
+                        <Link href="/servicios/automatizacion" style={{ color: "#f6c39c", fontWeight: 600 }}>
+                            automatización de procesos
                         </Link>
-                        : si ya has hecho una de las dos, la implantación se abarata — no se paga dos veces lo mismo.
-                        ¿Y si lo que necesitas poner en marcha es un CRM? Tiene{" "}
-                        <Link href="/servicios/implantacion-crm" style={{ color: "#f6c39c", fontWeight: 600 }}>
-                            página propia
-                        </Link>.
+                        . Y si ningún CRM del mercado te encaja, existe el{" "}
+                        <Link href="/servicios/paneles" style={{ color: "#f6c39c", fontWeight: 600 }}>
+                            CRM a medida
+                        </Link>
+                        , tuyo en código y datos.
                     </p>
                 </div>
             </section>
@@ -248,7 +242,7 @@ export default function ImplantacionIAPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="ii-faq">
+                        <details key={f.question} className="ic-faq">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>
@@ -271,10 +265,10 @@ export default function ImplantacionIAPage() {
                         margin: "0 0 1rem",
                         letterSpacing: "-0.02em",
                     }}>
-                        ¿Qué herramienta le toca a tu empresa?
+                        ¿Tus clientes siguen viviendo en un Excel?
                     </p>
                     <p style={{ color: "rgba(28,25,23,0.7)", marginBottom: "1.8rem", fontSize: "1.05rem" }}>
-                        30 minutos gratis: te digo cuál, qué plan y qué costaría dejarla rodando.
+                        30 minutos gratis: miro cómo gestionáis clientes hoy y te digo qué CRM te encaja — y si te hace falta uno.
                     </p>
                     <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.4rem" }}>
                         Pedir mis 30 minutos
@@ -285,7 +279,7 @@ export default function ImplantacionIAPage() {
             <Footer />
 
             <style>{`
-                .ii-fila {
+                .ic-fila {
                     display: grid;
                     grid-template-columns: 220px 1fr;
                     gap: 1.5rem;
@@ -293,27 +287,27 @@ export default function ImplantacionIAPage() {
                     padding: 1.3rem 0.3rem;
                     border-top: 1px solid var(--color-border);
                 }
-                .ii-fila:last-of-type {
+                .ic-fila:last-of-type {
                     border-bottom: 1px solid var(--color-border);
                 }
-                .ii-nombre {
+                .ic-nombre {
                     font-family: var(--font-display, serif);
                     font-size: clamp(1.15rem, 2vw, 1.45rem);
                     font-weight: 600;
                     color: var(--color-text-main);
                 }
-                .ii-detalle {
+                .ic-detalle {
                     color: var(--color-text-muted);
                     line-height: 1.6;
                     font-size: 0.95rem;
                 }
-                .ii-faq {
+                .ic-faq {
                     border-top: 1px solid var(--color-border);
                 }
-                .ii-faq:last-of-type {
+                .ic-faq:last-of-type {
                     border-bottom: 1px solid var(--color-border);
                 }
-                .ii-faq summary {
+                .ic-faq summary {
                     list-style: none;
                     display: flex;
                     align-items: center;
@@ -328,24 +322,24 @@ export default function ImplantacionIAPage() {
                     line-height: 1.3;
                     transition: color 0.2s ease, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
                 }
-                .ii-faq summary::-webkit-details-marker {
+                .ic-faq summary::-webkit-details-marker {
                     display: none;
                 }
-                .ii-faq summary:hover {
+                .ic-faq summary:hover {
                     color: var(--color-primary);
                     padding-left: 1rem;
                 }
-                .ii-faq summary i {
+                .ic-faq summary i {
                     color: var(--color-primary);
                     font-size: 0.8rem;
                     flex-shrink: 0;
                     transition: transform 0.3s ease;
                 }
-                .ii-faq[open] summary i {
+                .ic-faq[open] summary i {
                     transform: rotate(180deg);
                 }
                 @media (max-width: 700px) {
-                    .ii-fila {
+                    .ic-fila {
                         grid-template-columns: 1fr;
                         gap: 0.3rem;
                     }

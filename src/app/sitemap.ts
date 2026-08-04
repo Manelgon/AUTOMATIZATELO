@@ -26,10 +26,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.9,
         },
         {
+            url: 'https://automatizatelo.com/servicios/implantacion-crm',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: 'https://automatizatelo.com/servicios/chatbots',
             lastModified: now,
             changeFrequency: 'monthly',
             priority: 0.8,
+        },
+        {
+            url: 'https://automatizatelo.com/servicios/chatbots-whatsapp',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: 'https://automatizatelo.com/servicios/automatizacion-ventas',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: 'https://automatizatelo.com/servicios/extraccion-datos-documentos',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: 'https://automatizatelo.com/servicios/produccion-cursos-scorm',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.7,
         },
         {
             url: 'https://automatizatelo.com/servicios/paneles',

@@ -393,6 +393,63 @@ img {
   color: var(--color-primary);
 }
 
+/* Dropdown a dos columnas: qué hago | para quién + específicos */
+.dropdown-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.5rem;
+  min-width: 720px;
+}
+
+.dropdown-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Al ir en dos columnas hay más filas visibles: se compacta el alto
+   para que el menú entero quepa sin scroll en pantallas normales */
+.dropdown-doble .dropdown-item-num {
+  padding: 0.6rem 1rem;
+}
+
+.dropdown-doble .dropdown-item-num .item-desc {
+  font-size: 0.78rem;
+}
+
+/* Enlaces compactos (servicios especializados): sin número ni descripción,
+   para que se lean como lista secundaria y no compitan con los principales */
+.dropdown-item-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dropdown-item-mini .arrow {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-item-mini:hover {
+  background: #f8dfc6;
+  color: var(--color-text-main);
+  padding-left: 1.3rem;
+}
+
+.dropdown-item-mini:hover .arrow {
+  opacity: 1;
+  color: var(--color-primary);
+  transform: translateX(3px);
+}
+
 /* En mobile: dropdown inline (acordeón) en vez de absolute */
 @media (max-width: 768px) {
   .sectors-dropdown {
@@ -411,8 +468,32 @@ img {
     box-sizing: border-box;
   }
 
+  /* Las dos columnas se apilan en móvil */
+  .dropdown-doble {
+    grid-template-columns: 1fr;
+    min-width: 0;
+    gap: 0;
+  }
+
+  .dropdown-item-mini {
+    justify-content: center;
+  }
+
+  .dropdown-item-mini .arrow {
+    display: none;
+  }
+
   .sectors-dropdown-item {
     text-align: center;
+  }
+}
+
+/* En pantallas estrechas el menú a dos columnas no debe salirse de la ventana */
+@media (min-width: 769px) and (max-width: 900px) {
+  .dropdown-doble {
+    min-width: 0;
+    width: calc(100vw - 4rem);
+    max-width: 640px;
   }
 }
 
@@ -1064,9 +1145,18 @@ section {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 2.5rem 2rem;
   margin-bottom: var(--spacing-lg);
+}
+
+/* En escritorio, las cinco columnas en una sola fila: la de marca manda
+   y las de enlaces se reparten el resto */
+@media (min-width: 1080px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1.25fr 1.25fr 1.1fr;
+    gap: 2.5rem;
+  }
 }
 
 .footer-col h4 {

@@ -2,58 +2,55 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const planesProyectos = [
+const planesAutomatizar = [
     {
-        name: "Automatización Inicio",
-        price: "500",
+        name: "Poner en marcha",
+        price: "900",
         desde: true,
-        description: "Para empezar: uno o dos procesos concretos que te quiten trabajo ya.",
+        description: "La primera pieza funcionando: las herramientas de IA, un CRM o los flujos que más tiempo te comen.",
         badge: null,
         highlight: false,
         features: [
-            "Automatización de 1–2 procesos",
-            "Integración entre 2 herramientas",
-            "Avisos automáticos por email o WhatsApp",
-            "Entrega en 2 semanas",
-            "1 mes de soporte incluido",
+            "Herramientas de IA elegidas y configuradas",
+            "O el CRM implantado y migrado",
+            "Casos de uso por puesto y arranque del equipo",
+            "Una automatización suelta, desde 500€",
         ],
-        cta: "Solicitar Presupuesto",
+        cta: "Solicitar Propuesta",
         ctaHref: "#contact",
     },
     {
-        name: "Automatización Negocio",
+        name: "Un área completa",
         price: "2.000",
         desde: true,
-        description: "Para automatizar un área completa: ventas, clientes u operaciones.",
-        badge: "Más popular",
+        description: "Ventas, clientes u operaciones funcionando solos, de principio a fin.",
+        badge: "Lo más habitual",
         highlight: true,
         features: [
-            "Automatización de hasta 5 procesos",
-            "CRM + seguimiento de leads automático",
-            "Bot de atención al cliente (WhatsApp/web)",
-            "Generación automática de facturas",
-            "Reportes semanales automáticos",
+            "Hasta 5 procesos automatizados",
+            "Chatbot de WhatsApp o web conectado a tus sistemas",
+            "Panel de gestión a medida",
+            "Facturas y documentos, en los dos sentidos",
             "3 meses de soporte incluido",
         ],
         cta: "Empezar Ahora",
         ctaHref: "#contact",
     },
     {
-        name: "Automatización Completa",
+        name: "La empresa entera",
         price: "8.000",
         desde: true,
-        description: "Sistema automático integral para toda la empresa.",
+        description: "El sistema completo: todo conectado, todo trabajando solo.",
         badge: null,
         highlight: false,
         features: [
-            "Automatización completa de la empresa",
+            "Automatización integral de la operativa",
             "Integraciones ilimitadas entre sistemas",
-            "IA conversacional personalizada",
             "Panel de control y métricas en tiempo real",
             "Formación del equipo incluida",
             "6 meses de soporte y mantenimiento",
         ],
-        cta: "Solicitar Presupuesto",
+        cta: "Solicitar Propuesta",
         ctaHref: "#contact",
     },
 ];
@@ -160,7 +157,7 @@ const planesAuditoria = [
     },
 ];
 
-const garantiasProyectos = [
+const garantiasAutomatizar = [
     "Sin permanencia",
     "Pago por hitos",
     "Código y datos tuyos",
@@ -181,12 +178,14 @@ const garantiasAuditoria = [
     "Precio cerrado por escrito",
 ];
 
-type Tab = "proyectos" | "formacion" | "auditoria";
+// Las tres líneas del negocio, en el orden del embudo: formar capta,
+// cumplir cierra y automatizar es donde está el proyecto grande.
+type Tab = "formar" | "cumplir" | "automatizar";
 
 export default function Pricing() {
-    const [tab, setTab] = useState<Tab>("proyectos");
-    const planes = tab === "proyectos" ? planesProyectos : tab === "formacion" ? planesFormacion : planesAuditoria;
-    const garantias = tab === "proyectos" ? garantiasProyectos : tab === "formacion" ? garantiasFormacion : garantiasAuditoria;
+    const [tab, setTab] = useState<Tab>("formar");
+    const planes = tab === "formar" ? planesFormacion : tab === "cumplir" ? planesAuditoria : planesAutomatizar;
+    const garantias = tab === "formar" ? garantiasFormacion : tab === "cumplir" ? garantiasAuditoria : garantiasAutomatizar;
 
     return (
         <section id="model" style={{ padding: "4.5rem 0" }}>
@@ -203,48 +202,48 @@ export default function Pricing() {
                         Precio cerrado. Plazo cerrado. Sin permanencia.
                     </h2>
                     <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 620 }}>
-                        Desde una automatización puntual hasta un sistema completo — y la formación
-                        de tu equipo. Los precios están aquí, a la vista, como debe ser.
+                        Implantar la IA son tres cosas: formar al equipo, cumplir la normativa y
+                        automatizar el trabajo. Aquí está lo que cuesta cada una, a la vista.
                     </p>
                 </motion.div>
 
-                {/* Selector Proyectos / Formación */}
-                <div className="pr-tabs" role="tablist" aria-label="Tipo de servicio">
+                {/* Selector por línea: formar · cumplir · automatizar */}
+                <div className="pr-tabs" role="tablist" aria-label="Línea de servicio">
                     <button
                         type="button"
                         role="tab"
-                        aria-selected={tab === "proyectos"}
-                        className={`pr-tab ${tab === "proyectos" ? "pr-tab-activa" : ""}`}
-                        onClick={() => setTab("proyectos")}
-                    >
-                        <i className="fa-solid fa-gears" style={{ marginRight: "0.55rem" }}></i>
-                        Proyectos a medida
-                    </button>
-                    <button
-                        type="button"
-                        role="tab"
-                        aria-selected={tab === "formacion"}
-                        className={`pr-tab ${tab === "formacion" ? "pr-tab-activa" : ""}`}
-                        onClick={() => setTab("formacion")}
+                        aria-selected={tab === "formar"}
+                        className={`pr-tab ${tab === "formar" ? "pr-tab-activa" : ""}`}
+                        onClick={() => setTab("formar")}
                     >
                         <i className="fa-solid fa-graduation-cap" style={{ marginRight: "0.55rem" }}></i>
-                        Formación en IA
+                        Formar
                     </button>
                     <button
                         type="button"
                         role="tab"
-                        aria-selected={tab === "auditoria"}
-                        className={`pr-tab ${tab === "auditoria" ? "pr-tab-activa" : ""}`}
-                        onClick={() => setTab("auditoria")}
+                        aria-selected={tab === "cumplir"}
+                        className={`pr-tab ${tab === "cumplir" ? "pr-tab-activa" : ""}`}
+                        onClick={() => setTab("cumplir")}
                     >
                         <i className="fa-solid fa-clipboard-check" style={{ marginRight: "0.55rem" }}></i>
-                        Auditoría IA
+                        Cumplir
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected={tab === "automatizar"}
+                        className={`pr-tab ${tab === "automatizar" ? "pr-tab-activa" : ""}`}
+                        onClick={() => setTab("automatizar")}
+                    >
+                        <i className="fa-solid fa-gears" style={{ marginRight: "0.55rem" }}></i>
+                        Automatizar
                     </button>
                 </div>
 
                 <motion.div
                     key={tab}
-                    className={`pr-grid ${tab === "formacion" ? "pr-grid-4" : ""} ${tab === "auditoria" ? "pr-grid-2" : ""}`}
+                    className={`pr-grid ${tab === "formar" ? "pr-grid-4" : ""} ${tab === "cumplir" ? "pr-grid-2" : ""}`}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -264,7 +263,7 @@ export default function Pricing() {
                                 <span className="pr-cifra">{plan.price}€</span>
                             </div>
                             <span className="mono-label" style={{ display: "block", color: plan.highlight ? "rgba(250,246,239,0.7)" : "var(--color-text-muted)", marginBottom: "0.7rem" }}>
-                                {tab === "proyectos" ? "Ejemplos de lo que suele incluir" : "Qué incluye"}
+                                {tab === "automatizar" ? "Ejemplos de lo que suele incluir" : "Qué incluye"}
                             </span>
                             <ul className="pr-lista">
                                 {plan.features.map((f) => (
@@ -299,18 +298,7 @@ export default function Pricing() {
                     ))}
                 </motion.div>
 
-                {tab === "proyectos" && (
-                    <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
-                        Cada proyecto se compone a medida — panel, web, chatbot o automatizaciones,
-                        en la combinación que tu negocio necesite. El precio y el plazo se cierran
-                        antes de empezar.{" "}
-                        <a href="#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            Pide la auditoría gratuita
-                        </a>{" "}
-                        y te digo qué combinación te toca.
-                    </p>
-                )}
-                {tab === "formacion" && (
+                {tab === "formar" && (
                     <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
                         El precio final depende del número de participantes y la modalidad, y se
                         cierra en la propuesta. Todo el detalle — itinerarios, Art. 4 y evidencia
@@ -320,13 +308,24 @@ export default function Pricing() {
                         </a>.
                     </p>
                 )}
-                {tab === "auditoria" && (
+                {tab === "cumplir" && (
                     <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
                         El precio final depende del tamaño de la empresa y las herramientas en uso.
                         Qué revisa y qué te llevas, en la página de{" "}
                         <a href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             auditoría IA
                         </a>.
+                    </p>
+                )}
+                {tab === "automatizar" && (
+                    <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
+                        Cada proyecto se compone a medida — panel, chatbot, CRM o automatizaciones,
+                        en la combinación que tu negocio necesite. El precio y el plazo se cierran
+                        antes de empezar.{" "}
+                        <a href="#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            Pide la auditoría gratuita
+                        </a>{" "}
+                        y te digo qué combinación te toca.
                     </p>
                 )}
 

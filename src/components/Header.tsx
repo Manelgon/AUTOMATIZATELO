@@ -5,11 +5,16 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
+// Para quién: el visitante se reconoce por lo que es ("soy un despacho",
+// "soy un colegio"), no por el servicio que acabará comprando.
 const sectorLinks = [
     { href: "/automatizacion-administradores-fincas", num: "01", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
-    { href: "/automatizacion-academias", num: "02", label: "Academias y Formación Online", desc: "Matrículas, alumnos y cursos SCORM." },
-    { href: "/automatizacion-reclutamiento-rrhh", num: "03", label: "Selección de Personal y RRHH", desc: "Portal de empleo y criba con IA." },
-    { href: "/automatizacion-empresas-servicios", num: "04", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
+    { href: "/formacion-ia-despachos", num: "02", label: "Despachos Profesionales", desc: "Gestorías, asesorías y abogados." },
+    { href: "/formacion-ia-centros-educativos", num: "03", label: "Centros Educativos y Claustros", desc: "Formación del claustro y política de IA." },
+    { href: "/automatizacion-academias", num: "04", label: "Academias y Formación Online", desc: "Matrículas, alumnos y cursos SCORM." },
+    { href: "/automatizacion-reclutamiento-rrhh", num: "05", label: "Selección de Personal y RRHH", desc: "Portal de empleo y criba con IA." },
+    { href: "/automatizacion-empresas-servicios", num: "06", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
+    { href: "/formacion-ia-directivos", num: "07", label: "Equipos Directivos", desc: "Sesión ejecutiva: qué decidir y por qué." },
 ];
 
 const serviciosLinks = [
@@ -21,9 +26,19 @@ const serviciosLinks = [
     { href: "/servicios/paneles", num: "06", title: "Paneles a medida", desc: "Tu negocio entero, en un solo sitio." },
 ];
 
+// Servicios especializados: se descubren dentro de su servicio padre y por
+// buscador, pero también aquí en formato compacto para quien busca directo.
+const especializadosLinks = [
+    { href: "/servicios/chatbots-whatsapp", label: "Chatbots de WhatsApp" },
+    { href: "/servicios/implantacion-crm", label: "Implantación de CRM" },
+    { href: "/servicios/automatizacion-ventas", label: "Automatización de ventas" },
+    { href: "/servicios/extraccion-datos-documentos", label: "Extracción de datos (OCR + IA)" },
+    { href: "/servicios/produccion-cursos-scorm", label: "Producción de cursos SCORM" },
+];
+
 export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
-    const [openMenu, setOpenMenu] = useState<"soluciones" | "trabajo" | null>(null);
+    const [openMenu, setOpenMenu] = useState<"servicios" | "sector" | null>(null);
     const navRef = useRef<HTMLElement>(null);
     const pathname = usePathname();
 
@@ -95,28 +110,27 @@ export default function Header() {
                     {/* Inicio: solo visible en el menú móvil (en escritorio, el logo hace de inicio) */}
                     <Link href="/" className="nav-solo-movil" onClick={closeAll}>Inicio</Link>
 
-                    {/* Soluciones (sectores) */}
+                    {/* Servicios — qué hago */}
                     <div className="sectors-dropdown">
                         <button
                             type="button"
-                            onClick={(e) => { e.stopPropagation(); setOpenMenu(openMenu === "soluciones" ? null : "soluciones"); }}
-                            aria-expanded={openMenu === "soluciones"}
+                            onClick={(e) => { e.stopPropagation(); setOpenMenu(openMenu === "servicios" ? null : "servicios"); }}
+                            aria-expanded={openMenu === "servicios"}
                             aria-haspopup="menu"
                             className="sectors-dropdown-trigger"
                         >
-                            Soluciones
+                            Servicios
                             <i
                                 className="fa-solid fa-chevron-down"
                                 style={{
                                     fontSize: '0.7rem',
                                     transition: 'transform 0.2s ease',
-                                    transform: openMenu === "soluciones" ? 'rotate(180deg)' : 'rotate(0deg)',
+                                    transform: openMenu === "servicios" ? 'rotate(180deg)' : 'rotate(0deg)',
                                 }}
                             />
                         </button>
-                        {openMenu === "soluciones" && (
-                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 340 }} data-lenis-prevent>
-                                <span className="dropdown-grupo">Servicios</span>
+                        {openMenu === "servicios" && (
+                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 360 }} data-lenis-prevent>
                                 {serviciosLinks.map((s) => (
                                     <Link
                                         key={s.href}
@@ -133,7 +147,44 @@ export default function Header() {
                                         <span className="arrow">→</span>
                                     </Link>
                                 ))}
-                                <span className="dropdown-grupo" style={{ marginTop: '0.6rem' }}>Automatización por sector</span>
+                                <span className="dropdown-grupo" style={{ marginTop: '0.8rem' }}>Más específicos</span>
+                                {especializadosLinks.map((s) => (
+                                    <Link
+                                        key={s.href}
+                                        href={s.href}
+                                        role="menuitem"
+                                        onClick={closeAll}
+                                        className="dropdown-item-mini"
+                                    >
+                                        {s.label}
+                                        <span className="arrow">→</span>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Por sector — para quién */}
+                    <div className="sectors-dropdown">
+                        <button
+                            type="button"
+                            onClick={(e) => { e.stopPropagation(); setOpenMenu(openMenu === "sector" ? null : "sector"); }}
+                            aria-expanded={openMenu === "sector"}
+                            aria-haspopup="menu"
+                            className="sectors-dropdown-trigger"
+                        >
+                            Por sector
+                            <i
+                                className="fa-solid fa-chevron-down"
+                                style={{
+                                    fontSize: '0.7rem',
+                                    transition: 'transform 0.2s ease',
+                                    transform: openMenu === "sector" ? 'rotate(180deg)' : 'rotate(0deg)',
+                                }}
+                            />
+                        </button>
+                        {openMenu === "sector" && (
+                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 360 }} data-lenis-prevent>
                                 {sectorLinks.map((s) => (
                                     <Link
                                         key={s.href}

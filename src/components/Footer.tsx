@@ -13,21 +13,29 @@ const explora = [
     { href: "/#faq", label: "FAQ" },
 ];
 
-const soluciones = [
+const servicios = [
     { href: "/servicios/formacion-ia-empresas", label: "Formación en IA" },
     { href: "/servicios/auditoria-ia", label: "Auditoría IA (AI Act)" },
     { href: "/servicios/implantacion-ia", label: "Implantación de herramientas IA" },
+    { href: "/servicios/implantacion-crm", label: "Implantación de CRM" },
     { href: "/servicios/automatizacion", label: "Automatización de procesos" },
+    { href: "/servicios/automatizacion-ventas", label: "Automatización de ventas" },
     { href: "/servicios/chatbots", label: "Chatbots" },
+    { href: "/servicios/chatbots-whatsapp", label: "Chatbots de WhatsApp" },
     { href: "/servicios/paneles", label: "Paneles a medida" },
+    { href: "/servicios/extraccion-datos-documentos", label: "Extracción de datos (OCR + IA)" },
+    { href: "/servicios/produccion-cursos-scorm", label: "Producción de cursos SCORM" },
+];
+
+const porSector = [
+    { href: "/automatizacion-administradores-fincas", label: "Administradores de fincas" },
+    { href: "/automatizacion-academias", label: "Academias y formación online" },
+    { href: "/automatizacion-reclutamiento-rrhh", label: "Selección de personal y RRHH" },
+    { href: "/automatizacion-empresas-servicios", label: "Empresas de servicios" },
     { href: "/formacion-ia-despachos", label: "Formación · Despachos" },
-    { href: "/formacion-ia-centros-educativos", label: "Formación · Centros Educativos" },
+    { href: "/formacion-ia-centros-educativos", label: "Formación · Centros educativos" },
     { href: "/formacion-ia-directivos", label: "Formación · Directivos" },
-    { href: "/automatizacion-administradores-fincas", label: "Automatización · Fincas" },
-    { href: "/automatizacion-academias", label: "Automatización · Academias" },
-    { href: "/automatizacion-reclutamiento-rrhh", label: "Automatización · Selección/RRHH" },
-    { href: "/automatizacion-empresas-servicios", label: "Automatización · Servicios" },
-    { href: "/formacion-obligatoria-ai-act", label: "Formación obligatoria (AI Act)" },
+    { href: "/formacion-obligatoria-ai-act", label: "Guía del AI Act (Art. 4)" },
 ];
 
 const linkStyle = { color: "rgba(250,246,239,0.7)" } as const;
@@ -90,11 +98,23 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Soluciones */}
+                    {/* Servicios — qué hago */}
                     <div className="footer-col">
-                        <p style={tituloCol}>Soluciones</p>
+                        <p style={tituloCol}>Servicios</p>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
-                            {soluciones.map((l) => (
+                            {servicios.map((l) => (
+                                <li key={l.href}>
+                                    <a href={l.href} style={linkStyle}>{l.label}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Por sector — para quién */}
+                    <div className="footer-col">
+                        <p style={tituloCol}>Por sector</p>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                            {porSector.map((l) => (
                                 <li key={l.href}>
                                     <a href={l.href} style={linkStyle}>{l.label}</a>
                                 </li>

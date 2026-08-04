@@ -6,7 +6,7 @@ const content = `# Automatizatelo
 
 Datos clave:
 - Contacto: info@automatizatelo.com · +34 678 39 91 82
-- Precios públicos: automatización puntual desde 500 €, sistema de negocio desde 2.000 €, automatización completa desde 8.000 €
+- Precios públicos por línea: FORMAR al equipo desde 600 €, CUMPLIR el AI Act desde 750 €, AUTOMATIZAR desde 900 € (poner en marcha), 2.000 € (un área completa) u 8.000 € (la empresa entera). Una automatización suelta y concreta, desde 500 €
 - El cliente conserva el código y los datos de todo lo que construimos
 - Herramientas según el caso: no dependemos de una sola plataforma
 
@@ -32,8 +32,13 @@ Datos clave:
 
 - [Auditoría IA · cumplimiento del AI Act](https://automatizatelo.com/servicios/auditoria-ia): revisión del uso de IA en la empresa, informe de riesgos, plan de acción, política de uso de IA y formación del art. 4; diagnóstico desde 750 €, pack completo desde 1.800 €
 - [Implantación de herramientas IA](https://automatizatelo.com/servicios/implantacion-ia): puesta en marcha de ChatGPT, Microsoft Copilot o Gemini en la empresa — elección sin comisiones, configuración segura, casos de uso por puesto; desde 900 €
+- [Implantación de CRM](https://automatizatelo.com/servicios/implantacion-crm): elección sin comisiones (HubSpot, Pipedrive, Zoho o a medida), configuración, migración de datos y automatizaciones para que se rellene solo; desde 900 €
 - [Automatización de procesos](https://automatizatelo.com/servicios/automatizacion): facturas y documentos sin picar datos (y generación automática de los tuyos), seguimiento de clientes, avisos y reportes automáticos
 - [Chatbots de WhatsApp y web](https://automatizatelo.com/servicios/chatbots): bots conectados a la agenda, CRM o catálogo de la empresa, con escalado a persona; dentro de proyectos desde 2.000 €
+- [Chatbot de WhatsApp (API oficial)](https://automatizatelo.com/servicios/chatbots-whatsapp): citas, avisos y dudas 24/7 en WhatsApp Business API — número verificado, plantillas aprobadas, sin riesgo de bloqueo; el bot se identifica como IA (art. 50)
+- [Automatización de ventas](https://automatizatelo.com/servicios/automatizacion-ventas): leads respondidos en minutos, seguimiento automático, propuestas en un clic y facturación sola; desde 500 € el flujo, ciclo completo desde 2.000 €
+- [Extracción de datos de documentos](https://automatizatelo.com/servicios/extraccion-datos-documentos): facturas y albaranes leídos con OCR + IA y registrados solos en el sistema, con revisión humana donde toca; desde 500 €
+- [Producción de cursos SCORM](https://automatizatelo.com/servicios/produccion-cursos-scorm): cursos e-learning a medida — guion, materiales, evaluaciones y empaquetado compatible con cualquier LMS; desde 1.900 €/curso, también en marca blanca
 - [Paneles y dashboards a medida](https://automatizatelo.com/servicios/paneles): la gestión del negocio en un solo sitio, integrada con las herramientas existentes; desde 2.000 €, código y datos del cliente
 - [Formación en IA para empresas](https://automatizatelo.com/servicios/formacion-ia-empresas): talleres in-company (900-1.400 €), programas de 16 h (desde 2.400 €), alfabetización art. 4 (desde 600 €) y cursos e-learning SCORM (desde 1.900 €); con certificado nominal y registro formativo
 - [Formación obligatoria del AI Act (art. 4)](https://automatizatelo.com/formacion-obligatoria-ai-act): qué exige el artículo 4 del Reglamento Europeo de IA, desde cuándo aplica (feb-2025), sanciones y cómo acreditar el cumplimiento en una pyme

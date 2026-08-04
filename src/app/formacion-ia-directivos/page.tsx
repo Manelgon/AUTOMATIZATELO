@@ -62,12 +62,12 @@ const bloques = [
     {
         num: "03",
         titulo: "Gobernanza: quién decide qué",
-        desc: "Cómo se aprueban herramientas, quién responde de qué, qué política necesita tu plantilla y cómo se mide si la IA está aportando. Para que la empresa use la IA sin depender de que tú vigiles.",
+        desc: "Cómo se aprueban herramientas, quién responde de qué, qué política necesita tu plantilla y cómo evaluar — sin tecnicismos — a los proveedores de IA que llaman a tu puerta. Para que la empresa use la IA sin depender de que tú vigiles.",
     },
     {
         num: "04",
         titulo: "Tu plan de decisión",
-        desc: "Sales con un plan priorizado: qué implantar primero, qué formar, qué cumplir y qué descartar — con órdenes de magnitud de coste para poder presupuestar.",
+        desc: "Sales con un plan priorizado: qué implantar primero, qué formar, qué cumplir y qué descartar — con órdenes de magnitud de coste y cómo llevar al equipo contigo sin resistencias (la gestión del cambio es la mitad del éxito).",
     },
 ];
 

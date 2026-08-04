@@ -29,12 +29,16 @@ const faqs = [
         answer: "Ninguna cifra concreta: el Reglamento no fija horas, fija proporcionalidad al rol de cada persona y al riesgo del sistema de IA que utiliza. Quien venda un curso diciendo que la ley obliga a un número exacto de horas se lo está inventando. Lo que hay que poder demostrar es que cada perfil recibió formación adecuada a lo que hace.",
     },
     {
-        question: "¿Existe un certificado oficial del Art. 4?",
-        answer: "No. No hay ningún esquema oficial de certificación de la alfabetización en IA, y conviene desconfiar de quien venda un 'sello de cumplimiento'. Lo que sí es defendible ante una inspección es el expediente: registro formativo con contenidos y horas, certificado nominal por participante y material fechado.",
+        question: "¿Existe un certificado oficial del Art. 4? ¿Y una formación en IA con certificado?",
+        answer: "Certificado oficial, no: no hay ningún esquema oficial de certificación de la alfabetización en IA, y conviene desconfiar de quien venda un 'sello de cumplimiento'. Formación con certificado, sí — pero nominal y privado: lo defendible ante una inspección es el expediente completo (registro formativo con contenidos y horas, certificado nominal por participante y material fechado), que es exactamente lo que entrega nuestra formación de alfabetización.",
     },
     {
         question: "¿Qué pasa si no formo a mi equipo?",
-        answer: "El marco sancionador general del Reglamento contempla multas de hasta 35 millones de euros o el 7% de la facturación global en los casos más graves. Es razonable esperar proporcionalidad con las pymes, pero la obligación existe desde febrero de 2025 y la carga de acreditar el cumplimiento es de la empresa.",
+        answer: "El marco sancionador general del Reglamento contempla multas de hasta 35 millones de euros o el 7% de la facturación global en los casos más graves — con un matiz que pocas veces se cuenta: para las pymes aplica el menor de los dos importes. Aún así, la obligación existe desde febrero de 2025 y la carga de acreditar el cumplimiento es de la empresa.",
+    },
+    {
+        question: "¿No se había aplazado el AI Act? Me suena que hubo un aplazamiento.",
+        answer: "Se aplazó una parte — y quien te diga que 'ya no corre prisa' te está informando mal. El Ómnibus digital (Reglamento (UE) 2026/1744, en vigor desde julio de 2026) aplazó solo las obligaciones plenas de los sistemas de alto riesgo: las del Anexo III al 2 de diciembre de 2027 y las de productos regulados a 2028. Lo que NO se aplazó: la alfabetización del Art. 4 (aplicable desde febrero de 2025), la transparencia del Art. 50 (tu chatbot debe identificarse como IA desde agosto de 2026) y el régimen sancionador.",
     },
     {
         question: "¿Qué tiene que hacer una pyme, en concreto?",
@@ -146,8 +150,8 @@ export default function AiActPage() {
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "2rem", marginTop: "1.5rem" }}>
                         {[
                             { fecha: "2 feb 2025", texto: "El Art. 4 es aplicable: la obligación de alfabetización en IA ya está en vigor." },
-                            { fecha: "2 ago 2026", texto: "Aplicación general del grueso del Reglamento: supervisión efectiva y régimen sancionador." },
-                            { fecha: "35M€ / 7%", texto: "Techo del marco sancionador general (los casos más graves): multas de hasta 35 millones o el 7% de la facturación global." },
+                            { fecha: "2 ago 2026", texto: "Régimen sancionador y transparencia (Art. 50) aplicables. El Ómnibus digital solo aplazó el alto riesgo (a dic-2027) — el resto sigue en pie." },
+                            { fecha: "35M€ / 7%", texto: "Techo sancionador de los casos más graves: hasta 35 millones o el 7% de la facturación global. Para pymes aplica el menor de los dos importes." },
                         ].map((f) => (
                             <div key={f.fecha}>
                                 <div style={{ fontFamily: "var(--font-display, serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontWeight: 600, color: "#f6c39c", lineHeight: 1 }}>{f.fecha}</div>
