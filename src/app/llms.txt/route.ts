@@ -22,6 +22,8 @@ Datos clave:
 
 - [Automatización para empresas de servicios](https://automatizatelo.com/automatizacion-empresas-servicios): CRM y seguimiento automático de leads
 - [Automatización para administradores de fincas](https://automatizatelo.com/automatizacion-administradores-fincas): panel de incidencias, comunicaciones con vecinos y documentación, en uso diario en despachos reales desde enero de 2026
+- [Automatización para academias y formación online](https://automatizatelo.com/automatizacion-academias): panel de gestión académica (caso real: AFCademIA), bot de dudas y matrículas, facturación y certificados automáticos, y producción de cursos SCORM
+- [Automatización para selección de personal y RRHH](https://automatizatelo.com/automatizacion-reclutamiento-rrhh): portal de empleo propio, criba asistida por IA con supervisión humana y candidatos siempre respondidos (caso real: Henkoaching)
 - [Formación en IA para centros educativos](https://automatizatelo.com/formacion-ia-centros-educativos): formación de claustro para colegios, institutos y FP — talleres para docentes (900-1.400 €), política de uso de IA del centro, alfabetización art. 4 (desde 600 €) y curso SCORM (desde 1.900 €); no puntúa en baremos de oposiciones
 - [Formación en IA para despachos profesionales](https://automatizatelo.com/formacion-ia-despachos): administradores de fincas, gestorías y asesorías — talleres con los casos del despacho, protección del secreto profesional y evidencia del art. 4
 - [Formación en IA para directivos](https://automatizatelo.com/formacion-ia-directivos): sesión ejecutiva de medio día desde 600 € — qué implantar, qué exige el AI Act y cómo gobernar la IA; programa completo desde 1.200 €

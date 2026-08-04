@@ -23,12 +23,20 @@ const sectores = [
         span: "ancho",
     },
     {
+        sector: "Academias y Formación",
+        href: "/automatizacion-academias",
+        icon: "fa-book-open",
+        imagen: "academias",
+        frase: "Panel de academia en producción y cursos SCORM en venta.",
+        span: "normal",
+    },
+    {
         sector: "Empresas de Servicios",
         href: "/automatizacion-empresas-servicios",
         icon: "fa-briefcase",
         imagen: "servicios",
         frase: "CRM y seguimiento de leads en menos de 5 minutos.",
-        span: "ancho",
+        span: "normal",
     },
 ];
 

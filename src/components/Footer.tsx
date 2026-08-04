@@ -24,6 +24,8 @@ const soluciones = [
     { href: "/formacion-ia-centros-educativos", label: "Formación · Centros Educativos" },
     { href: "/formacion-ia-directivos", label: "Formación · Directivos" },
     { href: "/automatizacion-administradores-fincas", label: "Automatización · Fincas" },
+    { href: "/automatizacion-academias", label: "Automatización · Academias" },
+    { href: "/automatizacion-reclutamiento-rrhh", label: "Automatización · Selección/RRHH" },
     { href: "/automatizacion-empresas-servicios", label: "Automatización · Servicios" },
     { href: "/formacion-obligatoria-ai-act", label: "Formación obligatoria (AI Act)" },
 ];

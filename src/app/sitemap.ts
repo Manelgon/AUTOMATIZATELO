@@ -86,6 +86,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.9,
         },
         {
+            url: 'https://automatizatelo.com/automatizacion-academias',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://automatizatelo.com/automatizacion-reclutamiento-rrhh',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
             url: 'https://automatizatelo.com/servicios/formacion-ia-empresas',
             lastModified: now,
             changeFrequency: 'monthly',

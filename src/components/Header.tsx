@@ -7,7 +7,9 @@ import Image from "next/image";
 
 const sectorLinks = [
     { href: "/automatizacion-administradores-fincas", num: "01", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
-    { href: "/automatizacion-empresas-servicios", num: "02", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
+    { href: "/automatizacion-academias", num: "02", label: "Academias y Formación Online", desc: "Matrículas, alumnos y cursos SCORM." },
+    { href: "/automatizacion-reclutamiento-rrhh", num: "03", label: "Selección de Personal y RRHH", desc: "Portal de empleo y criba con IA." },
+    { href: "/automatizacion-empresas-servicios", num: "04", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
 ];
 
 const serviciosLinks = [

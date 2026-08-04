@@ -69,11 +69,12 @@ const serviceJsonLd = {
 };
 
 const herramientas = [
-    { nombre: "ChatGPT", detalle: "El asistente más versátil. Plan Team para que tus datos no entrenen modelos." },
-    { nombre: "Microsoft Copilot", detalle: "Si vivís en Word, Excel y Outlook, la IA juega en casa." },
-    { nombre: "Google Gemini", detalle: "La opción natural para empresas en Google Workspace." },
-    { nombre: "Claude", detalle: "Excelente redactando y analizando documentos largos." },
-    { nombre: "NotebookLM", detalle: "Tu documentación interna, convertida en un experto al que preguntar." },
+    { nombre: "ChatGPT", detalle: "El asistente más versátil: asistentes a medida para cada puesto y tareas programadas que se ejecutan solas cada día. Plan Team para que tus datos no entrenen modelos." },
+    { nombre: "Microsoft Copilot", detalle: "Si vivís en Word, Excel y Outlook, la IA juega en casa: resume tus reuniones de Teams, redacta en Word, analiza datos en Excel y te deja el correo medio contestado." },
+    { nombre: "Google Gemini", detalle: "La opción natural en Google Workspace: redacta en Gmail y Docs, cruza datos en Sheets y toma las notas de tus reuniones de Meet — sin salir de las herramientas de siempre." },
+    { nombre: "Claude", detalle: "Excelente redactando y analizando documentos largos — y con agentes capaces de trabajar como un compañero más: les das una tarea completa y la sacan de principio a fin." },
+    { nombre: "NotebookLM", detalle: "Tu documentación interna, convertida en un experto al que preguntar: le subes manuales, contratos o temarios y responde citando de dónde lo saca. Ideal para formar y para no depender de la memoria de nadie." },
+    { nombre: "n8n / Make", detalle: "Plataformas de automatización, montadas y con tu equipo formado para crear sus propios flujos. Y si prefieres que los construya yo, eso es la automatización de procesos." },
 ];
 
 const pasos = [
