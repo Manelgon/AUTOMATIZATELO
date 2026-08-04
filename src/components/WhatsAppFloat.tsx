@@ -34,7 +34,9 @@ export default function WhatsAppFloat() {
                 alignItems: "center",
                 justifyContent: "center",
                 boxShadow: "0 6px 20px rgba(37, 211, 102, 0.4)",
-                zIndex: 9999,
+                // Por debajo de la cabecera (1000) para no taparla cuando
+                // el menú móvil está abierto
+                zIndex: 900,
                 transition: "transform 0.2s ease, box-shadow 0.2s ease",
                 textDecoration: "none",
             }}

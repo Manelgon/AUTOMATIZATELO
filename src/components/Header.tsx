@@ -130,7 +130,7 @@ export default function Header() {
                             />
                         </button>
                         {openMenu === "servicios" && (
-                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 360 }} data-lenis-prevent>
+                            <div role="menu" className="sectors-dropdown-menu" data-lenis-prevent>
                                 {serviciosLinks.map((s) => (
                                     <Link
                                         key={s.href}
@@ -184,7 +184,7 @@ export default function Header() {
                             />
                         </button>
                         {openMenu === "sector" && (
-                            <div role="menu" className="sectors-dropdown-menu" style={{ minWidth: 360 }} data-lenis-prevent>
+                            <div role="menu" className="sectors-dropdown-menu" data-lenis-prevent>
                                 {sectorLinks.map((s) => (
                                     <Link
                                         key={s.href}
