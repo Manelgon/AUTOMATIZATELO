@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Implantar ChatGPT, Copilot o Gemini en tu Empresa",
+    title: "Implantar ChatGPT o Copilot en tu Empresa",
     description:
-        "Puesta en marcha de herramientas de IA en tu pyme: elección, configuración segura, casos de uso por puesto, política y formación. Desde 900€, sin comisiones de nadie.",
+        "Puesta en marcha de ChatGPT, Copilot o Gemini en tu pyme: elección sin comisiones, configuración segura y equipo formado. Desde 900€.",
     alternates: { canonical: "https://automatizatelo.com/servicios/implantacion-ia" },
     openGraph: {
         title: "ChatGPT, Copilot o Gemini en marcha en tu empresa — con cabeza",

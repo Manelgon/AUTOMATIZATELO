@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Formación en IA para Despachos Profesionales",
+    title: "Formación en IA para Despachos",
     description:
-        "Formación en IA para administradores de fincas, gestorías, asesorías y abogados: talleres con casos del despacho, secreto profesional a salvo y el Art. 4 cumplido.",
+        "Formación en IA para administradores de fincas, gestorías, asesorías y abogados: con los casos del despacho y el secreto profesional a salvo.",
     alternates: { canonical: "https://automatizatelo.com/formacion-ia-despachos" },
     openGraph: {
         title: "IA para tu despacho: formación práctica con tus casos reales",

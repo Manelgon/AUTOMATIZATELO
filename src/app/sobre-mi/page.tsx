@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
     title: { absolute: "Manel Méndez González · Automatizatelo" },
     description:
-        "Manel Méndez González implanta la IA en pymes: forma equipos, deja el cumplimiento del AI Act en regla y construye los sistemas que ya usan despachos y academias.",
+        "Manel Méndez González implanta la IA en pymes: forma equipos, deja el cumplimiento del AI Act en regla y construye sistemas que ya funcionan a diario.",
     alternates: { canonical: "https://automatizatelo.com/sobre-mi" },
 };
 

@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Cómo Trabajo: Mi Método para Implantar IA en tu Pyme",
+    title: "Cómo Trabajo: Mi Método para Implantar IA",
     description:
         "Todo empieza con 30 minutos gratis. Después: formar al equipo, cumplir el AI Act o automatizar el trabajo — con precio y plazo cerrados y sin permanencia.",
     alternates: { canonical: "https://automatizatelo.com/como-trabajo" },

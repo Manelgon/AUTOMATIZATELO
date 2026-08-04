@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Precios: Automatización IA y Formación para Pymes",
+    title: "Precios: Implantación de IA para Pymes",
     description:
-        "Cuánto cuesta automatizar tu negocio: automatización puntual desde 500€, sistema completo desde 2.000€ y formación en IA desde 600€. Precio cerrado antes de empezar.",
+        "Cuánto cuesta implantar IA en tu pyme: formación desde 600€, auditoría del AI Act desde 750€ y automatización desde 900€. Precio cerrado por escrito.",
     alternates: { canonical: "https://automatizatelo.com/precios" },
     openGraph: {
         title: "¿Cuánto cuesta automatizar tu negocio? Precios públicos",

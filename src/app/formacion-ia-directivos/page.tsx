@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Formación en IA para Directivos y Gerentes de Pymes",
+    title: "Formación en IA para Directivos",
     description:
         "Formación en IA para dirección: decidir con criterio qué implantar, qué exige el AI Act y cómo gobernar la IA en tu empresa. Sesión ejecutiva desde 600€.",
     alternates: { canonical: "https://automatizatelo.com/formacion-ia-directivos" },

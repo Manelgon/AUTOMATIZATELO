@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Chatbot de WhatsApp para Empresas | API Oficial",
+    title: "Chatbot de WhatsApp para Empresas",
     description:
-        "Chatbot en el WhatsApp de tu empresa con la API oficial: citas, avisos y dudas resueltas 24/7, conectado a tus sistemas y sin riesgo de bloqueo. Desde 2.000€.",
+        "Chatbot en el WhatsApp de tu empresa con la API oficial: citas, avisos y dudas resueltas 24/7, sin riesgo de bloqueo. Desde 2.000€.",
     alternates: { canonical: "https://automatizatelo.com/servicios/chatbots-whatsapp" },
     openGraph: {
         title: "Chatbot de WhatsApp con API oficial — sin números bloqueados",

@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
     title: "Paneles y Dashboards a Medida para Pymes",
     description:
-        "Paneles de gestión a medida: clientes, incidencias, agenda y métricas de tu negocio en un solo sitio. En uso diario en despachos reales. Desde 2.000€, el código es tuyo.",
+        "Paneles de gestión a medida: clientes, incidencias, agenda y métricas en un solo sitio. En uso diario en despachos reales. Desde 2.000€, el código es tuyo.",
     alternates: { canonical: "https://automatizatelo.com/servicios/paneles" },
     openGraph: {
         title: "Tu negocio entero, en un panel hecho para ti",

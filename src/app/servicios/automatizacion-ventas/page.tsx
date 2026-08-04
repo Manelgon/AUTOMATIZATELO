@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Automatización de Ventas para Pymes | Del Lead al Cobro",
+    title: "Automatización de Ventas para Pymes",
     description:
-        "Automatiza tu ciclo de ventas: leads respondidos en minutos, seguimiento que no se olvida, propuestas en un clic y facturas que se emiten solas. Desde 500€.",
+        "Automatiza tu ciclo de ventas: leads respondidos en minutos, seguimiento automático, propuestas y facturas solas. Desde 500€.",
     alternates: { canonical: "https://automatizatelo.com/servicios/automatizacion-ventas" },
     openGraph: {
         title: "Automatización de ventas: menos picar datos, más cerrar",

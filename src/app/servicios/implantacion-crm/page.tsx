@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Implantación de CRM para Pymes | Sin Comisiones",
+    title: "Implantación de CRM para Pymes",
     description:
         "Implanto el CRM adecuado en tu pyme: elección sin comisiones, configuración, migración de datos y automatizaciones para que se rellene solo. Desde 900€.",
     alternates: { canonical: "https://automatizatelo.com/servicios/implantacion-crm" },

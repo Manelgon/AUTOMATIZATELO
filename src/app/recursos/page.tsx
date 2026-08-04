@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Recursos Gratis: Guías, Prompts y Plantillas de IA",
+    title: "Recursos Gratis de IA para Pymes",
     description:
-        "Recursos gratuitos de IA para pymes y despachos: la guía del Art. 4 del AI Act, 10 prompts para administradores de fincas y el cheatsheet de las 3 herramientas. Sin email.",
+        "Recursos gratuitos de IA: la guía del Art. 4 del AI Act, 10 prompts para administradores de fincas y un cheatsheet de herramientas. Sin pedirte el email.",
     alternates: { canonical: "https://automatizatelo.com/recursos" },
     openGraph: {
         title: "Recursos gratis de IA — sin pedirte el email",

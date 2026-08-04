@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Extracción de Datos de Documentos con IA | OCR",
+    title: "Extracción de Datos de Documentos con IA",
     description:
-        "Facturas, albaranes y documentos que se leen solos: la IA extrae los datos y los registra en tu sistema sin picar nada. Desde 500€, con revisión humana donde toca.",
+        "Facturas, albaranes y documentos que se leen solos: la IA extrae los datos y los registra en tu sistema sin picar nada. Desde 500€.",
     alternates: { canonical: "https://automatizatelo.com/servicios/extraccion-datos-documentos" },
     openGraph: {
         title: "Documentos que se leen solos: extracción de datos con IA",

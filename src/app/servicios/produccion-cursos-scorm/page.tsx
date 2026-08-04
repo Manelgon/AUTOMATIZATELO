@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Producción de Cursos SCORM y E-learning a Medida",
+    title: "Producción de Cursos SCORM a Medida",
     description:
-        "Convierto tu conocimiento en cursos e-learning empaquetados en SCORM: guion, materiales y compatibilidad con cualquier LMS. Desde 1.900€, también en marca blanca.",
+        "Convierto tu conocimiento en cursos e-learning en formato SCORM: guion, materiales y compatibilidad con cualquier LMS. Desde 1.900€.",
     alternates: { canonical: "https://automatizatelo.com/servicios/produccion-cursos-scorm" },
     openGraph: {
         title: "Tus cursos, producidos en SCORM para cualquier plataforma",

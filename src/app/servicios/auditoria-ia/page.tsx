@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Auditoría IA: ¿Cumples el Reglamento Europeo de IA?",
+    title: "Auditoría de Cumplimiento del AI Act",
     description:
-        "Auditoría de cumplimiento del AI Act para pymes: reviso cómo usa IA tu empresa, te entrego informe de riesgos, plan de acción y política de uso. Desde 750€.",
+        "Auditoría del AI Act para pymes: reviso cómo usa IA tu empresa y te entrego informe de riesgos, plan de acción y política de uso. Desde 750€.",
     alternates: { canonical: "https://automatizatelo.com/servicios/auditoria-ia" },
     openGraph: {
         title: "Auditoría IA para pymes: cumplimiento del AI Act sin sustos",

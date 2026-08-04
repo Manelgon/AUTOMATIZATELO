@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Formación en IA para Centros Educativos y Docentes",
+    title: "Formación en IA para Centros Educativos",
     description:
-        "Formación de claustro en IA para colegios, institutos y centros de FP: talleres prácticos para docentes, política de uso de IA del centro y cumplimiento del Art. 4 del AI Act.",
+        "Formación de claustro en IA para colegios, institutos y FP: talleres para docentes, política de uso del centro y cumplimiento del Art. 4 del AI Act.",
     alternates: { canonical: "https://automatizatelo.com/formacion-ia-centros-educativos" },
     openGraph: {
         title: "IA para tu claustro: formación práctica para centros educativos",

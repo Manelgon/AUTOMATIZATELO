@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Chatbots para Empresas con IA | Web y WhatsApp",
+    title: "Chatbots para Empresas con IA",
     description:
-        "Chatbots para empresas que atienden solos y resuelven de verdad: conectados a tu agenda, CRM o catálogo, con escalado a persona. Desde 2.000€, el bot es tuyo.",
+        "Chatbots para empresas que resuelven de verdad: conectados a tu agenda, CRM o catálogo, con escalado a persona. Desde 2.000€, el bot es tuyo.",
     alternates: { canonical: "https://automatizatelo.com/servicios/chatbots" },
     openGraph: {
         title: "Chatbots que resuelven, no que contestan bonito",
