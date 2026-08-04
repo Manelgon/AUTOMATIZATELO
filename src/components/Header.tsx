@@ -7,13 +7,11 @@ import Image from "next/image";
 
 const sectorLinks = [
     { href: "/automatizacion-administradores-fincas", num: "01", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
-    { href: "/formacion-ia-centros-educativos", num: "02", label: "Centros Educativos", desc: "Formación del claustro en IA." },
-    { href: "/automatizacion-empresas-servicios", num: "03", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
-    { href: "/formacion-ia-despachos", num: "04", label: "Despachos Profesionales", desc: "IA sin jugarse los datos de nadie." },
+    { href: "/automatizacion-empresas-servicios", num: "02", label: "Empresas de Servicios", desc: "CRM y seguimiento de leads." },
 ];
 
 const serviciosLinks = [
-    { href: "/servicios/formacion-ia-empresas", num: "01", title: "Formación en IA", desc: "Talleres, gobernanza y cursos a medida." },
+    { href: "/servicios/formacion-ia-empresas", num: "01", title: "Formación en IA", desc: "Para empresas, despachos, centros y directivos." },
     { href: "/servicios/auditoria-ia", num: "02", title: "Auditoría IA (AI Act)", desc: "¿Tu empresa cumple? Informe y plan." },
     { href: "/servicios/implantacion-ia", num: "03", title: "Implantación de herramientas", desc: "ChatGPT, Copilot o Gemini, en marcha." },
     { href: "/servicios/automatizacion", num: "04", title: "Automatización de procesos", desc: "Facturas, seguimiento, avisos y reportes." },
@@ -133,7 +131,7 @@ export default function Header() {
                                         <span className="arrow">→</span>
                                     </Link>
                                 ))}
-                                <span className="dropdown-grupo" style={{ marginTop: '0.6rem' }}>Sectores</span>
+                                <span className="dropdown-grupo" style={{ marginTop: '0.6rem' }}>Automatización por sector</span>
                                 {sectorLinks.map((s) => (
                                     <Link
                                         key={s.href}

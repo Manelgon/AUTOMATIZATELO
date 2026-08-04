@@ -20,10 +20,11 @@ const soluciones = [
     { href: "/servicios/automatizacion", label: "Automatización de procesos" },
     { href: "/servicios/chatbots", label: "Chatbots" },
     { href: "/servicios/paneles", label: "Paneles a medida" },
-    { href: "/automatizacion-administradores-fincas", label: "Administradores de Fincas" },
-    { href: "/formacion-ia-despachos", label: "Despachos Profesionales" },
-    { href: "/formacion-ia-centros-educativos", label: "Centros Educativos" },
-    { href: "/automatizacion-empresas-servicios", label: "Empresas de Servicios" },
+    { href: "/formacion-ia-despachos", label: "Formación · Despachos" },
+    { href: "/formacion-ia-centros-educativos", label: "Formación · Centros Educativos" },
+    { href: "/formacion-ia-directivos", label: "Formación · Directivos" },
+    { href: "/automatizacion-administradores-fincas", label: "Automatización · Fincas" },
+    { href: "/automatizacion-empresas-servicios", label: "Automatización · Servicios" },
     { href: "/formacion-obligatoria-ai-act", label: "Formación obligatoria (AI Act)" },
 ];
 

@@ -34,7 +34,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="hero hero-foto" onMouseMove={seguirRaton} onMouseLeave={soltarRaton}>
+        <section className="hero hero-foto">
             {/* Foto de fondo + velo cálido */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -106,8 +106,9 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            {/* Nombre gigante: entrada letra a letra + palabras elásticas con el ratón */}
-            <div className="hero-giant-name" aria-hidden="true">
+            {/* Nombre gigante: entrada letra a letra + palabras elásticas con el ratón
+                (solo reacciona al pasar por encima del propio nombre) */}
+            <div className="hero-giant-name" aria-hidden="true" onMouseMove={seguirRaton} onMouseLeave={soltarRaton}>
                 <motion.span style={{ scaleX: escalaIzq, transformOrigin: "left center", display: "inline-block" }}>
                     {letrasDe("Manel", 0.55)}
                 </motion.span>
@@ -163,7 +164,9 @@ export default function Hero() {
                     line-height: 0.95;
                     color: #f6c39c;
                     white-space: nowrap;
-                    pointer-events: none;
+                    /* El efecto elástico escucha al ratón sobre el propio nombre */
+                    pointer-events: auto;
+                    cursor: default;
                     user-select: none;
                     z-index: 2;
                     text-shadow: 0 10px 60px rgba(28,25,23,0.35);

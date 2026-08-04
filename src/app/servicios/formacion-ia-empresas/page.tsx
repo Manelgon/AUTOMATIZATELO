@@ -115,10 +115,11 @@ export default function FormacionIaPage() {
                         color: "var(--color-text-main)",
                         margin: "1rem 0 1.2rem",
                     }}>
-                        Formación en IA <span style={{ color: "var(--color-primary)" }}>para empresas</span>
+                        Formación en IA para{" "}<br /><span style={{ color: "var(--color-primary)" }}>tu empresa, tu despacho o tu claustro</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 600 }}>
-                        Tu equipo usando la IA con criterio — y tu empresa cumpliendo la normativa europea.
+                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620 }}>
+                        Equipos, docentes y directivos usando la IA con criterio — y tu organización
+                        cumpliendo la normativa europea.
                     </p>
                     <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
                         Pide tu consulta gratuita de 30 minutos
@@ -248,20 +249,62 @@ export default function FormacionIaPage() {
                             alfabetización obligatoria del Art. 4 del AI Act
                         </Link>.
                     </p>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1rem", maxWidth: 720 }}>
-                        ¿Tu caso es específico? Hay versión propia para{" "}
-                        <Link href="/formacion-ia-centros-educativos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            centros educativos
-                        </Link>
-                        ,{" "}
-                        <Link href="/formacion-ia-despachos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            despachos profesionales
-                        </Link>{" "}
-                        y{" "}
-                        <Link href="/formacion-ia-directivos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            equipos directivos
-                        </Link>.
-                    </p>
+                </div>
+            </section>
+
+            {/* Versiones por audiencia — el servicio es uno, la versión es la tuya */}
+            <section style={{ padding: "4.5rem 0" }}>
+                <div className="container" style={{ maxWidth: 1000 }}>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="kicker-mono">¿Para quién?</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            La misma formación, en tu idioma
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            El servicio es uno; los casos, los ejemplos y los riesgos cambian según quién eres.
+                            Si tu caso es uno de estos, entra por su puerta.
+                        </p>
+                    </div>
+                    <div className="fp-audiencias">
+                        {[
+                            {
+                                href: "/formacion-ia-despachos",
+                                icon: "fa-briefcase",
+                                titulo: "Despachos profesionales",
+                                desc: "Fincas, gestorías y asesorías: con vuestros casos y el secreto profesional por delante.",
+                            },
+                            {
+                                href: "/formacion-ia-centros-educativos",
+                                icon: "fa-graduation-cap",
+                                titulo: "Centros educativos",
+                                desc: "Formación de claustro, política de uso del centro y el Art. 4 con evidencia.",
+                            },
+                            {
+                                href: "/formacion-ia-directivos",
+                                icon: "fa-chess-king",
+                                titulo: "Directivos",
+                                desc: "Sesión ejecutiva de medio día: qué implantar, qué exige la ley y cómo gobernarlo.",
+                            },
+                        ].map((a) => (
+                            <Link key={a.href} href={a.href} className="fp-audiencia">
+                                <i className={`fa-solid ${a.icon}`} style={{ color: "var(--color-primary)", fontSize: "1.5rem", marginBottom: "0.9rem", display: "block" }}></i>
+                                <h3 style={{
+                                    fontFamily: "var(--font-display, serif)",
+                                    fontSize: "1.25rem",
+                                    fontWeight: 600,
+                                    color: "var(--color-text-main)",
+                                    marginBottom: "0.5rem",
+                                    lineHeight: 1.25,
+                                }}>
+                                    {a.titulo}
+                                </h3>
+                                <p style={{ color: "var(--color-text-muted)", lineHeight: 1.6, margin: "0 0 1rem", fontSize: "0.92rem" }}>
+                                    {a.desc}
+                                </p>
+                                <span style={{ color: "var(--color-primary)", fontWeight: 600, fontSize: "0.92rem" }}>Ver mi versión →</span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </section>
 
@@ -356,6 +399,29 @@ export default function FormacionIaPage() {
             <Footer />
 
             <style>{`
+                .fp-audiencias {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.2rem;
+                    align-items: stretch;
+                }
+                .fp-audiencia {
+                    display: flex;
+                    flex-direction: column;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-lg);
+                    padding: 1.8rem 1.6rem;
+                    color: inherit;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .fp-audiencia:hover {
+                    transform: translateY(-4px);
+                    border-color: rgba(234, 88, 12, 0.4);
+                }
+                @media (max-width: 800px) {
+                    .fp-audiencias { grid-template-columns: 1fr; }
+                }
                 .fp-tabla-wrap {
                     overflow-x: auto;
                 }
@@ -449,6 +515,8 @@ export default function FormacionIaPage() {
                     transform: rotate(180deg);
                 }
                 @media (max-width: 600px) {
+                    /* En móvil el titular rompe línea de forma natural */
+                    h1 br { display: none; }
                     .fi-fila {
                         grid-template-columns: 1fr;
                         gap: 0.4rem;
