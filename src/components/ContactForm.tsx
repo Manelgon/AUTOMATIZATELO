@@ -379,6 +379,45 @@ export default function ContactForm() {
 
                     </div>
 
+                    {/* Qué necesita el lead: escrito como lo diría él, no como
+                        lo llamo yo en la web. La última opción evita atascar a
+                        quien aún no lo tiene claro. */}
+                    <div style={{ marginTop: '1.5rem' }}>
+                        <label htmlFor="servicio" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>
+                            ¿Qué te interesa? <span style={{ color: 'var(--color-primary)' }}>*</span>
+                        </label>
+                        <select
+                            id="servicio"
+                            name="servicio"
+                            className="glass"
+                            required
+                            value={formData.servicio}
+                            onChange={handleChange}
+                            style={{
+                                width: '100%',
+                                background: 'var(--color-bg-secondary)',
+                                color: formData.servicio ? 'var(--color-text-main)' : 'var(--color-text-muted)',
+                                border: '1px solid var(--color-border)',
+                                appearance: 'none',
+                                backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2357534e' stroke-width='2.5' stroke-linecap='round'><polyline points='6 9 12 15 18 9'/></svg>")`,
+                                backgroundRepeat: 'no-repeat',
+                                backgroundPosition: 'right 1rem center',
+                                backgroundSize: '1rem',
+                                paddingRight: '2.6rem',
+                                cursor: 'pointer',
+                            }}
+                        >
+                            <option value="" disabled>Elige una opción</option>
+                            <option value="formacion_ia">Formar a mi equipo en IA</option>
+                            <option value="cumplimiento_ai_act">Saber si cumplo el Reglamento de IA (AI Act)</option>
+                            <option value="empezar_con_ia">Empezar a usar la IA en mi empresa</option>
+                            <option value="automatizar_procesos">Automatizar tareas repetitivas</option>
+                            <option value="chatbot">Un chatbot para WhatsApp o la web</option>
+                            <option value="panel_gestion">Un panel de gestión a medida</option>
+                            <option value="no_lo_se">Aún no lo sé</option>
+                        </select>
+                    </div>
+
                     <div style={{ marginBottom: '0.75rem', marginTop: '1.5rem' }}>
                         <label htmlFor="mensaje" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Tu mensaje (Opcional)</label>
                         <textarea
