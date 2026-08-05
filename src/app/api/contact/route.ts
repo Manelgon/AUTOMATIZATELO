@@ -62,9 +62,15 @@ export async function POST(request: Request) {
             deviceType = 'tablet';
         }
 
+        // sector_otro pisa a sector cuando se elige "otro"
+        const finalSector = sector === 'otro' ? (sector_otro || 'otro') : (sector || null);
+
+        // Un lead = una fila. Hasta la migración 012 del panel esto eran tres
+        // inserciones en tres tablas (leads + service_segmentation +
+        // funnel_flows); ahora todo son columnas de `leads`.
         const leadData: Record<string, any> = {
             first_name: nombre || '',
-            last_name: apellido || '',
+            last_name: apellido || null,
             email: email || '',
             phone: telefono || '',
             client_type: tipo_cliente || 'N/A',
@@ -76,8 +82,17 @@ export async function POST(request: Request) {
             city: ciudad || 'Desconocida',
             country: pais || 'Desconocido',
             device_type: deviceType,
-            status: 'pendiente',
-            score: 0
+            status: 'nuevo',
+            score: 0,
+            // segmentación
+            company_size: tamano_empresa || null,
+            sector: finalSector,
+            automation_goal: '',
+            // embudo
+            flow_name: 'web',
+            activity: 'lead_inactivo',
+            process_tags: ['nuevo'],
+            last_interaction_date: new Date().toISOString(),
         };
 
         const headersList = await headers();
@@ -108,29 +123,6 @@ export async function POST(request: Request) {
         logToFile({ type: 'SUPABASE_SUCCESS', supabaseData });
 
         const leadId = supabaseData?.[0]?.id;
-
-        // Create the secondary modular tables immediately
-        if (leadId) {
-            // sector_otro overrides sector when 'otro' is selected
-            const finalSector = sector === 'otro' ? (sector_otro || 'otro') : (sector || null);
-
-            await supabase.from('service_segmentation').insert([{
-                lead_id: leadId,
-                company_size: tamano_empresa || null,
-                sector: finalSector,
-                automation_goal: ''
-            }]);
-
-            await supabase.from('funnel_flows').insert([{
-                lead_id: leadId,
-                flow_name: 'web',
-                current_status: 'nuevo',
-                activity: 'lead_inactivo',
-                process_tags: ['nuevo']
-            }]);
-
-            logToFile({ type: 'CRM_MODULES_CREATED', leadId });
-        }
 
         // 2. Notification to Webhook
         const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
