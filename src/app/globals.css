@@ -346,6 +346,12 @@ img {
 }
 
 /* Items numerados estilo editorial (01 / 02 / 03) */
+/* Los enlaces del nav llevan nowrap global: los items del desplegable
+   deben poder envolver su texto (si no, en movil se cortan) */
+.nav-links .sectors-dropdown-menu a {
+  white-space: normal;
+}
+
 .dropdown-item-num {
   display: flex;
   align-items: baseline;

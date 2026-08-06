@@ -77,6 +77,15 @@ export default function FormacionTabs() {
                     color: #1c1917;
                     background: #f6c39c;
                 }
+                @media (max-width: 760px) {
+                    .ft-pistas {
+                        flex-wrap: wrap;
+                        overflow-x: visible;
+                        justify-content: flex-start;
+                        row-gap: 0.15rem;
+                    }
+                    .ft-tab { flex: 1 1 auto; padding: 0.45rem 0.7rem; }
+                }
                 .ft-tab-activa:hover { color: #1c1917; background: #f6c39c; }
             `}</style>
         </nav>

@@ -76,6 +76,15 @@ export default function SistemasTabs() {
                     color: #1c1917;
                     background: #f6c39c;
                 }
+                @media (max-width: 760px) {
+                    .st-pistas {
+                        flex-wrap: wrap;
+                        overflow-x: visible;
+                        justify-content: flex-start;
+                        row-gap: 0.15rem;
+                    }
+                    .st-tab { flex: 1 1 auto; padding: 0.45rem 0.7rem; }
+                }
                 .st-tab-activa:hover { color: #1c1917; background: #f6c39c; }
             `}</style>
         </nav>
