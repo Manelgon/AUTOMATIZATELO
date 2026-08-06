@@ -83,7 +83,7 @@ export default function SobreMiPage() {
             <section className="sm-hero">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/sobre-mi.webp"
+                    src="/fondo-hero.webp"
                     alt=""
                     aria-hidden="true"
                     className="sm-hero-bg"

@@ -38,7 +38,7 @@ export default function Hero() {
             {/* Foto de fondo + velo cálido */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-                src="/fondo-hero.webp"
+                src="/sobre-mi.webp"
                 alt=""
                 aria-hidden="true"
                 className="hero-foto-bg"
@@ -66,7 +66,7 @@ export default function Hero() {
                     transition={{ delay: 0.2 }}
                     style={{ color: '#faf6ef', marginBottom: '1.5rem', textShadow: '0 2px 30px rgba(28,25,23,0.45)' }}
                 >
-                    Implanto la IA en tu empresa:{" "}<br /><span style={{ color: '#f6c39c' }}>con cabeza, cumpliendo la ley</span>{" "}<br />y con sistemas que trabajan solos
+                    Implanto la IA en tu empresa: <span style={{ color: '#f6c39c' }}>con cabeza, cumpliendo la ley</span> y con sistemas que trabajan solos
                 </motion.h1>
 
                 <motion.p
@@ -74,12 +74,12 @@ export default function Hero() {
                     animate="visible"
                     variants={fadeInUp}
                     transition={{ delay: 0.3 }}
-                    style={{ fontSize: '1.15rem', maxWidth: '540px', margin: '0 0 2.2rem', color: 'rgba(250,246,239,0.88)', lineHeight: 1.7, textShadow: '0 1px 20px rgba(28,25,23,0.4)' }}
+                    className="hero-sub"
+                    style={{ fontSize: '1.15rem', maxWidth: '720px', margin: '0 0 2.2rem', color: 'rgba(250,246,239,0.88)', lineHeight: 1.7, textShadow: '0 1px 20px rgba(28,25,23,0.4)' }}
                 >
-                    Formo a tu equipo, te pongo al día con el Reglamento Europeo de IA
-                    y construyo los sistemas que ya trabajan cada día en despachos,
-                    academias y pymes reales. Sin complicaciones: empezamos con
-                    30 minutos gratis.
+                    Formo a tu equipo, te pongo al día con el Reglamento Europeo de IA<br />
+                    y construyo los sistemas que ya trabajan cada día en despachos,<br />
+                    academias y pymes reales. Sin complicaciones: empezamos con 30 minutos gratis.
                 </motion.p>
 
                 <motion.div
@@ -182,9 +182,10 @@ export default function Hero() {
                         font-size: clamp(2.4rem, 12vw, 6rem);
                     }
                 }
-                @media (max-width: 600px) {
-                    /* En móvil el titular rompe línea de forma natural */
-                    .hero-foto h1 br { display: none; }
+                @media (max-width: 760px) {
+                    /* En móvil, titular y subtítulo rompen línea de forma natural */
+                    .hero-foto h1 br,
+                    .hero-foto .hero-sub br { display: none; }
                 }
             `}</style>
         </section>
