@@ -282,9 +282,11 @@ export default function SectorPage(p: SectorPageProps) {
                     position: absolute;
                     inset: 0;
                     z-index: 1;
+                    /* Velo lateral: sombra bajo el texto (izquierda), foto limpia
+                       a la derecha. Igual que el index y directivos. */
                     background:
-                        linear-gradient(180deg, rgba(28,25,23,0.42) 0%, rgba(28,25,23,0.18) 45%, rgba(120,53,15,0.22) 100%),
-                        radial-gradient(circle at 75% 30%, rgba(234,88,12,0.08), transparent 60%);
+                        linear-gradient(90deg, rgba(28,25,23,0.62) 0%, rgba(28,25,23,0.42) 38%, rgba(28,25,23,0.12) 65%, transparent 85%),
+                        linear-gradient(180deg, rgba(28,25,23,0.18) 0%, transparent 40%);
                 }
                 .sp-pains {
                     display: grid;

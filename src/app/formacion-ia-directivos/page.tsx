@@ -78,12 +78,26 @@ export default function DirectivosPage() {
             <Header />
 
             {/* Hero editorial */}
-            <section style={{
-                padding: "9rem 0 3.5rem",
-                background: "radial-gradient(circle at 20% 20%, rgba(234, 88, 12, 0.07) 0%, transparent 55%)",
-            }}>
-                <div className="container">
-                    <span className="kicker-mono">
+            {/* Hero con foto de fondo, mismo patrón que la home */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 5rem" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/directivos.webp"
+                    alt=""
+                    aria-hidden="true"
+                    fetchPriority="high"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    // Velo lateral: sombra donde está el texto (izquierda), foto
+                    // limpia a la derecha. Oscurecerlo todo mataba la imagen.
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.62) 0%, rgba(28,25,23,0.42) 38%, rgba(28,25,23,0.12) 65%, transparent 85%), linear-gradient(180deg, rgba(28,25,23,0.18) 0%, transparent 40%)",
+                }} />
+                <div className="container" style={{ position: "relative", zIndex: 2 }}>
+                    <span className="kicker-mono" style={{ color: "#f6c39c" }}>
                         <i className="fa-solid fa-chess-king" style={{ marginRight: "0.6rem" }}></i>
                         Formación IA · Dirección
                     </span>
@@ -93,18 +107,18 @@ export default function DirectivosPage() {
                         fontWeight: 600,
                         lineHeight: 1.1,
                         letterSpacing: "-0.02em",
-                        color: "var(--color-text-main)",
+                        color: "#faf6ef",
                         margin: "1rem 0 1.2rem",
+                        textShadow: "0 2px 30px rgba(28,25,23,0.45)",
                     }}>
-                        IA para dirección:{" "}<br />
-                        <span style={{ color: "var(--color-primary)" }}>criterio para decidir, no humo</span>
+                        IA para dirección: <span style={{ color: "#f6c39c" }}>criterio<br />para decidir, no humo</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
+                    <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Todo el mundo te habla de IA; casi nadie te ayuda a decidir. Esta formación
                         es para gerentes y comités de dirección: qué implantar, qué exige la ley y
                         cómo gobernarlo — en horas de directivo, no en cursos de meses.
                     </p>
-                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
+                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem", boxShadow: "var(--shadow-glow)" }}>
                         Hablar 30 minutos, gratis
                     </Link>
                 </div>

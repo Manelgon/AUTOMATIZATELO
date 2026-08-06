@@ -105,12 +105,26 @@ export default function CentrosEducativosPage() {
             <Header />
 
             {/* Hero editorial */}
-            <section style={{
-                padding: "9rem 0 3.5rem",
-                background: "radial-gradient(circle at 20% 20%, rgba(234, 88, 12, 0.07) 0%, transparent 55%)",
-            }}>
-                <div className="container">
-                    <span className="kicker-mono">
+            {/* Hero con foto de fondo, mismo patrón que la home */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 5rem" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/claustro.webp"
+                    alt=""
+                    aria-hidden="true"
+                    fetchPriority="high"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    // Velo lateral, igual que el index: sombra bajo el texto,
+                    // foto limpia a la derecha.
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.62) 0%, rgba(28,25,23,0.42) 38%, rgba(28,25,23,0.12) 65%, transparent 85%), linear-gradient(180deg, rgba(28,25,23,0.18) 0%, transparent 40%)",
+                }} />
+                <div className="container" style={{ position: "relative", zIndex: 2 }}>
+                    <span className="kicker-mono" style={{ color: "#f6c39c" }}>
                         <i className="fa-solid fa-graduation-cap" style={{ marginRight: "0.6rem" }}></i>
                         Formación IA · Centros educativos
                     </span>
@@ -120,18 +134,19 @@ export default function CentrosEducativosPage() {
                         fontWeight: 600,
                         lineHeight: 1.1,
                         letterSpacing: "-0.02em",
-                        color: "var(--color-text-main)",
+                        color: "#faf6ef",
                         margin: "1rem 0 1.2rem",
+                        textShadow: "0 2px 30px rgba(28,25,23,0.45)",
                     }}>
                         Tus alumnos ya usan IA.{" "}<br />
-                        <span style={{ color: "var(--color-primary)" }}>¿Y tu claustro?</span>
+                        <span style={{ color: "#f6c39c" }}>¿Y tu claustro?</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620 }}>
+                    <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Formación práctica en IA para colegios, institutos y centros de FP:
                         talleres para docentes, política de uso del centro y el cumplimiento
                         del Art. 4 del AI Act — con la evidencia documental que lo acredita.
                     </p>
-                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
+                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem", boxShadow: "var(--shadow-glow)" }}>
                         Consulta gratuita para tu centro
                     </Link>
                 </div>
