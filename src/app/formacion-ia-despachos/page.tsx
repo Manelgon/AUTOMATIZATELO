@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         question: "¿Esto cubre la obligación del Art. 4 del AI Act?",
-        answer: "Sí. Si el equipo del despacho usa IA — aunque sea por su cuenta — el despacho es responsable del despliegue y debe garantizar la alfabetización de su personal desde febrero de 2025. La formación deja la evidencia que lo acredita: certificados nominales y registro formativo fechado.",
+        answer: "Sí. Si el equipo del despacho usa IA — aunque sea por su cuenta — el despacho es responsable del despliegue y debe adoptar medidas para formar a su personal desde febrero de 2025. Es un deber de medios, no de resultado: no se exige garantizar un nivel concreto en cada persona, sino poder demostrar que se hizo lo razonable. La formación deja esa evidencia: certificados nominales y registro formativo fechado.",
     },
     {
         question: "¿Presencial o en remoto?",
@@ -101,12 +101,25 @@ export default function DespachosPage() {
             <Header />
 
             {/* Hero editorial */}
-            <section style={{
-                padding: "9rem 0 3.5rem",
-                background: "radial-gradient(circle at 20% 20%, rgba(234, 88, 12, 0.07) 0%, transparent 55%)",
-            }}>
-                <div className="container">
-                    <span className="kicker-mono">
+            {/* Hero con foto de fondo, mismo patrón que la home */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 5rem" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/despachos.webp"
+                    alt=""
+                    aria-hidden="true"
+                    fetchPriority="high"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    // Velo lateral unificado: sombra bajo el texto, foto limpia a la derecha
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.62) 0%, rgba(28,25,23,0.42) 38%, rgba(28,25,23,0.12) 65%, transparent 85%), linear-gradient(180deg, rgba(28,25,23,0.18) 0%, transparent 40%)",
+                }} />
+                <div className="container" style={{ position: "relative", zIndex: 2 }}>
+                    <span className="kicker-mono" style={{ color: "#f6c39c" }}>
                         <i className="fa-solid fa-briefcase" style={{ marginRight: "0.6rem" }}></i>
                         Formación IA · Despachos profesionales
                     </span>
@@ -116,18 +129,19 @@ export default function DespachosPage() {
                         fontWeight: 600,
                         lineHeight: 1.1,
                         letterSpacing: "-0.02em",
-                        color: "var(--color-text-main)",
+                        color: "#faf6ef",
                         margin: "1rem 0 1.2rem",
+                        textShadow: "0 2px 30px rgba(28,25,23,0.45)",
                     }}>
                         IA para tu despacho:{" "}<br />
-                        <span style={{ color: "var(--color-primary)" }}>sin jugarte los datos de nadie</span>
+                        <span style={{ color: "#f6c39c" }}>sin jugarte los datos de nadie</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640 }}>
+                    <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Formación práctica para administradores de fincas, gestorías, asesorías
                         y abogados: con vuestros casos reales, con el secreto profesional por
                         delante y con la evidencia del Art. 4 que un despacho debe poder enseñar.
                     </p>
-                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
+                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem", boxShadow: "var(--shadow-glow)" }}>
                         Consulta gratuita para tu despacho
                     </Link>
                 </div>

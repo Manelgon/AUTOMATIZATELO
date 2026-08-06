@@ -82,11 +82,11 @@ export default function DirectivosPage() {
             <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 5rem" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/directivos.webp"
+                    src="/equipos-directivos.webp"
                     alt=""
                     aria-hidden="true"
                     fetchPriority="high"
-                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", zIndex: 0 }}
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", zIndex: 0, transform: "translateX(6%) scale(1.07)", transformOrigin: "right top" }}
                 />
                 <div aria-hidden="true" style={{
                     position: "absolute",

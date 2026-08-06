@@ -19,6 +19,7 @@ const props: SectorPageProps = {
     icon: "fa-user-tie",
     color: "#10b981",
     heroKicker: "Selección de personal y RRHH",
+    heroImagen: "/directivos.webp",
     heroTitle: <>Recluta más rápido, <span className="premium-gradient">sin perder{" "}<br />candidatos por el camino</span></>,
     heroSubtitle: "Portal de empleo propio, criba asistida por IA y cada candidato respondido a tiempo. No es teoría: una consultora de selección real trabaja así con la plataforma que construí.",
     painPoints: [

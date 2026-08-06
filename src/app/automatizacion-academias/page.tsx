@@ -19,7 +19,8 @@ const props: SectorPageProps = {
     icon: "fa-book-open",
     color: "#8b5cf6",
     heroKicker: "Academias y formación online",
-    heroTitle: <>Más alumnos, menos gestión: <span className="premium-gradient">tu academia{" "}<br />en piloto automático</span></>,
+    heroImagen: "/academias.webp",
+    heroTitle: <>Más alumnos, menos gestión:{" "}<br /><span className="premium-gradient">tu academia en piloto automático</span></>,
     heroSubtitle: "Panel de gestión a medida, dudas de alumnos atendidas al momento y tus cursos producidos en SCORM. No es teoría: una academia online real gestiona su operación así — la construí yo.",
     painPoints: [
         { icon: "fa-user-plus", text: "Matrículas y altas de alumnos picadas a mano, una a una" },
