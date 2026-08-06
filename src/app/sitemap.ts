@@ -32,6 +32,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: 'https://automatizatelo.com/servicios/integracion-sistemas',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: 'https://automatizatelo.com/servicios/chatbots',
             lastModified: now,
             changeFrequency: 'monthly',

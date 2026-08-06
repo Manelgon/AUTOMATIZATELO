@@ -31,6 +31,7 @@ const serviciosLinks = [
 const especializadosLinks = [
     { href: "/servicios/chatbots-whatsapp", label: "Chatbots de WhatsApp" },
     { href: "/servicios/implantacion-crm", label: "Implantación de CRM" },
+    { href: "/servicios/integracion-sistemas", label: "Integración de sistemas" },
     { href: "/servicios/automatizacion-ventas", label: "Automatización de ventas" },
     { href: "/servicios/extraccion-datos-documentos", label: "Extracción de datos (OCR + IA)" },
     { href: "/servicios/produccion-cursos-scorm", label: "Producción de cursos SCORM" },

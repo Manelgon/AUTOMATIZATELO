@@ -19,6 +19,7 @@ const servicios = [
     { href: "/servicios/implantacion-ia", label: "Implantación de herramientas IA" },
     { href: "/servicios/implantacion-crm", label: "Implantación de CRM" },
     { href: "/servicios/automatizacion", label: "Automatización de procesos" },
+    { href: "/servicios/integracion-sistemas", label: "Integración de sistemas" },
     { href: "/servicios/automatizacion-ventas", label: "Automatización de ventas" },
     { href: "/servicios/chatbots", label: "Chatbots" },
     { href: "/servicios/chatbots-whatsapp", label: "Chatbots de WhatsApp" },
