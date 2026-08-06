@@ -21,7 +21,7 @@ const recursos = [
         tipo: "Guía",
         titulo: "Formación obligatoria del AI Act (Art. 4)",
         desc: "Qué exige el Reglamento Europeo de IA, desde cuándo, qué sanciones hay y los 4 pasos para que una pyme cumpla. Sin humo: no existe certificado oficial ni horas mínimas.",
-        href: "/formacion-obligatoria-ai-act",
+        href: "/formacion/ai-act",
         cta: "Leer la guía",
         externa: false,
     },
@@ -116,7 +116,7 @@ export default function RecursosPage() {
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "2rem", maxWidth: 720 }}>
                         Irán entrando más recursos aquí. Y si buscas los documentos serios — política
                         de uso de IA, inventario, registro formativo — esos forman parte del{" "}
-                        <Link href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <Link href="/cumplimiento" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             pack de la auditoría IA
                         </Link>
                         , redactados para tu empresa.

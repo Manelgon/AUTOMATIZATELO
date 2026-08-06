@@ -39,7 +39,7 @@ const lineas = [
             },
         ],
         enlaces: [
-            { href: "/servicios/formacion-ia-empresas", texto: "Formatos y tarifas de formación" },
+            { href: "/formacion", texto: "Formatos y tarifas de formación" },
         ],
     },
     {
@@ -65,8 +65,8 @@ const lineas = [
             },
         ],
         enlaces: [
-            { href: "/servicios/auditoria-ia", texto: "Alcance y precios de la auditoría" },
-            { href: "/formacion-obligatoria-ai-act", texto: "Qué exige el Art. 4" },
+            { href: "/cumplimiento", texto: "Alcance y precios de la auditoría" },
+            { href: "/formacion/ai-act", texto: "Qué exige el Art. 4" },
         ],
     },
     {
@@ -92,7 +92,7 @@ const lineas = [
             },
         ],
         enlaces: [
-            { href: "/casos-de-exito", texto: "Ver sistemas ya entregados" },
+            { href: "/casos", texto: "Ver sistemas ya entregados" },
             { href: "/precios", texto: "Precios de los proyectos" },
         ],
     },
@@ -284,7 +284,7 @@ export default function ComoTrabajoPage() {
                         <div className="ct-linea-enlaces">
                             {l.enlaces.map((e) => (
                                 <Link
-                                    key={e.href}
+                                    key={e.texto}
                                     href={e.href}
                                     style={{ color: l.oscuro ? "#f6c39c" : "var(--color-primary)", fontWeight: 600, fontSize: "0.95rem" }}
                                 >

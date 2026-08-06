@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import TechMarquee from "@/components/TechMarquee";
 import QueAutomatizamos from "@/components/QueAutomatizamos";
+import CursoEstrellaHome from "@/components/CursoEstrellaHome";
 import Razones from "@/components/Razones";
 import Encaje from "@/components/Encaje";
 import DelBlog from "@/components/DelBlog";
@@ -36,6 +37,9 @@ export default function Home() {
 
       {/* 2b. Hub de servicios con enlaces internos */}
       <QueAutomatizamos />
+
+      {/* 2c. Curso estrella — el producto insignia de la puerta de formación */}
+      <CursoEstrellaHome />
 
       {/* 3. Cómo trabajamos */}
       <HowWeWork />

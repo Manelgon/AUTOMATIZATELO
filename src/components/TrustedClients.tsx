@@ -39,7 +39,7 @@ export default function TrustedClients() {
                             Sistemas que ya funcionan, y quién los usa
                         </h2>
                     </div>
-                    <Link href="/casos-de-exito" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                    <Link href="/casos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                         Ver los casos completos →
                     </Link>
                 </div>
@@ -51,7 +51,7 @@ export default function TrustedClients() {
                     {[...casos, ...casos].map((c, i) => (
                         <Link
                             key={`${c.nombre}-${i}`}
-                            href="/casos-de-exito"
+                            href="/casos"
                             className="caso-chip"
                             aria-hidden={i >= casos.length}
                             tabIndex={i >= casos.length ? -1 : undefined}

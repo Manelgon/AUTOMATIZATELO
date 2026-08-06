@@ -70,10 +70,22 @@ const formacion = [
         ],
     },
     {
+        name: "Curso estrella: Alfabetización + herramienta",
+        price: "1.200",
+        description: "El formato que mejor funciona: el bloque obligatorio del Art. 4 y un taller práctico con la herramienta que ya usa tu equipo.",
+        highlight: true,
+        features: [
+            "Sesión 1: alfabetización del Art. 4 (obligatoria)",
+            "Sesión 2: ChatGPT, Copilot o Gemini con vuestros casos",
+            "Desde 4 + 4 horas, adaptable por equipo",
+            "Certificado nominal y registro formativo",
+        ],
+    },
+    {
         name: "Taller intensivo",
         price: "900",
         description: "Un día, un tema, saliendo con cosas montadas para tu trabajo.",
-        highlight: true,
+        highlight: false,
         features: [
             "1 día completo (8 horas)",
             "Práctico: cada equipo con sus casos",
@@ -281,11 +293,11 @@ export default function PreciosPage() {
                     <Parrilla planes={formacion} cols4 />
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: 720 }}>
                         Itinerarios, evidencia documental y el detalle del Art. 4 del AI Act, en la{" "}
-                        <Link href="/servicios/formacion-ia-empresas" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <Link href="/formacion" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             página de formación
                         </Link>{" "}
                         y en la guía de{" "}
-                        <Link href="/formacion-obligatoria-ai-act" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <Link href="/formacion/ai-act" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             formación obligatoria del AI Act
                         </Link>.
                     </p>
@@ -308,7 +320,7 @@ export default function PreciosPage() {
                     <Parrilla planes={auditoria} cols2 />
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: 720 }}>
                         El detalle del servicio, en la página de{" "}
-                        <Link href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <Link href="/cumplimiento" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             auditoría IA
                         </Link>.
                     </p>
@@ -331,15 +343,15 @@ export default function PreciosPage() {
                     <Parrilla planes={proyectos} />
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.5rem", maxWidth: 720 }}>
                         El detalle de cada pieza está en{" "}
-                        <Link href="/servicios/automatizacion" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <Link href="/sistemas" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             automatización de procesos
                         </Link>
                         ,{" "}
-                        <Link href="/servicios/chatbots" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <Link href="/sistemas/chatbots-whatsapp" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             chatbots
                         </Link>
                         ,{" "}
-                        <Link href="/servicios/paneles" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <Link href="/sistemas" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             paneles a medida
                         </Link>{" "}
                         y en las páginas de cada sector.

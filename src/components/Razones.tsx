@@ -7,7 +7,7 @@ const razones = [
         num: "01",
         titulo: "Construyo lo que enseño",
         texto: "No vivo de diapositivas: los bots, paneles y cursos que enseño y audito llevan meses funcionando en negocios reales.",
-        link: { href: "/casos-de-exito", label: "Ver los casos" },
+        link: { href: "/casos", label: "Ver los casos" },
     },
     {
         num: "02",
@@ -23,7 +23,7 @@ const razones = [
         num: "04",
         titulo: "Te enseño a no depender de mí",
         texto: "Formo a tu equipo para que el sistema sea vuestro de verdad. Un sistema que nadie usa no es automatización.",
-        link: { href: "/servicios/formacion-ia-empresas", label: "Cómo es la formación" },
+        link: { href: "/formacion", label: "Cómo es la formación" },
     },
 ];
 

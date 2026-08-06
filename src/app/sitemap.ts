@@ -3,203 +3,60 @@ import { supabaseServer } from '@/lib/supabase-server'
 
 export const revalidate = 3600;
 
+// Sitemap v2: 24 páginas de contenido + blog dinámico. Las URLs viejas
+// redirigen con 301 desde next.config.ts — aquí solo vive el mundo nuevo.
+const BASE = 'https://automatizatelo.com';
+
+const PAGINAS: { ruta: string; freq: 'weekly' | 'monthly' | 'yearly'; prio: number }[] = [
+    // Núcleo
+    { ruta: '', freq: 'weekly', prio: 1 },
+    { ruta: '/como-trabajo', freq: 'monthly', prio: 0.7 },
+    { ruta: '/precios', freq: 'monthly', prio: 0.9 },
+    { ruta: '/casos', freq: 'monthly', prio: 0.7 },
+    { ruta: '/sobre-mi', freq: 'monthly', prio: 0.6 },
+    { ruta: '/diagnostico', freq: 'monthly', prio: 0.8 },
+    { ruta: '/recursos', freq: 'monthly', prio: 0.5 },
+    { ruta: '/blog', freq: 'weekly', prio: 0.7 },
+    // Pilar 1 — Formación
+    { ruta: '/formacion', freq: 'monthly', prio: 0.9 },
+    { ruta: '/formacion/ai-act', freq: 'monthly', prio: 0.9 },
+    { ruta: '/formacion/chatgpt', freq: 'monthly', prio: 0.8 },
+    { ruta: '/formacion/copilot', freq: 'monthly', prio: 0.8 },
+    { ruta: '/formacion/gemini', freq: 'monthly', prio: 0.8 },
+    { ruta: '/formacion/claude', freq: 'monthly', prio: 0.8 },
+    { ruta: '/formacion/centros-educativos', freq: 'monthly', prio: 0.8 },
+    { ruta: '/formacion/directivos', freq: 'monthly', prio: 0.8 },
+    // Pilar 2 — Cumplimiento
+    { ruta: '/cumplimiento', freq: 'monthly', prio: 0.9 },
+    // Pilar 3 — Sistemas
+    { ruta: '/sistemas', freq: 'monthly', prio: 0.9 },
+    { ruta: '/sistemas/documentos', freq: 'monthly', prio: 0.8 },
+    { ruta: '/sistemas/ventas', freq: 'monthly', prio: 0.8 },
+    { ruta: '/sistemas/crm', freq: 'monthly', prio: 0.8 },
+    { ruta: '/sistemas/paneles', freq: 'monthly', prio: 0.8 },
+    { ruta: '/sistemas/chatbots-whatsapp', freq: 'monthly', prio: 0.8 },
+    { ruta: '/sistemas/integracion', freq: 'monthly', prio: 0.8 },
+    // Sectores
+    { ruta: '/sectores/administradores-fincas', freq: 'monthly', prio: 0.8 },
+    { ruta: '/sectores/despachos', freq: 'monthly', prio: 0.8 },
+    { ruta: '/sectores/academias', freq: 'monthly', prio: 0.8 },
+    { ruta: '/sectores/rrhh', freq: 'monthly', prio: 0.8 },
+    // Legales
+    { ruta: '/aviso-legal', freq: 'yearly', prio: 0.1 },
+    { ruta: '/proteccion-datos', freq: 'yearly', prio: 0.1 },
+    { ruta: '/politica-cookies', freq: 'yearly', prio: 0.1 },
+    { ruta: '/declaracion-accesibilidad', freq: 'yearly', prio: 0.1 },
+];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const now = new Date();
 
-    const staticPages: MetadataRoute.Sitemap = [
-        {
-            url: 'https://automatizatelo.com',
-            lastModified: now,
-            changeFrequency: 'weekly',
-            priority: 1,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/auditoria-ia',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/implantacion-ia',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/implantacion-crm',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/integracion-sistemas',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/diagnostico',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/chatbots',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/chatbots-whatsapp',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/automatizacion-ventas',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/extraccion-datos-documentos',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/produccion-cursos-scorm',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/paneles',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/formacion-ia-despachos',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/formacion-ia-directivos',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/recursos',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: 'https://automatizatelo.com/automatizacion-empresas-servicios',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/blog',
-            lastModified: now,
-            changeFrequency: 'weekly',
-            priority: 0.7,
-        },
-        {
-            url: 'https://automatizatelo.com/sobre-mi',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
-        {
-            url: 'https://automatizatelo.com/casos-de-exito',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/automatizacion-administradores-fincas',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/automatizacion-academias',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/automatizacion-reclutamiento-rrhh',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/formacion-ia-empresas',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/servicios/automatizacion',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/formacion-obligatoria-ai-act',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://automatizatelo.com/formacion-ia-centros-educativos',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/precios',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://automatizatelo.com/como-trabajo',
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
-            url: 'https://automatizatelo.com/aviso-legal',
-            lastModified: now,
-            changeFrequency: 'yearly',
-            priority: 0.1,
-        },
-        {
-            url: 'https://automatizatelo.com/proteccion-datos',
-            lastModified: now,
-            changeFrequency: 'yearly',
-            priority: 0.1,
-        },
-        {
-            url: 'https://automatizatelo.com/politica-cookies',
-            lastModified: now,
-            changeFrequency: 'yearly',
-            priority: 0.1,
-        },
-        {
-            url: 'https://automatizatelo.com/declaracion-accesibilidad',
-            lastModified: now,
-            changeFrequency: 'yearly',
-            priority: 0.1,
-        },
-    ];
+    const staticPages: MetadataRoute.Sitemap = PAGINAS.map((p) => ({
+        url: `${BASE}${p.ruta}`,
+        lastModified: now,
+        changeFrequency: p.freq,
+        priority: p.prio,
+    }));
 
     let blogPages: MetadataRoute.Sitemap = [];
     try {
@@ -210,7 +67,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             .eq('is_visible', true);
         if (data) {
             blogPages = data.map((p) => ({
-                url: `https://automatizatelo.com/blog/${p.slug}`,
+                url: `${BASE}/blog/${p.slug}`,
                 lastModified: new Date(p.updated_at || p.published_at || p.created_at),
                 changeFrequency: 'monthly' as const,
                 priority: 0.6,

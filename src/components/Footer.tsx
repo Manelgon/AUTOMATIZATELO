@@ -6,7 +6,7 @@ const explora = [
     { href: "/#que-automatizamos", label: "Qué implanto" },
     { href: "/como-trabajo", label: "Cómo trabajo" },
     { href: "/precios", label: "Precios" },
-    { href: "/casos-de-exito", label: "Casos de éxito" },
+    { href: "/casos", label: "Casos de éxito" },
     { href: "/diagnostico", label: "Diagnóstico de automatización" },
     { href: "/recursos", label: "Recursos gratis" },
     { href: "/blog", label: "Blog" },
@@ -14,32 +14,32 @@ const explora = [
     { href: "/#faq", label: "FAQ" },
 ];
 
-// Misma jerarquía que el menú: tres pilares y sus especializadas sangradas.
+// Misma jerarquía que el menú: tres pilares y sus hijas sangradas.
 // `sub` marca las hijas — se pintan con sangría y borde, estilo índice.
 const servicios = [
-    { href: "/servicios/formacion-ia-empresas", label: "Formación en IA" },
-    { href: "/formacion-obligatoria-ai-act", label: "Formación del Art. 4 (EU AI Act)", sub: true },
-    { href: "/servicios/produccion-cursos-scorm", label: "Producción de cursos SCORM", sub: true },
-    { href: "/servicios/auditoria-ia", label: "Consultoría y cumplimiento" },
-    { href: "/servicios/implantacion-ia", label: "Implantación de herramientas IA", sub: true },
-    { href: "/servicios/implantacion-crm", label: "Implantación de CRM", sub: true },
-    { href: "/servicios/automatizacion", label: "Automatización y sistemas" },
-    { href: "/servicios/integracion-sistemas", label: "Integración de sistemas", sub: true },
-    { href: "/servicios/automatizacion-ventas", label: "Automatización de ventas", sub: true },
-    { href: "/servicios/chatbots", label: "Chatbots", sub: true },
-    { href: "/servicios/chatbots-whatsapp", label: "Chatbots de WhatsApp", sub: true },
-    { href: "/servicios/extraccion-datos-documentos", label: "Extracción de datos (OCR + IA)", sub: true },
-    { href: "/servicios/paneles", label: "Paneles a medida", sub: true },
+    { href: "/formacion", label: "Formación en IA" },
+    { href: "/formacion/ai-act", label: "Alfabetización del Art. 4 (AI Act)", sub: true },
+    { href: "/formacion/chatgpt", label: "Curso de ChatGPT", sub: true },
+    { href: "/formacion/copilot", label: "Curso de Copilot 365", sub: true },
+    { href: "/formacion/gemini", label: "Curso de Gemini + NotebookLM", sub: true },
+    { href: "/formacion/claude", label: "Curso de Claude", sub: true },
+    { href: "/formacion/directivos", label: "Sesión ejecutiva para dirección", sub: true },
+    { href: "/cumplimiento", label: "Cumplimiento del AI Act" },
+    { href: "/sistemas", label: "Automatización y sistemas" },
+    { href: "/sistemas/documentos", label: "Facturas y documentos (OCR + IA)", sub: true },
+    { href: "/sistemas/ventas", label: "Automatización de ventas", sub: true },
+    { href: "/sistemas/crm", label: "Implantación de CRM", sub: true },
+    { href: "/sistemas/paneles", label: "Paneles a medida", sub: true },
+    { href: "/sistemas/chatbots-whatsapp", label: "Chatbots — WhatsApp y web", sub: true },
+    { href: "/sistemas/integracion", label: "Integración de sistemas", sub: true },
 ];
 
 const porSector = [
-    { href: "/automatizacion-administradores-fincas", label: "Administradores de fincas" },
-    { href: "/formacion-ia-despachos", label: "Despachos profesionales" },
-    { href: "/formacion-ia-centros-educativos", label: "Centros educativos" },
-    { href: "/automatizacion-academias", label: "Academias y formación online" },
-    { href: "/automatizacion-reclutamiento-rrhh", label: "Selección de personal y RRHH" },
-    { href: "/automatizacion-empresas-servicios", label: "Empresas de servicios" },
-    { href: "/formacion-ia-directivos", label: "Equipos directivos" },
+    { href: "/sectores/administradores-fincas", label: "Administradores de fincas" },
+    { href: "/sectores/despachos", label: "Despachos profesionales" },
+    { href: "/formacion/centros-educativos", label: "Centros educativos" },
+    { href: "/sectores/academias", label: "Academias y formación online" },
+    { href: "/sectores/rrhh", label: "Selección de personal y RRHH" },
 ];
 
 const linkStyle = { color: "rgba(250,246,239,0.7)" } as const;

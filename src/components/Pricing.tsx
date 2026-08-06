@@ -73,12 +73,28 @@ const planesFormacion = [
         ctaHref: "#contact",
     },
     {
+        name: "Alfabetización + herramienta",
+        price: "1.200",
+        desde: true,
+        description: "El formato que mejor funciona: el bloque del Art. 4 más un taller práctico con la herramienta que ya usáis.",
+        badge: "Curso estrella",
+        highlight: true,
+        features: [
+            "Sesión 1: alfabetización del Art. 4",
+            "Sesión 2: ChatGPT, Copilot o Gemini con vuestros casos",
+            "Desde 4 + 4 horas, adaptable por equipo",
+            "Certificado nominal y registro formativo",
+        ],
+        cta: "Solicitar Propuesta",
+        ctaHref: "#contact",
+    },
+    {
         name: "Taller intensivo",
         price: "900",
         desde: true,
         description: "Un día, un tema, saliendo con cosas montadas para tu trabajo.",
-        badge: "Más popular",
-        highlight: true,
+        badge: null,
+        highlight: false,
         features: [
             "1 día completo (8 horas)",
             "Práctico: cada equipo con sus casos",
@@ -303,7 +319,7 @@ export default function Pricing() {
                         El precio final depende del número de participantes y la modalidad, y se
                         cierra en la propuesta. Todo el detalle — itinerarios, Art. 4 y evidencia
                         documental — está en la{" "}
-                        <a href="/servicios/formacion-ia-empresas" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <a href="/formacion" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             página de formación
                         </a>.
                     </p>
@@ -312,7 +328,7 @@ export default function Pricing() {
                     <p style={{ textAlign: "center", color: "var(--color-text-muted)", marginTop: "2rem", fontSize: "1rem", maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
                         El precio final depende del tamaño de la empresa y las herramientas en uso.
                         Qué revisa y qué te llevas, en la página de{" "}
-                        <a href="/servicios/auditoria-ia" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                        <a href="/cumplimiento" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             auditoría IA
                         </a>.
                     </p>

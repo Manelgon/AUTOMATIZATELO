@@ -219,19 +219,19 @@ export default async function BlogPostPage(
                 <aside className="post-siguiente">
                     <span className="mono-label">Y ahora, ¿por dónde sigo?</span>
                     <div className="post-siguiente-grid">
-                        <Link href="/servicios/formacion-ia-empresas">
+                        <Link href="/formacion">
                             <strong>Formación en IA</strong>
                             <span>Que tu equipo la use con criterio — desde 600€</span>
                         </Link>
-                        <Link href="/servicios/auditoria-ia">
+                        <Link href="/cumplimiento">
                             <strong>Auditoría IA (AI Act)</strong>
                             <span>¿Tu empresa cumple? Informe y plan desde 750€</span>
                         </Link>
-                        <Link href="/servicios/automatizacion">
+                        <Link href="/sistemas">
                             <strong>Automatización de procesos</strong>
                             <span>Que el trabajo repetitivo se haga solo</span>
                         </Link>
-                        <Link href="/casos-de-exito">
+                        <Link href="/casos">
                             <strong>Casos de éxito</strong>
                             <span>Sistemas reales en producción, con sus resultados</span>
                         </Link>

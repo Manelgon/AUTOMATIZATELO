@@ -8,7 +8,7 @@ import Link from "next/link";
 const sectores = [
     {
         sector: "Administradores de Fincas",
-        href: "/automatizacion-administradores-fincas",
+        href: "/sectores/administradores-fincas",
         icon: "fa-building",
         imagen: "fincas",
         frase: "Panel en uso diario en despachos reales desde enero de 2026.",
@@ -16,7 +16,7 @@ const sectores = [
     },
     {
         sector: "Centros Educativos",
-        href: "/formacion-ia-centros-educativos",
+        href: "/formacion/centros-educativos",
         icon: "fa-graduation-cap",
         imagen: "educacion",
         frase: "Formación del claustro, política de uso de IA y cumplimiento del Art. 4.",
@@ -24,7 +24,7 @@ const sectores = [
     },
     {
         sector: "Academias y Formación",
-        href: "/automatizacion-academias",
+        href: "/sectores/academias",
         icon: "fa-book-open",
         imagen: "academias",
         frase: "Panel de academia en producción y cursos SCORM en venta.",
@@ -32,7 +32,7 @@ const sectores = [
     },
     {
         sector: "Empresas de Servicios",
-        href: "/automatizacion-empresas-servicios",
+        href: "/sistemas",
         icon: "fa-briefcase",
         imagen: "servicios",
         frase: "CRM y seguimiento de leads en menos de 5 minutos.",

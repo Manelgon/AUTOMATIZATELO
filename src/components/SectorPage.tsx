@@ -200,7 +200,7 @@ export default function SectorPage(p: SectorPageProps) {
                         </motion.div>
                         <div className="sp-relacionados">
                             {p.relacionados.map((r, i) => (
-                                <motion.div key={r.href} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal} transition={{ delay: i * 0.06 }}>
+                                <motion.div key={r.titulo} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal} transition={{ delay: i * 0.06 }}>
                                     <Link href={r.href} className="sp-relacionado">
                                         <i className={`fa-solid ${r.icon}`}></i>
                                         <span>

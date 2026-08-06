@@ -134,31 +134,31 @@ const AREAS: Record<Area, { nombre: string; consejo: string; href: string; enlac
     comercial: {
         nombre: "Captación y ventas",
         consejo: "Cada contacto sin contestar es dinero que se va a otro. Un CRM conectado a tu web y presupuestos con plantilla lo arreglan en semanas.",
-        href: "/servicios/automatizacion-ventas",
+        href: "/sistemas",
         enlace: "Automatización de ventas",
     },
     administracion: {
         nombre: "Administración y papeleo",
         consejo: "Facturas, cobros y documentos que se procesan solos: es la automatización con el retorno más rápido y medible.",
-        href: "/servicios/automatizacion",
+        href: "/sistemas",
         enlace: "Automatización de procesos",
     },
     atencion: {
         nombre: "Atención al cliente",
         consejo: "Las preguntas repetidas y las citas no necesitan tu tiempo: un chatbot bien conectado responde 24/7 y agenda solo.",
-        href: "/servicios/chatbots",
+        href: "/sistemas/chatbots-whatsapp",
         enlace: "Chatbots",
     },
     datos: {
         nombre: "Datos y herramientas",
         consejo: "Si copias datos de un programa a otro, te falta integración; si decides a ojo, te falta un panel. Las dos cosas se montan sobre lo que ya usas.",
-        href: "/servicios/integracion-sistemas",
+        href: "/sistemas/integracion",
         enlace: "Integración de sistemas",
     },
     ia: {
         nombre: "IA y cumplimiento",
         consejo: "El Reglamento de IA ya aplica y sanciona desde agosto de 2026. La formación del Art. 4 con certificados te pone en regla — y de paso el equipo aprende a usarla bien.",
-        href: "/servicios/formacion-ia-empresas",
+        href: "/formacion",
         enlace: "Formación en IA",
     },
 };

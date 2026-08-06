@@ -167,7 +167,7 @@ export default function SobreMiPage() {
                         ))}
                     </div>
 
-                    <Link href="/casos-de-exito" style={{ color: "var(--color-primary)", fontWeight: 600, display: "inline-block", marginTop: "1.8rem" }}>
+                    <Link href="/casos" style={{ color: "var(--color-primary)", fontWeight: 600, display: "inline-block", marginTop: "1.8rem" }}>
                         Ver los casos con detalle →
                     </Link>
                 </div>

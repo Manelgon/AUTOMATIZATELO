@@ -89,7 +89,7 @@ export async function POST(request: Request) {
             sector: finalSector,
             automation_goal: '',
             // embudo
-            flow_name: 'web',
+            flow_name: ['formacion', 'web'].includes(body.flow_name) ? body.flow_name : 'web',
             activity: 'lead_inactivo',
             process_tags: ['nuevo'],
             last_interaction_date: new Date().toISOString(),

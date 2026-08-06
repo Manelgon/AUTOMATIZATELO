@@ -10,19 +10,19 @@ const servicios = [
         icon: "fa-graduation-cap",
         titulo: "Formación en IA",
         desc: "Alfabetización del Art. 4 — obligatoria desde 2025 — y formación in-company para despachos, directivos y claustros. Con certificados.",
-        href: "/servicios/formacion-ia-empresas",
+        href: "/formacion",
     },
     {
         icon: "fa-clipboard-check",
         titulo: "Consultoría y cumplimiento",
         desc: "Auditoría del AI Act con informe y plan, política de uso, y ChatGPT, Copilot o tu CRM implantados con cabeza.",
-        href: "/servicios/auditoria-ia",
+        href: "/cumplimiento",
     },
     {
         icon: "fa-gears",
         titulo: "Automatización y sistemas",
         desc: "Procesos que se hacen solos: integración entre tus herramientas, chatbots de WhatsApp y web, lectura de documentos y paneles a medida.",
-        href: "/servicios/automatizacion",
+        href: "/sistemas",
     },
 ];
 

@@ -12,7 +12,7 @@ const fases = [
         texto:
             "Talleres prácticos con vuestros casos reales, no diapositivas genéricas: cada persona sale sabiendo qué pedirle a la IA en su puesto — y qué no. Con certificado nominal y registro formativo, la evidencia que exige el Art. 4.",
         precio: "desde 600€",
-        linkHref: "/servicios/formacion-ia-empresas",
+        linkHref: "/formacion",
         linkLabel: "Ver formatos y tarifas",
     },
     {
@@ -22,7 +22,7 @@ const fases = [
         texto:
             "Reviso qué IA usa tu empresa de verdad, clasifico los riesgos según el Reglamento Europeo y te entrego el informe con el plan de acción. Y si quieres cerrarlo: política de uso redactada y formación del Art. 4.",
         precio: "desde 750€",
-        linkHref: "/servicios/auditoria-ia",
+        linkHref: "/cumplimiento",
         linkLabel: "Ver qué incluye la auditoría",
     },
     {
@@ -32,7 +32,7 @@ const fases = [
         texto:
             "Chatbots, paneles a medida y flujos que eliminan el trabajo manual — construidos por hitos, probados con tus datos y entregados funcionando. El código y los datos, siempre tuyos.",
         precio: "desde 900€",
-        linkHref: "/casos-de-exito",
+        linkHref: "/casos",
         linkLabel: "Ver sistemas que ya funcionan",
     },
 ];
