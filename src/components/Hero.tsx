@@ -76,10 +76,10 @@ export default function Hero() {
                     transition={{ delay: 0.3 }}
                     style={{ fontSize: '1.15rem', maxWidth: '540px', margin: '0 0 2.2rem', color: 'rgba(250,246,239,0.88)', lineHeight: 1.7, textShadow: '0 1px 20px rgba(28,25,23,0.4)' }}
                 >
-                    Soy Manel. Formo a tu equipo, te pongo en regla con el Reglamento
-                    Europeo de IA y construyo los sistemas que ya trabajan cada día en
-                    despachos, academias y pymes reales. Sin complicaciones: empezamos
-                    con 30 minutos gratis.
+                    Formo a tu equipo, te pongo al día con el Reglamento Europeo de IA
+                    y construyo los sistemas que ya trabajan cada día en despachos,
+                    academias y pymes reales. Sin complicaciones: empezamos con
+                    30 minutos gratis.
                 </motion.p>
 
                 <motion.div
