@@ -13,30 +13,32 @@ const explora = [
     { href: "/#faq", label: "FAQ" },
 ];
 
+// Misma jerarquía que el menú: tres pilares y sus especializadas sangradas.
+// `sub` marca las hijas — se pintan con sangría y borde, estilo índice.
 const servicios = [
     { href: "/servicios/formacion-ia-empresas", label: "Formación en IA" },
-    { href: "/servicios/auditoria-ia", label: "Auditoría IA (AI Act)" },
-    { href: "/servicios/implantacion-ia", label: "Implantación de herramientas IA" },
-    { href: "/servicios/implantacion-crm", label: "Implantación de CRM" },
-    { href: "/servicios/automatizacion", label: "Automatización de procesos" },
-    { href: "/servicios/integracion-sistemas", label: "Integración de sistemas" },
-    { href: "/servicios/automatizacion-ventas", label: "Automatización de ventas" },
-    { href: "/servicios/chatbots", label: "Chatbots" },
-    { href: "/servicios/chatbots-whatsapp", label: "Chatbots de WhatsApp" },
-    { href: "/servicios/paneles", label: "Paneles a medida" },
-    { href: "/servicios/extraccion-datos-documentos", label: "Extracción de datos (OCR + IA)" },
-    { href: "/servicios/produccion-cursos-scorm", label: "Producción de cursos SCORM" },
+    { href: "/formacion-obligatoria-ai-act", label: "Formación del Art. 4 (EU AI Act)", sub: true },
+    { href: "/servicios/produccion-cursos-scorm", label: "Producción de cursos SCORM", sub: true },
+    { href: "/servicios/auditoria-ia", label: "Consultoría y cumplimiento" },
+    { href: "/servicios/implantacion-ia", label: "Implantación de herramientas IA", sub: true },
+    { href: "/servicios/implantacion-crm", label: "Implantación de CRM", sub: true },
+    { href: "/servicios/automatizacion", label: "Automatización y sistemas" },
+    { href: "/servicios/integracion-sistemas", label: "Integración de sistemas", sub: true },
+    { href: "/servicios/automatizacion-ventas", label: "Automatización de ventas", sub: true },
+    { href: "/servicios/chatbots", label: "Chatbots", sub: true },
+    { href: "/servicios/chatbots-whatsapp", label: "Chatbots de WhatsApp", sub: true },
+    { href: "/servicios/extraccion-datos-documentos", label: "Extracción de datos (OCR + IA)", sub: true },
+    { href: "/servicios/paneles", label: "Paneles a medida", sub: true },
 ];
 
 const porSector = [
     { href: "/automatizacion-administradores-fincas", label: "Administradores de fincas" },
+    { href: "/formacion-ia-despachos", label: "Despachos profesionales" },
+    { href: "/formacion-ia-centros-educativos", label: "Centros educativos" },
     { href: "/automatizacion-academias", label: "Academias y formación online" },
     { href: "/automatizacion-reclutamiento-rrhh", label: "Selección de personal y RRHH" },
     { href: "/automatizacion-empresas-servicios", label: "Empresas de servicios" },
-    { href: "/formacion-ia-despachos", label: "Formación · Despachos" },
-    { href: "/formacion-ia-centros-educativos", label: "Formación · Centros educativos" },
-    { href: "/formacion-ia-directivos", label: "Formación · Directivos" },
-    { href: "/formacion-obligatoria-ai-act", label: "Guía del AI Act (Art. 4)" },
+    { href: "/formacion-ia-directivos", label: "Equipos directivos" },
 ];
 
 const linkStyle = { color: "rgba(250,246,239,0.7)" } as const;
@@ -99,13 +101,22 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Servicios — qué hago */}
+                    {/* Servicios — qué hago, con la jerarquía de pilares */}
                     <div className="footer-col">
                         <p style={tituloCol}>Servicios</p>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                             {servicios.map((l) => (
-                                <li key={l.href}>
-                                    <a href={l.href} style={linkStyle}>{l.label}</a>
+                                <li
+                                    key={l.href}
+                                    style={l.sub ? {
+                                        paddingLeft: '0.9rem',
+                                        borderLeft: '1px solid rgba(250,246,239,0.18)',
+                                        marginLeft: '0.2rem',
+                                    } : undefined}
+                                >
+                                    <a href={l.href} style={l.sub ? { color: "rgba(250,246,239,0.55)", fontSize: '0.92em' } : linkStyle}>
+                                        {l.label}
+                                    </a>
                                 </li>
                             ))}
                         </ul>

@@ -3,48 +3,26 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+// Tres pilares, como el menú: formarse, cumplir, automatizar. Cada uno lleva
+// a su página hub, y desde ahí a las especializadas.
 const servicios = [
     {
         icon: "fa-graduation-cap",
-        titulo: "Formación en IA para tu equipo",
-        desc: "Talleres prácticos, gobernanza y cursos a medida. Cumple el AI Act.",
+        titulo: "Formación en IA",
+        desc: "Alfabetización del Art. 4 — obligatoria desde 2025 — y formación in-company para despachos, directivos y claustros. Con certificados.",
         href: "/servicios/formacion-ia-empresas",
     },
     {
         icon: "fa-clipboard-check",
-        titulo: "Auditoría de cumplimiento (AI Act)",
-        desc: "¿Cumples el Reglamento de IA? Informe, plan de acción y política de uso.",
+        titulo: "Consultoría y cumplimiento",
+        desc: "Auditoría del AI Act con informe y plan, política de uso, y ChatGPT, Copilot o tu CRM implantados con cabeza.",
         href: "/servicios/auditoria-ia",
     },
     {
-        icon: "fa-rocket",
-        titulo: "ChatGPT o Copilot en tu empresa",
-        desc: "Elección sin comisiones, configuración segura y casos de uso por puesto.",
-        href: "/servicios/implantacion-ia",
-    },
-    {
         icon: "fa-gears",
-        titulo: "Automatización de procesos",
-        desc: "Los flujos repetitivos de tu pyme, funcionando solos de principio a fin.",
+        titulo: "Automatización y sistemas",
+        desc: "Procesos que se hacen solos: integración entre tus herramientas, chatbots de WhatsApp y web, lectura de documentos y paneles a medida.",
         href: "/servicios/automatizacion",
-    },
-    {
-        icon: "fa-robot",
-        titulo: "Chatbots que atienden solos",
-        desc: "Atención por WhatsApp y web, 24/7, conectada a tu agenda o tu sistema.",
-        href: "/servicios/chatbots",
-    },
-    {
-        icon: "fa-chart-line",
-        titulo: "Paneles y dashboards a medida",
-        desc: "Toda la gestión de tu negocio en un solo sitio: clientes, incidencias, métricas.",
-        href: "/servicios/paneles",
-    },
-    {
-        icon: "fa-file-invoice",
-        titulo: "Facturas y documentos automáticos",
-        desc: "Los que llegan se leen solos, y tus facturas, albaranes e informes se generan solos.",
-        href: "/servicios/automatizacion#facturas",
     },
 ];
 

@@ -17,24 +17,21 @@ const sectorLinks = [
     { href: "/formacion-ia-directivos", num: "07", label: "Equipos Directivos", desc: "Sesión ejecutiva: qué decidir y por qué." },
 ];
 
+// Tres pilares, no quince puertas: el visitante elige entre formarse,
+// cumplir o automatizar. Las páginas especializadas siguen existiendo y
+// rankeando — se llega a ellas desde su pilar y desde el footer.
 const serviciosLinks = [
-    { href: "/servicios/formacion-ia-empresas", num: "01", title: "Formación en IA", desc: "Para empresas, despachos, centros y directivos." },
-    { href: "/servicios/auditoria-ia", num: "02", title: "Auditoría IA (AI Act)", desc: "¿Tu empresa cumple? Informe y plan." },
-    { href: "/servicios/implantacion-ia", num: "03", title: "Implantación de herramientas", desc: "ChatGPT, Copilot o Gemini, en marcha." },
-    { href: "/servicios/automatizacion", num: "04", title: "Automatización de procesos", desc: "Facturas, seguimiento, avisos y reportes." },
-    { href: "/servicios/chatbots", num: "05", title: "Chatbots", desc: "WhatsApp y web, conectados a tu sistema." },
-    { href: "/servicios/paneles", num: "06", title: "Paneles a medida", desc: "Tu negocio entero, en un solo sitio." },
+    { href: "/servicios/formacion-ia-empresas", num: "01", title: "Formación en IA", desc: "In-company y del Art. 4 — la obligatoria desde 2025." },
+    { href: "/servicios/auditoria-ia", num: "02", title: "Consultoría y cumplimiento", desc: "Auditoría del AI Act, política de uso e implantación." },
+    { href: "/servicios/automatizacion", num: "03", title: "Automatización y sistemas", desc: "Procesos, integraciones, chatbots y paneles." },
 ];
 
-// Servicios especializados: se descubren dentro de su servicio padre y por
-// buscador, pero también aquí en formato compacto para quien busca directo.
-const especializadosLinks = [
-    { href: "/servicios/chatbots-whatsapp", label: "Chatbots de WhatsApp" },
-    { href: "/servicios/implantacion-crm", label: "Implantación de CRM" },
-    { href: "/servicios/integracion-sistemas", label: "Integración de sistemas" },
-    { href: "/servicios/automatizacion-ventas", label: "Automatización de ventas" },
-    { href: "/servicios/extraccion-datos-documentos", label: "Extracción de datos (OCR + IA)" },
-    { href: "/servicios/produccion-cursos-scorm", label: "Producción de cursos SCORM" },
+// Atajos para quien llega sin saber por dónde entrar (patrón "empieza por aquí")
+const empiezaPorAqui = [
+    { href: "/formacion-obligatoria-ai-act", label: "Formación del Art. 4 — obligatoria desde 2025" },
+    { href: "/precios", label: "Precios cerrados, por escrito" },
+    { href: "/casos-de-exito", label: "Casos de éxito en producción real" },
+    { href: "/#contact", label: "30 minutos gratis — cuéntame tu caso" },
 ];
 
 export default function Header() {
@@ -148,8 +145,8 @@ export default function Header() {
                                         <span className="arrow">→</span>
                                     </Link>
                                 ))}
-                                <span className="dropdown-grupo" style={{ marginTop: '0.8rem' }}>Más específicos</span>
-                                {especializadosLinks.map((s) => (
+                                <span className="dropdown-grupo" style={{ marginTop: '0.8rem' }}>Empieza por aquí</span>
+                                {empiezaPorAqui.map((s) => (
                                     <Link
                                         key={s.href}
                                         href={s.href}
@@ -206,10 +203,9 @@ export default function Header() {
                         )}
                     </div>
 
-                    <Link href="/como-trabajo" onClick={closeAll}>Cómo trabajo</Link>
+                    {/* Barra corta a propósito: Cómo trabajo, Casos y Recursos
+                        viven en el desplegable y en el footer */}
                     <Link href="/precios" onClick={closeAll}>Precios</Link>
-                    <Link href="/casos-de-exito" onClick={closeAll}>Casos</Link>
-                    <Link href="/recursos" onClick={closeAll}>Recursos</Link>
                     <Link href="/blog" onClick={closeAll}>Blog</Link>
                     <Link href="/sobre-mi" onClick={closeAll}>Sobre mí</Link>
 
