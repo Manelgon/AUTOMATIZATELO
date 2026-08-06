@@ -290,6 +290,122 @@ export default function FormacionIaPage() {
                 </div>
             </section>
 
+            {/* El curso se monta con vuestro trabajo — personalización, con foto */}
+            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container fpv-grid" style={{ maxWidth: 1000 }}>
+                    <div>
+                        <span className="kicker-mono">Formación preparada para tu equipo</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "1rem" }}>
+                            El curso se monta con vuestro trabajo
+                        </h2>
+                        <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, marginBottom: "1.6rem", maxWidth: 560 }}>
+                            Antes de la primera sesión recojo vuestros casos: qué herramientas ya tenéis
+                            contratadas, qué tareas comen más horas, qué dudas y qué datos sensibles maneja
+                            cada puesto. Los ejercicios del curso salen de ahí — no de una plantilla.
+                        </p>
+                        <div className="fpv-punto">
+                            <i className="fa-solid fa-compass" style={{ color: "var(--color-primary)" }}></i>
+                            <div>
+                                <h3>Decisiones que salen resueltas</h3>
+                                <p>Qué herramientas se aprueban y cuáles no, qué datos no se pegan nunca en una IA y quién revisa qué. El equipo sale con criterio, no solo con trucos.</p>
+                            </div>
+                        </div>
+                        <div className="fpv-punto">
+                            <i className="fa-solid fa-box-archive" style={{ color: "var(--color-primary)" }}></i>
+                            <div>
+                                <h3>Lo que queda después</h3>
+                                <p>Certificado nominal por participante, registro formativo fechado, el material del curso y los casos montados en clase — que el equipo sigue usando el lunes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="fpv-foto">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/claustro.webp" alt="Formación de equipos en IA" loading="lazy" />
+                    </div>
+                </div>
+            </section>
+
+            {/* Catálogo: un curso por herramienta, en cards con foto */}
+            <section style={{ padding: "4.5rem 0" }}>
+                <div className="container" style={{ maxWidth: 1000 }}>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="kicker-mono">Catálogo</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            O elige el curso de una herramienta concreta
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            Si tenéis claro qué queréis dominar, cada herramienta tiene su curso. Todos con
+                            certificado y con vuestros casos reales.
+                        </p>
+                    </div>
+
+                    <div className="fpc-grid">
+                        {[
+                            {
+                                href: "/formacion/ai-act",
+                                foto: "/auditoria.webp",
+                                badge: "Obligatoria · Art. 4",
+                                titulo: "Alfabetización en IA",
+                                desc: "El bloque que exige el Reglamento: riesgos, marco jurídico y uso responsable.",
+                                datos: "4–8 h · toda la plantilla",
+                            },
+                            {
+                                href: "/formacion/chatgpt",
+                                foto: "/escribiendo-ventana.webp",
+                                badge: "El más pedido",
+                                titulo: "ChatGPT",
+                                desc: "GPTs por puesto, proyectos y tareas programadas. De básico a avanzado.",
+                                datos: "1 día · 8 h",
+                            },
+                            {
+                                href: "/formacion/copilot",
+                                foto: "/despachos.webp",
+                                badge: "Microsoft 365",
+                                titulo: "Copilot 365",
+                                desc: "Si vivís en Word, Excel, Outlook y Teams: la IA dentro del flujo de oficina.",
+                                datos: "1 día · 8 h",
+                            },
+                            {
+                                href: "/formacion/gemini",
+                                foto: "/academias.webp",
+                                badge: "Google Workspace",
+                                titulo: "Gemini + NotebookLM",
+                                desc: "Para equipos en Workspace, con NotebookLM para el conocimiento interno.",
+                                datos: "1 día · 8 h",
+                            },
+                            {
+                                href: "/formacion/claude",
+                                foto: "/equipos-directivos.webp",
+                                badge: "Documentos y agentes",
+                                titulo: "Claude",
+                                desc: "Documentos largos, proyectos y agentes. La herramienta con la que construyo mis propios sistemas.",
+                                datos: "1 día · 8 h",
+                            },
+                        ].map((c) => (
+                            <Link key={c.titulo} href={c.href} className="fpc-card">
+                                <span className="fpc-foto">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img src={c.foto} alt={`Curso de ${c.titulo}`} loading="lazy" />
+                                    <span className="fpc-badge">{c.badge}</span>
+                                </span>
+                                <span className="fpc-cuerpo">
+                                    <span className="fpc-titulo">{c.titulo}</span>
+                                    <span className="fpc-desc">{c.desc}</span>
+                                    <span className="fpc-datos mono-label">{c.datos}</span>
+                                </span>
+                            </Link>
+                        ))}
+                        <Link href="/#contact" className="fpc-card fpc-card-otra">
+                            <span className="fpc-cuerpo" style={{ justifyContent: "center", textAlign: "center", minHeight: "220px" }}>
+                                <span className="fpc-titulo" style={{ color: "var(--color-primary)" }}>¿Otra herramienta?</span>
+                                <span className="fpc-desc">La formación se monta sobre lo que ya usáis. Cuéntame qué tenéis y te propongo el curso.</span>
+                                <span style={{ color: "var(--color-primary)", fontWeight: 600, fontSize: "0.92rem" }}>Cuéntamelo →</span>
+                            </span>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* Formatos y precios */}
             <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
@@ -533,6 +649,132 @@ export default function FormacionIaPage() {
                 }
                 @media (max-width: 800px) {
                     .fp-audiencias { grid-template-columns: 1fr; }
+                }
+                .fpv-grid {
+                    display: grid;
+                    grid-template-columns: 1.15fr 1fr;
+                    gap: 3rem;
+                    align-items: center;
+                }
+                .fpv-punto {
+                    display: grid;
+                    grid-template-columns: 2rem 1fr;
+                    gap: 0.8rem;
+                    align-items: baseline;
+                    padding: 1.1rem 0;
+                    border-top: 1px solid var(--color-border);
+                }
+                .fpv-punto:last-of-type { padding-bottom: 0; }
+                .fpv-punto i { font-size: 1.15rem; }
+                .fpv-punto h3 {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.15rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    margin: 0 0 0.3rem;
+                    line-height: 1.3;
+                }
+                .fpv-punto p {
+                    color: var(--color-text-muted);
+                    line-height: 1.6;
+                    font-size: 0.92rem;
+                    margin: 0;
+                }
+                .fpv-foto {
+                    border-radius: var(--radius-md, 18px);
+                    overflow: hidden;
+                    box-shadow: var(--shadow-card);
+                    border: 1px solid var(--color-border);
+                }
+                .fpv-foto img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    min-height: 320px;
+                    object-fit: cover;
+                }
+                @media (max-width: 800px) {
+                    .fpv-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+                    .fpv-foto img { min-height: 220px; }
+                }
+                .fpc-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.3rem;
+                }
+                .fpc-card {
+                    display: flex;
+                    flex-direction: column;
+                    background: var(--color-card-bg);
+                    border: 1px solid var(--color-border);
+                    border-radius: var(--radius-md);
+                    box-shadow: var(--shadow-card);
+                    overflow: hidden;
+                    color: inherit;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .fpc-card:hover {
+                    transform: translateY(-4px);
+                    border-color: rgba(234, 88, 12, 0.4);
+                }
+                .fpc-foto {
+                    position: relative;
+                    display: block;
+                    aspect-ratio: 16 / 10;
+                    overflow: hidden;
+                }
+                .fpc-foto img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+                .fpc-card:hover .fpc-foto img { transform: scale(1.05); }
+                .fpc-badge {
+                    position: absolute;
+                    top: 0.7rem;
+                    left: 0.7rem;
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.62rem;
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    background: rgba(28, 25, 23, 0.85);
+                    color: #f6c39c;
+                    padding: 0.3rem 0.65rem;
+                    border-radius: 6px;
+                }
+                .fpc-cuerpo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.45rem;
+                    padding: 1.15rem 1.25rem 1.3rem;
+                    flex: 1;
+                }
+                .fpc-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    line-height: 1.25;
+                }
+                .fpc-desc {
+                    font-size: 0.88rem;
+                    color: var(--color-text-muted);
+                    line-height: 1.55;
+                    flex: 1;
+                }
+                .fpc-datos { color: var(--color-text-muted); }
+                .fpc-card-otra {
+                    border-style: dashed;
+                    background: transparent;
+                    box-shadow: none;
+                }
+                @media (max-width: 900px) {
+                    .fpc-grid { grid-template-columns: 1fr 1fr; }
+                }
+                @media (max-width: 600px) {
+                    .fpc-grid { grid-template-columns: 1fr; }
                 }
                 .fp-tabla-wrap {
                     overflow-x: auto;

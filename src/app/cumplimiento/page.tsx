@@ -232,6 +232,38 @@ export default function AuditoriaIAPage() {
                 </div>
             </section>
 
+            {/* Cómo transcurre — el proceso en 4 pasos, en orden temporal */}
+            <section style={{ padding: "4.5rem 0", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container" style={{ maxWidth: 1000 }}>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="kicker-mono">Cómo transcurre</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            De la primera reunión al expediente, en 4 pasos
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            El diagnóstico se entrega en una o dos semanas. Los pasos 3 y 4 son del pack completo.
+                        </p>
+                    </div>
+                    <div className="au-proceso">
+                        {[
+                            { n: "01", titulo: "Diagnóstico e inventario", d: "Una sesión para entender cómo trabajáis y el inventario de toda la IA en uso — también la que la plantilla usa por su cuenta." },
+                            { n: "02", titulo: "Clasificación y plan", d: "Cada uso clasificado según el Reglamento, y el plan de acción priorizado: qué hacer, en qué orden y qué cuesta." },
+                            { n: "03", titulo: "Política y gobernanza", d: "La política de uso de IA redactada para tu empresa: qué se puede usar, con qué datos y quién revisa qué." },
+                            { n: "04", titulo: "Formación y evidencia", d: "La alfabetización del Art. 4 impartida, con certificados nominales y el registro fechado. El expediente, cerrado." },
+                        ].map((p, i) => (
+                            <div key={p.n} className="au-paso">
+                                <div className="au-paso-cab">
+                                    <span className="au-paso-num">{p.n}</span>
+                                    {i < 3 && <span className="au-paso-linea" aria-hidden="true"></span>}
+                                </div>
+                                <h3>{p.titulo}</h3>
+                                <p>{p.d}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Absorbida de su antigua pagina: implantacion segura de herramientas */}
             <section id="implantacion" style={{ padding: "4.5rem 0" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
@@ -371,6 +403,54 @@ export default function AuditoriaIAPage() {
                     color: var(--color-text-main);
                     font-weight: 500;
                     line-height: 1.5;
+                }
+                .au-proceso {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 1.4rem;
+                }
+                .au-paso-cab {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.8rem;
+                    margin-bottom: 0.9rem;
+                }
+                .au-paso-num {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    color: var(--color-primary);
+                    background: rgba(234, 88, 12, 0.1);
+                    border: 1px solid rgba(234, 88, 12, 0.3);
+                    border-radius: 50px;
+                    padding: 0.35rem 0.75rem;
+                    flex-shrink: 0;
+                }
+                .au-paso-linea {
+                    flex: 1;
+                    height: 1px;
+                    background: var(--color-border);
+                }
+                .au-paso h3 {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.15rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    margin: 0 0 0.4rem;
+                    line-height: 1.3;
+                }
+                .au-paso p {
+                    color: var(--color-text-muted);
+                    font-size: 0.89rem;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+                @media (max-width: 900px) {
+                    .au-proceso { grid-template-columns: 1fr 1fr; }
+                    .au-paso-linea { display: none; }
+                }
+                @media (max-width: 560px) {
+                    .au-proceso { grid-template-columns: 1fr; }
                 }
                 .au-precios {
                     display: grid;

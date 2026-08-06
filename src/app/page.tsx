@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import TechMarquee from "@/components/TechMarquee";
-import QueAutomatizamos from "@/components/QueAutomatizamos";
 import CursoEstrellaHome from "@/components/CursoEstrellaHome";
-import Razones from "@/components/Razones";
-import Encaje from "@/components/Encaje";
+import PilaresHome from "@/components/PilaresHome";
+import CifrasHome from "@/components/CifrasHome";
+import TestimonioHome from "@/components/TestimonioHome";
+import TrustedClients from "@/components/TrustedClients";
+import ContactForm from "@/components/ContactForm";
 import DelBlog from "@/components/DelBlog";
 
 export const revalidate = 3600;
@@ -13,59 +14,39 @@ export const revalidate = 3600;
 export const metadata = {
   alternates: { canonical: "https://automatizatelo.com/" },
 };
-import Opportunity from "@/components/Opportunity";
-import HowWeWork from "@/components/HowWeWork";
-import UseCases from "@/components/UseCases";
-import TrustedClients from "@/components/TrustedClients";
-import Pricing from "@/components/Pricing";
-import ContactForm from "@/components/ContactForm";
-import FAQ from "@/components/FAQ";
+
+// =============================================================================
+// HOME v3 — una historia en 8 bloques, ritmo crema/tinta (estructura iActa)
+// =============================================================================
+// Lo que se fue del home sigue vivo en sus páginas: precios → /precios,
+// FAQ y cómo trabajo → /como-trabajo, casos por sector → dropdown Sectores.
+// =============================================================================
 
 export default function Home() {
   return (
     <main>
       <Header />
 
-      {/* 1. Hero */}
+      {/* 1. Hero — la promesa */}
       <Hero />
 
-      {/* 1b. Marquee de tecnologías */}
-      <TechMarquee />
-
-      {/* 2. Problema + Resultados (bento) */}
-      <Opportunity />
-
-      {/* 2b. Hub de servicios con enlaces internos */}
-      <QueAutomatizamos />
-
-      {/* 2c. Curso estrella — el producto insignia de la puerta de formación */}
+      {/* 2. Curso estrella — el producto insignia, arriba como iActa */}
       <CursoEstrellaHome />
 
-      {/* 3. Cómo trabajamos */}
-      <HowWeWork />
+      {/* 3. Los 3 pilares como cards con foto + chips de sectores */}
+      <PilaresHome />
 
-      {/* 4. Casos de uso por sector (con links a landings) */}
-      <UseCases />
+      {/* 4. Banda oscura de cifras — ⚠️ NÚMEROS DE TEST, sustituir antes de push */}
+      <CifrasHome />
 
-      {/* 4b. Por qué trabajar conmigo */}
-      <Razones />
-
-      {/* 4c. Encajamos / No encajamos — la versión completa vive en /como-trabajo */}
-      <Encaje />
-
-      {/* 5. Clientes de confianza */}
+      {/* 5. Prueba social: reseña de Google + cinta de casos */}
+      <TestimonioHome />
       <TrustedClients />
 
-      {/* 6. Precios */}
-      <Pricing />
-
-      {/* 7. Formulario de contacto */}
+      {/* 6. Formulario de contacto */}
       <ContactForm />
 
-      {/* 8. FAQ */}
-      <FAQ />
-
-      {/* 9. Últimos artículos del blog */}
+      {/* 7. Últimos artículos del blog */}
       <DelBlog />
 
       <Footer />
