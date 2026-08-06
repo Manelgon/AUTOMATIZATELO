@@ -21,10 +21,15 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
-      // URL de la web antigua que Google aún recuerda (404 en Search Console)
+      // URLs de la web antigua que Google aún recuerda (404 en Search Console)
       {
         source: '/servicios/desarrollo-web-crm',
         destination: '/servicios/paneles',
+        permanent: true,
+      },
+      {
+        source: '/servicios/ia-chatbots',
+        destination: '/servicios/chatbots',
         permanent: true,
       },
     ];
