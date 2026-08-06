@@ -38,6 +38,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: 'https://automatizatelo.com/diagnostico',
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: 'https://automatizatelo.com/servicios/chatbots',
             lastModified: now,
             changeFrequency: 'monthly',

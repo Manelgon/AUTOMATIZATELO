@@ -7,6 +7,7 @@ const explora = [
     { href: "/como-trabajo", label: "Cómo trabajo" },
     { href: "/precios", label: "Precios" },
     { href: "/casos-de-exito", label: "Casos de éxito" },
+    { href: "/diagnostico", label: "Diagnóstico de automatización" },
     { href: "/recursos", label: "Recursos gratis" },
     { href: "/blog", label: "Blog" },
     { href: "/sobre-mi", label: "Sobre mí" },

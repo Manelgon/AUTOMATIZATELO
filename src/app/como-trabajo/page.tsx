@@ -325,6 +325,62 @@ export default function ComoTrabajoPage() {
                 </div>
             </section>
 
+            {/* Encajamos / No encajamos — descalificar también vende */}
+            <section style={{ padding: "4.5rem 0" }}>
+                <div className="container" style={{ maxWidth: 1000 }}>
+                    <div style={{ marginBottom: "2.5rem" }}>
+                        <span className="kicker-mono">Antes de llamarme</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
+                            Cuándo encajamos — y cuándo no
+                        </h2>
+                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
+                            Prefiero decírtelo antes de que inviertas media hora en una llamada.
+                            Esto no es para todo el mundo, y descubrirlo tarde nos sale caro a los dos.
+                        </p>
+                    </div>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem" }}>
+                        <div style={{ background: "var(--color-card-bg, #fff)", border: "1px solid var(--color-border)", borderRadius: "18px", padding: "2rem" }}>
+                            <p style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--color-primary)", marginBottom: "1.2rem" }}>
+                                Encajamos si
+                            </p>
+                            <ul style={{ display: "flex", flexDirection: "column", gap: "0.9rem", margin: 0, padding: 0, listStyle: "none" }}>
+                                {[
+                                    "Tienes tareas repetitivas que os comen horas cada semana y quieres quitártelas de encima.",
+                                    "Te toca cumplir el Reglamento de IA y prefieres resolverlo con formación práctica y papeles en regla, no con un máster.",
+                                    "Quieres precio cerrado por escrito antes de empezar, no una tarifa por horas abierta.",
+                                    "Puedes dedicarle al proyecto media hora a la semana y decidir sin pasar por un comité.",
+                                    "Prefieres empezar pequeño — una automatización, una formación — y ampliar solo si funciona.",
+                                ].map((t) => (
+                                    <li key={t} style={{ display: "flex", gap: "0.8rem", alignItems: "flex-start", color: "var(--color-text-muted)", lineHeight: 1.6, fontSize: "0.95rem" }}>
+                                        <i className="fa-solid fa-check" style={{ color: "var(--color-primary)", marginTop: "0.25rem", flexShrink: 0 }}></i>
+                                        <span>{t}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div style={{ background: "var(--color-bg-secondary)", border: "1px solid var(--color-border)", borderRadius: "18px", padding: "2rem" }}>
+                            <p style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "1.2rem" }}>
+                                No encajamos si
+                            </p>
+                            <ul style={{ display: "flex", flexDirection: "column", gap: "0.9rem", margin: 0, padding: 0, listStyle: "none" }}>
+                                {[
+                                    "Buscas lo más barato del mercado sin importar si dentro de tres meses sigue funcionando.",
+                                    "Quieres «poner IA» para contarlo, no para usarla.",
+                                    "Esperas que todo cambie sin cambiar nada de cómo trabajáis hoy.",
+                                    "Nadie va a dedicarle ni una hora al proyecto después de firmar.",
+                                    "Necesitas un informe de 80 páginas para un comité — eso es otra liga, y otro precio.",
+                                ].map((t) => (
+                                    <li key={t} style={{ display: "flex", gap: "0.8rem", alignItems: "flex-start", color: "var(--color-text-muted)", lineHeight: 1.6, fontSize: "0.95rem" }}>
+                                        <i className="fa-solid fa-xmark" style={{ color: "rgba(28,25,23,0.35)", marginTop: "0.25rem", flexShrink: 0 }}></i>
+                                        <span>{t}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ */}
             <section style={{ padding: "4.5rem 0" }}>
                 <div className="container" style={{ maxWidth: 900 }}>

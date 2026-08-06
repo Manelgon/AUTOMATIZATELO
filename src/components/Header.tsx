@@ -28,6 +28,7 @@ const serviciosLinks = [
 
 // Atajos para quien llega sin saber por dónde entrar (patrón "empieza por aquí")
 const empiezaPorAqui = [
+    { href: "/diagnostico", label: "Diagnóstico de automatización — 12 preguntas, 3 min" },
     { href: "/formacion-obligatoria-ai-act", label: "Formación del Art. 4 — obligatoria desde 2025" },
     { href: "/precios", label: "Precios cerrados, por escrito" },
     { href: "/casos-de-exito", label: "Casos de éxito en producción real" },

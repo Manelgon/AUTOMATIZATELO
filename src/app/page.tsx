@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import TechMarquee from "@/components/TechMarquee";
 import QueAutomatizamos from "@/components/QueAutomatizamos";
 import Razones from "@/components/Razones";
+import Encaje from "@/components/Encaje";
 import DelBlog from "@/components/DelBlog";
 
 export const revalidate = 3600;
@@ -44,6 +45,9 @@ export default function Home() {
 
       {/* 4b. Por qué trabajar conmigo */}
       <Razones />
+
+      {/* 4c. Encajamos / No encajamos — la versión completa vive en /como-trabajo */}
+      <Encaje />
 
       {/* 5. Clientes de confianza */}
       <TrustedClients />
