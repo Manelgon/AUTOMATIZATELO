@@ -3,188 +3,143 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 // =============================================================================
-// LOS 3 PILARES COMO CARDS CON FOTO (estructura tipo iActa, vestida de casa)
-// =============================================================================
-// Sustituye en el home a QueAutomatizamos + Opportunity + UseCases: el mapa
-// del sitio en un vistazo. Cada card lleva a su hub; la fila de sectores
-// recoge el tráfico que buscaba "su" caso.
+// LOS 3 PILARES — paneles a sangre con foto y velo tinta (como las puertas
+// de la portada de formación). Tres columnas iguales: la jerarquía del navbar.
 // =============================================================================
 
 const pilares = [
     {
         foto: "/claustro.webp",
         num: "01",
-        titulo: "Formar",
-        desc: "Alfabetización del Art. 4 — obligatoria desde 2025 — y cursos de ChatGPT, Copilot, Gemini o Claude con vuestros casos reales. Con certificado.",
+        kicker: "Formar",
+        titulo: "Alfabetización + tu herramienta",
+        desc: "El Art. 4 — obligatorio desde 2025 — y cursos de ChatGPT, Copilot, Gemini o Claude con vuestros casos reales. Con certificado.",
         href: "/formacion",
         cta: "Ver formaciones",
     },
     {
         foto: "/auditoria.webp",
         num: "02",
-        titulo: "Cumplir",
-        desc: "Diagnóstico del Reglamento Europeo de IA, política de uso redactada y el expediente completo que te defiende ante una inspección o un cliente grande.",
+        kicker: "Cumplir",
+        titulo: "El Reglamento, sin sustos",
+        desc: "Diagnóstico del AI Act, política de uso redactada y el expediente completo que te defiende ante una inspección o un cliente grande.",
         href: "/cumplimiento",
         cta: "Ver cumplimiento",
     },
     {
         foto: "/servicios-hero.webp",
         num: "03",
-        titulo: "Automatizar",
-        desc: "Procesos que se hacen solos: integraciones entre tus herramientas, chatbots de WhatsApp, lectura de documentos y paneles a medida.",
+        kicker: "Automatizar",
+        titulo: "Sistemas que trabajan solos",
+        desc: "Integraciones entre tus herramientas, chatbots de WhatsApp, lectura de documentos y paneles a medida.",
         href: "/sistemas",
         cta: "Ver sistemas",
     },
 ];
 
-const sectores = [
-    { label: "Fincas", href: "/sectores/administradores-fincas" },
-    { label: "Despachos", href: "/sectores/despachos" },
-    { label: "Academias", href: "/sectores/academias" },
-    { label: "RRHH", href: "/sectores/rrhh" },
-    { label: "Centros educativos", href: "/formacion/centros-educativos" },
-    { label: "Directivos", href: "/formacion/directivos" },
-];
-
 export default function PilaresHome() {
     return (
-        <section id="pilares" style={{ padding: "6.5rem 0 5rem" }}>
-            <div className="container">
-                <div style={{ marginBottom: "2.5rem" }}>
-                    <span className="kicker-mono">Qué implanto</span>
-                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                        Tres maneras de empezar
-                    </h2>
-                    <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
-                        Todo con precio cerrado, sin permanencia, y el código y los datos siempre tuyos.
-                    </p>
-                </div>
-
-                <div className="ph-grid">
-                    {pilares.map((p, i) => (
-                        <motion.div
-                            key={p.titulo}
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-40px" }}
-                            transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        >
-                            <Link href={p.href} className="ph-card">
-                                <span className="ph-foto">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img src={p.foto} alt={p.titulo} loading="lazy" />
-                                    <span className="ph-num mono-label">{p.num}</span>
-                                </span>
-                                <span className="ph-cuerpo">
-                                    <span className="ph-titulo">{p.titulo}</span>
-                                    <span className="ph-desc">{p.desc}</span>
-                                    <span className="ph-cta">{p.cta} →</span>
-                                </span>
-                            </Link>
-                        </motion.div>
-                    ))}
-                </div>
-
-                <div className="ph-sectores">
-                    <span className="mono-label" style={{ color: "var(--color-text-muted)" }}>¿Tu sector?</span>
-                    {sectores.map((s) => (
-                        <Link key={s.label} href={s.href} className="ph-sector-chip">{s.label}</Link>
-                    ))}
-                </div>
+        <section id="pilares" style={{ padding: 0 }}>
+            <div className="ph-paneles">
+                {pilares.map((p, i) => (
+                    <motion.div
+                        key={p.kicker}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-40px" }}
+                        transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        style={{ display: "flex" }}
+                    >
+                        <Link href={p.href} className="ph-panel">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img className="ph-panel-fondo" src={p.foto} alt="" aria-hidden="true" loading="lazy" />
+                            <span className="ph-panel-velo" aria-hidden="true"></span>
+                            <span className="ph-panel-marca" aria-hidden="true">{p.num}</span>
+                            <span className="ph-panel-cuerpo">
+                                <span className="ph-panel-kicker mono-label">{p.kicker}</span>
+                                <span className="ph-panel-titulo">{p.titulo}</span>
+                                <span className="ph-panel-desc">{p.desc}</span>
+                                <span className="ph-panel-cta">{p.cta} →</span>
+                            </span>
+                        </Link>
+                    </motion.div>
+                ))}
             </div>
 
             <style>{`
-                .ph-grid {
+                .ph-paneles {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
-                    gap: 1.5rem;
                 }
-                .ph-card {
+                .ph-paneles > div { display: flex; }
+                .ph-panel {
+                    position: relative;
                     display: flex;
-                    flex-direction: column;
-                    height: 100%;
-                    background: var(--color-card-bg);
-                    border: 1px solid var(--color-border);
-                    border-radius: var(--radius-md);
-                    box-shadow: var(--shadow-card);
+                    align-items: flex-end;
+                    min-height: 27rem;
+                    width: 100%;
                     overflow: hidden;
                     color: inherit;
-                    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+                    background: #1c1917;
                 }
-                .ph-card:hover {
-                    transform: translateY(-5px);
-                    border-color: rgba(234, 88, 12, 0.4);
-                }
-                .ph-foto {
-                    position: relative;
-                    display: block;
-                    aspect-ratio: 16 / 9;
-                    overflow: hidden;
-                }
-                .ph-foto img {
+                .ph-panel-fondo {
+                    position: absolute;
+                    inset: 0;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+                    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
                 }
-                .ph-card:hover .ph-foto img { transform: scale(1.05); }
-                .ph-num {
+                .ph-panel:hover .ph-panel-fondo { transform: scale(1.04); }
+                .ph-panel-velo {
                     position: absolute;
-                    top: 0.8rem;
-                    left: 0.8rem;
-                    background: rgba(28, 25, 23, 0.82);
-                    color: #f6c39c;
-                    padding: 0.25rem 0.6rem;
-                    border-radius: 6px;
+                    inset: 0;
+                    background: linear-gradient(180deg, rgba(28,25,23,0.35) 0%, rgba(28,25,23,0.55) 45%, rgba(28,25,23,0.85) 100%);
                 }
-                .ph-cuerpo {
+                .ph-panel-marca {
+                    position: absolute;
+                    top: 1rem;
+                    left: 1.5rem;
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(3.5rem, 6vw, 5.5rem);
+                    font-weight: 700;
+                    line-height: 1;
+                    color: rgba(250, 246, 239, 0.16);
+                    pointer-events: none;
+                }
+                .ph-panel-cuerpo {
+                    position: relative;
                     display: flex;
                     flex-direction: column;
                     gap: 0.6rem;
-                    padding: 1.4rem 1.5rem 1.6rem;
-                    flex: 1;
+                    padding: 6rem 1.8rem 2rem;
                 }
-                .ph-titulo {
+                .ph-panel-kicker { color: #f6c39c; }
+                .ph-panel-titulo {
                     font-family: var(--font-display, serif);
-                    font-size: 1.45rem;
+                    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
                     font-weight: 600;
-                    color: var(--color-text-main);
+                    color: #faf6ef;
+                    line-height: 1.15;
                 }
-                .ph-desc {
+                .ph-panel-desc {
                     font-size: 0.93rem;
-                    color: var(--color-text-muted);
-                    line-height: 1.55;
-                    flex: 1;
+                    color: rgba(250, 246, 239, 0.85);
+                    line-height: 1.6;
                 }
-                .ph-cta {
-                    color: var(--color-primary);
+                .ph-panel-cta {
+                    color: #f6c39c;
                     font-weight: 600;
                     font-size: 0.95rem;
+                    margin-top: 0.4rem;
+                    transition: transform 0.25s ease;
                 }
-                .ph-sectores {
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    gap: 0.6rem;
-                    margin-top: 2rem;
-                }
-                .ph-sector-chip {
-                    font-size: 0.85rem;
-                    font-weight: 600;
-                    color: var(--color-text-main);
-                    background: var(--color-card-bg);
-                    border: 1px solid var(--color-border);
-                    border-radius: 50px;
-                    padding: 0.4rem 1rem;
-                    transition: border-color 0.2s ease, color 0.2s ease;
-                }
-                .ph-sector-chip:hover {
-                    border-color: var(--color-primary);
-                    color: var(--color-primary);
-                }
+                .ph-panel:hover .ph-panel-cta { transform: translateX(6px); }
                 @media (max-width: 900px) {
-                    .ph-grid { grid-template-columns: 1fr; }
-                    #pilares { padding: 4rem 0 3.5rem !important; }
+                    .ph-paneles { grid-template-columns: 1fr; }
+                    .ph-panel { min-height: 22rem; }
+                    .ph-panel-cuerpo { padding: 4.5rem 1.4rem 1.6rem; }
+                    #pilares { padding: 0 !important; }
                 }
             `}</style>
         </section>

@@ -206,24 +206,57 @@ export default function ContactForm() {
     };
 
     return (
-        <section id="contact" className="contact-section">
-            <div className="container">
+        <section id="contact" className="contact-section" style={{ position: "relative", overflow: "hidden", background: "#1c1917" }}>
+            {/* Foto ambiental + velo terracota→tinta, como los paneles del home */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+                src="/auditoria.webp"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+            />
+            <div aria-hidden="true" style={{
+                position: "absolute",
+                inset: 0,
+                zIndex: 1,
+                background: "linear-gradient(90deg, rgba(28,25,23,0.62) 0%, rgba(28,25,23,0.42) 38%, rgba(28,25,23,0.12) 65%, transparent 85%), linear-gradient(180deg, rgba(28,25,23,0.18) 0%, transparent 40%)",
+            }} />
+            <div className="container contact-grid" style={{ position: "relative", zIndex: 2 }}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <span className="kicker-mono">Contacto</span>
-                    <h2 className="section-title" style={{ textAlign: 'left', marginTop: '0.8rem', marginBottom: '0.5rem' }}>
+                    <span className="mono-label" style={{ color: '#f6c39c' }}>Contacto</span>
+                    <h2 className="section-title" style={{ textAlign: 'left', marginTop: '0.8rem', marginBottom: '0.5rem', color: '#faf6ef' }}>
                         Cuéntame cómo trabajas
                     </h2>
-                    <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 620 }}>
+                    <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 480, color: 'rgba(250,246,239,0.8)' }}>
                         Auditoría gratuita de 30 minutos. Te digo qué automatizar primero
                         y qué retorno esperar — sin compromiso y sin jerga.
                     </p>
+                    <div className="contact-datos">
+                        <a href="mailto:info@automatizatelo.com">info@automatizatelo.com</a>
+                        <a href="tel:+34678399182">+34 678 39 91 82</a>
+                        <a href="https://wa.me/34678399182" target="_blank" rel="noopener noreferrer">WhatsApp directo →</a>
+                    </div>
+                    <div className="contact-despues">
+                        <span className="contact-despues-titulo">Qué pasa después</span>
+                        {[
+                            ["01", "Te respondo en menos de 24 h laborables."],
+                            ["02", "Hablamos 30 minutos: me cuentas cómo trabajáis y te digo qué automatizar primero."],
+                            ["03", "Si encaja, propuesta por escrito con precio y plazo cerrados. Si no, te lo digo igual."],
+                        ].map(([n, t]) => (
+                            <div key={n} className="contact-paso">
+                                <span className="contact-paso-num">{n}</span>
+                                <span>{t}</span>
+                            </div>
+                        ))}
+                    </div>
                 </motion.div>
 
-                <form id="form-automatizatelo" onSubmit={handleSubmit} style={{ padding: '2.8rem', marginTop: '2.5rem', background: 'var(--color-card-bg)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-card)', maxWidth: 880 }}>
+                <form id="form-automatizatelo" onSubmit={handleSubmit}>
                     <div className="form-grid">
                         <div>
                             <label htmlFor="nombre" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Nombre <span style={{ color: 'var(--color-primary)' }}>*</span></label>
@@ -473,32 +506,138 @@ export default function ContactForm() {
             </div>
 
             <style>{`
-                /* Tarjeta del formulario al estilo de la casa: melocotón claro + campos crema */
+                /* Contacto editorial sobre tinta: split + campos de subrayado */
+                .contact-grid {
+                    display: grid;
+                    grid-template-columns: 0.85fr 1.15fr;
+                    gap: 4rem;
+                    align-items: center;
+                }
+                @media (max-width: 900px) {
+                    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+                }
+                .contact-datos {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.7rem;
+                    margin-top: 2.2rem;
+                    border-top: 1px solid rgba(250, 246, 239, 0.14);
+                    padding-top: 1.6rem;
+                }
+                .contact-datos a {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    letter-spacing: 0.05em;
+                    color: #f6c39c;
+                    width: fit-content;
+                }
+                .contact-datos a:hover { color: #faf6ef; }
+                .contact-despues {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.9rem;
+                    margin-top: 2.2rem;
+                    border-top: 1px solid rgba(250, 246, 239, 0.14);
+                    padding-top: 1.6rem;
+                }
+                .contact-despues-titulo {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.72rem;
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.55);
+                }
+                .contact-paso {
+                    display: grid;
+                    grid-template-columns: 2rem 1fr;
+                    gap: 0.7rem;
+                    align-items: baseline;
+                }
+                .contact-paso-num {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    color: #f6c39c;
+                }
+                .contact-paso span:last-child {
+                    color: rgba(250, 246, 239, 0.85);
+                    font-size: 0.93rem;
+                    line-height: 1.55;
+                }
                 #form-automatizatelo {
-                    background: #f8dfc6 !important;
-                    border: none !important;
-                    box-shadow: 0 25px 60px rgba(28, 25, 23, 0.12) !important;
+                    max-width: none !important;
+                    margin: 0 !important;
+                    background: rgba(28, 25, 23, 0.45);
+                    border: 1px solid rgba(250, 246, 239, 0.12);
+                    border-radius: 18px;
+                    padding: 2.4rem;
+                    backdrop-filter: blur(2px);
+                }
+                @media (max-width: 600px) {
+                    #form-automatizatelo { padding: 1.6rem 1.3rem; }
                 }
                 #form-automatizatelo label {
-                    color: #1c1917 !important;
+                    font-family: var(--font-mono, monospace) !important;
+                    font-size: 0.72rem !important;
+                    font-weight: 600 !important;
+                    letter-spacing: 0.08em !important;
+                    text-transform: uppercase !important;
+                    color: rgba(250, 246, 239, 0.7) !important;
                 }
                 #form-automatizatelo input,
-                #form-automatizatelo textarea {
-                    background: #fffdf8 !important;
-                    color: #1c1917 !important;
+                #form-automatizatelo textarea,
+                #form-automatizatelo select {
+                    background: transparent !important;
+                    color: #faf6ef !important;
                     border: none !important;
+                    border-bottom: 1px solid rgba(250, 246, 239, 0.3) !important;
+                    border-radius: 0 !important;
+                    padding-left: 0 !important;
+                    box-shadow: none !important;
+                }
+                #form-automatizatelo input:focus,
+                #form-automatizatelo textarea:focus,
+                #form-automatizatelo select:focus {
+                    border-bottom-color: #f6c39c !important;
+                    outline: none !important;
+                }
+                #form-automatizatelo select option {
+                    background: #fffdf8;
+                    color: #1c1917;
                 }
                 #form-automatizatelo input::placeholder,
                 #form-automatizatelo textarea::placeholder {
-                    color: #a8a29e;
+                    color: rgba(250, 246, 239, 0.35);
                 }
                 #form-automatizatelo button[type="button"] {
-                    background: #fffdf8 !important;
+                    background: transparent !important;
+                    color: #faf6ef !important;
+                    border: none !important;
+                    border-bottom: 1px solid rgba(250, 246, 239, 0.3) !important;
+                    border-radius: 0 !important;
+                }
+                #form-automatizatelo button[type="submit"] {
+                    background: #f6c39c !important;
+                    background-image: none !important;
                     color: #1c1917 !important;
                     border: none !important;
+                    border-radius: 50px !important;
+                    width: auto !important;
+                    padding: 0.85rem 2.2rem !important;
+                    font-weight: 700 !important;
+                    box-shadow: none !important;
+                }
+                #form-automatizatelo button[type="submit"]:hover {
+                    background: #faf6ef !important;
+                    transform: translateY(-2px);
                 }
                 #form-automatizatelo .checkbox {
-                    color: rgba(28, 25, 23, 0.75) !important;
+                    color: rgba(250, 246, 239, 0.8) !important;
+                }
+                #form-automatizatelo .checkbox a {
+                    color: #f6c39c !important;
                 }
             `}</style>
         </section>

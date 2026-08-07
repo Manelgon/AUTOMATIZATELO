@@ -2,8 +2,6 @@ import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const explora = [
     { href: "/", label: "Inicio" },
-    { href: "/#problema", label: "El problema" },
-    { href: "/#que-automatizamos", label: "Qué implanto" },
     { href: "/como-trabajo", label: "Cómo trabajo" },
     { href: "/precios", label: "Precios" },
     { href: "/casos", label: "Casos de éxito" },
@@ -11,18 +9,19 @@ const explora = [
     { href: "/recursos", label: "Recursos gratis" },
     { href: "/blog", label: "Blog" },
     { href: "/sobre-mi", label: "Sobre mí" },
-    { href: "/#faq", label: "FAQ" },
 ];
 
 // Misma jerarquía que el menú: tres pilares y sus hijas sangradas.
 // `sub` marca las hijas — se pintan con sangría y borde, estilo índice.
 const servicios = [
     { href: "/formacion", label: "Formación en IA" },
+    { href: "/formacion/empresas", label: "In-company para empresas", sub: true },
     { href: "/formacion/ai-act", label: "Alfabetización del Art. 4 (AI Act)", sub: true },
     { href: "/formacion/chatgpt", label: "Curso de ChatGPT", sub: true },
     { href: "/formacion/copilot", label: "Curso de Copilot 365", sub: true },
     { href: "/formacion/gemini", label: "Curso de Gemini + NotebookLM", sub: true },
     { href: "/formacion/claude", label: "Curso de Claude", sub: true },
+    { href: "/formacion/cursos-a-medida", label: "Cursos e-learning a medida (SCORM)", sub: true },
     { href: "/formacion/directivos", label: "Sesión ejecutiva para dirección", sub: true },
     { href: "/cumplimiento", label: "Cumplimiento del AI Act" },
     { href: "/sistemas", label: "Automatización y sistemas" },
@@ -40,6 +39,7 @@ const porSector = [
     { href: "/formacion/centros-educativos", label: "Centros educativos" },
     { href: "/sectores/academias", label: "Academias y formación online" },
     { href: "/sectores/rrhh", label: "Selección de personal y RRHH" },
+    { href: "/formacion/directivos", label: "Equipos directivos" },
 ];
 
 const linkStyle = { color: "rgba(250,246,239,0.7)" } as const;
@@ -68,25 +68,38 @@ export default function Footer() {
                     <div className="footer-col">
                         <a
                             href="/"
-                            className="logo"
-                            style={{ marginBottom: "1.2rem", display: "flex", alignItems: 'center', gap: '0.5rem' }}
+                            style={{ marginBottom: "1.2rem", display: "inline-block" }}
                         >
-                            <span className="premium-gradient" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Automatizatelo.</span>
+                            <span style={{
+                                fontFamily: 'var(--font-display, serif)',
+                                fontSize: '1.7rem',
+                                fontWeight: 600,
+                                letterSpacing: '-0.02em',
+                                color: '#faf6ef',
+                            }}>Automatizatelo<span style={{ color: '#ea580c' }}>.</span></span>
                         </a>
-                        <p style={{ color: "rgba(250,246,239,0.7)", lineHeight: '1.7', marginBottom: '1.5rem' }}>
-                            Chatbots, paneles y automatizaciones que ya funcionan
-                            en negocios reales. Barcelona y toda España.
+                        <p style={{ color: "rgba(250,246,239,0.65)", lineHeight: '1.7', marginBottom: '1.6rem', fontSize: '0.93rem', maxWidth: '30ch' }}>
+                            Formación en IA, cumplimiento del Reglamento Europeo y
+                            sistemas que trabajan solos — en despachos, academias
+                            y pymes reales. Barcelona y toda España.
                         </p>
-                        <div style={{ display: "flex", gap: "1.1rem" }}>
-                            <a href="https://www.linkedin.com/company/automatizatelo" style={{ fontSize: "1.4rem", color: '#f6c39c' }} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                                <FaLinkedin />
-                            </a>
-                            <a href="https://www.instagram.com/automatizatelo.ia?igsh=NWE1eW8xa2VieTlh&utm_source=qr" style={{ fontSize: "1.4rem", color: '#f6c39c' }} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                                <FaInstagram />
-                            </a>
-                            <a href="https://wa.me/34678399182" style={{ fontSize: "1.4rem", color: '#f6c39c' }} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                                <FaWhatsapp />
-                            </a>
+                        <div style={{ display: "flex", gap: "1rem" }}>
+                            {[
+                                { href: "https://www.linkedin.com/company/automatizatelo", label: "LinkedIn", icono: <FaLinkedin /> },
+                                { href: "https://www.instagram.com/automatizatelo.ia?igsh=NWE1eW8xa2VieTlh&utm_source=qr", label: "Instagram", icono: <FaInstagram /> },
+                                { href: "https://wa.me/34678399182", label: "WhatsApp", icono: <FaWhatsapp /> },
+                            ].map((r) => (
+                                <a
+                                    key={r.label}
+                                    href={r.href}
+                                    aria-label={r.label}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="footer-red"
+                                >
+                                    {r.icono}
+                                </a>
+                            ))}
                         </div>
                     </div>
 
@@ -201,6 +214,25 @@ export default function Footer() {
                     <p style={{ color: 'rgba(250,246,239,0.5)' }}>&copy; 2026 Automatizatelo. Todos los derechos reservados.</p>
                 </div>
             </div>
+            <style>{`
+                .footer-red {
+                    width: 38px;
+                    height: 38px;
+                    border: 1px solid rgba(250, 246, 239, 0.25);
+                    border-radius: 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.05rem;
+                    color: rgba(250, 246, 239, 0.75);
+                    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+                }
+                .footer-red:hover {
+                    color: #f6c39c;
+                    border-color: #f6c39c;
+                    transform: translateY(-2px);
+                }
+            `}</style>
         </footer>
     );
 }

@@ -178,6 +178,16 @@ export default function FormacionIaPage() {
                 </div>
             </section>
 
+            {/* Casos más concretos — línea fina bajo las puertas */}
+            <section style={{ padding: "1.5rem 0", background: "var(--color-bg-secondary)", borderBottom: "1px solid var(--color-border)" }}>
+                <div className="container fd-otros">
+                    <span className="mono-label" style={{ color: "var(--color-text-muted)" }}>¿Tu caso es más concreto?</span>
+                    <Link href="/sectores/despachos" className="fd-otro">Despachos profesionales →</Link>
+                    <Link href="/formacion/directivos" className="fd-otro">Dirección →</Link>
+                    <Link href="/formacion/cursos-a-medida" className="fd-otro">Cursos a medida · SCORM →</Link>
+                </div>
+            </section>
+
             {/* Por qué ahora — los tres datos que no son marketing */}
             <section style={{ padding: "4rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
                 <div className="container" style={{ maxWidth: 1000 }}>
@@ -198,62 +208,6 @@ export default function FormacionIaPage() {
                             <p style={{ fontFamily: "var(--font-display, serif)", fontSize: "2rem", fontWeight: 600, color: "var(--color-primary)", margin: "0 0 0.3rem" }}>35 M€ / 7%</p>
                             <p style={{ color: "var(--color-text-muted)", fontSize: "0.9rem", lineHeight: 1.55, margin: 0 }}>Techo sancionador del Reglamento (Art. 99). Para una pyme, la multa se modula — pero la evidencia formativa es lo que te defiende.</p>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Versiones por audiencia — el servicio es uno, la versión es la tuya */}
-            <section style={{ padding: "4.5rem 0" }}>
-                <div className="container" style={{ maxWidth: 1000 }}>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">¿Y si soy…?</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                            La misma formación, en tu idioma
-                        </h2>
-                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
-                            Los casos, los ejemplos y los riesgos cambian según quién eres.
-                            Si tu caso es uno de estos, entra por su puerta.
-                        </p>
-                    </div>
-                    <div className="fp-audiencias">
-                        {[
-                            {
-                                href: "/sectores/despachos",
-                                icon: "fa-briefcase",
-                                titulo: "Despachos profesionales",
-                                desc: "Fincas, gestorías y asesorías: con vuestros casos y el secreto profesional por delante.",
-                            },
-                            {
-                                href: "/formacion/directivos",
-                                icon: "fa-chess-king",
-                                titulo: "Directivos",
-                                desc: "Sesión ejecutiva de medio día: qué implantar, qué exige la ley y cómo gobernarlo.",
-                            },
-                            {
-                                href: "/formacion/cursos-a-medida",
-                                icon: "fa-laptop-file",
-                                titulo: "Academias y plataformas",
-                                desc: "Producción de cursos e-learning a medida (SCORM), también en marca blanca.",
-                            },
-                        ].map((a) => (
-                            <Link key={a.titulo} href={a.href} className="fp-audiencia">
-                                <i className={`fa-solid ${a.icon}`} style={{ color: "var(--color-primary)", fontSize: "1.5rem", marginBottom: "0.9rem", display: "block" }}></i>
-                                <h3 style={{
-                                    fontFamily: "var(--font-display, serif)",
-                                    fontSize: "1.25rem",
-                                    fontWeight: 600,
-                                    color: "var(--color-text-main)",
-                                    marginBottom: "0.5rem",
-                                    lineHeight: 1.25,
-                                }}>
-                                    {a.titulo}
-                                </h3>
-                                <p style={{ color: "var(--color-text-muted)", lineHeight: 1.6, margin: "0 0 1rem", fontSize: "0.92rem" }}>
-                                    {a.desc}
-                                </p>
-                                <span style={{ color: "var(--color-primary)", fontWeight: 600, fontSize: "0.92rem" }}>Ver mi versión →</span>
-                            </Link>
-                        ))}
                     </div>
                 </div>
             </section>
@@ -283,27 +237,31 @@ export default function FormacionIaPage() {
                 </div>
             </section>
 
-            {/* Para entidades de formación — producción white-label */}
+            {/* Cursos a medida (SCORM) — los dos compradores: empresa y academia */}
             <section style={{ padding: "4.5rem 0", borderBottom: "1px solid var(--color-border)" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
-                    <span className="kicker-mono">Para entidades de formación</span>
+                    <span className="kicker-mono">Cursos a medida · SCORM</span>
                     <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "1rem" }}>
-                        ¿Eres una academia o entidad de formación?
+                        ¿Y si tu formación fuera un curso instalado en tu plataforma?
                     </h2>
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 720, marginBottom: "1rem" }}>
-                        También produzco cursos <strong style={{ color: "var(--color-text-main)" }}>con tu marca</strong>:
-                        tú pones el catálogo y la certificación, yo produzco el contenido de IA — guion, materiales,
-                        vídeo y empaquetado SCORM listo para tu plataforma. Tu alumno nunca sabe que existo.
+                        <strong style={{ color: "var(--color-text-main)" }}>Si eres una empresa</strong>, convierto
+                        tu formación interna — el tema que necesites — en un curso e-learning (SCORM) instalado en
+                        vuestra plataforma para siempre, con registro individual por alumno. Pagas la producción
+                        una vez y el curso es tuyo.
+                    </p>
+                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 720, marginBottom: "1rem" }}>
+                        <strong style={{ color: "var(--color-text-main)" }}>Si eres una academia o entidad de formación</strong>,
+                        produzco cursos con tu marca: tú pones el catálogo y la certificación, yo el contenido — guion,
+                        materiales, vídeo y empaquetado SCORM.
                     </p>
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 720, margin: 0 }}>
-                        Es lo que ya hago con plataformas e-learning reales: cursos completos de IA publicados y en venta.
-                        Producción desde 1.900€ por curso, o licencia de contenido ya producido — el proceso completo
-                        está en la página de{" "}
+                        El proceso completo está en la página de{" "}
                         <Link href="/formacion/cursos-a-medida" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            producción de cursos SCORM a medida
+                            cursos e-learning a medida
                         </Link>.{" "}
                         <Link href="/#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            Cuéntame qué necesita tu catálogo
+                            Cuéntame qué curso necesitas
                         </Link>.
                     </p>
                 </div>
@@ -446,29 +404,19 @@ export default function FormacionIaPage() {
                     .fd-puerta { min-height: 24rem; }
                     .fd-puerta-cuerpo { padding: 5.5rem 1.4rem 1.8rem; }
                 }
-                .fp-audiencias {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 1.2rem;
-                    align-items: stretch;
-                }
-                .fp-audiencia {
+                .fd-otros {
                     display: flex;
-                    flex-direction: column;
-                    background: var(--color-card-bg);
-                    border: 1px solid var(--color-border);
-                    border-radius: var(--radius-lg);
-                    padding: 1.8rem 1.6rem;
-                    color: inherit;
-                    transition: transform 0.25s ease, border-color 0.25s ease;
+                    flex-wrap: wrap;
+                    align-items: baseline;
+                    gap: 0.6rem 1.8rem;
                 }
-                .fp-audiencia:hover {
-                    transform: translateY(-4px);
-                    border-color: rgba(234, 88, 12, 0.4);
+                .fd-otro {
+                    font-size: 0.92rem;
+                    font-weight: 600;
+                    color: var(--color-text-main);
+                    transition: color 0.2s ease;
                 }
-                @media (max-width: 800px) {
-                    .fp-audiencias { grid-template-columns: 1fr; }
-                }
+                .fd-otro:hover { color: var(--color-primary); }
                 .fi-faq {
                     border-top: 1px solid var(--color-border);
                 }

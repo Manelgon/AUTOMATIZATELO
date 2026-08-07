@@ -1,73 +1,208 @@
 import Link from "next/link";
 
 // =============================================================================
-// CURSO ESTRELLA — versión compacta para la home (Fase 4 de la v2)
-// =============================================================================
-// El producto de formación insignia, resumido: dos sesiones y los datos que
-// importan. La versión completa vive en /formacion.
+// CURSO ESTRELLA — split a sangre: la mitad terracota presenta (título, datos,
+// CTA) y la mitad tinta detalla las dos sesiones. Mismo lenguaje que las
+// puertas de formación. La versión completa vive en /formacion/empresas.
 // =============================================================================
 
 export default function CursoEstrellaHome() {
     return (
-        <section style={{ padding: "5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
-            <div className="container" style={{ maxWidth: 1000 }}>
-                <div style={{ marginBottom: "2rem" }}>
-                    <span className="kicker-mono">Curso estrella</span>
-                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                        Alfabetización IA + vuestra herramienta
-                    </h2>
-                    <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 660 }}>
-                        El formato que mejor funciona: una sesión cubre la obligación del Art. 4
-                        y la otra domina la herramienta que ya usa tu equipo — con vuestros casos reales.
-                    </p>
-                </div>
-
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.2rem", marginBottom: "1.4rem" }}>
-                    <div style={{ background: "linear-gradient(135deg, #b45309 0%, #7c2d12 60%, #431407 100%)", borderRadius: "16px", padding: "1.5rem 1.6rem" }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.7rem" }}>
-                            <span className="mono-label" style={{ color: "#f6c39c" }}>Sesión 01</span>
-                            <span style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#faf6ef", border: "1px solid rgba(250,246,239,0.35)", borderRadius: "50px", padding: "0.25rem 0.7rem" }}>Obligatoria · Art. 4</span>
-                        </div>
-                        <h3 style={{ fontFamily: "var(--font-display, serif)", fontSize: "1.3rem", fontWeight: 600, color: "#faf6ef", margin: "0 0 0.4rem" }}>Alfabetización en IA</h3>
-                        <p style={{ color: "rgba(250,246,239,0.82)", lineHeight: 1.6, fontSize: "0.92rem", margin: 0 }}>
-                            Fundamentos, riesgos, marco legal y gobernanza — con certificado nominal
-                            y el registro que sirve de evidencia.
+        <section aria-label="Curso estrella" style={{ padding: 0, background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)" }}>
+            <div className="container ces-mitades">
+                {/* Mitad 1 — la presentación */}
+                <div className="ces-mitad ces-mitad-pitch">
+                    <span className="ces-marca" aria-hidden="true">★</span>
+                    <div className="ces-cuerpo">
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>Curso estrella</span>
+                        <h2 className="ces-titulo">Alfabetización IA + vuestra herramienta</h2>
+                        <p className="ces-sub">
+                            El formato que mejor funciona: una sesión cubre la obligación del Art. 4
+                            y la otra domina la herramienta que ya usa tu equipo — con vuestros casos reales.
                         </p>
-                    </div>
-                    <div style={{ background: "#1c1917", borderRadius: "16px", padding: "1.5rem 1.6rem" }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.7rem" }}>
-                            <span className="mono-label" style={{ color: "#f6c39c" }}>Sesión 02</span>
-                            <span style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#faf6ef", border: "1px solid rgba(250,246,239,0.35)", borderRadius: "50px", padding: "0.25rem 0.7rem" }}>100% práctica</span>
+                        <div className="ces-datos">
+                            <span>Desde 4 + 4 h</span>
+                            <span>Presencial · aula virtual · SCORM</span>
+                            <span>Certificado nominal</span>
+                            <span className="ces-dato-precio">Desde 1.200 € · precio cerrado</span>
                         </div>
-                        <h3 style={{ fontFamily: "var(--font-display, serif)", fontSize: "1.3rem", fontWeight: 600, color: "#faf6ef", margin: "0 0 0.4rem" }}>Vuestra herramienta, dominada</h3>
-                        <p style={{ color: "rgba(250,246,239,0.82)", lineHeight: 1.6, fontSize: "0.92rem", margin: "0 0 0.8rem" }}>
-                            Con la que ya usáis — cada rol sale con casos montados para su trabajo:
-                        </p>
-                        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-                            {[
-                                { href: "/formacion/chatgpt", label: "ChatGPT" },
-                                { href: "/formacion/copilot", label: "Copilot 365" },
-                                { href: "/formacion/gemini", label: "Gemini" },
-                                { href: "/formacion/claude", label: "Claude" },
-                            ].map((c) => (
-                                <Link key={c.href} href={c.href} style={{ fontSize: "0.78rem", fontWeight: 600, color: "#faf6ef", border: "1px solid rgba(250,246,239,0.3)", borderRadius: "50px", padding: "0.3rem 0.85rem" }}>
-                                    {c.label} →
-                                </Link>
-                            ))}
-                        </div>
+                        <Link href="/formacion/empresas" className="ces-cta">Ver la formación completa →</Link>
                     </div>
                 </div>
 
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1.5rem" }}>
-                    <p style={{ color: "var(--color-text-muted)", fontSize: "0.92rem", margin: 0 }}>
-                        Desde 4 + 4 h · presencial, aula virtual o SCORM · certificado nominal ·{" "}
-                        <strong style={{ color: "var(--color-text-main)" }}>desde 1.200 € con precio cerrado</strong>
-                    </p>
-                    <Link href="/formacion" style={{ color: "var(--color-primary)", fontWeight: 600, fontSize: "0.95rem" }}>
-                        Ver la formación completa →
-                    </Link>
+                {/* Mitad 2 — las dos sesiones */}
+                <div className="ces-mitad ces-mitad-sesiones">
+                    <div className="ces-cuerpo">
+                        <div className="ces-sesion">
+                            <div className="ces-cab">
+                                <span className="mono-label" style={{ color: "#f6c39c" }}>Sesión 01</span>
+                                <span className="ces-badge">Obligatoria · Art. 4</span>
+                            </div>
+                            <h3>Alfabetización en IA</h3>
+                            <p>Fundamentos, riesgos, marco legal y gobernanza — con certificado nominal y el registro que sirve de evidencia.</p>
+                        </div>
+                        <div className="ces-sesion ces-sesion-2">
+                            <div className="ces-cab">
+                                <span className="mono-label" style={{ color: "#f6c39c" }}>Sesión 02</span>
+                                <span className="ces-badge">100% práctica</span>
+                            </div>
+                            <h3>Vuestra herramienta, dominada</h3>
+                            <p>Con la que ya usáis — cada rol sale con casos montados para su trabajo:</p>
+                            <div className="ces-chips">
+                                {[
+                                    { href: "/formacion/chatgpt", label: "ChatGPT" },
+                                    { href: "/formacion/copilot", label: "Copilot 365" },
+                                    { href: "/formacion/gemini", label: "Gemini" },
+                                    { href: "/formacion/claude", label: "Claude" },
+                                ].map((c) => (
+                                    <Link key={c.href} href={c.href} className="ces-chip">
+                                        {c.label} →
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <style>{`
+                .ces-mitades {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 4.5rem;
+                }
+                .ces-mitad {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                }
+                .ces-marca {
+                    position: absolute;
+                    top: 0.6rem;
+                    right: 1.4rem;
+                    font-size: clamp(5rem, 9vw, 8rem);
+                    line-height: 1;
+                    color: rgba(250, 246, 239, 0.1);
+                    pointer-events: none;
+                }
+                .ces-cuerpo {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    padding: 3.4rem 0;
+                    width: 100%;
+                }
+                .ces-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.7rem, 3vw, 2.4rem);
+                    font-weight: 600;
+                    color: #faf6ef;
+                    line-height: 1.12;
+                    letter-spacing: -0.01em;
+                    margin: 0;
+                }
+                .ces-sub {
+                    color: rgba(250, 246, 239, 0.85);
+                    line-height: 1.65;
+                    font-size: 0.97rem;
+                    margin: 0;
+                }
+                .ces-datos {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.4rem 1.3rem;
+                    margin-top: 0.4rem;
+                }
+                .ces-datos span {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.7);
+                }
+                .ces-datos .ces-dato-precio { color: #f6c39c; }
+                .ces-cta {
+                    display: inline-block;
+                    align-self: flex-start;
+                    margin-top: 0.6rem;
+                    background: #f6c39c;
+                    color: #1c1917;
+                    font-weight: 700;
+                    font-size: 0.92rem;
+                    border-radius: 50px;
+                    padding: 0.6rem 1.4rem;
+                    transition: transform 0.25s ease, background 0.2s ease;
+                }
+                .ces-cta:hover { transform: translateY(-2px); background: #faf6ef; }
+                .ces-sesion {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.45rem;
+                }
+                .ces-sesion-2 {
+                    border-top: 1px solid rgba(250, 246, 239, 0.14);
+                    padding-top: 1.4rem;
+                    margin-top: 1.4rem;
+                }
+                .ces-cab {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 1rem;
+                }
+                .ces-badge {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.65rem;
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: #faf6ef;
+                    border: 1px solid rgba(250, 246, 239, 0.35);
+                    border-radius: 50px;
+                    padding: 0.25rem 0.7rem;
+                    white-space: nowrap;
+                }
+                .ces-sesion h3 {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: #faf6ef;
+                    margin: 0;
+                    line-height: 1.2;
+                }
+                .ces-sesion p {
+                    color: rgba(250, 246, 239, 0.82);
+                    line-height: 1.6;
+                    font-size: 0.92rem;
+                    margin: 0;
+                }
+                .ces-chips {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    margin-top: 0.4rem;
+                }
+                .ces-chip {
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    color: #faf6ef;
+                    border: 1px solid rgba(250, 246, 239, 0.3);
+                    border-radius: 50px;
+                    padding: 0.3rem 0.85rem;
+                    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+                }
+                .ces-chip:hover {
+                    background: #f6c39c;
+                    border-color: #f6c39c;
+                    color: #1c1917;
+                }
+                @media (max-width: 800px) {
+                    .ces-mitades { grid-template-columns: 1fr; gap: 0; }
+                    .ces-cuerpo { padding: 2.2rem 0; }
+                }
+            `}</style>
         </section>
     );
 }

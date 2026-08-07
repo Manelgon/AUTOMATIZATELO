@@ -17,18 +17,15 @@ const techs = [
 
 export default function TechMarquee() {
     return (
-        <section aria-label="Tecnologías con las que trabajamos" style={{ padding: "1rem 0 2rem" }}>
-            <p style={{
-                textAlign: "center",
-                fontSize: "0.78rem",
-                fontWeight: 600,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "var(--color-text-muted)",
-                marginBottom: "0.5rem",
-            }}>
-                Trabajamos con las tecnologías de IA más avanzadas
-            </p>
+        <section aria-label="Tecnologías con las que trabajamos" style={{
+            marginTop: "-3.6rem",
+            padding: "1rem 0",
+            position: "relative",
+            zIndex: 2,
+            background: "rgba(28, 25, 23, 0.45)",
+            backdropFilter: "blur(3px)",
+            WebkitBackdropFilter: "blur(3px)",
+        }}>
             <div className="tech-marquee">
                 <div className="tech-marquee-track">
                     {[...techs, ...techs].map((t, i) => (

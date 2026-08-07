@@ -121,12 +121,12 @@ export default function Hero() {
             <style>{`
                 .hero-foto {
                     position: relative;
-                    min-height: 92vh;
+                    min-height: 98vh;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     overflow: hidden;
-                    padding: calc(var(--header-height) + 3rem) 0 clamp(6rem, 16vw, 12rem);
+                    padding: calc(var(--header-height) + 3rem) 0 4rem;
                 }
                 .hero-foto-bg {
                     position: absolute;
@@ -151,12 +151,14 @@ export default function Hero() {
                     position: relative;
                     z-index: 2;
                     width: 100%;
+                    max-width: none;
+                    padding-left: clamp(1.5rem, 4.5vw, 5rem);
+                    padding-right: clamp(1.5rem, 4.5vw, 5rem);
                     text-align: left;
                 }
                 .hero-foto .hero-giant-name {
-                    position: absolute;
-                    bottom: 0.6rem;
-                    left: 0;
+                    position: relative;
+                    margin: clamp(2.5rem, 7vh, 5rem) 0 0;
                     width: 100%;
                     text-align: center;
                     font-family: var(--font-display, serif);
@@ -174,13 +176,13 @@ export default function Hero() {
                     text-shadow: 0 10px 60px rgba(28,25,23,0.35);
                 }
                 @media (max-width: 900px) {
-                    .hero-foto { min-height: 86vh; }
+                    .hero-foto { min-height: 92vh; }
                     .hero-foto-bg { object-position: 66% top; }
                     .hero-foto .hero-foto-contenido { text-align: center; }
                     .hero-foto .hero-actions { justify-content: center !important; }
                     .hero-foto-contenido p, .hero-foto-contenido h1 { margin-left: auto !important; margin-right: auto !important; }
                     .hero-foto .hero-giant-name {
-                        bottom: 1rem;
+                        margin-top: 2rem;
                         font-size: clamp(2.4rem, 12vw, 6rem);
                     }
                 }

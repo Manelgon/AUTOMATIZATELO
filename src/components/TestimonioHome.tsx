@@ -2,10 +2,9 @@
 import { motion } from "framer-motion";
 
 // =============================================================================
-// TESTIMONIO — la reseña real de Google Business (AFC Academia, 5★)
-// =============================================================================
-// Texto literal de la reseña pública de Google Maps, recortado a las frases
-// centrales para el home. El enlace lleva a la ficha, donde está completa.
+// TESTIMONIO — split compacto sobre tinta: presentación a la izquierda, la
+// reseña real de Google (AFC Academia, 5★) a tamaño de lectura a la derecha.
+// Cuando haya más reseñas, se apilan en la columna derecha.
 // =============================================================================
 
 const FICHA_GOOGLE =
@@ -13,103 +12,109 @@ const FICHA_GOOGLE =
 
 export default function TestimonioHome() {
     return (
-        <section id="testimonio" style={{ padding: "6rem 0 1rem" }}>
-            <div className="container">
+        <section id="testimonio" className="tms-banda">
+            <div className="container tms-grid">
+                <div className="tms-izq">
+                    <span className="mono-label" style={{ color: "#f6c39c" }}>Testimonios</span>
+                    <h2 className="tms-titulo">Lo que dicen quienes ya lo usan</h2>
+                    <a href={FICHA_GOOGLE} target="_blank" rel="noopener noreferrer" className="tms-google">
+                        <span className="tms-estrellas" aria-label="5 de 5 estrellas">★★★★★</span>
+                        <span>Opiniones reales, verificables en Google →</span>
+                    </a>
+                </div>
+
                 <motion.figure
-                    className="tm-card"
+                    className="tms-item"
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <span className="tm-comillas">&ldquo;</span>
-                    <blockquote className="tm-cita">
-                        No podemos estar más satisfechos. Han transformado por completo la
+                    <blockquote className="tms-cita">
+                        &ldquo;No podemos estar más satisfechos. Han transformado por completo la
                         operativa de AFC Academia: captación de leads, panel de gestión en
                         tiempo real y la parte más compleja — FUNDAE — automatizada, con
                         generación de documentos y envío inmediato.{" "}
                         <strong>
                             Hemos eliminado el error humano y ahorrado cientos de horas de
                             gestión administrativa.
-                        </strong>
+                        </strong>&rdquo;
                     </blockquote>
-                    <figcaption className="tm-pie">
-                        <span className="tm-autor">
+                    <figcaption className="tms-pie">
+                        <span className="tms-logo">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src="/clients/afcademia.png" alt="AFC Academia" loading="lazy" />
-                            <span>
-                                <strong>AFC Academia</strong>
-                                <span className="tm-rol">Academia de formación</span>
-                            </span>
                         </span>
-                        <a href={FICHA_GOOGLE} target="_blank" rel="noopener noreferrer" className="tm-google">
-                            <span className="tm-estrellas" aria-label="5 de 5 estrellas">★★★★★</span>
-                            <span>Reseña verificable en Google</span>
-                        </a>
+                        <span className="tms-autor">
+                            <strong>AFC Academia</strong>
+                            <span className="tms-rol">Academia de formación</span>
+                        </span>
                     </figcaption>
                 </motion.figure>
             </div>
 
             <style>{`
-                .tm-card {
-                    position: relative;
-                    margin: 0;
-                    background: var(--color-card-bg);
-                    border: 1px solid var(--color-border);
-                    border-radius: var(--radius-md);
-                    box-shadow: var(--shadow-card);
-                    padding: 3rem 3.2rem 2.4rem;
-                    max-width: 880px;
-                    margin: 0 auto;
+                .tms-banda {
+                    background: #1c1917;
+                    padding: 3.2rem 0;
                 }
-                .tm-comillas {
-                    position: absolute;
-                    top: 0.6rem;
-                    left: 1.6rem;
-                    font-family: var(--font-display, serif);
-                    font-size: 5rem;
-                    line-height: 1;
-                    color: rgba(234, 88, 12, 0.25);
-                    pointer-events: none;
-                }
-                .tm-cita {
-                    margin: 0 0 1.8rem;
-                    font-family: var(--font-display, serif);
-                    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-                    line-height: 1.55;
-                    color: var(--color-text-main);
-                }
-                .tm-cita strong { color: var(--color-primary); font-weight: 600; }
-                .tm-pie {
-                    display: flex;
-                    flex-wrap: wrap;
+                .tms-grid {
+                    display: grid;
+                    grid-template-columns: 0.8fr 1.2fr;
+                    gap: 4rem;
                     align-items: center;
-                    justify-content: space-between;
-                    gap: 1rem;
-                    border-top: 1px solid var(--color-border);
-                    padding-top: 1.4rem;
                 }
-                .tm-autor {
+                .tms-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.5rem, 2.6vw, 2rem);
+                    font-weight: 600;
+                    color: #faf6ef;
+                    letter-spacing: -0.01em;
+                    line-height: 1.15;
+                    margin: 0.8rem 0 0.9rem;
+                }
+                .tms-google {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.6rem;
+                    font-size: 0.88rem;
+                    color: rgba(250, 246, 239, 0.7);
+                    transition: color 0.2s ease;
+                }
+                .tms-google:hover { color: #f6c39c; }
+                .tms-estrellas { color: #eab308; letter-spacing: 0.1em; font-size: 1rem; }
+                .tms-item {
+                    margin: 0;
+                    border-left: 2px solid rgba(246, 195, 156, 0.45);
+                    padding-left: 1.6rem;
+                }
+                .tms-cita {
+                    margin: 0 0 1.1rem;
+                    font-size: 1.02rem;
+                    line-height: 1.7;
+                    color: rgba(250, 246, 239, 0.88);
+                }
+                .tms-cita strong { color: #f6c39c; font-weight: 600; }
+                .tms-pie {
                     display: flex;
                     align-items: center;
                     gap: 0.9rem;
                 }
-                .tm-autor img { height: 36px; width: auto; max-width: 120px; object-fit: contain; }
-                .tm-autor > span { display: flex; flex-direction: column; line-height: 1.3; }
-                .tm-rol { font-size: 0.82rem; color: var(--color-text-muted); }
-                .tm-google {
-                    display: flex;
+                .tms-logo {
+                    display: inline-flex;
                     align-items: center;
-                    gap: 0.6rem;
-                    font-size: 0.85rem;
-                    color: var(--color-text-muted);
-                    transition: color 0.2s ease;
+                    justify-content: center;
+                    background: #faf6ef;
+                    border-radius: 8px;
+                    padding: 0.28rem 0.5rem;
                 }
-                .tm-google:hover { color: var(--color-primary); }
-                .tm-estrellas { color: #eab308; letter-spacing: 0.1em; font-size: 1rem; }
-                @media (max-width: 600px) {
-                    .tm-card { padding: 2.2rem 1.5rem 1.8rem; }
-                    #testimonio { padding: 4rem 0 0.5rem !important; }
+                .tms-logo img { height: 24px; width: auto; max-width: 95px; object-fit: contain; display: block; }
+                .tms-autor { display: flex; flex-direction: column; line-height: 1.3; }
+                .tms-autor strong { color: #faf6ef; font-size: 0.95rem; }
+                .tms-rol { font-size: 0.8rem; color: rgba(250, 246, 239, 0.6); }
+                @media (max-width: 800px) {
+                    .tms-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+                    .tms-banda { padding: 2.6rem 0; }
                 }
             `}</style>
         </section>

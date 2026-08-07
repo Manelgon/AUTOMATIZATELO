@@ -37,7 +37,7 @@ export default function CifrasHome() {
             <style>{`
                 .cf-banda {
                     background: #1c1917;
-                    padding: 4.5rem 0;
+                    padding: 2.2rem 0 2.6rem;
                 }
                 .cf-grid {
                     display: grid;
@@ -52,7 +52,7 @@ export default function CifrasHome() {
                 }
                 .cf-valor {
                     font-family: var(--font-display, serif);
-                    font-size: clamp(2.6rem, 5vw, 3.6rem);
+                    font-size: clamp(2.2rem, 4vw, 3rem);
                     font-weight: 700;
                     color: #f6c39c;
                     line-height: 1;

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import TechMarquee from "@/components/TechMarquee";
 import CursoEstrellaHome from "@/components/CursoEstrellaHome";
 import PilaresHome from "@/components/PilaresHome";
+import SectoresBar from "@/components/SectoresBar";
 import CifrasHome from "@/components/CifrasHome";
 import TestimonioHome from "@/components/TestimonioHome";
 import TrustedClients from "@/components/TrustedClients";
@@ -34,21 +35,24 @@ export default function Home() {
       {/* 1b. Marquee de herramientas — la cinta que se desplaza */}
       <TechMarquee />
 
-      {/* 2. Curso estrella — el producto insignia, arriba como iActa */}
-      <CursoEstrellaHome />
-
-      {/* 3. Los 3 pilares como cards con foto + chips de sectores */}
+      {/* 2. Los 3 pilares a sangre (con la barra de sectores sobre las imágenes) */}
       <PilaresHome />
 
-      {/* 4. Banda oscura de cifras — ⚠️ NÚMEROS DE TEST, sustituir antes de push */}
+      {/* 2b. Barra de sectores, entre los paneles y las cifras */}
+      <SectoresBar />
+
+      {/* 3. Banda oscura de cifras — ⚠️ NÚMEROS DE TEST, sustituir antes de push */}
       <CifrasHome />
 
-      {/* 5. Prueba social: reseña de Google + cinta de casos */}
-      <TestimonioHome />
+      {/* 4. Curso estrella — el producto insignia */}
+      <CursoEstrellaHome />
+
+      {/* 5. Cinta de casos en banda tinta */}
       <TrustedClients />
 
-      {/* 6. Formulario de contacto */}
+      {/* 6. Formulario sobre degradado + testimonio en tinta */}
       <ContactForm />
+      <TestimonioHome />
 
       {/* 7. Últimos artículos del blog */}
       <DelBlog />

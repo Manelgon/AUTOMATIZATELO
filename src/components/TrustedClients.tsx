@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+// =============================================================================
+// CASOS DE ÉXITO — banda tinta estilo "herramientas": etiqueta centrada y
+// cinta en movimiento con entradas planas (sin cards). Va tras el testimonio.
+// =============================================================================
+
 const casos = [
     {
         logo: "/clients/serincosol.png",
@@ -30,20 +35,8 @@ const casos = [
 
 export default function TrustedClients() {
     return (
-        <section id="trusted-clients" style={{ padding: "4.5rem 0" }}>
-            <div className="container">
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "baseline", justifyContent: "space-between", gap: "1rem", marginBottom: "2.5rem" }}>
-                    <div>
-                        <span className="kicker-mono">Proyectos de éxito</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: 0 }}>
-                            Sistemas que ya funcionan, y quién los usa
-                        </h2>
-                    </div>
-                    <Link href="/casos" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                        Ver los casos completos →
-                    </Link>
-                </div>
-            </div>
+        <section id="trusted-clients" className="casos-banda">
+            <p className="casos-etiqueta">Sistemas que ya funcionan, y quién los usa</p>
 
             {/* Cinta de casos en movimiento (pausa al pasar el ratón) */}
             <div className="casos-marquee">
@@ -52,94 +45,118 @@ export default function TrustedClients() {
                         <Link
                             key={`${c.nombre}-${i}`}
                             href="/casos"
-                            className="caso-chip"
+                            className="caso-item"
                             aria-hidden={i >= casos.length}
                             tabIndex={i >= casos.length ? -1 : undefined}
                         >
-                            <div className="caso-chip-marca">
+                            <span className="caso-marca">
                                 {"logo" in c && c.logo ? (
-                                    // eslint-disable-next-line @next/next/no-img-element
-                                    <img src={c.logo} alt={c.nombre} loading="lazy" />
+                                    <span className="caso-logo">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                        <img src={c.logo} alt={c.nombre} loading="lazy" />
+                                    </span>
                                 ) : (
-                                    <span className="caso-chip-icono">
+                                    <span className="caso-icono">
                                         <i className={`fa-solid ${"icono" in c ? c.icono : ""}`}></i>
                                     </span>
                                 )}
-                                <span className="caso-chip-nombre">{c.nombre}</span>
-                            </div>
-                            <span className="mono-label" style={{ color: "var(--color-text-muted)" }}>
-                                {c.resultado}
+                                <span className="caso-nombre">{c.nombre}</span>
                             </span>
+                            <span className="caso-resultado mono-label">{c.resultado}</span>
                         </Link>
                     ))}
                 </div>
             </div>
 
+            <p className="casos-enlace">
+                <Link href="/casos">Ver los casos completos →</Link>
+            </p>
+
             <style>{`
+                .casos-banda {
+                    background: #1c1917;
+                    padding: 2.6rem 0 2.4rem;
+                }
+                .casos-etiqueta {
+                    text-align: center;
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.55);
+                    margin: 0 0 1.6rem;
+                }
                 .casos-marquee {
                     overflow: hidden;
                     -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
                     mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-                    padding: 0.5rem 0 1rem;
                 }
                 .casos-marquee-track {
                     display: flex;
-                    gap: 1.2rem;
+                    align-items: center;
+                    gap: 3.5rem;
                     width: max-content;
                     animation: marquee 45s linear infinite;
                 }
                 .casos-marquee:hover .casos-marquee-track {
                     animation-play-state: paused;
                 }
-                .caso-chip {
+                .caso-item {
                     display: flex;
                     flex-direction: column;
-                    gap: 0.8rem;
-                    width: 340px;
-                    padding: 1.5rem 1.7rem;
-                    background: var(--color-card-bg);
-                    border: 1px solid var(--color-border);
-                    border-radius: var(--radius-md);
-                    box-shadow: var(--shadow-card);
+                    gap: 0.45rem;
+                    width: 300px;
                     color: inherit;
-                    transition: transform 0.25s ease, border-color 0.25s ease;
                 }
-                .caso-chip:hover {
-                    transform: translateY(-4px);
-                    border-color: rgba(234, 88, 12, 0.4);
-                }
-                .caso-chip-marca {
+                .caso-marca {
                     display: flex;
                     align-items: center;
-                    gap: 0.9rem;
+                    gap: 0.8rem;
                 }
-                .caso-chip-marca img {
-                    height: 34px;
-                    width: auto;
-                    max-width: 130px;
-                    object-fit: contain;
-                }
-                .caso-chip-icono {
-                    width: 38px;
-                    height: 38px;
-                    border-radius: 10px;
-                    background: rgba(234, 88, 12, 0.12);
+                .caso-logo {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    color: var(--color-primary);
-                    font-size: 1.1rem;
+                    background: #faf6ef;
+                    border-radius: 8px;
+                    padding: 0.3rem 0.55rem;
                     flex-shrink: 0;
                 }
-                .caso-chip-nombre {
+                .caso-logo img { height: 24px; width: auto; max-width: 100px; object-fit: contain; display: block; }
+                .caso-icono {
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 9px;
+                    background: rgba(246, 195, 156, 0.15);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #f6c39c;
+                    font-size: 1rem;
+                    flex-shrink: 0;
+                }
+                .caso-nombre {
                     font-family: var(--font-display, serif);
-                    font-size: 1.1rem;
+                    font-size: 1.05rem;
                     font-weight: 600;
-                    color: var(--color-text-main);
+                    color: #faf6ef;
                     line-height: 1.2;
                 }
+                .caso-resultado {
+                    color: rgba(250, 246, 239, 0.55);
+                }
+                .casos-enlace {
+                    text-align: center;
+                    margin: 1.8rem 0 0;
+                }
+                .casos-enlace a {
+                    color: #f6c39c;
+                    font-weight: 600;
+                    font-size: 0.92rem;
+                }
+                .casos-enlace a:hover { color: #faf6ef; }
                 @media (max-width: 600px) {
-                    .caso-chip { width: 280px; padding: 1.2rem 1.4rem; }
+                    .caso-item { width: 260px; }
                 }
             `}</style>
         </section>
