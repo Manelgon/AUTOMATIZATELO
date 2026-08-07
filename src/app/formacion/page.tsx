@@ -130,59 +130,51 @@ export default function FormacionIaPage() {
                 </div>
             </section>
 
-            {/* Las dos puertas — bloque partido 01/02 */}
-            <section style={{ padding: "4.5rem 0" }}>
-                <div className="container" style={{ maxWidth: 1080 }}>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">Elige tu puerta</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: 0 }}>
-                            Dos formaciones, según quién eres
-                        </h2>
-                    </div>
-                    <div className="fd-puertas">
-                        <Link href="/formacion/empresas" className="fd-puerta">
-                            <span className="fd-puerta-foto">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/despachos.webp" alt="Formación en IA para empresas" loading="lazy" />
+            {/* Las dos puertas — mitades a sangre con foto y velo tinta */}
+            <section style={{ padding: "0" }}>
+                <div className="fd-puertas">
+                    <Link href="/formacion/empresas" className="fd-puerta">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img className="fd-puerta-fondo" src="/despachos.webp" alt="" aria-hidden="true" loading="lazy" />
+                        <span className="fd-puerta-velo" aria-hidden="true"></span>
+                        <span className="fd-puerta-marca" aria-hidden="true">01</span>
+                        <span className="fd-puerta-cuerpo">
+                            <span className="fd-puerta-num mono-label">Empresas</span>
+                            <span className="fd-puerta-titulo">Alfabetización + tu herramienta</span>
+                            <span className="fd-puerta-desc">
+                                El bloque obligatorio del Art. 4 más el taller 100% práctico con la
+                                herramienta que ya usa tu equipo. Con certificado nominal y registro
+                                formativo, adaptado por departamento y nivel.
                             </span>
-                            <span className="fd-puerta-cuerpo">
-                                <span className="fd-puerta-num mono-label">01 · Empresas</span>
-                                <span className="fd-puerta-titulo">Alfabetización + tu herramienta</span>
-                                <span className="fd-puerta-desc">
-                                    El bloque obligatorio del Art. 4 más el taller 100% práctico con la
-                                    herramienta que ya usa tu equipo. Con certificado nominal y registro
-                                    formativo, adaptado por departamento y nivel.
-                                </span>
-                                <span className="fd-puerta-chips">
-                                    {["Art. 4", "ChatGPT", "Copilot 365", "Gemini", "Claude", "A medida · SCORM"].map((c) => (
-                                        <span key={c} className="fd-chip">{c}</span>
-                                    ))}
-                                </span>
-                                <span className="fd-puerta-cta">Ver formación para empresas →</span>
+                            <span className="fd-puerta-chips">
+                                {["Art. 4", "ChatGPT", "Copilot 365", "Gemini", "Claude", "A medida · SCORM"].map((c) => (
+                                    <span key={c} className="fd-chip">{c}</span>
+                                ))}
                             </span>
-                        </Link>
-                        <Link href="/formacion/centros-educativos" className="fd-puerta">
-                            <span className="fd-puerta-foto">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/claustro.webp" alt="Formación en IA para centros educativos" loading="lazy" />
+                            <span className="fd-puerta-cta">Ver formación para empresas →</span>
+                        </span>
+                    </Link>
+                    <Link href="/formacion/centros-educativos" className="fd-puerta">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img className="fd-puerta-fondo" src="/claustro.webp" alt="" aria-hidden="true" loading="lazy" />
+                        <span className="fd-puerta-velo" aria-hidden="true"></span>
+                        <span className="fd-puerta-marca" aria-hidden="true">02</span>
+                        <span className="fd-puerta-cuerpo">
+                            <span className="fd-puerta-num mono-label">Centros educativos</span>
+                            <span className="fd-puerta-titulo">IA en el aula y para el claustro</span>
+                            <span className="fd-puerta-desc">
+                                Formación de claustro con seguridad jurídica, política de uso de IA
+                                del centro, y la IA llevada al aula con criterio — para que docentes
+                                y alumnado aprendan a usarla, no a esconderla.
                             </span>
-                            <span className="fd-puerta-cuerpo">
-                                <span className="fd-puerta-num mono-label">02 · Centros educativos</span>
-                                <span className="fd-puerta-titulo">IA en el aula y para el claustro</span>
-                                <span className="fd-puerta-desc">
-                                    Formación de claustro con seguridad jurídica, política de uso de IA
-                                    del centro, y la IA llevada al aula con criterio — para que docentes
-                                    y alumnado aprendan a usarla, no a esconderla.
-                                </span>
-                                <span className="fd-puerta-chips">
-                                    {["Claustro", "Política del centro", "Aula", "Menores y RGPD"].map((c) => (
-                                        <span key={c} className="fd-chip">{c}</span>
-                                    ))}
-                                </span>
-                                <span className="fd-puerta-cta">Ver formación para centros →</span>
+                            <span className="fd-puerta-chips">
+                                {["Claustro", "Política del centro", "Aula", "Menores y RGPD"].map((c) => (
+                                    <span key={c} className="fd-chip">{c}</span>
+                                ))}
                             </span>
-                        </Link>
-                    </div>
+                            <span className="fd-puerta-cta">Ver formación para centros →</span>
+                        </span>
+                    </Link>
                 </div>
             </section>
 
@@ -364,81 +356,95 @@ export default function FormacionIaPage() {
                 .fd-puertas {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    gap: 1.5rem;
                 }
                 .fd-puerta {
+                    position: relative;
                     display: flex;
-                    flex-direction: column;
-                    background: var(--color-card-bg);
-                    border: 1px solid var(--color-border);
-                    border-radius: var(--radius-md);
-                    box-shadow: var(--shadow-card);
+                    align-items: flex-end;
+                    min-height: 30rem;
                     overflow: hidden;
                     color: inherit;
-                    transition: transform 0.25s ease, border-color 0.25s ease;
+                    background: #1c1917;
                 }
-                .fd-puerta:hover {
-                    transform: translateY(-5px);
-                    border-color: rgba(234, 88, 12, 0.4);
-                }
-                .fd-puerta-foto {
-                    display: block;
-                    aspect-ratio: 21 / 9;
-                    overflow: hidden;
-                }
-                .fd-puerta-foto img {
+                .fd-puerta-fondo {
+                    position: absolute;
+                    inset: 0;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+                    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
                 }
-                .fd-puerta:hover .fd-puerta-foto img { transform: scale(1.05); }
+                .fd-puerta:hover .fd-puerta-fondo { transform: scale(1.04); }
+                .fd-puerta-velo {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(180deg, rgba(28,25,23,0.35) 0%, rgba(28,25,23,0.55) 45%, rgba(28,25,23,0.85) 100%);
+                    transition: background 0.3s ease;
+                }
+                .fd-puerta-marca {
+                    position: absolute;
+                    top: 1.2rem;
+                    left: 1.8rem;
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(4rem, 8vw, 6.5rem);
+                    font-weight: 700;
+                    line-height: 1;
+                    color: rgba(250, 246, 239, 0.16);
+                    pointer-events: none;
+                }
                 .fd-puerta-cuerpo {
+                    position: relative;
                     display: flex;
                     flex-direction: column;
-                    gap: 0.65rem;
-                    padding: 1.5rem 1.6rem 1.7rem;
-                    flex: 1;
+                    gap: 0.7rem;
+                    padding: 7rem 2.2rem 2.4rem;
+                    max-width: 34rem;
                 }
-                .fd-puerta-num { color: var(--color-primary); }
+                .fd-puerta-num {
+                    color: #f6c39c;
+                }
                 .fd-puerta-titulo {
                     font-family: var(--font-display, serif);
-                    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+                    font-size: clamp(1.45rem, 2.8vw, 2rem);
                     font-weight: 600;
-                    color: var(--color-text-main);
-                    line-height: 1.2;
+                    color: #faf6ef;
+                    line-height: 1.15;
                 }
                 .fd-puerta-desc {
                     font-size: 0.95rem;
-                    color: var(--color-text-muted);
+                    color: rgba(250, 246, 239, 0.85);
                     line-height: 1.6;
-                    flex: 1;
                 }
                 .fd-puerta-chips {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 0.45rem;
+                    margin-top: 0.2rem;
                 }
                 .fd-chip {
                     font-family: var(--font-mono, monospace);
-                    font-size: 0.68rem;
+                    font-size: 0.66rem;
                     font-weight: 600;
                     letter-spacing: 0.06em;
                     text-transform: uppercase;
-                    color: var(--color-text-main);
-                    background: rgba(234, 88, 12, 0.08);
-                    border: 1px solid rgba(234, 88, 12, 0.25);
+                    color: #faf6ef;
+                    background: rgba(28, 25, 23, 0.45);
+                    border: 1px solid rgba(250, 246, 239, 0.35);
                     border-radius: 50px;
                     padding: 0.28rem 0.7rem;
                 }
                 .fd-puerta-cta {
-                    color: var(--color-primary);
+                    color: #f6c39c;
                     font-weight: 600;
                     font-size: 0.95rem;
-                    margin-top: 0.3rem;
+                    margin-top: 0.5rem;
+                    transition: transform 0.25s ease;
                 }
+                .fd-puerta:hover .fd-puerta-cta { transform: translateX(6px); }
                 @media (max-width: 800px) {
                     .fd-puertas { grid-template-columns: 1fr; }
+                    .fd-puerta { min-height: 24rem; }
+                    .fd-puerta-cuerpo { padding: 5.5rem 1.4rem 1.8rem; }
                 }
                 .fp-audiencias {
                     display: grid;
