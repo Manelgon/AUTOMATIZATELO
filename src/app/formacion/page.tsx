@@ -124,9 +124,8 @@ export default function FormacionIaPage() {
                     </p>
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.8, margin: 0, maxWidth: 720 }}>
                         Y ya no es solo cuestión de productividad: usar IA sin formar al equipo es hoy
-                        un <strong style={{ color: "var(--color-text-main)" }}>incumplimiento normativo</strong> —
-                        las fechas y las multas, justo debajo. La mayoría de pymes y centros españoles
-                        todavía no lo ha resuelto.
+                        un <strong style={{ color: "var(--color-text-main)" }}>incumplimiento normativo</strong>.
+                        La mayoría de pymes y centros españoles todavía no lo ha resuelto.
                     </p>
                 </div>
             </section>
