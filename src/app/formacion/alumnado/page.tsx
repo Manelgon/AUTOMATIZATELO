@@ -293,8 +293,8 @@ export default function AlumnadoPage() {
                     }}>
                         En el taller corto se trabajan los bloques que elija el centro; el curso completo los recorre todos.
                     </p>
-                    {temario.map((b, i) => (
-                        <details key={b.num} className="al-acordeon" open={i === 0}>
+                    {temario.map((b) => (
+                        <details key={b.num} className="al-acordeon" name="temario-alumnado">
                             <summary>
                                 <span className="al-acordeon-num mono-label">{b.num}</span>
                                 <span className="al-acordeon-titulo">{b.titulo}</span>
@@ -345,7 +345,7 @@ export default function AlumnadoPage() {
                     </div>
                     <div>
                         {faqs.map((f) => (
-                            <details key={f.question} className="al-faq">
+                            <details key={f.question} className="al-faq" name="faq-alumnado">
                                 <summary>
                                     <span>{f.question}</span>
                                     <i className="fas fa-chevron-down"></i>

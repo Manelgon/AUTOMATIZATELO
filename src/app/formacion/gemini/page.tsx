@@ -21,10 +21,10 @@ export default function Pagina() {
             kicker="Curso · El mundo Google Workspace"
             titulo={<>
                 Gemini + NotebookLM:{" "}<br />
-                <span style={{ color: "var(--color-primary)" }}>la IA del mundo Google</span>
+                <span style={{ color: "#f6c39c" }}>la IA del mundo Google</span>
             </>}
             subtitulo="Si tu empresa trabaja en Gmail, Docs, Sheets y Meet, Gemini ya vive dentro. Y NotebookLM es el arma secreta que casi nadie usa: le subes vuestros manuales, contratos o temarios, y responde citando de dónde lo saca."
-            enCorto="Curso de Gemini para empresas en Google Workspace: la IA aplicada en Gmail, Docs, Sheets y Meet, más NotebookLM para convertir vuestra documentación interna en un experto al que preguntar. Desde 900€ con precio cerrado; con el bloque del Art. 4, desde 1.200€."
+            enCorto="Curso de Gemini para empresas en Google Workspace: la IA aplicada en Gmail, Docs, Sheets y Meet, más NotebookLM para convertir vuestra documentación interna en un experto al que preguntar."
             paraQuien="Para equipos que trabajan en Google Workspace. Y NotebookLM interesa a cualquiera con documentación interna que la gente no se lee: manuales, procedimientos, temarios."
             temario={[
                 { num: "01", titulo: "Workspace con IA, bien configurado", desc: "Qué incluye vuestra licencia, qué añade Gemini y cómo quedan protegidos los datos del dominio.", puntos: ["Qué incluye vuestra licencia y qué añade Gemini", "Privacidad del dominio: qué accede y qué no", "Quién necesita qué: no todos el mismo plan", "Qué no debe meterse nunca en un chat"] },

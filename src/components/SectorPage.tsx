@@ -174,7 +174,7 @@ export default function SectorPage(p: SectorPageProps) {
                         </h2>
                     </motion.div>
                     {p.faqs.map((f) => (
-                        <details key={f.question} className="sp-faq">
+                        <details key={f.question} className="sp-faq" name="faq-sector">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

@@ -252,7 +252,7 @@ export default function ChatbotsWhatsappPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="cw-faq">
+                        <details key={f.question} className="cw-faq" name="faq-chatbots">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

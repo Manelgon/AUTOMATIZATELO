@@ -344,7 +344,7 @@ export default function AuditoriaIAPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="au-faq">
+                        <details key={f.question} className="au-faq" name="faq-cumplimiento">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

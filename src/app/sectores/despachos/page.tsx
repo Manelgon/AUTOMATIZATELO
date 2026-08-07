@@ -289,7 +289,7 @@ export default function DespachosPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="fd-faq">
+                        <details key={f.question} className="fd-faq" name="faq-despachos">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

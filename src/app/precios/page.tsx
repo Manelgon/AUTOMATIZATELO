@@ -406,7 +406,7 @@ export default function PreciosPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="pp-faq">
+                        <details key={f.question} className="pp-faq" name="faq-precios">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

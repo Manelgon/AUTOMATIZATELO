@@ -246,7 +246,7 @@ export default function ImplantacionCrmPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="ic-faq">
+                        <details key={f.question} className="ic-faq" name="faq-crm">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

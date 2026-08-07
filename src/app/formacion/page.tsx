@@ -307,7 +307,7 @@ export default function FormacionIaPage() {
                     </div>
                     <div>
                         {faqs.map((f) => (
-                            <details key={f.question} className="fi-faq">
+                            <details key={f.question} className="fi-faq" name="faq-formacion">
                                 <summary>
                                     <span>{f.question}</span>
                                     <i className="fas fa-chevron-down"></i>

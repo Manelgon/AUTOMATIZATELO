@@ -166,40 +166,6 @@ export default function FormacionEmpresasPage() {
 
             <FormacionTabs />
 
-            {/* Formación preparada para tu equipo — proceso en 3 pasos */}
-            <section style={{ padding: "3.6rem 0", background: "#1c1917" }}>
-                <div className="container">
-                    <h2 style={{
-                        textAlign: "center",
-                        fontFamily: "var(--font-mono, monospace)",
-                        fontSize: "0.78rem",
-                        fontWeight: 600,
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        color: "rgba(250, 246, 239, 0.55)",
-                        margin: "0 0 2.2rem",
-                    }}>
-                        El curso se monta con vuestro trabajo
-                    </h2>
-                    <div className="fe-pasos">
-                        {[
-                            { n: "01", titulo: "Antes de la primera sesión", d: "Recojo vuestros casos: qué herramientas ya tenéis contratadas, qué tareas comen más horas y qué datos sensibles maneja cada puesto." },
-                            { n: "02", titulo: "En clase", d: "Los ejercicios salen de vuestro trabajo real — no de una plantilla. Y las decisiones salen resueltas: qué se aprueba, qué no se pega nunca en una IA y quién revisa qué." },
-                            { n: "03", titulo: "Lo que queda después", d: "Certificado nominal por participante, registro formativo fechado, el material del curso y los casos montados en clase — que el equipo sigue usando el lunes." },
-                        ].map((p, i) => (
-                            <div key={p.n} className="fe-paso">
-                                <div className="fe-paso-cab">
-                                    <span className="fe-paso-num">{p.n}</span>
-                                    {i < 2 && <span className="fe-paso-linea" aria-hidden="true"></span>}
-                                </div>
-                                <h3>{p.titulo}</h3>
-                                <p>{p.d}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Curso estrella — split degradado, como el del home */}
             <section aria-label="Curso estrella" style={{ padding: 0, background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)" }}>
                 <div className="container fe-mitades">
@@ -284,7 +250,58 @@ export default function FormacionEmpresasPage() {
                 </div>
             </section>
 
-            {/* Casos más concretos — barra tinta, pegada a las cifras */}
+            {/* Formación preparada para tu equipo — foto ambiental + velo, como el "quién lo imparte" */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "4.5rem 0", background: "#1c1917" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/auditoria.webp"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.72) 0%, rgba(28,25,23,0.52) 45%, rgba(28,25,23,0.25) 75%, rgba(28,25,23,0.1) 100%)",
+                }} />
+                <div className="container" style={{ position: "relative", zIndex: 2 }}>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>Formación preparada para tu equipo</span>
+                        <h2 style={{
+                            fontFamily: "var(--font-display, serif)",
+                            fontSize: "clamp(1.5rem, 2.8vw, 2.1rem)",
+                            fontWeight: 600,
+                            lineHeight: 1.2,
+                            color: "#faf6ef",
+                            margin: "1rem 0 0",
+                            letterSpacing: "-0.01em",
+                            textShadow: "0 2px 30px rgba(28,25,23,0.45)",
+                        }}>
+                            El curso se monta con vuestro trabajo
+                        </h2>
+                    </div>
+                    <div className="fe-pasos">
+                        {[
+                            { n: "01", titulo: "Antes de la primera sesión", d: "Recojo vuestros casos: qué herramientas ya tenéis contratadas, qué tareas comen más horas y qué datos sensibles maneja cada puesto." },
+                            { n: "02", titulo: "En clase", d: "Los ejercicios salen de vuestro trabajo real — no de una plantilla. Y las decisiones salen resueltas: qué se aprueba, qué no se pega nunca en una IA y quién revisa qué." },
+                            { n: "03", titulo: "Lo que queda después", d: "Certificado nominal por participante, registro formativo fechado, el material del curso y los casos montados en clase — que el equipo sigue usando el lunes." },
+                        ].map((p, i) => (
+                            <div key={p.n} className="fe-paso">
+                                <div className="fe-paso-cab">
+                                    <span className="fe-paso-num">{p.n}</span>
+                                    {i < 2 && <span className="fe-paso-linea" aria-hidden="true"></span>}
+                                </div>
+                                <h3>{p.titulo}</h3>
+                                <p>{p.d}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Casos más concretos — barra tinta */}
             <nav aria-label="Casos concretos" className="fd-otros-barra">
                 <div className="container fd-otros">
                     <span className="fd-otros-etiqueta mono-label">¿Tu caso es más concreto?</span>
@@ -335,7 +352,7 @@ export default function FormacionEmpresasPage() {
                     </div>
                     <div>
                         {faqs.map((f) => (
-                            <details key={f.question} className="fe-faq">
+                            <details key={f.question} className="fe-faq" name="faq-empresas">
                                 <summary>
                                     <span>{f.question}</span>
                                     <i className="fas fa-chevron-down"></i>
@@ -543,7 +560,7 @@ export default function FormacionEmpresasPage() {
                 .fe-paso-linea {
                     flex: 1;
                     height: 1px;
-                    background: rgba(250, 246, 239, 0.16);
+                    background: rgba(250, 246, 239, 0.2);
                 }
                 .fe-paso h3 {
                     font-family: var(--font-display, serif);
@@ -554,7 +571,7 @@ export default function FormacionEmpresasPage() {
                     line-height: 1.3;
                 }
                 .fe-paso p {
-                    color: rgba(250, 246, 239, 0.72);
+                    color: rgba(250, 246, 239, 0.8);
                     font-size: 0.9rem;
                     line-height: 1.6;
                     margin: 0;

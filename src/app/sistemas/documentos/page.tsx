@@ -202,7 +202,7 @@ export default function ExtraccionDatosPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="ex-faq">
+                        <details key={f.question} className="ex-faq" name="faq-documentos">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

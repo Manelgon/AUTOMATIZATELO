@@ -116,23 +116,31 @@ const temario = [
     },
 ];
 
-const bloques: { num: string; titulo: string; desc: string; href?: string; enlaceTexto?: string }[] = [
+const bloques = [
     {
         num: "01",
+        foto: "/auditoria.webp",
+        kicker: "Cumplimiento",
         titulo: "Política de uso de IA del centro",
-        desc: "Un documento marco, trabajado con dirección: qué pueden hacer docentes y alumnos, cómo se cita la IA y cómo se evalúa.",
+        desc: "Un documento marco que redacto con dirección: qué pueden hacer docentes y alumnos, cómo se cita la IA y cómo se evalúa. La misma política del pack de cumplimiento, adaptada al mundo educativo.",
+        href: "/cumplimiento",
+        enlaceTexto: "Ver el pack de cumplimiento →",
     },
     {
         num: "02",
-        titulo: "Cursos e-learning a medida (SCORM)",
+        foto: "/escribiendo-ventana.webp",
+        kicker: "SCORM",
+        titulo: "Cursos e-learning a medida",
         desc: "Produzco los cursos que el centro necesite — del tema que sea — instalados en vuestra plataforma para siempre, con registro por alumno.",
         href: "/formacion/cursos-a-medida",
         enlaceTexto: "Cómo funciona →",
     },
     {
         num: "03",
-        titulo: "Taller para alumnado: IA y el primer empleo",
-        desc: "Para etapas superiores — 4º ESO, Bachillerato y FP: usar la IA para estudiar mejor (no para copiar) y para lo que viene después: CV, cartas y preparación de entrevistas.",
+        foto: "/academias.webp",
+        kicker: "Alumnado",
+        titulo: "Taller: IA y el primer empleo",
+        desc: "Para 4º ESO, Bachillerato y FP: usar la IA para estudiar mejor — no para copiar — y para el CV, las cartas y las entrevistas.",
         href: "/formacion/alumnado",
         enlaceTexto: "Ver el taller →",
     },
@@ -193,30 +201,6 @@ export default function CentrosEducativosPage() {
 
             {/* Salta entre todas las formaciones sin volver atras */}
             <FormacionTabs />
-
-            {/* El problema — split sobre crema: título a la izquierda, dolores con filete a la derecha */}
-            <section style={{ padding: "3.6rem 0" }}>
-                <div className="container ce2-problema-grid">
-                    <div>
-                        <span className="kicker-mono">El problema</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.9rem" }}>
-                            Lo que está pasando en los centros ahora mismo
-                        </h2>
-                        <p style={{ color: "var(--color-text-muted)", lineHeight: 1.65, margin: 0, fontSize: "0.95rem", maxWidth: 420 }}>
-                            Cuatro señales de que a tu centro le toca ponerse con esto — probablemente
-                            reconozcas más de una.
-                        </p>
-                    </div>
-                    <div className="ce2-dolores">
-                        {dolores.map((d) => (
-                            <div key={d.titulo} className="ce2-dolor">
-                                <h3>{d.titulo}</h3>
-                                <p>{d.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* El curso de claustro — split degradado, como el curso estrella */}
             <section aria-label="El curso de claustro" style={{ padding: 0, background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)" }}>
@@ -291,8 +275,8 @@ export default function CentrosEducativosPage() {
                     }}>
                         El punto de partida se ajusta al nivel real del claustro en la reunión previa con dirección.
                     </p>
-                    {temario.map((b, i) => (
-                        <details key={b.num} className="ct-acordeon" open={i === 0}>
+                    {temario.map((b) => (
+                        <details key={b.num} className="ct-acordeon" name="temario-claustro">
                             <summary>
                                 <span className="ct-acordeon-num mono-label">{b.num}</span>
                                 <span className="ct-acordeon-titulo">{b.titulo}</span>
@@ -305,25 +289,6 @@ export default function CentrosEducativosPage() {
                             </ul>
                         </details>
                     ))}
-                </div>
-            </section>
-
-            {/* El programa completo — banda tinta con los 4 bloques */}
-            <section style={{ padding: "3.4rem 0", background: "#1c1917" }}>
-                <div className="container">
-                    <h2 className="ce2-etiqueta">Además del curso: el programa completo del centro</h2>
-                    <div className="ce2-bloques">
-                        {bloques.map((b) => (
-                            <div key={b.num} className="ce2-bloque">
-                                <span className="mono-label" style={{ color: "#f6c39c" }}>{b.num}</span>
-                                <h3>{b.titulo}</h3>
-                                <p>{b.desc}</p>
-                                {b.href && (
-                                    <Link href={b.href} className="ce2-bloque-enlace">{b.enlaceTexto ?? "Cómo funciona →"}</Link>
-                                )}
-                            </div>
-                        ))}
-                    </div>
                 </div>
             </section>
 
@@ -341,7 +306,7 @@ export default function CentrosEducativosPage() {
                         </div>
                         <div className="ce2-cifra">
                             <span className="ce2-cifra-valor">desde 1.900 €</span>
-                            <span className="ce2-cifra-etiqueta">Curso SCORM en vuestra plataforma</span>
+                            <span className="ce2-cifra-etiqueta">Cursos a medida · SCORM</span>
                         </div>
                     </div>
                     <p className="ce2-cifras-pie">
@@ -349,6 +314,88 @@ export default function CentrosEducativosPage() {
                         es para el centro y su evidencia del Art. 4 ·{" "}
                         <Link href="/precios">Ver la tabla de precios →</Link>
                     </p>
+                </div>
+            </section>
+
+            {/* El problema — foto ambiental + velo, como el "quién lo imparte" */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "4.5rem 0", background: "#1c1917" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/auditoria.webp"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.72) 0%, rgba(28,25,23,0.52) 45%, rgba(28,25,23,0.25) 75%, rgba(28,25,23,0.1) 100%)",
+                }} />
+                <div className="container" style={{ maxWidth: 1000, position: "relative", zIndex: 2 }}>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>El problema</span>
+                        <h2 style={{
+                            fontFamily: "var(--font-display, serif)",
+                            fontSize: "clamp(1.5rem, 2.8vw, 2.1rem)",
+                            fontWeight: 600,
+                            lineHeight: 1.2,
+                            color: "#faf6ef",
+                            margin: "1rem 0 0.6rem",
+                            letterSpacing: "-0.01em",
+                            textShadow: "0 2px 30px rgba(28,25,23,0.45)",
+                        }}>
+                            Lo que está pasando en los centros ahora mismo
+                        </h2>
+                        <p style={{ color: "rgba(250,246,239,0.85)", lineHeight: 1.7, margin: 0, maxWidth: 560 }}>
+                            Cuatro señales de que a tu centro le toca ponerse con esto — probablemente
+                            reconozcas más de una.
+                        </p>
+                    </div>
+                    <div className="ce2-dolores">
+                        {dolores.map((d) => (
+                            <div key={d.titulo} className="ce2-dolor">
+                                <h3>{d.titulo}</h3>
+                                <p>{d.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Casos más concretos — barra tinta */}
+            <nav aria-label="Casos concretos" className="fd-otros-barra">
+                <div className="container fd-otros">
+                    <span className="fd-otros-etiqueta mono-label">¿Tu caso es más concreto?</span>
+                    <Link href="/formacion/empresas" className="fd-otro">Formación para empresas</Link>
+                    <Link href="/sectores/despachos" className="fd-otro">Despachos profesionales</Link>
+                    <Link href="/formacion/directivos" className="fd-otro">Dirección</Link>
+                    <Link href="/sectores/academias" className="fd-otro">Academias</Link>
+                    <Link href="/formacion/cursos-a-medida" className="fd-otro">Cursos a medida · SCORM</Link>
+                </div>
+            </nav>
+
+            {/* El programa completo — paneles a sangre con foto, como los pilares del index */}
+            <section style={{ padding: 0 }}>
+                <div className="ce2-prog-cabecera">
+                    <h2 className="ce2-etiqueta" style={{ marginBottom: 0 }}>Además del curso: el programa completo del centro</h2>
+                </div>
+                <div className="ce2-prog-paneles">
+                    {bloques.map((b) => (
+                        <Link key={b.num} href={b.href} className="ce2-prog-panel">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img className="ce2-prog-fondo" src={b.foto} alt="" aria-hidden="true" loading="lazy" />
+                            <span className="ce2-prog-velo" aria-hidden="true"></span>
+                            <span className="ce2-prog-marca" aria-hidden="true">{b.num}</span>
+                            <span className="ce2-prog-cuerpo">
+                                <span className="mono-label" style={{ color: "#f6c39c" }}>{b.kicker}</span>
+                                <span className="ce2-prog-titulo">{b.titulo}</span>
+                                <span className="ce2-prog-desc">{b.desc}</span>
+                                <span className="ce2-prog-cta">{b.enlaceTexto}</span>
+                            </span>
+                        </Link>
+                    ))}
                 </div>
             </section>
 
@@ -368,7 +415,7 @@ export default function CentrosEducativosPage() {
                     </div>
                     <div>
                         {faqs.map((f) => (
-                            <details key={f.question} className="ce-faq">
+                            <details key={f.question} className="ce-faq" name="faq-centros">
                                 <summary>
                                     <span>{f.question}</span>
                                     <i className="fas fa-chevron-down"></i>
@@ -388,36 +435,31 @@ export default function CentrosEducativosPage() {
                     backdrop-filter: blur(5px);
                     -webkit-backdrop-filter: blur(5px);
                 }
-                .ce2-problema-grid {
-                    display: grid;
-                    grid-template-columns: 0.8fr 1.2fr;
-                    gap: 4rem;
-                    align-items: center;
-                }
                 .ce2-dolores {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.2rem;
-                    border-left: 2px solid rgba(234, 88, 12, 0.35);
-                    padding-left: 1.6rem;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.8rem 3rem;
+                }
+                .ce2-dolor {
+                    border-top: 1px solid rgba(250, 246, 239, 0.16);
+                    padding-top: 1rem;
                 }
                 .ce2-dolor h3 {
                     font-family: var(--font-display, serif);
                     font-size: 1.15rem;
                     font-weight: 600;
-                    color: var(--color-text-main);
+                    color: #faf6ef;
                     margin: 0 0 0.25rem;
                     line-height: 1.3;
                 }
                 .ce2-dolor p {
-                    color: var(--color-text-muted);
+                    color: rgba(250, 246, 239, 0.8);
                     line-height: 1.6;
                     font-size: 0.92rem;
                     margin: 0;
                 }
-                @media (max-width: 800px) {
-                    .ce2-problema-grid { grid-template-columns: 1fr; gap: 1.8rem; }
-                    .ce2-dolores { border-left: none; padding-left: 0; }
+                @media (max-width: 700px) {
+                    .ce2-dolores { grid-template-columns: 1fr; gap: 1.4rem; }
                 }
                 .ct-acordeon {
                     border-top: 1px solid rgba(250, 246, 239, 0.14);
@@ -635,39 +677,79 @@ export default function CentrosEducativosPage() {
                     color: rgba(250, 246, 239, 0.55);
                     margin: 0 0 2.2rem;
                 }
-                .ce2-bloques {
+                .ce2-prog-cabecera {
+                    background: #1c1917;
+                    padding: 2.4rem 0 1.6rem;
+                }
+                .ce2-prog-paneles {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
-                    gap: 2rem;
                 }
-                .ce2-bloque h3 {
+                .ce2-prog-panel {
+                    position: relative;
+                    display: flex;
+                    align-items: flex-end;
+                    min-height: 24rem;
+                    overflow: hidden;
+                    color: inherit;
+                    background: #1c1917;
+                }
+                .ce2-prog-fondo {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+                .ce2-prog-panel:hover .ce2-prog-fondo { transform: scale(1.04); }
+                .ce2-prog-velo {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(180deg, rgba(28,25,23,0.35) 0%, rgba(28,25,23,0.6) 45%, rgba(28,25,23,0.9) 100%);
+                }
+                .ce2-prog-marca {
+                    position: absolute;
+                    top: 1rem;
+                    left: 1.5rem;
                     font-family: var(--font-display, serif);
-                    font-size: 1.2rem;
+                    font-size: clamp(3.5rem, 6vw, 5.5rem);
+                    font-weight: 700;
+                    line-height: 1;
+                    color: rgba(250, 246, 239, 0.16);
+                    pointer-events: none;
+                }
+                .ce2-prog-cuerpo {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.55rem;
+                    padding: 5rem 1.8rem 1.9rem;
+                }
+                .ce2-prog-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.25rem, 2vw, 1.55rem);
                     font-weight: 600;
                     color: #faf6ef;
-                    margin: 0.5rem 0;
-                    line-height: 1.3;
+                    line-height: 1.2;
                 }
-                .ce2-bloque p {
-                    color: rgba(250, 246, 239, 0.72);
-                    line-height: 1.6;
-                    margin: 0;
-                    font-size: 0.92rem;
+                .ce2-prog-desc {
+                    font-size: 0.9rem;
+                    color: rgba(250, 246, 239, 0.82);
+                    line-height: 1.55;
                 }
-                .ce2-bloque-enlace {
-                    display: inline-block;
-                    margin-top: 0.6rem;
+                .ce2-prog-cta {
                     color: #f6c39c;
                     font-weight: 600;
-                    font-size: 0.88rem;
-                    transition: transform 0.25s ease, color 0.2s ease;
+                    font-size: 0.92rem;
+                    margin-top: 0.3rem;
+                    transition: transform 0.25s ease;
                 }
-                .ce2-bloque-enlace:hover {
-                    color: #faf6ef;
-                    transform: translateX(6px);
-                }
-                @media (max-width: 800px) {
-                    .ce2-bloques { grid-template-columns: 1fr; }
+                .ce2-prog-panel:hover .ce2-prog-cta { transform: translateX(6px); }
+                @media (max-width: 900px) {
+                    .ce2-prog-paneles { grid-template-columns: 1fr; }
+                    .ce2-prog-panel { min-height: 19rem; }
+                    .ce2-prog-cuerpo { padding: 4rem 1.4rem 1.6rem; }
                 }
                 .ce2-cifras {
                     display: grid;
@@ -710,6 +792,40 @@ export default function CentrosEducativosPage() {
                 @media (max-width: 700px) {
                     .ce2-cifras { grid-template-columns: 1fr; gap: 1.4rem; }
                 }
+                .fd-otros-barra {
+                    background: #1c1917;
+                    border-top: 1px solid rgba(250, 246, 239, 0.08);
+                    border-bottom: 1px solid rgba(250, 246, 239, 0.08);
+                }
+                .fd-otros {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.15rem 0.25rem;
+                    padding-top: 0.55rem;
+                    padding-bottom: 0.55rem;
+                }
+                .fd-otros-etiqueta {
+                    color: #f6c39c;
+                    padding: 0.5rem 0.9rem 0.5rem 0;
+                    white-space: nowrap;
+                }
+                .fd-otro {
+                    flex: 1 1 auto;
+                    text-align: center;
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.72rem;
+                    font-weight: 600;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.65);
+                    padding: 0.5rem 0.9rem;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                    transition: color 0.2s ease, background 0.2s ease;
+                }
+                .fd-otro:hover { color: #faf6ef; background: rgba(250, 246, 239, 0.07); }
                 .ce2-faq-grid {
                     display: grid;
                     grid-template-columns: 0.38fr 0.62fr;

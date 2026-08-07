@@ -21,10 +21,10 @@ export default function Pagina() {
             kicker="Curso · La IA más versátil"
             titulo={<>
                 ChatGPT en tu empresa:{" "}<br />
-                <span style={{ color: "var(--color-primary)" }}>de probarlo a dominarlo</span>
+                <span style={{ color: "#f6c39c" }}>de probarlo a dominarlo</span>
             </>}
             subtitulo="Casi todo el mundo lo ha abierto; casi nadie le saca ni la mitad. Este taller convierte el «a veces le pregunto cosas» en asistentes montados por puesto, con datos seguros y resultados que se notan la misma semana."
-            enCorto="Curso de ChatGPT para empresas, práctico y con vuestros casos reales: cuentas de empresa bien configuradas, prompts con criterio, asistentes personalizados por puesto y tareas programadas. Desde 900€ con precio cerrado; con el bloque del Art. 4, desde 1.200€."
+            enCorto="Curso de ChatGPT para empresas, práctico y con vuestros casos reales: cuentas de empresa bien configuradas, prompts con criterio, asistentes personalizados por puesto y tareas programadas."
             paraQuien="Para equipos de cualquier pyme que no viven casados con Microsoft ni Google — o que quieren el asistente más versátil además de su suite. De nivel cero a avanzado, adaptado por departamento."
             temario={[
                 { num: "01", titulo: "La cuenta de empresa, bien montada", desc: "Plan de equipo, permisos y la configuración que garantiza que vuestros datos no entrenan modelos.", puntos: ["Plan Team vs Plus vs gratis: cuál toca y por qué", "Que vuestros datos NO entrenen modelos: la casilla que importa", "Memoria e historial: qué recuerda y cómo controlarlo", "Qué no debe pegarse nunca en un chat"] },

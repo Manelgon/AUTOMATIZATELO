@@ -210,7 +210,7 @@ export default function PanelesPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="pn-faq">
+                        <details key={f.question} className="pn-faq" name="faq-paneles">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

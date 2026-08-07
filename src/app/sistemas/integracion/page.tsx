@@ -251,7 +251,7 @@ export default function IntegracionSistemasPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="is-faq">
+                        <details key={f.question} className="is-faq" name="faq-integracion">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

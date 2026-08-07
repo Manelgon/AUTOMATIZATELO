@@ -211,7 +211,7 @@ export default function AutomatizacionVentasPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="av-faq">
+                        <details key={f.question} className="av-faq" name="faq-ventas">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

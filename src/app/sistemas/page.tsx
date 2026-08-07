@@ -327,7 +327,7 @@ export default function AutomatizacionPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="au-faq">
+                        <details key={f.question} className="au-faq" name="faq-sistemas">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

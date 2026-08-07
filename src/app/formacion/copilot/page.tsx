@@ -21,10 +21,10 @@ export default function Pagina() {
             kicker="Curso · El mundo Microsoft 365"
             titulo={<>
                 Copilot 365: la IA que ya está{" "}<br />
-                <span style={{ color: "var(--color-primary)" }}>dentro de tu Office</span>
+                <span style={{ color: "#f6c39c" }}>dentro de tu Office</span>
             </>}
             subtitulo="Si tu empresa vive en Word, Excel, Outlook y Teams, la IA juega en casa. El problema es el de siempre: se pagó la licencia, se anunció, y a las seis semanas la usa uno de cada diez. Este taller es la diferencia entre pagar Copilot y amortizarlo."
-            enCorto="Curso de Microsoft Copilot 365 para empresas: la IA aplicada dentro de Word, Excel, Outlook y Teams, con los casos reales de cada puesto y la configuración de licencias y permisos bien hecha. Desde 900€ con precio cerrado; con el bloque del Art. 4, desde 1.200€."
+            enCorto="Curso de Microsoft Copilot 365 para empresas: la IA aplicada dentro de Word, Excel, Outlook y Teams, con los casos reales de cada puesto y la configuración de licencias y permisos bien hecha."
             paraQuien="Para equipos que trabajan en Microsoft 365 — que en la pyme española son mayoría. Especialmente rentable si ya pagáis licencias de Copilot que nadie está exprimiendo."
             temario={[
                 { num: "01", titulo: "Licencias, permisos y gobernanza M365", desc: "Qué licencia necesita quién, qué ve Copilot de vuestros documentos y cómo no llevarse sustos.", puntos: ["Qué licencia necesita quién (y quién no la necesita)", "Qué ve Copilot: permisos de SharePoint y OneDrive a revisión", "Gobernanza básica M365 antes de encender nada", "El error caro: licencias para todos sin plan"] },

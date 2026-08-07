@@ -81,40 +81,170 @@ const pasos = [
     },
 ];
 
+const fechas = [
+    {
+        fecha: "2 feb 2025",
+        texto: "El Art. 4 es aplicable: la obligación de alfabetización en IA ya está en vigor.",
+    },
+    {
+        fecha: "2 ago 2026",
+        texto: "Régimen sancionador y transparencia (Art. 50) aplicables. El Ómnibus digital solo aplazó el alto riesgo, a diciembre de 2027 — el resto sigue en pie.",
+    },
+    {
+        fecha: "35 M€ / 7%",
+        texto: "Techo sancionador de los casos más graves: hasta 35 millones o el 7% de la facturación global. Para pymes aplica el menor de los dos importes.",
+    },
+];
+
+const temario = [
+    {
+        num: "01",
+        titulo: "Qué es (y qué no es) la IA",
+        puntos: [
+            "Desmontando mitos: qué hace de verdad y qué es marketing",
+            "IA generativa vs IA tradicional, con ejemplos del día a día",
+            "Cómo funcionan los modelos por dentro, a nivel usuario",
+            "Límites reales: dónde acierta y dónde no llega",
+        ],
+    },
+    {
+        num: "02",
+        titulo: "El mapa de herramientas",
+        puntos: [
+            "ChatGPT, Copilot, Gemini, Claude y NotebookLM: quién es quién",
+            "Cuál conviene según la tarea y lo que ya usáis",
+            "Criterios para elegir herramienta en la empresa",
+            "Cuándo una gratuita NO vale para uso profesional",
+        ],
+    },
+    {
+        num: "03",
+        titulo: "Riesgos reales: alucinaciones, sesgos y deepfakes",
+        puntos: [
+            "Qué son las alucinaciones y cómo pillarlas antes de que cuesten dinero",
+            "Sesgos de los modelos: de dónde salen y qué implican",
+            "Deepfakes y desinformación: cómo reconocerlos",
+            "Por qué la supervisión humana no es opcional",
+        ],
+    },
+    {
+        num: "04",
+        titulo: "Shadow IA: el uso que ya existe en tu empresa",
+        puntos: [
+            "Qué es la shadow IA y por qué es riesgo legal y de seguridad",
+            "Cómo detectar quién usa qué sin autorización",
+            "Encauzarla sin prohibirla: la vía que funciona",
+            "El caso típico: datos de clientes en cuentas gratuitas",
+        ],
+    },
+    {
+        num: "05",
+        titulo: "El AI Act sin humo: qué te obliga de verdad",
+        puntos: [
+            "Qué es el Reglamento y a quién aplica (spoiler: también a ti)",
+            "Art. 4: la alfabetización obligatoria desde febrero de 2025",
+            "La clasificación por riesgo, explicada para pymes",
+            "Sanciones: hasta 35 M€ o el 7% — y cómo se modulan",
+        ],
+    },
+    {
+        num: "06",
+        titulo: "RGPD e IA: la combinación que nadie explica bien",
+        puntos: [
+            "Qué datos se pueden meter en una IA y cuáles nunca",
+            "Datos personales, sensibles y de clientes: las tres líneas rojas",
+            "Quién responde: el papel del responsable del tratamiento",
+            "Cómo documentar el uso de IA de forma conforme",
+        ],
+    },
+    {
+        num: "07",
+        titulo: "La política de uso y la evidencia",
+        puntos: [
+            "Qué debe incluir la política interna de IA",
+            "Cómo comunicarla para que el equipo la siga de verdad",
+            "El registro formativo: la prueba de que cumples el Art. 4",
+            "Qué enseñar si un día pregunta una inspección",
+        ],
+    },
+];
+
+const piezas = [
+    {
+        num: "01",
+        href: "/cumplimiento",
+        kicker: "Auditoría IA · desde 750 €",
+        titulo: "No sé por dónde empezar",
+        desc: "Inventario de la IA que ya se usa, riesgos por perfil, informe y plan de acción. Es el trabajo de los pasos 1 y 2.",
+        enlaceTexto: "Ver la auditoría →",
+        foto: "/despachos.webp",
+    },
+    {
+        num: "02",
+        href: "/formacion/empresas",
+        kicker: "Formación · desde 600 €",
+        titulo: "Sé que tengo que formar",
+        desc: "La alfabetización del Art. 4, con certificado nominal y registro formativo fechado. Los pasos 3 y 4, resueltos.",
+        enlaceTexto: "Ver la formación →",
+        foto: "/academias.webp",
+    },
+    {
+        num: "03",
+        href: "/cumplimiento",
+        kicker: "Implantación · desde 900 €",
+        titulo: "Quiero usarla bien desde el principio",
+        desc: "La herramienta configurada, los permisos revisados y la política interna de uso redactada y comunicada.",
+        enlaceTexto: "Ver la implantación →",
+        foto: "/equipos-directivos.webp",
+    },
+];
+
 export default function AiActPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <Header />
 
-            {/* Hero editorial */}
-            <section style={{
-                padding: "9rem 0 3.5rem",
-                background: "radial-gradient(circle at 20% 20%, rgba(234, 88, 12, 0.07) 0%, transparent 55%)",
-            }}>
-                <div className="container fc-hero-grid">
+            {/* Hero con foto + velo lateral y formulario translúcido */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4rem" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/escribiendo-ventana.webp"
+                    alt=""
+                    aria-hidden="true"
+                    fetchPriority="high"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.62) 0%, rgba(28,25,23,0.42) 38%, rgba(28,25,23,0.12) 65%, transparent 85%), linear-gradient(180deg, rgba(28,25,23,0.18) 0%, transparent 40%)",
+                }} />
+                <div className="container fc-hero-grid fh-foto" style={{ position: "relative", zIndex: 2 }}>
                     <div>
-                    <span className="kicker-mono">
-                        <i className="fa-solid fa-scale-balanced" style={{ marginRight: "0.6rem" }}></i>
-                        Reglamento (UE) 2024/1689 · Art. 4
-                    </span>
-                    <h1 style={{
-                        fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(2.2rem, 6vw, 3.6rem)",
-                        fontWeight: 600,
-                        lineHeight: 1.1,
-                        letterSpacing: "-0.02em",
-                        color: "var(--color-text-main)",
-                        margin: "1rem 0 1.2rem",
-                    }}>
-                        Formar a tu equipo en IA{" "}<br />
-                        <span style={{ color: "var(--color-primary)" }}>ya no es opcional</span>
-                    </h1>
-                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620 }}>
-                        El artículo 4 del Reglamento Europeo de IA obliga desde febrero de 2025
-                        a que las empresas que usan IA — aunque solo sea ChatGPT — adopten medidas
-                        para formar a su personal. Aquí tienes lo que exige, sin humo.
-                    </p>
+                        <span className="kicker-mono" style={{ color: "#f6c39c" }}>
+                            <i className="fa-solid fa-scale-balanced" style={{ marginRight: "0.6rem" }}></i>
+                            Reglamento (UE) 2024/1689 · Art. 4
+                        </span>
+                        <h1 style={{
+                            fontFamily: "var(--font-display, serif)",
+                            fontSize: "clamp(2rem, 4.5vw, 3rem)",
+                            fontWeight: 600,
+                            lineHeight: 1.12,
+                            letterSpacing: "-0.02em",
+                            color: "#faf6ef",
+                            margin: "1rem 0 1.2rem",
+                            textShadow: "0 2px 30px rgba(28,25,23,0.45)",
+                        }}>
+                            Formar a tu equipo en IA{" "}
+                            <span style={{ color: "#f6c39c" }}>ya no es opcional</span>
+                        </h1>
+                        <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: 0, maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
+                            El artículo 4 del Reglamento Europeo de IA obliga desde febrero de 2025
+                            a que las empresas que usan IA — aunque solo sea ChatGPT — adopten medidas
+                            para formar a su personal. Aquí tienes lo que exige, sin humo.
+                        </p>
                     </div>
 
                     {/* Captura en el hero: el curso viaja como origen del lead */}
@@ -125,393 +255,592 @@ export default function AiActPage() {
             {/* Salta entre todas las formaciones sin volver atras */}
             <FormacionTabs />
 
-            {/* Answer capsule */}
-            <section style={{ padding: "4rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <span className="kicker-mono">Qué exige, en corto</span>
-                    <p style={{
-                        fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(1.4rem, 2.8vw, 2rem)",
-                        fontWeight: 600,
-                        lineHeight: 1.35,
-                        color: "var(--color-text-main)",
-                        margin: "1rem 0 1.2rem",
-                        letterSpacing: "-0.01em",
-                    }}>
-                        Toda empresa que use sistemas de IA debe adoptar medidas para garantizar,
-                        en la mayor medida posible, un nivel suficiente de alfabetización en IA de
-                        su personal — proporcional al rol de cada persona y al riesgo del sistema.
-                    </p>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.8, margin: 0, maxWidth: 720 }}>
-                        Obliga a quien desarrolla IA <strong style={{ color: "var(--color-text-main)" }}>y también a quien
-                        solo la usa</strong> (los "responsables del despliegue"). No fija un número de horas ni existe
-                        un certificado oficial: lo que se acredita es la formación impartida y su evidencia documental.
-                    </p>
-                </div>
-            </section>
-
-            {/* Fechas y sanciones — franja terracota */}
-            <section style={{ padding: "4rem 0", background: "linear-gradient(135deg, #b45309 0%, #7c2d12 55%, #431407 100%)" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <span className="mono-label" style={{ color: "#f6c39c" }}>Las fechas que importan</span>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "2rem", marginTop: "1.5rem" }}>
-                        {[
-                            { fecha: "2 feb 2025", texto: "El Art. 4 es aplicable: la obligación de alfabetización en IA ya está en vigor." },
-                            { fecha: "2 ago 2026", texto: "Régimen sancionador y transparencia (Art. 50) aplicables. El Ómnibus digital solo aplazó el alto riesgo (a dic-2027) — el resto sigue en pie." },
-                            { fecha: "35M€ / 7%", texto: "Techo sancionador de los casos más graves: hasta 35 millones o el 7% de la facturación global. Para pymes aplica el menor de los dos importes." },
-                        ].map((f) => (
-                            <div key={f.fecha}>
-                                <div style={{ fontFamily: "var(--font-display, serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontWeight: 600, color: "#f6c39c", lineHeight: 1 }}>{f.fecha}</div>
-                                <div style={{ color: "rgba(250,246,239,0.85)", marginTop: "0.6rem", lineHeight: 1.55, fontSize: "0.95rem" }}>{f.texto}</div>
+            {/* Qué exige y desde cuándo — split degradado */}
+            <section aria-label="Qué exige el Art. 4" style={{ padding: 0, background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)" }}>
+                <div className="container aa2-mitades">
+                    <div className="aa2-mitad">
+                        <span className="aa2-marca" aria-hidden="true">§</span>
+                        <div className="aa2-cuerpo">
+                            <span className="mono-label" style={{ color: "#f6c39c" }}>Qué exige, en corto</span>
+                            <h2 className="aa2-titulo">
+                                Alfabetización suficiente, <span style={{ color: "#f6c39c" }}>proporcional al puesto</span>
+                            </h2>
+                            <p className="aa2-sub">
+                                Toda empresa que use sistemas de IA debe adoptar medidas para garantizar,
+                                en la mayor medida posible, un nivel suficiente de alfabetización en IA de
+                                su personal — proporcional al rol de cada persona y al riesgo del sistema.
+                                Obliga a quien desarrolla IA y también a quien solo la usa.
+                            </p>
+                            <div className="aa2-datos">
+                                <span>Aplicable desde feb. 2025</span>
+                                <span>Sin horas mínimas ni certificado oficial</span>
+                                <span>Certificado nominal + registro fechado</span>
+                                <span className="aa2-dato-precio">Alfabetización desde 600 €</span>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Los 4 pasos para una pyme */}
-            <section style={{ padding: "4.5rem 0" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">Qué hacer</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: 0 }}>
-                            El cumplimiento de una pyme, en 4 pasos
-                        </h2>
-                    </div>
-                    {pasos.map((p) => (
-                        <div key={p.num} className="aa-fila">
-                            <span className="mono-label" style={{ color: "var(--color-text-muted)" }}>{p.num}</span>
-                            <div>
-                                <h3 style={{
-                                    fontFamily: "var(--font-display, serif)",
-                                    fontSize: "clamp(1.2rem, 2.2vw, 1.55rem)",
-                                    fontWeight: 600,
-                                    color: "var(--color-text-main)",
-                                    marginBottom: "0.35rem",
-                                    lineHeight: 1.25,
-                                }}>
-                                    {p.titulo}
-                                </h3>
-                                <p style={{ color: "var(--color-text-muted)", lineHeight: 1.65, margin: 0, maxWidth: 640 }}>
-                                    {p.desc}
-                                </p>
+                            <div className="aa2-enlaces">
+                                <a href="#temario" className="aa2-enlace">Ver el temario completo ↓</a>
+                                <Link href="/precios" className="aa2-enlace">Ver la tabla de precios →</Link>
                             </div>
+                            <p className="aa2-nota">
+                                ¿La quieres junto a la herramienta que usáis? Ese es el{" "}
+                                <Link href="/formacion/empresas">curso estrella, desde 1.200 € →</Link>
+                            </p>
                         </div>
-                    ))}
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginTop: "1.8rem", maxWidth: 720 }}>
-                        Los pasos 1 y 2 son el trabajo de la{" "}
-                        <Link href="/cumplimiento" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            auditoría IA
-                        </Link>{" "}
-                        (inventario, riesgos, informe y plan, desde 750€); los pasos 3 y 4, el de la{" "}
-                        <Link href="/formacion" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            formación en IA para empresas
-                        </Link>
-                        : el bloque de alfabetización desde 600€, con certificado nominal y registro formativo fechado.
+                    </div>
+                    <div className="aa2-mitad">
+                        <div className="aa2-cuerpo">
+                            <span className="mono-label" style={{ color: "#f6c39c" }}>Las fechas que importan</span>
+                            {fechas.map((f, i) => (
+                                <div key={f.fecha} className={i === 0 ? "aa2-fecha" : "aa2-fecha aa2-fecha-2"}>
+                                    <span className="aa2-fecha-valor">{f.fecha}</span>
+                                    <p>{f.texto}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Temario de la alfabetización — acordeones integrados en tinta */}
+            <section id="temario" style={{ padding: "2.8rem 0 3.4rem", background: "#1c1917", scrollMarginTop: "6rem" }}>
+                <div className="container" style={{ maxWidth: 900 }}>
+                    <h2 className="aa2-etiqueta" style={{ marginBottom: "0.8rem" }}>El temario de la alfabetización, bloque a bloque</h2>
+                    <p style={{
+                        textAlign: "center",
+                        color: "rgba(250,246,239,0.6)",
+                        fontSize: "0.9rem",
+                        lineHeight: 1.6,
+                        margin: "0 0 2rem",
+                    }}>
+                        Siete bloques, de qué es la IA a cómo dejar la evidencia que te defiende —
+                        adaptados al nivel del equipo y con vuestros ejemplos.
                     </p>
-                </div>
-            </section>
-
-            {/* Temario del bloque de alfabetizacion */}
-            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">Temario</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                            Qué cubre la alfabetización — lo que exige la ley y el criterio para aplicarla
-                        </h2>
-                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 660 }}>
-                            Siete bloques, de qué es la IA a cómo dejar la evidencia que te defiende.
-                            Adaptado al nivel del equipo y con vuestros ejemplos.
-                        </p>
-                    </div>
-                    <details className="aa-acordeon" open>
-                        <summary>
-                            <span className="mono-label" style={{ color: "var(--color-primary)" }}>01</span>
-                            <span className="aa-acordeon-t">Qué es (y qué no es) la IA</span>
-                            <i className="fas fa-chevron-down"></i>
-                        </summary>
-                        <ul className="aa-puntos">
-                            <li>Desmontando mitos: qué hace de verdad y qué es marketing</li>
-                            <li>IA generativa vs IA tradicional, con ejemplos del día a día</li>
-                            <li>Cómo funcionan los modelos por dentro, a nivel usuario</li>
-                            <li>Límites reales: dónde acierta y dónde no llega</li>
-                        </ul>
-                    </details>
-                    <details className="aa-acordeon">
-                        <summary>
-                            <span className="mono-label" style={{ color: "var(--color-primary)" }}>02</span>
-                            <span className="aa-acordeon-t">El mapa de herramientas</span>
-                            <i className="fas fa-chevron-down"></i>
-                        </summary>
-                        <ul className="aa-puntos">
-                            <li>ChatGPT, Copilot, Gemini, Claude y NotebookLM: quién es quién</li>
-                            <li>Cuál conviene según la tarea y lo que ya usáis</li>
-                            <li>Criterios para elegir herramienta en la empresa</li>
-                            <li>Cuándo una gratuita NO vale para uso profesional</li>
-                        </ul>
-                    </details>
-                    <details className="aa-acordeon">
-                        <summary>
-                            <span className="mono-label" style={{ color: "var(--color-primary)" }}>03</span>
-                            <span className="aa-acordeon-t">Riesgos reales: alucinaciones, sesgos y deepfakes</span>
-                            <i className="fas fa-chevron-down"></i>
-                        </summary>
-                        <ul className="aa-puntos">
-                            <li>Qué son las alucinaciones y cómo pillarlas antes de que cuesten dinero</li>
-                            <li>Sesgos de los modelos: de dónde salen y qué implican</li>
-                            <li>Deepfakes y desinformación: cómo reconocerlos</li>
-                            <li>Por qué la supervisión humana no es opcional</li>
-                        </ul>
-                    </details>
-                    <details className="aa-acordeon">
-                        <summary>
-                            <span className="mono-label" style={{ color: "var(--color-primary)" }}>04</span>
-                            <span className="aa-acordeon-t">Shadow IA: el uso que ya existe en tu empresa</span>
-                            <i className="fas fa-chevron-down"></i>
-                        </summary>
-                        <ul className="aa-puntos">
-                            <li>Qué es la shadow IA y por qué es riesgo legal y de seguridad</li>
-                            <li>Cómo detectar quién usa qué sin autorización</li>
-                            <li>Encauzarla sin prohibirla: la vía que funciona</li>
-                            <li>El caso típico: datos de clientes en cuentas gratuitas</li>
-                        </ul>
-                    </details>
-                    <details className="aa-acordeon">
-                        <summary>
-                            <span className="mono-label" style={{ color: "var(--color-primary)" }}>05</span>
-                            <span className="aa-acordeon-t">El AI Act sin humo: qué te obliga de verdad</span>
-                            <i className="fas fa-chevron-down"></i>
-                        </summary>
-                        <ul className="aa-puntos">
-                            <li>Qué es el Reglamento y a quién aplica (spoiler: también a ti)</li>
-                            <li>Art. 4: la alfabetización obligatoria desde febrero de 2025</li>
-                            <li>La clasificación por riesgo, explicada para pymes</li>
-                            <li>Sanciones: hasta 35 M€ o el 7% — y cómo se modulan</li>
-                        </ul>
-                    </details>
-                    <details className="aa-acordeon">
-                        <summary>
-                            <span className="mono-label" style={{ color: "var(--color-primary)" }}>06</span>
-                            <span className="aa-acordeon-t">RGPD e IA: la combinación que nadie explica bien</span>
-                            <i className="fas fa-chevron-down"></i>
-                        </summary>
-                        <ul className="aa-puntos">
-                            <li>Qué datos se pueden meter en una IA y cuáles nunca</li>
-                            <li>Datos personales, sensibles y de clientes: las tres líneas rojas</li>
-                            <li>Quién responde: el papel del responsable del tratamiento</li>
-                            <li>Cómo documentar el uso de IA de forma conforme</li>
-                        </ul>
-                    </details>
-                    <details className="aa-acordeon">
-                        <summary>
-                            <span className="mono-label" style={{ color: "var(--color-primary)" }}>07</span>
-                            <span className="aa-acordeon-t">La política de uso y la evidencia</span>
-                            <i className="fas fa-chevron-down"></i>
-                        </summary>
-                        <ul className="aa-puntos">
-                            <li>Qué debe incluir la política interna de IA</li>
-                            <li>Cómo comunicarla para que el equipo la siga de verdad</li>
-                            <li>El registro formativo: la prueba de que cumples el Art. 4</li>
-                            <li>Qué enseñar si un día pregunta una inspección</li>
-                        </ul>
-                    </details>
-                </div>
-                <style>{`
-                    .aa-acordeon {
-                        border: 1px solid var(--color-border);
-                        border-radius: 14px;
-                        margin: 0 auto 0.7rem;
-                        max-width: 900px;
-                        background: var(--color-card-bg, #fff);
-                        overflow: hidden;
-                    }
-                    .aa-acordeon summary {
-                        list-style: none;
-                        display: flex;
-                        align-items: center;
-                        gap: 1rem;
-                        padding: 1.1rem 1.3rem;
-                        cursor: pointer;
-                    }
-                    .aa-acordeon summary::-webkit-details-marker { display: none; }
-                    .aa-acordeon-t {
-                        flex: 1;
-                        font-family: var(--font-display, serif);
-                        font-size: clamp(1.05rem, 2vw, 1.3rem);
-                        font-weight: 600;
-                        color: var(--color-text-main);
-                        line-height: 1.3;
-                    }
-                    .aa-acordeon summary i { color: var(--color-primary); font-size: 0.8rem; transition: transform 0.3s ease; }
-                    .aa-acordeon[open] summary i { transform: rotate(180deg); }
-                    .aa-puntos { margin: 0; padding: 0 1.3rem 1.2rem 3.6rem; list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
-                    .aa-puntos li {
-                        color: var(--color-text-muted);
-                        font-size: 0.92rem;
-                        line-height: 1.5;
-                        padding-left: 1.1rem;
-                        position: relative;
-                    }
-                    .aa-puntos li::before { content: "·"; position: absolute; left: 0.2rem; color: var(--color-primary); font-weight: 700; }
-                    @media (max-width: 600px) { .aa-puntos { padding-left: 1.3rem; } }
-                `}</style>
-            </section>
-
-            {/* Cómo cumplirlo — enlazado de la página pilar */}
-            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 1000 }}>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">Cómo se cumple</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.5rem" }}>
-                            Lo que necesitas, según dónde estés
-                        </h2>
-                        <p className="section-subtitle" style={{ textAlign: "left", margin: 0, maxWidth: 640 }}>
-                            Cada pieza con su página y su precio — sin packs opacos ni certificaciones inventadas.
-                        </p>
-                    </div>
-                    <div className="aa-rutas">
-                        {[
-                            { href: "/cumplimiento", icon: "fa-clipboard-check", t: "Auditoría IA (AI Act)", d: "«No sé ni por dónde empezar»: inventario, riesgos, informe y plan de acción. Desde 750€." },
-                            { href: "/formacion", icon: "fa-graduation-cap", t: "Formación en IA para empresas", d: "«Sé que tengo que formar»: alfabetización del Art. 4 con certificado nominal. Desde 600€." },
-                            { href: "/formacion/directivos", icon: "fa-chess-king", t: "Formación para directivos", d: "«Decido yo»: qué implantar, qué exige la ley y cómo gobernarla. Media jornada, desde 600€." },
-                            { href: "/sectores/despachos", icon: "fa-briefcase", t: "Despachos profesionales", d: "«Manejo datos de clientes»: secreto profesional y IA, con los casos de tu despacho." },
-                            { href: "/formacion/centros-educativos", icon: "fa-school", t: "Centros educativos", d: "«Soy un colegio»: formación de claustro, política de uso del centro y evidencia." },
-                            { href: "/cumplimiento", icon: "fa-rocket", t: "Implantación de herramientas", d: "«Quiero usarla bien desde el principio»: configuración segura y política de uso. Desde 900€." },
-                        ].map((r) => (
-                            <Link key={r.t} href={r.href} className="aa-ruta">
-                                <i className={`fa-solid ${r.icon}`}></i>
-                                <span>
-                                    <span className="aa-ruta-t">{r.t}</span>
-                                    <span className="aa-ruta-d">{r.d}</span>
-                                </span>
-                                <span className="aa-ruta-f">→</span>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ */}
-            <section style={{ padding: "4.5rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">FAQ</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: 0 }}>
-                            Lo que preguntan las empresas
-                        </h2>
-                    </div>
-                    {faqs.map((f) => (
-                        <details key={f.question} className="aa-faq">
+                    {temario.map((b) => (
+                        <details key={b.num} className="aa-acordeon" name="temario-aiact">
                             <summary>
-                                <span>{f.question}</span>
+                                <span className="aa-acordeon-num mono-label">{b.num}</span>
+                                <span className="aa-acordeon-t">{b.titulo}</span>
                                 <i className="fas fa-chevron-down"></i>
                             </summary>
-                            <p style={{ padding: "0 0.4rem 1.5rem", color: "var(--color-text-muted)", lineHeight: 1.7, margin: 0, maxWidth: 720 }}>{f.answer}</p>
+                            <ul className="aa-puntos">
+                                {b.puntos.map((pt) => <li key={pt}>{pt}</li>)}
+                            </ul>
                         </details>
                     ))}
                 </div>
             </section>
 
-            {/* CTA final en melocotón */}
-            <section style={{ padding: "4.5rem 0", background: "#f8dfc6", textAlign: "center" }}>
+            {/* Precios de un vistazo — banda de cifras */}
+            <section style={{ padding: "2.6rem 0 2.8rem", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)" }}>
                 <div className="container">
-                    <p style={{
-                        fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(1.7rem, 3.5vw, 2.6rem)",
-                        fontWeight: 600,
-                        color: "#1c1917",
-                        lineHeight: 1.2,
-                        margin: "0 0 1rem",
-                        letterSpacing: "-0.02em",
-                    }}>
-                        ¿Tu empresa ya cumple el Art. 4?
+                    <div className="aa2-cifras">
+                        <div className="aa2-cifra">
+                            <span className="aa2-cifra-valor">desde 600 €</span>
+                            <span className="aa2-cifra-etiqueta">Alfabetización suelta · Art. 4</span>
+                        </div>
+                        <div className="aa2-cifra">
+                            <span className="aa2-cifra-valor">desde 750 €</span>
+                            <span className="aa2-cifra-etiqueta">Auditoría IA · inventario y plan</span>
+                        </div>
+                        <div className="aa2-cifra">
+                            <span className="aa2-cifra-valor">desde 1.200 €</span>
+                            <span className="aa2-cifra-etiqueta">Curso estrella · Art. 4 + herramienta</span>
+                        </div>
+                        <div className="aa2-cifra">
+                            <span className="aa2-cifra-valor">desde 1.900 €</span>
+                            <span className="aa2-cifra-etiqueta">Cursos a medida · SCORM</span>
+                        </div>
+                    </div>
+                    <p className="aa2-cifras-pie">
+                        Precio cerrado por sesión, no por alumno —{" "}
+                        <Link href="/precios">Ver la tabla de precios →</Link>
                     </p>
-                    <p style={{ color: "rgba(28,25,23,0.7)", marginBottom: "1.8rem", fontSize: "1.05rem" }}>
-                        En 30 minutos te digo qué perfiles tienes, qué formación les toca y qué evidencia guardar.
-                    </p>
-                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.4rem" }}>
-                        Pedir mi consulta gratuita
-                    </Link>
+                </div>
+            </section>
+
+            {/* El cumplimiento en 4 pasos — foto ambiental + velo, como el "quién lo imparte" */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "4.5rem 0", background: "#1c1917" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/auditoria.webp"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.72) 0%, rgba(28,25,23,0.52) 45%, rgba(28,25,23,0.25) 75%, rgba(28,25,23,0.1) 100%)",
+                }} />
+                <div className="container" style={{ maxWidth: 1000, position: "relative", zIndex: 2 }}>
+                    <div style={{ marginBottom: "2rem" }}>
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>Qué hacer</span>
+                        <h2 style={{
+                            fontFamily: "var(--font-display, serif)",
+                            fontSize: "clamp(1.5rem, 2.8vw, 2.1rem)",
+                            fontWeight: 600,
+                            lineHeight: 1.2,
+                            color: "#faf6ef",
+                            margin: "1rem 0 0.6rem",
+                            letterSpacing: "-0.01em",
+                            textShadow: "0 2px 30px rgba(28,25,23,0.45)",
+                        }}>
+                            El cumplimiento de una pyme, en 4 pasos
+                        </h2>
+                        <p style={{ color: "rgba(250,246,239,0.85)", lineHeight: 1.7, margin: 0, maxWidth: 560 }}>
+                            Ninguno necesita un departamento legal — sí orden y dejarlo por escrito.
+                        </p>
+                    </div>
+                    <div className="aa2-pasos">
+                        {pasos.map((p) => (
+                            <div key={p.num} className="aa2-paso">
+                                <span className="aa2-paso-num mono-label">{p.num}</span>
+                                <h3>{p.titulo}</h3>
+                                <p>{p.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Casos más concretos — barra tinta */}
+            <nav aria-label="Casos concretos" className="fd-otros-barra">
+                <div className="container fd-otros">
+                    <span className="fd-otros-etiqueta mono-label">¿Tu caso es más concreto?</span>
+                    <Link href="/sectores/despachos" className="fd-otro">Despachos profesionales</Link>
+                    <Link href="/formacion/directivos" className="fd-otro">Dirección</Link>
+                    <Link href="/formacion/centros-educativos" className="fd-otro">Centros educativos</Link>
+                    <Link href="/sectores/academias" className="fd-otro">Academias</Link>
+                    <Link href="/formacion/cursos-a-medida" className="fd-otro">Cursos a medida · SCORM</Link>
+                </div>
+            </nav>
+
+            {/* Cómo se cumple — paneles a sangre con foto, como los pilares del index */}
+            <section style={{ padding: 0 }}>
+                <div className="aa2-piezas-cabecera">
+                    <h2 className="aa2-etiqueta" style={{ marginBottom: 0 }}>Lo que necesitas, según dónde estés</h2>
+                </div>
+                <div className="aa2-piezas">
+                    {piezas.map((pz) => (
+                        <Link key={pz.num} href={pz.href} className="aa2-pieza">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img className="aa2-pieza-fondo" src={pz.foto} alt="" aria-hidden="true" loading="lazy" />
+                            <span className="aa2-pieza-velo" aria-hidden="true"></span>
+                            <span className="aa2-pieza-marca" aria-hidden="true">{pz.num}</span>
+                            <span className="aa2-pieza-cuerpo">
+                                <span className="mono-label" style={{ color: "#f6c39c" }}>{pz.kicker}</span>
+                                <span className="aa2-pieza-titulo">«{pz.titulo}»</span>
+                                <span className="aa2-pieza-desc">{pz.desc}</span>
+                                <span className="aa2-pieza-cta">{pz.enlaceTexto}</span>
+                            </span>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+
+            {/* FAQ — split en tinta con el CTA integrado */}
+            <section style={{ padding: "4rem 0", background: "#1c1917" }}>
+                <div className="container aa2-faq-grid">
+                    <div>
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>FAQ</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.9rem", color: "#faf6ef" }}>
+                            Lo que preguntan las empresas
+                        </h2>
+                        <p style={{ color: "rgba(250,246,239,0.7)", lineHeight: 1.65, margin: "0 0 1.6rem", fontSize: "0.95rem" }}>
+                            En 30 minutos te digo qué perfiles tienes, qué formación les toca y
+                            qué evidencia guardar.
+                        </p>
+                        <Link href="/#contact" className="aa2-cta">Pedir mis 30 minutos →</Link>
+                    </div>
+                    <div>
+                        {faqs.map((f) => (
+                            <details key={f.question} className="aa-faq" name="faq-aiact">
+                                <summary>
+                                    <span>{f.question}</span>
+                                    <i className="fas fa-chevron-down"></i>
+                                </summary>
+                                <p style={{ padding: "0 0.4rem 1.5rem", color: "rgba(250,246,239,0.75)", lineHeight: 1.7, margin: 0 }}>{f.answer}</p>
+                            </details>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             <Footer />
 
             <style>{`
-                .aa-fila {
+                .fh-foto .fc-card {
+                    background: rgba(28, 25, 23, 0.62);
+                    backdrop-filter: blur(5px);
+                    -webkit-backdrop-filter: blur(5px);
+                }
+                .aa2-mitades {
                     display: grid;
-                    grid-template-columns: 3rem 1fr;
-                    gap: 1rem;
-                    align-items: baseline;
-                    padding: 1.5rem 0.3rem;
-                    border-top: 1px solid var(--color-border);
+                    grid-template-columns: 1fr 1fr;
+                    gap: 4.5rem;
                 }
-                .aa-fila:last-of-type {
-                    border-bottom: 1px solid var(--color-border);
-                }
-                .aa-rutas {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 0.9rem;
-                }
-                .aa-ruta {
+                .aa2-mitad {
+                    position: relative;
                     display: flex;
-                    align-items: flex-start;
-                    gap: 1rem;
-                    height: 100%;
-                    background: var(--color-card-bg);
-                    border: 1px solid var(--color-border);
-                    border-radius: var(--radius-lg);
-                    padding: 1.2rem 1.3rem;
-                    color: inherit;
-                    transition: transform 0.25s ease, border-color 0.25s ease;
+                    align-items: center;
                 }
-                .aa-ruta:hover {
-                    transform: translateY(-3px);
-                    border-color: rgba(234, 88, 12, 0.4);
-                }
-                .aa-ruta > i {
-                    color: var(--color-primary);
-                    font-size: 1.15rem;
-                    margin-top: 0.2rem;
-                    flex-shrink: 0;
-                    width: 1.5rem;
-                    text-align: center;
-                }
-                .aa-ruta-t {
-                    display: block;
+                .aa2-marca {
+                    position: absolute;
+                    top: 0.6rem;
+                    right: 1.4rem;
                     font-family: var(--font-display, serif);
-                    font-size: 1.05rem;
+                    font-size: clamp(5rem, 9vw, 8rem);
+                    line-height: 1;
+                    color: rgba(250, 246, 239, 0.1);
+                    pointer-events: none;
+                }
+                .aa2-cuerpo {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    padding: 3rem 0;
+                    width: 100%;
+                }
+                .aa2-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
                     font-weight: 600;
-                    color: var(--color-text-main);
-                    line-height: 1.3;
+                    color: #faf6ef;
+                    line-height: 1.12;
+                    letter-spacing: -0.01em;
+                    margin: 0;
                 }
-                .aa-ruta-d {
-                    display: block;
-                    font-size: 0.86rem;
-                    color: var(--color-text-muted);
-                    line-height: 1.5;
-                    margin-top: 0.2rem;
+                .aa2-sub {
+                    color: rgba(250, 246, 239, 0.85);
+                    line-height: 1.65;
+                    font-size: 0.97rem;
+                    margin: 0;
                 }
-                .aa-ruta-f {
-                    margin-left: auto;
-                    color: var(--color-primary);
-                    font-weight: 700;
-                    transition: transform 0.2s ease;
+                .aa2-datos {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.4rem 1.3rem;
+                    margin-top: 0.4rem;
                 }
-                .aa-ruta:hover .aa-ruta-f {
-                    transform: translateX(4px);
+                .aa2-datos span {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.7);
+                }
+                .aa2-datos .aa2-dato-precio { color: #f6c39c; }
+                .aa2-enlaces {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.8rem 1.3rem;
+                    margin-top: 1rem;
+                }
+                .aa2-enlace {
+                    display: inline-block;
+                    color: #f6c39c;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    transition: transform 0.25s ease, color 0.2s ease;
+                }
+                .aa2-enlace:hover {
+                    color: #faf6ef;
+                    transform: translateX(6px);
+                }
+                .aa2-nota {
+                    margin: 0.6rem 0 0;
+                    font-size: 0.85rem;
+                    line-height: 1.6;
+                    color: rgba(250, 246, 239, 0.6);
+                }
+                .aa2-nota a { color: #f6c39c; font-weight: 600; }
+                .aa2-nota a:hover { color: #faf6ef; }
+                .aa2-fecha {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.35rem;
+                }
+                .aa2-fecha-2 {
+                    border-top: 1px solid rgba(250, 246, 239, 0.14);
+                    padding-top: 1.3rem;
+                    margin-top: 1.3rem;
+                }
+                .aa2-fecha-valor {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.6rem, 3vw, 2.2rem);
+                    font-weight: 600;
+                    color: #f6c39c;
+                    line-height: 1;
+                }
+                .aa2-fecha p {
+                    color: rgba(250, 246, 239, 0.82);
+                    line-height: 1.6;
+                    font-size: 0.92rem;
+                    margin: 0;
                 }
                 @media (max-width: 800px) {
-                    .aa-rutas { grid-template-columns: 1fr; }
+                    .aa2-mitades { grid-template-columns: 1fr; gap: 0; }
+                    .aa2-cuerpo { padding: 2.2rem 0; }
                 }
-                .aa-faq {
-                    border-top: 1px solid var(--color-border);
+                .aa2-pasos {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.8rem 3rem;
                 }
-                .aa-faq:last-of-type {
-                    border-bottom: 1px solid var(--color-border);
+                .aa2-paso {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3rem;
+                    border-top: 1px solid rgba(250, 246, 239, 0.16);
+                    padding-top: 1rem;
                 }
+                .aa2-paso-num { color: #f6c39c; }
+                .aa2-paso h3 {
+                    font-family: var(--font-display, serif);
+                    font-size: 1.15rem;
+                    font-weight: 600;
+                    color: #faf6ef;
+                    margin: 0;
+                    line-height: 1.3;
+                }
+                .aa2-paso p {
+                    color: rgba(250, 246, 239, 0.8);
+                    line-height: 1.6;
+                    font-size: 0.92rem;
+                    margin: 0;
+                }
+                @media (max-width: 700px) {
+                    .aa2-pasos { grid-template-columns: 1fr; gap: 1.4rem; }
+                }
+                .aa2-etiqueta {
+                    text-align: center;
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.55);
+                    margin: 0 0 2.2rem;
+                }
+                .aa-acordeon {
+                    border-top: 1px solid rgba(250, 246, 239, 0.14);
+                }
+                .aa-acordeon:last-of-type {
+                    border-bottom: 1px solid rgba(250, 246, 239, 0.14);
+                }
+                .aa-acordeon summary {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.3rem 0.4rem;
+                    cursor: pointer;
+                }
+                .aa-acordeon summary::-webkit-details-marker { display: none; }
+                .aa-acordeon-num { color: #f6c39c; flex-shrink: 0; }
+                .aa-acordeon-t {
+                    flex: 1;
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.05rem, 2vw, 1.3rem);
+                    font-weight: 600;
+                    color: #faf6ef;
+                    line-height: 1.3;
+                    transition: color 0.2s ease;
+                }
+                .aa-acordeon summary:hover .aa-acordeon-t { color: #f6c39c; }
+                .aa-acordeon summary i { color: #f6c39c; font-size: 0.8rem; flex-shrink: 0; transition: transform 0.3s ease; }
+                .aa-acordeon[open] summary i { transform: rotate(180deg); }
+                .aa-puntos {
+                    margin: 0;
+                    padding: 0 0.4rem 1.5rem 3rem;
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.45rem;
+                }
+                .aa-puntos li {
+                    color: rgba(250, 246, 239, 0.75);
+                    font-size: 0.93rem;
+                    line-height: 1.5;
+                    padding-left: 1.1rem;
+                    position: relative;
+                }
+                .aa-puntos li::before { content: "·"; position: absolute; left: 0.2rem; color: #f6c39c; font-weight: 700; }
+                @media (max-width: 600px) { .aa-puntos { padding-left: 1.5rem; } }
+                .aa2-cifras {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 2rem;
+                }
+                .aa2-cifra {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+                    text-align: center;
+                }
+                .aa2-cifra-valor {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.4rem, 2.6vw, 2rem);
+                    font-weight: 700;
+                    color: #f6c39c;
+                    line-height: 1;
+                }
+                .aa2-cifra-etiqueta {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.6);
+                }
+                .aa2-cifras-pie {
+                    text-align: center;
+                    margin: 1.8rem 0 0;
+                    font-size: 0.88rem;
+                    color: rgba(250, 246, 239, 0.65);
+                }
+                .aa2-cifras-pie a { color: #f6c39c; font-weight: 600; }
+                .aa2-cifras-pie a:hover { color: #faf6ef; }
+                @media (max-width: 800px) {
+                    .aa2-cifras { grid-template-columns: 1fr 1fr; gap: 1.6rem 1rem; }
+                }
+                .fd-otros-barra {
+                    background: #1c1917;
+                    border-top: 1px solid rgba(250, 246, 239, 0.08);
+                    border-bottom: 1px solid rgba(250, 246, 239, 0.08);
+                }
+                .fd-otros {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.15rem 0.25rem;
+                    padding-top: 0.55rem;
+                    padding-bottom: 0.55rem;
+                }
+                .fd-otros-etiqueta {
+                    color: #f6c39c;
+                    padding: 0.5rem 0.9rem 0.5rem 0;
+                    white-space: nowrap;
+                }
+                .fd-otro {
+                    flex: 1 1 auto;
+                    text-align: center;
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.72rem;
+                    font-weight: 600;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.65);
+                    padding: 0.5rem 0.9rem;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                    transition: color 0.2s ease, background 0.2s ease;
+                }
+                .fd-otro:hover { color: #faf6ef; background: rgba(250, 246, 239, 0.07); }
+                .aa2-piezas-cabecera {
+                    background: #1c1917;
+                    padding: 2.4rem 0 1.6rem;
+                }
+                .aa2-piezas {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                .aa2-pieza {
+                    position: relative;
+                    display: flex;
+                    align-items: flex-end;
+                    min-height: 24rem;
+                    overflow: hidden;
+                    color: inherit;
+                    background: #1c1917;
+                }
+                .aa2-pieza-fondo {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+                }
+                .aa2-pieza:hover .aa2-pieza-fondo { transform: scale(1.04); }
+                .aa2-pieza-velo {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(180deg, rgba(28,25,23,0.35) 0%, rgba(28,25,23,0.6) 45%, rgba(28,25,23,0.9) 100%);
+                }
+                .aa2-pieza-marca {
+                    position: absolute;
+                    top: 1rem;
+                    left: 1.5rem;
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(3.5rem, 6vw, 5.5rem);
+                    font-weight: 700;
+                    line-height: 1;
+                    color: rgba(250, 246, 239, 0.16);
+                    pointer-events: none;
+                }
+                .aa2-pieza-cuerpo {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.55rem;
+                    padding: 5rem 1.8rem 1.9rem;
+                }
+                .aa2-pieza-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.25rem, 2vw, 1.55rem);
+                    font-weight: 600;
+                    color: #faf6ef;
+                    line-height: 1.2;
+                }
+                .aa2-pieza-desc {
+                    font-size: 0.9rem;
+                    color: rgba(250, 246, 239, 0.82);
+                    line-height: 1.55;
+                }
+                .aa2-pieza-cta {
+                    color: #f6c39c;
+                    font-weight: 600;
+                    font-size: 0.92rem;
+                    margin-top: 0.3rem;
+                    transition: transform 0.25s ease;
+                }
+                .aa2-pieza:hover .aa2-pieza-cta { transform: translateX(6px); }
+                @media (max-width: 900px) {
+                    .aa2-piezas { grid-template-columns: 1fr; }
+                    .aa2-pieza { min-height: 19rem; }
+                    .aa2-pieza-cuerpo { padding: 4rem 1.4rem 1.6rem; }
+                }
+                .aa2-faq-grid {
+                    display: grid;
+                    grid-template-columns: 0.38fr 0.62fr;
+                    gap: 4rem;
+                    align-items: start;
+                }
+                @media (max-width: 800px) {
+                    .aa2-faq-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+                }
+                .aa2-cta {
+                    display: inline-block;
+                    background: #f6c39c;
+                    color: #1c1917;
+                    font-weight: 700;
+                    font-size: 0.92rem;
+                    border-radius: 50px;
+                    padding: 0.8rem 1.6rem;
+                    transition: background 0.2s ease, transform 0.2s ease;
+                }
+                .aa2-cta:hover {
+                    background: #faf6ef;
+                    transform: translateY(-2px);
+                }
+                .aa-faq { border-top: 1px solid rgba(250, 246, 239, 0.14); }
+                .aa-faq:last-of-type { border-bottom: 1px solid rgba(250, 246, 239, 0.14); }
                 .aa-faq summary {
                     list-style: none;
                     display: flex;
@@ -523,33 +852,14 @@ export default function AiActPage() {
                     font-family: var(--font-display, serif);
                     font-size: clamp(1.05rem, 2vw, 1.3rem);
                     font-weight: 600;
-                    color: var(--color-text-main);
+                    color: #faf6ef;
                     line-height: 1.3;
                     transition: color 0.2s ease, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
                 }
-                .aa-faq summary::-webkit-details-marker {
-                    display: none;
-                }
-                .aa-faq summary:hover {
-                    color: var(--color-primary);
-                    padding-left: 1rem;
-                }
-                .aa-faq summary i {
-                    color: var(--color-primary);
-                    font-size: 0.8rem;
-                    flex-shrink: 0;
-                    transition: transform 0.3s ease;
-                }
-                .aa-faq[open] summary i {
-                    transform: rotate(180deg);
-                }
-                @media (max-width: 600px) {
-                    h1 br { display: none; }
-                    .aa-fila {
-                        grid-template-columns: 1fr;
-                        gap: 0.4rem;
-                    }
-                }
+                .aa-faq summary::-webkit-details-marker { display: none; }
+                .aa-faq summary:hover { color: #f6c39c; padding-left: 1rem; }
+                .aa-faq summary i { color: #f6c39c; font-size: 0.8rem; flex-shrink: 0; transition: transform 0.3s ease; }
+                .aa-faq[open] summary i { transform: rotate(180deg); }
             `}</style>
         </main>
     );

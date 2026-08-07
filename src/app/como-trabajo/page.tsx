@@ -391,7 +391,7 @@ export default function ComoTrabajoPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="ct-faq">
+                        <details key={f.question} className="ct-faq" name="faq-como-trabajo">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>

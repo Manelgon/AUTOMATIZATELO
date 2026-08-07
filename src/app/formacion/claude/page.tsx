@@ -21,10 +21,10 @@ export default function Pagina() {
             kicker="Curso · Documentos largos y agentes"
             titulo={<>
                 Claude: la IA que lee lo que{" "}<br />
-                <span style={{ color: "var(--color-primary)" }}>las demás no aguantan</span>
+                <span style={{ color: "#f6c39c" }}>las demás no aguantan</span>
             </>}
             subtitulo="Contratos de cuarenta páginas, expedientes enteros, redacción que no suena a robot y agentes capaces de sacar una tarea completa de principio a fin. Claude es la herramienta preferida de quien trabaja con información compleja — y la que yo uso a diario."
-            enCorto="Curso de Claude para empresas: análisis de documentos largos, redacción técnica y profesional, proyectos con contexto propio y agentes que ejecutan tareas completas. Desde 900€ con precio cerrado; con el bloque del Art. 4, desde 1.200€."
+            enCorto="Curso de Claude para empresas: análisis de documentos largos, redacción técnica y profesional, proyectos con contexto propio y agentes que ejecutan tareas completas."
             paraQuien="Para despachos, asesorías, consultores y cualquier equipo que viva entre documentos largos e información compleja. Si tu trabajo es leer, analizar y redactar, esta es tu herramienta."
             temario={[
                 { num: "01", titulo: "La cuenta de empresa y el contexto", desc: "Plan de equipo con datos protegidos y el contexto de tu negocio siempre presente.", puntos: ["Plan de equipo y protección de datos", "Memoria e historial: qué guarda y cómo controlarlo", "Instrucciones para que responda como alguien de la casa", "Qué documentos de referencia conviene subirle"] },

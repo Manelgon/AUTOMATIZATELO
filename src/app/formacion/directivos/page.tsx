@@ -212,7 +212,7 @@ export default function DirectivosPage() {
                         </h2>
                     </div>
                     {faqs.map((f) => (
-                        <details key={f.question} className="fdir-faq">
+                        <details key={f.question} className="fdir-faq" name="faq-directivos">
                             <summary>
                                 <span>{f.question}</span>
                                 <i className="fas fa-chevron-down"></i>
