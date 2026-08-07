@@ -537,10 +537,6 @@ img {
   animation: marquee 38s linear infinite;
 }
 
-.tech-marquee:hover .tech-marquee-track {
-  animation-play-state: paused;
-}
-
 .tech-pill {
   display: inline-flex;
   align-items: center;
