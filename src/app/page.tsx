@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import TechMarquee from "@/components/TechMarquee";
 import CursoEstrellaHome from "@/components/CursoEstrellaHome";
 import PilaresHome from "@/components/PilaresHome";
 import CifrasHome from "@/components/CifrasHome";
@@ -29,6 +30,9 @@ export default function Home() {
 
       {/* 1. Hero — la promesa */}
       <Hero />
+
+      {/* 1b. Marquee de herramientas — la cinta que se desplaza */}
+      <TechMarquee />
 
       {/* 2. Curso estrella — el producto insignia, arriba como iActa */}
       <CursoEstrellaHome />
