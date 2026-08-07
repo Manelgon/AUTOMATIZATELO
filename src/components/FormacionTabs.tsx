@@ -17,8 +17,6 @@ const TABS = [
     { href: "/formacion/copilot", label: "Copilot 365" },
     { href: "/formacion/gemini", label: "Gemini + NotebookLM" },
     { href: "/formacion/claude", label: "Claude" },
-    { href: "/formacion/centros-educativos", label: "Centros educativos" },
-    { href: "/formacion/cursos-a-medida", label: "A medida · SCORM" },
 ];
 
 export default function FormacionTabs() {

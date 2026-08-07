@@ -69,14 +69,25 @@ export default function FormacionIaPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
             <Header />
 
-            {/* Hero editorial */}
-            <section style={{
-                padding: "9rem 0 3.5rem",
-                background: "radial-gradient(circle at 20% 20%, rgba(234, 88, 12, 0.07) 0%, transparent 55%)",
-            }}>
-                <div className="container fc-hero-grid">
+            {/* Hero con foto ambiental + velo lateral, como el index */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4rem" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/claustro.webp"
+                    alt=""
+                    aria-hidden="true"
+                    fetchPriority="high"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.62) 0%, rgba(28,25,23,0.42) 38%, rgba(28,25,23,0.12) 65%, transparent 85%), linear-gradient(180deg, rgba(28,25,23,0.18) 0%, transparent 40%)",
+                }} />
+                <div className="container fc-hero-grid fh-foto" style={{ position: "relative", zIndex: 2 }}>
                     <div>
-                    <span className="kicker-mono">
+                    <span className="kicker-mono" style={{ color: "#f6c39c" }}>
                         <i className="fa-solid fa-graduation-cap" style={{ marginRight: "0.6rem" }}></i>
                         Formación · Barcelona y toda España
                     </span>
@@ -86,12 +97,13 @@ export default function FormacionIaPage() {
                         fontWeight: 600,
                         lineHeight: 1.1,
                         letterSpacing: "-0.02em",
-                        color: "var(--color-text-main)",
+                        color: "#faf6ef",
                         margin: "1rem 0 1.2rem",
+                        textShadow: "0 2px 30px rgba(28,25,23,0.45)",
                     }}>
-                        Formación en IA para{" "}<br /><span style={{ color: "var(--color-primary)" }}>tu empresa, tu despacho o tu claustro</span>
+                        Formación en IA para{" "}<br /><span style={{ color: "#f6c39c" }}>tu empresa, tu despacho o tu claustro</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620 }}>
+                    <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Equipos, docentes y directivos usando la IA con criterio — y tu organización
                         cumpliendo la normativa europea.
                     </p>
@@ -105,28 +117,36 @@ export default function FormacionIaPage() {
             {/* Salta entre todas las formaciones sin volver atras */}
             <FormacionTabs />
 
-            {/* Qué es + answer capsule */}
-            <section style={{ padding: "4rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <span className="kicker-mono">Qué es</span>
-                    <p style={{
-                        fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(1.4rem, 2.8vw, 2rem)",
-                        fontWeight: 600,
-                        lineHeight: 1.35,
-                        color: "var(--color-text-main)",
-                        margin: "1rem 0 1.2rem",
-                        letterSpacing: "-0.01em",
-                    }}>
-                        La formación en IA capacita a equipos y claustros para usar herramientas
-                        de inteligencia artificial con criterio, seguridad y resultados medibles en su
-                        trabajo diario.
-                    </p>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.8, margin: 0, maxWidth: 720 }}>
+            {/* Qué es + por qué ahora — una sola banda sobre el degradado */}
+            <section style={{ padding: 0, background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)" }}>
+                <div className="container fqe-grid">
+                    <div>
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>Qué es · por qué ahora</span>
+                        <p className="fqe-capsula">
+                            La formación en IA capacita a equipos y claustros para usar herramientas
+                            de inteligencia artificial con criterio, seguridad y resultados medibles en su
+                            trabajo diario.
+                        </p>
+                    </div>
+                    <p className="fqe-apoyo">
                         Y ya no es solo cuestión de productividad: usar IA sin formar al equipo es hoy
-                        un <strong style={{ color: "var(--color-text-main)" }}>incumplimiento normativo</strong>.
+                        un <strong>incumplimiento normativo</strong>.
                         La mayoría de pymes y centros españoles todavía no lo ha resuelto.
                     </p>
+                </div>
+                <div className="container fpn-grid" style={{ paddingBottom: "2.2rem" }}>
+                    <div className="fpn-item">
+                        <span className="fpn-valor">Feb. 2025</span>
+                        <span className="fpn-texto">Desde entonces, el Art. 4 del Reglamento Europeo de IA obliga a la alfabetización del personal que usa IA.</span>
+                    </div>
+                    <div className="fpn-item">
+                        <span className="fpn-valor">Ago. 2026</span>
+                        <span className="fpn-texto">El régimen sancionador general ya está en vigor: la obligación tiene consecuencias desde este mes.</span>
+                    </div>
+                    <div className="fpn-item">
+                        <span className="fpn-valor">35 M€ · 7%</span>
+                        <span className="fpn-texto">Techo sancionador del Reglamento (Art. 99). Para una pyme la multa se modula — pero la evidencia formativa es lo que te defiende.</span>
+                    </div>
                 </div>
             </section>
 
@@ -178,43 +198,68 @@ export default function FormacionIaPage() {
                 </div>
             </section>
 
-            {/* Casos más concretos — línea fina bajo las puertas */}
-            <section style={{ padding: "1.5rem 0", background: "var(--color-bg-secondary)", borderBottom: "1px solid var(--color-border)" }}>
+            {/* Casos más concretos — barra tinta como la de sectores del index */}
+            <nav aria-label="Casos concretos" className="fd-otros-barra">
                 <div className="container fd-otros">
-                    <span className="mono-label" style={{ color: "var(--color-text-muted)" }}>¿Tu caso es más concreto?</span>
-                    <Link href="/sectores/despachos" className="fd-otro">Despachos profesionales →</Link>
-                    <Link href="/formacion/directivos" className="fd-otro">Dirección →</Link>
-                    <Link href="/formacion/cursos-a-medida" className="fd-otro">Cursos a medida · SCORM →</Link>
+                    <span className="fd-otros-etiqueta mono-label">¿Tu caso es más concreto?</span>
+                    <Link href="/sectores/despachos" className="fd-otro">Despachos profesionales</Link>
+                    <Link href="/formacion/directivos" className="fd-otro">Dirección</Link>
+                    <Link href="/formacion/centros-educativos" className="fd-otro">Centros educativos</Link>
+                    <Link href="/sectores/academias" className="fd-otro">Academias</Link>
+                    <Link href="/formacion/cursos-a-medida" className="fd-otro">Cursos a medida · SCORM</Link>
                 </div>
-            </section>
+            </nav>
 
-            {/* Por qué ahora — los tres datos que no son marketing */}
-            <section style={{ padding: "4rem 0", background: "var(--color-bg-secondary)", borderTop: "1px solid var(--color-border)", borderBottom: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 1000 }}>
-                    <span className="kicker-mono">Por qué ahora</span>
-                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "1.6rem" }}>
-                        Formar al equipo dejó de ser opcional
-                    </h2>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem" }}>
-                        <div style={{ border: "1px solid var(--color-border)", borderRadius: "14px", padding: "1.3rem 1.4rem", background: "var(--color-card-bg, #fff)" }}>
-                            <p style={{ fontFamily: "var(--font-display, serif)", fontSize: "2rem", fontWeight: 600, color: "var(--color-primary)", margin: "0 0 0.3rem" }}>Feb. 2025</p>
-                            <p style={{ color: "var(--color-text-muted)", fontSize: "0.9rem", lineHeight: 1.55, margin: 0 }}>Desde entonces, el Art. 4 del Reglamento Europeo de IA obliga a la alfabetización del personal que usa IA.</p>
-                        </div>
-                        <div style={{ border: "1px solid var(--color-border)", borderRadius: "14px", padding: "1.3rem 1.4rem", background: "var(--color-card-bg, #fff)" }}>
-                            <p style={{ fontFamily: "var(--font-display, serif)", fontSize: "2rem", fontWeight: 600, color: "var(--color-primary)", margin: "0 0 0.3rem" }}>Ago. 2026</p>
-                            <p style={{ color: "var(--color-text-muted)", fontSize: "0.9rem", lineHeight: 1.55, margin: 0 }}>El régimen sancionador general ya está en vigor: la obligación tiene consecuencias desde este mes.</p>
-                        </div>
-                        <div style={{ border: "1px solid var(--color-border)", borderRadius: "14px", padding: "1.3rem 1.4rem", background: "var(--color-card-bg, #fff)" }}>
-                            <p style={{ fontFamily: "var(--font-display, serif)", fontSize: "2rem", fontWeight: 600, color: "var(--color-primary)", margin: "0 0 0.3rem" }}>35 M€ / 7%</p>
-                            <p style={{ color: "var(--color-text-muted)", fontSize: "0.9rem", lineHeight: 1.55, margin: 0 }}>Techo sancionador del Reglamento (Art. 99). Para una pyme, la multa se modula — pero la evidencia formativa es lo que te defiende.</p>
-                        </div>
+            {/* Cursos a medida (SCORM) — split tinta como el testimonio del index */}
+            <section style={{ padding: "3.2rem 0", background: "#1c1917" }}>
+                <div className="container fsc-grid">
+                    <div>
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>Cursos a medida · SCORM</span>
+                        <h2 className="fsc-titulo">
+                            ¿Y si tu formación fuera un curso instalado en tu plataforma?
+                        </h2>
+                        <p style={{ color: "rgba(250,246,239,0.7)", lineHeight: 1.7, margin: 0, fontSize: "0.92rem" }}>
+                            El proceso completo está en la página de{" "}
+                            <Link href="/formacion/cursos-a-medida" style={{ color: "#f6c39c", fontWeight: 600 }}>
+                                cursos e-learning a medida
+                            </Link>.{" "}
+                            <Link href="/#contact" style={{ color: "#f6c39c", fontWeight: 600 }}>
+                                Cuéntame qué curso necesitas
+                            </Link>.
+                        </p>
+                    </div>
+                    <div className="fsc-compradores">
+                        <p className="fsc-comprador">
+                            <strong>Si eres una empresa</strong>, convierto tu formación interna — el tema que
+                            necesites — en un curso e-learning (SCORM) instalado en vuestra plataforma para
+                            siempre, con registro individual por alumno. Pagas la producción una vez y el curso es tuyo.
+                        </p>
+                        <p className="fsc-comprador">
+                            <strong>Si eres una academia o entidad de formación</strong>, produzco cursos con
+                            tu marca: tú pones el catálogo y la certificación, yo el contenido — guion, materiales,
+                            vídeo y empaquetado SCORM.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            {/* Quién lo imparte — franja terracota */}
-            <section style={{ padding: "4rem 0", background: "linear-gradient(135deg, #b45309 0%, #7c2d12 55%, #431407 100%)" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
+            {/* Quién lo imparte + CTA — foto ambiental + velo, cierre de confianza */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "4.5rem 0", background: "#1c1917" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/auditoria.webp"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.72) 0%, rgba(28,25,23,0.52) 45%, rgba(28,25,23,0.25) 75%, rgba(28,25,23,0.1) 100%)",
+                }} />
+                <div className="container" style={{ maxWidth: 900, position: "relative", zIndex: 2 }}>
                     <span className="mono-label" style={{ color: "#f6c39c" }}>Quién lo imparte</span>
                     <p style={{
                         fontFamily: "var(--font-display, serif)",
@@ -234,77 +279,43 @@ export default function FormacionIaPage() {
                         e-learning y formo a equipos con los casos de{" "}
                         <Link href="/casos" style={{ color: "#f6c39c", fontWeight: 600 }}>sistemas que ya funcionan</Link>.
                     </p>
+                    <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1rem 1.4rem", marginTop: "1.8rem" }}>
+                        <Link href="/#contact" className="fqi-cta">
+                            Pide tu consulta gratuita de 30 minutos →
+                        </Link>
+                        <span style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(250,246,239,0.6)" }}>
+                            ¿Formamos a tu equipo?
+                        </span>
+                    </div>
                 </div>
             </section>
 
-            {/* Cursos a medida (SCORM) — los dos compradores: empresa y academia */}
-            <section style={{ padding: "4.5rem 0", borderBottom: "1px solid var(--color-border)" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <span className="kicker-mono">Cursos a medida · SCORM</span>
-                    <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "1rem" }}>
-                        ¿Y si tu formación fuera un curso instalado en tu plataforma?
-                    </h2>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 720, marginBottom: "1rem" }}>
-                        <strong style={{ color: "var(--color-text-main)" }}>Si eres una empresa</strong>, convierto
-                        tu formación interna — el tema que necesites — en un curso e-learning (SCORM) instalado en
-                        vuestra plataforma para siempre, con registro individual por alumno. Pagas la producción
-                        una vez y el curso es tuyo.
-                    </p>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 720, marginBottom: "1rem" }}>
-                        <strong style={{ color: "var(--color-text-main)" }}>Si eres una academia o entidad de formación</strong>,
-                        produzco cursos con tu marca: tú pones el catálogo y la certificación, yo el contenido — guion,
-                        materiales, vídeo y empaquetado SCORM.
-                    </p>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.75, maxWidth: 720, margin: 0 }}>
-                        El proceso completo está en la página de{" "}
-                        <Link href="/formacion/cursos-a-medida" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            cursos e-learning a medida
-                        </Link>.{" "}
-                        <Link href="/#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            Cuéntame qué curso necesitas
-                        </Link>.
-                    </p>
-                </div>
-            </section>
-
-            {/* FAQ — filas editoriales */}
-            <section style={{ padding: "4.5rem 0" }}>
-                <div className="container" style={{ maxWidth: 900 }}>
-                    <div style={{ marginBottom: "2rem" }}>
-                        <span className="kicker-mono">FAQ</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: 0 }}>
+            {/* FAQ — split en tinta: título a la izquierda, acordeones a la derecha */}
+            <section style={{ padding: "4rem 0", background: "#1c1917" }}>
+                <div className="container ffq-grid">
+                    <div>
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>FAQ</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.9rem", color: "#faf6ef" }}>
                             Preguntas frecuentes
                         </h2>
+                        <p style={{ color: "rgba(250,246,239,0.7)", lineHeight: 1.65, margin: 0, fontSize: "0.95rem" }}>
+                            ¿No está la tuya?{" "}
+                            <Link href="/#contact" style={{ color: "#f6c39c", fontWeight: 600 }}>
+                                Pregúntamela directamente →
+                            </Link>
+                        </p>
                     </div>
-                    {faqs.map((f) => (
-                        <details key={f.question} className="fi-faq">
-                            <summary>
-                                <span>{f.question}</span>
-                                <i className="fas fa-chevron-down"></i>
-                            </summary>
-                            <p style={{ padding: "0 0.4rem 1.5rem", color: "var(--color-text-muted)", lineHeight: 1.7, margin: 0, maxWidth: 720 }}>{f.answer}</p>
-                        </details>
-                    ))}
-                </div>
-            </section>
-
-            {/* CTA final en melocotón */}
-            <section style={{ padding: "4.5rem 0", background: "#f8dfc6", textAlign: "center" }}>
-                <div className="container">
-                    <p style={{
-                        fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(1.7rem, 3.5vw, 2.6rem)",
-                        fontWeight: 600,
-                        color: "#1c1917",
-                        lineHeight: 1.2,
-                        margin: "0 0 1.8rem",
-                        letterSpacing: "-0.02em",
-                    }}>
-                        ¿Formamos a tu equipo?
-                    </p>
-                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.4rem" }}>
-                        Pide tu consulta gratuita de 30 minutos
-                    </Link>
+                    <div>
+                        {faqs.map((f) => (
+                            <details key={f.question} className="fi-faq">
+                                <summary>
+                                    <span>{f.question}</span>
+                                    <i className="fas fa-chevron-down"></i>
+                                </summary>
+                                <p style={{ padding: "0 0.4rem 1.5rem", color: "rgba(250,246,239,0.75)", lineHeight: 1.7, margin: 0 }}>{f.answer}</p>
+                            </details>
+                        ))}
+                    </div>
                 </div>
             </section>
 
@@ -404,24 +415,174 @@ export default function FormacionIaPage() {
                     .fd-puerta { min-height: 24rem; }
                     .fd-puerta-cuerpo { padding: 5.5rem 1.4rem 1.8rem; }
                 }
+                .fh-foto .fc-card {
+                    background: rgba(28, 25, 23, 0.62);
+                    backdrop-filter: blur(5px);
+                    -webkit-backdrop-filter: blur(5px);
+                }
+                .fqe-grid {
+                    display: grid;
+                    grid-template-columns: 1.15fr 0.85fr;
+                    gap: 3rem;
+                    align-items: center;
+                    padding-top: 1.8rem;
+                    padding-bottom: 1.6rem;
+                }
+                .fqe-capsula {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.15rem, 2.1vw, 1.5rem);
+                    font-weight: 600;
+                    line-height: 1.35;
+                    color: #faf6ef;
+                    letter-spacing: -0.01em;
+                    margin: 1rem 0 0;
+                }
+                .fqe-apoyo {
+                    color: rgba(250, 246, 239, 0.85);
+                    line-height: 1.8;
+                    font-size: 0.98rem;
+                    margin: 0;
+                    border-left: 2px solid rgba(246, 195, 156, 0.45);
+                    padding-left: 1.6rem;
+                }
+                .fqe-apoyo strong { color: #f6c39c; }
+                @media (max-width: 800px) {
+                    .fqe-grid { grid-template-columns: 1fr; gap: 1.6rem; padding-top: 2.6rem; padding-bottom: 2.6rem; }
+                    .fqe-apoyo { border-left: none; padding-left: 0; }
+                }
+                .fsc-grid {
+                    display: grid;
+                    grid-template-columns: 0.85fr 1.15fr;
+                    gap: 4rem;
+                    align-items: center;
+                }
+                .fsc-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.5rem, 2.6vw, 2rem);
+                    font-weight: 600;
+                    color: #faf6ef;
+                    letter-spacing: -0.01em;
+                    line-height: 1.15;
+                    margin: 0.8rem 0 0.9rem;
+                }
+                .fsc-compradores {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.3rem;
+                    border-left: 2px solid rgba(246, 195, 156, 0.45);
+                    padding-left: 1.6rem;
+                }
+                .fsc-comprador {
+                    color: rgba(250, 246, 239, 0.88);
+                    line-height: 1.7;
+                    font-size: 0.96rem;
+                    margin: 0;
+                }
+                .fsc-comprador strong { color: #f6c39c; }
+                @media (max-width: 800px) {
+                    .fsc-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+                    .fsc-compradores { border-left: none; padding-left: 0; }
+                }
+                .fpn-banda {
+                    background: #1c1917;
+                    padding: 3rem 0 3.2rem;
+                }
+                .fpn-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+                    font-weight: 600;
+                    color: #faf6ef;
+                    letter-spacing: -0.01em;
+                    line-height: 1.15;
+                    margin: 0.8rem 0 1.8rem;
+                }
+                .fpn-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 2rem;
+                }
+                .fpn-item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.45rem;
+                }
+                .fpn-valor {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+                    font-weight: 700;
+                    color: #f6c39c;
+                    line-height: 1;
+                }
+                .fpn-texto {
+                    color: rgba(250, 246, 239, 0.7);
+                    font-size: 0.9rem;
+                    line-height: 1.55;
+                }
+                @media (max-width: 800px) {
+                    .fpn-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+                }
+                .fd-otros-barra {
+                    background: #1c1917;
+                    border-top: 1px solid rgba(250, 246, 239, 0.08);
+                    border-bottom: 1px solid rgba(250, 246, 239, 0.08);
+                }
                 .fd-otros {
                     display: flex;
                     flex-wrap: wrap;
-                    align-items: baseline;
-                    gap: 0.6rem 1.8rem;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.15rem 0.25rem;
+                    padding-top: 0.55rem;
+                    padding-bottom: 0.55rem;
+                }
+                .fd-otros-etiqueta {
+                    color: #f6c39c;
+                    padding: 0.5rem 0.9rem 0.5rem 0;
+                    white-space: nowrap;
                 }
                 .fd-otro {
-                    font-size: 0.92rem;
+                    flex: 1 1 auto;
+                    text-align: center;
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.72rem;
                     font-weight: 600;
-                    color: var(--color-text-main);
-                    transition: color 0.2s ease;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.65);
+                    padding: 0.5rem 0.9rem;
+                    border-radius: 8px;
+                    white-space: nowrap;
+                    transition: color 0.2s ease, background 0.2s ease;
                 }
-                .fd-otro:hover { color: var(--color-primary); }
+                .fd-otro:hover { color: #faf6ef; background: rgba(250, 246, 239, 0.07); }
+                .fqi-cta {
+                    display: inline-block;
+                    background: #f6c39c;
+                    color: #1c1917;
+                    font-weight: 700;
+                    font-size: 0.95rem;
+                    border-radius: 50px;
+                    padding: 0.85rem 1.8rem;
+                    transition: background 0.2s ease, transform 0.2s ease;
+                }
+                .fqi-cta:hover {
+                    background: #faf6ef;
+                    transform: translateY(-2px);
+                }
+                .ffq-grid {
+                    display: grid;
+                    grid-template-columns: 0.38fr 0.62fr;
+                    gap: 4rem;
+                    align-items: start;
+                }
+                @media (max-width: 800px) {
+                    .ffq-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+                }
                 .fi-faq {
-                    border-top: 1px solid var(--color-border);
+                    border-top: 1px solid rgba(250, 246, 239, 0.14);
                 }
                 .fi-faq:last-of-type {
-                    border-bottom: 1px solid var(--color-border);
+                    border-bottom: 1px solid rgba(250, 246, 239, 0.14);
                 }
                 .fi-faq summary {
                     list-style: none;
@@ -434,7 +595,7 @@ export default function FormacionIaPage() {
                     font-family: var(--font-display, serif);
                     font-size: clamp(1.05rem, 2vw, 1.3rem);
                     font-weight: 600;
-                    color: var(--color-text-main);
+                    color: #faf6ef;
                     line-height: 1.3;
                     transition: color 0.2s ease, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
                 }
@@ -442,11 +603,11 @@ export default function FormacionIaPage() {
                     display: none;
                 }
                 .fi-faq summary:hover {
-                    color: var(--color-primary);
+                    color: #f6c39c;
                     padding-left: 1rem;
                 }
                 .fi-faq summary i {
-                    color: var(--color-primary);
+                    color: #f6c39c;
                     font-size: 0.8rem;
                     flex-shrink: 0;
                     transition: transform 0.3s ease;

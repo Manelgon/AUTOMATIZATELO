@@ -55,9 +55,9 @@ export default function FormularioCurso({ origen, opciones }: { origen: string; 
         return (
             <div className="fc-card">
                 <p className="fc-titulo">Recibido ✓</p>
-                <p style={{ color: "var(--color-text-muted)", lineHeight: 1.6, fontSize: "0.92rem", margin: 0 }}>
+                <p style={{ color: "rgba(250,246,239,0.75)", lineHeight: 1.6, fontSize: "0.92rem", margin: 0 }}>
                     Te respondo en menos de 24 h laborables con la propuesta
-                    de <strong style={{ color: "var(--color-text-main)" }}>{cursoFinal}</strong> para tu equipo.
+                    de <strong style={{ color: "#f6c39c" }}>{cursoFinal}</strong> para tu equipo.
                 </p>
             </div>
         );
@@ -66,7 +66,7 @@ export default function FormularioCurso({ origen, opciones }: { origen: string; 
     return (
         <form onSubmit={enviar} className="fc-card">
             <p className="fc-titulo">Pide información</p>
-            <p style={{ color: "var(--color-text-muted)", fontSize: "0.82rem", margin: "0 0 0.9rem" }}>
+            <p style={{ color: "rgba(250,246,239,0.65)", fontSize: "0.82rem", margin: "0 0 0.9rem" }}>
                 Te respondo en menos de 24 h laborables.
             </p>
             <div className="fc-fila">
@@ -77,27 +77,27 @@ export default function FormularioCurso({ origen, opciones }: { origen: string; 
                 <input value={form.empresa} onChange={(e) => setForm({ ...form, empresa: e.target.value })} placeholder="Tu empresa o centro" className="fc-input" />
                 <input value={form.telefono} onChange={(e) => setForm({ ...form, telefono: e.target.value })} placeholder="600 000 000" className="fc-input" />
             </div>
-            <select value={form.personas} onChange={(e) => setForm({ ...form, personas: e.target.value })} className="fc-input" style={{ color: form.personas ? "var(--color-text-main)" : "var(--color-text-muted)" }}>
+            <select value={form.personas} onChange={(e) => setForm({ ...form, personas: e.target.value })} className="fc-input" style={{ color: form.personas ? "#faf6ef" : "rgba(250,246,239,0.45)" }}>
                 <option value="">Nº de personas a formar</option>
                 {TAMANOS.map((t) => <option key={t} value={t}>{t}</option>)}
             </select>
             {opciones && (
-                <select value={form.curso} onChange={(e) => setForm({ ...form, curso: e.target.value })} className="fc-input" style={{ color: form.curso ? "var(--color-text-main)" : "var(--color-text-muted)" }}>
+                <select value={form.curso} onChange={(e) => setForm({ ...form, curso: e.target.value })} className="fc-input" style={{ color: form.curso ? "#faf6ef" : "rgba(250,246,239,0.45)" }}>
                     <option value="">Curso de interés*</option>
                     {opciones.map((o) => <option key={o} value={o}>{o}</option>)}
                 </select>
             )}
             <textarea value={form.mensaje} onChange={(e) => setForm({ ...form, mensaje: e.target.value })} placeholder="Cuéntame cualquier detalle…" rows={2} className="fc-input" style={{ resize: "vertical" }} />
-            <label style={{ display: "flex", gap: "0.5rem", alignItems: "flex-start", fontSize: "0.75rem", color: "var(--color-text-muted)", lineHeight: 1.45, margin: "0.2rem 0 0.7rem" }}>
+            <label style={{ display: "flex", gap: "0.5rem", alignItems: "flex-start", fontSize: "0.75rem", color: "rgba(250,246,239,0.7)", lineHeight: 1.45, margin: "0.2rem 0 0.7rem" }}>
                 <input type="checkbox" checked={form.acepto} onChange={(e) => setForm({ ...form, acepto: e.target.checked })} style={{ marginTop: "0.15rem" }} />
-                <span>Acepto la <Link href="/proteccion-datos" style={{ color: "var(--color-primary)" }}>política de privacidad</Link>.</span>
+                <span>Acepto la <Link href="/proteccion-datos" style={{ color: "#f6c39c" }}>política de privacidad</Link>.</span>
             </label>
             {estado === "error" && (
-                <p style={{ color: "#b91c1c", fontSize: "0.8rem", margin: "0 0 0.6rem" }}>
+                <p style={{ color: "#fca5a5", fontSize: "0.8rem", margin: "0 0 0.6rem" }}>
                     Revisa nombre, email{opciones ? ", curso" : ""} y la casilla de privacidad.
                 </p>
             )}
-            <button type="submit" disabled={estado === "enviando"} className="btn btn-primary" style={{ width: "100%", padding: "0.85rem 1rem", fontSize: "0.95rem", opacity: estado === "enviando" ? 0.6 : 1 }}>
+            <button type="submit" disabled={estado === "enviando"} className="fc-btn" style={{ opacity: estado === "enviando" ? 0.6 : 1 }}>
                 {estado === "enviando" ? "Enviando…" : "Enviar solicitud"}
             </button>
 
@@ -112,14 +112,13 @@ export default function FormularioCurso({ origen, opciones }: { origen: string; 
                     .fc-hero-grid { grid-template-columns: 1fr; gap: 2rem; }
                 }
                 .fc-card {
-                    background: var(--color-card-bg, #fff);
-                    border: 1px solid var(--color-border);
+                    background: rgba(28, 25, 23, 0.92);
+                    border: 1px solid rgba(250, 246, 239, 0.12);
                     border-radius: 18px;
-                    padding: 1.5rem 1.6rem;
-                    box-shadow: 0 20px 50px rgba(28,25,23,0.12);
+                    padding: 1.6rem 1.7rem;
                     display: flex;
                     flex-direction: column;
-                    gap: 0.6rem;
+                    gap: 0.7rem;
                     max-width: 460px;
                     width: 100%;
                     justify-self: end;
@@ -129,25 +128,41 @@ export default function FormularioCurso({ origen, opciones }: { origen: string; 
                     font-family: var(--font-display, serif);
                     font-size: 1.25rem;
                     font-weight: 600;
-                    color: var(--color-text-main);
+                    color: #faf6ef;
                     margin: 0;
                 }
-                .fc-fila { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+                .fc-fila { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1rem; }
                 @media (max-width: 480px) { .fc-fila { grid-template-columns: 1fr; } }
                 .fc-input {
                     width: 100%;
-                    background: rgba(28,25,23,0.03);
-                    border: 1px solid var(--color-border);
-                    border-radius: 10px;
-                    padding: 0.7rem 0.9rem;
+                    background: transparent;
+                    border: none;
+                    border-bottom: 1px solid rgba(250, 246, 239, 0.3);
+                    border-radius: 0;
+                    padding: 0.6rem 0;
                     font-size: 0.88rem;
                     font-family: inherit;
-                    color: var(--color-text-main);
+                    color: #faf6ef;
                     outline: none;
                     transition: border-color 0.2s ease;
                 }
-                .fc-input:focus { border-color: var(--color-primary); }
-                .fc-input::placeholder { color: var(--color-text-muted); }
+                .fc-input:focus { border-bottom-color: #f6c39c; }
+                .fc-input::placeholder { color: rgba(250, 246, 239, 0.55); }
+                .fc-input option { background: #fffdf8; color: #1c1917; }
+                .fc-btn {
+                    background: #f6c39c;
+                    color: #1c1917;
+                    border: none;
+                    border-radius: 50px;
+                    padding: 0.8rem 1rem;
+                    width: 100%;
+                    font-size: 0.95rem;
+                    font-weight: 700;
+                    font-family: inherit;
+                    cursor: pointer;
+                    transition: background 0.2s ease, transform 0.2s ease;
+                }
+                .fc-btn:hover { background: #faf6ef; transform: translateY(-1px); }
             `}</style>
         </form>
     );
