@@ -11,7 +11,6 @@ import { usePathname } from "next/navigation";
 // =============================================================================
 
 const TABS = [
-    { href: "/formacion", label: "Formación" },
     { href: "/formacion/empresas", label: "Empresas" },
     { href: "/formacion/ai-act", label: "Alfabetización · Art. 4" },
     { href: "/formacion/chatgpt", label: "ChatGPT" },
@@ -19,7 +18,6 @@ const TABS = [
     { href: "/formacion/gemini", label: "Gemini + NotebookLM" },
     { href: "/formacion/claude", label: "Claude" },
     { href: "/formacion/centros-educativos", label: "Centros educativos" },
-    { href: "/formacion/directivos", label: "Directivos" },
     { href: "/formacion/cursos-a-medida", label: "A medida · SCORM" },
 ];
 
@@ -51,15 +49,12 @@ export default function FormacionTabs() {
                 }
                 .ft-pistas {
                     display: flex;
+                    flex-wrap: wrap;
                     justify-content: space-between;
-                    gap: 0.25rem;
-                    overflow-x: auto;
-                    -webkit-overflow-scrolling: touch;
-                    scrollbar-width: none;
+                    gap: 0.15rem 0.25rem;
                     padding-top: 0.55rem;
                     padding-bottom: 0.55rem;
                 }
-                .ft-pistas::-webkit-scrollbar { display: none; }
                 .ft-tab {
                     flex: 1 1 auto;
                     text-align: center;
@@ -80,13 +75,8 @@ export default function FormacionTabs() {
                     background: #f6c39c;
                 }
                 @media (max-width: 760px) {
-                    .ft-pistas {
-                        flex-wrap: wrap;
-                        overflow-x: visible;
-                        justify-content: flex-start;
-                        row-gap: 0.15rem;
-                    }
-                    .ft-tab { flex: 1 1 auto; padding: 0.45rem 0.7rem; }
+                    .ft-pistas { justify-content: flex-start; }
+                    .ft-tab { padding: 0.45rem 0.7rem; }
                 }
                 .ft-tab-activa:hover { color: #1c1917; background: #f6c39c; }
             `}</style>

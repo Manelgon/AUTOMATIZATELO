@@ -48,15 +48,12 @@ export default function SistemasTabs() {
                 }
                 .st-pistas {
                     display: flex;
+                    flex-wrap: wrap;
                     justify-content: space-between;
-                    gap: 0.25rem;
-                    overflow-x: auto;
-                    -webkit-overflow-scrolling: touch;
-                    scrollbar-width: none;
+                    gap: 0.15rem 0.25rem;
                     padding-top: 0.55rem;
                     padding-bottom: 0.55rem;
                 }
-                .st-pistas::-webkit-scrollbar { display: none; }
                 .st-tab {
                     flex: 1 1 auto;
                     text-align: center;
@@ -77,13 +74,8 @@ export default function SistemasTabs() {
                     background: #f6c39c;
                 }
                 @media (max-width: 760px) {
-                    .st-pistas {
-                        flex-wrap: wrap;
-                        overflow-x: visible;
-                        justify-content: flex-start;
-                        row-gap: 0.15rem;
-                    }
-                    .st-tab { flex: 1 1 auto; padding: 0.45rem 0.7rem; }
+                    .st-pistas { justify-content: flex-start; }
+                    .st-tab { padding: 0.45rem 0.7rem; }
                 }
                 .st-tab-activa:hover { color: #1c1917; background: #f6c39c; }
             `}</style>
