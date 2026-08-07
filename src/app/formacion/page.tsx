@@ -123,10 +123,10 @@ export default function FormacionIaPage() {
                         trabajo diario.
                     </p>
                     <p style={{ color: "var(--color-text-muted)", lineHeight: 1.8, margin: 0, maxWidth: 720 }}>
-                        Y ya no es opcional: el artículo 4 del Reglamento Europeo de IA (Reglamento UE 2024/1689)
-                        exige, desde el 2 de febrero de 2025, que las organizaciones que usan sistemas de IA garanticen
-                        un nivel suficiente de <strong style={{ color: "var(--color-text-main)" }}>alfabetización en IA</strong> de
-                        su personal. La mayoría de pymes y centros españoles todavía no lo ha resuelto.
+                        Y ya no es solo cuestión de productividad: usar IA sin formar al equipo es hoy
+                        un <strong style={{ color: "var(--color-text-main)" }}>incumplimiento normativo</strong> —
+                        las fechas y las multas, justo debajo. La mayoría de pymes y centros españoles
+                        todavía no lo ha resuelto.
                     </p>
                 </div>
             </section>
