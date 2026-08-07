@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 
 const TABS = [
     { href: "/formacion", label: "Formación" },
+    { href: "/formacion/empresas", label: "Empresas" },
     { href: "/formacion/ai-act", label: "Alfabetización · Art. 4" },
     { href: "/formacion/chatgpt", label: "ChatGPT" },
     { href: "/formacion/copilot", label: "Copilot 365" },

@@ -19,6 +19,7 @@ const PAGINAS: { ruta: string; freq: 'weekly' | 'monthly' | 'yearly'; prio: numb
     { ruta: '/blog', freq: 'weekly', prio: 0.7 },
     // Pilar 1 — Formación
     { ruta: '/formacion', freq: 'monthly', prio: 0.9 },
+    { ruta: '/formacion/empresas', freq: 'monthly', prio: 0.9 },
     { ruta: '/formacion/ai-act', freq: 'monthly', prio: 0.9 },
     { ruta: '/formacion/chatgpt', freq: 'monthly', prio: 0.8 },
     { ruta: '/formacion/copilot', freq: 'monthly', prio: 0.8 },

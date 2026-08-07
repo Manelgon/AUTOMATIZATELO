@@ -38,12 +38,12 @@ const pilares = [
 ];
 
 const sectores = [
-    { label: "Fincas", href: "/automatizacion-administradores-fincas" },
-    { label: "Clínicas", href: "/automatizacion-clinicas" },
-    { label: "Despachos", href: "/automatizacion-despachos" },
-    { label: "Academias", href: "/automatizacion-academias" },
-    { label: "Centros educativos", href: "/formacion-ia-centros-educativos" },
-    { label: "Empresas de servicios", href: "/automatizacion-empresas-servicios" },
+    { label: "Fincas", href: "/sectores/administradores-fincas" },
+    { label: "Despachos", href: "/sectores/despachos" },
+    { label: "Academias", href: "/sectores/academias" },
+    { label: "RRHH", href: "/sectores/rrhh" },
+    { label: "Centros educativos", href: "/formacion/centros-educativos" },
+    { label: "Directivos", href: "/formacion/directivos" },
 ];
 
 export default function PilaresHome() {

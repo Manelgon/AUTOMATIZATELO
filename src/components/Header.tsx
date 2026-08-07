@@ -15,9 +15,9 @@ import Image from "next/image";
 // =============================================================================
 
 const formacionLinks = [
-    { href: "/formacion", num: "01", title: "Formación in-company", desc: "El curso estrella y todos los formatos, con certificado." },
-    { href: "/formacion/ai-act", num: "02", title: "Alfabetización del Art. 4", desc: "La obligatoria desde 2025 — sanciona desde ago-2026." },
-    { href: "/formacion/directivos", num: "03", title: "Sesión ejecutiva", desc: "Para dirección: decidir con criterio, no promptear." },
+    { href: "/formacion", num: "01", title: "Formación en IA", desc: "La portada: las dos puertas, empresas y educación." },
+    { href: "/formacion/empresas", num: "02", title: "In-company para empresas", desc: "El curso estrella, el catálogo y los precios." },
+    { href: "/formacion/ai-act", num: "03", title: "Alfabetización del Art. 4", desc: "La obligatoria desde 2025 — sanciona desde ago-2026." },
     { href: "/formacion/centros-educativos", num: "04", title: "Centros educativos", desc: "Formación de claustro y política de IA del centro." },
 ];
 
