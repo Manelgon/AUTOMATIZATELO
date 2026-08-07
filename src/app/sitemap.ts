@@ -26,6 +26,7 @@ const PAGINAS: { ruta: string; freq: 'weekly' | 'monthly' | 'yearly'; prio: numb
     { ruta: '/formacion/claude', freq: 'monthly', prio: 0.8 },
     { ruta: '/formacion/centros-educativos', freq: 'monthly', prio: 0.8 },
     { ruta: '/formacion/directivos', freq: 'monthly', prio: 0.8 },
+    { ruta: '/formacion/cursos-a-medida', freq: 'monthly', prio: 0.8 },
     // Pilar 2 — Cumplimiento
     { ruta: '/cumplimiento', freq: 'monthly', prio: 0.9 },
     // Pilar 3 — Sistemas

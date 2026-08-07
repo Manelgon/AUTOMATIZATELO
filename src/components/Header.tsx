@@ -26,6 +26,7 @@ const cursosLinks = [
     { href: "/formacion/copilot", label: "Curso de Copilot 365" },
     { href: "/formacion/gemini", label: "Curso de Gemini + NotebookLM" },
     { href: "/formacion/claude", label: "Curso de Claude" },
+    { href: "/formacion/cursos-a-medida", label: "Cursos a medida (SCORM)" },
 ];
 
 const empiezaPorAqui = [

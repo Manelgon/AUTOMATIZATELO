@@ -573,8 +573,8 @@ export default function FormacionIaPage() {
                         Es lo que ya hago con plataformas e-learning reales: cursos completos de IA publicados y en venta.
                         Producción desde 1.900€ por curso, o licencia de contenido ya producido — el proceso completo
                         está en la página de{" "}
-                        <Link href="/formacion" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                            producción de cursos SCORM
+                        <Link href="/formacion/cursos-a-medida" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            producción de cursos SCORM a medida
                         </Link>.{" "}
                         <Link href="/#contact" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
                             Cuéntame qué necesita tu catálogo
