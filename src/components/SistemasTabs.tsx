@@ -24,7 +24,7 @@ export default function SistemasTabs() {
     const pathname = usePathname();
 
     return (
-        <nav aria-label="Páginas de sistemas" className="st-barra" data-lenis-prevent>
+        <nav aria-label="Páginas de sistemas" className="st-barra">
             <div className="container st-pistas">
                 {TABS.map((t) => {
                     const activa = pathname === t.href;

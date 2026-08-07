@@ -25,7 +25,7 @@ export default function FormacionTabs() {
     const pathname = usePathname();
 
     return (
-        <nav aria-label="Páginas de formación" className="ft-barra" data-lenis-prevent>
+        <nav aria-label="Páginas de formación" className="ft-barra">
             <div className="container ft-pistas">
                 {TABS.map((t) => {
                     const activa = pathname === t.href;
