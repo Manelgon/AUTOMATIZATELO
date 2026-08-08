@@ -210,6 +210,7 @@ export default function Header() {
                         <span className="dropdown-grupo" style={{ marginTop: "0.8rem" }}>Empieza por aquí</span>
                         <ItemMini href="/diagnostico" label="Diagnóstico gratis — 12 preguntas, 3 min" />
                         <ItemMini href="/casos" label="Casos en producción real" />
+                        <ItemMini href="/recursos" label="Recursos gratis, sin registro" />
                     </Desplegable>
 
                     {/* Puertas por identidad */}

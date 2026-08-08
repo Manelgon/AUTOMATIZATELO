@@ -29,7 +29,7 @@ const servicios = [
     { href: "/sistemas/documentos", label: "Facturas y documentos (OCR + IA)", sub: true },
     { href: "/sistemas/ventas", label: "Automatización de ventas", sub: true },
     { href: "/sistemas/crm", label: "Implantación de CRM", sub: true },
-    { href: "/sistemas/paneles", label: "Paneles a medida", sub: true },
+    { href: "/sistemas/paneles", label: "Paneles de gestión", sub: true },
     { href: "/sistemas/chatbots-whatsapp", label: "Chatbots — WhatsApp y web", sub: true },
     { href: "/sistemas/integracion", label: "Integración de sistemas", sub: true },
 ];
@@ -87,7 +87,7 @@ export default function Footer() {
                         <div style={{ display: "flex", gap: "1rem" }}>
                             {[
                                 { href: "https://www.linkedin.com/company/automatizatelo", label: "LinkedIn", icono: <FaLinkedin /> },
-                                { href: "https://www.instagram.com/automatizatelo.ia?igsh=NWE1eW8xa2VieTlh&utm_source=qr", label: "Instagram", icono: <FaInstagram /> },
+                                { href: "https://www.instagram.com/automatizatelo.ia", label: "Instagram", icono: <FaInstagram /> },
                                 { href: "https://wa.me/34678399182", label: "WhatsApp", icono: <FaWhatsapp /> },
                             ].map((r) => (
                                 <a
