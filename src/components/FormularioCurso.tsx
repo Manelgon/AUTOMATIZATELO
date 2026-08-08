@@ -17,13 +17,16 @@ import Link from "next/link";
 
 const TAMANOS = ["1-5 personas", "6-15 personas", "16-50 personas", "Más de 50"];
 
+// Prefijos habituales: España primero, y los de quien nos escribe de fuera.
+const PREFIJOS = ["+34", "+351", "+33", "+39", "+44", "+49", "+52", "+54", "+56", "+57"];
+
 export default function FormularioCurso({ origen, opciones, etiquetaOpciones, etiquetaPersonas }: {
     origen: string;
     opciones?: string[];
     etiquetaOpciones?: string;
     etiquetaPersonas?: string;
 }) {
-    const [form, setForm] = useState({ nombre: "", email: "", empresa: "", telefono: "", personas: "", curso: "", mensaje: "", acepto: false });
+    const [form, setForm] = useState({ nombre: "", email: "", empresa: "", prefijo: "+34", telefono: "", personas: "", curso: "", mensaje: "", acepto: false });
     const [estado, setEstado] = useState<"idle" | "enviando" | "ok" | "error">("idle");
 
     const cursoFinal = opciones ? form.curso : origen;
@@ -41,7 +44,7 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                 body: JSON.stringify({
                     nombre: form.nombre,
                     email: form.email,
-                    telefono: form.telefono,
+                    telefono: form.telefono ? `${form.prefijo} ${form.telefono}` : "",
                     tipo_cliente: "empresa",
                     servicio: cursoFinal,
                     tamano_empresa: form.personas || null,
@@ -82,7 +85,24 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
             </div>
             <div className="fc-fila">
                 <input value={form.empresa} onChange={(e) => setForm({ ...form, empresa: e.target.value })} placeholder="Tu empresa o centro" className="fc-input" />
-                <input value={form.telefono} onChange={(e) => setForm({ ...form, telefono: e.target.value })} placeholder="600 000 000" className="fc-input" />
+                <div className="fc-tel">
+                    <select
+                        aria-label="Prefijo del país"
+                        value={form.prefijo}
+                        onChange={(e) => setForm({ ...form, prefijo: e.target.value })}
+                        className="fc-input fc-prefijo"
+                    >
+                        {PREFIJOS.map((p) => <option key={p} value={p}>{p}</option>)}
+                    </select>
+                    <input
+                        type="tel"
+                        inputMode="tel"
+                        value={form.telefono}
+                        onChange={(e) => setForm({ ...form, telefono: e.target.value })}
+                        placeholder="600 000 000"
+                        className="fc-input"
+                    />
+                </div>
             </div>
             <select value={form.personas} onChange={(e) => setForm({ ...form, personas: e.target.value })} className="fc-input" style={{ color: form.personas ? "#faf6ef" : "rgba(250,246,239,0.45)" }}>
                 <option value="">{etiquetaPersonas ?? "Nº de personas a formar"}</option>
@@ -140,6 +160,16 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                 }
                 .fc-fila { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1rem; }
                 @media (max-width: 480px) { .fc-fila { grid-template-columns: 1fr; } }
+                .fc-tel {
+                    display: grid;
+                    grid-template-columns: 4.6rem 1fr;
+                    gap: 0.6rem;
+                    align-items: end;
+                }
+                .fc-prefijo {
+                    color: #faf6ef;
+                    font-variant-numeric: tabular-nums;
+                }
                 .fc-input {
                     width: 100%;
                     background: transparent;
@@ -155,7 +185,20 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                 }
                 .fc-input:focus { border-bottom-color: #f6c39c; }
                 .fc-input::placeholder { color: rgba(250, 246, 239, 0.55); }
-                .fc-input option { background: #fffdf8; color: #1c1917; }
+                /* La lista desplegable la pinta el sistema: con color-scheme
+                   oscuro sale en tinta y no en blanco con resalte azul. */
+                .fc-input,
+                .fc-prefijo {
+                    color-scheme: dark;
+                }
+                .fc-input option {
+                    background: #1c1917;
+                    color: #faf6ef;
+                }
+                .fc-input option:checked {
+                    background: #f6c39c;
+                    color: #1c1917;
+                }
                 .fc-btn {
                     background: #f6c39c;
                     color: #1c1917;

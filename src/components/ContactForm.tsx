@@ -603,8 +603,15 @@ export default function ContactForm() {
                     border-bottom-color: #f6c39c !important;
                     outline: none !important;
                 }
+                #form-automatizatelo select {
+                    color-scheme: dark;
+                }
                 #form-automatizatelo select option {
-                    background: #fffdf8;
+                    background: #1c1917;
+                    color: #faf6ef;
+                }
+                #form-automatizatelo select option:checked {
+                    background: #f6c39c;
                     color: #1c1917;
                 }
                 #form-automatizatelo input::placeholder,

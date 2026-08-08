@@ -267,7 +267,6 @@ export default function DirectivosPage() {
                         { href: "/formacion/centros-educativos", label: "Centros" },
                     ].map((t, i) => (
                         <Link key={t.href} href={t.href} className="nav-barra-item">
-                            <span className="nav-barra-num">{String(i + 1).padStart(2, "0")}</span>
                             {t.label}
                         </Link>
                     ))}

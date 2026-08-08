@@ -61,6 +61,9 @@ type Menu = "formacion" | "sistemas" | "sector" | null;
 export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const [openMenu, setOpenMenu] = useState<Menu>(null);
+    // Arriba del todo la barra desaparece sobre la foto del hero; al bajar
+    // vuelve la pastilla crema con blur para que se lea sobre el contenido.
+    const [conScroll, setConScroll] = useState(false);
     const navRef = useRef<HTMLElement>(null);
     const pathname = usePathname();
 
@@ -73,6 +76,13 @@ export default function Header() {
     useEffect(() => {
         closeAll();
     }, [pathname, closeAll]);
+
+    useEffect(() => {
+        const alScroll = () => setConScroll(window.scrollY > 24);
+        alScroll();
+        window.addEventListener("scroll", alScroll, { passive: true });
+        return () => window.removeEventListener("scroll", alScroll);
+    }, []);
 
     useEffect(() => {
         if (!openMenu) return;
@@ -138,19 +148,27 @@ export default function Header() {
     );
 
     return (
-        <header className="header" style={{
-            background: isMobileOpen ? "var(--color-card-bg)" : "rgba(250, 246, 239, 0.85)",
-            backdropFilter: isMobileOpen ? "none" : "blur(16px) saturate(140%)",
-            WebkitBackdropFilter: isMobileOpen ? "none" : "blur(16px) saturate(140%)",
-            margin: "1rem",
-            width: "calc(100% - 2rem)",
-            borderRadius: isMobileOpen ? "16px 16px 0 0" : "16px",
-            top: "0",
-            border: "1px solid var(--color-border)",
-            borderBottom: isMobileOpen ? "none" : "1px solid var(--color-border)",
-            boxShadow: isMobileOpen ? "0 20px 40px rgba(28,25,23,0.15)" : "0 10px 30px rgba(28,25,23,0.06)",
-            zIndex: 1000,
-        }}>
+        <header
+            className={`header ${conScroll || isMobileOpen ? "header-solida" : "header-arriba"}`}
+            style={{
+                background: isMobileOpen
+                    ? "var(--color-card-bg)"
+                    : conScroll
+                        ? "rgba(250, 246, 239, 0.9)"
+                        : "transparent",
+                backdropFilter: isMobileOpen || !conScroll ? "none" : "blur(16px) saturate(140%)",
+                WebkitBackdropFilter: isMobileOpen || !conScroll ? "none" : "blur(16px) saturate(140%)",
+                margin: 0,
+                width: "100%",
+                borderRadius: 0,
+                top: "0",
+                border: "none",
+                borderBottom: conScroll && !isMobileOpen ? "1px solid var(--color-border)" : "1px solid transparent",
+                boxShadow: isMobileOpen ? "0 20px 40px rgba(28,25,23,0.15)" : "none",
+                transition: "background 0.25s ease, border-color 0.25s ease",
+                zIndex: 1000,
+            }}
+        >
             <div className="container nav" ref={navRef as React.RefObject<HTMLDivElement>}>
                 <Link
                     href="/"

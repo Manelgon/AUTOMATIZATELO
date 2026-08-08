@@ -268,15 +268,20 @@ img {
 
 .sectors-dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.9rem);
+  top: 100%;
   left: 0;
-  background: var(--color-card-bg);
+  /* Mismo cristal que la barra: el panel es la barra desplegándose, no una
+     hoja pegada debajo. */
+  background: rgba(250, 246, 239, 0.94);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid var(--color-border);
-  border-radius: 18px;
-  padding: 0.9rem;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 1.4rem 1.8rem 1.4rem;
   /* En CSS y no inline: así la regla móvil (width 100%) puede ganarle */
-  min-width: 360px;
-  box-shadow: 0 24px 60px rgba(28, 25, 23, 0.16);
+  min-width: 420px;
+  box-shadow: 0 20px 45px rgba(28, 25, 23, 0.12);
   z-index: 1001;
   animation: dropdownIn 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   /* Con 10+ entradas el menú puede superar el alto de la ventana:
@@ -305,7 +310,6 @@ img {
   gap: 1rem;
   padding: 0.75rem 1rem;
   color: var(--color-text-main);
-  border-radius: 12px;
   text-decoration: none;
   font-family: var(--font-display, serif);
   font-size: 1.02rem;
@@ -322,7 +326,7 @@ img {
 }
 
 .sectors-dropdown-item:hover {
-  background: #f8dfc6;
+  color: var(--color-primary);
   padding-left: 1.3rem;
 }
 
@@ -339,10 +343,12 @@ img {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  padding: 0.5rem 1rem 0.3rem;
-  border-bottom: 1px solid var(--color-border);
-  margin-bottom: 0.3rem;
+  color: var(--color-primary);
+  padding: 1.4rem 0 0.6rem;
+  border-bottom: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0.6rem 0 0.2rem;
+  letter-spacing: 0.18em;
 }
 
 /* Items numerados estilo editorial (01 / 02 / 03) */
@@ -353,45 +359,54 @@ img {
 }
 
 .dropdown-item-num {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2.1rem 1fr auto;
   align-items: baseline;
-  gap: 0.9rem;
-  padding: 0.85rem 1rem;
-  border-radius: 12px;
-  transition: background 0.2s ease, padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  gap: 0 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--color-border);
+  transition: padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.dropdown-item-num:hover {
-  background: #f8dfc6;
-  padding-left: 1.3rem;
-}
+.dropdown-item-num:first-of-type { border-top: none; padding-top: 0.2rem; }
+.dropdown-item-num:hover { padding-left: 0.4rem; }
 
 .dropdown-item-num .num {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.1em;
+  font-family: var(--font-display, serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(234, 88, 12, 0.35);
   font-variant-numeric: tabular-nums;
+  transition: color 0.2s ease;
 }
+
+.dropdown-item-num:hover .num { color: var(--color-primary); }
 
 .dropdown-item-num .item-title {
   font-family: var(--font-display, serif);
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   font-weight: 600;
   color: var(--color-text-main);
   display: block;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
 }
 
+.dropdown-item-num:hover .item-title { color: var(--color-primary); }
+
 .dropdown-item-num .item-desc {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--color-text-muted);
   display: block;
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
+  line-height: 1.5;
 }
 
 .dropdown-item-num .arrow {
   margin-left: auto;
-  color: var(--color-text-muted);
+  color: rgba(28, 25, 23, 0.3);
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
@@ -430,30 +445,27 @@ img {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
+  padding: 0.5rem 0;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--color-text-muted);
-  transition: background 0.2s ease, color 0.2s ease, padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: color 0.2s ease, padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .dropdown-item-mini .arrow {
   margin-left: auto;
-  color: var(--color-text-muted);
+  color: var(--color-primary);
   opacity: 0;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .dropdown-item-mini:hover {
-  background: #f8dfc6;
   color: var(--color-text-main);
-  padding-left: 1.3rem;
+  padding-left: 0.5rem;
 }
 
 .dropdown-item-mini:hover .arrow {
   opacity: 1;
-  color: var(--color-primary);
   transform: translateX(3px);
 }
 
@@ -2093,10 +2105,43 @@ section {
   transition: color 0.2s ease, background 0.2s ease;
 }
 .nav-barra-item:hover { color: #faf6ef; background: rgba(250, 246, 239, 0.07); }
-.nav-barra-num { color: #f6c39c; opacity: 0.75; }
 .nav-barra-activa { color: #1c1917; background: #f6c39c; }
-.nav-barra-activa .nav-barra-num { color: #1c1917; opacity: 0.6; }
 .nav-barra-activa:hover { color: #1c1917; background: #f6c39c; }
 @media (max-width: 900px) {
   .nav-barra-item { flex: 1 1 45%; }
+}
+
+/* --------------------------------------------------------------------------
+   CABECERA TRANSPARENTE ARRIBA
+   --------------------------------------------------------------------------
+   Sobre la foto del hero la barra desaparece y su texto va en crema; al hacer
+   scroll vuelve la pastilla crema y el texto recupera el color de siempre.
+   -------------------------------------------------------------------------- */
+.header-arriba .nav-links a,
+.header-arriba .sectors-dropdown-trigger,
+.header-arriba .logo {
+  color: #faf6ef;
+  text-shadow: 0 1px 12px rgba(28, 25, 23, 0.45);
+}
+.header-arriba .nav-links a:hover,
+.header-arriba .sectors-dropdown-trigger:hover {
+  color: #f6c39c;
+}
+.header-arriba .logo .premium-gradient {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #faf6ef !important;
+  color: #faf6ef !important;
+}
+.header-arriba .mobile-toggle { color: #faf6ef; }
+/* El botón de contacto no cambia: es el único elemento que debe destacar. */
+.header-arriba .nav-links a.btn-primary {
+  color: #fff;
+  text-shadow: none;
+}
+/* Dentro de los desplegables manda el estilo del panel, no el de la barra. */
+.header-arriba .sectors-dropdown-menu a,
+.header-arriba .sectors-dropdown-menu a:hover {
+  text-shadow: none;
 }

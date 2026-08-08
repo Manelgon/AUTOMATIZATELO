@@ -185,7 +185,6 @@ export default function DespachosPage() {
                                 aria-current={activa ? "page" : undefined}
                                 className={`nav-barra-item ${activa ? "nav-barra-activa" : ""}`}
                             >
-                                <span className="nav-barra-num">{String(i + 1).padStart(2, "0")}</span>
                                 {t.label}
                             </Link>
                         );
