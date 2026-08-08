@@ -19,6 +19,7 @@ const formacionLinks = [
     { href: "/formacion/empresas", num: "02", title: "In-company para empresas", desc: "El curso estrella, el catálogo y los precios." },
     { href: "/formacion/ai-act", num: "03", title: "Alfabetización del Art. 4", desc: "La obligatoria desde 2025 — sanciona desde ago-2026." },
     { href: "/formacion/centros-educativos", num: "04", title: "Centros educativos", desc: "Formación de claustro y política de IA del centro." },
+    { href: "/formacion/alumnado", num: "05", title: "Alumnado", desc: "Taller de IA para estudiantes: estudiar y buscar empleo." },
 ];
 
 const cursosLinks = [
@@ -30,9 +31,17 @@ const cursosLinks = [
 ];
 
 const sistemasLinks = [
-    { href: "/sistemas", num: "01", title: "Automatización de procesos", desc: "Facturas, documentos, ventas, CRM y paneles." },
-    { href: "/sistemas/chatbots-whatsapp", num: "02", title: "Chatbots — WhatsApp y web", desc: "Atención 24/7 con la API oficial." },
-    { href: "/sistemas/integracion", num: "03", title: "Integración de sistemas", desc: "Tus herramientas, pasándose los datos solas." },
+    { href: "/sistemas", num: "01", title: "Automatización de procesos", desc: "El pilar: qué se puede automatizar y qué cuesta." },
+];
+
+// Las seis piezas, cada una con su página propia.
+const sistemasPiezas = [
+    { href: "/sistemas/documentos", label: "Facturas y documentos (OCR + IA)" },
+    { href: "/sistemas/ventas", label: "Automatización de ventas" },
+    { href: "/sistemas/crm", label: "Implantación de CRM" },
+    { href: "/sistemas/paneles", label: "Paneles de gestión" },
+    { href: "/sistemas/chatbots-whatsapp", label: "Chatbots — WhatsApp y web" },
+    { href: "/sistemas/integracion", label: "Integración de sistemas" },
 ];
 
 // El visitante se reconoce por lo que es ("soy un despacho"), no por el
@@ -178,6 +187,8 @@ export default function Header() {
                     {/* Pilar 3 — Automatizar */}
                     <Desplegable id="sistemas" etiqueta="Sistemas">
                         {sistemasLinks.map((s) => <ItemGrande key={s.href} {...s} />)}
+                        <span className="dropdown-grupo" style={{ marginTop: "0.8rem" }}>Por sistema</span>
+                        {sistemasPiezas.map((s) => <ItemMini key={s.href} {...s} />)}
                         <span className="dropdown-grupo" style={{ marginTop: "0.8rem" }}>Empieza por aquí</span>
                         <ItemMini href="/diagnostico" label="Diagnóstico gratis — 12 preguntas, 3 min" />
                         <ItemMini href="/casos" label="Casos en producción real" />
