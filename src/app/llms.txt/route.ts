@@ -6,7 +6,7 @@ const content = `# Automatizatelo
 
 Datos clave:
 - Contacto: info@automatizatelo.com · +34 678 39 91 82
-- Precios públicos por línea: FORMAR al equipo desde 600 €, CUMPLIR el AI Act desde 750 €, AUTOMATIZAR desde 900 € (poner en marcha), 2.000 € (un área completa) u 8.000 € (la empresa entera). Una automatización suelta y concreta, desde 500 €
+- Precios públicos por línea: FORMAR al equipo desde 600 €, CUMPLIR el AI Act desde 750 €, AUTOMATIZAR desde 500 € (una automatización concreta), 900 € (poner en marcha), 2.000 € (un área completa) u 8.000 € (la empresa entera). Una automatización suelta y concreta, desde 500 €
 - El cliente conserva el código y los datos de todo lo que construimos
 - Herramientas según el caso: no dependemos de una sola plataforma
 
