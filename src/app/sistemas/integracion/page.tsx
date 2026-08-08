@@ -280,9 +280,9 @@ export default function IntegracionSistemasPage() {
             </section>
 
             {/* Casos más concretos — tira numerada por sector */}
-            <nav aria-label="Casos concretos" className="in2-tira">
-                <div className="container in2-tira-fila">
-                    <span className="in2-tira-etiqueta mono-label">¿Tu caso es más concreto?</span>
+            <nav aria-label="Casos concretos" className="nav-barra">
+                <div className="container nav-barra-fila">
+                    <span className="nav-barra-etiqueta mono-label">¿Tu caso es más concreto?</span>
                     {[
                         { href: "/sectores/administradores-fincas", label: "Fincas" },
                         { href: "/sectores/despachos", label: "Despachos" },
@@ -290,8 +290,8 @@ export default function IntegracionSistemasPage() {
                         { href: "/sectores/rrhh", label: "RRHH" },
                         { href: "/cumplimiento", label: "Cumplimiento" },
                     ].map((t, i) => (
-                        <Link key={t.href} href={t.href} className="in2-tira-item">
-                            <span className="in2-tira-num">{String(i + 1).padStart(2, "0")}</span>
+                        <Link key={t.href} href={t.href} className="nav-barra-item">
+                            <span className="nav-barra-num">{String(i + 1).padStart(2, "0")}</span>
                             {t.label}
                         </Link>
                     ))}
@@ -302,7 +302,7 @@ export default function IntegracionSistemasPage() {
             <section id="conexiones" style={{ position: "relative", overflow: "hidden", padding: "4.5rem 0", background: "#1c1917", scrollMarginTop: "6rem" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/servicios-hero.webp"
+                    src="/auditoria.webp"
                     alt=""
                     aria-hidden="true"
                     loading="lazy"
@@ -588,45 +588,7 @@ export default function IntegracionSistemasPage() {
                     .in2-pasos { grid-template-columns: 1fr; }
                     .in2-paso-linea { display: none; }
                 }
-                .in2-tira {
-                    display: block;
-                    background: #1c1917;
-                    border-top: 1px solid rgba(250, 246, 239, 0.08);
-                    border-bottom: 1px solid rgba(250, 246, 239, 0.08);
-                }
-                .in2-tira-fila {
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: stretch;
-                }
-                .in2-tira-etiqueta {
-                    display: flex;
-                    align-items: center;
-                    color: #f6c39c;
-                    padding: 0.95rem 1.4rem 0.95rem 0;
-                    white-space: nowrap;
-                }
-                .in2-tira-item {
-                    flex: 1 1 auto;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 0.55rem;
-                    font-family: var(--font-mono, monospace);
-                    font-size: 0.72rem;
-                    font-weight: 600;
-                    letter-spacing: 0.06em;
-                    text-transform: uppercase;
-                    color: rgba(250, 246, 239, 0.7);
-                    padding: 0.95rem 1rem;
-                    border-left: 1px solid rgba(250, 246, 239, 0.12);
-                    white-space: nowrap;
-                    transition: color 0.2s ease, background 0.2s ease;
-                }
-                .in2-tira-item:hover { color: #faf6ef; background: rgba(250, 246, 239, 0.05); }
-                .in2-tira-num { color: #f6c39c; font-size: 0.7rem; opacity: 0.75; }
                 @media (max-width: 900px) {
-                    .in2-tira-item { flex: 1 1 45%; justify-content: flex-start; }
                 }
                 .in2-con-grid {
                     display: grid;

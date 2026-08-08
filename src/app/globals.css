@@ -2045,3 +2045,58 @@ section {
     padding-bottom: 4rem !important;
   }
 }
+
+/* ==========================================================================
+   BARRAS DE NAVEGACIÓN — una sola definición para todo el sitio
+   ==========================================================================
+   Las usan las pestañas de formación y sistemas, la barra de sectores del
+   index y todas las tiras "¿Tu caso es más concreto?" de las páginas hijas.
+   Variantes: con etiqueta a la izquierda o sin ella, con número o sin él, y
+   con la pestaña activa marcada.
+   ========================================================================== */
+.nav-barra {
+  display: block;
+  background: #1c1917;
+  border-top: 1px solid rgba(250, 246, 239, 0.08);
+  border-bottom: 1px solid rgba(250, 246, 239, 0.08);
+}
+.nav-barra-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.15rem 0.25rem;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+.nav-barra-etiqueta {
+  color: #f6c39c;
+  padding: 0.5rem 0.9rem 0.5rem 0;
+  white-space: nowrap;
+}
+.nav-barra-item {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 239, 0.65);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.nav-barra-item:hover { color: #faf6ef; background: rgba(250, 246, 239, 0.07); }
+.nav-barra-num { color: #f6c39c; opacity: 0.75; }
+.nav-barra-activa { color: #1c1917; background: #f6c39c; }
+.nav-barra-activa .nav-barra-num { color: #1c1917; opacity: 0.6; }
+.nav-barra-activa:hover { color: #1c1917; background: #f6c39c; }
+@media (max-width: 900px) {
+  .nav-barra-item { flex: 1 1 45%; }
+}

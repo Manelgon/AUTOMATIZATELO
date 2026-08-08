@@ -24,8 +24,8 @@ export default function SistemasTabs() {
     const pathname = usePathname();
 
     return (
-        <nav aria-label="Páginas de sistemas" className="st-barra">
-            <div className="container st-pistas">
+        <nav aria-label="Páginas de sistemas" className="nav-barra">
+            <div className="container nav-barra-fila">
                 {TABS.map((t) => {
                     const activa = pathname === t.href;
                     return (
@@ -33,7 +33,7 @@ export default function SistemasTabs() {
                             key={t.href}
                             href={t.href}
                             aria-current={activa ? "page" : undefined}
-                            className={`st-tab ${activa ? "st-tab-activa" : ""}`}
+                            className={`nav-barra-item ${activa ? "nav-barra-activa" : ""}`}
                         >
                             {t.label}
                         </Link>
@@ -41,43 +41,8 @@ export default function SistemasTabs() {
                 })}
             </div>
             <style>{`
-                .st-barra {
-                    background: #1c1917;
-                    border-top: 1px solid rgba(250,246,239,0.08);
-                    border-bottom: 1px solid rgba(250,246,239,0.08);
-                }
-                .st-pistas {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    gap: 0.15rem 0.25rem;
-                    padding-top: 0.55rem;
-                    padding-bottom: 0.55rem;
-                }
-                .st-tab {
-                    flex: 1 1 auto;
-                    text-align: center;
-                    font-family: var(--font-mono, monospace);
-                    font-size: 0.72rem;
-                    font-weight: 600;
-                    letter-spacing: 0.06em;
-                    text-transform: uppercase;
-                    color: rgba(250,246,239,0.65);
-                    padding: 0.5rem 0.9rem;
-                    border-radius: 8px;
-                    white-space: nowrap;
-                    transition: color 0.2s ease, background 0.2s ease;
-                }
-                .st-tab:hover { color: #faf6ef; background: rgba(250,246,239,0.07); }
-                .st-tab-activa {
-                    color: #1c1917;
-                    background: #f6c39c;
-                }
                 @media (max-width: 760px) {
-                    .st-pistas { justify-content: flex-start; }
-                    .st-tab { padding: 0.45rem 0.7rem; }
                 }
-                .st-tab-activa:hover { color: #1c1917; background: #f6c39c; }
             `}</style>
         </nav>
     );

@@ -326,14 +326,14 @@ export default function CursosAMedidaPage() {
             </section>
 
             {/* Casos más concretos — barra tinta */}
-            <nav aria-label="Casos concretos" className="fd-otros-barra">
-                <div className="container fd-otros">
-                    <span className="fd-otros-etiqueta mono-label">¿Tu caso es más concreto?</span>
-                    <Link href="/formacion/empresas" className="fd-otro">Formación para empresas</Link>
-                    <Link href="/sectores/despachos" className="fd-otro">Despachos profesionales</Link>
-                    <Link href="/formacion/directivos" className="fd-otro">Dirección</Link>
-                    <Link href="/formacion/centros-educativos" className="fd-otro">Centros educativos</Link>
-                    <Link href="/sectores/academias" className="fd-otro">Academias</Link>
+            <nav aria-label="Casos concretos" className="nav-barra">
+                <div className="container nav-barra-fila">
+                    <span className="nav-barra-etiqueta mono-label">¿Tu caso es más concreto?</span>
+                    <Link href="/formacion/empresas" className="nav-barra-item">Formación para empresas</Link>
+                    <Link href="/sectores/despachos" className="nav-barra-item">Despachos profesionales</Link>
+                    <Link href="/formacion/directivos" className="nav-barra-item">Dirección</Link>
+                    <Link href="/formacion/centros-educativos" className="nav-barra-item">Centros educativos</Link>
+                    <Link href="/sectores/academias" className="nav-barra-item">Academias</Link>
                 </div>
             </nav>
 
@@ -665,40 +665,6 @@ export default function CursosAMedidaPage() {
                     .cam2-proceso { grid-template-columns: 1fr; }
                     .cam2-paso-linea { display: none; }
                 }
-                .fd-otros-barra {
-                    background: #1c1917;
-                    border-top: 1px solid rgba(250, 246, 239, 0.08);
-                    border-bottom: 1px solid rgba(250, 246, 239, 0.08);
-                }
-                .fd-otros {
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 0.15rem 0.25rem;
-                    padding-top: 0.55rem;
-                    padding-bottom: 0.55rem;
-                }
-                .fd-otros-etiqueta {
-                    color: #f6c39c;
-                    padding: 0.5rem 0.9rem 0.5rem 0;
-                    white-space: nowrap;
-                }
-                .fd-otro {
-                    flex: 1 1 auto;
-                    text-align: center;
-                    font-family: var(--font-mono, monospace);
-                    font-size: 0.72rem;
-                    font-weight: 600;
-                    letter-spacing: 0.06em;
-                    text-transform: uppercase;
-                    color: rgba(250, 246, 239, 0.65);
-                    padding: 0.5rem 0.9rem;
-                    border-radius: 8px;
-                    white-space: nowrap;
-                    transition: color 0.2s ease, background 0.2s ease;
-                }
-                .fd-otro:hover { color: #faf6ef; background: rgba(250, 246, 239, 0.07); }
                 .cam2-faq-grid {
                     display: grid;
                     grid-template-columns: 0.38fr 0.62fr;

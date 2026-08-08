@@ -23,8 +23,8 @@ export default function FormacionTabs() {
     const pathname = usePathname();
 
     return (
-        <nav aria-label="Páginas de formación" className="ft-barra">
-            <div className="container ft-pistas">
+        <nav aria-label="Páginas de formación" className="nav-barra">
+            <div className="container nav-barra-fila">
                 {TABS.map((t) => {
                     const activa = pathname === t.href;
                     return (
@@ -32,7 +32,7 @@ export default function FormacionTabs() {
                             key={t.href}
                             href={t.href}
                             aria-current={activa ? "page" : undefined}
-                            className={`ft-tab ${activa ? "ft-tab-activa" : ""}`}
+                            className={`nav-barra-item ${activa ? "nav-barra-activa" : ""}`}
                         >
                             {t.label}
                         </Link>
@@ -40,43 +40,8 @@ export default function FormacionTabs() {
                 })}
             </div>
             <style>{`
-                .ft-barra {
-                    background: #1c1917;
-                    border-top: 1px solid rgba(250,246,239,0.08);
-                    border-bottom: 1px solid rgba(250,246,239,0.08);
-                }
-                .ft-pistas {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    gap: 0.15rem 0.25rem;
-                    padding-top: 0.55rem;
-                    padding-bottom: 0.55rem;
-                }
-                .ft-tab {
-                    flex: 1 1 auto;
-                    text-align: center;
-                    font-family: var(--font-mono, monospace);
-                    font-size: 0.72rem;
-                    font-weight: 600;
-                    letter-spacing: 0.06em;
-                    text-transform: uppercase;
-                    color: rgba(250,246,239,0.65);
-                    padding: 0.5rem 0.9rem;
-                    border-radius: 8px;
-                    white-space: nowrap;
-                    transition: color 0.2s ease, background 0.2s ease;
-                }
-                .ft-tab:hover { color: #faf6ef; background: rgba(250,246,239,0.07); }
-                .ft-tab-activa {
-                    color: #1c1917;
-                    background: #f6c39c;
-                }
                 @media (max-width: 760px) {
-                    .ft-pistas { justify-content: flex-start; }
-                    .ft-tab { padding: 0.45rem 0.7rem; }
                 }
-                .ft-tab-activa:hover { color: #1c1917; background: #f6c39c; }
             `}</style>
         </nav>
     );
