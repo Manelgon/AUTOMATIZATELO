@@ -27,7 +27,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta un panel a medida?",
-        answer: "Un panel de gestión entra normalmente en el proyecto de automatización de área, desde 2.000€; uno que cubra toda la operación de la empresa, en el rango del proyecto integral desde 8.000€. Precio y plazo cerrados por escrito antes de empezar, pago por hitos y sin cuotas por usuario.",
+        answer: "Un panel de gestión entra normalmente en el proyecto de automatización de área, desde 2.000€; uno que cubra toda la operación de la empresa, en el rango del proyecto integral desde 8.000€. Precio y plazo cerrados por escrito antes de empezar, y sin cuotas por usuario.",
     },
     {
         question: "¿Y cuando quiera cambiar algo dentro de un año?",

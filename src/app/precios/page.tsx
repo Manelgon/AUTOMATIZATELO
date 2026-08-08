@@ -165,7 +165,7 @@ const variables = [
     {
         icon: "fa-file-signature",
         titulo: "Lo que nunca varía",
-        desc: "El precio y el plazo se cierran por escrito antes de empezar, se paga por hitos, no hay permanencia y el código y los datos son tuyos. Eso no se negocia — va de serie.",
+        desc: "El precio y el plazo se cierran por escrito antes de empezar, no hay permanencia y el código y los datos son tuyos. Eso no se negocia — va de serie.",
     },
 ];
 
@@ -184,7 +184,7 @@ const faqs = [
     },
     {
         question: "¿Hay permanencia o cuotas mensuales obligatorias?",
-        answer: "No. Se paga por hitos de entrega y no hay permanencia. Todos los proyectos incluyen un periodo de soporte (de 1 a 6 meses según el tamaño); después, el mantenimiento es opcional — y como el código y los datos son tuyos, puedes seguir con cualquier proveedor.",
+        answer: "No. No hay permanencia ni cuotas obligatorias. Todos los proyectos incluyen un periodo de soporte (de 1 a 6 meses según el tamaño); después, el mantenimiento es opcional — y como el código y los datos son tuyos, puedes seguir con cualquier proveedor.",
     },
     {
         question: "¿Cuánto cuesta la formación en IA para empresas?",
@@ -272,7 +272,13 @@ export default function PreciosPage() {
                         <strong style={{ color: "var(--color-text-main)" }}> cumplir</strong> el AI Act desde 750€ y
                         <strong style={{ color: "var(--color-text-main)" }}> automatizar</strong> el trabajo desde 900€
                         (un área completa desde 2.000€, la empresa entera desde 8.000€). El precio
-                        final se cierra por escrito antes de empezar, se paga por hitos y no hay permanencia.
+                        final se cierra por escrito antes de empezar y no hay permanencia.
+                    </p>
+                    <p style={{ marginTop: "1.4rem", fontSize: "0.95rem", color: "var(--color-text-muted)" }}>
+                        ¿No sabes cuál de los tres te toca?{" "}
+                        <Link href="/diagnostico" style={{ color: "var(--color-primary)", fontWeight: 600 }}>
+                            Haz el diagnóstico gratis — 12 preguntas, 3 minutos →
+                        </Link>
                     </p>
                 </div>
             </section>

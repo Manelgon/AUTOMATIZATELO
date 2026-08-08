@@ -143,9 +143,14 @@ export default function AutomatizacionPage() {
                         funcionando solas. Con la herramienta que tu caso necesite, o a medida:
                         lo que te convenga a ti, no lo que me convenga vender.
                     </p>
-                    <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
-                        Auditoría gratis de 30 minutos
-                    </Link>
+                    <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1rem 1.6rem" }}>
+                        <Link href="/#contact" className="btn btn-primary" style={{ fontSize: "1.02rem", padding: "1rem 2.25rem" }}>
+                            Auditoría gratis de 30 minutos
+                        </Link>
+                        <Link href="/diagnostico" className="sis-test">
+                            ¿Cuánto de tu semana se puede automatizar? Haz el test, 3 min →
+                        </Link>
+                    </div>
                 </div>
             </section>
 
@@ -508,6 +513,14 @@ export default function AutomatizacionPage() {
                         gap: 0.4rem;
                     }
                 }
+                .sis-test {
+                    color: var(--color-primary);
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    display: inline-block;
+                    transition: transform 0.25s ease;
+                }
+                .sis-test:hover { transform: translateX(6px); }
             `}</style>
         </main>
     );

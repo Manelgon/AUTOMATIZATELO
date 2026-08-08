@@ -2,7 +2,7 @@ export const dynamic = "force-static";
 
 const content = `# Automatizatelo
 
-> Empresa de implantación de IA para pymes, con base en Barcelona y servicio en toda España. Dirigida por Manel Méndez González. Tres líneas: formación de equipos en IA (incluida la alfabetización obligatoria del art. 4 del AI Act), auditoría de cumplimiento del Reglamento Europeo de IA, y automatización (chatbots, CRM, paneles y flujos a medida). Precio cerrado, pago por hitos y sin permanencia. Auditoría inicial gratuita de 30 minutos.
+> Empresa de implantación de IA para pymes, con base en Barcelona y servicio en toda España. Dirigida por Manel Méndez González. Tres líneas: formación de equipos en IA (incluida la alfabetización obligatoria del art. 4 del AI Act), auditoría de cumplimiento del Reglamento Europeo de IA, y automatización (chatbots, CRM, paneles y flujos a medida). Precio cerrado y sin permanencia. Auditoría inicial gratuita de 30 minutos.
 
 Datos clave:
 - Contacto: info@automatizatelo.com · +34 678 39 91 82
@@ -14,7 +14,7 @@ Datos clave:
 
 - [Inicio](https://automatizatelo.com/): qué automatizamos, metodología en 5 pasos, precios y preguntas frecuentes
 - [Precios](https://automatizatelo.com/precios): todos los precios públicos — proyectos de automatización (500-8.000 €), formación en IA (600-2.400 €), qué hace variar el precio y FAQ de precios
-- [Cómo trabajo](https://automatizatelo.com/como-trabajo): método en 3 fases — auditoría gratuita de 30 minutos, implementación por hitos con precio y plazo cerrados, acompañamiento con soporte incluido; sin permanencia y con el código en propiedad del cliente
+- [Sobre mí](https://automatizatelo.com/sobre-mi): quién es Manel Méndez González y cómo trabaja — auditoría gratuita de 30 minutos, tres caminos (formar, cumplir, automatizar) con precio y plazo cerrados, acompañamiento con soporte incluido; sin permanencia y con el código en propiedad del cliente
 - [Recursos gratis](https://automatizatelo.com/recursos): guía del Art. 4 del AI Act, 10 prompts de IA para administradores de fincas y cheatsheet de herramientas — sin registro
 - [Blog](https://automatizatelo.com/blog): guías prácticas sobre automatización e IA para pymes
 - [Diagnóstico de automatización](https://automatizatelo.com/diagnostico): 12 preguntas y 3 minutos para saber cuánto de tu semana se puede automatizar, con plan por áreas

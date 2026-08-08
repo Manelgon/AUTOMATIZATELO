@@ -11,11 +11,18 @@ import Link from "next/link";
 // curso pidió cada lead sin abrir el mensaje.
 // - `origen` fija el curso de la página (p. ej. "Curso de ChatGPT")
 // - `opciones` (hub): muestra selector de curso en vez de fijarlo
+// - `etiquetaOpciones` / `etiquetaPersonas`: renombran los dos selectores
+//   cuando la pagina no vende un curso (p. ej. /sobre-mi)
 // =============================================================================
 
 const TAMANOS = ["1-5 personas", "6-15 personas", "16-50 personas", "Más de 50"];
 
-export default function FormularioCurso({ origen, opciones }: { origen: string; opciones?: string[] }) {
+export default function FormularioCurso({ origen, opciones, etiquetaOpciones, etiquetaPersonas }: {
+    origen: string;
+    opciones?: string[];
+    etiquetaOpciones?: string;
+    etiquetaPersonas?: string;
+}) {
     const [form, setForm] = useState({ nombre: "", email: "", empresa: "", telefono: "", personas: "", curso: "", mensaje: "", acepto: false });
     const [estado, setEstado] = useState<"idle" | "enviando" | "ok" | "error">("idle");
 
@@ -78,12 +85,12 @@ export default function FormularioCurso({ origen, opciones }: { origen: string; 
                 <input value={form.telefono} onChange={(e) => setForm({ ...form, telefono: e.target.value })} placeholder="600 000 000" className="fc-input" />
             </div>
             <select value={form.personas} onChange={(e) => setForm({ ...form, personas: e.target.value })} className="fc-input" style={{ color: form.personas ? "#faf6ef" : "rgba(250,246,239,0.45)" }}>
-                <option value="">Nº de personas a formar</option>
+                <option value="">{etiquetaPersonas ?? "Nº de personas a formar"}</option>
                 {TAMANOS.map((t) => <option key={t} value={t}>{t}</option>)}
             </select>
             {opciones && (
                 <select value={form.curso} onChange={(e) => setForm({ ...form, curso: e.target.value })} className="fc-input" style={{ color: form.curso ? "#faf6ef" : "rgba(250,246,239,0.45)" }}>
-                    <option value="">Curso de interés*</option>
+                    <option value="">{etiquetaOpciones ?? "Curso de interés*"}</option>
                     {opciones.map((o) => <option key={o} value={o}>{o}</option>)}
                 </select>
             )}

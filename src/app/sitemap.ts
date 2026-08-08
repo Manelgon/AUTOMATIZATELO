@@ -10,10 +10,9 @@ const BASE = 'https://automatizatelo.com';
 const PAGINAS: { ruta: string; freq: 'weekly' | 'monthly' | 'yearly'; prio: number }[] = [
     // Núcleo
     { ruta: '', freq: 'weekly', prio: 1 },
-    { ruta: '/como-trabajo', freq: 'monthly', prio: 0.7 },
     { ruta: '/precios', freq: 'monthly', prio: 0.9 },
     { ruta: '/casos', freq: 'monthly', prio: 0.7 },
-    { ruta: '/sobre-mi', freq: 'monthly', prio: 0.6 },
+    { ruta: '/sobre-mi', freq: 'monthly', prio: 0.8 },
     { ruta: '/diagnostico', freq: 'monthly', prio: 0.8 },
     { ruta: '/recursos', freq: 'monthly', prio: 0.5 },
     { ruta: '/blog', freq: 'weekly', prio: 0.7 },

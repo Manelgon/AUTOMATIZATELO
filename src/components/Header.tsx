@@ -29,13 +29,6 @@ const cursosLinks = [
     { href: "/formacion/cursos-a-medida", label: "Cursos a medida (SCORM)" },
 ];
 
-const empiezaPorAqui = [
-    { href: "/diagnostico", label: "Diagnóstico — 12 preguntas, 3 min" },
-    { href: "/precios", label: "Precios cerrados, por escrito" },
-    { href: "/casos", label: "Casos en producción real" },
-    { href: "/#contact", label: "30 minutos gratis" },
-];
-
 const sistemasLinks = [
     { href: "/sistemas", num: "01", title: "Automatización de procesos", desc: "Facturas, documentos, ventas, CRM y paneles." },
     { href: "/sistemas/chatbots-whatsapp", num: "02", title: "Chatbots — WhatsApp y web", desc: "Atención 24/7 con la API oficial." },
@@ -177,8 +170,6 @@ export default function Header() {
                         {formacionLinks.map((s) => <ItemGrande key={s.href} {...s} />)}
                         <span className="dropdown-grupo" style={{ marginTop: "0.8rem" }}>Cursos por herramienta</span>
                         {cursosLinks.map((s) => <ItemMini key={s.href} {...s} />)}
-                        <span className="dropdown-grupo" style={{ marginTop: "0.8rem" }}>Empieza por aquí</span>
-                        {empiezaPorAqui.map((s) => <ItemMini key={s.href} {...s} />)}
                     </Desplegable>
 
                     {/* Pilar 2 — Cumplir: una sola página fuerte, enlace directo */}
@@ -187,6 +178,9 @@ export default function Header() {
                     {/* Pilar 3 — Automatizar */}
                     <Desplegable id="sistemas" etiqueta="Sistemas">
                         {sistemasLinks.map((s) => <ItemGrande key={s.href} {...s} />)}
+                        <span className="dropdown-grupo" style={{ marginTop: "0.8rem" }}>Empieza por aquí</span>
+                        <ItemMini href="/diagnostico" label="Diagnóstico gratis — 12 preguntas, 3 min" />
+                        <ItemMini href="/casos" label="Casos en producción real" />
                     </Desplegable>
 
                     {/* Puertas por identidad */}

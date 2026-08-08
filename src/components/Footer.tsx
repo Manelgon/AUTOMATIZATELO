@@ -2,10 +2,9 @@ import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const explora = [
     { href: "/", label: "Inicio" },
-    { href: "/como-trabajo", label: "Cómo trabajo" },
     { href: "/precios", label: "Precios" },
     { href: "/casos", label: "Casos de éxito" },
-    { href: "/diagnostico", label: "Diagnóstico de automatización" },
+    { href: "/diagnostico", label: "Diagnóstico gratis — 12 preguntas" },
     { href: "/recursos", label: "Recursos gratis" },
     { href: "/blog", label: "Blog" },
     { href: "/sobre-mi", label: "Sobre mí" },

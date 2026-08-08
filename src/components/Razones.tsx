@@ -12,7 +12,7 @@ const razones = [
     {
         num: "02",
         titulo: "Precio cerrado, sin permanencia",
-        texto: "Sabes lo que pagas antes de empezar. Pago por hitos: si no avanzo, no cobro. Y si quieres parar, paras.",
+        texto: "Sabes lo que pagas antes de empezar: precio cerrado por escrito. Y si quieres parar, paras — no hay permanencia.",
     },
     {
         num: "03",

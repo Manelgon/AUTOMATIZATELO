@@ -31,6 +31,8 @@ const nextConfig: NextConfig = {
       { source: '/servicios/implantacion-ia', destination: '/cumplimiento', permanent: true },
       { source: '/servicios/integracion-sistemas', destination: '/sistemas/integracion', permanent: true },
       { source: '/servicios/produccion-cursos-scorm', destination: '/formacion', permanent: true },
+      // Fusion ago-2026: como-trabajo vive dentro de sobre-mi
+      { source: '/como-trabajo', destination: '/sobre-mi', permanent: true },
     ];
   },
   images: {

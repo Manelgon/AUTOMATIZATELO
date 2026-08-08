@@ -268,7 +268,7 @@ export default function CursosAMedidaPage() {
                         </div>
                     </div>
                     <p className="cam2-cifras-pie">
-                        Precio cerrado por escrito y pago por hitos —{" "}
+                        Precio cerrado por escrito antes de empezar —{" "}
                         <Link href="/precios">Ver la tabla de precios →</Link> · ¿Quieres ver una
                         plataforma real con sus cursos? <Link href="/casos">Ver casos →</Link>
                     </p>

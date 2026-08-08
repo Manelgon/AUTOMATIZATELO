@@ -175,7 +175,6 @@ const planesAuditoria = [
 
 const garantiasAutomatizar = [
     "Sin permanencia",
-    "Pago por hitos",
     "Código y datos tuyos",
     "Soporte humano en español",
 ];

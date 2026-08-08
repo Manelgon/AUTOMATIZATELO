@@ -165,16 +165,11 @@ export default function CursoPage(p: CursoPageProps) {
             {/* Temario — acordeones integrados en tinta, continuación del split */}
             <section id="temario" style={{ padding: "2.8rem 0 3.4rem", background: "#1c1917", scrollMarginTop: "6rem" }}>
                 <div className="container" style={{ maxWidth: 900 }}>
-                    <h2 className="cp2-etiqueta" style={{ marginBottom: "0.8rem" }}>El temario, bloque a bloque</h2>
-                    <p style={{
-                        textAlign: "center",
-                        color: "rgba(250,246,239,0.6)",
-                        fontSize: "0.9rem",
-                        lineHeight: 1.6,
-                        margin: "0 0 2rem",
-                    }}>
-                        Se trabaja con vuestros casos reales — no con demos de laboratorio.
-                    </p>
+                    <div className="tem-cabecera">
+                        <span className="mono-label tem-kicker">Temario</span>
+                        <h2 className="tem-titulo">El temario, bloque a bloque</h2>
+                        <p className="tem-sub">Se trabaja con vuestros casos reales — no con demos de laboratorio.</p>
+                    </div>
                     {p.temario.map((b) => (
                         <details key={b.num} className="cp-acordeon" name="temario-curso">
                             <summary>
@@ -696,6 +691,27 @@ export default function CursoPage(p: CursoPageProps) {
                 .cp-faq summary:hover { color: #f6c39c; padding-left: 1rem; }
                 .cp-faq summary i { color: #f6c39c; font-size: 0.8rem; flex-shrink: 0; transition: transform 0.3s ease; }
                 .cp-faq[open] summary i { transform: rotate(180deg); }
+                .tem-cabecera {
+                    text-align: center;
+                    max-width: 660px;
+                    margin: 0 auto 2.4rem;
+                }
+                .tem-kicker { color: #f6c39c; }
+                .tem-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+                    font-weight: 600;
+                    color: #faf6ef;
+                    line-height: 1.15;
+                    letter-spacing: -0.01em;
+                    margin: 0.9rem 0 0.7rem;
+                }
+                .tem-sub {
+                    color: rgba(250, 246, 239, 0.7);
+                    font-size: 0.95rem;
+                    line-height: 1.65;
+                    margin: 0;
+                }
             `}</style>
         </main>
     );
