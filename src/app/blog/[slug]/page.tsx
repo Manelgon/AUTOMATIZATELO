@@ -26,6 +26,21 @@ interface BlogPostFull {
 // El contenido de la BD a veces trae su propio <h1>, que duplicaría el de la
 // plantilla (malo para SEO). Si el primero repite el título se elimina; el
 // resto de h1 se degradan a h2 para mantener una jerarquía única.
+// La ficha (fecha y autor) la pinta la plantilla en la portada. Si el
+// contenido de la BD trae la suya al principio — y a veces con otra firma —
+// se retira, junto al separador que suele acompañarla.
+function quitarFichaDuplicada(html: string): string {
+    let out = html.trimStart();
+    const bloqueMeta = /^\s*<p[^>]*>(?:(?!<\/p>)[\s\S])*?(?:Fecha|Publicado|Por|Autor)\s*:[\s\S]*?<\/p>/i;
+    // Puede venir en uno o en dos párrafos seguidos (Fecha: … / Por: …)
+    for (let i = 0; i < 2; i++) {
+        const antes = out;
+        out = out.replace(bloqueMeta, "").trimStart();
+        if (out === antes) break;
+    }
+    return out.replace(/^\s*<hr\s*\/?>/i, "").trimStart();
+}
+
 function sanearEncabezados(html: string, titulo: string): string {
     let out = html.replace(/^\s*<h1[^>]*>([\s\S]*?)<\/h1>/i, (coincidencia, interior: string) => {
         const texto = interior.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim().toLowerCase();
@@ -133,223 +148,264 @@ export default async function BlogPostPage(
             />
             <Header />
 
-            {/* Article */}
-            <article style={{
-                maxWidth: 820,
-                margin: "4rem auto 0",
-                padding: "2rem 1.5rem 5rem",
-                flexGrow: 1,
-            }}>
-                {/* Cover */}
-                {post.cover_image && (
+            {/* Portada a sangre con el título encima */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "11rem 0 3.5rem", background: "#1c1917" }}>
+                {post.cover_image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                         src={post.cover_image}
-                        alt={post.title}
-                        style={{
-                            width: "100%",
-                            maxHeight: 450,
-                            objectFit: "cover",
-                            borderRadius: "var(--radius-lg)",
-                            marginBottom: "2.5rem",
-                            boxShadow: "0 10px 40px rgba(0,0,0,0.12)",
-                        }}
+                        alt=""
+                        aria-hidden="true"
+                        fetchPriority="high"
+                        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
                     />
+                ) : (
+                    <span aria-hidden="true" style={{
+                        position: "absolute",
+                        inset: 0,
+                        zIndex: 0,
+                        background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)",
+                    }} />
                 )}
-
-                {/* Meta */}
-                <div style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    alignItems: "center",
-                    gap: "1rem",
-                    marginBottom: "1.5rem",
-                    fontSize: "0.85rem",
-                    color: "var(--color-text-muted)",
-                }}>
-                    <span style={{
-                        color: "var(--color-primary)",
-                        fontWeight: 600,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.04em",
-                    }}>
-                        <i className="fa-regular fa-calendar" style={{ marginRight: "0.4rem" }} />
-                        {formatDate(post.published_at || post.created_at)}
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    background: "linear-gradient(180deg, rgba(28,25,23,0.45) 0%, rgba(28,25,23,0.66) 45%, rgba(28,25,23,0.9) 100%)",
+                }} />
+                <div className="container ar2-cabecera" style={{ position: "relative", zIndex: 2 }}>
+                    <span className="mono-label ar2-migas">
+                        <Link href="/blog">Blog</Link>
+                        {post.tags?.[0] && <> · {post.tags[0]}</>}
                     </span>
-                    <span>
-                        Por{" "}
-                        <a href="/sobre-mi" style={{ color: "var(--color-primary)", fontWeight: 600, textDecoration: "none" }}>
-                            Manel Méndez González
-                        </a>
-                    </span>
-                    {post.tags?.map((t) => (
-                        <span key={t} style={{
-                            fontSize: "0.7rem",
-                            fontWeight: 600,
-                            padding: "0.2rem 0.6rem",
-                            borderRadius: 999,
-                            background: "rgba(249,115,22,0.1)",
-                            color: "var(--color-primary)",
-                            textTransform: "uppercase",
-                        }}>
-                            {t}
+                    <h1 className="ar2-titulo">{post.title}</h1>
+                    {post.excerpt && <p className="ar2-entradilla">{post.excerpt}</p>}
+                    <div className="ar2-firma">
+                        <span>{formatDate(post.published_at || post.created_at)}</span>
+                        <span>
+                            Por <Link href="/sobre-mi">Manel Méndez González</Link>
                         </span>
-                    ))}
+                    </div>
                 </div>
+            </section>
 
-                {/* Title */}
-                <h1 style={{
-                    fontSize: "clamp(2rem, 5vw, 3rem)",
-                    fontWeight: 800,
-                    lineHeight: 1.15,
-                    marginBottom: "2rem",
-                    color: "var(--color-text-main)",
-                }}>
-                    {post.title}
-                </h1>
-
-                {/* Content — el H1 lo pone la plantilla; los del contenido se sanean
-                    para no duplicar (el primero se quita si repite el título, el resto baja a H2) */}
+            {/* El cuerpo, en papel: un artículo largo se lee mejor sobre crema */}
+            <article className="ar2-cuerpo">
                 <div
                     className="article-body"
-                    dangerouslySetInnerHTML={{ __html: sanearEncabezados(post.content, post.title) }}
+                    dangerouslySetInnerHTML={{ __html: quitarFichaDuplicada(sanearEncabezados(post.content, post.title)) }}
                 />
-
-                {/* Un artículo nunca es un callejón: siguiente paso hacia servicio,
-                    prueba y recursos */}
-                <aside className="post-siguiente">
-                    <span className="mono-label">Y ahora, ¿por dónde sigo?</span>
-                    <div className="post-siguiente-grid">
-                        <Link href="/formacion">
-                            <strong>Formación en IA</strong>
-                            <span>Que tu equipo la use con criterio — desde 600€</span>
-                        </Link>
-                        <Link href="/cumplimiento">
-                            <strong>Auditoría IA (AI Act)</strong>
-                            <span>¿Tu empresa cumple? Informe y plan desde 750€</span>
-                        </Link>
-                        <Link href="/sistemas">
-                            <strong>Automatización de procesos</strong>
-                            <span>Que el trabajo repetitivo se haga solo</span>
-                        </Link>
-                        <Link href="/casos">
-                            <strong>Casos de éxito</strong>
-                            <span>Sistemas reales en producción, con sus resultados</span>
-                        </Link>
-                        <Link href="/recursos">
-                            <strong>Recursos gratis</strong>
-                            <span>Guías y prompts descargables, sin pedirte el email</span>
-                        </Link>
-                        <Link href="/blog">
-                            <strong>Más artículos</strong>
-                            <span>Todo el blog sobre IA aplicada a pymes</span>
-                        </Link>
-                    </div>
-                    <p className="post-cta">
-                        ¿Prefieres que lo miremos sobre tu caso?{" "}
-                        <Link href="/#contact">Pide la auditoría gratuita de 30 minutos →</Link>
-                    </p>
-                </aside>
             </article>
+
+            {/* Los pilares, en tira */}
+            <nav aria-label="Secciones" className="nav-barra">
+                <div className="container nav-barra-fila">
+                    <span className="nav-barra-etiqueta mono-label">Y ahora, ¿por dónde sigo?</span>
+                    <Link href="/formacion" className="nav-barra-item">Formación</Link>
+                    <Link href="/cumplimiento" className="nav-barra-item">Cumplimiento</Link>
+                    <Link href="/sistemas" className="nav-barra-item">Sistemas</Link>
+                    <Link href="/casos" className="nav-barra-item">Casos</Link>
+                    <Link href="/blog" className="nav-barra-item">Más artículos</Link>
+                </div>
+            </nav>
+
+            {/* Cierre — el artículo no es un callejón */}
+            <section style={{ padding: "3.4rem 0", background: "#1c1917" }}>
+                <div className="container ar2-cierre">
+                    <div>
+                        <span className="mono-label" style={{ color: "#f6c39c" }}>Si esto te ha tocado de cerca</span>
+                        <h2 className="ar2-cierre-titulo">30 minutos gratis, sin compromiso</h2>
+                        <p className="ar2-cierre-sub">
+                            Me cuentas cómo trabajáis y te digo qué automatizar primero, qué formar
+                            y qué no merece la pena tocar. Y si no te hace falta nada, también te lo digo.
+                        </p>
+                    </div>
+                    <div className="ar2-cierre-acciones">
+                        <Link href="/#contact" className="ar2-cierre-cta">Pedir mis 30 minutos →</Link>
+                        <Link href="/diagnostico" className="ar2-cierre-enlace">O haz el test de 3 minutos →</Link>
+                    </div>
+                </div>
+            </section>
 
             {/* Footer */}
             <Footer />
 
             <style>{`
-                .post-siguiente {
-                    margin-top: 3.5rem;
-                    padding-top: 2rem;
-                    border-top: 1px solid var(--color-border);
+                .ar2-cabecera {
+                    max-width: 900px;
                 }
-                .post-siguiente > .mono-label {
-                    display: block;
-                    color: var(--color-text-muted);
-                    margin-bottom: 1.2rem;
+                .ar2-migas {
+                    color: rgba(250, 246, 239, 0.65);
                 }
-                .post-siguiente-grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 0.8rem;
-                }
-                .post-siguiente-grid a {
-                    display: block;
-                    background: var(--color-card-bg);
-                    border: 1px solid var(--color-border);
-                    border-radius: var(--radius-lg);
-                    padding: 1rem 1.1rem;
-                    color: inherit;
-                    transition: transform 0.25s ease, border-color 0.25s ease;
-                }
-                .post-siguiente-grid a:hover {
-                    transform: translateY(-3px);
-                    border-color: rgba(234, 88, 12, 0.4);
-                }
-                .post-siguiente-grid strong {
-                    display: block;
+                .ar2-migas a { color: #f6c39c; font-weight: 600; }
+                .ar2-migas a:hover { color: #faf6ef; }
+                .ar2-titulo {
                     font-family: var(--font-display, serif);
-                    font-size: 1rem;
+                    font-size: clamp(2rem, 4.6vw, 3.1rem);
                     font-weight: 600;
+                    line-height: 1.12;
+                    letter-spacing: -0.02em;
+                    color: #faf6ef;
+                    margin: 1rem 0 1rem;
+                    text-shadow: 0 2px 30px rgba(28,25,23,0.5);
+                }
+                .ar2-entradilla {
+                    font-size: 1.1rem;
+                    color: rgba(250, 246, 239, 0.88);
+                    line-height: 1.7;
+                    margin: 0 0 1.6rem;
+                    max-width: 720px;
+                    text-shadow: 0 1px 20px rgba(28,25,23,0.4);
+                }
+                .ar2-firma {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.4rem 1.4rem;
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.72rem;
+                    font-weight: 600;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.7);
+                }
+                .ar2-firma a { color: #f6c39c; }
+                .ar2-firma a:hover { color: #faf6ef; }
+                .ar2-cuerpo {
+                    max-width: 760px;
+                    margin: 0 auto;
+                    padding: 3.5rem 1.5rem 4rem;
+                    flex-grow: 1;
+                }
+                .ar2-cierre {
+                    display: grid;
+                    grid-template-columns: 0.62fr 0.38fr;
+                    gap: 3rem;
+                    align-items: center;
+                }
+                @media (max-width: 800px) {
+                    .ar2-cierre { grid-template-columns: 1fr; gap: 1.6rem; }
+                }
+                .ar2-cierre-titulo {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+                    font-weight: 600;
+                    color: #faf6ef;
+                    line-height: 1.15;
+                    margin: 0.9rem 0 0.6rem;
+                }
+                .ar2-cierre-sub {
+                    color: rgba(250, 246, 239, 0.75);
+                    line-height: 1.65;
+                    font-size: 0.95rem;
+                    margin: 0;
+                    max-width: 620px;
+                }
+                .ar2-cierre-acciones {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0.9rem;
+                }
+                .ar2-cierre-cta {
+                    display: inline-block;
+                    background: #f6c39c;
+                    color: #1c1917;
+                    font-weight: 700;
+                    font-size: 0.92rem;
+                    border-radius: 50px;
+                    padding: 0.8rem 1.6rem;
+                    transition: background 0.2s ease, transform 0.2s ease;
+                }
+                .ar2-cierre-cta:hover { background: #faf6ef; transform: translateY(-2px); }
+                .ar2-cierre-enlace {
+                    color: #f6c39c;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    transition: transform 0.25s ease, color 0.2s ease;
+                }
+                .ar2-cierre-enlace:hover { color: #faf6ef; transform: translateX(6px); }
+
+                /* Tipografía del artículo: serif en los títulos, medida corta y
+                   filetes en vez de cajas — el mismo idioma que el resto. */
+                .article-body h2 {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+                    font-weight: 600;
+                    line-height: 1.2;
+                    letter-spacing: -0.01em;
+                    margin: 2.6rem 0 0.9rem;
                     color: var(--color-text-main);
-                    margin-bottom: 0.2rem;
                 }
-                .post-siguiente-grid span {
-                    display: block;
-                    font-size: 0.85rem;
-                    color: var(--color-text-muted);
-                    line-height: 1.5;
-                }
-                .post-cta {
-                    margin-top: 1.4rem;
-                    color: var(--color-text-muted);
-                }
-                .post-cta a {
-                    color: var(--color-primary);
+                .article-body h3 {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.15rem, 2vw, 1.4rem);
                     font-weight: 600;
+                    margin: 2rem 0 0.6rem;
+                    color: var(--color-text-main);
                 }
-                @media (max-width: 900px) {
-                    .post-siguiente-grid { grid-template-columns: repeat(2, 1fr); }
+                .article-body p {
+                    margin-bottom: 1.3rem;
+                    color: var(--color-text-main);
+                    line-height: 1.8;
+                    font-size: 1.02rem;
                 }
-                @media (max-width: 600px) {
-                    .post-siguiente-grid { grid-template-columns: 1fr; }
+                .article-body ul, .article-body ol {
+                    padding-left: 1.4rem;
+                    margin-bottom: 1.3rem;
+                    color: var(--color-text-main);
+                    line-height: 1.8;
                 }
-                .article-body h1 { font-size: 2rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--color-primary); }
-                .article-body h2 { font-size: 1.6rem; font-weight: 600; margin: 1.8rem 0 0.8rem; color: var(--color-text-main); }
-                .article-body h3 { font-size: 1.3rem; font-weight: 500; margin: 1.5rem 0 0.6rem; color: var(--color-text-main); }
-                .article-body p { margin-bottom: 1.2rem; color: var(--color-text-muted); line-height: 1.8; }
-                .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.2rem; color: var(--color-text-muted); list-style: disc; }
-                .article-body li { margin-bottom: 0.5rem; }
+                .article-body ul { list-style: none; padding-left: 0; }
+                .article-body ul li {
+                    position: relative;
+                    padding-left: 1.3rem;
+                    margin-bottom: 0.6rem;
+                }
+                .article-body ul li::before {
+                    content: "·";
+                    position: absolute;
+                    left: 0.3rem;
+                    color: var(--color-primary);
+                    font-weight: 700;
+                }
+                .article-body ol li { margin-bottom: 0.6rem; }
                 .article-body blockquote {
-                    border-left: 4px solid var(--color-primary);
-                    padding: 1rem 1.5rem;
-                    margin: 1.5rem 0;
-                    font-style: italic;
-                    color: var(--color-text-muted);
-                    background: rgba(249,115,22,0.03);
-                    border-radius: 0 12px 12px 0;
+                    border-left: 2px solid var(--color-primary);
+                    padding: 0.2rem 0 0.2rem 1.4rem;
+                    margin: 2rem 0;
+                    font-family: var(--font-display, serif);
+                    font-size: 1.15rem;
+                    line-height: 1.5;
+                    font-style: normal;
+                    color: var(--color-text-main);
+                    background: none;
+                    border-radius: 0;
                 }
                 .article-body pre {
-                    background: var(--color-bg-secondary);
-                    border: 1px solid var(--color-border);
-                    border-radius: 12px;
-                    padding: 1.2rem;
+                    background: #1c1917;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 1.2rem 1.4rem;
                     overflow-x: auto;
                     font-size: 0.85rem;
-                    margin: 1.5rem 0;
+                    color: #faf6ef;
+                    margin: 1.8rem 0;
                 }
                 .article-body img {
                     max-width: 100%;
-                    border-radius: 12px;
-                    margin: 1.5rem 0;
-                    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+                    border-radius: 4px;
+                    margin: 2rem 0;
                 }
                 .article-body a {
                     color: var(--color-primary);
+                    font-weight: 600;
                     text-decoration: underline;
                     text-underline-offset: 3px;
                 }
                 .article-body hr {
                     border: none;
                     border-top: 1px solid var(--color-border);
-                    margin: 2rem 0;
+                    margin: 2.4rem 0;
                 }
             `}</style>
         </main>
