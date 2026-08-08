@@ -65,7 +65,7 @@ const courseJsonLd = {
 const catalogo = [
     {
         href: "/formacion/ai-act",
-        foto: "/auditoria.webp",
+        foto: "/escribiendo-ventana.webp",
         badge: "Obligatoria · Art. 4",
         titulo: "Alfabetización en IA",
         desc: "El bloque que exige el Reglamento: riesgos, marco jurídico y uso responsable.",
