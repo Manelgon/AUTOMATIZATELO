@@ -117,10 +117,10 @@ const fugas = [
 
 const piezas = [
     { href: "/sistemas/documentos", badge: "La estrella", t: "Facturas y documentos", d: "Los que llegan se leen solos; los tuyos se generan solos, con tu plantilla.", datos: "Desde 500 €", foto: "/auditoria.webp" },
-    { href: "/sistemas/ventas", badge: "Del lead al cobro", t: "Automatización de ventas", d: "Respuesta inmediata, seguimiento que no se olvida y facturación sola.", datos: "Desde 900 €", foto: "/ecommerce-hero.webp" },
+    { href: "/sistemas/ventas", badge: "Del lead al cobro", t: "Automatización de ventas", d: "Respuesta inmediata, seguimiento que no se olvida y facturación sola.", datos: "Desde 500 €", foto: "/ecommerce-hero.webp" },
     { href: "/sistemas/crm", badge: "Sin comisiones", t: "CRM que se alimenta solo", d: "Elegido según tu caso, migrado, y con automatizaciones que lo mantienen vivo.", datos: "Desde 900 €", foto: "/despachos.webp" },
     { href: "/sistemas/paneles", badge: "A medida", t: "Paneles de gestión", d: "Tu negocio entero en una pantalla, integrado con lo que ya usas.", datos: "Desde 2.000 €", foto: "/fincas-hero.webp" },
-    { href: "/sistemas/chatbots-whatsapp", badge: "API oficial", t: "Chatbots — WhatsApp y web", d: "Atención 24/7 conectada a tus sistemas y con escalado a persona.", datos: "Desde 900 €", foto: "/clinicas-hero.webp" },
+    { href: "/sistemas/chatbots-whatsapp", badge: "API oficial", t: "Chatbots — WhatsApp y web", d: "Atención 24/7 conectada a tus sistemas y con escalado a persona.", datos: "Desde 2.000 €", foto: "/clinicas-hero.webp" },
     { href: "/sistemas/integracion", badge: "Todo conectado", t: "Integración de sistemas", d: "Tus herramientas pasándose los datos solas: CRM, facturación, correo, Excel.", datos: "Desde 500 €", foto: "/equipos-directivos.webp" },
 ];
 
