@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import SelectorFC from "./SelectorFC";
 
 // =============================================================================
 // FORMULARIO DE CURSO — la tarjeta "Pide información" del hero (idea iActa)
@@ -86,14 +87,14 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
             <div className="fc-fila">
                 <input value={form.empresa} onChange={(e) => setForm({ ...form, empresa: e.target.value })} placeholder="Tu empresa o centro" className="fc-input" />
                 <div className="fc-tel">
-                    <select
-                        aria-label="Prefijo del país"
+                    <SelectorFC
+                        nombre="fc-prefijo"
+                        etiquetaAria="Prefijo del país"
                         value={form.prefijo}
-                        onChange={(e) => setForm({ ...form, prefijo: e.target.value })}
-                        className="fc-input fc-prefijo"
-                    >
-                        {PREFIJOS.map((p) => <option key={p} value={p}>{p}</option>)}
-                    </select>
+                        onChange={(v) => setForm({ ...form, prefijo: v })}
+                        placeholder="+34"
+                        opciones={PREFIJOS}
+                    />
                     <input
                         type="tel"
                         inputMode="tel"
@@ -104,15 +105,21 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                     />
                 </div>
             </div>
-            <select value={form.personas} onChange={(e) => setForm({ ...form, personas: e.target.value })} className="fc-input" style={{ color: form.personas ? "#faf6ef" : "rgba(250,246,239,0.45)" }}>
-                <option value="">{etiquetaPersonas ?? "Nº de personas a formar"}</option>
-                {TAMANOS.map((t) => <option key={t} value={t}>{t}</option>)}
-            </select>
+            <SelectorFC
+                nombre="fc-personas"
+                value={form.personas}
+                onChange={(v) => setForm({ ...form, personas: v })}
+                placeholder={etiquetaPersonas ?? "Nº de personas a formar"}
+                opciones={TAMANOS}
+            />
             {opciones && (
-                <select value={form.curso} onChange={(e) => setForm({ ...form, curso: e.target.value })} className="fc-input" style={{ color: form.curso ? "#faf6ef" : "rgba(250,246,239,0.45)" }}>
-                    <option value="">{etiquetaOpciones ?? "Curso de interés*"}</option>
-                    {opciones.map((o) => <option key={o} value={o}>{o}</option>)}
-                </select>
+                <SelectorFC
+                    nombre="fc-curso"
+                    value={form.curso}
+                    onChange={(v) => setForm({ ...form, curso: v })}
+                    placeholder={etiquetaOpciones ?? "Curso de interés*"}
+                    opciones={opciones}
+                />
             )}
             <textarea value={form.mensaje} onChange={(e) => setForm({ ...form, mensaje: e.target.value })} placeholder="Cuéntame cualquier detalle…" rows={2} className="fc-input" style={{ resize: "vertical" }} />
             <label style={{ display: "flex", gap: "0.5rem", alignItems: "flex-start", fontSize: "0.75rem", color: "rgba(250,246,239,0.7)", lineHeight: 1.45, margin: "0.2rem 0 0.7rem" }}>
@@ -162,13 +169,9 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                 @media (max-width: 480px) { .fc-fila { grid-template-columns: 1fr; } }
                 .fc-tel {
                     display: grid;
-                    grid-template-columns: 4.6rem 1fr;
+                    grid-template-columns: 5.6rem 1fr;
                     gap: 0.6rem;
                     align-items: end;
-                }
-                .fc-prefijo {
-                    color: #faf6ef;
-                    font-variant-numeric: tabular-nums;
                 }
                 .fc-input {
                     width: 100%;
@@ -184,21 +187,9 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                     transition: border-color 0.2s ease;
                 }
                 .fc-input:focus { border-bottom-color: #f6c39c; }
+                /* El selector propio se pone a la medida de los demás campos */
+                .fc-card .sfc { font-size: 0.88rem; }
                 .fc-input::placeholder { color: rgba(250, 246, 239, 0.55); }
-                /* La lista desplegable la pinta el sistema: con color-scheme
-                   oscuro sale en tinta y no en blanco con resalte azul. */
-                .fc-input,
-                .fc-prefijo {
-                    color-scheme: dark;
-                }
-                .fc-input option {
-                    background: #1c1917;
-                    color: #faf6ef;
-                }
-                .fc-input option:checked {
-                    background: #f6c39c;
-                    color: #1c1917;
-                }
                 .fc-btn {
                     background: #f6c39c;
                     color: #1c1917;

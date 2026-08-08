@@ -2,6 +2,19 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { countryCodes } from "../data/countryCodes";
+import SelectorFC from "./SelectorFC";
+
+// Qué necesita el lead, escrito como lo diría él y no como lo llamo yo en la
+// web. La última opción evita atascar a quien aún no lo tiene claro.
+const SERVICIOS = [
+    { valor: "formacion_ia", etiqueta: "Formar a mi equipo en IA" },
+    { valor: "cumplimiento_ai_act", etiqueta: "Saber si cumplo el Reglamento de IA (AI Act)" },
+    { valor: "empezar_con_ia", etiqueta: "Empezar a usar la IA en mi empresa" },
+    { valor: "automatizar_procesos", etiqueta: "Automatizar tareas repetitivas" },
+    { valor: "chatbot", etiqueta: "Un chatbot para WhatsApp o la web" },
+    { valor: "panel_gestion", etiqueta: "Un panel de gestión a medida" },
+    { valor: "no_lo_se", etiqueta: "Aún no lo sé" },
+];
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -110,6 +123,15 @@ export default function ContactForm() {
                 emailInput.setCustomValidity("Por favor, introduce un correo electrónico válido (ej: usuario@dominio.com).");
                 emailInput.reportValidity();
             }
+            return;
+        }
+
+        // El selector ya no es un <select> nativo, así que "¿qué te interesa?"
+        // se comprueba aquí: el navegador no puede exigirlo por nosotros.
+        if (!formData.servicio) {
+            setStatus("error");
+            setStatusMessage("Dime qué te interesa para poder responderte bien.");
+            document.getElementById("servicio")?.focus();
             return;
         }
 
@@ -310,7 +332,7 @@ export default function ContactForm() {
                                         }}
                                     >
                                         <span>{formData.prefijo}</span>
-                                        <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>▼</span>
+                                        <i className="fa-solid fa-chevron-down" style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }} aria-hidden="true"></i>
                                     </button>
 
                                     <AnimatePresence>
@@ -329,7 +351,7 @@ export default function ContactForm() {
                                                     zIndex: 1000,
                                                     boxShadow: '0 24px 60px rgba(28, 25, 23, 0.16)',
                                                     border: '1px solid var(--color-border)',
-                                                    borderRadius: '18px',
+                                                    borderRadius: '8px',
                                                     overflow: 'hidden',
                                                 }}
                                             >
@@ -367,7 +389,7 @@ export default function ContactForm() {
                                                                     gap: '8px',
                                                                     color: 'var(--color-text-main)'
                                                                 }}
-                                                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f8dfc6'; }}
+                                                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(234, 88, 12, 0.07)'; }}
                                                                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
                                                             >
                                                                 <span style={{ fontSize: '1.2rem' }}>{country.flag}</span>
@@ -412,43 +434,18 @@ export default function ContactForm() {
 
                     </div>
 
-                    {/* Qué necesita el lead: escrito como lo diría él, no como
-                        lo llamo yo en la web. La última opción evita atascar a
-                        quien aún no lo tiene claro. */}
                     <div style={{ marginTop: '1.5rem' }}>
                         <label htmlFor="servicio" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>
                             ¿Qué te interesa? <span style={{ color: 'var(--color-primary)' }}>*</span>
                         </label>
-                        <select
-                            id="servicio"
-                            name="servicio"
-                            className="glass"
-                            required
+                        <SelectorFC
+                            nombre="servicio"
+                            requerido
                             value={formData.servicio}
-                            onChange={handleChange}
-                            style={{
-                                width: '100%',
-                                background: 'var(--color-bg-secondary)',
-                                color: formData.servicio ? 'var(--color-text-main)' : 'var(--color-text-muted)',
-                                border: '1px solid var(--color-border)',
-                                appearance: 'none',
-                                backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2357534e' stroke-width='2.5' stroke-linecap='round'><polyline points='6 9 12 15 18 9'/></svg>")`,
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'right 1rem center',
-                                backgroundSize: '1rem',
-                                paddingRight: '2.6rem',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            <option value="" disabled>Elige una opción</option>
-                            <option value="formacion_ia">Formar a mi equipo en IA</option>
-                            <option value="cumplimiento_ai_act">Saber si cumplo el Reglamento de IA (AI Act)</option>
-                            <option value="empezar_con_ia">Empezar a usar la IA en mi empresa</option>
-                            <option value="automatizar_procesos">Automatizar tareas repetitivas</option>
-                            <option value="chatbot">Un chatbot para WhatsApp o la web</option>
-                            <option value="panel_gestion">Un panel de gestión a medida</option>
-                            <option value="no_lo_se">Aún no lo sé</option>
-                        </select>
+                            onChange={(v) => setFormData((prev) => ({ ...prev, servicio: v }))}
+                            placeholder="Elige una opción"
+                            opciones={SERVICIOS}
+                        />
                     </div>
 
                     <div style={{ marginBottom: '0.75rem', marginTop: '1.5rem' }}>
@@ -587,8 +584,7 @@ export default function ContactForm() {
                     color: rgba(250, 246, 239, 0.7) !important;
                 }
                 #form-automatizatelo input,
-                #form-automatizatelo textarea,
-                #form-automatizatelo select {
+                #form-automatizatelo textarea {
                     background: transparent !important;
                     color: #faf6ef !important;
                     border: none !important;
@@ -598,25 +594,17 @@ export default function ContactForm() {
                     box-shadow: none !important;
                 }
                 #form-automatizatelo input:focus,
-                #form-automatizatelo textarea:focus,
-                #form-automatizatelo select:focus {
+                #form-automatizatelo textarea:focus {
                     border-bottom-color: #f6c39c !important;
                     outline: none !important;
-                }
-                #form-automatizatelo select {
-                    color-scheme: dark;
-                }
-                #form-automatizatelo select option {
-                    background: #1c1917;
-                    color: #faf6ef;
-                }
-                #form-automatizatelo select option:checked {
-                    background: #f6c39c;
-                    color: #1c1917;
                 }
                 #form-automatizatelo input::placeholder,
                 #form-automatizatelo textarea::placeholder {
                     color: rgba(250, 246, 239, 0.35);
+                }
+                /* El selector propio respira igual que los campos de al lado */
+                #form-automatizatelo .sfc-boton {
+                    padding: 0.81rem 0;
                 }
                 #form-automatizatelo button[type="button"] {
                     background: transparent !important;

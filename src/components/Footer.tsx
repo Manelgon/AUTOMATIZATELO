@@ -12,7 +12,7 @@ const explora = [
 
 // Misma jerarquía que el menú: tres pilares y sus hijas sangradas.
 // `sub` marca las hijas — se pintan con sangría y borde, estilo índice.
-const servicios = [
+const serviciosFormacion = [
     { href: "/formacion", label: "Formación en IA" },
     { href: "/formacion/empresas", label: "In-company para empresas", sub: true },
     { href: "/formacion/ai-act", label: "Alfabetización del Art. 4 (AI Act)", sub: true },
@@ -24,6 +24,9 @@ const servicios = [
     { href: "/formacion/centros-educativos", label: "Formación para centros educativos", sub: true },
     { href: "/formacion/alumnado", label: "Taller de IA para alumnado", sub: true },
     { href: "/formacion/directivos", label: "Sesión ejecutiva para dirección", sub: true },
+];
+
+const serviciosSistemas = [
     { href: "/cumplimiento", label: "Cumplimiento del AI Act" },
     { href: "/sistemas", label: "Automatización y sistemas" },
     { href: "/sistemas/documentos", label: "Facturas y documentos (OCR + IA)", sub: true },
@@ -102,6 +105,23 @@ export default function Footer() {
                                 </a>
                             ))}
                         </div>
+
+                        {/* El contacto vive con la marca: quien lo busca mira aquí */}
+                        <ul className="footer-contacto">
+                            <li>
+                                <i className="fa-solid fa-phone" style={{ color: '#f6c39c' }}></i>
+                                <a href="tel:+34678399182" style={linkStyle}>+34 678 39 91 82</a>
+                            </li>
+                            <li>
+                                <i className="fa-solid fa-envelope" style={{ color: '#f6c39c' }}></i>
+                                <a href="mailto:info@automatizatelo.com" style={linkStyle}>info@automatizatelo.com</a>
+                            </li>
+                            <li>
+                                <i className="fa-solid fa-location-dot" style={{ color: '#f6c39c' }}></i>
+                                <span style={{ color: 'rgba(250,246,239,0.7)' }}>Barcelona · toda España</span>
+                            </li>
+                        </ul>
+                        <a href="/#contact" className="footer-cta">Auditoría gratuita de 30 min →</a>
                     </div>
 
                     {/* Explora */}
@@ -116,11 +136,32 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Servicios — qué hago, con la jerarquía de pilares */}
+                    {/* Servicios · formar */}
                     <div className="footer-col">
-                        <p style={tituloCol}>Servicios</p>
+                        <p style={tituloCol}>Formación</p>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
-                            {servicios.map((l) => (
+                            {serviciosFormacion.map((l) => (
+                                <li
+                                    key={l.href}
+                                    style={l.sub ? {
+                                        paddingLeft: '0.9rem',
+                                        borderLeft: '1px solid rgba(250,246,239,0.18)',
+                                        marginLeft: '0.2rem',
+                                    } : undefined}
+                                >
+                                    <a href={l.href} style={l.sub ? { color: "rgba(250,246,239,0.55)", fontSize: '0.92em' } : linkStyle}>
+                                        {l.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Servicios · cumplir y automatizar */}
+                    <div className="footer-col">
+                        <p style={tituloCol}>Cumplir y automatizar</p>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                            {serviciosSistemas.map((l) => (
                                 <li
                                     key={l.href}
                                     style={l.sub ? {
@@ -149,34 +190,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Contacto */}
-                    <div className="footer-col">
-                        <p style={tituloCol}>Contacto</p>
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'rgba(250,246,239,0.7)' }}>
-                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                                <i className="fa-solid fa-phone" style={{ color: '#f6c39c' }}></i>
-                                <a href="tel:+34678399182" style={linkStyle}>+34 678 39 91 82</a>
-                            </li>
-                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                                <i className="fa-solid fa-envelope" style={{ color: '#f6c39c' }}></i>
-                                <a href="mailto:info@automatizatelo.com" style={linkStyle}>info@automatizatelo.com</a>
-                            </li>
-                            <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                                <i className="fa-solid fa-location-dot" style={{ color: '#f6c39c' }}></i>
-                                Barcelona · toda España
-                            </li>
-                            <li style={{ marginTop: '0.6rem' }}>
-                                <a href="/#contact" className="btn btn-primary" style={{
-                                    padding: '0.6rem 1.5rem',
-                                    fontSize: '0.9rem',
-                                    fontWeight: '600',
-                                    borderRadius: '50px',
-                                    color: '#fff',
-                                    display: 'inline-block',
-                                }}>Auditoría gratuita</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
 
                 {/* Logo XXL — cierre editorial */}

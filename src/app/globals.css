@@ -1164,7 +1164,7 @@ section {
    y las de enlaces se reparten el resto */
 @media (min-width: 1080px) {
   .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1.25fr 1.25fr 1.1fr;
+    grid-template-columns: 1.45fr 0.85fr 1.2fr 1.15fr 1fr;
     gap: 2.5rem;
   }
 }
@@ -2145,3 +2145,26 @@ section {
 .header-arriba .sectors-dropdown-menu a:hover {
   text-shadow: none;
 }
+
+/* Contacto dentro de la columna de marca, bajo las redes */
+.footer-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+  font-size: 0.93rem;
+}
+.footer-contacto li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.footer-cta {
+  display: inline-block;
+  margin-top: 1.4rem;
+  color: #f6c39c;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+.footer-cta:hover { color: #faf6ef; transform: translateX(6px); }
