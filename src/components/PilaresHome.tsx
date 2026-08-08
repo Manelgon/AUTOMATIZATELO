@@ -18,7 +18,7 @@ const pilares = [
         cta: "Ver formaciones",
     },
     {
-        foto: "/auditoria.webp",
+        foto: "/despachos.webp",
         num: "02",
         kicker: "Cumplir",
         titulo: "El Reglamento, sin sustos",

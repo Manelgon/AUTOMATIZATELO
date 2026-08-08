@@ -119,7 +119,7 @@ const temario = [
 const bloques = [
     {
         num: "01",
-        foto: "/auditoria.webp",
+        foto: "/despachos.webp",
         kicker: "Cumplimiento",
         titulo: "Política de uso de IA del centro",
         desc: "Un documento marco que redacto con dirección: qué pueden hacer docentes y alumnos, cómo se cita la IA y cómo se evalúa. La misma política del pack de cumplimiento, adaptada al mundo educativo.",
@@ -128,7 +128,7 @@ const bloques = [
     },
     {
         num: "02",
-        foto: "/escribiendo-ventana.webp",
+        foto: "/academias.webp",
         kicker: "SCORM",
         titulo: "Cursos e-learning a medida",
         desc: "Produzco los cursos que el centro necesite — del tema que sea — instalados en vuestra plataforma para siempre, con registro por alumno.",

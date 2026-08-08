@@ -100,7 +100,7 @@ const compradores = [
         titulo: "Catálogo nuevo, con tu marca",
         desc: "Tú pones el catálogo y la certificación; yo produzco el contenido — guion, materiales, vídeo y empaquetado SCORM — con tu logo, tus colores y tu voz. Tu alumno nunca sabe que existo: es lo que ya hago con plataformas e-learning reales, con cursos publicados y en venta.",
         chips: ["Marca blanca", "Por encargo o licencia", "Catálogo de IA"],
-        foto: "/equipos-directivos.webp",
+        foto: "/academias.webp",
         href: "/sectores/academias",
         cta: "Ver el caso de academias →",
     },

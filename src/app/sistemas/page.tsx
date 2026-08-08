@@ -116,7 +116,7 @@ const fugas = [
 ];
 
 const piezas = [
-    { href: "/sistemas/documentos", badge: "La estrella", t: "Facturas y documentos", d: "Los que llegan se leen solos; los tuyos se generan solos, con tu plantilla.", datos: "Desde 500 €", foto: "/auditoria.webp" },
+    { href: "/sistemas/documentos", badge: "La estrella", t: "Facturas y documentos", d: "Los que llegan se leen solos; los tuyos se generan solos, con tu plantilla.", datos: "Desde 500 €", foto: "/escribiendo-ventana.webp" },
     { href: "/sistemas/ventas", badge: "Del lead al cobro", t: "Automatización de ventas", d: "Respuesta inmediata, seguimiento que no se olvida y facturación sola.", datos: "Desde 500 €", foto: "/ecommerce-hero.webp" },
     { href: "/sistemas/crm", badge: "Sin comisiones", t: "CRM que se alimenta solo", d: "Elegido según tu caso, migrado, y con automatizaciones que lo mantienen vivo.", datos: "Desde 900 €", foto: "/despachos.webp" },
     { href: "/sistemas/paneles", badge: "A medida", t: "Paneles de gestión", d: "Tu negocio entero en una pantalla, integrado con lo que ya usas.", datos: "Desde 2.000 €", foto: "/fincas-hero.webp" },

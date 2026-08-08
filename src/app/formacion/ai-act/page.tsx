@@ -186,7 +186,7 @@ const piezas = [
         titulo: "Sé que tengo que formar",
         desc: "La alfabetización del Art. 4, con certificado nominal y registro formativo fechado. Los pasos 3 y 4, resueltos.",
         enlaceTexto: "Ver la formación →",
-        foto: "/academias.webp",
+        foto: "/despachos.webp",
     },
     {
         num: "03",
@@ -195,7 +195,7 @@ const piezas = [
         titulo: "Quiero usarla bien desde el principio",
         desc: "La herramienta configurada, los permisos revisados y la política interna de uso redactada y comunicada.",
         enlaceTexto: "Ver la implantación →",
-        foto: "/equipos-directivos.webp",
+        foto: "/despachos.webp",
     },
 ];
 

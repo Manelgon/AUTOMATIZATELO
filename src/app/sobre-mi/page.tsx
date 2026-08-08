@@ -52,7 +52,7 @@ const lineas = [
         pasos: ["Ajuste", "Impartición", "Evidencia"],
         href: "/formacion",
         cta: "Formatos y tarifas de formación →",
-        foto: "/academias.webp",
+        foto: "/claustro.webp",
     },
     {
         num: "02",
@@ -72,7 +72,7 @@ const lineas = [
         pasos: ["Propuesta cerrada", "Entregas parciales", "Acompañamiento"],
         href: "/sistemas",
         cta: "Ver los sistemas que construyo →",
-        foto: "/escribiendo-ventana.webp",
+        foto: "/servicios-hero.webp",
     },
 ];
 

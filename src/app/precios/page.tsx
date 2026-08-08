@@ -74,8 +74,8 @@ const formar: Fila[] = [
     {
         nombre: "Taller de IA para alumnado",
         formato: "2–4 h por grupo · curso desde 10 h",
-        incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. Sin cuentas de pago y con protección de datos de menores.",
-        precio: "con el programa",
+        incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El curso completo, desde 1.200 €. Sin cuentas de pago y con protección de datos de menores.",
+        precio: "desde 600 €",
         href: "/formacion/alumnado",
     },
     {
@@ -194,7 +194,7 @@ const faqs = [
     },
     {
         question: "¿Y la formación para colegios y para el alumnado?",
-        answer: "La formación de claustro tiene la misma tarifa que la de empresas: un día de 8 horas entre 900€ y 1.400€, o el bloque de alfabetización del Art. 4 desde 600€. El taller para alumnado se presupuesta junto con el programa del centro, porque depende de cuántos grupos, qué etapa y qué bloques elija cada uno.",
+        answer: "La formación de claustro tiene la misma tarifa que la de empresas: un día de 8 horas entre 900€ y 1.400€, o el bloque de alfabetización del Art. 4 desde 600€. El taller para alumnado parte de 600€ por sesión en el centro (con varios grupos seguidos en la misma jornada sale mejor) y el curso completo, desde 1.200€.",
     },
     {
         question: "¿El código y los datos son míos?",
