@@ -32,7 +32,7 @@ const faqs = [
     },
     {
         question: "¿Existe un certificado oficial del Art. 4? ¿Y una formación en IA con certificado?",
-        answer: "Certificado oficial, no: no hay ningún esquema oficial de certificación de la alfabetización en IA, y conviene desconfiar de quien venda un 'sello de cumplimiento'. Formación con certificado, sí — pero nominal y privado: lo defendible ante una inspección es el expediente completo (registro formativo con contenidos y horas, certificado nominal por participante y material fechado), que es exactamente lo que entrega nuestra formación de alfabetización.",
+        answer: "Certificado oficial, no: no hay ningún esquema oficial de certificación de la alfabetización en IA, y conviene desconfiar de quien venda un 'sello de cumplimiento'. Formación con certificado, sí — pero nominal y privado: lo defendible ante una inspección es el expediente completo (registro formativo con contenidos y horas, certificado nominal por participante y material fechado), que es exactamente lo que entrega la formación de alfabetización.",
     },
     {
         question: "¿Qué pasa si no formo a mi equipo?",

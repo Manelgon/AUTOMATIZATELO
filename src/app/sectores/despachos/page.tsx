@@ -157,7 +157,7 @@ export default function DespachosPage() {
                         etiquetaPersonas="Personas en el despacho"
                         etiquetaOpciones="¿Qué te urge más?*"
                         opciones={[
-                            "Formar al equipo con nuestros casos",
+                            "Formar al equipo con nuestros propios casos",
                             "Poner orden con los datos de clientes",
                             "Cubrir el Art. 4 con evidencia",
                             "Montar sistemas, no solo formar",

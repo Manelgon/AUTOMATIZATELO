@@ -38,7 +38,7 @@ const casos: Caso[] = [
         resultados: [
             "En producción y uso diario desde enero de 2026",
             "Todas las incidencias registradas y con seguimiento — nada se pierde en un email",
-            "El equipo gestiona su día a día completo desde el panel",
+            "El equipo lleva su día a día desde el panel",
         ],
         siguiente: [
             { href: "/sectores/administradores-fincas", texto: "Automatización para administradores de fincas" },
@@ -58,7 +58,7 @@ const casos: Caso[] = [
         resultados: [
             "Portal de empleo propio sin pagar licencias de software genérico",
             "Candidatos, ofertas y procesos centralizados en su plataforma",
-            "El código y los datos son suyos, como en todos nuestros proyectos",
+            "El código y los datos son suyos, como en todos los proyectos",
         ],
         siguiente: [
             { href: "/sectores/rrhh", texto: "Automatización para selección y RRHH" },
