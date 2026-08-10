@@ -17,7 +17,7 @@ import Image from "next/image";
 const formacionLinks = [
     { href: "/formacion", num: "01", title: "Formación en IA", desc: "La portada: las dos puertas, empresas y educación." },
     { href: "/formacion/empresas", num: "02", title: "In-company para empresas", desc: "El curso estrella, el catálogo y los precios." },
-    { href: "/formacion/ai-act", num: "03", title: "Alfabetización del Art. 4", desc: "La obligatoria desde 2025 — sanciona desde ago-2026." },
+    { href: "/formacion/ai-act", num: "03", title: "Alfabetización del Art. 4", desc: "La obligatoria desde 2025 — supervisada desde ago-2026." },
     { href: "/formacion/centros-educativos", num: "04", title: "Centros educativos", desc: "Formación de claustro y política de IA del centro." },
     { href: "/formacion/alumnado", num: "05", title: "Alumnado", desc: "Taller de IA para estudiantes: estudiar y buscar empleo." },
 ];

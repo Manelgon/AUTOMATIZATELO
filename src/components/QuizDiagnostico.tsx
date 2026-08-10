@@ -159,7 +159,7 @@ const AREAS: Record<Area, { nombre: string; consejo: string; href: string; enlac
     },
     ia: {
         nombre: "IA y cumplimiento",
-        consejo: "El Reglamento de IA ya aplica y sanciona desde agosto de 2026. La formación del Art. 4 con certificados te pone en regla — y de paso el equipo aprende a usarla bien.",
+        consejo: "El Reglamento de IA ya aplica, y desde agosto de 2026 las autoridades nacionales lo supervisan. La formación del Art. 4 con certificados te pone en regla — y de paso el equipo aprende a usarla bien.",
         href: "/formacion/ai-act",
         enlace: "Alfabetización del Art. 4",
     },

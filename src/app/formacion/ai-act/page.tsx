@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "¿Desde cuándo es obligatoria la alfabetización en IA?",
-        answer: "El artículo 4 del Reglamento (UE) 2024/1689 es aplicable desde el 2 de febrero de 2025 — ya es exigible hoy. El 2 de agosto de 2026 llega además la fecha general de aplicación del grueso del Reglamento, con la supervisión efectiva y el régimen sancionador.",
+        answer: "El artículo 4 del Reglamento (UE) 2024/1689 es aplicable desde el 2 de febrero de 2025 — ya es exigible hoy. El 2 de agosto de 2026 llega la fecha general de aplicación del grueso del Reglamento: desde entonces las autoridades nacionales de vigilancia del mercado pueden supervisar y hacer cumplir también el Art. 4.",
     },
     {
         question: "Mi empresa solo usa ChatGPT o Copilot, no desarrolla IA. ¿También me obliga?",
@@ -36,11 +36,11 @@ const faqs = [
     },
     {
         question: "¿Qué pasa si no formo a mi equipo?",
-        answer: "El marco sancionador general del Reglamento contempla multas de hasta 35 millones de euros o el 7% de la facturación global en los casos más graves — con un matiz que pocas veces se cuenta: para las pymes aplica el menor de los dos importes. Aún así, la obligación existe desde febrero de 2025 y la carga de acreditar el cumplimiento es de la empresa.",
+        answer: "Menos de lo que te cuentan, y más de lo que parece. El Art. 4 no figura en la lista de infracciones con multa del Art. 99 — los 35 millones o el 7% que verás en muchos anuncios son el techo de las prácticas prohibidas del Art. 5, no de la formación. Lo que sí ocurre: la obligación existe desde febrero de 2025, desde el 2 de agosto de 2026 las autoridades nacionales pueden supervisarla y hacerla cumplir con medidas proporcionadas, y la carga de acreditar que tomaste medidas es tuya. Sin inventario, política ni registro formativo, no hay nada que enseñar.",
     },
     {
         question: "¿No se había aplazado el AI Act? Me suena que hubo un aplazamiento.",
-        answer: "Se aplazó una parte — y quien te diga que 'ya no corre prisa' te está informando mal. El Ómnibus digital (Reglamento (UE) 2026/1744, en vigor desde julio de 2026) aplazó solo las obligaciones plenas de los sistemas de alto riesgo: las del Anexo III al 2 de diciembre de 2027 y las de productos regulados a 2028. Lo que NO se aplazó: la alfabetización del Art. 4 (aplicable desde febrero de 2025), la transparencia del Art. 50 (tu chatbot debe identificarse como IA desde agosto de 2026) y el régimen sancionador.",
+        answer: "Se aplazó una parte — y quien te diga que 'ya no corre prisa' te está informando mal. El Ómnibus digital (Reglamento (UE) 2026/1744, en vigor desde julio de 2026) aplazó solo las obligaciones plenas de los sistemas de alto riesgo: las del Anexo III al 2 de diciembre de 2027 y las de productos regulados a 2028. Lo que NO se aplazó: la alfabetización del Art. 4 (aplicable desde febrero de 2025), la transparencia del Art. 50 (tu chatbot debe identificarse como IA desde agosto de 2026) ni la supervisión de las autoridades nacionales, que arranca esa misma fecha.",
     },
     {
         question: "¿Qué tiene que hacer una pyme, en concreto?",
@@ -88,11 +88,11 @@ const fechas = [
     },
     {
         fecha: "2 ago 2026",
-        texto: "Régimen sancionador y transparencia (Art. 50) aplicables. El Ómnibus digital solo aplazó el alto riesgo, a diciembre de 2027 — el resto sigue en pie.",
+        texto: "Empieza la supervisión: las autoridades nacionales pueden supervisar y hacer cumplir el Art. 4, y la transparencia del Art. 50 pasa a ser aplicable. El Ómnibus digital solo aplazó el alto riesgo, a diciembre de 2027.",
     },
     {
         fecha: "35 M€ / 7%",
-        texto: "Techo sancionador de los casos más graves: hasta 35 millones o el 7% de la facturación global. Para pymes aplica el menor de los dos importes.",
+        texto: "Es el techo de las prácticas prohibidas (Art. 5), no del Art. 4: la alfabetización no aparece en la lista de multas del Art. 99. Quien te venda un curso citando esa cifra, te está vendiendo miedo.",
     },
 ];
 
@@ -144,7 +144,7 @@ const temario = [
             "Qué es el Reglamento y a quién aplica (spoiler: también a ti)",
             "Art. 4: la alfabetización obligatoria desde febrero de 2025",
             "La clasificación por riesgo, explicada para pymes",
-            "Sanciones: hasta 35 M€ o el 7% — y cómo se modulan",
+            "Qué multa de verdad el Reglamento — y por qué el Art. 4 no está en esa lista",
         ],
     },
     {
@@ -269,7 +269,9 @@ export default function AiActPage() {
                                 Toda empresa que use sistemas de IA debe adoptar medidas para garantizar,
                                 en la mayor medida posible, un nivel suficiente de alfabetización en IA de
                                 su personal — proporcional al rol de cada persona y al riesgo del sistema.
-                                Obliga a quien desarrolla IA y también a quien solo la usa.
+                                Obliga a quien desarrolla IA y también a quien solo la usa. Es un
+                                <strong> deber de medios</strong>: se te pide adoptar medidas razonables y
+                                poder demostrarlo, no garantizar que cada persona alcance un nivel.
                             </p>
                             <div className="aa2-datos">
                                 <span>Aplicable desde feb. 2025</span>

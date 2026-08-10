@@ -146,23 +146,25 @@ export default function FormacionIaPage() {
                     </div>
                     <p className="fqe-apoyo">
                         Y ya no es solo cuestión de productividad: usar IA sin formar al equipo es hoy
-                        un <strong>incumplimiento normativo</strong>.
-                        La mayoría de pymes y centros españoles todavía no lo ha resuelto.
+                        una <strong>obligación sin resolver</strong>: si tu organización usa IA, el
+                        Art. 4 exige tomar medidas para que quien la utiliza tenga una
+                        alfabetización suficiente — y poder demostrarlo. La mayoría de pymes
+                        y centros españoles todavía no lo ha hecho.
                     </p>
                 </div>
                 <p className="fpn-cabecera mono-label">¿Por qué formar ahora?</p>
                 <div className="container fpn-grid" style={{ paddingBottom: "2.2rem" }}>
                     <div className="fpn-item">
                         <span className="fpn-valor">Feb. 2025</span>
-                        <span className="fpn-texto">Desde entonces, el Art. 4 del Reglamento Europeo de IA obliga a la alfabetización del personal que usa IA.</span>
+                        <span className="fpn-texto">El Art. 4 exige a quien provee y a quien despliega IA tomar medidas para la alfabetización del personal que trabaja con ella.</span>
                     </div>
                     <div className="fpn-item">
                         <span className="fpn-valor">Ago. 2026</span>
-                        <span className="fpn-texto">Desde el 2 de agosto de 2026 está en vigor el régimen sancionador general: la obligación ya tiene consecuencias.</span>
+                        <span className="fpn-texto">Empieza la supervisión: desde el 2 de agosto de 2026 las autoridades nacionales pueden supervisar y hacer cumplir el Art. 4.</span>
                     </div>
                     <div className="fpn-item">
-                        <span className="fpn-valor">35 M€ · 7%</span>
-                        <span className="fpn-texto">Techo sancionador del Reglamento (Art. 99). Para una pyme la multa se modula — pero la evidencia formativa es lo que puedes enseñar si preguntan.</span>
+                        <span className="fpn-valor">Sin multa propia</span>
+                        <span className="fpn-texto">El Art. 4 no está en la lista de multas del Art. 99 — los 35 M€ o el 7 % son el techo de las prácticas prohibidas. Lo que se te pide es demostrar las medidas que tomaste.</span>
                     </div>
                 </div>
             </section>
@@ -200,7 +202,7 @@ export default function FormacionIaPage() {
                             <span className="fd-puerta-num mono-label">Centros educativos</span>
                             <span className="fd-puerta-titulo">IA en el aula y para el claustro</span>
                             <span className="fd-puerta-desc">
-                                Formación de claustro con seguridad jurídica, política de uso de IA
+                                Formación de claustro con criterios claros de uso, política de IA
                                 del centro, y la IA llevada al aula con criterio — para que docentes
                                 y alumnado aprendan a usarla, no a esconderla.
                             </span>

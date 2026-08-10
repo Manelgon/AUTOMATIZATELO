@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "¿Mi empresa necesita una auditoría de IA?",
-        answer: "Si tu plantilla usa cualquier herramienta de IA — ChatGPT, Copilot, Gemini o software con IA integrada — el Reglamento Europeo de IA ya te aplica: la obligación de alfabetización rige desde febrero de 2025 y el régimen sancionador general desde el 2 de agosto de 2026. La auditoría te dice en qué punto estás y qué te falta, sin alarmismo.",
+        answer: "Si tu plantilla usa cualquier herramienta de IA — ChatGPT, Copilot, Gemini o software con IA integrada — el Reglamento Europeo de IA ya te aplica: la obligación de alfabetización rige desde febrero de 2025 y desde el 2 de agosto de 2026 las autoridades nacionales pueden supervisarla y hacerla cumplir. La auditoría te dice en qué punto estás y qué te falta, sin alarmismo.",
     },
     {
         question: "¿Qué incluye exactamente la auditoría?",
@@ -94,8 +94,8 @@ const dolores = [
         desc: "Tu equipo pega datos de clientes en ChatGPT y nadie ha dicho qué se puede y qué no. Eso es shadow IA, y responde la empresa.",
     },
     {
-        titulo: "El régimen sancionador ya corre",
-        desc: "La alfabetización del Art. 4 es exigible desde febrero de 2025 y el régimen sancionador general desde el 2 de agosto de 2026.",
+        titulo: "La supervisión ya ha empezado",
+        desc: "La alfabetización del Art. 4 es exigible desde febrero de 2025, y desde el 2 de agosto de 2026 las autoridades nacionales de vigilancia del mercado pueden supervisarla y hacerla cumplir.",
     },
     {
         titulo: "No tienes ni un papel que lo demuestre",
