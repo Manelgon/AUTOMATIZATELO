@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LegalHero from "@/components/LegalHero";
 
 export const metadata = {
     title: "Aviso Legal y Condiciones de Uso",
@@ -11,15 +12,14 @@ export default function AvisoLegal() {
     return (
         <main>
             <Header />
+            <LegalHero
+                kicker="Aviso legal"
+                titulo="Quién hay detrás de esta web y en qué condiciones se usa"
+                bajada="Datos identificativos del titular, condiciones de uso, propiedad intelectual y legislación aplicable, conforme al artículo 10 de la LSSI-CE."
+                actualizado="mayo de 2026"
+                activa="/aviso-legal"
+            />
             <div className="legal-page-wrapper">
-                <div className="legal-header">
-                    <h1>Aviso Legal</h1>
-                    <p>
-                        <strong>Información legal y condiciones de uso del sitio web</strong>
-                        <br />
-                        Última actualización: Mayo 2026
-                    </p>
-                </div>
 
                 <section className="legal-section">
                     <h2>1. Información legal y aceptación</h2>

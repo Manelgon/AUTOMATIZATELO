@@ -1784,178 +1784,211 @@ section {
 }
 
 /* Legal Pages Styles */
+/* ── Páginas legales ─────────────────────────────────────────────────────
+   Hero en tinta (LegalHero) y cuerpo en papel: un aviso legal se lee de
+   arriba abajo, y sobre oscuro cansa. Sin tarjetas ni bordes de color. */
+.lg2-titulo {
+  font-family: var(--font-display, serif);
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #faf6ef;
+  margin: 1rem 0 1rem;
+}
+
+.lg2-bajada {
+  color: rgba(250, 246, 239, 0.82);
+  line-height: 1.7;
+  font-size: 1.02rem;
+  margin: 0;
+  max-width: 62ch;
+}
+
+.lg2-fecha {
+  color: rgba(250, 246, 239, 0.5);
+  margin: 1.2rem 0 0;
+}
+
 .legal-page-wrapper {
-  padding: 120px 20px 80px;
-  max-width: 900px;
+  max-width: 780px;
   margin: 0 auto;
+  padding: 3.5rem 1.5rem 4.5rem;
 }
 
+/* La cabecera vieja ya no se usa: la sustituye LegalHero */
 .legal-header {
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.legal-header h1 {
-  font-size: 2.5rem;
-  color: var(--color-text-main);
-  margin-bottom: 1rem;
-}
-
-.legal-header p {
-  color: var(--color-text-muted);
+  display: none;
 }
 
 .legal-section {
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: var(--color-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
+  margin: 0 0 2.6rem;
+  padding: 2rem 0 0;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.legal-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
 }
 
 .legal-section h2 {
-  font-size: 1.5rem;
-  color: var(--color-primary);
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-bg-secondary);
+  font-family: var(--font-display, serif);
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text-main);
+  margin: 0 0 1.2rem;
+  padding: 0;
+  border: none;
 }
 
 .legal-section h3 {
-  font-size: 1.25rem;
+  font-family: var(--font-display, serif);
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--color-text-main);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin: 1.8rem 0 0.7rem;
 }
+
+.legal-section p,
+.legal-section li {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.legal-section p { margin-bottom: 1rem; }
 
 .legal-table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .legal-table th,
 .legal-table td {
-  padding: 1rem;
-  border: 1px solid var(--border-color);
+  padding: 0.85rem 0.9rem;
+  border: none;
+  border-top: 1px solid var(--color-border);
   text-align: left;
+  vertical-align: top;
+  color: var(--color-text-muted);
 }
 
 .legal-table th {
-  background-color: var(--color-primary);
-  color: white;
+  background: none;
+  color: var(--color-text-main);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-top: none;
+  border-bottom: 1px solid var(--color-text-main);
 }
 
-.legal-table tr:nth-child(even) {
-  background-color: var(--color-bg-secondary);
-}
+.legal-table tr:nth-child(even) { background: none; }
 
 .legal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0 2rem;
+  margin-top: 1rem;
 }
 
 .legal-card {
-  background: var(--color-bg-secondary);
-  padding: 1.5rem;
-  border-radius: var(--radius-sm);
-  border-left: 4px solid var(--color-primary);
+  background: none;
+  padding: 1.1rem 0;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
 }
 
 .legal-card strong {
   display: block;
-  margin-bottom: 0.5rem;
-  color: var(--color-primary);
-  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-text-main);
+  font-family: var(--font-display, serif);
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
+/* La nota destacada: un filete melocotón, no una caja naranja */
 .info-box {
-  background-color: #fff7ed;
-  /* Light orange tint */
-  border-left: 4px solid var(--color-primary);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: var(--radius-sm);
+  background: none;
+  border: none;
+  border-left: 2px solid var(--color-primary);
+  padding: 0.2rem 0 0.2rem 1.4rem;
+  margin: 0 0 2rem;
 }
 
 .info-box h3 {
-  color: var(--color-primary);
+  color: var(--color-text-main);
   margin-top: 0;
 }
 
-/* Vertical Data Lists (Single Column Tables) */
+/* Fichas de datos: filas de índice, etiqueta en mono y valor en tinta */
 .legal-data-list {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  background: var(--color-surface);
-  overflow: hidden;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  background: none;
 }
 
 .data-item {
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--color-surface);
-}
-
-.data-item:last-child {
-  border-bottom: none;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-border);
+  background: none;
 }
 
 .data-item .label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
   font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.3rem;
   display: block;
 }
 
 .data-item .value {
   color: var(--color-text-main);
+  line-height: 1.6;
   display: block;
 }
 
-/* Card variant for more complex items inside the table structure if needed */
 .data-card {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  background: var(--color-card-bg);
-  margin-bottom: 1rem;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  background: none;
+  margin-bottom: 0;
 }
 
-/* Ensure grid items also use the table row style if we switch them to list */
-.legal-grid .data-item {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-}
+.legal-grid .data-item { border-radius: 0; }
 
 @media (min-width: 640px) {
-
-  /* On desktop, keep 1 column but maybe row layout for label/value? 
-     User requested "one column tables", so stacking label/value is safer 
-     or distinct columns. Let's stick to vertical stacking or 30/70 split 
-     to ensure it looks like a "row". 
-  */
   .data-item {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    /* Approx 30% 70% */
+    grid-template-columns: 0.9fr 2fr;
     gap: 1rem;
-    align-items: center;
+    align-items: baseline;
   }
 
-  .data-item .label {
-    margin-bottom: 0;
-  }
+  .data-item .label { margin-bottom: 0; }
 
   .data-card .data-row {
     flex-direction: row;
@@ -1963,9 +1996,7 @@ section {
     align-items: center;
   }
 
-  .data-card .label {
-    margin-bottom: 0;
-  }
+  .data-card .label { margin-bottom: 0; }
 }
 
 /* Specific fixes for ultra-small screens or enlarged text */

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LegalHero from "@/components/LegalHero";
 
 export const metadata = {
     title: "Declaración de Accesibilidad",
@@ -11,15 +12,13 @@ export default function Accesibilidad() {
     return (
         <main>
             <Header />
+            <LegalHero
+                kicker="Accesibilidad"
+                titulo="Esta web tiene que poder usarla todo el mundo"
+                bajada="Grado de cumplimiento, qué se ha hecho para conseguirlo y cómo avisarme si algo no te funciona. Conforme a la WCAG 2.1 AA y la UNE-EN 301 549:2022."
+                activa="/declaracion-accesibilidad"
+            />
             <div className="legal-page-wrapper">
-                <div className="legal-header">
-                    <h1>Declaración de Accesibilidad</h1>
-                    <p>
-                        <strong>Compromiso con la accesibilidad web y la inclusión digital</strong>
-                        <br />
-                        Conforme a WCAG 2.1 AA - UNE-EN 301 549:2022
-                    </p>
-                </div>
 
                 <section className="legal-section">
                     <h2>1. Compromiso</h2>

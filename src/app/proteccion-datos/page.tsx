@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LegalHero from "@/components/LegalHero";
 
 export const metadata = {
     title: "Política de Privacidad",
@@ -11,17 +12,14 @@ export default function ProteccionDatos() {
     return (
         <main>
             <Header />
+            <LegalHero
+                kicker="Protección de datos"
+                titulo="Qué hago con tus datos, en cristiano"
+                bajada="Quién es el responsable, con qué base jurídica se tratan tus datos, cuánto se conservan, quién más los ve y cómo ejerces tus derechos. Conforme al RGPD y a la LOPDGDD."
+                actualizado="mayo de 2026"
+                activa="/proteccion-datos"
+            />
             <div className="legal-page-wrapper">
-                <div className="legal-header">
-                    <h1>Política de Privacidad</h1>
-                    <p>
-                        <strong>Información sobre el tratamiento de tus datos personales</strong>
-                        <br />
-                        Conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD)
-                        <br />
-                        Última actualización: Mayo 2026
-                    </p>
-                </div>
 
                 <section className="legal-section">
                     <h2>1. Responsable del tratamiento</h2>

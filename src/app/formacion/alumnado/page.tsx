@@ -232,6 +232,25 @@ export default function AlumnadoPage() {
                 </div>
             </section>
 
+            {/* A quién va dirigido — tira de 4 perfiles */}
+            <section style={{ padding: "3.4rem 0", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)" }}>
+                <div className="container">
+                    <h2 className="al-etiqueta">A quién va dirigido</h2>
+                    <div className="al-perfiles">
+                        {dirigido.map((p, i) => (
+                            <div key={p.n} className="al-perfil">
+                                <div className="al-perfil-cab">
+                                    <span className="al-perfil-num">{p.n}</span>
+                                    {i < dirigido.length - 1 && <span className="al-perfil-linea" aria-hidden="true"></span>}
+                                </div>
+                                <h3>{p.titulo}</h3>
+                                <p>{p.d}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* El taller — split degradado como el curso estrella */}
             <section aria-label="El taller" style={{ padding: 0, background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)" }}>
                 <div className="container al-mitades">
@@ -302,25 +321,6 @@ export default function AlumnadoPage() {
                             </ul>
                         </details>
                     ))}
-                </div>
-            </section>
-
-            {/* A quién va dirigido — tira de 4 perfiles */}
-            <section style={{ padding: "3.4rem 0", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)" }}>
-                <div className="container">
-                    <h2 className="al-etiqueta">A quién va dirigido</h2>
-                    <div className="al-perfiles">
-                        {dirigido.map((p, i) => (
-                            <div key={p.n} className="al-perfil">
-                                <div className="al-perfil-cab">
-                                    <span className="al-perfil-num">{p.n}</span>
-                                    {i < dirigido.length - 1 && <span className="al-perfil-linea" aria-hidden="true"></span>}
-                                </div>
-                                <h3>{p.titulo}</h3>
-                                <p>{p.d}</p>
-                            </div>
-                        ))}
-                    </div>
                 </div>
             </section>
 

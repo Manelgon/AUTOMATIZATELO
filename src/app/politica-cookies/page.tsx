@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LegalHero from "@/components/LegalHero";
 import CookiePreferencesButton from "@/components/CookiePreferencesButton";
 
 export const metadata = {
@@ -12,18 +13,18 @@ export default function PoliticaCookies() {
     return (
         <main>
             <Header />
-            <div className="legal-page-wrapper">
-                <div className="legal-header">
-                    <h1>Política de Cookies</h1>
-                    <p>
-                        <strong>Información sobre el uso de cookies en nuestro sitio web</strong>
-                        <br />
-                        Última actualización: agosto de 2026
-                    </p>
-                    <div style={{ marginTop: "1.5rem" }}>
-                        <CookiePreferencesButton />
-                    </div>
+            <LegalHero
+                kicker="Cookies"
+                titulo="Qué cookies usa esta web y cómo las decides tú"
+                bajada="Cuáles hay, para qué sirven, cuánto duran y cómo aceptarlas, configurarlas o rechazarlas cuando quieras — también desde aquí mismo."
+                actualizado="agosto de 2026"
+                activa="/politica-cookies"
+            >
+                <div style={{ marginTop: "1.6rem" }}>
+                    <CookiePreferencesButton />
                 </div>
+            </LegalHero>
+            <div className="legal-page-wrapper">
 
                 <section className="legal-section">
                     <h2>1. ¿Qué son las Cookies?</h2>
