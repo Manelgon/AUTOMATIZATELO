@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Esquema from "@/components/Esquema";
 import { migas } from "@/lib/esquemas";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
     title: "Blog de Automatización e IA para Pymes",

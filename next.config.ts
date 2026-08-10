@@ -9,7 +9,9 @@ const nextConfig: NextConfig = {
       // impresiones — 321 solo las de restaurantes — y aterrizaban en la home,
       // que no habla de nada de eso. Cada una va ahora a la pieza que resuelve
       // lo que buscan: reservas y citas al bot, pedidos al ciclo de ventas.
-      { source: '/automatizacion-restaurantes', destination: '/sistemas/chatbots-whatsapp', permanent: true },
+      // La de restaurantes ya tiene destino propio: el artículo que responde
+      // exactamente lo que se busca — cómo automatizar las reservas.
+      { source: '/automatizacion-restaurantes', destination: '/blog/como-automatizar-las-reservas-de-un-restaurante', permanent: true },
       { source: '/automatizacion-clinicas', destination: '/sistemas/chatbots-whatsapp', permanent: true },
       { source: '/automatizacion-ecommerce', destination: '/sistemas/ventas', permanent: true },
       { source: '/automatizacion-academias', destination: '/sectores/academias', permanent: true },

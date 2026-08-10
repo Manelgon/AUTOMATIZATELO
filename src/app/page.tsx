@@ -11,7 +11,7 @@ import TrustedClients from "@/components/TrustedClients";
 import ContactForm from "@/components/ContactForm";
 import DelBlog from "@/components/DelBlog";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export const metadata = {
   alternates: { canonical: "https://automatizatelo.com/" },

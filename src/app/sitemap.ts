@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { supabaseServer } from '@/lib/supabase-server'
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 // Sitemap v2: 24 páginas de contenido + blog dinámico. Las URLs viejas
 // redirigen con 301 desde next.config.ts — aquí solo vive el mundo nuevo.
