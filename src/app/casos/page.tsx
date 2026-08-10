@@ -78,7 +78,7 @@ const casos: Caso[] = [
             "Citas agendadas por WhatsApp 24/7 sin intervención humana",
             "Recordatorios automáticos 24h antes con confirmación del paciente",
             "Lista de espera automática: si se libera un hueco, se ofrece a quien esperaba",
-            "Cumplimiento RGPD sanitario: consentimientos, registro de auditoría y derechos ARCO",
+            "Datos de salud como categoría especial: consentimientos, registro de auditoría y derechos del paciente",
         ],
         siguiente: [
             { href: "/sistemas/chatbots-whatsapp", texto: "Chatbot de WhatsApp" },

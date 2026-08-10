@@ -102,7 +102,7 @@ const pasos = [
     {
         num: "04",
         titulo: "Entrega con vigilancia",
-        desc: "Flujos documentados y en tu propiedad, con reintentos automáticos y avisos si algo se atasca. Te enteras al minuto, no a fin de mes.",
+        desc: "Flujos documentados y en tu propiedad, con reintentos automáticos y avisos si algo se atasca. Te enteras cuando pasa, no a fin de mes.",
     },
 ];
 

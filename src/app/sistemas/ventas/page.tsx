@@ -71,7 +71,7 @@ const pasos = [
     {
         num: "01",
         titulo: "El lead, respondido en minutos",
-        desc: "Entra por la web, el email o WhatsApp y recibe respuesta al momento — con sus datos ya registrados. Un lead sin respuesta rápida se enfría o se va a la competencia.",
+        desc: "Entra por la web, el email o WhatsApp y recibe respuesta al momento — con sus datos ya registrados. Un lead sin respuesta rápida se enfría, y muchas veces acaba en la competencia.",
     },
     {
         num: "02",
@@ -81,7 +81,7 @@ const pasos = [
     {
         num: "03",
         titulo: "Propuestas y facturas sin picar datos",
-        desc: "La propuesta sale de una plantilla con los datos del cliente ya puestos; al cerrar, la factura se emite y se envía sola. Del sí al cobro sin administración manual.",
+        desc: "La propuesta sale de una plantilla con los datos del cliente ya puestos; al cerrar, la factura se genera y se envía sola. Del sí al cobro sin administración manual.",
     },
     {
         num: "04",
@@ -202,7 +202,7 @@ export default function AutomatizacionVentasPage() {
                             <div className="ve2-caso">
                                 <span className="mono-label" style={{ color: "#f6c39c" }}>Lo que se arregla primero</span>
                                 <h3>El lead que se contesta tarde</h3>
-                                <p>El presupuesto que se pide el viernes y se responde el martes ya está perdido. Ese es el flujo que más rápido se paga.</p>
+                                <p>El presupuesto que se pide el viernes y se responde el martes suele estar perdido. Ese es el flujo que más rápido se paga.</p>
                             </div>
                             <div className="ve2-caso ve2-caso-2">
                                 <span className="mono-label" style={{ color: "#f6c39c" }}>Y después</span>
@@ -232,7 +232,7 @@ export default function AutomatizacionVentasPage() {
                         </div>
                         <div className="ve2-cifra">
                             <span className="ve2-cifra-num">minutos</span>
-                            <span className="ve2-cifra-lab">Lo que tarda en contestarse un lead</span>
+                            <span className="ve2-cifra-lab">Respuesta automática al lead</span>
                         </div>
                     </div>
                     <p className="ve2-cifras-pie">

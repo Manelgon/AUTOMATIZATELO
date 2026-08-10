@@ -176,9 +176,9 @@ export default function ExtraccionDatosPage() {
                             <p className="do2-sub">
                                 Extracción de datos de facturas, albaranes y documentos con OCR e IA,
                                 registrados solos en tu sistema; y en la otra dirección, tus facturas
-                                e informes generados desde tus datos. Es de lo que más horas devuelve
-                                por euro en una pyme con papeleo — gestorías, despachos y empresas de
-                                servicios lo notan la primera semana.
+                                e informes generados desde tus datos. Es de los procesos que más trabajo
+                                repetitivo quitan en una pyme con papeleo — sobre todo en gestorías,
+                                despachos y empresas de servicios.
                             </p>
                             <div className="do2-datos">
                                 <span>Sin plantillas por proveedor</span>
@@ -202,7 +202,7 @@ export default function ExtraccionDatosPage() {
                             <div className="do2-caso">
                                 <span className="mono-label" style={{ color: "#f6c39c" }}>Quién lo nota antes</span>
                                 <h3>Gestorías y despachos</h3>
-                                <p>Cientos de facturas de terceros al mes: es donde el ahorro se ve en la primera semana.</p>
+                                <p>Cientos de facturas de terceros al mes: es donde antes se nota el ahorro.</p>
                             </div>
                             <div className="do2-caso do2-caso-2">
                                 <span className="mono-label" style={{ color: "#f6c39c" }}>Y también</span>

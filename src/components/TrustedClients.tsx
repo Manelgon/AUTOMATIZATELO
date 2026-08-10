@@ -14,7 +14,7 @@ const casos = [
     {
         icono: "fa-stethoscope",
         nombre: "Clínica estética",
-        resultado: "Bot de citas por WhatsApp 24/7 con RGPD sanitario",
+        resultado: "Bot de citas por WhatsApp 24/7 con datos de salud protegidos",
     },
     {
         logo: "/clients/henkoaching.png",

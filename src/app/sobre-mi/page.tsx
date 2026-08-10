@@ -37,7 +37,7 @@ const construido = [
         num: "03",
         kicker: "Asistentes de IA",
         titulo: "Bots que agendan y responden solos",
-        desc: "Una clínica estética agenda citas por WhatsApp con huecos reales, recordatorios, lista de espera y RGPD sanitario. Y cientos de familias avisan ausencias al comedor escolar sin colapsar a administración.",
+        desc: "Una clínica estética agenda citas por WhatsApp con huecos reales, recordatorios, lista de espera y los datos de salud tratados como toca. Y cientos de familias avisan ausencias al comedor escolar sin colapsar a administración.",
         piezas: ["Clínica estética", "Comedores escolares"],
         foto: "/clinicas-hero.webp",
     },

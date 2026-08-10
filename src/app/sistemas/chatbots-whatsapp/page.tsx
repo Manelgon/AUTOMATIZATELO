@@ -348,8 +348,10 @@ export default function ChatbotsWhatsappPage() {
                         </div>
                     </div>
                     <p className="cw2-api-pie">
-                        Y siempre identificándose como asistente automático — lo exige el Art. 50 del
-                        Reglamento Europeo de IA desde agosto de 2026, y además funciona mejor.{" "}
+                        Y siempre identificándose como asistente automático: las obligaciones de
+                        transparencia del Art. 50 del Reglamento Europeo de IA se aplican desde el 2 de
+                        agosto de 2026 — salvo cuando resulta evidente que hablas con una máquina —, y
+                        decirlo claro funciona mejor de todas formas.{" "}
                         <Link href="/cumplimiento">Ver qué más te obliga el Reglamento →</Link>
                     </p>
                 </div>

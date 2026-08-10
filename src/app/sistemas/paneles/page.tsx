@@ -24,7 +24,7 @@ const faqs = [
     },
     {
         question: "¿Esto está probado en negocios reales?",
-        answer: "Sí — es de lo que más construyo. Despachos de administración de fincas gestionan su día a día (incidencias, comunicaciones con vecinos, documentación) en paneles míos desde enero de 2026; una academia online gestiona su operación en otro; y una clínica estética lleva agenda, historia clínica y cumplimiento RGPD sanitario en el suyo. Los tienes en casos de éxito.",
+        answer: "Sí — es de lo que más construyo. Despachos de administración de fincas gestionan su día a día (incidencias, comunicaciones con vecinos, documentación) en paneles míos desde enero de 2026; una academia online gestiona su operación en otro; y una clínica estética lleva agenda, historia clínica y datos de salud con registro de auditoría en el suyo. Los tienes en casos de éxito.",
     },
     {
         question: "¿Cuánto cuesta un panel a medida?",
@@ -86,7 +86,7 @@ const capacidades = [
     {
         num: "04",
         titulo: "Tuyo, con sus papeles en regla",
-        desc: "Código y datos en tu propiedad, accesos por rol y cumplimiento RGPD desde el diseño. Sin licencias por usuario ni letra pequeña.",
+        desc: "Código y datos en tu propiedad, accesos por rol y protección de datos desde el diseño (art. 25 del RGPD). Sin licencias por usuario ni letra pequeña.",
     },
 ];
 
@@ -103,7 +103,7 @@ const enProduccion = [
     },
     {
         titulo: "Clínica estética",
-        desc: "Agenda, historia clínica, informes con diseño propio y RGPD sanitario con registro de auditoría.",
+        desc: "Agenda, historia clínica, informes con diseño propio y registro de auditoría sobre datos de salud.",
         href: "/casos",
     },
 ];
@@ -194,7 +194,7 @@ export default function PanelesPage() {
                             </p>
                             <div className="pa2-datos">
                                 <span>Integrado con tus herramientas</span>
-                                <span>Accesos por rol · RGPD desde el diseño</span>
+                                <span>Accesos por rol · protección de datos desde el diseño</span>
                                 <span>Por partes, en 4 – 8 semanas</span>
                                 <span className="pa2-dato-precio">Desde 2.000 € · sin cuota por usuario</span>
                             </div>
