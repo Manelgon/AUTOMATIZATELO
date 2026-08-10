@@ -197,7 +197,7 @@ export default function CursosAMedidaPage() {
                                 <span>Guion · vídeo · SCORM instalado</span>
                                 <span>3 – 6 semanas por curso</span>
                                 <span>El curso es tuyo, sin licencias</span>
-                                <span className="cam2-dato-precio">Desde 1.900 € · precio cerrado</span>
+                                <span className="cam2-dato-precio">Desde 1.900 € · cerrado en la propuesta</span>
                             </div>
                             <div className="cam2-enlaces">
                                 <a href="#proceso" className="cam2-enlace">Ver cómo transcurre ↓</a>

@@ -183,7 +183,7 @@ export default function FormacionEmpresasPage() {
                                 <span>Desde 4 + 4 h</span>
                                 <span>Presencial · aula virtual · SCORM</span>
                                 <span>Certificado nominal</span>
-                                <span className="fe-dato-precio">Desde 1.200 € · precio cerrado</span>
+                                <span className="fe-dato-precio">Desde 1.200 € · cerrado en la propuesta</span>
                             </div>
                             <div className="fe-precios-linea">
                                 <Link href="/formacion/ai-act" className="fe-precios-boton">Ver la alfabetización · Art. 4 →</Link>

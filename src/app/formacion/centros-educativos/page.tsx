@@ -219,7 +219,7 @@ export default function CentrosEducativosPage() {
                                 <span>1 día · 8 h (o 4 + 4)</span>
                                 <span>Presencial · remoto · SCORM</span>
                                 <span>Certificado + registro del Art. 4</span>
-                                <span className="ce2-dato-precio">900 – 1.400 € · precio cerrado</span>
+                                <span className="ce2-dato-precio">900 – 1.400 € · cerrado en la propuesta</span>
                             </div>
                             <div className="ce2-enlaces">
                                 <a href="#temario" className="ce2-enlace">Ver el temario completo ↓</a>

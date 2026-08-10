@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta automatizar un proceso?",
-        answer: "Una automatización concreta (por ejemplo, la entrada de facturas) desde 500€ con precio cerrado. Automatizar varios procesos del negocio, desde 2.000€. Siempre sin permanencia y con el código y los datos en tu propiedad.",
+        answer: "Una automatización concreta (por ejemplo, la entrada de facturas), desde 500€ — con el precio final cerrado por escrito en la propuesta. Automatizar varios procesos del negocio, desde 2.000€. Siempre sin permanencia y con el código y los datos en tu propiedad.",
     },
     {
         question: "¿Cuánto se tarda?",
@@ -217,7 +217,7 @@ export default function AutomatizacionPage() {
                                 <span>Una automatización, ~2 semanas</span>
                                 <span>Conecta lo que ya usáis</span>
                                 <span>El código y los datos, tuyos</span>
-                                <span className="si2-dato-precio">Desde 500 € · precio cerrado</span>
+                                <span className="si2-dato-precio">Desde 500 € · cerrado en la propuesta</span>
                             </div>
                             <div className="si2-enlaces">
                                 <Link href="/sistemas/documentos" className="si2-enlace">La pieza estrella: documentos →</Link>

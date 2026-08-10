@@ -24,7 +24,7 @@ export default function CursoEstrellaHome() {
                             <span>Desde 4 + 4 h</span>
                             <span>Presencial · aula virtual · SCORM</span>
                             <span>Certificado nominal</span>
-                            <span className="ces-dato-precio">Desde 1.200 € · precio cerrado</span>
+                            <span className="ces-dato-precio">Desde 1.200 € · cerrado en la propuesta</span>
                         </div>
                         <Link href="/formacion/empresas" className="ces-cta">Ver la formación completa →</Link>
                     </div>
