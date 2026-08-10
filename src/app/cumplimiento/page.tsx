@@ -34,6 +34,10 @@ const faqs = [
         answer: "No, y quien te venda una 'certificación oficial del AI Act' te está engañando: no existe ningún esquema oficial de certificación para esto. Lo que sí existe es la evidencia documental defendible — inventario, informe, política y registro formativo fechados — que es exactamente lo que la auditoría te deja.",
     },
     {
+        question: "¿No se aplazó el AI Act? Me suena que hubo un aplazamiento.",
+        answer: "Se aplazó una parte, y conviene saber cuál. El Ómnibus digital (Reglamento (UE) 2026/1744, en vigor desde julio de 2026) retrasó las obligaciones plenas de los sistemas de alto riesgo — las del Anexo III a diciembre de 2027 — y retocó el Art. 4: la alfabetización sigue siendo obligatoria, pero ya no se exige alcanzar un nivel concreto, sino adoptar medidas y poder documentarlas. Lo que no se movió: la alfabetización es aplicable desde febrero de 2025, la transparencia del Art. 50 desde agosto de 2026 y, desde esa misma fecha, las autoridades nacionales supervisan y hacen cumplir. Es decir: el diagnóstico sigue teniendo sentido hoy.",
+    },
+    {
         question: "¿Qué pasa después de la auditoría?",
         answer: "El plan de acción es tuyo y puedes ejecutarlo con quien quieras — no hay permanencia ni letra pequeña. Si quieres que lo ejecute yo, las piezas habituales son la formación del equipo y la automatización de los procesos que la auditoría destapa. Pero el informe vale por sí solo.",
     },
@@ -99,7 +103,7 @@ const dolores = [
     },
     {
         titulo: "No tienes ni un papel que lo demuestre",
-        desc: "La carga de acreditar el cumplimiento es tuya. Sin inventario, política ni registro formativo, no hay nada que enseñar.",
+        desc: "Si preguntan, eres tú quien tiene que poder enseñar lo que hizo la empresa. Sin inventario, política ni registro formativo, no hay nada que enseñar.",
     },
     {
         titulo: "Te llegan ofertas de «certificación oficial»",
@@ -111,14 +115,14 @@ const proceso = [
     { n: "01", titulo: "Diagnóstico e inventario", d: "Una sesión para entender cómo trabajáis y el inventario de toda la IA en uso — también la que la plantilla usa por su cuenta." },
     { n: "02", titulo: "Clasificación y plan", d: "Cada uso clasificado según el Reglamento, y el plan de acción priorizado: qué hacer, en qué orden y qué cuesta." },
     { n: "03", titulo: "Política y gobernanza", d: "La política de uso de IA redactada para tu empresa: qué se puede usar, con qué datos y quién revisa qué." },
-    { n: "04", titulo: "Formación y evidencia", d: "La alfabetización del Art. 4 impartida, con certificados nominales y el registro fechado. El expediente, cerrado." },
+    { n: "04", titulo: "Formación y evidencia", d: "La alfabetización del Art. 4 impartida, con certificados nominales y el registro fechado. El expediente, montado y con fecha." },
 ];
 
 const implantacion = [
     { n: "01", titulo: "Elección con criterio", d: "Qué herramienta y qué plan según lo que ya usáis — el más barato que cumpla." },
     { n: "02", titulo: "Configuración segura", d: "Cuentas de empresa, permisos, y que el proveedor no entrene con vuestros datos." },
     { n: "03", titulo: "Casos de uso por puesto", d: "Cada rol sale sabiendo qué pedirle a la IA en SU trabajo, con plantillas propias." },
-    { n: "04", titulo: "Política y evidencia", d: "La política de uso redactada para tu empresa y el expediente que acredita el Art. 4." },
+    { n: "04", titulo: "Política y evidencia", d: "La política de uso redactada para tu empresa y el expediente que documenta las medidas del Art. 4." },
 ];
 
 export default function AuditoriaIAPage() {
@@ -231,8 +235,8 @@ export default function AuditoriaIAPage() {
                                 <Link href="/diagnostico" className="cu2-enlace">¿Por dónde empiezo? Test de 3 min →</Link>
                             </div>
                             <p className="cu2-nota">
-                                ¿Solo necesitáis la formación obligatoria? La{" "}
-                                <Link href="/formacion/ai-act">alfabetización del Art. 4, desde 600 € →</Link>
+                                ¿Solo necesitáis cubrir el Art. 4? El{" "}
+                                <Link href="/formacion/ai-act">bloque de alfabetización, desde 600 € →</Link>
                             </p>
                         </div>
                     </div>
