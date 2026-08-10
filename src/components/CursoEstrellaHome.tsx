@@ -39,7 +39,7 @@ export default function CursoEstrellaHome() {
                                 <span className="ces-badge">Obligatoria · Art. 4</span>
                             </div>
                             <h3>Alfabetización en IA</h3>
-                            <p>Fundamentos, riesgos, marco legal y gobernanza — con certificado nominal y el registro que sirve de evidencia.</p>
+                            <p>Fundamentos, riesgos, uso responsable y marco legal. Con certificado nominal y registro de la formación.</p>
                         </div>
                         <div className="ces-sesion ces-sesion-2">
                             <div className="ces-cab">

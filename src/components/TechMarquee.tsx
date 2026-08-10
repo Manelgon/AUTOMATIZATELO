@@ -1,18 +1,19 @@
+// Primero las que el cliente reconoce; la fontanería, al final. Quien busca
+// un panel a medida sabe qué es n8n; quien administra fincas, no — y es este
+// último el que tiene que sentirse en casa al leer la tira.
 const techs = [
+    "ChatGPT",
+    "Copilot 365",
+    "Gemini",
     "Claude",
-    "GPT-5",
+    "NotebookLM",
+    "WhatsApp",
+    "Excel",
+    "Google Workspace",
+    "Microsoft 365",
+    "CRM",
     "n8n",
     "Make",
-    "WhatsApp API",
-    "Supabase",
-    "PostgreSQL",
-    "Next.js",
-    "Docker",
-    "Redis",
-    "RAG",
-    "Vercel",
-    "Ollama",
-    "Cal.com",
 ];
 
 export default function TechMarquee() {
@@ -26,6 +27,7 @@ export default function TechMarquee() {
             backdropFilter: "blur(3px)",
             WebkitBackdropFilter: "blur(3px)",
         }}>
+            <p className="tech-rotulo">Trabajo con las herramientas que ya usas</p>
             <div className="tech-marquee">
                 <div className="tech-marquee-track">
                     {[...techs, ...techs].map((t, i) => (

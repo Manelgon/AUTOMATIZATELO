@@ -31,14 +31,17 @@ export default function TestimonioHome() {
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                 >
                     <blockquote className="tms-cita">
-                        &ldquo;No podemos estar más satisfechos. Han transformado por completo la
-                        operativa de AFC Academia: captación de leads, panel de gestión en
-                        tiempo real y la parte más compleja — FUNDAE — automatizada, con
-                        generación de documentos y envío inmediato.{" "}
-                        <strong>
-                            Hemos eliminado el error humano y ahorrado cientos de horas de
-                            gestión administrativa.
-                        </strong>&rdquo;
+                        {/* Lo que vende no se hace esperar al final del párrafo */}
+                        <p className="tms-destacado">
+                            &ldquo;Hemos eliminado el error humano y ahorrado cientos de horas
+                            de gestión administrativa.&rdquo;
+                        </p>
+                        <p className="tms-resto">
+                            No podemos estar más satisfechos. Han transformado por completo la
+                            operativa de AFC Academia: captación de leads, panel de gestión en
+                            tiempo real y la parte más compleja — FUNDAE — automatizada, con
+                            generación de documentos y envío inmediato.
+                        </p>
                     </blockquote>
                     <figcaption className="tms-pie">
                         <span className="tms-logo">
@@ -94,7 +97,21 @@ export default function TestimonioHome() {
                     line-height: 1.7;
                     color: rgba(250, 246, 239, 0.88);
                 }
-                .tms-cita strong { color: #f6c39c; font-weight: 600; }
+                .tms-destacado {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+                    font-weight: 600;
+                    line-height: 1.28;
+                    letter-spacing: -0.01em;
+                    color: #f6c39c;
+                    margin: 0 0 0.9rem;
+                }
+                .tms-resto {
+                    margin: 0;
+                    color: rgba(250, 246, 239, 0.72);
+                    font-size: 0.95rem;
+                    line-height: 1.7;
+                }
                 .tms-pie {
                     display: flex;
                     align-items: center;

@@ -37,7 +37,7 @@ export default function CifrasHome() {
             </div>
             {/* La home no tenia camino a precios salvo por el menu */}
             <p className="cf-pie">
-                <Link href="/precios">Los quince precios, públicos y por escrito →</Link>
+                <Link href="/precios">15 servicios · precios públicos, sin sorpresas →</Link>
             </p>
 
             <style>{`

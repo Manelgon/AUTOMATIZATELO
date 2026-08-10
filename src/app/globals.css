@@ -518,6 +518,18 @@ img {
 }
 
 /* Marquee de tecnologías */
+/* El rótulo explica la tira: sin él son marcas sueltas pasando */
+.tech-rotulo {
+  text-align: center;
+  margin: 0 0 0.7rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 239, 0.5);
+}
+
 .tech-marquee {
   overflow: hidden;
   padding: 0;

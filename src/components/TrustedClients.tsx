@@ -36,7 +36,7 @@ const casos = [
 export default function TrustedClients() {
     return (
         <section id="trusted-clients" className="casos-banda">
-            <p className="casos-etiqueta">Sistemas que ya funcionan, y quién los usa</p>
+            <p className="casos-etiqueta">No te cuento lo que podría hacerse. Te enseño lo que ya está funcionando</p>
 
             {/* Cinta de casos en movimiento (pausa al pasar el ratón) */}
             <div className="casos-marquee">
