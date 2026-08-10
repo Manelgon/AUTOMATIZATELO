@@ -8,7 +8,7 @@ import FormacionTabs from "@/components/FormacionTabs";
 export const metadata: Metadata = {
     title: "Formación en IA para Directivos",
     description:
-        "Formación en IA para dirección: decidir con criterio qué implantar, qué exige el AI Act y cómo gobernar la IA en tu empresa. Sesión ejecutiva desde 600€.",
+        "Formación en IA para dirección: decidir con criterio qué implantar, qué exige el AI Act y cómo gobernar la IA en tu empresa. Sesión ejecutiva desde 600 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/directivos" },
     openGraph: {
         title: "IA para dirección: criterio para decidir, no humo",
@@ -28,7 +28,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "La sesión ejecutiva de medio día para el equipo directivo, desde 600€. El programa completo de dirección (dos sesiones más plan de gobernanza documentado), desde 1.200€. Precio cerrado por escrito, como todo lo que hago.",
+        answer: "La sesión ejecutiva de medio día para el equipo directivo, desde 600 €. El programa completo de dirección (dos sesiones más plan de gobernanza documentado), desde 1.200 €. Precio cerrado por escrito, como todo lo que hago.",
     },
     {
         question: "¿Esto cuenta para el Art. 4 del AI Act?",
@@ -286,6 +286,8 @@ export default function DirectivosPage() {
                             sesión te aporta — o si lo que necesitas es otra cosa.
                         </p>
                         <Link href="/#contact" className="di2-cta">Pedir mis 30 minutos →</Link>
+                        <Link href="/casos" className="di2-enlace" style={{ marginTop: "0.9rem", display: "inline-block" }}>Ver sistemas que ya funcionan →</Link>
+                        <Link href="/diagnostico" className="di2-enlace" style={{ marginTop: "0.5rem", display: "block", opacity: 0.72 }}>¿Por dónde empiezo? Test de 3 min →</Link>
                     </div>
                     <div>
                         {faqs.map((f) => (

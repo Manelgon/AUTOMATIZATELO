@@ -337,6 +337,8 @@ export default function AlumnadoPage() {
                             30 minutos con dirección y os paso propuesta cerrada.
                         </p>
                         <Link href="/#contact" className="al-cta">Pedirlo para mi centro →</Link>
+                        <Link href="/casos" className="al-enlace" style={{ marginTop: "0.9rem", display: "inline-block" }}>Ver lo que he montado a otros →</Link>
+                        <Link href="/diagnostico" className="al-enlace" style={{ marginTop: "0.5rem", display: "block", opacity: 0.72 }}>¿Por dónde empiezo? Test de 3 min →</Link>
                     </div>
                     <div>
                         {faqs.map((f) => (

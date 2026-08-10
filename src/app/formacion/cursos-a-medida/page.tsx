@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta y cuánto se tarda?",
-        answer: "La producción completa de un curso, desde 1.900€ con precio cerrado por escrito según duración y complejidad (vídeo, evaluaciones, ejercicios). Los plazos habituales van de 3 a 6 semanas por curso. La licencia de contenido ya producido es inmediata y se presupuesta por catálogo.",
+        answer: "La producción completa de un curso, desde 1.900 € con precio cerrado por escrito según duración y complejidad (vídeo, evaluaciones, ejercicios). Los plazos habituales van de 3 a 6 semanas por curso. La licencia de contenido ya producido es inmediata y se presupuesta por catálogo.",
     },
     {
         question: "¿El curso sirve como evidencia del Art. 4 del AI Act?",
@@ -270,7 +270,7 @@ export default function CursosAMedidaPage() {
                     <p className="cam2-cifras-pie">
                         Precio cerrado por escrito antes de empezar —{" "}
                         <Link href="/precios#formar">Ver la tabla de precios →</Link> · ¿Quieres ver una
-                        plataforma real con sus cursos? <Link href="/casos">Ver casos →</Link>
+                        plataforma real con sus cursos? <Link href="/casos">Ver casos →</Link> · <Link href="/diagnostico">¿Por dónde empiezo? Test de 3 min →</Link>
                     </p>
                 </div>
             </section>

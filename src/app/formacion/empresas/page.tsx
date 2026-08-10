@@ -6,7 +6,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
 
 export const metadata: Metadata = {
-    title: "Formación en IA In-Company para Empresas",
+    title: "Formación en IA in-company con certificado",
     description:
         "Formación in-company con certificado: el curso estrella (Art. 4 + vuestra herramienta) y cursos de ChatGPT, Copilot, Gemini y Claude. Desde 600 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/empresas" },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "¿Cuánto cuesta formar a mi equipo?",
-        answer: "Un taller intensivo de un día (8 horas) cuesta entre 900€ y 1.400€. Un programa in-company de 16 horas repartidas en varias semanas, desde 2.400€. El bloque de alfabetización del Art. 4 (4-8 horas), desde 600€. Y un curso e-learning a medida en SCORM para tu plataforma, desde 1.900€. El precio final depende del número de participantes y la modalidad, y se cierra en la propuesta.",
+        answer: "Un taller intensivo de un día (8 horas) cuesta entre 900 € y 1.400 €. Un programa in-company de 16 horas repartidas en varias semanas, desde 2.400 €. El bloque de alfabetización del Art. 4 (4-8 horas), desde 600 €. Y un curso e-learning a medida en SCORM para tu plataforma, desde 1.900 €. El precio final depende del número de participantes y la modalidad, y se cierra en la propuesta.",
     },
     {
         question: "¿Qué evidencia queda para acreditar el Art. 4?",
@@ -245,7 +245,7 @@ export default function FormacionEmpresasPage() {
                     </div>
                     <p className="fe-cifras-pie">
                         Certificado nominal y registro formativo · presencial, aula virtual o SCORM ·{" "}
-                        <Link href="/precios#formar">Ver la tabla de precios →</Link>
+                        <Link href="/precios#formar">Ver la tabla de precios →</Link> · <Link href="/casos">ver sistemas que ya funcionan →</Link> · <Link href="/diagnostico">¿por dónde empiezo? test de 3 min →</Link>
                     </p>
                 </div>
             </section>

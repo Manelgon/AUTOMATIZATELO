@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta formar a mi equipo?",
-        answer: "El bloque de alfabetización del Art. 4 (4-8 horas, toda la plantilla), desde 600€. El curso estrella —ese bloque más un taller práctico con vuestra herramienta— desde 1.200€. Un taller de un día por herramienta, entre 900€ y 1.400€. Un programa in-company de 16 horas, desde 2.400€. Y un curso e-learning a medida en SCORM, desde 1.900€. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
+        answer: "El bloque de alfabetización del Art. 4 (4-8 horas, toda la plantilla), desde 600 €. El curso estrella —ese bloque más un taller práctico con vuestra herramienta— desde 1.200 €. Un taller de un día por herramienta, entre 900 € y 1.400 €. Un programa in-company de 16 horas, desde 2.400 €. Y un curso e-learning a medida en SCORM, desde 1.900 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
     },
     {
         question: "¿Qué evidencia documental me queda después?",
@@ -44,7 +44,7 @@ const faqs = [
     },
     {
         question: "¿Podéis formar también al alumnado, no solo al claustro?",
-        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 600€ por sesión en el centro. Muchos centros contratan las dos en la misma jornada.",
+        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 600 € por sesión en el centro. Muchos centros contratan las dos en la misma jornada.",
     },
     {
         question: "¿Podéis producirlo como curso para nuestra propia plataforma?",
@@ -326,7 +326,7 @@ export default function FormacionIaPage() {
                         <Link href="/sobre-mi" style={{ color: "#f6c39c", fontWeight: 600 }}>Manel Méndez González</Link>,
                         fundador de Automatizatelo. He publicado cursos completos de IA en plataformas
                         e-learning y formo a equipos con los casos de{" "}
-                        <Link href="/casos" style={{ color: "#f6c39c", fontWeight: 600 }}>sistemas que ya funcionan</Link>.
+                        <Link href="/casos" style={{ color: "#f6c39c", fontWeight: 600 }}>sistemas que ya funcionan</Link>. Y si no sabes por dónde empezar, el{" "}<Link href="/diagnostico" style={{ color: "#f6c39c", fontWeight: 600 }}>test de 3 minutos</Link> te lo dice.
                     </p>
                     <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1rem 1.4rem", marginTop: "1.8rem" }}>
                         <Link href="/#contact" className="fqi-cta">

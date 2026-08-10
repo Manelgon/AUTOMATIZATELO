@@ -4,7 +4,7 @@ import CursoPage from "@/components/CursoPage";
 export const metadata: Metadata = {
     title: "Curso de Copilot 365 para Empresas",
     description:
-        "Taller práctico de Copilot en Word, Excel, Outlook y Teams: la IA dentro de las herramientas que tu equipo ya usa cada día. Desde 900€, con certificado.",
+        "Taller práctico de Copilot en Word, Excel, Outlook y Teams: la IA dentro de las herramientas que tu equipo ya usa cada día. Desde 900 €, con certificado.",
     alternates: { canonical: "https://automatizatelo.com/formacion/copilot" },
     openGraph: {
         title: "Copilot 365: la IA que ya está dentro de tu Office",
@@ -56,7 +56,7 @@ export default function Pagina() {
                 },
                 {
                     question: "¿Este curso cumple la formación obligatoria del Art. 4?",
-                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.200€, con certificado nominal y registro formativo fechado para documentarlo.",
+                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.200 €, con certificado nominal y registro formativo fechado para documentarlo.",
                 },
                 {
                     question: "¿Qué pasa con los permisos y la confidencialidad interna?",

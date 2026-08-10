@@ -8,7 +8,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: "Automatización de Ventas para Pymes",
     description:
-        "Automatiza tu ciclo de ventas: leads respondidos en minutos, seguimiento automático, propuestas y facturas solas. Desde 500€.",
+        "Automatiza tu ciclo de ventas: leads respondidos en minutos, seguimiento automático, propuestas y facturas solas. Desde 500 €.",
     alternates: { canonical: "https://automatizatelo.com/sistemas/ventas" },
     openGraph: {
         title: "Automatización de ventas: menos picar datos, más cerrar",
@@ -28,7 +28,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta automatizar las ventas?",
-        answer: "Una automatización concreta — por ejemplo, la respuesta inmediata a leads o los recordatorios de seguimiento — desde 500€. El ciclo comercial completo (captación, seguimiento, propuestas y facturación funcionando solos) es un proyecto de área desde 2.000€. Precio cerrado por escrito antes de empezar.",
+        answer: "Una automatización concreta — por ejemplo, la respuesta inmediata a leads o los recordatorios de seguimiento — desde 500 €. El ciclo comercial completo (captación, seguimiento, propuestas y facturación funcionando solos) es un proyecto de área desde 2.000 €. Precio cerrado por escrito antes de empezar.",
     },
     {
         question: "¿Los mensajes automáticos no espantan al cliente?",
@@ -64,7 +64,7 @@ const serviceJsonLd = {
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Automatización del ciclo comercial: respuesta inmediata a leads, calificación, seguimiento automático, propuestas y facturación. Desde 500€ por flujo; ciclo completo desde 2.000€.",
+    "description": "Automatización del ciclo comercial: respuesta inmediata a leads, calificación, seguimiento automático, propuestas y facturación. Desde 500 € por flujo; ciclo completo desde 2.000 €.",
 };
 
 const pasos = [
@@ -340,6 +340,7 @@ export default function AutomatizacionVentasPage() {
                             primero — y cuántas ventas se te están enfriando por no llegar a tiempo.
                         </p>
                         <Link href="/#contact" className="ve2-cta">Pedir mis 30 minutos →</Link>
+                        <Link href="/casos" className="ve2-enlace" style={{ marginTop: "0.9rem", display: "inline-block" }}>Ver sistemas que ya funcionan →</Link>
                     </div>
                     <div>
                         {faqs.map((f) => (

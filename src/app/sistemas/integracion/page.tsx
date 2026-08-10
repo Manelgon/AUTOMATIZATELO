@@ -8,11 +8,11 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: "Integración de Sistemas para Pymes",
     description:
-        "Conecto las herramientas que ya usas — CRM, facturación, correo, WhatsApp, Excel — para que los datos fluyan solos, sin copiar y pegar. Desde 500€.",
+        "Conecto las herramientas que ya usas — CRM, facturación, correo, WhatsApp, Excel — para que los datos fluyan solos, sin copiar y pegar. Desde 500 €.",
     alternates: { canonical: "https://automatizatelo.com/sistemas/integracion" },
     openGraph: {
         title: "Integración de sistemas: tus programas, por fin hablándose",
-        description: "Integraciones entre las herramientas que ya usas, con precio cerrado por escrito. Una integración concreta desde 500€.",
+        description: "Integraciones entre las herramientas que ya usas, con precio cerrado por escrito. Una integración concreta desde 500 €.",
         url: "https://automatizatelo.com/sistemas/integracion",
     },
 };
@@ -28,7 +28,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta conectar dos aplicaciones?",
-        answer: "Una integración concreta — por ejemplo, que los formularios de tu web creen el contacto en el CRM y avisen al comercial — desde 500€ con precio cerrado por escrito. Integrar varias herramientas de un área (comercial, administración) desde 2.000€. Sin permanencia, y los flujos quedan en tu propiedad, documentados.",
+        answer: "Una integración concreta — por ejemplo, que los formularios de tu web creen el contacto en el CRM y avisen al comercial — desde 500 € con precio cerrado por escrito. Integrar varias herramientas de un área (comercial, administración) desde 2.000 €. Sin permanencia, y los flujos quedan en tu propiedad, documentados.",
     },
     {
         question: "¿Puedes conectar mi CRM con la facturación?",
@@ -351,6 +351,7 @@ export default function IntegracionSistemasPage() {
                             qué se puede conectar y qué ahorraría cada conexión.
                         </p>
                         <Link href="/#contact" className="in2-cta">Pedir mis 30 minutos →</Link>
+                        <Link href="/casos" className="in2-enlace" style={{ marginTop: "0.9rem", display: "inline-block" }}>Ver sistemas que ya funcionan →</Link>
                     </div>
                     <div>
                         {faqs.map((f) => (

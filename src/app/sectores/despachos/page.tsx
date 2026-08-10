@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://automatizatelo.com/sectores/despachos" },
     openGraph: {
         title: "IA para tu despacho: formación práctica con tus casos reales",
-        description: "Talleres para el equipo, protección del secreto profesional y la documentación de las medidas del Art. 4. Desde 600€.",
+        description: "Talleres para el equipo, protección del secreto profesional y la documentación de las medidas del Art. 4. Desde 600 €.",
         url: "https://automatizatelo.com/sectores/despachos",
     },
 };
@@ -27,7 +27,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "Las tarifas generales de formación: el bloque de alfabetización del Art. 4 (4-8 horas, toda la plantilla), desde 600€. Un taller intensivo de un día adaptado al despacho, entre 900€ y 1.400€. Un programa de 16 horas en varias semanas, desde 2.400€. Con certificado nominal y registro formativo fechado siempre incluidos.",
+        answer: "Las tarifas generales de formación: el bloque de alfabetización del Art. 4 (4-8 horas, toda la plantilla), desde 600 €. Un taller intensivo de un día adaptado al despacho, entre 900 € y 1.400 €. Un programa de 16 horas en varias semanas, desde 2.400 €. Con certificado nominal y registro formativo fechado siempre incluidos.",
     },
     {
         question: "¿Esto cubre la obligación del Art. 4 del AI Act?",
@@ -371,6 +371,7 @@ export default function DespachosPage() {
                             formación toca, en qué formato y qué evidencia guardar.
                         </p>
                         <Link href="/#contact" className="de2-cta">Pedir mis 30 minutos →</Link>
+                        <Link href="/casos" className="de2-enlace" style={{ marginTop: "0.9rem", display: "inline-block" }}>Ver sistemas que ya funcionan →</Link>
                     </div>
                     <div>
                         {faqs.map((f) => (

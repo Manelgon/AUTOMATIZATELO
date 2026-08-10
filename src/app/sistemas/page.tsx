@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta automatizar un proceso?",
-        answer: "Una automatización concreta (por ejemplo, la entrada de facturas), desde 500€ — con el precio final cerrado por escrito en la propuesta. Automatizar varios procesos del negocio, desde 2.000€. Siempre sin permanencia y con el código y los datos en tu propiedad.",
+        answer: "Una automatización concreta (por ejemplo, la entrada de facturas), desde 500 € — con el precio final cerrado por escrito en la propuesta. Automatizar varios procesos del negocio, desde 2.000 €. Siempre sin permanencia y con el código y los datos en tu propiedad.",
     },
     {
         question: "¿Cuánto se tarda?",

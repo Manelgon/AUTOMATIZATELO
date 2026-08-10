@@ -298,7 +298,7 @@ export default function CursoPage(p: CursoPageProps) {
                         <Link href="/formacion/empresas">curso estrella</Link>{" "}
                         (alfabetización + herramienta, desde 1.200 €). Y si la herramienta debe
                         quedar además configurada y con política de uso, eso es el{" "}
-                        <Link href="/cumplimiento">pilar de cumplimiento</Link>. Y si prefieres
+                        <Link href="/cumplimiento">pilar de cumplimiento</Link>. Lo imparto yo, <Link href="/sobre-mi">Manel Méndez</Link>, y si dudas de cuál te toca, el <Link href="/diagnostico">test de 3 minutos</Link> te orienta. Y si prefieres
                         ver antes lo que sale de todo esto, ahí están los{" "}
                         <Link href="/casos">sistemas que ya funcionan</Link>.
                     </p>

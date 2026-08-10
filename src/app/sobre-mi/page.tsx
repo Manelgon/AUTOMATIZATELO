@@ -101,7 +101,7 @@ const noEncajamos = [
 const faqs = [
     {
         question: "¿La auditoría gratuita es lo mismo que la Auditoría IA que vendes?",
-        answer: "No, y conviene distinguirlo: la auditoría gratuita son los 30 minutos iniciales en los que miramos tu caso y te digo por dónde empezar — sin coste ni compromiso. La Auditoría IA (AI Act) es un servicio con entregables: inventario, clasificación de riesgos, informe y plan de acción, desde 750€. La gratuita puede acabar recomendándote la de pago… o diciéndote que no te hace falta.",
+        answer: "No, y conviene distinguirlo: la auditoría gratuita son los 30 minutos iniciales en los que miramos tu caso y te digo por dónde empezar — sin coste ni compromiso. La Auditoría IA (AI Act) es un servicio con entregables: inventario, clasificación de riesgos, informe y plan de acción, desde 750 €. La gratuita puede acabar recomendándote la de pago… o diciéndote que no te hace falta.",
     },
     {
         question: "¿Cuánto tarda cada cosa?",

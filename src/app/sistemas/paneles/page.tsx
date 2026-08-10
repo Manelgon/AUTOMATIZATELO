@@ -8,7 +8,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: "Paneles y Dashboards a Medida para Pymes",
     description:
-        "Paneles de gestión a medida: clientes, incidencias, agenda y métricas en un solo sitio. En uso diario en despachos reales. Desde 2.000€, el código es tuyo.",
+        "Paneles de gestión a medida: clientes, incidencias, agenda y métricas en un solo sitio. En uso diario en despachos reales. Desde 2.000 €, el código es tuyo.",
     alternates: { canonical: "https://automatizatelo.com/sistemas/paneles" },
     openGraph: {
         title: "Tu negocio entero, en un panel hecho para ti",
@@ -28,7 +28,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta un panel a medida?",
-        answer: "Un panel de gestión entra normalmente en el proyecto de automatización de área, desde 2.000€; uno que cubra toda la operación de la empresa, en el rango del proyecto integral desde 8.000€. Precio y plazo cerrados por escrito antes de empezar, y sin cuotas por usuario.",
+        answer: "Un panel de gestión entra normalmente en el proyecto de automatización de área, desde 2.000 €; uno que cubra toda la operación de la empresa, en el rango del proyecto integral desde 8.000 €. Precio y plazo cerrados por escrito antes de empezar, y sin cuotas por usuario.",
     },
     {
         question: "¿Y cuando quiera cambiar algo dentro de un año?",
@@ -64,7 +64,7 @@ const serviceJsonLd = {
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Paneles de gestión a medida para pymes: clientes, incidencias, agenda, documentación y métricas en un solo sitio, integrados con las herramientas existentes. Desde 2.000€, propiedad del cliente.",
+    "description": "Paneles de gestión a medida para pymes: clientes, incidencias, agenda, documentación y métricas en un solo sitio, integrados con las herramientas existentes. Desde 2.000 €, propiedad del cliente.",
 };
 
 const capacidades = [

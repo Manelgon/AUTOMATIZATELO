@@ -7,11 +7,11 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: "Cumplimiento del AI Act para Empresas",
     description:
-        "Auditoría del AI Act para pymes: reviso cómo usa IA tu empresa y te entrego informe de riesgos, plan de acción y política de uso. Desde 750€.",
+        "Auditoría del AI Act para pymes: reviso cómo usa IA tu empresa y te entrego informe de riesgos, plan de acción y política de uso. Desde 750 €.",
     alternates: { canonical: "https://automatizatelo.com/cumplimiento" },
     openGraph: {
         title: "Auditoría IA para pymes: cumplimiento del AI Act sin sustos",
-        description: "Informe de riesgos, plan de acción, política de uso de IA y formación del Art. 4. Precio público, desde 750€.",
+        description: "Informe de riesgos, plan de acción, política de uso de IA y formación del Art. 4. Precio público, desde 750 €.",
         url: "https://automatizatelo.com/cumplimiento",
     },
 };
@@ -27,7 +27,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "El diagnóstico con informe y plan de acción, desde 750€. El pack completo — auditoría + política de uso de IA personalizada + formación de alfabetización del Art. 4 con certificados — desde 1.800€. La formación del pack es el mismo bloque de alfabetización que puedes contratar suelto desde 600€: en el pack va incluido, junto con la política. El precio final depende del tamaño de la empresa y del número de herramientas en uso, y se cierra por escrito antes de empezar.",
+        answer: "El diagnóstico con informe y plan de acción, desde 750 €. El pack completo — auditoría + política de uso de IA personalizada + formación de alfabetización del Art. 4 con certificados — desde 1.800 €. La formación del pack es el mismo bloque de alfabetización que puedes contratar suelto desde 600 €: en el pack va incluido, junto con la política. El precio final depende del tamaño de la empresa y del número de herramientas en uso, y se cierra por escrito antes de empezar.",
     },
     {
         question: "¿La auditoría es una certificación oficial?",

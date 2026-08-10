@@ -452,6 +452,8 @@ export default function AiActPage() {
                             qué evidencia guardar.
                         </p>
                         <Link href="/#contact" className="aa2-cta">Pedir mis 30 minutos →</Link>
+                        <Link href="/casos" className="aa2-enlace" style={{ marginTop: "0.9rem", display: "inline-block" }}>Ver sistemas de IA que ya funcionan →</Link>
+                        <Link href="/diagnostico" className="aa2-enlace" style={{ marginTop: "0.5rem", display: "block", opacity: 0.72 }}>¿Por dónde empiezo? Test de 3 min →</Link>
                     </div>
                     <div>
                         {faqs.map((f) => (

@@ -56,7 +56,7 @@ export default function Pagina() {
                 },
                 {
                     question: "¿Este curso cumple la formación obligatoria del Art. 4?",
-                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.200€, con certificado nominal y registro formativo fechado para documentarlo.",
+                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.200 €, con certificado nominal y registro formativo fechado para documentarlo.",
                 },
                 {
                     question: "¿Es seguro para un despacho, con el secreto profesional?",

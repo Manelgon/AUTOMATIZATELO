@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta formar al claustro?",
-        answer: "Las tarifas son las mismas que para empresas: taller intensivo de un día (8 horas) entre 900€ y 1.400€; bloque de alfabetización del Art. 4 (4-8 horas) desde 600€; curso e-learning a medida en SCORM desde 1.900€. El precio final depende del tamaño del claustro y la modalidad, y se cierra en la propuesta.",
+        answer: "Las tarifas son las mismas que para empresas: taller intensivo de un día (8 horas) entre 900 € y 1.400 €; bloque de alfabetización del Art. 4 (4-8 horas) desde 600 €; curso e-learning a medida en SCORM desde 1.900 €. El precio final depende del tamaño del claustro y la modalidad, y se cierra en la propuesta.",
     },
     {
         question: "¿Qué evidencia queda para el centro?",
@@ -227,7 +227,7 @@ export default function CentrosEducativosPage() {
                             </div>
                             <p className="ce2-nota">
                                 ¿Solo necesitáis el mínimo legal? La{" "}
-                                <Link href="/formacion/ai-act">alfabetización suelta, desde 600€ →</Link>
+                                <Link href="/formacion/ai-act">alfabetización suelta, desde 600 € →</Link>
                             </p>
                         </div>
                     </div>
@@ -407,6 +407,8 @@ export default function CentrosEducativosPage() {
                             en qué formato y qué evidencia guardar.
                         </p>
                         <Link href="/#contact" className="ce2-cta">Pedir consulta para mi centro →</Link>
+                        <Link href="/casos" className="ce2-enlace" style={{ marginTop: "0.9rem", display: "inline-block" }}>Ver sistemas que ya funcionan →</Link>
+                        <Link href="/diagnostico" className="ce2-enlace" style={{ marginTop: "0.5rem", display: "block", opacity: 0.72 }}>¿Por dónde empiezo? Test de 3 min →</Link>
                     </div>
                     <div>
                         {faqs.map((f) => (

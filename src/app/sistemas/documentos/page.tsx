@@ -8,7 +8,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: "Extracción de Datos de Documentos con IA",
     description:
-        "Facturas, albaranes y documentos que se leen solos: la IA extrae los datos y los registra en tu sistema. Y los que emites, generados solos. Desde 500€.",
+        "Facturas, albaranes y documentos que se leen solos: la IA extrae los datos y los registra en tu sistema. Y los que emites, generados solos. Desde 500 €.",
     alternates: { canonical: "https://automatizatelo.com/sistemas/documentos" },
     openGraph: {
         title: "Documentos que se leen solos: extracción de datos con IA",
@@ -36,7 +36,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "Un flujo concreto — por ejemplo, las facturas de proveedores entrando solas a tu sistema — desde 500€. El circuito documental completo (entrada, extracción, registro y generación de tus propios documentos) suele ir en proyectos desde 2.000€. Precio cerrado por escrito antes de empezar.",
+        answer: "Un flujo concreto — por ejemplo, las facturas de proveedores entrando solas a tu sistema — desde 500 €. El circuito documental completo (entrada, extracción, registro y generación de tus propios documentos) suele ir en proyectos desde 2.000 €. Precio cerrado por escrito antes de empezar.",
     },
     {
         question: "¿Cuánto se tarda en tenerlo funcionando?",
@@ -64,7 +64,7 @@ const serviceJsonLd = {
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Lectura automática de facturas, albaranes y documentos con OCR e IA, con registro en el sistema de la empresa y revisión humana donde toca; y generación automática de facturas, albaranes e informes con la plantilla del cliente. Desde 500€.",
+    "description": "Lectura automática de facturas, albaranes y documentos con OCR e IA, con registro en el sistema de la empresa y revisión humana donde toca; y generación automática de facturas, albaranes e informes con la plantilla del cliente. Desde 500 €.",
 };
 
 const entrada = [

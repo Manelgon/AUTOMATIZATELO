@@ -64,14 +64,14 @@ const props: SectorPageProps = {
         { question: "¿Conocéis el sector o sois una agencia genérica?", answer: "Conocemos el sector por dentro: hemos construido los paneles de gestión que despachos de administración de fincas como Serincosol usan a diario desde enero de 2026, y colaboramos con formación para administradores de fincas." },
         { question: "¿Sustituye a mi programa de administración (Gesfincas, TAAF, Fincasplus...)?", answer: "No hace falta sustituirlo. El panel cubre lo que esos programas no resuelven bien — incidencias, comunicaciones y seguimiento del día a día — y puede convivir con tu software contable de siempre." },
         { question: "¿Qué pasa con los datos de los vecinos y el RGPD?", answer: "El panel se diseña cumpliendo RGPD desde el primer día: datos en servidores europeos, accesos por roles y trazabilidad de acciones. Y el código y los datos son siempre del despacho." },
-        { question: "¿Cuánto cuesta?", answer: "Una automatización concreta (por ejemplo, el registro de incidencias) desde 500€. Un panel de gestión completo para el despacho, desde 2.000€. Pide la auditoría gratuita y te decimos qué recuperarías primero." },
+        { question: "¿Cuánto cuesta?", answer: "Una automatización concreta (por ejemplo, el registro de incidencias) desde 500 €. Un panel de gestión completo para el despacho, desde 2.000 €. Pide la auditoría gratuita y te decimos qué recuperarías primero." },
     ],
     relacionados: [
-        { href: "/sectores/despachos", icon: "fa-briefcase", titulo: "Formación en IA para despachos", desc: "Que el equipo use la IA sin jugarse los datos de los propietarios. Desde 600€." },
+        { href: "/sectores/despachos", icon: "fa-briefcase", titulo: "Formación en IA para despachos", desc: "Que el equipo use la IA sin jugarse los datos de los propietarios. Desde 600 €." },
         { href: "/sistemas/paneles", icon: "fa-chart-line", titulo: "Paneles a medida", desc: "El panel de incidencias por dentro: cómo se construye y qué incluye." },
         { href: "/sistemas/chatbots-whatsapp", icon: "fa-comment-dots", titulo: "Chatbot de WhatsApp", desc: "Que los vecinos pregunten al bot y no al teléfono del despacho." },
         { href: "/sistemas/documentos", icon: "fa-file-import", titulo: "Extracción de datos", desc: "Facturas de proveedores y albaranes registrados solos, sin picar nada." },
-        { href: "/cumplimiento", icon: "fa-clipboard-check", titulo: "Auditoría IA (AI Act)", desc: "Un despacho que asesora en cumplimiento no puede incumplir. Desde 750€." },
+        { href: "/cumplimiento", icon: "fa-clipboard-check", titulo: "Auditoría IA (AI Act)", desc: "Un despacho que asesora en cumplimiento no puede incumplir. Desde 750 €." },
         { href: "/casos", icon: "fa-trophy", titulo: "Casos de éxito", desc: "Serincosol y otros despachos, con problema, solución y resultados." },
     ],
 };

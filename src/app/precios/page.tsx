@@ -7,11 +7,11 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: "Precios: Implantación de IA para Pymes",
     description:
-        "Cuánto cuesta implantar IA en tu pyme: formación desde 600€, auditoría del AI Act desde 750€ y automatización desde 500€. Precio cerrado por escrito.",
+        "Cuánto cuesta implantar IA en tu pyme: formación desde 600 €, auditoría del AI Act desde 750 € y automatización desde 500 €. Precio cerrado por escrito.",
     alternates: { canonical: "https://automatizatelo.com/precios" },
     openGraph: {
         title: "¿Cuánto cuesta automatizar tu negocio? Precios públicos",
-        description: "Automatización desde 500€, formación desde 600€. Precio y plazo cerrados antes de empezar, sin permanencia.",
+        description: "Automatización desde 500 €, formación desde 600 €. Precio y plazo cerrados antes de empezar, sin permanencia.",
         url: "https://automatizatelo.com/precios",
     },
 };
@@ -191,11 +191,11 @@ const variables = [
 const faqs = [
     {
         question: "¿Cuánto cuesta automatizar un proceso en una pyme?",
-        answer: "Una automatización suelta y concreta — por ejemplo, unos avisos automáticos o las facturas entrando solas — desde 500€, con entrega en unas dos semanas. Poner en marcha la primera pieza seria (las herramientas de IA configuradas o un CRM implantado y migrado) parte de 900€. Automatizar un área completa (ventas, clientes u operaciones) parte de 2.000€, y el sistema integral para toda la empresa, de 8.000€.",
+        answer: "Una automatización suelta y concreta — por ejemplo, unos avisos automáticos o las facturas entrando solas — desde 500 €, con entrega en unas dos semanas. Poner en marcha la primera pieza seria (las herramientas de IA configuradas o un CRM implantado y migrado) parte de 900 €. Automatizar un área completa (ventas, clientes u operaciones) parte de 2.000 €, y el sistema integral para toda la empresa, de 8.000 €.",
     },
     {
         question: "¿Cuánto cuesta un chatbot de atención al cliente?",
-        answer: "Un bot de atención por WhatsApp o web no suele ir solo: forma parte de un proyecto de automatización de área, desde 2.000€, porque necesita conectarse a tu agenda, CRM o catálogo para ser útil de verdad. Un bot sin sistema detrás contesta bonito pero no resuelve nada.",
+        answer: "Un bot de atención por WhatsApp o web no suele ir solo: forma parte de un proyecto de automatización de área, desde 2.000 €, porque necesita conectarse a tu agenda, CRM o catálogo para ser útil de verdad. Un bot sin sistema detrás contesta bonito pero no resuelve nada.",
     },
     {
         question: "¿Por qué los precios son \"desde\"? ¿Cuándo sé el precio final?",
@@ -207,15 +207,15 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta la formación en IA para empresas?",
-        answer: "El bloque de alfabetización del Art. 4 del AI Act (4-8 horas), desde 600€. Un taller intensivo de un día (8 horas), entre 900€ y 1.400€. Un programa in-company de 16 horas en varias semanas, desde 2.400€. Y un curso e-learning a medida en SCORM para tu plataforma, desde 1.900€. Siempre con certificado nominal y registro formativo.",
+        answer: "El bloque de alfabetización del Art. 4 del AI Act (4-8 horas), desde 600 €. Un taller intensivo de un día (8 horas), entre 900 € y 1.400 €. Un programa in-company de 16 horas en varias semanas, desde 2.400 €. Y un curso e-learning a medida en SCORM para tu plataforma, desde 1.900 €. Siempre con certificado nominal y registro formativo.",
     },
     {
         question: "¿Cuánto cuesta la auditoría de cumplimiento del AI Act?",
-        answer: "El diagnóstico — inventario de la IA en uso, clasificación de riesgos, informe y plan de acción — desde 750€. El pack completo, que añade la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados, desde 1.800€. El precio final depende del tamaño de la empresa y de las herramientas en uso.",
+        answer: "El diagnóstico — inventario de la IA en uso, clasificación de riesgos, informe y plan de acción — desde 750 €. El pack completo, que añade la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados, desde 1.800 €. El precio final depende del tamaño de la empresa y de las herramientas en uso.",
     },
     {
         question: "¿Y la formación para colegios y para el alumnado?",
-        answer: "La formación de claustro tiene la misma tarifa que la de empresas: un día de 8 horas entre 900€ y 1.400€, o el bloque de alfabetización del Art. 4 desde 600€. El taller para alumnado parte de 600€ por sesión en el centro (con varios grupos seguidos en la misma jornada sale mejor) y el curso completo, desde 1.200€.",
+        answer: "La formación de claustro tiene la misma tarifa que la de empresas: un día de 8 horas entre 900 € y 1.400 €, o el bloque de alfabetización del Art. 4 desde 600 €. El taller para alumnado parte de 600 € por sesión en el centro (con varios grupos seguidos en la misma jornada sale mejor) y el curso completo, desde 1.200 €.",
     },
     {
         question: "¿El código y los datos son míos?",
