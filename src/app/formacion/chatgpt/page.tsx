@@ -4,7 +4,7 @@ import CursoPage from "@/components/CursoPage";
 export const metadata: Metadata = {
     title: "Curso de ChatGPT para Empresas",
     description:
-        "Taller práctico de ChatGPT para tu equipo: cuentas seguras, prompts con criterio y asistentes por puesto. Desde 900 €, con certificado.",
+        "Taller práctico de ChatGPT para tu equipo: cuentas seguras, prompts con criterio y asistentes por puesto. Desde 1.400 €, con certificado.",
     alternates: { canonical: "https://automatizatelo.com/formacion/chatgpt" },
     openGraph: {
         title: "ChatGPT en tu empresa: de probarlo a dominarlo",
@@ -52,7 +52,7 @@ export default function Pagina() {
             faqs={[
                 {
                     question: "¿Este curso cumple la formación obligatoria del Art. 4?",
-                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.200 €, con certificado nominal y registro formativo fechado para documentarlo.",
+                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.800 €, con certificado nominal y registro formativo fechado para documentarlo.",
                 },
                 {
                     question: "¿Qué plan de ChatGPT necesita mi empresa?",

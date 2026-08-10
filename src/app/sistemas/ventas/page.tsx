@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta automatizar las ventas?",
-        answer: "Una automatización concreta — por ejemplo, la respuesta inmediata a leads o los recordatorios de seguimiento — desde 500 €. El ciclo comercial completo (captación, seguimiento, propuestas y facturación funcionando solos) es un proyecto de área desde 2.000 €. Precio cerrado por escrito antes de empezar.",
+        answer: "Una automatización concreta — por ejemplo, la respuesta inmediata a leads o los recordatorios de seguimiento — desde 500 €. El ciclo comercial completo (captación, seguimiento, propuestas y facturación funcionando solos) es un proyecto de área desde 3.000 €. Precio cerrado por escrito antes de empezar.",
     },
     {
         question: "¿Los mensajes automáticos no espantan al cliente?",
@@ -66,7 +66,7 @@ const serviceJsonLd = {
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Automatización del ciclo comercial: respuesta inmediata a leads, calificación, seguimiento automático, propuestas y facturación. Desde 500 € por flujo; ciclo completo desde 2.000 €.",
+    "description": "Automatización del ciclo comercial: respuesta inmediata a leads, calificación, seguimiento automático, propuestas y facturación. Desde 500 € por flujo; ciclo completo desde 3.000 €.",
 };
 
 const pasos = [
@@ -187,7 +187,7 @@ export default function AutomatizacionVentasPage() {
                                 <span>Respuesta al lead en minutos</span>
                                 <span>Tu tono en cada mensaje</span>
                                 <span>En producción en ~2 semanas</span>
-                                <span className="ve2-dato-precio">Desde 500 € · ciclo completo 2.000 €</span>
+                                <span className="ve2-dato-precio">Desde 500 € · ciclo completo 3.000 €</span>
                             </div>
                             <div className="ve2-enlaces">
                                 <a href="#ciclo" className="ve2-enlace">Ver cómo queda el ciclo ↓</a>
@@ -226,7 +226,7 @@ export default function AutomatizacionVentasPage() {
                             <span className="ve2-cifra-lab">Un flujo suelto del ciclo</span>
                         </div>
                         <div className="ve2-cifra">
-                            <span className="ve2-cifra-num">desde 2.000 €</span>
+                            <span className="ve2-cifra-num">desde 3.000 €</span>
                             <span className="ve2-cifra-lab">El ciclo comercial completo</span>
                         </div>
                         <div className="ve2-cifra">

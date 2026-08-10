@@ -175,7 +175,7 @@ const piezas = [
     {
         num: "01",
         href: "/cumplimiento",
-        kicker: "Auditoría IA · desde 750 €",
+        kicker: "Auditoría IA · desde 950 €",
         titulo: "No sé por dónde empezar",
         desc: "Inventario de la IA que ya se usa, riesgos por perfil, informe y plan de acción. Es el trabajo de los pasos 1 y 2.",
         enlaceTexto: "Ver la auditoría →",
@@ -184,7 +184,7 @@ const piezas = [
     {
         num: "02",
         href: "/formacion/empresas",
-        kicker: "Formación · desde 600 €",
+        kicker: "Formación · desde 1.800 €",
         titulo: "Sé que tengo que formar",
         desc: "La alfabetización del Art. 4, con certificado nominal y registro formativo fechado. Los pasos 3 y 4, resueltos.",
         enlaceTexto: "Ver la formación →",
@@ -193,7 +193,7 @@ const piezas = [
     {
         num: "03",
         href: "/cumplimiento",
-        kicker: "Implantación · desde 900 €",
+        kicker: "Implantación · desde 1.200 €",
         titulo: "Quiero usarla bien desde el principio",
         desc: "La herramienta configurada, los permisos revisados y la política interna de uso redactada y comunicada.",
         enlaceTexto: "Ver la implantación →",
@@ -289,7 +289,7 @@ export default function AiActPage() {
                                 <span>Aplicable desde feb. 2025</span>
                                 <span>Sin horas mínimas, nivel exigido ni certificado oficial</span>
                                 <span>Certificado nominal + registro fechado</span>
-                                <span className="aa2-dato-precio">Alfabetización desde 600 €</span>
+                                <span className="aa2-dato-precio">4 h desde 750 € · 8 h desde 1.200 €</span>
                             </div>
                             <div className="aa2-enlaces">
                                 <a href="#temario" className="aa2-enlace">Ver el temario completo ↓</a>
@@ -297,7 +297,7 @@ export default function AiActPage() {
                             </div>
                             <p className="aa2-nota">
                                 ¿La quieres junto a la herramienta que usáis? Ese es el{" "}
-                                <Link href="/formacion/empresas">curso estrella, desde 1.200 € →</Link>
+                                <Link href="/formacion/empresas">curso estrella, desde 1.800 € →</Link>
                             </p>
                         </div>
                     </div>
@@ -344,19 +344,19 @@ export default function AiActPage() {
                 <div className="container">
                     <div className="aa2-cifras">
                         <div className="aa2-cifra">
-                            <span className="aa2-cifra-valor">desde 600 €</span>
+                            <span className="aa2-cifra-valor">desde 950 €</span>
                             <span className="aa2-cifra-etiqueta">Alfabetización suelta · Art. 4</span>
                         </div>
                         <div className="aa2-cifra">
-                            <span className="aa2-cifra-valor">desde 750 €</span>
+                            <span className="aa2-cifra-valor">desde 950 €</span>
                             <span className="aa2-cifra-etiqueta">Auditoría IA · inventario y plan</span>
                         </div>
                         <div className="aa2-cifra">
-                            <span className="aa2-cifra-valor">desde 1.200 €</span>
+                            <span className="aa2-cifra-valor">desde 1.800 €</span>
                             <span className="aa2-cifra-etiqueta">Curso estrella · Art. 4 + herramienta</span>
                         </div>
                         <div className="aa2-cifra">
-                            <span className="aa2-cifra-valor">desde 1.900 €</span>
+                            <span className="aa2-cifra-valor">desde 2.400 €</span>
                             <span className="aa2-cifra-etiqueta">Cursos a medida · SCORM</span>
                         </div>
                     </div>

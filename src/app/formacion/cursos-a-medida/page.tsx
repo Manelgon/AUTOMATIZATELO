@@ -10,7 +10,7 @@ import { migas, curso } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Cursos E-learning a Medida en SCORM",
     description:
-        "Tu curso e-learning producido en SCORM: guion, materiales, vídeo y empaquetado, instalado en tu plataforma. Cualquier tema. Desde 1.900 €.",
+        "Tu curso e-learning producido en SCORM: guion, materiales, vídeo y empaquetado, instalado en tu plataforma. Cualquier tema. Desde 2.400 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/cursos-a-medida" },
     openGraph: {
         title: "Producción de cursos e-learning a medida (SCORM)",
@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta y cuánto se tarda?",
-        answer: "La producción completa de un curso, desde 1.900 € con precio cerrado por escrito según duración y complejidad (vídeo, evaluaciones, ejercicios). Los plazos habituales van de 3 a 6 semanas por curso. La licencia de contenido ya producido es inmediata y se presupuesta por catálogo.",
+        answer: "La producción completa de un curso, desde 2.400 € con precio cerrado por escrito según duración y complejidad (vídeo, evaluaciones, ejercicios). Los plazos habituales van de 3 a 6 semanas por curso. La licencia de contenido ya producido es inmediata y se presupuesta por catálogo.",
     },
     {
         question: "¿El curso sirve como evidencia del Art. 4 del AI Act?",
@@ -208,7 +208,7 @@ export default function CursosAMedidaPage() {
                                 <span>Guion · vídeo · SCORM instalado</span>
                                 <span>3 – 6 semanas por curso</span>
                                 <span>El curso es tuyo, sin licencias</span>
-                                <span className="cam2-dato-precio">Desde 1.900 € · cerrado en la propuesta</span>
+                                <span className="cam2-dato-precio">Desde 2.400 € · cerrado en la propuesta</span>
                             </div>
                             <div className="cam2-enlaces">
                                 <a href="#proceso" className="cam2-enlace">Ver cómo transcurre ↓</a>
@@ -262,7 +262,7 @@ export default function CursosAMedidaPage() {
                 <div className="container">
                     <div className="cam2-cifras">
                         <div className="cam2-cifra">
-                            <span className="cam2-cifra-valor">desde 1.900 €</span>
+                            <span className="cam2-cifra-valor">desde 2.400 €</span>
                             <span className="cam2-cifra-etiqueta">Producción completa del curso</span>
                         </div>
                         <div className="cam2-cifra">

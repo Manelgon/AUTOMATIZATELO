@@ -10,7 +10,7 @@ import { migas } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Paneles y Dashboards a Medida para Pymes",
     description:
-        "Paneles de gestión a medida: clientes, incidencias, agenda y métricas en un solo sitio. En uso diario en despachos reales. Desde 2.000 €, el código es tuyo.",
+        "Paneles de gestión a medida: clientes, incidencias, agenda y métricas en un solo sitio. En uso diario en despachos reales. Desde 3.000 €, el código es tuyo.",
     alternates: { canonical: "https://automatizatelo.com/sistemas/paneles" },
     openGraph: {
         title: "Tu negocio entero, en un panel hecho para ti",
@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta un panel a medida?",
-        answer: "Un panel de gestión entra normalmente en el proyecto de automatización de área, desde 2.000 €; uno que cubra toda la operación de la empresa, en el rango del proyecto integral desde 8.000 €. Precio y plazo cerrados por escrito antes de empezar, y sin cuotas por usuario.",
+        answer: "Un panel de gestión entra normalmente en el proyecto de automatización de área, desde 3.000 €; uno que cubra toda la operación de la empresa, en el rango del proyecto integral desde 8.000 €. Precio y plazo cerrados por escrito antes de empezar, y sin cuotas por usuario.",
     },
     {
         question: "¿Y cuando quiera cambiar algo dentro de un año?",
@@ -66,7 +66,7 @@ const serviceJsonLd = {
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Paneles de gestión a medida para pymes: clientes, incidencias, agenda, documentación y métricas en un solo sitio, integrados con las herramientas existentes. Desde 2.000 €, propiedad del cliente.",
+    "description": "Paneles de gestión a medida para pymes: clientes, incidencias, agenda, documentación y métricas en un solo sitio, integrados con las herramientas existentes. Desde 3.000 €, propiedad del cliente.",
 };
 
 const capacidades = [
@@ -199,7 +199,7 @@ export default function PanelesPage() {
                                 <span>Integrado con tus herramientas</span>
                                 <span>Accesos por rol · protección de datos desde el diseño</span>
                                 <span>Por partes, en 4 – 8 semanas</span>
-                                <span className="pa2-dato-precio">Desde 2.000 € · sin cuota por usuario</span>
+                                <span className="pa2-dato-precio">Desde 3.000 € · sin cuota por usuario</span>
                             </div>
                             <div className="pa2-enlaces">
                                 <a href="#capacidades" className="pa2-enlace">Ver qué hace por dentro ↓</a>
@@ -234,7 +234,7 @@ export default function PanelesPage() {
                 <div className="container">
                     <div className="pa2-cifras">
                         <div className="pa2-cifra">
-                            <span className="pa2-cifra-num">desde 2.000 €</span>
+                            <span className="pa2-cifra-num">desde 3.000 €</span>
                             <span className="pa2-cifra-lab">Panel de un área del negocio</span>
                         </div>
                         <div className="pa2-cifra">

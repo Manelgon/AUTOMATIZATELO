@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "Un flujo concreto — por ejemplo, las facturas de proveedores entrando solas a tu sistema — desde 500 €. El circuito documental completo (entrada, extracción, registro y generación de tus propios documentos) suele ir en proyectos desde 2.000 €. Precio cerrado por escrito antes de empezar.",
+        answer: "Un flujo concreto — por ejemplo, las facturas de proveedores entrando solas a tu sistema — desde 500 €. El circuito documental completo (entrada, extracción, registro y generación de tus propios documentos) suele ir en proyectos desde 3.000 €. Precio cerrado por escrito antes de empezar.",
     },
     {
         question: "¿Cuánto se tarda en tenerlo funcionando?",
@@ -226,7 +226,7 @@ export default function ExtraccionDatosPage() {
                             <span className="do2-cifra-lab">Un flujo de entrada</span>
                         </div>
                         <div className="do2-cifra">
-                            <span className="do2-cifra-num">desde 2.000 €</span>
+                            <span className="do2-cifra-num">desde 3.000 €</span>
                             <span className="do2-cifra-lab">El circuito documental completo</span>
                         </div>
                         <div className="do2-cifra">

@@ -10,7 +10,7 @@ import { migas, curso } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Formación en IA in-company con certificado",
     description:
-        "Formación in-company con certificado: el curso estrella (Art. 4 + vuestra herramienta) y cursos de ChatGPT, Copilot, Gemini y Claude. Desde 600 €.",
+        "Formación in-company con certificado: el curso estrella (Art. 4 + vuestra herramienta) y cursos de ChatGPT, Copilot, Gemini y Claude. Desde 1.800 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/empresas" },
     openGraph: {
         title: "Formación en IA in-company: curso estrella y catálogo",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "¿Cuánto cuesta formar a mi equipo?",
-        answer: "Un taller intensivo de un día (8 horas) cuesta entre 900 € y 1.400 €. Un programa in-company de 16 horas repartidas en varias semanas, desde 2.400 €. El bloque de alfabetización del Art. 4 (4-8 horas), desde 600 €. Y un curso e-learning a medida en SCORM para tu plataforma, desde 1.900 €. El precio final depende del número de participantes y la modalidad, y se cierra en la propuesta.",
+        answer: "Un taller intensivo de un día (8 horas) cuesta entre 1.400 € y 2.000 €. Un programa in-company de 20 horas repartidas en cuatro semanas, desde 3.500 €. El bloque de alfabetización del Art. 4, desde 750 € en su formato esencial de 4 horas y desde 1.200 € en jornada completa. Y un curso e-learning a medida en SCORM para tu plataforma, desde 2.400 €. El precio final depende del número de participantes y la modalidad, y se cierra en la propuesta.",
     },
     {
         question: "¿Qué evidencia queda para acreditar el Art. 4?",
@@ -194,7 +194,7 @@ export default function FormacionEmpresasPage() {
                                 <span>Desde 4 + 4 h</span>
                                 <span>Presencial · aula virtual · SCORM</span>
                                 <span>Certificado nominal</span>
-                                <span className="fe-dato-precio">Desde 1.200 € · cerrado en la propuesta</span>
+                                <span className="fe-dato-precio">Desde 1.800 € · cerrado en la propuesta</span>
                             </div>
                             <div className="fe-precios-linea">
                                 <Link href="/formacion/ai-act" className="fe-precios-boton">Ver la alfabetización · Art. 4 →</Link>
@@ -242,15 +242,15 @@ export default function FormacionEmpresasPage() {
                 <div className="container">
                     <div className="fe-cifras">
                         <div className="fe-cifra">
-                            <span className="fe-cifra-valor">desde 600 €</span>
+                            <span className="fe-cifra-valor">desde 750 €</span>
                             <span className="fe-cifra-etiqueta">Alfabetización · Art. 4</span>
                         </div>
                         <div className="fe-cifra">
-                            <span className="fe-cifra-valor">desde 900 €</span>
+                            <span className="fe-cifra-valor">desde 1.400 €</span>
                             <span className="fe-cifra-etiqueta">Curso por herramienta</span>
                         </div>
                         <div className="fe-cifra">
-                            <span className="fe-cifra-valor">desde 1.200 €</span>
+                            <span className="fe-cifra-valor">desde 1.800 €</span>
                             <span className="fe-cifra-etiqueta">★ Curso estrella · 4+4 h</span>
                         </div>
                     </div>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://automatizatelo.com/sectores/despachos" },
     openGraph: {
         title: "IA para tu despacho: formación práctica con tus casos reales",
-        description: "Talleres para el equipo, protección del secreto profesional y la documentación de las medidas del Art. 4. Desde 600 €.",
+        description: "Talleres para el equipo, protección del secreto profesional y la documentación de las medidas del Art. 4. Desde 750 €.",
         url: "https://automatizatelo.com/sectores/despachos",
     },
 };
@@ -29,7 +29,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "Las tarifas generales de formación: el bloque de alfabetización del Art. 4 (4-8 horas, toda la plantilla), desde 600 €. Un taller intensivo de un día adaptado al despacho, entre 900 € y 1.400 €. Un programa de 16 horas en varias semanas, desde 2.400 €. Con certificado nominal y registro formativo fechado siempre incluidos.",
+        answer: "Las tarifas generales de formación: el bloque de alfabetización del Art. 4 en su formato esencial de 4 horas, desde 750 €; en jornada completa de 8 horas, desde 1.200 €. Un taller intensivo de un día adaptado al despacho, entre 1.400 € y 2.000 €. Un programa de 20 horas en cuatro semanas, desde 3.500 €. Con certificado nominal y registro formativo fechado siempre incluidos.",
     },
     {
         question: "¿Esto cubre la obligación del Art. 4 del AI Act?",
@@ -216,7 +216,7 @@ export default function DespachosPage() {
                                 <span>Presencial · remoto · SCORM</span>
                                 <span>Certificado nominal + registro fechado</span>
                                 <span>Con los casos de tu despacho</span>
-                                <span className="de2-dato-precio">Desde 600 € · taller de día 900–1.400 €</span>
+                                <span className="de2-dato-precio">Desde 750 € · taller de día 1.400–2.000 €</span>
                             </div>
                             <div className="de2-enlaces">
                                 <a href="#programa" className="de2-enlace">Ver qué incluye ↓</a>
@@ -225,7 +225,7 @@ export default function DespachosPage() {
                             </div>
                             <p className="de2-nota">
                                 ¿Solo necesitáis el mínimo legal? La{" "}
-                                <Link href="/formacion/ai-act">alfabetización del Art. 4, desde 600 € →</Link>
+                                <Link href="/formacion/ai-act">alfabetización del Art. 4, desde 750 € →</Link>
                             </p>
                         </div>
                     </div>
@@ -251,15 +251,15 @@ export default function DespachosPage() {
                 <div className="container">
                     <div className="de2-cifras">
                         <div className="de2-cifra">
-                            <span className="de2-cifra-num">desde 600 €</span>
+                            <span className="de2-cifra-num">desde 750 €</span>
                             <span className="de2-cifra-lab">Alfabetización del Art. 4</span>
                         </div>
                         <div className="de2-cifra">
-                            <span className="de2-cifra-num">900 – 1.400 €</span>
+                            <span className="de2-cifra-num">1.400 – 2.000 €</span>
                             <span className="de2-cifra-lab">Taller de un día con vuestros casos</span>
                         </div>
                         <div className="de2-cifra">
-                            <span className="de2-cifra-num">desde 2.400 €</span>
+                            <span className="de2-cifra-num">desde 3.500 €</span>
                             <span className="de2-cifra-lab">Programa de 16 h en varias semanas</span>
                         </div>
                         <div className="de2-cifra">

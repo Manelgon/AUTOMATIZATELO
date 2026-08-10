@@ -10,7 +10,7 @@ import { migas, curso } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Formación en IA para Directivos",
     description:
-        "Formación en IA para dirección: decidir con criterio qué implantar, qué exige el AI Act y cómo gobernar la IA en tu empresa. Sesión ejecutiva desde 600 €.",
+        "Formación en IA para dirección: decidir con criterio qué implantar, qué exige el AI Act y cómo gobernar la IA en tu empresa. Sesión ejecutiva desde 900 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/directivos" },
     openGraph: {
         title: "IA para dirección: criterio para decidir, no humo",
@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "La sesión ejecutiva de medio día para el equipo directivo, desde 600 €. El programa completo de dirección (dos sesiones más plan de gobernanza documentado), desde 1.200 €. Precio cerrado por escrito, como todo lo que hago.",
+        answer: "La sesión ejecutiva de medio día para el equipo directivo, desde 900 €. El programa completo de dirección (dos sesiones más plan de gobernanza documentado), desde 1.800 €. Precio cerrado por escrito, como todo lo que hago.",
     },
     {
         question: "¿Esto cuenta para el Art. 4 del AI Act?",
@@ -172,7 +172,7 @@ export default function DirectivosPage() {
                                 <span>Medio día · 4 h</span>
                                 <span>Presencial o en remoto</span>
                                 <span>Certificado nominal + registro</span>
-                                <span className="di2-dato-precio">Desde 600 € · programa 1.200 €</span>
+                                <span className="di2-dato-precio">Desde 900 € · programa 1.800 €</span>
                             </div>
                             <div className="di2-enlaces">
                                 <a href="#programa" className="di2-enlace">Ver qué cubre ↓</a>
@@ -180,7 +180,7 @@ export default function DirectivosPage() {
                             </div>
                             <p className="di2-nota">
                                 ¿La formación es para el equipo, no para el comité? Entonces es el{" "}
-                                <Link href="/formacion/empresas">curso in-company, desde 900 € →</Link>
+                                <Link href="/formacion/empresas">curso in-company, desde 1.800 € →</Link>
                             </p>
                         </div>
                     </div>
@@ -206,11 +206,11 @@ export default function DirectivosPage() {
                 <div className="container">
                     <div className="di2-cifras">
                         <div className="di2-cifra">
-                            <span className="di2-cifra-num">desde 600 €</span>
+                            <span className="di2-cifra-num">desde 900 €</span>
                             <span className="di2-cifra-lab">Sesión ejecutiva de medio día</span>
                         </div>
                         <div className="di2-cifra">
-                            <span className="di2-cifra-num">desde 1.200 €</span>
+                            <span className="di2-cifra-num">desde 1.800 €</span>
                             <span className="di2-cifra-lab">Programa con plan de gobernanza</span>
                         </div>
                         <div className="di2-cifra">

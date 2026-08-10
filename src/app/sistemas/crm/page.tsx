@@ -10,7 +10,7 @@ import { migas } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Implantación de CRM para Pymes",
     description:
-        "Implanto el CRM adecuado en tu pyme: elección sin comisiones, configuración, migración de datos y automatizaciones para que se rellene solo. Desde 900 €.",
+        "Implanto el CRM adecuado en tu pyme: elección sin comisiones, configuración, migración de datos y automatizaciones para que se rellene solo. Desde 1.200 €.",
     alternates: { canonical: "https://automatizatelo.com/sistemas/crm" },
     openGraph: {
         title: "Implantación de CRM: que tu equipo lo use de verdad",
@@ -26,7 +26,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta implantar un CRM?",
-        answer: "La puesta en marcha — elección, configuración, migración de tus datos y formación básica del equipo — desde 900 €. Con la automatización comercial completa (leads entrando solos, seguimiento automático, avisos y reportes), desde 2.000 € como proyecto de área. Las licencias del CRM las pagas directamente al proveedor, sin sobreprecio. Precio cerrado por escrito antes de empezar.",
+        answer: "La puesta en marcha — elección, configuración, migración de tus datos y formación básica del equipo — desde 1.200 €. Con la automatización comercial completa (leads entrando solos, seguimiento automático, avisos y reportes), desde 3.000 € como proyecto de área. Las licencias del CRM las pagas directamente al proveedor, sin sobreprecio. Precio cerrado por escrito antes de empezar.",
     },
     {
         question: "¿Podéis migrar mis datos desde Excel u otro CRM?",
@@ -70,7 +70,7 @@ const serviceJsonLd = {
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Implantación de CRM en pymes: elección sin comisiones, configuración, migración de datos, automatizaciones que lo alimentan solo y formación del equipo. Desde 900 €.",
+    "description": "Implantación de CRM en pymes: elección sin comisiones, configuración, migración de datos, automatizaciones que lo alimentan solo y formación del equipo. Desde 1.200 €.",
     "offers": [
         { "@type": "Offer", "name": "Puesta en marcha de CRM", "price": "900", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
     ],
@@ -196,7 +196,7 @@ export default function ImplantacionCrmPage() {
                                 <span>Sin comisiones de proveedor</span>
                                 <span>Migración incluida, sin duplicados</span>
                                 <span>Listo en 2 – 3 semanas</span>
-                                <span className="cr2-dato-precio">Desde 900 € · con automatización 2.000 €</span>
+                                <span className="cr2-dato-precio">Desde 1.200 € · con automatización 3.000 €</span>
                             </div>
                             <div className="cr2-enlaces">
                                 <a href="#proceso" className="cr2-enlace">Ver qué incluye ↓</a>
@@ -231,11 +231,11 @@ export default function ImplantacionCrmPage() {
                 <div className="container">
                     <div className="cr2-cifras">
                         <div className="cr2-cifra">
-                            <span className="cr2-cifra-num">desde 900 €</span>
+                            <span className="cr2-cifra-num">desde 1.200 €</span>
                             <span className="cr2-cifra-lab">Puesta en marcha con migración</span>
                         </div>
                         <div className="cr2-cifra">
-                            <span className="cr2-cifra-num">desde 2.000 €</span>
+                            <span className="cr2-cifra-num">desde 3.000 €</span>
                             <span className="cr2-cifra-lab">Con la automatización comercial</span>
                         </div>
                         <div className="cr2-cifra">

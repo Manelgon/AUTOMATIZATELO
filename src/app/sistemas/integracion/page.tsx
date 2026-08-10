@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta conectar dos aplicaciones?",
-        answer: "Una integración concreta — por ejemplo, que los formularios de tu web creen el contacto en el CRM y avisen al comercial — desde 500 € con precio cerrado por escrito. Integrar varias herramientas de un área (comercial, administración) desde 2.000 €. Sin permanencia, y los flujos quedan en tu propiedad, documentados.",
+        answer: "Una integración concreta — por ejemplo, que los formularios de tu web creen el contacto en el CRM y avisen al comercial — desde 500 € con precio cerrado por escrito. Integrar varias herramientas de un área (comercial, administración) desde 3.000 €. Sin permanencia, y los flujos quedan en tu propiedad, documentados.",
     },
     {
         question: "¿Puedes conectar mi CRM con la facturación?",
@@ -199,7 +199,7 @@ export default function IntegracionSistemasPage() {
                                 <span>Sin cambiar de herramientas</span>
                                 <span>Reintentos y aviso si algo falla</span>
                                 <span>En marcha en 1 – 2 semanas</span>
-                                <span className="in2-dato-precio">Desde 500 € · un área desde 2.000 €</span>
+                                <span className="in2-dato-precio">Desde 500 € · un área desde 3.000 €</span>
                             </div>
                             <div className="in2-enlaces">
                                 <a href="#conexiones" className="in2-enlace">Ver conexiones típicas ↓</a>
@@ -238,7 +238,7 @@ export default function IntegracionSistemasPage() {
                             <span className="in2-cifra-lab">Una integración concreta</span>
                         </div>
                         <div className="in2-cifra">
-                            <span className="in2-cifra-num">desde 2.000 €</span>
+                            <span className="in2-cifra-num">desde 3.000 €</span>
                             <span className="in2-cifra-lab">Las herramientas de un área</span>
                         </div>
                         <div className="in2-cifra">

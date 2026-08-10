@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta automatizar un proceso?",
-        answer: "Una automatización concreta (por ejemplo, la entrada de facturas), desde 500 € — con el precio final cerrado por escrito en la propuesta. Automatizar varios procesos del negocio, desde 2.000 €. Siempre sin permanencia y con el código y los datos en tu propiedad.",
+        answer: "Una automatización concreta (por ejemplo, la entrada de facturas), desde 500 € — con el precio final cerrado por escrito en la propuesta. Automatizar varios procesos del negocio, desde 3.000 €. Siempre sin permanencia y con el código y los datos en tu propiedad.",
     },
     {
         question: "¿Cuánto se tarda?",
@@ -120,9 +120,9 @@ const fugas = [
 const piezas = [
     { href: "/sistemas/documentos", badge: "La estrella", t: "Facturas y documentos", d: "Los que llegan se leen solos; los tuyos se generan solos, con tu plantilla.", datos: "Desde 500 €", foto: "/escribiendo-ventana.webp" },
     { href: "/sistemas/ventas", badge: "Del lead al cobro", t: "Automatización de ventas", d: "Respuesta inmediata, seguimiento que no se olvida y facturación sola.", datos: "Desde 500 €", foto: "/ecommerce-hero.webp" },
-    { href: "/sistemas/crm", badge: "Sin comisiones", t: "CRM que se alimenta solo", d: "Elegido según tu caso, migrado, y con automatizaciones que lo mantienen vivo.", datos: "Desde 900 €", foto: "/despachos.webp" },
-    { href: "/sistemas/paneles", badge: "A medida", t: "Paneles de gestión", d: "Tu negocio entero en una pantalla, integrado con lo que ya usas.", datos: "Desde 2.000 €", foto: "/fincas-hero.webp" },
-    { href: "/sistemas/chatbots-whatsapp", badge: "API oficial", t: "Chatbots — WhatsApp y web", d: "Atención 24/7 conectada a tus sistemas y con escalado a persona.", datos: "Desde 2.000 €", foto: "/clinicas-hero.webp" },
+    { href: "/sistemas/crm", badge: "Sin comisiones", t: "CRM que se alimenta solo", d: "Elegido según tu caso, migrado, y con automatizaciones que lo mantienen vivo.", datos: "Desde 1.200 €", foto: "/despachos.webp" },
+    { href: "/sistemas/paneles", badge: "A medida", t: "Paneles de gestión", d: "Tu negocio entero en una pantalla, integrado con lo que ya usas.", datos: "Desde 3.000 €", foto: "/fincas-hero.webp" },
+    { href: "/sistemas/chatbots-whatsapp", badge: "API oficial", t: "Chatbots — WhatsApp y web", d: "Atención 24/7 conectada a tus sistemas y con escalado a persona.", datos: "Desde 3.000 €", foto: "/clinicas-hero.webp" },
     { href: "/sistemas/integracion", badge: "Todo conectado", t: "Integración de sistemas", d: "Tus herramientas pasándose los datos solas: CRM, facturación, correo, Excel.", datos: "Desde 500 €", foto: "/equipos-directivos.webp" },
 ];
 
@@ -257,7 +257,7 @@ export default function AutomatizacionPage() {
                             <span className="si2-cifra-lab">Una automatización concreta</span>
                         </div>
                         <div className="si2-cifra">
-                            <span className="si2-cifra-num">desde 2.000 €</span>
+                            <span className="si2-cifra-num">desde 3.000 €</span>
                             <span className="si2-cifra-lab">Un área completa del negocio</span>
                         </div>
                         <div className="si2-cifra">

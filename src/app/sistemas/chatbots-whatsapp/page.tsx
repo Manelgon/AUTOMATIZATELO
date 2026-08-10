@@ -10,7 +10,7 @@ import { migas } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Chatbots para Empresas: WhatsApp y Web",
     description:
-        "Chatbots en WhatsApp (API oficial) y en tu web: citas, avisos y dudas resueltas 24/7, conectados a tu sistema. Desde 2.000 €.",
+        "Chatbots en WhatsApp (API oficial) y en tu web: citas, avisos y dudas resueltas 24/7, conectados a tu sistema. Desde 3.000 €.",
     alternates: { canonical: "https://automatizatelo.com/sistemas/chatbots-whatsapp" },
     openGraph: {
         title: "Chatbot de WhatsApp con API oficial — sin números bloqueados",
@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta un chatbot de WhatsApp?",
-        answer: "El bot forma parte de un proyecto de automatización desde 2.000 €, porque su valor está en conectarlo a tu agenda o tu sistema — un bot que no consulta nada solo contesta bonito. Aparte están las tarifas de conversación de Meta, que son céntimos y se pagan directamente a Meta: sin sobreprecio ni comisión mía, como todo lo que hago.",
+        answer: "El bot forma parte de un proyecto de automatización desde 3.000 €, porque su valor está en conectarlo a tu agenda o tu sistema — un bot que no consulta nada solo contesta bonito. Aparte están las tarifas de conversación de Meta, que son céntimos y se pagan directamente a Meta: sin sobreprecio ni comisión mía, como todo lo que hago.",
     },
     {
         question: "¿Puedo seguir atendiendo yo desde el mismo número?",
@@ -70,7 +70,7 @@ const serviceJsonLd = {
         "url": "https://automatizatelo.com",
     },
     "areaServed": "España",
-    "description": "Chatbots de WhatsApp con la API oficial de WhatsApp Business: citas, avisos y dudas resueltas 24/7, conectados a los sistemas de la empresa y con escalado a persona. Dentro de proyectos desde 2.000 €.",
+    "description": "Chatbots de WhatsApp con la API oficial de WhatsApp Business: citas, avisos y dudas resueltas 24/7, conectados a los sistemas de la empresa y con escalado a persona. Dentro de proyectos desde 3.000 €.",
 };
 
 const capacidades = [
@@ -200,7 +200,7 @@ export default function ChatbotsWhatsappPage() {
                                 <span>API oficial · número verificado</span>
                                 <span>Escalado a persona con contexto</span>
                                 <span>En marcha en 2 – 4 semanas</span>
-                                <span className="cw2-dato-precio">Dentro de proyectos desde 2.000 €</span>
+                                <span className="cw2-dato-precio">Dentro de proyectos desde 3.000 €</span>
                             </div>
                             <div className="cw2-enlaces">
                                 <a href="#api" className="cw2-enlace">API oficial o número bloqueado ↓</a>
@@ -238,7 +238,7 @@ export default function ChatbotsWhatsappPage() {
                 <div className="container">
                     <div className="cw2-cifras">
                         <div className="cw2-cifra">
-                            <span className="cw2-cifra-num">desde 2.000 €</span>
+                            <span className="cw2-cifra-num">desde 3.000 €</span>
                             <span className="cw2-cifra-lab">Proyecto con el bot conectado</span>
                         </div>
                         <div className="cw2-cifra">

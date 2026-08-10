@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta formar al claustro?",
-        answer: "Las tarifas son las mismas que para empresas: taller intensivo de un día (8 horas) entre 900 € y 1.400 €; bloque de alfabetización del Art. 4 (4-8 horas) desde 600 €; curso e-learning a medida en SCORM desde 1.900 €. El precio final depende del tamaño del claustro y la modalidad, y se cierra en la propuesta.",
+        answer: "Las tarifas son las mismas que para empresas: taller de claustro de un día (8 horas) entre 1.100 € y 1.500 €; bloque de alfabetización del Art. 4 desde 750 € en su formato esencial de 4 horas; curso e-learning a medida en SCORM desde 2.400 €. El precio final depende del tamaño del claustro y la modalidad, y se cierra en la propuesta.",
     },
     {
         question: "¿Qué evidencia queda para el centro?",
@@ -230,7 +230,7 @@ export default function CentrosEducativosPage() {
                                 <span>1 día · 8 h (o 4 + 4)</span>
                                 <span>Presencial · remoto · SCORM</span>
                                 <span>Certificado nominal + registro formativo</span>
-                                <span className="ce2-dato-precio">900 – 1.400 € · cerrado en la propuesta</span>
+                                <span className="ce2-dato-precio">1.100 – 1.500 € · cerrado en la propuesta</span>
                             </div>
                             <div className="ce2-enlaces">
                                 <a href="#temario" className="ce2-enlace">Ver el temario completo ↓</a>
@@ -238,7 +238,7 @@ export default function CentrosEducativosPage() {
                             </div>
                             <p className="ce2-nota">
                                 ¿Solo necesitáis el mínimo legal? La{" "}
-                                <Link href="/formacion/ai-act">alfabetización suelta, desde 600 € →</Link>
+                                <Link href="/formacion/ai-act">alfabetización suelta, desde 750 € →</Link>
                             </p>
                         </div>
                     </div>
@@ -303,15 +303,15 @@ export default function CentrosEducativosPage() {
                 <div className="container">
                     <div className="ce2-cifras">
                         <div className="ce2-cifra">
-                            <span className="ce2-cifra-valor">desde 600 €</span>
+                            <span className="ce2-cifra-valor">desde 750 €</span>
                             <span className="ce2-cifra-etiqueta">Alfabetización · Art. 4</span>
                         </div>
                         <div className="ce2-cifra">
-                            <span className="ce2-cifra-valor">900 – 1.400 €</span>
+                            <span className="ce2-cifra-valor">1.100 – 1.500 €</span>
                             <span className="ce2-cifra-etiqueta">Taller de claustro · 1 día</span>
                         </div>
                         <div className="ce2-cifra">
-                            <span className="ce2-cifra-valor">desde 1.900 €</span>
+                            <span className="ce2-cifra-valor">desde 2.400 €</span>
                             <span className="ce2-cifra-etiqueta">Cursos a medida · SCORM</span>
                         </div>
                     </div>

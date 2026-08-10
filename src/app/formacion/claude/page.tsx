@@ -4,7 +4,7 @@ import CursoPage from "@/components/CursoPage";
 export const metadata: Metadata = {
     title: "Curso de Claude para Empresas",
     description:
-        "Taller práctico de Claude: documentos largos, redacción con criterio, proyectos y agentes. Impartido por quien lo usa a diario. Desde 900 €.",
+        "Taller práctico de Claude: documentos largos, redacción con criterio, proyectos y agentes. Impartido por quien lo usa a diario. Desde 1.400 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/claude" },
     openGraph: {
         title: "Claude: la IA que lee lo que las demás no aguantan",
@@ -56,7 +56,7 @@ export default function Pagina() {
                 },
                 {
                     question: "¿Este curso cumple la formación obligatoria del Art. 4?",
-                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.200 €, con certificado nominal y registro formativo fechado para documentarlo.",
+                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.800 €, con certificado nominal y registro formativo fechado para documentarlo.",
                 },
                 {
                     question: "¿Es seguro para un despacho, con el secreto profesional?",

@@ -34,7 +34,7 @@ const faqs = [
     },
     {
         question: "¿Cómo se contrata y cuánto cuesta?",
-        answer: "Hay dos formatos: el taller de 2 a 4 horas por grupo (los bloques que elija el centro) y el curso completo desde 10 horas, que recorre todo el temario. Ambos se imparten en el centro o en aula virtual. El taller parte de 600 € por sesión en el centro — con varios grupos seguidos en la misma jornada sale mejor —, y el curso completo, desde 1.200 €. El precio se cierra por escrito con el programa del centro, según cuántos grupos y qué bloques.",
+        answer: "Hay dos formatos: el taller de 2 a 4 horas por grupo (los bloques que elija el centro) y el curso completo desde 10 horas, que recorre todo el temario. Ambos se imparten en el centro o en aula virtual. El taller se cobra por grupo, 500 € cada uno, con un mínimo de 1.200 € por jornada en el centro — con varios grupos seguidos en la misma jornada sale mejor —, y el curso completo, desde 2.000 €. El precio se cierra por escrito con el programa del centro, según cuántos grupos y qué bloques.",
     },
 ];
 
@@ -233,7 +233,7 @@ export default function AlumnadoPage() {
                                 <span>Taller 2 – 4 h · curso completo desde 10 h</span>
                                 <span>Presencial en el centro · aula virtual</span>
                                 <span>Certificado nominal de finalización</span>
-                                <span className="al-dato-precio">Desde 600 € · curso completo desde 1.200 €</span>
+                                <span className="al-dato-precio">500 € por grupo · curso completo desde 2.000 €</span>
                             </div>
                             <div className="al-enlaces">
                                 <a href="#temario" className="al-enlace">Ver el temario completo ↓</a>

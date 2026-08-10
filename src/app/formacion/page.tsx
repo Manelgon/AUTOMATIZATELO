@@ -10,7 +10,7 @@ import { migas } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Formación en IA para Empresas y Centros",
     description:
-        "Forma a tu equipo o a tu claustro y cubre las medidas del Art. 4 del Reglamento de IA: alfabetización más herramienta, e IA en el aula. Desde 600 €.",
+        "Forma a tu equipo o a tu claustro y cubre las medidas del Art. 4 del Reglamento de IA: alfabetización más herramienta, e IA en el aula. Desde 750 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion" },
     openGraph: {
         title: "Formación en IA para Empresas y Centros Educativos",
@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta formar a mi equipo?",
-        answer: "El bloque de alfabetización del Art. 4 (4-8 horas, toda la plantilla), desde 600 €. El curso estrella —ese bloque más un taller práctico con vuestra herramienta— desde 1.200 €. Un taller de un día por herramienta, entre 900 € y 1.400 €. Un programa in-company de 16 horas, desde 2.400 €. Y un curso e-learning a medida en SCORM, desde 1.900 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
+        answer: "El bloque de alfabetización del Art. 4 en su formato esencial de 4 horas, desde 750 €; en jornada completa de 8 horas, desde 1.200 €. El curso estrella —ese bloque más un taller práctico con vuestra herramienta— desde 1.800 €. Un taller de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas, desde 3.500 €. Y un curso e-learning a medida en SCORM, desde 2.400 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
     },
     {
         question: "¿Qué evidencia documental me queda después?",
@@ -46,7 +46,7 @@ const faqs = [
     },
     {
         question: "¿Podéis formar también al alumnado, no solo al claustro?",
-        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 600 € por sesión en el centro. Muchos centros contratan las dos en la misma jornada.",
+        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 500 € por grupo en el centro. Muchos centros contratan las dos en la misma jornada.",
     },
     {
         question: "¿Podéis producirlo como curso para nuestra propia plataforma?",
@@ -271,19 +271,19 @@ export default function FormacionIaPage() {
                 <div className="container">
                     <div className="fpr-cifras">
                         <div className="fpr-cifra">
-                            <span className="fpr-cifra-valor">desde 600 €</span>
+                            <span className="fpr-cifra-valor">desde 750 €</span>
                             <span className="fpr-cifra-etiqueta">Alfabetización · Art. 4</span>
                         </div>
                         <div className="fpr-cifra">
-                            <span className="fpr-cifra-valor">desde 1.200 €</span>
+                            <span className="fpr-cifra-valor">desde 1.800 €</span>
                             <span className="fpr-cifra-etiqueta">★ Curso estrella · 4 + 4 h</span>
                         </div>
                         <div className="fpr-cifra">
-                            <span className="fpr-cifra-valor">900 – 1.400 €</span>
+                            <span className="fpr-cifra-valor">1.400 – 2.000 €</span>
                             <span className="fpr-cifra-etiqueta">Taller por herramienta · 1 día</span>
                         </div>
                         <div className="fpr-cifra">
-                            <span className="fpr-cifra-valor">desde 1.900 €</span>
+                            <span className="fpr-cifra-valor">desde 2.400 €</span>
                             <span className="fpr-cifra-etiqueta">Curso e-learning (SCORM)</span>
                         </div>
                     </div>

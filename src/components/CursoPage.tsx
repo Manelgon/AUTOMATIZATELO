@@ -139,7 +139,7 @@ export default function CursoPage(p: CursoPageProps) {
                                 <span>Desde 4 h · medio día o día completo</span>
                                 <span>Presencial · aula virtual · SCORM</span>
                                 <span>Certificado nominal + registro formativo</span>
-                                <span className="cp2-dato-precio">Desde 900 € · con el bloque del Art. 4, desde 1.200 €</span>
+                                <span className="cp2-dato-precio">Desde 1.400 € · con el bloque del Art. 4, desde 1.800 €</span>
                             </div>
                             <div className="cp2-enlaces">
                                 <a href="#temario" className="cp2-enlace">Ver el temario completo ↓</a>
@@ -201,19 +201,19 @@ export default function CursoPage(p: CursoPageProps) {
                 <div className="container">
                     <div className="cp2-cifras">
                         <div className="cp2-cifra">
-                            <span className="cp2-cifra-valor">desde 600 €</span>
+                            <span className="cp2-cifra-valor">desde 750 €</span>
                             <span className="cp2-cifra-etiqueta">Alfabetización suelta · Art. 4</span>
                         </div>
                         <div className="cp2-cifra">
-                            <span className="cp2-cifra-valor">desde 900 €</span>
+                            <span className="cp2-cifra-valor">desde 1.400 €</span>
                             <span className="cp2-cifra-etiqueta">Este curso de {p.herramienta}</span>
                         </div>
                         <div className="cp2-cifra">
-                            <span className="cp2-cifra-valor">desde 1.200 €</span>
+                            <span className="cp2-cifra-valor">desde 1.800 €</span>
                             <span className="cp2-cifra-etiqueta">Curso estrella · Art. 4 + herramienta</span>
                         </div>
                         <div className="cp2-cifra">
-                            <span className="cp2-cifra-valor">desde 1.900 €</span>
+                            <span className="cp2-cifra-valor">desde 2.400 €</span>
                             <span className="cp2-cifra-etiqueta">Cursos a medida · SCORM</span>
                         </div>
                     </div>
@@ -302,7 +302,7 @@ export default function CursoPage(p: CursoPageProps) {
                         ¿Quieres además el bloque de alfabetización del Art. 4? Este taller es la sesión
                         práctica del{" "}
                         <Link href="/formacion/empresas">curso estrella</Link>{" "}
-                        (alfabetización + herramienta, desde 1.200 €). Y si la herramienta debe
+                        (alfabetización + herramienta, desde 1.800 €). Y si la herramienta debe
                         quedar además configurada y con política de uso, eso es el{" "}
                         <Link href="/cumplimiento">pilar de cumplimiento</Link>. Lo imparto yo, <Link href="/sobre-mi">Manel Méndez</Link>, y si dudas de cuál te toca, el <Link href="/diagnostico">test de 3 minutos</Link> te orienta. Y si prefieres
                         ver antes lo que sale de todo esto, ahí están los{" "}

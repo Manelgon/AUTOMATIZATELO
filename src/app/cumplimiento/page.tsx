@@ -9,11 +9,11 @@ import { migas } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Cumplimiento del AI Act para Empresas",
     description:
-        "Auditoría del AI Act para pymes: reviso cómo usa IA tu empresa y te entrego informe de riesgos, plan de acción y política de uso. Desde 750 €.",
+        "Auditoría del AI Act para pymes: reviso cómo usa IA tu empresa y te entrego informe de riesgos, plan de acción y política de uso. Desde 950 €.",
     alternates: { canonical: "https://automatizatelo.com/cumplimiento" },
     openGraph: {
         title: "Auditoría IA para pymes: cumplimiento del AI Act sin sustos",
-        description: "Informe de riesgos, plan de acción, política de uso de IA y formación del Art. 4. Precio público, desde 750 €.",
+        description: "Informe de riesgos, plan de acción, política de uso de IA y formación del Art. 4. Precio público, desde 950 €.",
         url: "https://automatizatelo.com/cumplimiento",
     },
 };
@@ -29,7 +29,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "El diagnóstico con informe y plan de acción, desde 750 €. El pack completo — auditoría + política de uso de IA personalizada + formación de alfabetización del Art. 4 con certificados — desde 1.800 €. La formación del pack es el mismo bloque de alfabetización que puedes contratar suelto desde 600 €: en el pack va incluido, junto con la política. El precio final depende del tamaño de la empresa y del número de herramientas en uso, y se cierra por escrito antes de empezar.",
+        answer: "El diagnóstico con informe y plan de acción, desde 950 €. El pack completo — auditoría + política de uso de IA personalizada + formación de alfabetización del Art. 4 con certificados — desde 2.400 €. La formación del pack es el mismo bloque de alfabetización que puedes contratar suelto desde 750 €: en el pack va incluido, junto con la política. El precio final depende del tamaño de la empresa y del número de herramientas en uso, y se cierra por escrito antes de empezar.",
     },
     {
         question: "¿La auditoría es una certificación oficial?",
@@ -230,7 +230,7 @@ export default function AuditoriaIAPage() {
                                 <span>1 – 2 semanas</span>
                                 <span>Informe + plan de acción</span>
                                 <span>Política y formación en el pack</span>
-                                <span className="cu2-dato-precio">Desde 750 € · pack desde 1.800 €</span>
+                                <span className="cu2-dato-precio">Desde 950 € · pack desde 2.400 €</span>
                             </div>
                             <div className="cu2-enlaces">
                                 <a href="#proceso" className="cu2-enlace">Ver cómo transcurre ↓</a>
@@ -239,7 +239,7 @@ export default function AuditoriaIAPage() {
                             </div>
                             <p className="cu2-nota">
                                 ¿Solo necesitáis cubrir el Art. 4? El{" "}
-                                <Link href="/formacion/ai-act">bloque de alfabetización, desde 600 € →</Link>
+                                <Link href="/formacion/ai-act">bloque de alfabetización, desde 750 € →</Link>
                             </p>
                         </div>
                     </div>
@@ -267,15 +267,15 @@ export default function AuditoriaIAPage() {
                 <div className="container">
                     <div className="cu2-cifras">
                         <div className="cu2-cifra">
-                            <span className="cu2-cifra-valor">desde 750 €</span>
+                            <span className="cu2-cifra-valor">desde 950 €</span>
                             <span className="cu2-cifra-etiqueta">Diagnóstico · informe y plan</span>
                         </div>
                         <div className="cu2-cifra">
-                            <span className="cu2-cifra-valor">desde 1.800 €</span>
+                            <span className="cu2-cifra-valor">desde 2.400 €</span>
                             <span className="cu2-cifra-etiqueta">Pack · + política + formación</span>
                         </div>
                         <div className="cu2-cifra">
-                            <span className="cu2-cifra-valor">desde 900 €</span>
+                            <span className="cu2-cifra-valor">desde 1.200 €</span>
                             <span className="cu2-cifra-etiqueta">Implantación de herramientas</span>
                         </div>
                         <div className="cu2-cifra">
@@ -391,7 +391,7 @@ export default function AuditoriaIAPage() {
                             sale de tu caso, no de mi bolsillo.
                         </p>
                         <p className="cu2-impl-sub">
-                            Puesta en marcha <strong>desde 900 €</strong>; las licencias las pagas
+                            Puesta en marcha <strong>desde 1.200 €</strong>; las licencias las pagas
                             directamente al proveedor, sin sobreprecio.
                         </p>
                         <div className="cu2-enlaces">

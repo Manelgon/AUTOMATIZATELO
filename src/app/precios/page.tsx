@@ -9,11 +9,11 @@ import { migas } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Precios: Implantación de IA para Pymes",
     description:
-        "Cuánto cuesta implantar IA en tu pyme: formación desde 600 €, auditoría del AI Act desde 750 € y automatización desde 500 €. Precio cerrado por escrito.",
+        "Cuánto cuesta implantar IA en tu pyme: formación desde 750 €, auditoría del AI Act desde 950 € y automatización desde 500 €. Precio cerrado por escrito.",
     alternates: { canonical: "https://automatizatelo.com/precios" },
     openGraph: {
         title: "¿Cuánto cuesta automatizar tu negocio? Precios públicos",
-        description: "Automatización desde 500 €, formación desde 600 €. Precio y plazo cerrados antes de empezar, sin permanencia.",
+        description: "Automatización desde 500 €, formación desde 750 €. Precio y plazo cerrados antes de empezar, sin permanencia.",
         url: "https://automatizatelo.com/precios",
     },
 };
@@ -35,19 +35,27 @@ interface Fila {
 
 const formar: Fila[] = [
     {
-        nombre: "Alfabetización en IA (Art. 4)",
-        formato: "4–8 h · toda la plantilla",
+        nombre: "Alfabetización en IA (Art. 4) · esencial",
+        formato: "4 h · toda la plantilla",
         incluye: "El bloque con el que se cubren las medidas del Art. 4: qué es la IA, riesgos y uso responsable. Certificado nominal y registro formativo fechado.",
-        precio: "desde 600 €",
-        min: 600,
+        precio: "desde 750 €",
+        min: 750,
+        href: "/formacion/ai-act",
+    },
+    {
+        nombre: "Alfabetización en IA (Art. 4) · completa",
+        formato: "8 h · toda la plantilla",
+        incluye: "El mismo bloque con la tarde de práctica aplicada: casos reales de cada puesto y el plan de acción individual que se revisa después.",
+        precio: "desde 1.200 €",
+        min: 1200,
         href: "/formacion/ai-act",
     },
     {
         nombre: "Alfabetización + herramienta",
         formato: "4 + 4 h · adaptable por equipo",
         incluye: "El bloque de alfabetización del Art. 4 más un taller práctico con la herramienta que ya usáis, sobre vuestros casos reales.",
-        precio: "desde 1.200 €",
-        min: 1200,
+        precio: "desde 1.800 €",
+        min: 1800,
         href: "/formacion/empresas",
         estrella: true,
     },
@@ -55,50 +63,58 @@ const formar: Fila[] = [
         nombre: "Taller por herramienta",
         formato: "1 día · 8 h",
         incluye: "ChatGPT, Copilot 365, Gemini + NotebookLM o Claude a fondo. Cada rol sale con casos montados para su trabajo.",
-        precio: "900 – 1.400 €",
-        min: 900,
-        max: 1400,
+        precio: "1.400 – 2.000 €",
+        min: 1400,
+        max: 2000,
         href: "/formacion",
     },
     {
         nombre: "Programa in-company",
-        formato: "16 h · 4 semanas",
+        formato: "20 h · 4 semanas",
         incluye: "Para mandos y equipos completos, con trabajo real aplicado entre sesión y sesión y evidencia documental completa.",
-        precio: "desde 2.400 €",
-        min: 2400,
+        precio: "desde 3.500 €",
+        min: 3500,
+        href: "/formacion/empresas",
+    },
+    {
+        nombre: "In-company a medida",
+        formato: "4 – 40 h · varios departamentos",
+        incluye: "Un itinerario distinto por departamento: dirección decide, operaciones se quita trabajo y RRHH guarda la evidencia. Las horas se reparten según el peso de cada área.",
+        precio: "por alcance",
+        min: 0,
         href: "/formacion/empresas",
     },
     {
         nombre: "Sesión ejecutiva para dirección",
         formato: "medio día · 4 h",
-        incluye: "Qué implantar, qué exige la ley y cómo gobernarlo, en horas de directivo. El programa completo de dirección, desde 1.200 €.",
-        precio: "desde 600 €",
-        min: 600,
+        incluye: "Qué implantar, qué exige la ley y cómo gobernarlo, en horas de directivo. El programa completo de dirección, desde 1.800 €.",
+        precio: "desde 900 €",
+        min: 900,
         href: "/formacion/directivos",
     },
     {
         nombre: "Formación de claustro",
         formato: "1 día · 8 h (o 4 + 4)",
         incluye: "Para colegios, institutos y FP: práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro. Presencial, en remoto o SCORM.",
-        precio: "900 – 1.400 €",
-        min: 900,
-        max: 1400,
+        precio: "1.100 – 1.500 €",
+        min: 1100,
+        max: 1500,
         href: "/formacion/centros-educativos",
     },
     {
         nombre: "Taller de IA para alumnado",
-        formato: "2–4 h por grupo · curso desde 10 h",
-        incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El curso completo, desde 1.200 €. Sin cuentas de pago y con la protección de datos de menores por delante.",
-        precio: "desde 600 €",
-        min: 600,
+        formato: "2 h por grupo · mínimo 1.200 € por jornada",
+        incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El curso completo, desde 2.000 €. Sin cuentas de pago y con la protección de datos de menores por delante.",
+        precio: "500 € por grupo",
+        min: 500,
         href: "/formacion/alumnado",
     },
     {
         nombre: "Curso e-learning a medida (SCORM)",
         formato: "producción única",
         incluye: "Vuestra formación producida como curso e instalada en vuestra plataforma para siempre, con registro individual por alumno. También en marca blanca.",
-        precio: "desde 1.900 €",
-        min: 1900,
+        precio: "desde 2.400 €",
+        min: 2400,
         href: "/formacion/cursos-a-medida",
     },
 ];
@@ -108,16 +124,16 @@ const cumplir: Fila[] = [
         nombre: "Diagnóstico AI Act",
         formato: "entrega en 1–2 semanas",
         incluye: "Inventario de la IA en uso real, clasificación de riesgos según el Reglamento e informe con plan de acción priorizado.",
-        precio: "desde 750 €",
-        min: 750,
+        precio: "desde 950 €",
+        min: 950,
         href: "/cumplimiento",
     },
     {
         nombre: "Pack cumplimiento",
         formato: "diagnóstico + política + formación",
         incluye: "Todo el diagnóstico, la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados nominales. El expediente completo.",
-        precio: "desde 1.800 €",
-        min: 1800,
+        precio: "desde 2.400 €",
+        min: 2400,
         href: "/cumplimiento",
         estrella: true,
     },
@@ -125,8 +141,8 @@ const cumplir: Fila[] = [
         nombre: "Implantación segura de herramientas",
         formato: "ChatGPT · Copilot · Gemini",
         incluye: "Elección sin comisiones, configuración de privacidad y uso de datos según el plan contratado, casos de uso por puesto y arranque del equipo. Licencias aparte, sin sobreprecio.",
-        precio: "desde 900 €",
-        min: 900,
+        precio: "desde 1.200 €",
+        min: 1200,
         href: "/cumplimiento",
     },
 ];
@@ -144,16 +160,16 @@ const automatizar: Fila[] = [
         nombre: "Poner en marcha",
         formato: "la primera pieza seria",
         incluye: "El CRM implantado y migrado (HubSpot, Pipedrive, Zoho o a medida, sin comisiones) o las herramientas de IA configuradas con el equipo arrancado.",
-        precio: "desde 900 €",
-        min: 900,
+        precio: "desde 1.200 €",
+        min: 1200,
         href: "/sistemas/crm",
     },
     {
         nombre: "Un área completa",
         formato: "3 meses de soporte incluido",
         incluye: "Ventas, clientes u operaciones funcionando solos: hasta 5 procesos, chatbot de WhatsApp o web conectado a tus sistemas, panel a medida y documentos en los dos sentidos.",
-        precio: "desde 2.000 €",
-        min: 2000,
+        precio: "desde 3.000 €",
+        min: 3000,
         href: "/sistemas",
         estrella: true,
     },
@@ -193,11 +209,11 @@ const variables = [
 const faqs = [
     {
         question: "¿Cuánto cuesta automatizar un proceso en una pyme?",
-        answer: "Una automatización suelta y concreta — por ejemplo, unos avisos automáticos o las facturas entrando solas — desde 500 €, con entrega en unas dos semanas. Poner en marcha la primera pieza seria (las herramientas de IA configuradas o un CRM implantado y migrado) parte de 900 €. Automatizar un área completa (ventas, clientes u operaciones) parte de 2.000 €, y el sistema integral para toda la empresa, de 8.000 €.",
+        answer: "Una automatización suelta y concreta — por ejemplo, unos avisos automáticos o las facturas entrando solas — desde 500 €, con entrega en unas dos semanas. Poner en marcha la primera pieza seria (las herramientas de IA configuradas o un CRM implantado y migrado) parte de 1.200 €. Automatizar un área completa (ventas, clientes u operaciones) parte de 3.000 €, y el sistema integral para toda la empresa, de 8.000 €.",
     },
     {
         question: "¿Cuánto cuesta un chatbot de atención al cliente?",
-        answer: "Un bot de atención por WhatsApp o web no suele ir solo: forma parte de un proyecto de automatización de área, desde 2.000 €, porque necesita conectarse a tu agenda, CRM o catálogo para ser útil de verdad. Un bot sin sistema detrás contesta bonito pero no resuelve nada.",
+        answer: "Un bot de atención por WhatsApp o web no suele ir solo: forma parte de un proyecto de automatización de área, desde 3.000 €, porque necesita conectarse a tu agenda, CRM o catálogo para ser útil de verdad. Un bot sin sistema detrás contesta bonito pero no resuelve nada.",
     },
     {
         question: "¿Por qué los precios son \"desde\"? ¿Cuándo sé el precio final?",
@@ -209,15 +225,15 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta la formación en IA para empresas?",
-        answer: "El bloque de alfabetización del Art. 4 del AI Act (4-8 horas), desde 600 €. Un taller intensivo de un día (8 horas), entre 900 € y 1.400 €. Un programa in-company de 16 horas en varias semanas, desde 2.400 €. Y un curso e-learning a medida en SCORM para tu plataforma, desde 1.900 €. Siempre con certificado nominal y registro formativo.",
+        answer: "El bloque de alfabetización del Art. 4 del AI Act en su formato esencial de 4 horas, desde 750 €; en jornada completa de 8 horas, desde 1.200 €. Un taller intensivo de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas repartidas en cuatro semanas, desde 3.500 €. Y un curso e-learning a medida en SCORM para tu plataforma, desde 2.400 €. Siempre con certificado nominal y registro formativo.",
     },
     {
         question: "¿Cuánto cuesta la auditoría de cumplimiento del AI Act?",
-        answer: "El diagnóstico — inventario de la IA en uso, clasificación de riesgos, informe y plan de acción — desde 750 €. El pack completo, que añade la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados, desde 1.800 €. El precio final depende del tamaño de la empresa y de las herramientas en uso.",
+        answer: "El diagnóstico — inventario de la IA en uso, clasificación de riesgos, informe y plan de acción — desde 950 €. El pack completo, que añade la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados, desde 2.400 €. El precio final depende del tamaño de la empresa y de las herramientas en uso.",
     },
     {
         question: "¿Y la formación para colegios y para el alumnado?",
-        answer: "La formación de claustro tiene la misma tarifa que la de empresas: un día de 8 horas entre 900 € y 1.400 €, o el bloque de alfabetización del Art. 4 desde 600 €. El taller para alumnado parte de 600 € por sesión en el centro (con varios grupos seguidos en la misma jornada sale mejor) y el curso completo, desde 1.200 €.",
+        answer: "La formación de claustro tiene la misma tarifa que la de empresas: un día de 8 horas entre 1.100 € y 1.500 €, o el bloque de alfabetización del Art. 4 desde 750 €. El taller para alumnado se cobra por grupo, 500 € cada uno, con un mínimo de 1.200 € por jornada en el centro — con varios grupos seguidos sale mejor —, y el curso completo, desde 2.000 €.",
     },
     {
         question: "¿El código y los datos son míos?",
@@ -236,13 +252,17 @@ function oferta(f: Fila) {
         "description": f.incluye,
         "url": SITIO + f.href,
         "priceCurrency": "EUR",
-        "priceSpecification": {
-            "@type": "PriceSpecification",
-            "priceCurrency": "EUR",
-            "minPrice": f.min,
-            ...(f.max ? { "maxPrice": f.max } : {}),
-            "valueAddedTaxIncluded": false,
-        },
+        // el in-company a medida se presupuesta por alcance: no lleva precio,
+        // y declarar 0 € sería declarar algo falso
+        ...(f.min > 0 ? {
+            "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "EUR",
+                "minPrice": f.min,
+                ...(f.max ? { "maxPrice": f.max } : {}),
+                "valueAddedTaxIncluded": false,
+            },
+        } : {}),
         "availability": "https://schema.org/InStock",
         "areaServed": { "@type": "Country", "name": "España" },
         "itemOffered": {
@@ -379,8 +399,8 @@ export default function PreciosPage() {
                         </h1>
                         <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: 0, maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                             Publico las tarifas porque es la primera pregunta de todo el mundo.
-                            Quince productos con su precio de partida a la vista: <strong style={{ color: "#f6c39c" }}>formar</strong> desde
-                            600 €, <strong style={{ color: "#f6c39c" }}>cumplir</strong> desde 750 € y{" "}
+                            Diecisiete productos con su precio de partida a la vista: <strong style={{ color: "#f6c39c" }}>formar</strong> desde
+                            750 €, <strong style={{ color: "#f6c39c" }}>cumplir</strong> desde 950 € y{" "}
                             <strong style={{ color: "#f6c39c" }}>automatizar</strong> desde 500 €. El precio final
                             se cierra por escrito antes de empezar y no hay permanencia.
                         </p>
@@ -420,11 +440,11 @@ export default function PreciosPage() {
                             <span className="pp2-cifra-etiqueta">Una automatización concreta</span>
                         </div>
                         <div className="pp2-cifra">
-                            <span className="pp2-cifra-valor">desde 600 €</span>
+                            <span className="pp2-cifra-valor">desde 750 €</span>
                             <span className="pp2-cifra-etiqueta">Formar a la plantilla</span>
                         </div>
                         <div className="pp2-cifra">
-                            <span className="pp2-cifra-valor">desde 750 €</span>
+                            <span className="pp2-cifra-valor">desde 950 €</span>
                             <span className="pp2-cifra-etiqueta">Cumplir el AI Act</span>
                         </div>
                         <div className="pp2-cifra">
@@ -444,7 +464,7 @@ export default function PreciosPage() {
                 id="formar"
                 num="01 · Formar"
                 titulo="Que tu equipo use la IA con criterio"
-                resumen="8 formaciones · desde 600 €"
+                resumen="10 formaciones · desde 750 €"
                 sub="Para empresas, despachos y centros educativos. El precio final depende del número de participantes y de la modalidad, y se cierra en la propuesta."
                 filas={formar}
                 pie={<>
@@ -458,7 +478,7 @@ export default function PreciosPage() {
                 id="cumplir"
                 num="02 · Cumplir"
                 titulo="Que la ley no te pille a contrapié"
-                resumen="3 servicios · desde 750 €"
+                resumen="3 servicios · desde 950 €"
                 sub="Para saber dónde está tu empresa y qué le falta — con evidencia documental, no con miedo."
                 filas={cumplir}
                 pie={<>
