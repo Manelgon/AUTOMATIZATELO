@@ -132,8 +132,8 @@ export default function CursoPage(p: CursoPageProps) {
                             <div className="cp2-datos">
                                 <span>Desde 4 h · medio día o día completo</span>
                                 <span>Presencial · aula virtual · SCORM</span>
-                                <span>Certificado + registro formativo</span>
-                                <span className="cp2-dato-precio">Desde 900 € · con Art. 4, 1.200 €</span>
+                                <span>Certificado nominal + registro formativo</span>
+                                <span className="cp2-dato-precio">Desde 900 € · con el bloque del Art. 4, desde 1.200 €</span>
                             </div>
                             <div className="cp2-enlaces">
                                 <a href="#temario" className="cp2-enlace">Ver el temario completo ↓</a>

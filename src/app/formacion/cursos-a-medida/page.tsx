@@ -40,7 +40,7 @@ const faqs = [
     },
     {
         question: "¿El curso sirve como evidencia del Art. 4 del AI Act?",
-        answer: "Si el curso es de alfabetización en IA, sí: el SCORM registra qué alumno lo completó y cuándo, que es exactamente el registro formativo fechado que pide el artículo 4 del Reglamento Europeo de IA. Para plantillas grandes o distribuidas suele ser el formato más práctico de cumplir.",
+        answer: "Puede formar parte de la documentación de las medidas que adopta tu organización. El Art. 4 no exige un certificado oficial ni un formato concreto de registro: pide medidas de alfabetización adaptadas al contexto y poder demostrarlas. El SCORM deja registrado qué alumno completó el curso y cuándo, que es exactamente el tipo de registro interno que sirve para documentarlo — y en plantillas grandes o distribuidas suele ser el formato más práctico.",
     },
 ];
 

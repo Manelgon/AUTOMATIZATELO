@@ -47,7 +47,7 @@ export default function Pagina() {
                 { titulo: "Vivís en Microsoft 365", desc: "Word, Excel, Outlook y Teams a diario: la IA que ya está dentro es la primera que hay que dominar." },
                 { titulo: "Pagáis licencias que nadie exprime", desc: "Copilot contratado y medio parado: este taller es la diferencia entre pagarlo y amortizarlo." },
                 { titulo: "Muchas reuniones, muchas actas", desc: "Si el día se va en Teams, las actas y acuerdos automáticos devuelven horas cada semana." },
-                { titulo: "Dirección prudente con los datos", desc: "Todo se queda dentro del tenant de Microsoft: el argumento que convence a IT y a gerencia." },
+                { titulo: "Dirección prudente con los datos", desc: "Qué puede consultar Copilot, quién puede verlo y cómo se configura el tenant: el argumento que convence a IT y a gerencia." },
             ]}
             faqs={[
                 {
@@ -56,7 +56,7 @@ export default function Pagina() {
                 },
                 {
                     question: "¿Este curso cumple la formación obligatoria del Art. 4?",
-                    answer: "Este taller es la parte práctica. Para cumplir el Art. 4 hace falta también el bloque de alfabetización (riesgos, marco legal, uso responsable) — juntos forman el curso estrella, desde 1.200€, con certificado nominal y registro formativo como evidencia.",
+                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.200€, con certificado nominal y registro formativo fechado para documentarlo.",
                 },
                 {
                     question: "¿Qué pasa con los permisos y la confidencialidad interna?",

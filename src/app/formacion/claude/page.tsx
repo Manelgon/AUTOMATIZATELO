@@ -23,7 +23,7 @@ export default function Pagina() {
                 Claude: la IA que lee lo que{" "}<br />
                 <span style={{ color: "#f6c39c" }}>las demás no aguantan</span>
             </>}
-            subtitulo="Contratos de cuarenta páginas, expedientes enteros, redacción que no suena a robot y agentes capaces de sacar una tarea completa de principio a fin. Claude es la herramienta preferida de quien trabaja con información compleja — y la que yo uso a diario."
+            subtitulo="Contratos de cuarenta páginas, expedientes enteros, redacción que no suena a robot y agentes capaces de sacar una tarea completa de principio a fin. Claude está hecho para documentos largos, contexto complejo y redacción profesional — y es la que yo uso a diario."
             enCorto="Curso de Claude para empresas: análisis de documentos largos, redacción técnica y profesional, proyectos con contexto propio y agentes que ejecutan tareas completas."
             paraQuien="Para despachos, asesorías, consultores y cualquier equipo que viva entre documentos largos e información compleja. Si tu trabajo es leer, analizar y redactar, esta es tu herramienta."
             temario={[
@@ -56,7 +56,7 @@ export default function Pagina() {
                 },
                 {
                     question: "¿Este curso cumple la formación obligatoria del Art. 4?",
-                    answer: "Este taller es la parte práctica. Para cumplir el Art. 4 hace falta también el bloque de alfabetización (riesgos, marco legal, uso responsable) — juntos forman el curso estrella, desde 1.200€, con certificado nominal y registro formativo como evidencia.",
+                    answer: "El Art. 4 no se cumple con un curso concreto: se cumple adoptando medidas de alfabetización adaptadas a tu equipo y pudiendo documentarlas. Este taller es la parte práctica, y puede ser una de esas medidas. Si además quieres cubrir los contenidos del Art. 4 — riesgos, marco legal, uso responsable —, ese es el bloque de alfabetización: juntos forman el curso estrella, desde 1.200€, con certificado nominal y registro formativo fechado para documentarlo.",
                 },
                 {
                     question: "¿Es seguro para un despacho, con el secreto profesional?",
