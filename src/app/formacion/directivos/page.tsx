@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://automatizatelo.com/formacion/directivos" },
     openGraph: {
         title: "IA para dirección: criterio para decidir, no humo",
-        description: "Qué implantar, qué exige la ley y cómo gobernarlo — en horas de directivo, no en cursos de meses.",
+        description: "Qué implantar, qué exige el AI Act y cómo gobernarlo — en horas de directivo, no en cursos de meses.",
         url: "https://automatizatelo.com/formacion/directivos",
     },
 };
@@ -209,7 +209,7 @@ export default function DirectivosPage() {
                         </div>
                         <div className="di2-cifra">
                             <span className="di2-cifra-num">Art. 4</span>
-                            <span className="di2-cifra-lab">Cubierto también para dirección</span>
+                            <span className="di2-cifra-lab">Incluido en la sesión, para dirección</span>
                         </div>
                     </div>
                     <p className="di2-cifras-pie">

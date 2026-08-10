@@ -23,15 +23,15 @@ const props: SectorPageProps = {
     heroTitle: <>Tu despacho de fincas, <span className="premium-gradient">sin{" "}<br />ahogarse en llamadas y emails</span></>,
     heroSubtitle: "Panel de gestión a medida para incidencias, comunicaciones con vecinos y documentación de cada comunidad. No es teoría: despachos reales lo usan a diario desde enero de 2026.",
     enCortoTitulo: "Un panel para lo que tu programa contable no cubre",
-    enCorto: "Un panel donde cada incidencia tiene comunidad, estado y responsable; las comunicaciones con vecinos dejan de vivir en tres bandejas de correo; y la documentación de cada comunidad se encuentra en segundos. Conviven con tu programa contable de siempre — no hay que sustituir nada.",
+    enCorto: "Un panel donde cada incidencia tiene comunidad, estado y responsable; las comunicaciones con vecinos dejan de vivir en tres bandejas de correo; y la documentación de cada comunidad se encuentra en segundos. Conviven con tu programa contable de siempre — no hay que sustituir nada, y se integran con él cuando técnicamente se puede.",
     datos: [
-        "Conviven con Gesfincas, TAAF o el tuyo",
+        "Conviven con Gesfincas, TAAF o el que uséis",
         "RGPD y accesos por rol",
         "En uso diario desde enero de 2026",
         "Desde 500 € · panel completo 2.000 €",
     ],
     dolorTitulo: "El día a día de un despacho de fincas",
-    dolorSub: "Seis fugas de tiempo que no se facturan a nadie. Si reconoces tres o más, hay horas que recuperar.",
+    dolorSub: "Seis fugas de tiempo que no se facturan a nadie. Si reconoces tres o más, probablemente haya tareas que merezca la pena automatizar.",
     solucionTitulo: "El despacho, con las incidencias bajo control",
     fotoSoluciones: "/auditoria.webp",
     opcionesFormulario: [
@@ -57,8 +57,8 @@ const props: SectorPageProps = {
     ],
     results: [
         { stat: "Ene 2026", label: "En producción y uso diario desde entonces" },
-        { stat: "2", label: "Despachos gestionando con nuestros paneles" },
-        { stat: "100%", label: "De incidencias registradas y con seguimiento" },
+        { stat: "2", label: "Despachos gestionando con su panel propio" },
+        { stat: "Todas", label: "Las incidencias, registradas y con seguimiento" },
     ],
     faqs: [
         { question: "¿Conocéis el sector o sois una agencia genérica?", answer: "Conocemos el sector por dentro: hemos construido los paneles de gestión que despachos de administración de fincas como Serincosol usan a diario desde enero de 2026, y colaboramos con formación para administradores de fincas." },

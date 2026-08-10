@@ -24,7 +24,7 @@ const faqs = [
     },
     {
         question: "¿El AI Act obliga también a un colegio?",
-        answer: "Sí. El artículo 4 obliga a quien provee y a quien despliega sistemas de IA — y un centro donde los docentes usan ChatGPT, Copilot o plataformas con IA integrada es responsable del despliegue. Además, la educación aparece en el Reglamento entre los ámbitos de mayor sensibilidad, así que un centro tiene más motivos que la media para hacerlo bien y poder acreditarlo.",
+        answer: "Sí. El artículo 4 obliga a quien provee y a quien despliega sistemas de IA — y un centro cuyos docentes usan ChatGPT, Copilot o plataformas con IA integrada bajo su autoridad actúa como responsable del despliegue. Además, la educación aparece en el Reglamento entre los ámbitos de mayor sensibilidad, así que un centro tiene más motivos que la media para hacerlo bien y poder acreditarlo.",
     },
     {
         question: "¿Qué hacemos con los alumnos que ya usan IA para los trabajos?",
@@ -213,7 +213,7 @@ export default function CentrosEducativosPage() {
                             <p className="ce2-sub">
                                 Un solo curso que cubre el bloque de alfabetización del Art. 4 y la
                                 práctica real de aula — cada docente sale con cosas montadas para SU
-                                asignatura, y el centro con su evidencia formativa.
+                                asignatura, y el centro con la formación documentada.
                             </p>
                             <div className="ce2-datos">
                                 <span>1 día · 8 h (o 4 + 4)</span>
@@ -306,7 +306,7 @@ export default function CentrosEducativosPage() {
                     </div>
                     <p className="ce2-cifras-pie">
                         Aviso honesto: esta formación <strong>no puntúa en el baremo de oposiciones</strong> —
-                        es para el centro y su evidencia del Art. 4 ·{" "}
+                        es para el centro y su documentación de las medidas del Art. 4 ·{" "}
                         <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>

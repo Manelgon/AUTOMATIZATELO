@@ -44,7 +44,7 @@ const faqs = [
     },
     {
         question: "¿Podéis formar también al alumnado, no solo al claustro?",
-        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la evidencia del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 600€ por sesión en el centro. Muchos centros contratan las dos en la misma jornada.",
+        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 600€ por sesión en el centro. Muchos centros contratan las dos en la misma jornada.",
     },
     {
         question: "¿Podéis producirlo como curso para nuestra propia plataforma?",

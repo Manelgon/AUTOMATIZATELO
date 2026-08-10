@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://automatizatelo.com/sectores/despachos" },
     openGraph: {
         title: "IA para tu despacho: formación práctica con tus casos reales",
-        description: "Talleres para el equipo, protección del secreto profesional y la evidencia del Art. 4. Desde 600€.",
+        description: "Talleres para el equipo, protección del secreto profesional y la documentación de las medidas del Art. 4. Desde 600€.",
         url: "https://automatizatelo.com/sectores/despachos",
     },
 };
@@ -31,7 +31,7 @@ const faqs = [
     },
     {
         question: "¿Esto cubre la obligación del Art. 4 del AI Act?",
-        answer: "Sí. Si el equipo del despacho usa IA — aunque sea por su cuenta — el despacho es responsable del despliegue y debe adoptar medidas para formar a su personal desde febrero de 2025. Es un deber de medios, no de resultado: no se exige garantizar un nivel concreto en cada persona, sino poder demostrar que se hizo lo razonable. La formación deja esa evidencia: certificados nominales y registro formativo fechado.",
+        answer: "Sí. Si el equipo del despacho usa IA — aunque sea por su cuenta — el despacho actúa como responsable del despliegue y debe adoptar medidas para la alfabetización de su personal desde febrero de 2025. Es un deber de medios, no de resultado: no se exige garantizar un nivel concreto en cada persona, sino poder demostrar que se hizo lo razonable. La formación deja esa evidencia: certificados nominales y registro formativo fechado.",
     },
     {
         question: "¿Presencial o en remoto?",
@@ -60,7 +60,7 @@ const dolores = [
     },
     {
         titulo: "Datos de clientes en cuentas gratuitas",
-        desc: "El equipo ya usa ChatGPT — y en un despacho eso significa datos personales y secreto profesional en manos de terceros. Sin política, cada chat es un riesgo.",
+        desc: "El equipo ya usa ChatGPT — y en un despacho eso obliga a saber qué se puede escribir, con qué cuenta y bajo qué condiciones. Sin política, cada chat lo decide quien lo escribe.",
     },
     {
         titulo: "Documentación infinita",
@@ -99,7 +99,7 @@ const sistemas = [
     { href: "/sistemas/documentos", titulo: "Documentos que se leen solos", d: "Facturas, escrituras y expedientes extraídos con IA y registrados sin picar datos." },
     { href: "/sistemas/chatbots-whatsapp", titulo: "Atención que no interrumpe", d: "Las dudas repetidas de clientes, resueltas 24/7 por WhatsApp — con escalado al equipo." },
     { href: "/sistemas/integracion", titulo: "Herramientas conectadas", d: "El programa del despacho, el correo y la facturación pasándose los datos solos." },
-    { href: "/cumplimiento", titulo: "El despacho, en regla", d: "Política de uso de IA y evidencia del Art. 4 — con el secreto profesional por delante." },
+    { href: "/cumplimiento", titulo: "El despacho, en regla", d: "Política de uso de IA y la documentación de las medidas del Art. 4 — con el secreto profesional por delante." },
 ];
 
 export default function DespachosPage() {
@@ -146,7 +146,8 @@ export default function DespachosPage() {
                         <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: 0, maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                             Formación práctica para administradores de fincas, gestorías, asesorías
                             y abogados: con vuestros casos reales, con el secreto profesional por
-                            delante y con la evidencia del Art. 4 que un despacho debe poder enseñar.
+                            delante y con la documentación de las medidas del Art. 4 que un
+                            despacho debe poder enseñar.
                         </p>
                     </div>
 
@@ -200,13 +201,13 @@ export default function DespachosPage() {
                         <div className="de2-cuerpo">
                             <span className="mono-label" style={{ color: "#f6c39c" }}>En corto</span>
                             <h2 className="de2-titulo">
-                                La IA en el despacho, <span style={{ color: "#f6c39c" }}>con el secreto profesional intacto</span>
+                                La IA en el despacho, <span style={{ color: "#f6c39c" }}>con el secreto profesional por delante</span>
                             </h2>
                             <p className="de2-sub">
-                                Formación con vuestros casos y vuestros datos protegidos: qué
-                                herramientas dan garantías, qué se anonimiza antes de preguntar y
-                                qué no sale del despacho nunca — más la evidencia del Art. 4 que
-                                hay que poder enseñar.
+                                Formación con vuestros casos y el foco en la confidencialidad: qué
+                                herramientas dan garantías, qué se anonimiza antes de preguntar y qué
+                                información no debería salir del despacho — más la documentación de
+                                las medidas de alfabetización, que hay que poder enseñar.
                             </p>
                             <div className="de2-datos">
                                 <span>Presencial · remoto · SCORM</span>

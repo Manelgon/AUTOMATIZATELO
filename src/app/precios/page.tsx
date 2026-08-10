@@ -77,7 +77,7 @@ const formar: Fila[] = [
     {
         nombre: "Formación de claustro",
         formato: "1 día · 8 h (o 4 + 4)",
-        incluye: "Para colegios, institutos y FP: práctica de aula, política de uso y la evidencia del Art. 4 del centro. Presencial, en remoto o SCORM.",
+        incluye: "Para colegios, institutos y FP: práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro. Presencial, en remoto o SCORM.",
         precio: "900 – 1.400 €",
         min: 900,
         max: 1400,

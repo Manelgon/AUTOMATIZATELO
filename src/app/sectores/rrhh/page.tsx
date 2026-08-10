@@ -51,13 +51,13 @@ const props: SectorPageProps = {
     ],
     solutions: [
         { icon: "fa-globe", title: "Portal de empleo propio", description: "Tus ofertas en tu web, con candidaturas entrando ordenadas a tu sistema — no a una bandeja de correo — y conectable con los portales externos donde ya publicas. Es lo que construí para una consultora de selección real: portal, dashboard e informes, en producción." },
-        { icon: "fa-wand-magic-sparkles", title: "Criba y matching asistidos por IA", description: "La IA preclasifica candidaturas contra los requisitos del puesto y te deja lo relevante arriba. Tú decides — con supervisión humana siempre, como exige el sentido común y la normativa." },
+        { icon: "fa-wand-magic-sparkles", title: "Criba y matching asistidos por IA", description: "La IA preclasifica candidaturas contra los requisitos del puesto y te deja lo relevante arriba. La IA asiste en la clasificación; la decisión es de una persona. En selección eso no es un detalle: cribar candidaturas con IA puede entrar en los sistemas de alto riesgo del Anexo III del Reglamento, así que antes de automatizar nada se revisa el caso de uso y las obligaciones que le tocan." },
         { icon: "fa-comments", title: "Ningún candidato sin respuesta", description: "Confirmaciones, avances de fase y descartes comunicados automáticamente y con tono humano. Tu marca empleadora deja de sufrir por los silencios." },
         { icon: "fa-chart-line", title: "Procesos e informes en un panel", description: "Cada proceso con su estado, sus candidatos y su historial. Y el informe para el cliente sale solo, no un domingo por la noche." },
     ],
     results: [
         { stat: "En uso", label: "Plataforma completa de selección en producción" },
-        { stat: "100%", label: "De candidatos con respuesta, sin excepción" },
+        { stat: "Cada uno", label: "Los candidatos reciben respuesta, se elija o no" },
         { stat: "1", label: "Solo sitio para ofertas, candidatos y procesos" },
     ],
     faqs: [

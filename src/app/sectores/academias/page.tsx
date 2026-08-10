@@ -47,12 +47,12 @@ const props: SectorPageProps = {
         { icon: "fa-table", text: "El seguimiento de cada alumno repartido entre Excel, la plataforma y el correo" },
         { icon: "fa-file-invoice", text: "Facturas, recibos y certificados generados uno por uno" },
         { icon: "fa-hourglass-half", text: "Cursos por producir que nunca salen porque la gestión se come las horas" },
-        { icon: "fa-user-clock", text: "Interesados que preguntan, nadie responde a tiempo, y se matriculan en otra academia" },
+        { icon: "fa-user-clock", text: "Interesados que preguntan y, si nadie responde a tiempo, acaban mirando en otra academia" },
     ],
     solutions: [
         { icon: "fa-chart-line", title: "Panel de gestión académica", description: "Alumnos, matrículas, pagos y seguimiento en un solo sitio, conectado con tu plataforma de cursos. Es lo que una academia online real usa para operar a diario — construido a medida y en su propiedad." },
         { icon: "fa-robot", title: "Bot de dudas y matrículas", description: "Las preguntas repetidas (precios, fechas, temarios, cómo me apunto) contestadas al momento por WhatsApp o web, con matrícula guiada — y escalado a una persona cuando toca." },
-        { icon: "fa-file-signature", title: "Facturación y certificados automáticos", description: "Recibos, facturas y certificados de finalización que se generan y envían solos cuando el alumno cumple las condiciones. Cero picar datos." },
+        { icon: "fa-file-signature", title: "Facturación y certificados automáticos", description: "Recibos, facturas y certificados de finalización que se generan y envían solos cuando el alumno cumple las condiciones. Sin volver a picar los datos a mano." },
         { icon: "fa-clapperboard", title: "Producción de cursos (SCORM)", description: "Convierto tu conocimiento en cursos e-learning empaquetados en SCORM, listos para tu plataforma o para vender. Los míos están publicados y en venta — sé lo que funciona." },
     ],
     results: [
