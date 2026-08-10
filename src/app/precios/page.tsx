@@ -275,6 +275,42 @@ const faqJsonLd = {
     })),
 };
 
+/** Una familia entera: la cabecera pliega, pero llega abierta */
+function Bloque({ id, num, titulo, sub, filas, resumen, pie }: {
+    id: string;
+    num: string;
+    titulo: string;
+    sub: string;
+    filas: Fila[];
+    /** lo que se lee a la derecha cuando está plegada */
+    resumen: string;
+    pie: React.ReactNode;
+}) {
+    return (
+        <section id={id} style={{ padding: "3.4rem 0", background: "#1c1917", scrollMarginTop: "5rem" }}>
+            <div className="container">
+                <details className="pp2-familia" open>
+                    <summary className="pp2-familia-cab">
+                        <span className="pp2-familia-izq">
+                            <span className="mono-label" style={{ color: "#f6c39c" }}>{num}</span>
+                            <h2 className="pp2-titulo">{titulo}</h2>
+                        </span>
+                        <span className="pp2-familia-dcha">
+                            <span className="mono-label pp2-familia-resumen">{resumen}</span>
+                            <i className="fa-solid fa-chevron-down pp2-familia-flecha" aria-hidden="true"></i>
+                        </span>
+                    </summary>
+                    <div className="pp2-familia-cuerpo">
+                        <p className="pp2-sub">{sub}</p>
+                        <Familia filas={filas} />
+                        <p className="pp2-pie">{pie}</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    );
+}
+
 /** Una familia del catálogo, como índice de filas: nombre · qué incluye · precio */
 function Familia({ filas }: { filas: Fila[] }) {
     return (
@@ -400,71 +436,47 @@ export default function PreciosPage() {
                 </div>
             </section>
 
-            {/* 01 · Formar */}
-            <section id="formar" style={{ padding: "3.8rem 0", background: "#1c1917", scrollMarginTop: "5rem" }}>
-                <div className="container">
-                    <div className="pp2-cabecera">
-                        <div>
-                            <span className="mono-label" style={{ color: "#f6c39c" }}>01 · Formar</span>
-                            <h2 className="pp2-titulo">Que tu equipo use la IA con criterio</h2>
-                        </div>
-                        <p className="pp2-sub">
-                            Para empresas, despachos y centros educativos. El precio final depende del
-                            número de participantes y de la modalidad, y se cierra en la propuesta.
-                        </p>
-                    </div>
-                    <Familia filas={formar} />
-                    <p className="pp2-pie">
-                        Itinerarios y evidencia documental, en{" "}
-                        <Link href="/formacion">formación en IA</Link>; el detalle del Art. 4, en la{" "}
-                        <Link href="/formacion/ai-act">guía del AI Act</Link>.
-                    </p>
-                </div>
-            </section>
+            {/* Las tres familias — plegables, pero abiertas de entrada */}
+            <Bloque
+                id="formar"
+                num="01 · Formar"
+                titulo="Que tu equipo use la IA con criterio"
+                resumen="8 formaciones · desde 600 €"
+                sub="Para empresas, despachos y centros educativos. El precio final depende del número de participantes y de la modalidad, y se cierra en la propuesta."
+                filas={formar}
+                pie={<>
+                    Itinerarios y evidencia documental, en{" "}
+                    <Link href="/formacion">formación en IA</Link>; el detalle del Art. 4, en la{" "}
+                    <Link href="/formacion/ai-act">guía del AI Act</Link>.
+                </>}
+            />
 
-            {/* 02 · Cumplir */}
-            <section id="cumplir" style={{ padding: "3.8rem 0", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)", scrollMarginTop: "5rem" }}>
-                <div className="container">
-                    <div className="pp2-cabecera">
-                        <div>
-                            <span className="mono-label" style={{ color: "#f6c39c" }}>02 · Cumplir</span>
-                            <h2 className="pp2-titulo">Que la ley no te pille a contrapié</h2>
-                        </div>
-                        <p className="pp2-sub">
-                            Para saber dónde está tu empresa y qué le falta — con evidencia documental,
-                            no con miedo.
-                        </p>
-                    </div>
-                    <Familia filas={cumplir} />
-                    <p className="pp2-pie">
-                        El detalle del servicio, en{" "}
-                        <Link href="/cumplimiento">auditoría IA y cumplimiento</Link>.
-                    </p>
-                </div>
-            </section>
+            <Bloque
+                id="cumplir"
+                num="02 · Cumplir"
+                titulo="Que la ley no te pille a contrapié"
+                resumen="3 servicios · desde 750 €"
+                sub="Para saber dónde está tu empresa y qué le falta — con evidencia documental, no con miedo."
+                filas={cumplir}
+                pie={<>
+                    El detalle del servicio, en{" "}
+                    <Link href="/cumplimiento">auditoría IA y cumplimiento</Link>.
+                </>}
+            />
 
-            {/* 03 · Automatizar */}
-            <section id="automatizar" style={{ padding: "3.8rem 0", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)", scrollMarginTop: "5rem" }}>
-                <div className="container">
-                    <div className="pp2-cabecera">
-                        <div>
-                            <span className="mono-label" style={{ color: "#f6c39c" }}>03 · Automatizar</span>
-                            <h2 className="pp2-titulo">Que el trabajo repetitivo se haga solo</h2>
-                        </div>
-                        <p className="pp2-sub">
-                            Cada proyecto se compone a medida — panel, chatbot, CRM o automatizaciones —
-                            en la combinación que tu negocio necesite.
-                        </p>
-                    </div>
-                    <Familia filas={automatizar} />
-                    <p className="pp2-pie">
-                        Las seis piezas, una a una, en{" "}
-                        <Link href="/sistemas">automatización y sistemas</Link>; y lo que ya está
-                        funcionando en negocios reales, en{" "}
-                        <Link href="/casos">casos</Link>.
-                    </p>
-                </div>
-            </section>
+            <Bloque
+                id="automatizar"
+                num="03 · Automatizar"
+                titulo="Que el trabajo repetitivo se haga solo"
+                resumen="4 proyectos · desde 500 €"
+                sub="Cada proyecto se compone a medida — panel, chatbot, CRM o automatizaciones — en la combinación que tu negocio necesite."
+                filas={automatizar}
+                pie={<>
+                    Las seis piezas, una a una, en{" "}
+                    <Link href="/sistemas">automatización y sistemas</Link>; y lo que ya está
+                    funcionando en negocios reales, en <Link href="/casos">casos</Link>.
+                </>}
+            />
 
             {/* Qué hace variar el precio — foto ambiental + velo */}
             <section style={{ position: "relative", overflow: "hidden", padding: "4.5rem 0", background: "#1c1917" }}>
@@ -583,6 +595,39 @@ export default function PreciosPage() {
                     .pp2-cifras { grid-template-columns: 1fr 1fr; gap: 1.6rem 1rem; }
                 }
 
+                /* La cabecera de familia es el tirador: pliega, pero llega abierta */
+                .pp2-familia { border-top: 1px solid rgba(250, 246, 239, 0.14); }
+                .pp2-familia-cab {
+                    list-style: none;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    gap: 2rem;
+                    padding: 1.6rem 0.2rem 1.4rem;
+                    cursor: pointer;
+                }
+                .pp2-familia-cab::-webkit-details-marker { display: none; }
+                .pp2-familia-izq { display: block; }
+                .pp2-familia-dcha {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 1rem;
+                    flex-shrink: 0;
+                }
+                .pp2-familia-resumen { color: rgba(250, 246, 239, 0.55); }
+                .pp2-familia-flecha {
+                    font-size: 0.8rem;
+                    color: #f6c39c;
+                    transition: transform 0.25s ease;
+                }
+                .pp2-familia[open] .pp2-familia-flecha { transform: rotate(180deg); }
+                .pp2-familia-cab:hover .pp2-titulo { color: #f6c39c; }
+                .pp2-familia-cuerpo { padding-bottom: 0.4rem; }
+                .pp2-familia .pp2-titulo { margin-top: 0.5rem; }
+                @media (max-width: 700px) {
+                    .pp2-familia-cab { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+                    .pp2-familia-dcha { width: 100%; justify-content: space-between; }
+                }
                 .pp2-cabecera {
                     display: grid;
                     grid-template-columns: 0.48fr 0.52fr;
