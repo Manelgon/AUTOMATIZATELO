@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const cifras = [
     { valor: "5", etiqueta: "sistemas en producción" },
-    { valor: "6", etiqueta: "sectores con sistema propio" },
+    { valor: "6", etiqueta: "sectores con su propio sistema" },
     { valor: "3 años", etiqueta: "de IA aplicada a negocios reales" },
     { valor: "100%", etiqueta: "precio cerrado por escrito" },
 ];

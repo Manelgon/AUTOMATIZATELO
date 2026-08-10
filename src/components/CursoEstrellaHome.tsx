@@ -18,7 +18,7 @@ export default function CursoEstrellaHome() {
                         <h2 className="ces-titulo">Alfabetización IA + vuestra herramienta</h2>
                         <p className="ces-sub">
                             El formato que mejor funciona: una sesión cubre la obligación del Art. 4
-                            y la otra domina la herramienta que ya usa tu equipo — con vuestros casos reales.
+                            y la otra pone a tu equipo a trabajar con la herramienta que ya usa — con vuestros casos reales.
                         </p>
                         <div className="ces-datos">
                             <span>Desde 4 + 4 h</span>
@@ -39,7 +39,7 @@ export default function CursoEstrellaHome() {
                                 <span className="ces-badge">Obligatoria · Art. 4</span>
                             </div>
                             <h3>Alfabetización en IA</h3>
-                            <p>Fundamentos, riesgos, uso responsable y marco legal. Con certificado nominal y registro de la formación.</p>
+                            <p>Fundamentos, riesgos, uso responsable y marco legal. Certificado nominal y registro fechado de la formación.</p>
                         </div>
                         <div className="ces-sesion ces-sesion-2">
                             <div className="ces-cab">

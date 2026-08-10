@@ -1,6 +1,6 @@
-// Primero las que el cliente reconoce; la fontanería, al final. Quien busca
-// un panel a medida sabe qué es n8n; quien administra fincas, no — y es este
-// último el que tiene que sentirse en casa al leer la tira.
+// Solo herramientas que el cliente usa o reconoce: el rótulo promete "las que
+// ya usas", y nadie en una pyme usa n8n. La fontanería (n8n, Make, Supabase)
+// se cuenta donde toca, en /sistemas.
 const techs = [
     "ChatGPT",
     "Copilot 365",
@@ -12,8 +12,6 @@ const techs = [
     "Google Workspace",
     "Microsoft 365",
     "CRM",
-    "n8n",
-    "Make",
 ];
 
 export default function TechMarquee() {
