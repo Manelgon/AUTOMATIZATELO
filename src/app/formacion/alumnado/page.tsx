@@ -134,8 +134,7 @@ const temario = [
 const dirigido = [
     { n: "01", titulo: "4º ESO y Bachillerato", d: "Con el foco en estudiar mejor con IA y una primera orientación al mundo laboral." },
     { n: "02", titulo: "FP · último curso", d: "El perfil que más lo aprovecha: prácticas y primer empleo a la vuelta de la esquina." },
-    { n: "03", titulo: "Universitarios · últimos cursos", d: "CV, LinkedIn y entrevistas con IA antes de salir al mercado." },
-    { n: "04", titulo: "Programas de transición al empleo", d: "Para orientadores y entidades que preparan la inserción laboral de jóvenes." },
+    { n: "03", titulo: "Programas de transición al empleo", d: "Para orientadores y entidades que preparan la inserción laboral de jóvenes." },
 ];
 
 const razones = [
@@ -582,7 +581,7 @@ export default function AlumnadoPage() {
                 }
                 .al-perfiles {
                     display: grid;
-                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-columns: repeat(3, 1fr);
                     gap: 1.6rem;
                 }
                 .al-perfil-cab {
