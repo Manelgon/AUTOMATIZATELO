@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta formar a mi equipo?",
-        answer: "El bloque de alfabetización del Art. 4 en su formato esencial de 4 horas, desde 750 €; en jornada completa de 8 horas, desde 1.200 €. El curso estrella —ese bloque más un taller práctico con vuestra herramienta— desde 1.800 €. Un taller de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas, desde 3.500 €. Y un curso e-learning a medida en SCORM, desde 2.400 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
+        answer: "El bloque de alfabetización del Art. 4, cuatro horas para toda la plantilla, desde 750 €. El curso estrella —ese bloque más un taller práctico con vuestra herramienta— desde 1.800 €. Un taller de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas, desde 3.500 €. Y un curso e-learning a medida en SCORM, desde 2.400 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
     },
     {
         question: "¿Qué evidencia documental me queda después?",

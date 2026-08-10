@@ -35,19 +35,11 @@ interface Fila {
 
 const formar: Fila[] = [
     {
-        nombre: "Alfabetización en IA (Art. 4) · esencial",
+        nombre: "Alfabetización en IA (Art. 4)",
         formato: "4 h · toda la plantilla",
         incluye: "El bloque con el que se cubren las medidas del Art. 4: qué es la IA, riesgos y uso responsable. Certificado nominal y registro formativo fechado.",
         precio: "desde 750 €",
         min: 750,
-        href: "/formacion/ai-act",
-    },
-    {
-        nombre: "Alfabetización en IA (Art. 4) · completa",
-        formato: "8 h · toda la plantilla",
-        incluye: "El mismo bloque con la tarde de práctica aplicada: casos reales de cada puesto y el plan de acción individual que se revisa después.",
-        precio: "desde 1.200 €",
-        min: 1200,
         href: "/formacion/ai-act",
     },
     {
@@ -225,7 +217,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta la formación en IA para empresas?",
-        answer: "El bloque de alfabetización del Art. 4 del AI Act en su formato esencial de 4 horas, desde 750 €; en jornada completa de 8 horas, desde 1.200 €. Un taller intensivo de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas repartidas en cuatro semanas, desde 3.500 €. Y un curso e-learning a medida en SCORM para tu plataforma, desde 2.400 €. Siempre con certificado nominal y registro formativo.",
+        answer: "El bloque de alfabetización del Art. 4 del AI Act, cuatro horas para toda la plantilla, desde 750 €. Un taller intensivo de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas repartidas en cuatro semanas, desde 3.500 €. Y un curso e-learning a medida en SCORM para tu plataforma, desde 2.400 €. Siempre con certificado nominal y registro formativo.",
     },
     {
         question: "¿Cuánto cuesta la auditoría de cumplimiento del AI Act?",
@@ -399,7 +391,7 @@ export default function PreciosPage() {
                         </h1>
                         <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: 0, maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                             Publico las tarifas porque es la primera pregunta de todo el mundo.
-                            Diecisiete productos con su precio de partida a la vista: <strong style={{ color: "#f6c39c" }}>formar</strong> desde
+                            Dieciséis productos con su precio de partida a la vista: <strong style={{ color: "#f6c39c" }}>formar</strong> desde
                             750 €, <strong style={{ color: "#f6c39c" }}>cumplir</strong> desde 950 € y{" "}
                             <strong style={{ color: "#f6c39c" }}>automatizar</strong> desde 500 €. El precio final
                             se cierra por escrito antes de empezar y no hay permanencia.
@@ -464,7 +456,7 @@ export default function PreciosPage() {
                 id="formar"
                 num="01 · Formar"
                 titulo="Que tu equipo use la IA con criterio"
-                resumen="10 formaciones · desde 750 €"
+                resumen="9 formaciones · desde 750 €"
                 sub="Para empresas, despachos y centros educativos. El precio final depende del número de participantes y de la modalidad, y se cierra en la propuesta."
                 filas={formar}
                 pie={<>

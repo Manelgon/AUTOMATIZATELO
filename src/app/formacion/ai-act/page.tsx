@@ -289,7 +289,7 @@ export default function AiActPage() {
                                 <span>Aplicable desde feb. 2025</span>
                                 <span>Sin horas mínimas, nivel exigido ni certificado oficial</span>
                                 <span>Certificado nominal + registro fechado</span>
-                                <span className="aa2-dato-precio">4 h desde 750 € · 8 h desde 1.200 €</span>
+                                <span className="aa2-dato-precio">4 h · desde 750 €</span>
                             </div>
                             <div className="aa2-enlaces">
                                 <a href="#temario" className="aa2-enlace">Ver el temario completo ↓</a>
