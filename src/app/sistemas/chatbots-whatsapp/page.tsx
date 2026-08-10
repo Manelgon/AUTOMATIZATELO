@@ -201,7 +201,7 @@ export default function ChatbotsWhatsappPage() {
                             </div>
                             <div className="cw2-enlaces">
                                 <a href="#api" className="cw2-enlace">API oficial o número bloqueado ↓</a>
-                                <Link href="/precios" className="cw2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#automatizar" className="cw2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="cw2-nota">
                                 ¿No sabes si el bot es tu prioridad? El{" "}
@@ -253,7 +253,7 @@ export default function ChatbotsWhatsappPage() {
                     </div>
                     <p className="cw2-cifras-pie">
                         Las tarifas de Meta van directas a Meta, sin sobreprecio —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#automatizar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

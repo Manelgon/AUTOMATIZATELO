@@ -227,7 +227,7 @@ export default function AuditoriaIAPage() {
                             </div>
                             <div className="cu2-enlaces">
                                 <a href="#proceso" className="cu2-enlace">Ver cómo transcurre ↓</a>
-                                <Link href="/precios" className="cu2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#cumplir" className="cu2-enlace">Ver la tabla de precios →</Link>
                                 <Link href="/diagnostico" className="cu2-enlace">¿Por dónde empiezo? Test de 3 min →</Link>
                             </div>
                             <p className="cu2-nota">
@@ -278,7 +278,7 @@ export default function AuditoriaIAPage() {
                     <p className="cu2-cifras-pie">
                         El precio final depende del tamaño y de las herramientas en uso, y se cierra
                         por escrito antes de empezar —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#cumplir">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

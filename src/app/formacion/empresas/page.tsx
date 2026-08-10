@@ -187,7 +187,7 @@ export default function FormacionEmpresasPage() {
                             </div>
                             <div className="fe-precios-linea">
                                 <Link href="/formacion/ai-act" className="fe-precios-boton">Ver la alfabetización · Art. 4 →</Link>
-                                <Link href="/precios" className="fe-precios-boton">Ver la tabla de precios →</Link>
+                                <Link href="/precios#formar" className="fe-precios-boton">Ver la tabla de precios →</Link>
                             </div>
                         </div>
                     </div>
@@ -245,7 +245,7 @@ export default function FormacionEmpresasPage() {
                     </div>
                     <p className="fe-cifras-pie">
                         Certificado nominal y registro del Art. 4 · presencial, aula virtual o SCORM ·{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

@@ -221,7 +221,7 @@ export default function AutomatizacionPage() {
                             </div>
                             <div className="si2-enlaces">
                                 <Link href="/sistemas/documentos" className="si2-enlace">La pieza estrella: documentos →</Link>
-                                <Link href="/precios" className="si2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#automatizar" className="si2-enlace">Ver la tabla de precios →</Link>
                             </div>
                         </div>
                     </div>
@@ -267,7 +267,7 @@ export default function AutomatizacionPage() {
                     </div>
                     <p className="si2-cifras-pie">
                         Precio cerrado por escrito antes de empezar, sin permanencia —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#automatizar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

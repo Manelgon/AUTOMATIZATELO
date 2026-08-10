@@ -169,7 +169,7 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                 @media (max-width: 480px) { .fc-fila { grid-template-columns: 1fr; } }
                 .fc-tel {
                     display: grid;
-                    grid-template-columns: 5.6rem 1fr;
+                    grid-template-columns: 4rem 1fr;
                     gap: 0.6rem;
                     align-items: end;
                 }
@@ -189,6 +189,8 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                 .fc-input:focus { border-bottom-color: #f6c39c; }
                 /* El selector propio se pone a la medida de los demás campos */
                 .fc-card .sfc { font-size: 0.88rem; }
+                /* En la columna del prefijo el aire entre número y flecha sobra */
+                .fc-tel .sfc-boton { gap: 0.35rem; }
                 .fc-input::placeholder { color: rgba(250, 246, 239, 0.55); }
                 .fc-btn {
                     background: #f6c39c;

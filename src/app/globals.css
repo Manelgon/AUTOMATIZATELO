@@ -2117,13 +2117,13 @@ section {
    Sobre la foto del hero la barra desaparece y su texto va en crema; al hacer
    scroll vuelve la pastilla crema y el texto recupera el color de siempre.
    -------------------------------------------------------------------------- */
-.header-arriba .nav-links a,
+.header-arriba .nav-links > a,
 .header-arriba .sectors-dropdown-trigger,
 .header-arriba .logo {
   color: #faf6ef;
   text-shadow: 0 1px 12px rgba(28, 25, 23, 0.45);
 }
-.header-arriba .nav-links a:hover,
+.header-arriba .nav-links > a:hover,
 .header-arriba .sectors-dropdown-trigger:hover {
   color: #f6c39c;
 }
@@ -2136,15 +2136,24 @@ section {
 }
 .header-arriba .mobile-toggle { color: #faf6ef; }
 /* El botón de contacto no cambia: es el único elemento que debe destacar. */
-.header-arriba .nav-links a.btn-primary {
+.header-arriba .nav-links > a.btn-primary {
   color: #fff;
   text-shadow: none;
 }
-/* Dentro de los desplegables manda el estilo del panel, no el de la barra. */
+/* Dentro de los desplegables manda el estilo del panel, no el de la barra:
+   el panel es crema también arriba del todo, así que su texto va en tinta. */
 .header-arriba .sectors-dropdown-menu a,
 .header-arriba .sectors-dropdown-menu a:hover {
+  color: var(--color-text-main);
   text-shadow: none;
 }
+.header-arriba .sectors-dropdown-menu .item-title { color: var(--color-text-main); }
+.header-arriba .sectors-dropdown-menu .item-desc,
+.header-arriba .sectors-dropdown-menu .item-mini-desc {
+  color: var(--color-text-muted);
+}
+.header-arriba .sectors-dropdown-menu a:hover .item-title,
+.header-arriba .sectors-dropdown-menu a:hover .num { color: var(--color-primary); }
 
 /* Contacto dentro de la columna de marca, bajo las redes */
 .footer-contacto {

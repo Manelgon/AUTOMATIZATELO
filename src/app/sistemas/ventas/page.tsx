@@ -188,7 +188,7 @@ export default function AutomatizacionVentasPage() {
                             </div>
                             <div className="ve2-enlaces">
                                 <a href="#ciclo" className="ve2-enlace">Ver cómo queda el ciclo ↓</a>
-                                <Link href="/precios" className="ve2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#automatizar" className="ve2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="ve2-nota">
                                 ¿No sabes si las ventas son tu mayor fuga de tiempo? El{" "}
@@ -237,7 +237,7 @@ export default function AutomatizacionVentasPage() {
                     </div>
                     <p className="ve2-cifras-pie">
                         Precio cerrado por escrito antes de empezar, sin permanencia —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#automatizar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

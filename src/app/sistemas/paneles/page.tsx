@@ -200,7 +200,7 @@ export default function PanelesPage() {
                             </div>
                             <div className="pa2-enlaces">
                                 <a href="#capacidades" className="pa2-enlace">Ver qué hace por dentro ↓</a>
-                                <Link href="/precios" className="pa2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#automatizar" className="pa2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="pa2-nota">
                                 ¿No sabes si necesitas panel o basta automatizar? El{" "}
@@ -249,7 +249,7 @@ export default function PanelesPage() {
                     </div>
                     <p className="pa2-cifras-pie">
                         Precio y plazo cerrados por escrito antes de empezar —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#automatizar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

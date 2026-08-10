@@ -254,7 +254,7 @@ export default function AlumnadoPage() {
                             <div className="al-enlaces">
                                 <a href="#temario" className="al-enlace">Ver el temario completo ↓</a>
                                 <Link href="/formacion/centros-educativos" className="al-enlace">Ver el programa del centro →</Link>
-                                <Link href="/precios" className="al-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#formar" className="al-enlace">Ver la tabla de precios →</Link>
                             </div>
                         </div>
                     </div>

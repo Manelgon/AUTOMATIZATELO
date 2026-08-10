@@ -167,7 +167,7 @@ export default function SectorPage(p: SectorPageProps) {
                                 )}
                                 <div className="sp2-enlaces">
                                     <a href="#soluciones" className="sp2-enlace">Ver qué se automatiza ↓</a>
-                                    <Link href="/precios" className="sp2-enlace">Ver la tabla de precios →</Link>
+                                    <Link href="/precios#automatizar" className="sp2-enlace">Ver la tabla de precios →</Link>
                                 </div>
                                 <p className="sp2-nota">
                                     ¿No sabes por dónde empezar? El{" "}

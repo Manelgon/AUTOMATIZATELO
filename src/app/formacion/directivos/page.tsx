@@ -166,7 +166,7 @@ export default function DirectivosPage() {
                             </div>
                             <div className="di2-enlaces">
                                 <a href="#programa" className="di2-enlace">Ver qué cubre ↓</a>
-                                <Link href="/precios" className="di2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#formar" className="di2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="di2-nota">
                                 ¿La formación es para el equipo, no para el comité? Entonces es el{" "}
@@ -214,7 +214,7 @@ export default function DirectivosPage() {
                     </div>
                     <p className="di2-cifras-pie">
                         Precio cerrado por sesión, no por asistente —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

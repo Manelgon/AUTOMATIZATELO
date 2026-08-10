@@ -200,7 +200,7 @@ export default function IntegracionSistemasPage() {
                             </div>
                             <div className="in2-enlaces">
                                 <a href="#conexiones" className="in2-enlace">Ver conexiones típicas ↓</a>
-                                <Link href="/precios" className="in2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#automatizar" className="in2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="in2-nota">
                                 ¿No sabes cuántas veces se copia un dato en tu empresa? El{" "}
@@ -249,7 +249,7 @@ export default function IntegracionSistemasPage() {
                     </div>
                     <p className="in2-cifras-pie">
                         Precio cerrado por escrito antes de empezar, sin permanencia —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#automatizar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

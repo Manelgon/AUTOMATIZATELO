@@ -137,7 +137,7 @@ export default function CursoPage(p: CursoPageProps) {
                             </div>
                             <div className="cp2-enlaces">
                                 <a href="#temario" className="cp2-enlace">Ver el temario completo ↓</a>
-                                <Link href="/precios" className="cp2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#formar" className="cp2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="cp2-splitnota">{p.paraQuien}</p>
                         </div>
@@ -213,7 +213,7 @@ export default function CursoPage(p: CursoPageProps) {
                     </div>
                     <p className="cp2-cifras-pie">
                         Precio cerrado por sesión, no por alumno —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

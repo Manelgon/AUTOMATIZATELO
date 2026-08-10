@@ -197,7 +197,7 @@ export default function ImplantacionCrmPage() {
                             </div>
                             <div className="cr2-enlaces">
                                 <a href="#proceso" className="cr2-enlace">Ver qué incluye ↓</a>
-                                <Link href="/precios" className="cr2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#automatizar" className="cr2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="cr2-nota">
                                 ¿No sabes si tu problema es el CRM o el proceso? El{" "}
@@ -246,7 +246,7 @@ export default function ImplantacionCrmPage() {
                     </div>
                     <p className="cr2-cifras-pie">
                         Las licencias se pagan al proveedor, sin sobreprecio —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#automatizar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

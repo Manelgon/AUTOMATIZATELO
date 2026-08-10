@@ -150,7 +150,7 @@ export default function FormacionIaPage() {
                 </div>
                 <p className="fpn-precio">
                     Alfabetización del Art. 4 desde 600 €; el curso estrella, desde 1.200 € —{" "}
-                    <Link href="/precios">ver la tabla de precios completa →</Link>
+                    <Link href="/precios#formar">ver la tabla de precios completa →</Link>
                 </p>
             </section>
 

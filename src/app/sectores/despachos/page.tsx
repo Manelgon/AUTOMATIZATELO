@@ -216,7 +216,7 @@ export default function DespachosPage() {
                             </div>
                             <div className="de2-enlaces">
                                 <a href="#programa" className="de2-enlace">Ver qué incluye ↓</a>
-                                <Link href="/precios" className="de2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#formar" className="de2-enlace">Ver la tabla de precios →</Link>
                                 <Link href="/diagnostico" className="de2-enlace">¿Qué automatizarías tú? Test de 3 min →</Link>
                             </div>
                             <p className="de2-nota">
@@ -265,7 +265,7 @@ export default function DespachosPage() {
                     </div>
                     <p className="de2-cifras-pie">
                         Precio cerrado por sesión, no por alumno —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

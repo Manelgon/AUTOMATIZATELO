@@ -21,7 +21,11 @@ interface Fila {
     /** El formato en corto: horas, plazo, modalidad */
     formato: string;
     incluye: string;
+    /** Lo que lee una persona */
     precio: string;
+    /** Lo mismo en número, para el buscador: suelo y, si es horquilla, techo */
+    min: number;
+    max?: number;
     href: string;
     /** Las tres estrellas del catálogo: el mejor equilibrio para el cliente */
     estrella?: boolean;
@@ -33,6 +37,7 @@ const formar: Fila[] = [
         formato: "4–8 h · toda la plantilla",
         incluye: "El bloque que exige el Reglamento Europeo: qué es la IA, riesgos y uso responsable. Certificado nominal y registro formativo fechado.",
         precio: "desde 600 €",
+        min: 600,
         href: "/formacion/ai-act",
     },
     {
@@ -40,6 +45,7 @@ const formar: Fila[] = [
         formato: "4 + 4 h · adaptable por equipo",
         incluye: "El bloque obligatorio del Art. 4 más un taller práctico con la herramienta que ya usáis, sobre vuestros casos reales.",
         precio: "desde 1.200 €",
+        min: 1200,
         href: "/formacion/empresas",
         estrella: true,
     },
@@ -48,6 +54,8 @@ const formar: Fila[] = [
         formato: "1 día · 8 h",
         incluye: "ChatGPT, Copilot 365, Gemini + NotebookLM o Claude a fondo. Cada rol sale con casos montados para su trabajo.",
         precio: "900 – 1.400 €",
+        min: 900,
+        max: 1400,
         href: "/formacion",
     },
     {
@@ -55,6 +63,7 @@ const formar: Fila[] = [
         formato: "16 h · 4 semanas",
         incluye: "Para mandos y equipos completos, con trabajo real aplicado entre sesión y sesión y evidencia documental completa.",
         precio: "desde 2.400 €",
+        min: 2400,
         href: "/formacion/empresas",
     },
     {
@@ -62,6 +71,7 @@ const formar: Fila[] = [
         formato: "medio día · 4 h",
         incluye: "Qué implantar, qué exige la ley y cómo gobernarlo, en horas de directivo. El programa completo de dirección, desde 1.200 €.",
         precio: "desde 600 €",
+        min: 600,
         href: "/formacion/directivos",
     },
     {
@@ -69,6 +79,8 @@ const formar: Fila[] = [
         formato: "1 día · 8 h (o 4 + 4)",
         incluye: "Para colegios, institutos y FP: práctica de aula, política de uso y la evidencia del Art. 4 del centro. Presencial, en remoto o SCORM.",
         precio: "900 – 1.400 €",
+        min: 900,
+        max: 1400,
         href: "/formacion/centros-educativos",
     },
     {
@@ -76,6 +88,7 @@ const formar: Fila[] = [
         formato: "2–4 h por grupo · curso desde 10 h",
         incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El curso completo, desde 1.200 €. Sin cuentas de pago y con protección de datos de menores.",
         precio: "desde 600 €",
+        min: 600,
         href: "/formacion/alumnado",
     },
     {
@@ -83,6 +96,7 @@ const formar: Fila[] = [
         formato: "producción única",
         incluye: "Vuestra formación producida como curso e instalada en vuestra plataforma para siempre, con registro individual por alumno. También en marca blanca.",
         precio: "desde 1.900 €",
+        min: 1900,
         href: "/formacion/cursos-a-medida",
     },
 ];
@@ -93,6 +107,7 @@ const cumplir: Fila[] = [
         formato: "entrega en 1–2 semanas",
         incluye: "Inventario de la IA en uso real, clasificación de riesgos según el Reglamento e informe con plan de acción priorizado.",
         precio: "desde 750 €",
+        min: 750,
         href: "/cumplimiento",
     },
     {
@@ -100,6 +115,7 @@ const cumplir: Fila[] = [
         formato: "diagnóstico + política + formación",
         incluye: "Todo el diagnóstico, la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados nominales. El expediente completo.",
         precio: "desde 1.800 €",
+        min: 1800,
         href: "/cumplimiento",
         estrella: true,
     },
@@ -108,6 +124,7 @@ const cumplir: Fila[] = [
         formato: "ChatGPT · Copilot · Gemini",
         incluye: "Elección sin comisiones, configuración segura (los datos no entrenan modelos), casos de uso por puesto y arranque del equipo. Licencias aparte, sin sobreprecio.",
         precio: "desde 900 €",
+        min: 900,
         href: "/cumplimiento",
     },
 ];
@@ -118,6 +135,7 @@ const automatizar: Fila[] = [
         formato: "~2 semanas",
         incluye: "Una pieza suelta que ahorra horas ya: dos herramientas conectadas, las facturas leyéndose solas o un flujo comercial concreto.",
         precio: "desde 500 €",
+        min: 500,
         href: "/sistemas",
     },
     {
@@ -125,6 +143,7 @@ const automatizar: Fila[] = [
         formato: "la primera pieza seria",
         incluye: "El CRM implantado y migrado (HubSpot, Pipedrive, Zoho o a medida, sin comisiones) o las herramientas de IA configuradas con el equipo arrancado.",
         precio: "desde 900 €",
+        min: 900,
         href: "/sistemas/crm",
     },
     {
@@ -132,6 +151,7 @@ const automatizar: Fila[] = [
         formato: "3 meses de soporte incluido",
         incluye: "Ventas, clientes u operaciones funcionando solos: hasta 5 procesos, chatbot de WhatsApp o web conectado a tus sistemas, panel a medida y documentos en los dos sentidos.",
         precio: "desde 2.000 €",
+        min: 2000,
         href: "/sistemas",
         estrella: true,
     },
@@ -140,6 +160,7 @@ const automatizar: Fila[] = [
         formato: "6 meses de soporte incluido",
         incluye: "El sistema completo: automatización integral, integraciones ilimitadas, panel de control en tiempo real y formación del equipo incluida.",
         precio: "desde 8.000 €",
+        min: 8000,
         href: "/sistemas/paneles",
     },
 ];
@@ -202,6 +223,48 @@ const faqs = [
     },
 ];
 
+const SITIO = "https://automatizatelo.com";
+
+// Los quince productos como datos estructurados. Un "desde" es un minPrice sin
+// techo; una horquilla lleva los dos. Importes sin IVA, como dice la tabla.
+function oferta(f: Fila) {
+    return {
+        "@type": "Offer",
+        "name": f.nombre,
+        "description": f.incluye,
+        "url": SITIO + f.href,
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "EUR",
+            "minPrice": f.min,
+            ...(f.max ? { "maxPrice": f.max } : {}),
+            "valueAddedTaxIncluded": false,
+        },
+        "availability": "https://schema.org/InStock",
+        "areaServed": { "@type": "Country", "name": "España" },
+        "itemOffered": {
+            "@type": "Service",
+            "name": f.nombre,
+            "description": f.incluye,
+            "provider": { "@type": "Organization", "name": "Automatizatelo", "url": SITIO },
+        },
+    };
+}
+
+const ofertasJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Tarifas de Automatizatelo",
+    "url": SITIO + "/precios",
+    "provider": { "@type": "Organization", "name": "Automatizatelo", "url": SITIO },
+    "itemListElement": [
+        { "@type": "OfferCatalog", "name": "Formar", "url": SITIO + "/precios#formar", "itemListElement": formar.map(oferta) },
+        { "@type": "OfferCatalog", "name": "Cumplir", "url": SITIO + "/precios#cumplir", "itemListElement": cumplir.map(oferta) },
+        { "@type": "OfferCatalog", "name": "Automatizar", "url": SITIO + "/precios#automatizar", "itemListElement": automatizar.map(oferta) },
+    ],
+};
+
 const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -237,6 +300,7 @@ export default function PreciosPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ofertasJsonLd) }} />
             <Header />
 
             {/* Hero con foto + velo lateral y captura */}

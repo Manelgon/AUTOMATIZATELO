@@ -223,7 +223,7 @@ export default function CentrosEducativosPage() {
                             </div>
                             <div className="ce2-enlaces">
                                 <a href="#temario" className="ce2-enlace">Ver el temario completo ↓</a>
-                                <Link href="/precios" className="ce2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#formar" className="ce2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="ce2-nota">
                                 ¿Solo necesitáis el mínimo legal? La{" "}
@@ -307,7 +307,7 @@ export default function CentrosEducativosPage() {
                     <p className="ce2-cifras-pie">
                         Aviso honesto: esta formación <strong>no puntúa en el baremo de oposiciones</strong> —
                         es para el centro y su evidencia del Art. 4 ·{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

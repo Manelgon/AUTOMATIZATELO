@@ -201,7 +201,7 @@ export default function CursosAMedidaPage() {
                             </div>
                             <div className="cam2-enlaces">
                                 <a href="#proceso" className="cam2-enlace">Ver cómo transcurre ↓</a>
-                                <Link href="/precios" className="cam2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#formar" className="cam2-enlace">Ver la tabla de precios →</Link>
                             </div>
                         </div>
                     </div>
@@ -269,7 +269,7 @@ export default function CursosAMedidaPage() {
                     </div>
                     <p className="cam2-cifras-pie">
                         Precio cerrado por escrito antes de empezar —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link> · ¿Quieres ver una
+                        <Link href="/precios#formar">Ver la tabla de precios →</Link> · ¿Quieres ver una
                         plataforma real con sus cursos? <Link href="/casos">Ver casos →</Link>
                     </p>
                 </div>

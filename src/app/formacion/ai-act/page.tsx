@@ -279,7 +279,7 @@ export default function AiActPage() {
                             </div>
                             <div className="aa2-enlaces">
                                 <a href="#temario" className="aa2-enlace">Ver el temario completo ↓</a>
-                                <Link href="/precios" className="aa2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#formar" className="aa2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="aa2-nota">
                                 ¿La quieres junto a la herramienta que usáis? Ese es el{" "}
@@ -348,7 +348,7 @@ export default function AiActPage() {
                     </div>
                     <p className="aa2-cifras-pie">
                         Precio cerrado por sesión, no por alumno —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>

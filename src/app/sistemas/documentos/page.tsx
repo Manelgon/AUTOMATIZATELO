@@ -188,7 +188,7 @@ export default function ExtraccionDatosPage() {
                             </div>
                             <div className="do2-enlaces">
                                 <a href="#circuito" className="do2-enlace">Ver el circuito completo ↓</a>
-                                <Link href="/precios" className="do2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/precios#automatizar" className="do2-enlace">Ver la tabla de precios →</Link>
                             </div>
                             <p className="do2-nota">
                                 ¿No sabes si el papeleo es tu mayor fuga de tiempo? El{" "}
@@ -237,7 +237,7 @@ export default function ExtraccionDatosPage() {
                     </div>
                     <p className="do2-cifras-pie">
                         Precio cerrado por escrito antes de empezar, sin permanencia —{" "}
-                        <Link href="/precios">Ver la tabla de precios →</Link>
+                        <Link href="/precios#automatizar">Ver la tabla de precios →</Link>
                     </p>
                 </div>
             </section>
