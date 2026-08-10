@@ -83,7 +83,7 @@ const entregables = [
     {
         num: "02",
         titulo: "Clasificación de riesgos",
-        desc: "Cada uso, clasificado según el Reglamento: qué es riesgo mínimo, qué exige transparencia y qué entra en alto riesgo.",
+        desc: "Cada uso, clasificado según el Reglamento: qué queda sin obligaciones específicas, qué exige transparencia y qué puede entrar en alto riesgo.",
     },
     {
         num: "03",
@@ -95,7 +95,7 @@ const entregables = [
 const dolores = [
     {
         titulo: "La plantilla ya usa IA por su cuenta",
-        desc: "Tu equipo pega datos de clientes en ChatGPT y nadie ha dicho qué se puede y qué no. Eso es shadow IA, y responde la empresa.",
+        desc: "Tu equipo pega datos de clientes en ChatGPT y nadie ha dicho qué se puede y qué no. Eso es shadow IA: la empresa es la responsable del despliegue aunque nadie lo haya aprobado.",
     },
     {
         titulo: "La supervisión ya ha empezado",
@@ -115,12 +115,12 @@ const proceso = [
     { n: "01", titulo: "Diagnóstico e inventario", d: "Una sesión para entender cómo trabajáis y el inventario de toda la IA en uso — también la que la plantilla usa por su cuenta." },
     { n: "02", titulo: "Clasificación y plan", d: "Cada uso clasificado según el Reglamento, y el plan de acción priorizado: qué hacer, en qué orden y qué cuesta." },
     { n: "03", titulo: "Política y gobernanza", d: "La política de uso de IA redactada para tu empresa: qué se puede usar, con qué datos y quién revisa qué." },
-    { n: "04", titulo: "Formación y evidencia", d: "La alfabetización del Art. 4 impartida, con certificados nominales y el registro fechado. El expediente, montado y con fecha." },
+    { n: "04", titulo: "Formación y evidencia", d: "Las medidas de alfabetización impartidas y adaptadas a los perfiles que usan la IA, con certificado nominal y registro fechado. El expediente, montado y con fecha." },
 ];
 
 const implantacion = [
     { n: "01", titulo: "Elección con criterio", d: "Qué herramienta y qué plan según lo que ya usáis — el más barato que cumpla." },
-    { n: "02", titulo: "Configuración segura", d: "Cuentas de empresa, permisos, y que el proveedor no entrene con vuestros datos." },
+    { n: "02", titulo: "Configuración segura", d: "Cuentas de empresa, permisos y revisar qué hace el proveedor con vuestros datos." },
     { n: "03", titulo: "Casos de uso por puesto", d: "Cada rol sale sabiendo qué pedirle a la IA en SU trabajo, con plantillas propias." },
     { n: "04", titulo: "Política y evidencia", d: "La política de uso redactada para tu empresa y el expediente que documenta las medidas del Art. 4." },
 ];
@@ -250,8 +250,9 @@ export default function AuditoriaIAPage() {
                                 </div>
                             ))}
                             <p className="cu2-nota" style={{ marginTop: "1.1rem" }}>
-                                Y con el pack, la política de uso redactada y la formación del Art. 4
-                                con certificado nominal y registro fechado.
+                                Y con el pack, la política de uso redactada y la formación de
+                                alfabetización en IA para la plantilla, con certificado nominal y
+                                registro fechado.
                             </p>
                         </div>
                     </div>
