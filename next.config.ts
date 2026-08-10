@@ -5,9 +5,13 @@ const nextConfig: NextConfig = {
   async redirects() {
     // Mapa completo v1 -> v2: ninguna URL del sitio viejo muere en 404.
     return [
-      { source: '/automatizacion-restaurantes', destination: '/', permanent: true },
-      { source: '/automatizacion-clinicas', destination: '/', permanent: true },
-      { source: '/automatizacion-ecommerce', destination: '/', permanent: true },
+      // Search Console (may-ago 2026): estas tres viejas siguen recibiendo
+      // impresiones — 321 solo las de restaurantes — y aterrizaban en la home,
+      // que no habla de nada de eso. Cada una va ahora a la pieza que resuelve
+      // lo que buscan: reservas y citas al bot, pedidos al ciclo de ventas.
+      { source: '/automatizacion-restaurantes', destination: '/sistemas/chatbots-whatsapp', permanent: true },
+      { source: '/automatizacion-clinicas', destination: '/sistemas/chatbots-whatsapp', permanent: true },
+      { source: '/automatizacion-ecommerce', destination: '/sistemas/ventas', permanent: true },
       { source: '/automatizacion-academias', destination: '/sectores/academias', permanent: true },
       { source: '/automatizacion-administradores-fincas', destination: '/sectores/administradores-fincas', permanent: true },
       { source: '/automatizacion-empresas-servicios', destination: '/sistemas', permanent: true },
