@@ -207,7 +207,7 @@ export default function FormacionIaPage() {
                                 y alumnado aprendan a usarla, no a esconderla.
                             </span>
                             <span className="fd-puerta-chips">
-                                {["Claustro", "Política del centro", "Aula", "Menores y RGPD"].map((c) => (
+                                {["Claustro", "Política del centro", "Aula", "RGPD y datos"].map((c) => (
                                     <span key={c} className="fd-chip">{c}</span>
                                 ))}
                             </span>

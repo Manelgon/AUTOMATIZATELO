@@ -244,7 +244,7 @@ export default function FormacionEmpresasPage() {
                         </div>
                     </div>
                     <p className="fe-cifras-pie">
-                        Certificado nominal y registro del Art. 4 · presencial, aula virtual o SCORM ·{" "}
+                        Certificado nominal y registro formativo · presencial, aula virtual o SCORM ·{" "}
                         <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>

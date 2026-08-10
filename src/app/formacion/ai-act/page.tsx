@@ -142,7 +142,7 @@ const temario = [
         titulo: "El AI Act sin humo: qué te obliga de verdad",
         puntos: [
             "Qué es el Reglamento y a quién aplica (spoiler: también a ti)",
-            "Art. 4: la alfabetización obligatoria desde febrero de 2025",
+            "Art. 4: la obligación de tomar medidas, aplicable desde febrero de 2025",
             "La clasificación por riesgo, explicada para pymes",
             "Qué multa de verdad el Reglamento — y por qué el Art. 4 no está en esa lista",
         ],

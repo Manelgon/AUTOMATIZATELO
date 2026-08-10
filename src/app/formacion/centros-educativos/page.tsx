@@ -24,7 +24,7 @@ const faqs = [
     },
     {
         question: "¿El AI Act obliga también a un colegio?",
-        answer: "Sí. El artículo 4 del Reglamento Europeo de IA obliga a cualquier organización que use sistemas de IA — y un centro donde los docentes usan ChatGPT, Copilot o plataformas con IA integrada lo es. Además, la educación aparece en el Reglamento entre los ámbitos de mayor sensibilidad, así que un centro tiene más motivos que la media para hacerlo bien y poder acreditarlo.",
+        answer: "Sí. El artículo 4 obliga a quien provee y a quien despliega sistemas de IA — y un centro donde los docentes usan ChatGPT, Copilot o plataformas con IA integrada es responsable del despliegue. Además, la educación aparece en el Reglamento entre los ámbitos de mayor sensibilidad, así que un centro tiene más motivos que la media para hacerlo bien y poder acreditarlo.",
     },
     {
         question: "¿Qué hacemos con los alumnos que ya usan IA para los trabajos?",
@@ -72,8 +72,8 @@ const dolores = [
     },
     {
         icon: "fa-scale-balanced",
-        titulo: "El Art. 4 del AI Act también obliga al centro",
-        desc: "Si el personal usa IA, el centro debe tomar medidas para su alfabetización y poder acreditarlas. Aplica desde febrero de 2025.",
+        titulo: "El Art. 4 del AI Act también afecta al centro",
+        desc: "Si el centro usa sistemas de IA, es responsable del despliegue: debe tomar medidas para apoyar la alfabetización de su personal y de quien los maneja en su nombre, y poder acreditarlas. Aplica desde febrero de 2025.",
     },
 ];
 
@@ -86,7 +86,7 @@ const temario = [
             "Cómo está cambiando la forma de aprender — y de copiar",
             "El Art. 4 del Reglamento Europeo: qué obliga exactamente al centro desde febrero de 2025",
             "La educación como ámbito sensible del Reglamento: qué implica en la práctica",
-            "RGPD con menores: qué datos no salen nunca del centro y qué herramientas pueden usarse",
+            "RGPD en el centro: datos de alumnado, familias y docentes — qué no sale nunca y qué herramientas pueden usarse",
             "Comunicación a familias y qué documentación debe guardar el centro",
         ],
     },
@@ -211,14 +211,14 @@ export default function CentrosEducativosPage() {
                             <span className="mono-label" style={{ color: "#f6c39c" }}>El curso de claustro</span>
                             <h2 className="ce2-titulo">Un día para poner al claustro <span style={{ color: "#f6c39c" }}>al día</span></h2>
                             <p className="ce2-sub">
-                                Un solo curso que cubre la alfabetización obligatoria del Art. 4 y la
+                                Un solo curso que cubre el bloque de alfabetización del Art. 4 y la
                                 práctica real de aula — cada docente sale con cosas montadas para SU
                                 asignatura, y el centro con su evidencia formativa.
                             </p>
                             <div className="ce2-datos">
                                 <span>1 día · 8 h (o 4 + 4)</span>
                                 <span>Presencial · remoto · SCORM</span>
-                                <span>Certificado + registro del Art. 4</span>
+                                <span>Certificado nominal + registro formativo</span>
                                 <span className="ce2-dato-precio">900 – 1.400 € · cerrado en la propuesta</span>
                             </div>
                             <div className="ce2-enlaces">
@@ -239,7 +239,7 @@ export default function CentrosEducativosPage() {
                                     <span className="ce2-badge">Art. 4 incluido</span>
                                 </div>
                                 <h3>Fundamentos y marco legal</h3>
-                                <p>Qué es la IA, el Reglamento Europeo y el RGPD con menores — la alfabetización obligatoria, cubierta.</p>
+                                <p>Qué es la IA, el Reglamento Europeo y el RGPD en el aula — la alfabetización del Art. 4, cubierta.</p>
                             </div>
                             <div className="ce2-sesion ce2-sesion-2">
                                 <div className="ce2-cab">
