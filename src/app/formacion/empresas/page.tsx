@@ -247,7 +247,7 @@ export default function FormacionEmpresasPage() {
                         </div>
                         <div className="fe-cifra">
                             <span className="fe-cifra-valor">desde 1.400 €</span>
-                            <span className="fe-cifra-etiqueta">Curso por herramienta</span>
+                            <span className="fe-cifra-etiqueta">Taller por herramienta</span>
                         </div>
                         <div className="fe-cifra">
                             <span className="fe-cifra-valor">desde 1.800 €</span>

@@ -344,7 +344,7 @@ export default function AiActPage() {
                 <div className="container">
                     <div className="aa2-cifras">
                         <div className="aa2-cifra">
-                            <span className="aa2-cifra-valor">desde 950 €</span>
+                            <span className="aa2-cifra-valor">desde 750 €</span>
                             <span className="aa2-cifra-etiqueta">Alfabetización suelta · Art. 4</span>
                         </div>
                         <div className="aa2-cifra">

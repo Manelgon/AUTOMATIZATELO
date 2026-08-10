@@ -308,7 +308,7 @@ export default function CentrosEducativosPage() {
                         </div>
                         <div className="ce2-cifra">
                             <span className="ce2-cifra-valor">1.100 – 1.500 €</span>
-                            <span className="ce2-cifra-etiqueta">Taller de claustro · 1 día</span>
+                            <span className="ce2-cifra-etiqueta">Formación de claustro · 1 día</span>
                         </div>
                         <div className="ce2-cifra">
                             <span className="ce2-cifra-valor">desde 2.400 €</span>
