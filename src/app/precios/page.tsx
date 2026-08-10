@@ -517,6 +517,16 @@ export default function PreciosPage() {
                             sabes siempre qué estás pagando.
                         </p>
                     </div>
+                    <p style={{
+                        color: "rgba(250,246,239,0.6)",
+                        fontSize: "0.85rem",
+                        margin: "1.6rem 0 0",
+                        maxWidth: 560,
+                    }}>
+                        Todos los importes son sin IVA. Las licencias de las herramientas
+                        (ChatGPT, Copilot, WhatsApp Business) las paga el cliente a su
+                        proveedor, sin sobreprecio por mi parte.
+                    </p>
                     <div className="pp2-variables">
                         {variables.map((v) => (
                             <div key={v.n} className="pp2-variable">
