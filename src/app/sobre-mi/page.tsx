@@ -477,15 +477,15 @@ export default function SobreMiPage() {
                 }
                 .sm-cta {
                     display: inline-block;
-                    background: #f6c39c;
-                    color: #1c1917;
+                    background: var(--color-primary);
+                    color: #fff;
                     font-weight: 700;
                     font-size: 0.95rem;
                     border-radius: 50px;
                     padding: 0.9rem 1.8rem;
                     transition: background 0.2s ease, transform 0.2s ease;
                 }
-                .sm-cta:hover { background: #faf6ef; transform: translateY(-2px); }
+                .sm-cta:hover { background: var(--color-primary-glow); transform: translateY(-2px); }
                 .sm-cta-wa {
                     display: inline-flex;
                     align-items: center;

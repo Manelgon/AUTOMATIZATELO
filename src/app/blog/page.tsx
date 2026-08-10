@@ -55,7 +55,7 @@ export default async function BlogListingPage() {
             <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4rem" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/escribiendo-ventana.webp"
+                    src="/auditoria.webp"
                     alt=""
                     aria-hidden="true"
                     fetchPriority="high"
