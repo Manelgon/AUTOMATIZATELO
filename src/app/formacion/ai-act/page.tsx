@@ -8,7 +8,7 @@ import FormacionTabs from "@/components/FormacionTabs";
 export const metadata: Metadata = {
     title: "Formación Obligatoria del AI Act (Art. 4)",
     description:
-        "El Art. 4 del Reglamento Europeo de IA obliga a formar a tu plantilla desde febrero de 2025. Qué exige, a quién aplica, sanciones y cómo acreditarlo.",
+        "El Art. 4 del Reglamento Europeo de IA obliga desde febrero de 2025 a alfabetizar a tu plantilla. Qué exige de verdad, a quién aplica y cómo acreditarlo.",
     alternates: { canonical: "https://automatizatelo.com/formacion/ai-act" },
     openGraph: {
         title: "Formación obligatoria en IA: el Art. 4 del AI Act explicado",

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://automatizatelo.com/formacion" },
     openGraph: {
         title: "Formación en IA para Empresas y Centros Educativos",
-        description: "Dos puertas: alfabetización + tu herramienta para empresas, e IA en el aula para centros educativos. El AI Act ya exige formar.",
+        description: "Dos puertas: alfabetización + tu herramienta para empresas, e IA en el aula para centros educativos. El AI Act ya exige tomar medidas.",
         url: "https://automatizatelo.com/formacion",
     },
 };
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "¿Es obligatorio formar a mi equipo en IA?",
-        answer: "Si tu empresa usa sistemas de IA, sí: el artículo 4 del Reglamento Europeo de IA (Reglamento UE 2024/1689) exige desde el 2 de febrero de 2025 que proveedores y usuarios de sistemas de IA garanticen un nivel suficiente de alfabetización en IA de su personal.",
+        answer: "Si tu empresa usa sistemas de IA, sí: el artículo 4 del Reglamento Europeo de IA (Reglamento UE 2024/1689) exige desde el 2 de febrero de 2025 que quien provee y quien despliega sistemas de IA adopte medidas para que su personal tenga, en la medida de lo posible, un nivel suficiente de alfabetización en IA. Es un deber de medios: no se exige garantizar un nivel concreto en cada persona, sino tomar medidas razonables y poder demostrarlo.",
     },
     {
         question: "¿Qué formatos de formación ofrecéis?",

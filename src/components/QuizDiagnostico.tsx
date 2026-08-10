@@ -105,7 +105,7 @@ const PREGUNTAS: Pregunta[] = [
     },
     {
         area: "ia",
-        texto: "El Art. 4 del Reglamento de IA obliga a formar al personal que usa IA desde febrero de 2025…",
+        texto: "El Art. 4 del Reglamento de IA obliga desde febrero de 2025 a tomar medidas para que quien usa IA sepa usarla…",
         opciones: [
             { texto: "Lo sé: tenemos formación hecha y papeles", puntos: 0 },
             { texto: "Me suena, pero no hemos hecho nada", puntos: 1 },
