@@ -8,11 +8,11 @@ import FormacionTabs from "@/components/FormacionTabs";
 export const metadata: Metadata = {
     title: "Taller de IA para Alumnado en Centros",
     description:
-        "Taller de IA para alumnado de 4º ESO, Bachillerato y FP: usar la IA para estudiar mejor — no para copiar — y preparar CV, entrevistas y presencia profesional.",
+        "Taller de IA para alumnado de 4º ESO, Bachillerato y FP: usar la IA para estudiar mejor — no para copiar — y preparar CV, entrevistas y perfil profesional.",
     alternates: { canonical: "https://automatizatelo.com/formacion/alumnado" },
     openGraph: {
         title: "IA para el alumnado: aprender mejor y preparar el primer empleo",
-        description: "Una sesión en el centro, por grupos: estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional.",
+        description: "Una sesión en el centro, por grupos: estudiar con IA sin copiar, y usarla para el CV, las entrevistas y el perfil profesional.",
         url: "https://automatizatelo.com/formacion/alumnado",
     },
 };
@@ -85,7 +85,7 @@ const temario = [
     },
     {
         num: "03",
-        titulo: "El CV que pasa los filtros",
+        titulo: "Un CV adaptado a cada oferta",
         puntos: [
             "Redactar y mejorar el CV desde cero con IA",
             "Adaptarlo a cada oferta en minutos, sin mentir",
@@ -104,7 +104,7 @@ const temario = [
     },
     {
         num: "05",
-        titulo: "LinkedIn y marca personal",
+        titulo: "LinkedIn y perfil profesional",
         puntos: [
             "Montar un perfil que aparezca en las búsquedas",
             "Publicar con criterio: contenido que suma, no relleno",
@@ -140,16 +140,16 @@ const dirigido = [
 
 const razones = [
     {
-        titulo: "Ya la usan — sin criterio",
-        desc: "El alumnado usa IA para los trabajos desde hace tiempo. La pregunta no es si la usan, sino si saben cuándo les ayuda y cuándo les está robando el aprendizaje.",
+        titulo: "Ya la usan — falta el criterio",
+        desc: "El alumnado ya utiliza la IA para estudiar y para los trabajos. La pregunta no es si la usa, sino si sabe cuándo le ayuda y cuándo le está robando el aprendizaje.",
     },
     {
-        titulo: "Los detectores no funcionan",
-        desc: "No hay herramienta fiable que detecte texto de IA. El único camino real es una cultura de uso: qué está permitido, qué se cita y cómo se evalúa.",
+        titulo: "Los detectores no son fiables",
+        desc: "Las herramientas que dicen detectar texto de IA se equivocan en las dos direcciones, y una acusación falsa hace más daño que la copia. Lo que sí funciona es una cultura de uso: qué está permitido, qué se cita y cómo se evalúa.",
     },
     {
         titulo: "El primer empleo ya se juega con IA",
-        desc: "Los procesos de selección filtran CVs con software y valoran saber usar IA. Salir del centro sin saber usarla bien es salir con desventaja.",
+        desc: "La IA ya está dentro de muchos procesos de selección y de casi cualquier trabajo. Salir del centro sin saber usarla bien es salir con desventaja.",
     },
 ];
 
@@ -198,7 +198,7 @@ export default function AlumnadoPage() {
                     <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Una sesión en el centro, por grupos: que el alumnado use la IA para
                         estudiar mejor — no para copiar — y aprenda a usarla para el CV,
-                        las entrevistas y su presencia profesional.
+                        las entrevistas y su perfil profesional.
                     </p>
                     </div>
 
@@ -218,8 +218,8 @@ export default function AlumnadoPage() {
                             Prohibirla no funciona. Enseñarla, sí.
                         </h2>
                         <p style={{ color: "var(--color-text-muted)", lineHeight: 1.65, margin: 0, fontSize: "0.95rem", maxWidth: 420 }}>
-                            Tres razones por las que los centros que van por delante ya forman
-                            a su alumnado en IA.
+                            Tres razones para enseñarles a usarla con criterio, en vez de
+                            perseguirla.
                         </p>
                     </div>
                     <div className="al-razones">
@@ -248,7 +248,7 @@ export default function AlumnadoPage() {
                             <div className="al-datos">
                                 <span>Taller 2 – 4 h · curso completo desde 10 h</span>
                                 <span>Presencial en el centro · aula virtual</span>
-                                <span>Certificado de finalización</span>
+                                <span>Certificado nominal de finalización</span>
                                 <span className="al-dato-precio">Desde 600 € · curso completo desde 1.200 €</span>
                             </div>
                             <div className="al-enlaces">
@@ -274,7 +274,7 @@ export default function AlumnadoPage() {
                                     <span className="al-badge">Empleabilidad</span>
                                 </div>
                                 <h3>IA para el primer empleo</h3>
-                                <p>El CV que pasa los filtros automáticos, cartas que no suenan a plantilla, preparar entrevistas con la IA de sparring, y LinkedIn y la búsqueda de ofertas con cabeza.</p>
+                                <p>Un CV adaptado a cada oferta, cartas que no suenan a plantilla, preparar entrevistas con la IA de sparring, y LinkedIn y la búsqueda de ofertas con cabeza.</p>
                             </div>
                         </div>
                     </div>
