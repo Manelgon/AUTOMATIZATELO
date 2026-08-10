@@ -97,7 +97,7 @@ export default function RecursosPage() {
             <Header />
 
             {/* Hero con foto + velo lateral */}
-            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4.5rem" }}>
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4rem" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src="/fondo-nuevo.webp"
@@ -119,7 +119,7 @@ export default function RecursosPage() {
                     </span>
                     <h1 style={{
                         fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(2rem, 5vw, 3.4rem)",
+                        fontSize: "clamp(2rem, 4.5vw, 3rem)",
                         fontWeight: 600,
                         lineHeight: 1.1,
                         letterSpacing: "-0.02em",

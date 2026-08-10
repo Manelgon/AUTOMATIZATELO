@@ -155,7 +155,7 @@ export default function FormacionEmpresasPage() {
                         </span>
                         <h1 style={{
                             fontFamily: "var(--font-display, serif)",
-                            fontSize: "clamp(2.1rem, 5vw, 3.3rem)",
+                            fontSize: "clamp(2rem, 4.5vw, 3rem)",
                             fontWeight: 600,
                             lineHeight: 1.1,
                             letterSpacing: "-0.02em",
@@ -165,7 +165,7 @@ export default function FormacionEmpresasPage() {
                         }}>
                             Tu equipo usando la IA{" "}<br /><span style={{ color: "#f6c39c" }}>con criterio y con certificado</span>
                         </h1>
-                        <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
+                        <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                             El bloque de alfabetización del Art. 4 más el taller práctico con la herramienta
                             que ya usáis — con vuestros casos reales, no ejemplos de laboratorio.
                         </p>

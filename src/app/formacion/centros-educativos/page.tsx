@@ -187,7 +187,7 @@ export default function CentrosEducativosPage() {
                     </span>
                     <h1 style={{
                         fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(2.2rem, 6vw, 3.6rem)",
+                        fontSize: "clamp(2rem, 4.5vw, 3rem)",
                         fontWeight: 600,
                         lineHeight: 1.1,
                         letterSpacing: "-0.02em",
@@ -198,7 +198,7 @@ export default function CentrosEducativosPage() {
                         Tus alumnos ya usan IA.{" "}<br />
                         <span style={{ color: "#f6c39c" }}>¿Y tu claustro?</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
+                    <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Formación práctica en IA para colegios, institutos y centros de FP:
                         talleres para docentes, política de uso del centro y el cumplimiento
                         del Art. 4 del AI Act — con la evidencia documental que lo acredita.

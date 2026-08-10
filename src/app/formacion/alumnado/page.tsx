@@ -192,7 +192,7 @@ export default function AlumnadoPage() {
                     </span>
                     <h1 style={{
                         fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(2.1rem, 5.5vw, 3.4rem)",
+                        fontSize: "clamp(2rem, 4.5vw, 3rem)",
                         fontWeight: 600,
                         lineHeight: 1.1,
                         letterSpacing: "-0.02em",
@@ -203,7 +203,7 @@ export default function AlumnadoPage() {
                         IA para aprender —{" "}<br />
                         <span style={{ color: "#f6c39c" }}>y para el primer empleo</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
+                    <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Una sesión en el centro, por grupos: que el alumnado use la IA para
                         estudiar mejor — no para copiar — y aprenda a usarla para el CV,
                         las entrevistas y su perfil profesional.

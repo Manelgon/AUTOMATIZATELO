@@ -91,7 +91,7 @@ export default function DirectivosPage() {
 
             {/* Hero editorial */}
             {/* Hero con foto de fondo, mismo patrón que la home */}
-            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 5rem" }}>
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4rem" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src="/equipos-directivos.webp"
@@ -116,7 +116,7 @@ export default function DirectivosPage() {
                     </span>
                     <h1 style={{
                         fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(2.2rem, 6vw, 3.6rem)",
+                        fontSize: "clamp(2rem, 4.5vw, 3rem)",
                         fontWeight: 600,
                         lineHeight: 1.1,
                         letterSpacing: "-0.02em",
@@ -126,7 +126,7 @@ export default function DirectivosPage() {
                     }}>
                         IA para dirección: <span style={{ color: "#f6c39c" }}>criterio<br />para decidir, no humo</span>
                     </h1>
-                    <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
+                    <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 640, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Todo el mundo te habla de IA; casi nadie te ayuda a decidir. Esta formación
                         es para gerentes y comités de dirección: qué implantar, qué exige la ley y
                         cómo gobernarlo — en horas de directivo, no en cursos de meses.

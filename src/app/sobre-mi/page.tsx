@@ -167,7 +167,7 @@ export default function SobreMiPage() {
             <Header />
 
             {/* Hero con foto + velo lateral, como el resto del sitio */}
-            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4.5rem" }}>
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4rem" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src="/sobre-mi.webp"

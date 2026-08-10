@@ -150,7 +150,7 @@ export default function CasosDeExitoPage() {
             <Header />
 
             {/* Hero con foto + velo lateral */}
-            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4.5rem" }}>
+            <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4rem" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src="/servicios-hero.webp"
@@ -172,7 +172,7 @@ export default function CasosDeExitoPage() {
                     </span>
                     <h1 style={{
                         fontFamily: "var(--font-display, serif)",
-                        fontSize: "clamp(2rem, 4.8vw, 3.2rem)",
+                        fontSize: "clamp(2rem, 4.5vw, 3rem)",
                         fontWeight: 600,
                         lineHeight: 1.12,
                         letterSpacing: "-0.02em",
