@@ -220,8 +220,12 @@ export default async function BlogPostPage(
                 </div>
             </nav>
 
-            {/* Cierre — el artículo no es un callejón */}
-            <section style={{ padding: "3.4rem 0", background: "#1c1917" }}>
+            {/* Cierre — el artículo no es un callejón. En el naranja de la casa,
+                el mismo del curso estrella: es la última cosa que se ve. */}
+            <section style={{
+                padding: "3.9rem 0",
+                background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)",
+            }}>
                 <div className="container ar2-cierre">
                     <div>
                         <span className="mono-label" style={{ color: "#f6c39c" }}>Si esto te ha tocado de cerca</span>

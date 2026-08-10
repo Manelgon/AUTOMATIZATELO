@@ -171,8 +171,12 @@ export default async function BlogListingPage() {
                 </>
             )}
 
-            {/* Cierre — el blog no es un callejón */}
-            <section style={{ padding: "3.4rem 0", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)" }}>
+            {/* Cierre — el blog no es un callejón. Mismo naranja que el cierre
+                de los artículos y que el curso estrella. */}
+            <section style={{
+                padding: "3.9rem 0",
+                background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)",
+            }}>
                 <div className="container bl2-cierre">
                     <div>
                         <span className="mono-label" style={{ color: "#f6c39c" }}>Y si quieres pasar a la práctica</span>
