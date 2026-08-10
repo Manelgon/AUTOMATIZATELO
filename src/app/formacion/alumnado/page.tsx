@@ -314,7 +314,7 @@ export default function AlumnadoPage() {
             <section style={{ position: "relative", overflow: "hidden", padding: "4rem 0", background: "#1c1917" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/claustro.webp"
+                    src="/auditoria.webp"
                     alt=""
                     aria-hidden="true"
                     loading="lazy"
