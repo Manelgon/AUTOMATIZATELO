@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: "Panel de gestión e IA para academias: matrículas, seguimiento de alumnos, dudas 24/7 y producción de cursos SCORM. Con una academia real en producción.",
     alternates: { canonical: "https://automatizatelo.com/sectores/academias" },
     openGraph: {
-        title: "Automatización para Academias y Formación Online",
+        title: "IA y Automatización para Academias",
         description: "Matrículas, alumnos y dudas en piloto automático — y tus cursos producidos en SCORM. Caso real en producción.",
         url: "https://automatizatelo.com/sectores/academias",
     },

@@ -1,6 +1,6 @@
 const techs = [
     "Claude",
-    "GPT-4o",
+    "GPT-5",
     "n8n",
     "Make",
     "WhatsApp API",

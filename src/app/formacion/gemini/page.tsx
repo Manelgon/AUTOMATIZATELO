@@ -4,7 +4,7 @@ import CursoPage from "@/components/CursoPage";
 export const metadata: Metadata = {
     title: "Curso de Gemini y NotebookLM para Empresas",
     description:
-        "Taller práctico de Gemini en Gmail, Docs, Sheets y Meet, más NotebookLM: tu documentación convertida en un experto al que preguntar. Desde 900€, con certificado.",
+        "Taller práctico de Gemini en Gmail, Docs, Sheets y Meet, más NotebookLM: tu documentación convertida en un experto. Desde 900 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/gemini" },
     openGraph: {
         title: "Gemini + NotebookLM: la IA del mundo Google Workspace",

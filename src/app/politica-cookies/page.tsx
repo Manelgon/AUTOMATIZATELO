@@ -4,7 +4,7 @@ import CookiePreferencesButton from "@/components/CookiePreferencesButton";
 
 export const metadata = {
     title: "Política de Cookies",
-    description: "Qué cookies usa automatizatelo.com, con qué finalidad y cómo configurarlas o rechazarlas.",
+    description: "Qué cookies usa automatizatelo.com, con qué finalidad, cuánto duran y cómo aceptarlas, configurarlas o rechazarlas desde el propio navegador.",
     alternates: { canonical: "https://automatizatelo.com/politica-cookies" },
 };
 

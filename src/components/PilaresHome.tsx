@@ -40,6 +40,10 @@ const pilares = [
 export default function PilaresHome() {
     return (
         <section id="pilares" style={{ padding: 0 }}>
+            {/* Quien no sabe cual de los tres le toca, tiene el test */}
+            <p className="ph-duda">
+                <Link href="/diagnostico">¿No sabes cuál de los tres te toca? El test lo dice en 3 minutos →</Link>
+            </p>
             <div className="ph-paneles">
                 {pilares.map((p, i) => (
                     <motion.div
@@ -67,6 +71,21 @@ export default function PilaresHome() {
             </div>
 
             <style>{`
+                .ph-duda {
+                    background: #1c1917;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0 0 1.6rem;
+                }
+                .ph-duda a {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: #f6c39c;
+                }
+                .ph-duda a:hover { color: #faf6ef; }
                 .ph-paneles {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);

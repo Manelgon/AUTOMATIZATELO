@@ -228,6 +228,7 @@ export default function AuditoriaIAPage() {
                             <div className="cu2-enlaces">
                                 <a href="#proceso" className="cu2-enlace">Ver cómo transcurre ↓</a>
                                 <Link href="/precios" className="cu2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/diagnostico" className="cu2-enlace">¿Por dónde empiezo? Test de 3 min →</Link>
                             </div>
                             <p className="cu2-nota">
                                 ¿Solo necesitáis la formación obligatoria? La{" "}
@@ -416,6 +417,9 @@ export default function AuditoriaIAPage() {
                             menos te vale. Mejor un informe hoy que una carta mañana.
                         </p>
                         <Link href="/#contact" className="cu2-cta">Pedir mis 30 minutos →</Link>
+                        <Link href="/casos" className="cu2-enlace" style={{ marginTop: "0.9rem", display: "inline-block" }}>
+                            Ver sistemas que ya funcionan →
+                        </Link>
                     </div>
                     <div>
                         {faqs.map((f) => (

@@ -1,17 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // =============================================================================
 // BANDA OSCURA DE CIFRAS — prueba en números grandes (ritmo tipo iActa)
 // =============================================================================
-// ⚠️ NÚMEROS DE PRUEBA: pendientes de sustituir por los reales de Manel
-// antes de hacer push. La estructura queda lista; solo se cambia el array.
+// Solo cifras comprobables: las tres primeras se pueden contar en /casos y
+// /sistemas. Si algún día hay un dato de alumnos formados que se sostenga,
+// entra aquí — pero nunca una cifra que no se pueda enseñar.
 // =============================================================================
 
 const cifras = [
-    { valor: "120+", etiqueta: "personas formadas en IA" },
-    { valor: "30+", etiqueta: "automatizaciones en producción" },
+    { valor: "5", etiqueta: "sistemas en producción" },
     { valor: "6", etiqueta: "sectores con sistema propio" },
+    { valor: "3 años", etiqueta: "de IA aplicada a negocios reales" },
     { valor: "100%", etiqueta: "precio cerrado por escrito" },
 ];
 
@@ -33,12 +35,29 @@ export default function CifrasHome() {
                     </motion.div>
                 ))}
             </div>
+            {/* La home no tenia camino a precios salvo por el menu */}
+            <p className="cf-pie">
+                <Link href="/precios">Los quince precios, públicos y por escrito →</Link>
+            </p>
 
             <style>{`
                 .cf-banda {
                     background: #1c1917;
                     padding: 2.2rem 0 2.6rem;
                 }
+                .cf-pie {
+                    margin: 1.8rem 0 0;
+                    text-align: center;
+                }
+                .cf-pie a {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.78rem;
+                    font-weight: 600;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    color: #f6c39c;
+                }
+                .cf-pie a:hover { color: #faf6ef; }
                 .cf-grid {
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);

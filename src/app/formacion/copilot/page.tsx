@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CursoPage from "@/components/CursoPage";
 
 export const metadata: Metadata = {
-    title: "Curso de Microsoft Copilot 365 para Empresas",
+    title: "Curso de Copilot 365 para Empresas",
     description:
         "Taller práctico de Copilot en Word, Excel, Outlook y Teams: la IA dentro de las herramientas que tu equipo ya usa cada día. Desde 900€, con certificado.",
     alternates: { canonical: "https://automatizatelo.com/formacion/copilot" },

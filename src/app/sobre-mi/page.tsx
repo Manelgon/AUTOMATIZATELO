@@ -7,10 +7,10 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: { absolute: "Manel Méndez González · Quién soy y cómo trabajo" },
     description:
-        "Manel Méndez González implanta la IA en pymes: forma equipos, deja el cumplimiento del AI Act en regla y construye sistemas que ya funcionan. Precio y plazo cerrados, sin permanencia.",
+        "Manel Méndez implanta la IA en pymes: forma equipos, deja el AI Act en regla y construye sistemas que ya funcionan. Precio cerrado, sin permanencia.",
     alternates: { canonical: "https://automatizatelo.com/sobre-mi" },
     openGraph: {
-        title: "Quién soy y cómo trabajo · Manel Méndez González",
+        title: "Manel Méndez · Quién soy y cómo trabajo",
         description: "30 minutos gratis y tres caminos: formar, cumplir y automatizar. Precio cerrado, sin permanencia, código tuyo.",
         url: "https://automatizatelo.com/sobre-mi",
     },
@@ -68,7 +68,7 @@ const lineas = [
         num: "03",
         titulo: "Automatizar",
         lema: "Que el trabajo repetitivo se haga solo",
-        desc: "Alcance, precio y plazo por escrito antes de tocar nada; entregas parciales que ves funcionar, y de 1 a 6 meses de acompañamiento.",
+        desc: "Alcance, precio y plazo por escrito antes de tocar nada; entregas parciales que ves funcionar, y de 3 a 6 meses de acompañamiento.",
         pasos: ["Propuesta cerrada", "Entregas parciales", "Acompañamiento"],
         href: "/sistemas",
         cta: "Ver los sistemas que construyo →",
@@ -204,7 +204,7 @@ export default function SobreMiPage() {
                         cumplimiento en regla y construyo los sistemas que trabajan solos.
                     </p>
                     <div className="sm-hero-ctas">
-                        <Link href="#contact" className="sm-cta">Auditoría gratis de 30 min →</Link>
+                        <Link href="#contact" className="sm-cta">30 minutos gratis →</Link>
                         <a
                             href="https://wa.me/34678399182?text=Hola%20Manel%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20automatizaci%C3%B3n%20con%20IA"
                             target="_blank"

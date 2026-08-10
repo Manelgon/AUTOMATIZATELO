@@ -121,7 +121,7 @@ export default function Footer() {
                                 <span style={{ color: 'rgba(250,246,239,0.7)' }}>Barcelona · toda España</span>
                             </li>
                         </ul>
-                        <a href="/#contact" className="footer-cta">Auditoría gratuita de 30 min →</a>
+                        <a href="/#contact" className="footer-cta">30 minutos gratis →</a>
                     </div>
 
                     {/* Explora */}

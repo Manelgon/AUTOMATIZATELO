@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: "Panel de gestión e IA para administradores de fincas: incidencias, vecinos y documentación en un solo sitio. En uso diario en despachos reales.",
     alternates: { canonical: "https://automatizatelo.com/sectores/administradores-fincas" },
     openGraph: {
-        title: "Automatización para Administradores de Fincas",
+        title: "IA para Administradores de Fincas",
         description: "Incidencias, vecinos y documentación en un solo panel. Construido con despachos reales.",
         url: "https://automatizatelo.com/sectores/administradores-fincas",
     },

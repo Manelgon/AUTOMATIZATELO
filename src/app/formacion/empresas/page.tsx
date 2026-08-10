@@ -8,7 +8,7 @@ import FormacionTabs from "@/components/FormacionTabs";
 export const metadata: Metadata = {
     title: "Formación en IA In-Company para Empresas",
     description:
-        "Formación in-company de IA con certificado: el curso estrella (Alfabetización Art. 4 + vuestra herramienta), cursos de ChatGPT, Copilot, Gemini y Claude, y precios públicos.",
+        "Formación in-company con certificado: el curso estrella (Art. 4 + vuestra herramienta) y cursos de ChatGPT, Copilot, Gemini y Claude. Desde 600 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/empresas" },
     openGraph: {
         title: "Formación en IA in-company: curso estrella y catálogo",

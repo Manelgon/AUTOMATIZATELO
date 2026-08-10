@@ -136,6 +136,7 @@ export default function RecursosPage() {
                     <div className="rc2-hero-acciones">
                         <a href="#recursos" className="rc2-cta">Ver los tres recursos ↓</a>
                         <Link href="/diagnostico" className="rc2-enlace">O haz el test de 3 minutos →</Link>
+                        <Link href="/precios" className="rc2-enlace">Ver qué cuesta lo de pago →</Link>
                     </div>
                 </div>
             </section>

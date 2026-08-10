@@ -255,8 +255,8 @@ export default function ContactForm() {
                         Cuéntame cómo trabajas
                     </h2>
                     <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 480, color: 'rgba(250,246,239,0.8)' }}>
-                        Auditoría gratuita de 30 minutos. Te digo qué automatizar primero
-                        y qué retorno esperar — sin compromiso y sin jerga.
+                        Media hora gratis. Te digo qué automatizar primero, qué formar
+                        y qué no te compensa tocar — sin compromiso y sin jerga.
                     </p>
                     <div className="contact-datos">
                         <a href="mailto:info@automatizatelo.com">info@automatizatelo.com</a>

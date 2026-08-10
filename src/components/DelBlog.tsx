@@ -70,6 +70,7 @@ export default async function DelBlog() {
 
             <p className="db-enlace">
                 <Link href="/blog">Ver todos los artículos →</Link>
+                <Link href="/recursos">Y los recursos gratis: guía del AI Act, prompts y cheatsheet →</Link>
             </p>
 
             <style>{`
@@ -92,6 +93,10 @@ export default async function DelBlog() {
                     text-align: center;
                     margin: 0;
                     padding: 1.6rem 0 2rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 0.6rem 2.4rem;
                 }
                 .db-enlace a {
                     color: #f6c39c;

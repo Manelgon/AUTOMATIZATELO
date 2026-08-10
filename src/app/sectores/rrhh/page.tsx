@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: "Portal de empleo propio, criba asistida por IA y candidatos siempre respondidos. Construido y en producción para una consultora de selección real.",
     alternates: { canonical: "https://automatizatelo.com/sectores/rrhh" },
     openGraph: {
-        title: "Automatización para Selección de Personal y RRHH",
+        title: "Automatización para RRHH y Selección",
         description: "Portal de empleo, criba con IA y seguimiento de procesos en un solo sitio. Caso real en producción.",
         url: "https://automatizatelo.com/sectores/rrhh",
     },

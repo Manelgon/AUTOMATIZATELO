@@ -6,9 +6,9 @@ import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
 
 export const metadata: Metadata = {
-    title: "Cursos E-learning a Medida (SCORM) | Producción",
+    title: "Cursos E-learning a Medida en SCORM",
     description:
-        "Produzco tu curso e-learning a medida en formato SCORM: guion, materiales, vídeo y empaquetado, instalado en tu plataforma. Sobre cualquier tema. Desde 1.900€.",
+        "Tu curso e-learning producido en SCORM: guion, materiales, vídeo y empaquetado, instalado en tu plataforma. Cualquier tema. Desde 1.900 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/cursos-a-medida" },
     openGraph: {
         title: "Producción de cursos e-learning a medida (SCORM)",

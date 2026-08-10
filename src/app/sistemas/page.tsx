@@ -164,7 +164,7 @@ export default function AutomatizacionPage() {
                             textShadow: "0 2px 30px rgba(28,25,23,0.45)",
                         }}>
                             Automatización de procesos:{" "}
-                            <span style={{ color: "#f6c39c" }}>recupera +10 horas a la semana</span>
+                            <span style={{ color: "#f6c39c" }}>que lo repetitivo se haga solo</span>
                         </h1>
                         <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: "0 0 1.4rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                             Las tareas repetitivas de tu pyme — facturas, seguimiento, avisos, informes —
@@ -208,10 +208,10 @@ export default function AutomatizacionPage() {
                                 Que las tareas repetitivas <span style={{ color: "#f6c39c" }}>se ejecuten solas</span>
                             </h2>
                             <p className="si2-sub">
-                                En una pyme española típica, entre facturas, seguimientos, avisos e
-                                informes se van más de diez horas a la semana de trabajo que una
-                                máquina hace mejor y sin errores. Ese es el tiempo que recuperamos —
-                                con las herramientas que ya usáis, sin cambiar de sistema.
+                                Facturas que se teclean a mano, seguimientos que dependen de que
+                                alguien se acuerde, informes que se montan copiando de tres sitios:
+                                trabajo que una máquina hace mejor, más rápido y sin errores de
+                                tecleo — con las herramientas que ya usáis, sin cambiar de sistema.
                             </p>
                             <div className="si2-datos">
                                 <span>Una automatización, ~2 semanas</span>
@@ -228,8 +228,8 @@ export default function AutomatizacionPage() {
                     <div className="si2-mitad">
                         <div className="si2-cuerpo">
                             <div className="si2-cifra-bloque">
-                                <span className="si2-cifra-valor">+10 h</span>
-                                <span className="si2-cifra-etiqueta">A la semana en tareas que no dan dinero</span>
+                                <span className="si2-cifra-valor">6 piezas</span>
+                                <span className="si2-cifra-etiqueta">Se contratan sueltas o juntas</span>
                             </div>
                             <div className="si2-cifra-bloque si2-cifra-bloque-2">
                                 <span className="si2-cifra-valor">0 errores</span>

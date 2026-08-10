@@ -90,7 +90,7 @@ export default function Hero() {
                 >
                     <div className="hero-actions" style={{ gap: '1.2rem', justifyContent: 'flex-start' }}>
                         <a href="#contact" className="btn btn-primary" style={{ fontSize: '1.05rem', padding: '1rem 2.2rem', boxShadow: 'var(--shadow-glow)' }}>
-                            Auditoría Gratis
+                            30 minutos gratis
                         </a>
                         <a
                             href="https://wa.me/34678399182?text=Hola%20Manel%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20automatizaci%C3%B3n%20con%20IA"

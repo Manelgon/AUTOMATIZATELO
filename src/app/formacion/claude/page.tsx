@@ -4,7 +4,7 @@ import CursoPage from "@/components/CursoPage";
 export const metadata: Metadata = {
     title: "Curso de Claude para Empresas",
     description:
-        "Taller práctico de Claude: documentos largos, redacción con criterio, proyectos y agentes. Impartido por quien lo usa a diario para construir sistemas reales. Desde 900€.",
+        "Taller práctico de Claude: documentos largos, redacción con criterio, proyectos y agentes. Impartido por quien lo usa a diario. Desde 900 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/claude" },
     openGraph: {
         title: "Claude: la IA que lee lo que las demás no aguantan",

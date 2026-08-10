@@ -8,7 +8,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: "Chatbots para Empresas: WhatsApp y Web",
     description:
-        "Chatbots para tu empresa en WhatsApp (API oficial) y en tu web: citas, avisos y dudas resueltas 24/7, conectados a tu sistema y con escalado a persona. Desde 2.000€.",
+        "Chatbots en WhatsApp (API oficial) y en tu web: citas, avisos y dudas resueltas 24/7, conectados a tu sistema. Desde 2.000 €.",
     alternates: { canonical: "https://automatizatelo.com/sistemas/chatbots-whatsapp" },
     openGraph: {
         title: "Chatbot de WhatsApp con API oficial — sin números bloqueados",

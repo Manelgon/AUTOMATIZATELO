@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import QuizDiagnostico from "@/components/QuizDiagnostico";
 
 export const metadata: Metadata = {
-    title: "Diagnóstico de Automatización: 12 Preguntas, 3 Minutos",
+    title: "Diagnóstico de Automatización Gratis",
     description:
         "Descubre cuántas horas pierde tu pyme en tareas repetitivas y qué automatizar primero. 12 preguntas, 3 minutos, plan por áreas gratis.",
     alternates: { canonical: "https://automatizatelo.com/diagnostico" },

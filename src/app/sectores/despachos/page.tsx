@@ -217,6 +217,7 @@ export default function DespachosPage() {
                             <div className="de2-enlaces">
                                 <a href="#programa" className="de2-enlace">Ver qué incluye ↓</a>
                                 <Link href="/precios" className="de2-enlace">Ver la tabla de precios →</Link>
+                                <Link href="/diagnostico" className="de2-enlace">¿Qué automatizarías tú? Test de 3 min →</Link>
                             </div>
                             <p className="de2-nota">
                                 ¿Solo necesitáis el mínimo legal? La{" "}

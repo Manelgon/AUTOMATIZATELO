@@ -6,9 +6,9 @@ import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
 
 export const metadata: Metadata = {
-    title: "Formación en IA para Empresas y Centros Educativos",
+    title: "Formación en IA para Empresas y Centros",
     description:
-        "Forma a tu equipo o a tu claustro y cumple el Art. 4 del Reglamento Europeo de IA: alfabetización + herramienta para empresas, e IA en el aula para centros. Toda España.",
+        "Forma a tu equipo o a tu claustro y cumple el Art. 4 del Reglamento Europeo de IA: alfabetización más herramienta, e IA en el aula. Desde 600 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion" },
     openGraph: {
         title: "Formación en IA para Empresas y Centros Educativos",
@@ -141,13 +141,17 @@ export default function FormacionIaPage() {
                     </div>
                     <div className="fpn-item">
                         <span className="fpn-valor">Ago. 2026</span>
-                        <span className="fpn-texto">El régimen sancionador general ya está en vigor: la obligación tiene consecuencias desde este mes.</span>
+                        <span className="fpn-texto">Desde el 2 de agosto de 2026 está en vigor el régimen sancionador general: la obligación ya tiene consecuencias.</span>
                     </div>
                     <div className="fpn-item">
                         <span className="fpn-valor">35 M€ · 7%</span>
                         <span className="fpn-texto">Techo sancionador del Reglamento (Art. 99). Para una pyme la multa se modula — pero la evidencia formativa es lo que te defiende.</span>
                     </div>
                 </div>
+                <p className="fpn-precio">
+                    Alfabetización del Art. 4 desde 600 €; el curso estrella, desde 1.200 € —{" "}
+                    <Link href="/precios">ver la tabla de precios completa →</Link>
+                </p>
             </section>
 
             {/* Las dos puertas — mitades a sangre con foto y velo tinta */}
@@ -205,6 +209,7 @@ export default function FormacionIaPage() {
                     <Link href="/sectores/despachos" className="nav-barra-item">Despachos profesionales</Link>
                     <Link href="/formacion/directivos" className="nav-barra-item">Dirección</Link>
                     <Link href="/formacion/centros-educativos" className="nav-barra-item">Centros educativos</Link>
+                    <Link href="/formacion/alumnado" className="nav-barra-item">Alumnado</Link>
                     <Link href="/sectores/academias" className="nav-barra-item">Academias</Link>
                     <Link href="/formacion/cursos-a-medida" className="nav-barra-item">Cursos a medida · SCORM</Link>
                 </div>
@@ -496,6 +501,15 @@ export default function FormacionIaPage() {
                     line-height: 1.15;
                     margin: 0.8rem 0 1.8rem;
                 }
+                .fpn-precio {
+                    margin: 0;
+                    padding: 0 0 2.2rem;
+                    text-align: center;
+                    color: rgba(250, 246, 239, 0.65);
+                    font-size: 0.9rem;
+                }
+                .fpn-precio a { color: #f6c39c; font-weight: 600; }
+                .fpn-precio a:hover { color: #faf6ef; }
                 .fpn-grid {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);

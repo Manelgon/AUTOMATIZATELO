@@ -70,7 +70,10 @@ export async function generateMetadata(
     if (!post) return { title: "Artículo no encontrado" };
 
     const title = post.meta_title || post.title;
-    const description = post.meta_description || post.excerpt || undefined;
+    // Ningún artículo debe quedarse sin descripción: si la base no trae ni
+    // meta ni entradilla, se compone una a partir del título.
+    const description = post.meta_description || post.excerpt ||
+        `${post.title}. Automatización con IA, formación y cumplimiento del AI Act para pymes, explicado sin jerga por Manel Méndez.`.slice(0, 155);
     const url = `https://automatizatelo.com/blog/${post.slug}`;
 
     return {

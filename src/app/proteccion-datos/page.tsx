@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
     title: "Política de Privacidad",
-    description: "Información sobre el tratamiento de datos personales en Automatizatelo conforme al RGPD y la LOPDGDD.",
+    description: "Cómo trata Automatizatelo los datos personales: base jurídica, plazos de conservación, encargados del tratamiento y cómo ejercer tus derechos (RGPD).",
     alternates: { canonical: "https://automatizatelo.com/proteccion-datos" },
 };
 

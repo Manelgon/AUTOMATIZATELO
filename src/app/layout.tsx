@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     default: "Implantación de IA para Pymes en Barcelona | Automatizatelo",
     template: "%s | Automatizatelo"
   },
-  description: "Implantación de IA para pymes: formación de equipos, cumplimiento del AI Act y automatizaciones con precio cerrado. Barcelona y toda España. Auditoría gratis.",
+  description: "Implantación de IA para pymes: formación de equipos, cumplimiento del AI Act y automatizaciones con precio cerrado. Barcelona y toda España.",
   authors: [{ name: "Automatizatelo Team" }],
   creator: "Automatizatelo",
   publisher: "Automatizatelo",

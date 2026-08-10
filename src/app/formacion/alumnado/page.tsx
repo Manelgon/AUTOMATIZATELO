@@ -6,7 +6,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
 
 export const metadata: Metadata = {
-    title: "Taller de IA para Alumnado: Aprender y Primer Empleo",
+    title: "Taller de IA para Alumnado en Centros",
     description:
         "Taller de IA para alumnado de 4º ESO, Bachillerato y FP: usar la IA para estudiar mejor — no para copiar — y preparar CV, entrevistas y presencia profesional.",
     alternates: { canonical: "https://automatizatelo.com/formacion/alumnado" },
@@ -254,6 +254,7 @@ export default function AlumnadoPage() {
                             <div className="al-enlaces">
                                 <a href="#temario" className="al-enlace">Ver el temario completo ↓</a>
                                 <Link href="/formacion/centros-educativos" className="al-enlace">Ver el programa del centro →</Link>
+                                <Link href="/precios" className="al-enlace">Ver la tabla de precios →</Link>
                             </div>
                         </div>
                     </div>
@@ -330,7 +331,7 @@ export default function AlumnadoPage() {
                     <div>
                         <span className="mono-label" style={{ color: "#f6c39c" }}>FAQ</span>
                         <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.9rem", color: "#faf6ef" }}>
-                            Lo que preguntan los centros
+                            Lo que preguntan antes de traerlo al aula
                         </h2>
                         <p style={{ color: "rgba(250,246,239,0.7)", lineHeight: 1.65, margin: "0 0 1.6rem", fontSize: "0.95rem" }}>
                             El taller se contrata junto al programa de formación del centro —

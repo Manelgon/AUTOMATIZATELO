@@ -4,7 +4,7 @@ import CursoPage from "@/components/CursoPage";
 export const metadata: Metadata = {
     title: "Curso de ChatGPT para Empresas",
     description:
-        "Taller práctico de ChatGPT para tu equipo: cuentas seguras, prompts con criterio, asistentes por puesto y tareas que se hacen solas. Desde 900€, con certificado.",
+        "Taller práctico de ChatGPT para tu equipo: cuentas seguras, prompts con criterio y asistentes por puesto. Desde 900 €, con certificado.",
     alternates: { canonical: "https://automatizatelo.com/formacion/chatgpt" },
     openGraph: {
         title: "ChatGPT en tu empresa: de probarlo a dominarlo",
