@@ -73,7 +73,7 @@ const catalogo = [
     },
     {
         href: "/formacion/chatgpt",
-        foto: "/escribiendo-ventana.webp",
+        foto: "/chatgpt-hero.webp",
         badge: "El más pedido",
         titulo: "ChatGPT",
         desc: "GPTs por puesto, proyectos y tareas programadas. De básico a avanzado.",
@@ -81,7 +81,7 @@ const catalogo = [
     },
     {
         href: "/formacion/copilot",
-        foto: "/despachos.webp",
+        foto: "/copilot-hero.webp",
         badge: "Microsoft 365",
         titulo: "Copilot 365",
         desc: "Si vivís en Word, Excel, Outlook y Teams: la IA dentro del flujo de oficina.",
@@ -89,7 +89,7 @@ const catalogo = [
     },
     {
         href: "/formacion/gemini",
-        foto: "/academias.webp",
+        foto: "/gemini-hero.webp",
         badge: "Google Workspace",
         titulo: "Gemini + NotebookLM",
         desc: "Para equipos en Workspace, con NotebookLM para el conocimiento interno.",
@@ -97,7 +97,7 @@ const catalogo = [
     },
     {
         href: "/formacion/claude",
-        foto: "/equipos-directivos.webp",
+        foto: "/claude-hero.webp",
         badge: "Documentos y agentes",
         titulo: "Claude",
         desc: "Documentos largos, proyectos y agentes. La herramienta con la que construyo mis propios sistemas.",
