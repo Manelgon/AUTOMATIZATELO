@@ -126,7 +126,7 @@ export default function DiagnosticoPage() {
                     <h2 className="dg-titulo">Las cinco áreas donde se va el tiempo</h2>
                     <p className="dg-sub">
                         Cada pregunta puntúa en una de estas cinco. Al final sabrás cuáles son las
-                        dos tuyas — y qué pieza las arregla.
+                        dos tuyas — y qué pieza encaja mejor para resolverlas.
                     </p>
                 </div>
                 <div className="dg-paneles">
@@ -154,12 +154,12 @@ export default function DiagnosticoPage() {
                 <div className="container dg-cierre">
                     <div>
                         <span className="mono-label" style={{ color: "#f6c39c" }}>Qué hago con tus respuestas</span>
-                        <h2 className="dg-titulo">Ni las vendo ni te meto en una lista</h2>
+                        <h2 className="dg-titulo">Ni las vendo ni te apunto a una newsletter</h2>
                         <p className="dg-sub">
-                            El email solo se usa para mandarte el plan y, como mucho, algún consejo
-                            que te sirva. Ni spam, ni terceros, ni llamada comercial sin avisar —
+                            El email se usa para mandarte el plan y, como mucho, algún consejo que
+                            te sirva. Ni spam, ni cesión a terceros, ni llamada comercial sin avisar —
                             está escrito en la{" "}
-                            <Link href="/proteccion-datos">política de privacidad</Link> y se cumple.
+                            <Link href="/proteccion-datos">política de privacidad</Link>.
                         </p>
                         <p className="dg-sub">
                             Si el resultado te sale bajo, te lo diré igual: hay negocios que no

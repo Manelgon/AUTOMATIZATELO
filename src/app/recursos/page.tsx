@@ -32,12 +32,12 @@ interface Recurso {
 const recursos: Recurso[] = [
     {
         tipo: "Guía",
-        titulo: "La formación obligatoria del AI Act, explicada sin humo",
+        titulo: "El Art. 4 del AI Act, explicado sin humo",
         desc:
             "Qué exige el Art. 4 del Reglamento Europeo de IA, desde cuándo, qué sanciones hay de verdad y los cuatro pasos para que una pyme lo tenga cerrado.",
         dentro: [
             "Por qué no existe certificado oficial ni horas mínimas — y quién te dirá lo contrario",
-            "Qué se guarda como prueba de que has formado a tu gente",
+            "Qué se guarda para documentar las medidas que has tomado",
             "Los cuatro pasos, en orden, con lo que hay que tener escrito en cada uno",
         ],
         paraQuien: "Si en tu empresa alguien usa ChatGPT y nadie ha escrito nada al respecto",
@@ -233,8 +233,9 @@ export default function RecursosPage() {
                             La política de uso de IA, el inventario de sistemas y el registro
                             formativo tienen que hablar de <strong>tu</strong> empresa: qué
                             herramientas usáis, con qué datos y quién responde. Una plantilla
-                            genérica descargada de internet no te protege de nada — te da la
-                            sensación de haber cumplido, que es peor.
+                            genérica descargada de internet se queda corta: no dice qué
+                            herramientas usáis, con qué datos ni quién responde — y te deja la
+                            sensación de haber cumplido, que es lo peligroso.
                         </p>
                         <p className="rc2-falta-sub">
                             Esos tres van redactados dentro de la auditoría, con tu nombre y tus
@@ -248,7 +249,7 @@ export default function RecursosPage() {
                         {[
                             { n: "01", t: "Política de uso de IA", d: "Qué se puede meter en un chat de IA y qué no, en tu empresa y con tus datos." },
                             { n: "02", t: "Inventario de sistemas", d: "Qué IA se usa ya, para qué, y en qué nivel de riesgo la coloca el Reglamento." },
-                            { n: "03", t: "Registro formativo", d: "La prueba de que has formado a tu gente: quién, cuándo y en qué. Con fecha." },
+                            { n: "03", t: "Registro formativo", d: "El registro de las medidas formativas adoptadas: quién, cuándo y en qué. Con fecha." },
                         ].map((d) => (
                             <div key={d.n} className="rc2-doc">
                                 <span className="rc2-doc-num mono-label">{d.n}</span>

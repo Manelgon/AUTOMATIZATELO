@@ -75,7 +75,7 @@ const casos: Caso[] = [
         solucion:
             "Asistente de IA por WhatsApp conectado a la agenda real: propone huecos disponibles, confirma la cita, envía recordatorios y gestiona la lista de espera. Panel interno para el equipo con agenda por profesional.",
         resultados: [
-            "Citas agendadas por WhatsApp 24/7 sin intervención humana",
+            "Citas agendadas por WhatsApp a cualquier hora, sin que nadie las teclee",
             "Recordatorios automáticos 24h antes con confirmación del paciente",
             "Lista de espera automática: si se libera un hueco, se ofrece a quien esperaba",
             "Datos de salud como categoría especial: consentimientos, registro de auditoría y derechos del paciente",
