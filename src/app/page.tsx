@@ -26,7 +26,9 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main>
+    /* La home es oscura de arriba abajo: sin este fondo, cualquier hueco entre
+       secciones (la marquesina es tinta translúcida) enseña el crema del body. */
+    <main style={{ background: "#1c1917" }}>
       <Header />
 
       {/* 1. Hero — la promesa */}

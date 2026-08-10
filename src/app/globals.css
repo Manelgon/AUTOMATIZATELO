@@ -616,15 +616,16 @@ img {
   border: none;
 }
 
-/* La píldora melocotón: el mismo CTA que usan todas las páginas v3 */
+/* El CTA de la casa: naranja de marca. Es el único elemento que canta sobre
+   la foto del hero, y por eso no se apaga al melocotón del resto del sitio. */
 .btn-primary {
-  background: #f6c39c;
-  color: #1c1917;
+  background: var(--color-primary);
+  color: #fff;
   box-shadow: none;
 }
 
 .btn-primary:hover {
-  background: #faf6ef;
+  background: var(--color-primary-glow);
   transform: translateY(-2px);
 }
 
@@ -726,7 +727,7 @@ img {
 
 .nav-links a.btn-primary,
 .nav-links a.btn-primary:hover {
-  color: #1c1917;
+  color: #fff;
 }
 
 .mobile-toggle {
@@ -2102,7 +2103,7 @@ section {
 .header-arriba .mobile-toggle { color: #faf6ef; }
 /* El botón de contacto no cambia: es el único elemento que debe destacar. */
 .header-arriba .nav-links > a.btn-primary {
-  color: #1c1917;
+  color: #fff;
   text-shadow: none;
 }
 /* Dentro de los desplegables manda el estilo del panel, no el de la barra:
