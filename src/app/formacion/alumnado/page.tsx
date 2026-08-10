@@ -217,49 +217,6 @@ export default function AlumnadoPage() {
 
             <FormacionTabs />
 
-            {/* Por qué — split sobre crema */}
-            <section style={{ padding: "3.6rem 0" }}>
-                <div className="container al-porque-grid">
-                    <div>
-                        <span className="kicker-mono">Por qué</span>
-                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.9rem" }}>
-                            Prohibirla no funciona. Enseñarla, sí.
-                        </h2>
-                        <p style={{ color: "var(--color-text-muted)", lineHeight: 1.65, margin: 0, fontSize: "0.95rem", maxWidth: 420 }}>
-                            Tres razones para enseñarles a usarla con criterio, en vez de
-                            perseguirla.
-                        </p>
-                    </div>
-                    <div className="al-razones">
-                        {razones.map((r) => (
-                            <div key={r.titulo} className="al-razon">
-                                <h3>{r.titulo}</h3>
-                                <p>{r.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* A quién va dirigido — tira de 4 perfiles */}
-            <section style={{ padding: "3.4rem 0", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)" }}>
-                <div className="container">
-                    <h2 className="al-etiqueta">A quién va dirigido</h2>
-                    <div className="al-perfiles">
-                        {dirigido.map((p, i) => (
-                            <div key={p.n} className="al-perfil">
-                                <div className="al-perfil-cab">
-                                    <span className="al-perfil-num">{p.n}</span>
-                                    {i < dirigido.length - 1 && <span className="al-perfil-linea" aria-hidden="true"></span>}
-                                </div>
-                                <h3>{p.titulo}</h3>
-                                <p>{p.d}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* El taller — split degradado como el curso estrella */}
             <section aria-label="El taller" style={{ padding: 0, background: "linear-gradient(110deg, #b45309 0%, #7c2d12 28%, #431407 54%, #1c1917 78%)" }}>
                 <div className="container al-mitades">
@@ -333,6 +290,64 @@ export default function AlumnadoPage() {
                 </div>
             </section>
 
+            {/* A quién va dirigido — tira de 4 perfiles */}
+            <section style={{ padding: "3.4rem 0", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)" }}>
+                <div className="container">
+                    <h2 className="al-etiqueta">A quién va dirigido</h2>
+                    <div className="al-perfiles">
+                        {dirigido.map((p, i) => (
+                            <div key={p.n} className="al-perfil">
+                                <div className="al-perfil-cab">
+                                    <span className="al-perfil-num">{p.n}</span>
+                                    {i < dirigido.length - 1 && <span className="al-perfil-linea" aria-hidden="true"></span>}
+                                </div>
+                                <h3>{p.titulo}</h3>
+                                <p>{p.d}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Por qué — cierra el argumentario con el tratamiento del contacto
+                del home: foto ambiental, velo lateral y tinta */}
+            <section style={{ position: "relative", overflow: "hidden", padding: "4rem 0", background: "#1c1917" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/claustro.webp"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
+                />
+                <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 1,
+                    background: "linear-gradient(90deg, rgba(28,25,23,0.62) 0%, rgba(28,25,23,0.42) 38%, rgba(28,25,23,0.12) 65%, transparent 85%), linear-gradient(180deg, rgba(28,25,23,0.18) 0%, transparent 40%)",
+                }} />
+                <div className="container al-porque-grid" style={{ position: "relative", zIndex: 2 }}>
+                    <div>
+                        <span className="kicker-mono">Por qué</span>
+                        <h2 className="section-title" style={{ textAlign: "left", marginTop: "0.8rem", marginBottom: "0.9rem", color: "#faf6ef" }}>
+                            Prohibirla no funciona. Enseñarla, sí.
+                        </h2>
+                        <p style={{ color: "rgba(250,246,239,0.8)", lineHeight: 1.65, margin: 0, fontSize: "0.95rem", maxWidth: 420 }}>
+                            Tres razones para enseñarles a usarla con criterio, en vez de
+                            perseguirla.
+                        </p>
+                    </div>
+                    <div className="al-razones">
+                        {razones.map((r) => (
+                            <div key={r.titulo} className="al-razon">
+                                <h3>{r.titulo}</h3>
+                                <p>{r.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ — split en tinta con CTA */}
             <section style={{ padding: "4rem 0", background: "#1c1917" }}>
                 <div className="container al-faq-grid">
@@ -381,19 +396,19 @@ export default function AlumnadoPage() {
                     display: flex;
                     flex-direction: column;
                     gap: 1.2rem;
-                    border-left: 2px solid rgba(234, 88, 12, 0.35);
+                    border-left: 2px solid rgba(246, 195, 156, 0.45);
                     padding-left: 1.6rem;
                 }
                 .al-razon h3 {
                     font-family: var(--font-display, serif);
                     font-size: 1.15rem;
                     font-weight: 600;
-                    color: var(--color-text-main);
+                    color: #faf6ef;
                     margin: 0 0 0.25rem;
                     line-height: 1.3;
                 }
                 .al-razon p {
-                    color: var(--color-text-muted);
+                    color: rgba(250, 246, 239, 0.78);
                     line-height: 1.6;
                     font-size: 0.92rem;
                     margin: 0;

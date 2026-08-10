@@ -124,7 +124,9 @@ export default function DiagnosticoPage() {
 
             {/* Qué mide — paneles a sangre, como el catálogo de sistemas */}
             <section style={{ padding: "3.4rem 0 0", background: "#1c1917", borderTop: "1px solid rgba(250,246,239,0.08)", flexGrow: 1 }}>
-                <div className="container" style={{ marginBottom: "1.8rem" }}>
+                {/* Cabecera centrada, como la de «Lo que he construido» en sobre-mí:
+                    misma medida y mismo peso antes de los paneles a sangre. */}
+                <div className="dg-cab">
                     <span className="mono-label" style={{ color: "#f6c39c" }}>Qué mide</span>
                     <h2 className="dg-titulo">Las cinco áreas donde se va el tiempo</h2>
                     <p className="dg-sub">
@@ -228,9 +230,18 @@ export default function DiagnosticoPage() {
                     .dg-cifras { grid-template-columns: 1fr 1fr; gap: 1.6rem 1rem; }
                 }
 
+                .dg-cab {
+                    text-align: center;
+                    max-width: 660px;
+                    margin: 0 auto 1.8rem;
+                    padding: 0 1.5rem;
+                }
+                /* el subtítulo va a 52ch en el resto de la página; aquí manda la
+                   caja centrada */
+                .dg-cab .dg-sub { max-width: none; margin: 0; }
                 .dg-titulo {
                     font-family: var(--font-display, serif);
-                    font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+                    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
                     font-weight: 600;
                     color: #faf6ef;
                     line-height: 1.15;
