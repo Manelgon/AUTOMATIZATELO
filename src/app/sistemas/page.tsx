@@ -88,7 +88,7 @@ const fugas = [
     {
         num: "03",
         titulo: "Confirmar y recordar citas se come la mañana",
-        desc: "Llamadas, mensajes, huecos que se quedan vacíos porque nadie reofrece la cancelación. Todo eso lo hace un sistema sin equivocarse de hora.",
+        desc: "Llamadas, mensajes, huecos que se quedan vacíos porque nadie reofrece la cancelación. Todo eso lo hace un sistema sin que nadie tenga que acordarse de cada aviso y cada confirmación.",
         enlace: "/sistemas/chatbots-whatsapp",
         enlaceTexto: "Así se resuelve →",
     },
@@ -108,8 +108,8 @@ const fugas = [
     },
     {
         num: "06",
-        titulo: "El cumplimiento depende de acordarse",
-        desc: "Registrar accesos, borrar lo que ya no toca guardar, tener el papel a mano si preguntan. Si no está automatizado, tarde o temprano se olvida.",
+        titulo: "Hay cumplimiento que depende de acordarse",
+        desc: "Registrar accesos, borrar lo que ya no toca guardar, tener el papel a mano si preguntan. Cuando depende de que alguien se acuerde, es fácil que se escape.",
         enlace: "/cumplimiento",
         enlaceTexto: "Ver cumplimiento →",
     },
@@ -210,11 +210,12 @@ export default function AutomatizacionPage() {
                             <p className="si2-sub">
                                 Facturas que se teclean a mano, seguimientos que dependen de que
                                 alguien se acuerde, informes que se montan copiando de tres sitios:
-                                trabajo que una máquina hace mejor, más rápido y sin errores de
-                                tecleo — con las herramientas que ya usáis, sin cambiar de sistema.
+                                trabajo que un sistema hace más rápido y sin que nadie tenga que
+                                volver a teclear los datos — con las herramientas que ya usáis, sin
+                                cambiar de sistema.
                             </p>
                             <div className="si2-datos">
-                                <span>Una automatización, ~2 semanas</span>
+                                <span>Una automatización, desde ~2 semanas</span>
                                 <span>Conecta lo que ya usáis</span>
                                 <span>El código y los datos, tuyos</span>
                                 <span className="si2-dato-precio">Desde 500 € · cerrado en la propuesta</span>
@@ -232,8 +233,8 @@ export default function AutomatizacionPage() {
                                 <span className="si2-cifra-etiqueta">Se contratan sueltas o juntas</span>
                             </div>
                             <div className="si2-cifra-bloque si2-cifra-bloque-2">
-                                <span className="si2-cifra-valor">0 errores</span>
-                                <span className="si2-cifra-etiqueta">De tecleo: los datos entran solos</span>
+                                <span className="si2-cifra-valor">sin teclear</span>
+                                <span className="si2-cifra-etiqueta">Los datos entran solos, no a mano</span>
                             </div>
                             <div className="si2-cifra-bloque si2-cifra-bloque-2">
                                 <span className="si2-cifra-valor">24/7</span>
@@ -261,7 +262,7 @@ export default function AutomatizacionPage() {
                             <span className="si2-cifra-lab">La empresa entera</span>
                         </div>
                         <div className="si2-cifra">
-                            <span className="si2-cifra-num">~2 semanas</span>
+                            <span className="si2-cifra-num">desde ~2 sem.</span>
                             <span className="si2-cifra-lab">Para una automatización puntual</span>
                         </div>
                     </div>
