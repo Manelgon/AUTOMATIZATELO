@@ -40,7 +40,7 @@ const faqs = [
     },
     {
         question: "¿Qué evidencia queda para el centro?",
-        answer: "Certificado nominal por docente y registro formativo fechado con contenidos y horas. Es el expediente con el que el centro acredita la alfabetización en IA de su personal ante quien se lo pida — titularidad, inspección o familias.",
+        answer: "Certificado nominal por docente y registro formativo fechado con contenidos y horas. Es el expediente con el que el centro documenta las medidas de alfabetización que ha tomado, ante quien se lo pida — titularidad, inspección o familias.",
     },
 ];
 

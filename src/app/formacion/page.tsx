@@ -40,7 +40,7 @@ const faqs = [
     },
     {
         question: "¿Qué evidencia documental me queda después?",
-        answer: "Certificado nominal por participante y registro formativo fechado con contenidos, horas y asistentes, más el material impartido. Ese expediente es lo que acredita la alfabetización del Art. 4 — no existe ningún certificado oficial del Reglamento, y quien te venda un 'sello de cumplimiento' te está engañando.",
+        answer: "Certificado nominal por participante y registro formativo fechado con contenidos, horas y asistentes, más el material impartido. Ese expediente es lo que documenta las medidas del Art. 4 — no existe ningún certificado oficial del Reglamento, y quien te venda un 'sello de cumplimiento' te está engañando.",
     },
     {
         question: "¿Podéis formar también al alumnado, no solo al claustro?",
@@ -181,7 +181,7 @@ export default function FormacionIaPage() {
                             <span className="fd-puerta-num mono-label">Empresas</span>
                             <span className="fd-puerta-titulo">Alfabetización + tu herramienta</span>
                             <span className="fd-puerta-desc">
-                                El bloque obligatorio del Art. 4 más el taller 100% práctico con la
+                                El bloque de alfabetización del Art. 4 más el taller 100% práctico con la
                                 herramienta que ya usa tu equipo. Con certificado nominal y registro
                                 formativo, adaptado por departamento y nivel.
                             </span>

@@ -68,7 +68,7 @@ const catalogo = [
         foto: "/escribiendo-ventana.webp",
         badge: "Obligatoria · Art. 4",
         titulo: "Alfabetización en IA",
-        desc: "El bloque que exige el Reglamento: riesgos, marco jurídico y uso responsable.",
+        desc: "El bloque con el que se cubren las medidas del Art. 4: riesgos, marco jurídico y uso responsable.",
         datos: "4–8 h · toda la plantilla",
     },
     {
@@ -155,7 +155,7 @@ export default function FormacionEmpresasPage() {
                             Tu equipo usando la IA{" "}<br /><span style={{ color: "#f6c39c" }}>con criterio y con certificado</span>
                         </h1>
                         <p style={{ fontSize: "1.15rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
-                            El bloque obligatorio del Art. 4 más el taller práctico con la herramienta
+                            El bloque de alfabetización del Art. 4 más el taller práctico con la herramienta
                             que ya usáis — con vuestros casos reales, no ejemplos de laboratorio.
                         </p>
                     </div>

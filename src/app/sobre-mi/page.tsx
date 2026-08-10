@@ -48,7 +48,7 @@ const lineas = [
         num: "01",
         titulo: "Formar",
         lema: "Que tu equipo use la IA con criterio",
-        desc: "Sesiones prácticas con vuestros casos reales, no diapositivas genéricas — y el expediente que acredita la alfabetización del Art. 4, en tu empresa.",
+        desc: "Sesiones prácticas con vuestros casos reales, no diapositivas genéricas — y la documentación de las medidas formativas adoptadas en tu empresa.",
         pasos: ["Ajuste", "Impartición", "Evidencia"],
         href: "/formacion",
         cta: "Formatos y tarifas de formación →",
@@ -200,8 +200,8 @@ export default function SobreMiPage() {
                         Llevo 3 años metido de lleno en la IA aplicada a negocios reales: asistentes
                         de WhatsApp, paneles y plataformas que hoy usan a diario despachos,
                         consultoras y academias — y cursos de IA que se venden en plataformas
-                        e-learning. Automatizatelo es eso, junto: formo a tu equipo, dejo el
-                        cumplimiento en regla y construyo los sistemas que trabajan solos.
+                        e-learning. Automatizatelo es eso, junto: formo a tu equipo, te ayudo a
+                        documentar el cumplimiento y construyo los sistemas que trabajan solos.
                     </p>
                     <div className="sm-hero-ctas">
                         <Link href="#contact" className="sm-cta">30 minutos gratis →</Link>

@@ -293,7 +293,7 @@ export default function CursoPage(p: CursoPageProps) {
                         ))}
                     </div>
                     <p className="cp2-roles-pie">
-                        ¿Quieres además el bloque obligatorio del Art. 4? Este taller es la sesión
+                        ¿Quieres además el bloque de alfabetización del Art. 4? Este taller es la sesión
                         práctica del{" "}
                         <Link href="/formacion/empresas">curso estrella</Link>{" "}
                         (alfabetización + herramienta, desde 1.200 €). Y si la herramienta debe

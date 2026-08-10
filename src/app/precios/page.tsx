@@ -35,7 +35,7 @@ const formar: Fila[] = [
     {
         nombre: "Alfabetización en IA (Art. 4)",
         formato: "4–8 h · toda la plantilla",
-        incluye: "El bloque que exige el Reglamento Europeo: qué es la IA, riesgos y uso responsable. Certificado nominal y registro formativo fechado.",
+        incluye: "El bloque con el que se cubren las medidas del Art. 4: qué es la IA, riesgos y uso responsable. Certificado nominal y registro formativo fechado.",
         precio: "desde 600 €",
         min: 600,
         href: "/formacion/ai-act",
@@ -43,7 +43,7 @@ const formar: Fila[] = [
     {
         nombre: "Alfabetización + herramienta",
         formato: "4 + 4 h · adaptable por equipo",
-        incluye: "El bloque obligatorio del Art. 4 más un taller práctico con la herramienta que ya usáis, sobre vuestros casos reales.",
+        incluye: "El bloque de alfabetización del Art. 4 más un taller práctico con la herramienta que ya usáis, sobre vuestros casos reales.",
         precio: "desde 1.200 €",
         min: 1200,
         href: "/formacion/empresas",
@@ -86,7 +86,7 @@ const formar: Fila[] = [
     {
         nombre: "Taller de IA para alumnado",
         formato: "2–4 h por grupo · curso desde 10 h",
-        incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El curso completo, desde 1.200 €. Sin cuentas de pago y con protección de datos de menores.",
+        incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El curso completo, desde 1.200 €. Sin cuentas de pago y con la protección de datos de menores por delante.",
         precio: "desde 600 €",
         min: 600,
         href: "/formacion/alumnado",
@@ -122,7 +122,7 @@ const cumplir: Fila[] = [
     {
         nombre: "Implantación segura de herramientas",
         formato: "ChatGPT · Copilot · Gemini",
-        incluye: "Elección sin comisiones, configuración segura (los datos no entrenan modelos), casos de uso por puesto y arranque del equipo. Licencias aparte, sin sobreprecio.",
+        incluye: "Elección sin comisiones, configuración de privacidad y uso de datos según el plan contratado, casos de uso por puesto y arranque del equipo. Licencias aparte, sin sobreprecio.",
         precio: "desde 900 €",
         min: 900,
         href: "/cumplimiento",
@@ -158,7 +158,7 @@ const automatizar: Fila[] = [
     {
         nombre: "La empresa entera",
         formato: "6 meses de soporte incluido",
-        incluye: "El sistema completo: automatización integral, integraciones ilimitadas, panel de control en tiempo real y formación del equipo incluida.",
+        incluye: "El sistema completo: automatización integral, las integraciones que pida el alcance sin contarlas una a una, panel de control en tiempo real y formación del equipo incluida.",
         precio: "desde 8.000 €",
         min: 8000,
         href: "/sistemas/paneles",
