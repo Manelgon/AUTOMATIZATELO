@@ -89,18 +89,17 @@ export default function Hero() {
                     transition={{ delay: 0.5 }}
                 >
                     <div className="hero-actions" style={{ gap: '1.2rem', justifyContent: 'flex-start' }}>
-                        <a href="#contact" className="btn btn-primary" style={{ fontSize: '1.05rem', padding: '1rem 2.2rem', boxShadow: 'var(--shadow-glow)' }}>
+                        <a href="#contact" className="btn btn-primary" style={{ fontSize: '1.05rem', padding: '1rem 2.2rem' }}>
                             30 minutos gratis
                         </a>
                         <a
                             href="https://wa.me/34678399182?text=Hola%20Manel%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20automatizaci%C3%B3n%20con%20IA"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn"
-                            style={{ color: '#faf6ef', padding: '1rem 2.2rem', border: '1px solid rgba(250,246,239,0.4)', background: 'rgba(28,25,23,0.25)', backdropFilter: 'blur(8px)', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+                            className="hero-enlace"
                         >
                             <i className="fa-brands fa-whatsapp" style={{ color: '#25D366' }}></i>
-                            Escríbeme por WhatsApp
+                            O escríbeme por WhatsApp →
                         </a>
                     </div>
                 </motion.div>
@@ -119,6 +118,17 @@ export default function Hero() {
             </div>
 
             <style>{`
+                /* El segundo CTA no compite con la píldora: enlace y flecha */
+                .hero-enlace {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: #f6c39c;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    transition: transform 0.25s ease, color 0.2s ease;
+                }
+                .hero-enlace:hover { color: #faf6ef; transform: translateX(6px); }
                 .hero-foto {
                     position: relative;
                     min-height: 98vh;

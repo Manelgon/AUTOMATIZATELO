@@ -228,7 +228,6 @@ export default function Header() {
                         href="/#contact"
                         className="btn btn-primary"
                         onClick={closeAll}
-                        style={{ background: "var(--color-primary)", border: "none" }}
                     >
                         30 min gratis
                     </Link>
