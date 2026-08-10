@@ -310,7 +310,7 @@ export default function ExtraccionDatosPage() {
                         <p className="do2-salida-sub">
                             Tus facturas, albaranes, presupuestos e informes salen desde tus propios
                             datos, con tu plantilla y tu marca, y se envían a quien toca. Como los
-                            informes con diseño propio que genera el panel que construimos para una
+                            informes con diseño propio que genera el panel que construí para una
                             clínica real.
                         </p>
                         <div className="do2-enlaces">

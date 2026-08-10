@@ -28,11 +28,27 @@ const faqs = [
     },
     {
         question: "¿La formación es teórica o práctica?",
-        answer: "Práctica: trabajamos con los casos reales de tu empresa. El equipo sale usando la IA en sus tareas del día a día — redactar, resumir, clasificar, automatizar — y con criterios claros de qué puede y qué no puede hacer con ella.",
+        answer: "Práctica: trabajo con los casos reales de tu empresa. El equipo sale usando la IA en sus tareas del día a día — redactar, resumir, clasificar, automatizar — y con criterios claros de qué puede y qué no puede hacer con ella.",
     },
     {
         question: "¿Incluye la parte de gobernanza y normativa?",
-        answer: "Sí. Además del uso práctico, cubrimos la política interna de uso de IA: qué datos no se pueden pegar en una IA, cómo revisar resultados, qué herramientas están aprobadas y cómo documentarlo para cumplir con el RGPD y el Reglamento de IA.",
+        answer: "Sí. Además del uso práctico, cubro la política interna de uso de IA: qué datos no se pueden pegar en una IA, cómo revisar resultados, qué herramientas están aprobadas y cómo documentarlo para cumplir con el RGPD y el Reglamento de IA.",
+    },
+    {
+        question: "¿Cuánto cuesta formar a mi equipo?",
+        answer: "El bloque de alfabetización del Art. 4 (4-8 horas, toda la plantilla), desde 600€. El curso estrella —ese bloque más un taller práctico con vuestra herramienta— desde 1.200€. Un taller de un día por herramienta, entre 900€ y 1.400€. Un programa in-company de 16 horas, desde 2.400€. Y un curso e-learning a medida en SCORM, desde 1.900€. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
+    },
+    {
+        question: "¿Qué evidencia documental me queda después?",
+        answer: "Certificado nominal por participante y registro formativo fechado con contenidos, horas y asistentes, más el material impartido. Ese expediente es lo que acredita la alfabetización del Art. 4 — no existe ningún certificado oficial del Reglamento, y quien te venda un 'sello de cumplimiento' te está engañando.",
+    },
+    {
+        question: "¿Podéis formar también al alumnado, no solo al claustro?",
+        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la evidencia del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 600€ por sesión en el centro. Muchos centros contratan las dos en la misma jornada.",
+    },
+    {
+        question: "¿Podéis producirlo como curso para nuestra propia plataforma?",
+        answer: "Sí: la formación se produce como curso e-learning en formato SCORM y se instala en vuestra plataforma para siempre, con registro individual por alumno. Se paga la producción una vez y el curso es vuestro, sin licencias recurrentes. También en marca blanca para academias.",
     },
 ];
 
@@ -134,6 +150,7 @@ export default function FormacionIaPage() {
                         La mayoría de pymes y centros españoles todavía no lo ha resuelto.
                     </p>
                 </div>
+                <p className="fpn-cabecera mono-label">¿Por qué formar ahora?</p>
                 <div className="container fpn-grid" style={{ paddingBottom: "2.2rem" }}>
                     <div className="fpn-item">
                         <span className="fpn-valor">Feb. 2025</span>
@@ -148,10 +165,6 @@ export default function FormacionIaPage() {
                         <span className="fpn-texto">Techo sancionador del Reglamento (Art. 99). Para una pyme la multa se modula — pero la evidencia formativa es lo que puedes enseñar si preguntan.</span>
                     </div>
                 </div>
-                <p className="fpn-precio">
-                    Alfabetización del Art. 4 desde 600 €; el curso estrella, desde 1.200 € —{" "}
-                    <Link href="/precios#formar">ver la tabla de precios completa →</Link>
-                </p>
             </section>
 
             {/* Las dos puertas — mitades a sangre con foto y velo tinta */}
@@ -248,6 +261,35 @@ export default function FormacionIaPage() {
                 </div>
             </section>
 
+            {/* Lo que cuesta cada formato — banda de cifras, como el resto del sitio */}
+            <section style={{ padding: "2.6rem 0 2.8rem", background: "#1c1917" }}>
+                <div className="container">
+                    <div className="fpr-cifras">
+                        <div className="fpr-cifra">
+                            <span className="fpr-cifra-valor">desde 600 €</span>
+                            <span className="fpr-cifra-etiqueta">Alfabetización · Art. 4</span>
+                        </div>
+                        <div className="fpr-cifra">
+                            <span className="fpr-cifra-valor">desde 1.200 €</span>
+                            <span className="fpr-cifra-etiqueta">★ Curso estrella · 4 + 4 h</span>
+                        </div>
+                        <div className="fpr-cifra">
+                            <span className="fpr-cifra-valor">900 – 1.400 €</span>
+                            <span className="fpr-cifra-etiqueta">Taller por herramienta · 1 día</span>
+                        </div>
+                        <div className="fpr-cifra">
+                            <span className="fpr-cifra-valor">desde 1.900 €</span>
+                            <span className="fpr-cifra-etiqueta">Curso e-learning (SCORM)</span>
+                        </div>
+                    </div>
+                    <p className="fpr-cifras-pie">
+                        Precio cerrado por sesión, no por alumno; el importe final depende de
+                        participantes y modalidad y se cierra en la propuesta —{" "}
+                        <Link href="/precios#formar">ver las ocho formaciones con su precio →</Link>
+                    </p>
+                </div>
+            </section>
+
             {/* Quién lo imparte + CTA — foto ambiental + velo, cierre de confianza */}
             <section style={{ position: "relative", overflow: "hidden", padding: "4.5rem 0", background: "#1c1917" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -289,7 +331,7 @@ export default function FormacionIaPage() {
                             Pide tu consulta gratuita de 30 minutos →
                         </Link>
                         <span style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(250,246,239,0.6)" }}>
-                            ¿Formamos a tu equipo?
+                            ¿Formo a tu equipo?
                         </span>
                     </div>
                 </div>
@@ -500,6 +542,49 @@ export default function FormacionIaPage() {
                     letter-spacing: -0.01em;
                     line-height: 1.15;
                     margin: 0.8rem 0 1.8rem;
+                }
+                .fpn-cabecera {
+                    text-align: center;
+                    color: rgba(250, 246, 239, 0.55);
+                    margin: 0 0 1.6rem;
+                }
+                .fpr-cifras {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 2rem;
+                }
+                .fpr-cifra {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+                    text-align: center;
+                }
+                .fpr-cifra-valor {
+                    font-family: var(--font-display, serif);
+                    font-size: clamp(1.4rem, 2.6vw, 2rem);
+                    font-weight: 700;
+                    color: #f6c39c;
+                    line-height: 1;
+                }
+                .fpr-cifra-etiqueta {
+                    font-family: var(--font-mono, monospace);
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: rgba(250, 246, 239, 0.6);
+                }
+                .fpr-cifras-pie {
+                    margin: 2rem auto 0;
+                    max-width: 68ch;
+                    text-align: center;
+                    color: rgba(250, 246, 239, 0.6);
+                    font-size: 0.88rem;
+                    line-height: 1.6;
+                }
+                .fpr-cifras-pie a { color: #f6c39c; font-weight: 600; }
+                @media (max-width: 900px) {
+                    .fpr-cifras { grid-template-columns: 1fr 1fr; gap: 1.6rem 1rem; }
                 }
                 .fpn-precio {
                     margin: 0;

@@ -16,7 +16,7 @@ const techs = [
 
 export default function TechMarquee() {
     return (
-        <section aria-label="Tecnologías con las que trabajamos" style={{
+        <section aria-label="Herramientas con las que trabajo" style={{
             marginTop: "-3.6rem",
             padding: "1rem 0",
             position: "relative",

@@ -8,7 +8,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: "Automatización de Procesos para Pymes",
     description:
-        "Automatizamos facturas, documentos, seguimiento de clientes y reportes de tu pyme. Precio cerrado, sin permanencia y auditoría gratis de 30 minutos.",
+        "Automatizo facturas, documentos, seguimiento de clientes y reportes de tu pyme. Precio cerrado, sin permanencia y auditoría gratis de 30 minutos.",
     alternates: { canonical: "https://automatizatelo.com/sistemas" },
     openGraph: {
         title: "Automatización de Procesos para Pymes",
@@ -32,7 +32,7 @@ const faqs = [
     },
     {
         question: "¿Con qué herramientas trabajáis? ¿Tengo que cambiar las mías?",
-        answer: "Trabajamos con las principales plataformas de automatización del mercado o con desarrollo a medida, según lo que tu caso necesite — no nos casamos con ninguna. Y no tienes que cambiar tus herramientas: conectamos las que ya usas (email, WhatsApp, hojas de cálculo, CRM, plataformas de pago).",
+        answer: "Trabajo con las principales plataformas de automatización del mercado o con desarrollo a medida, según lo que tu caso necesite — no nos casamos con ninguna. Y no tienes que cambiar tus herramientas: conectamos las que ya usas (email, WhatsApp, hojas de cálculo, CRM, plataformas de pago).",
     },
     {
         question: "¿Cuánto cuesta automatizar un proceso?",

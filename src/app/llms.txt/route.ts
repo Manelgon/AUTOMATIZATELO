@@ -7,12 +7,12 @@ const content = `# Automatizatelo
 Datos clave:
 - Contacto: info@automatizatelo.com · +34 678 39 91 82
 - Precios públicos por línea: FORMAR al equipo desde 600 €, CUMPLIR el AI Act desde 750 €, AUTOMATIZAR desde 500 € (una automatización concreta), 900 € (poner en marcha), 2.000 € (un área completa) u 8.000 € (la empresa entera). Una automatización suelta y concreta, desde 500 €
-- El cliente conserva el código y los datos de todo lo que construimos
+- El cliente conserva el código y los datos de todo lo que construyo
 - Herramientas según el caso: no dependemos de una sola plataforma
 
 ## Páginas principales
 
-- [Inicio](https://automatizatelo.com/): qué automatizamos, metodología en 5 pasos, precios y preguntas frecuentes
+- [Inicio](https://automatizatelo.com/): qué automatizo, cómo trabajo, precios y preguntas frecuentes
 - [Precios](https://automatizatelo.com/precios): todos los precios públicos — proyectos de automatización (500-8.000 €), formación en IA (600-2.400 €), qué hace variar el precio y FAQ de precios
 - [Sobre mí](https://automatizatelo.com/sobre-mi): quién es Manel Méndez González y cómo trabaja — auditoría gratuita de 30 minutos, tres caminos (formar, cumplir, automatizar) con precio y plazo cerrados, acompañamiento con soporte incluido; sin permanencia y con el código en propiedad del cliente
 - [Recursos gratis](https://automatizatelo.com/recursos): guía del Art. 4 del AI Act, 10 prompts de IA para administradores de fincas y cheatsheet de herramientas — sin registro

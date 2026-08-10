@@ -174,7 +174,7 @@ const variables = [
     {
         n: "02",
         titulo: "Qué existe ya y qué hay que construir",
-        desc: "Si ya tienes CRM, agenda o facturación, automatizamos sobre ello. Si hay que construir el panel o el bot desde cero, es más proyecto — y se presupuesta como tal.",
+        desc: "Si ya tienes CRM, agenda o facturación, automatizo sobre ello. Si hay que construir el panel o el bot desde cero, es más proyecto — y se presupuesta como tal.",
     },
     {
         n: "03",

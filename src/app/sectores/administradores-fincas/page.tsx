@@ -53,7 +53,7 @@ const props: SectorPageProps = {
         { icon: "fa-list-check", title: "Incidencias con registro y seguimiento", description: "Cada incidencia queda registrada con su comunidad, estado y responsable. Nada se pierde en un email y el despacho ve de un vistazo qué está pendiente." },
         { icon: "fa-comments", title: "Comunicaciones con vecinos centralizadas", description: "Las conversaciones y avisos de cada comunidad, en un solo sitio. Se acabó buscar en tres bandejas de correo quién dijo qué." },
         { icon: "fa-folder-tree", title: "Documentación por comunidad", description: "Actas, contratos y documentos organizados por comunidad y accesibles al momento, sin depender de la memoria de nadie." },
-        { icon: "fa-robot", title: "IA para las tareas repetitivas", description: "Automatizamos lo que roba tiempo al despacho: clasificar correos entrantes, redactar comunicados, preparar informes. Formamos también a tu equipo para usar la IA con criterio." },
+        { icon: "fa-robot", title: "IA para las tareas repetitivas", description: "Automatizo lo que roba tiempo al despacho: clasificar correos entrantes, redactar comunicados, preparar informes. Y formo a tu equipo para usar la IA con criterio." },
     ],
     results: [
         { stat: "Ene 2026", label: "En producción y uso diario desde entonces" },
