@@ -8,7 +8,7 @@ import FormacionTabs from "@/components/FormacionTabs";
 export const metadata: Metadata = {
     title: "Formación en IA para Empresas y Centros",
     description:
-        "Forma a tu equipo o a tu claustro y cumple el Art. 4 del Reglamento Europeo de IA: alfabetización más herramienta, e IA en el aula. Desde 600 €.",
+        "Forma a tu equipo o a tu claustro y cubre las medidas del Art. 4 del Reglamento de IA: alfabetización más herramienta, e IA en el aula. Desde 600 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion" },
     openGraph: {
         title: "Formación en IA para Empresas y Centros Educativos",

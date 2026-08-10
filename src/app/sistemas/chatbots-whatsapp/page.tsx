@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "¿Me pueden bloquear el número de WhatsApp por usar un bot?",
-        answer: "Con atajos, sí — y pasa constantemente: las herramientas que automatizan WhatsApp sin la API oficial violan las condiciones de Meta y el número de la empresa acaba bloqueado, con todos los chats dentro. Yo trabajo solo con la API oficial de WhatsApp Business: número verificado, plantillas de mensaje aprobadas y cero riesgo de perder el canal por el que te habla media clientela.",
+        answer: "Con atajos, sí — y pasa constantemente: las herramientas que automatizan WhatsApp sin la API oficial violan las condiciones de Meta y el número de la empresa acaba bloqueado, con todos los chats dentro. Yo trabajo solo con la API oficial de WhatsApp Business: número verificado, plantillas de mensaje aprobadas y sin el motivo de bloqueo más común — el de automatizar por la puerta de atrás el canal por el que te habla media clientela.",
     },
     {
         question: "¿Qué necesito para tener un chatbot en WhatsApp?",

@@ -163,7 +163,7 @@ const temario = [
         puntos: [
             "Qué debe incluir la política interna de IA",
             "Cómo comunicarla para que el equipo la siga de verdad",
-            "El registro formativo: la prueba de que cumples el Art. 4",
+            "El registro formativo: la prueba de las medidas que has tomado",
             "Qué enseñar si un día pregunta una inspección",
         ],
     },

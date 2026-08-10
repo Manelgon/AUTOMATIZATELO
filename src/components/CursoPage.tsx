@@ -32,10 +32,10 @@ export interface CursoPageProps {
 const NUMEROS: Record<number, string> = { 2: "Dos", 3: "Tres", 4: "Cuatro", 5: "Cinco", 6: "Seis" };
 
 const FOTOS: Record<string, string> = {
-    chatgpt: "/escribiendo-ventana.webp",
-    copilot: "/despachos.webp",
-    gemini: "/academias.webp",
-    claude: "/equipos-directivos.webp",
+    chatgpt: "/chatgpt-hero.webp",
+    copilot: "/copilot-hero.webp",
+    gemini: "/gemini-hero.webp",
+    claude: "/claude-hero.webp",
 };
 
 // Segunda foto de la página: la misma que el "quién lo imparte" de /formacion

@@ -7,7 +7,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 export const metadata: Metadata = {
     title: { absolute: "Manel Méndez González · Quién soy y cómo trabajo" },
     description:
-        "Manel Méndez implanta la IA en pymes: forma equipos, deja el AI Act en regla y construye sistemas que ya funcionan. Precio cerrado, sin permanencia.",
+        "Manel Méndez implanta la IA en pymes: forma equipos, documenta el cumplimiento del AI Act y construye sistemas que ya funcionan. Precio cerrado por escrito.",
     alternates: { canonical: "https://automatizatelo.com/sobre-mi" },
     openGraph: {
         title: "Manel Méndez · Quién soy y cómo trabajo",
