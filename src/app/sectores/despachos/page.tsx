@@ -68,7 +68,7 @@ const dolores = [
     },
     {
         titulo: "El Art. 4 también obliga al despacho",
-        desc: "Si el personal usa IA, el despacho debe garantizar su alfabetización y acreditarla. Y quien asesora en cumplimiento no puede permitirse incumplirlo.",
+        desc: "Si el personal usa IA, el despacho debe tomar medidas para su alfabetización y poder acreditarlas. Y quien asesora en cumplimiento no puede permitirse incumplirlo.",
     },
 ];
 
@@ -264,7 +264,7 @@ export default function DespachosPage() {
                         </div>
                     </div>
                     <p className="de2-cifras-pie">
-                        Precio cerrado por sesión, no por alumno —{" "}
+                        No se paga por alumno, sino por sesión —{" "}
                         <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>

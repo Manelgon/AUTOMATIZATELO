@@ -73,7 +73,7 @@ const dolores = [
     {
         icon: "fa-scale-balanced",
         titulo: "El Art. 4 del AI Act también obliga al centro",
-        desc: "Si el personal usa IA, el centro debe garantizar su alfabetización y poder acreditarla. Aplica desde febrero de 2025.",
+        desc: "Si el personal usa IA, el centro debe tomar medidas para su alfabetización y poder acreditarlas. Aplica desde febrero de 2025.",
     },
 ];
 

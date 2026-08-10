@@ -285,7 +285,7 @@ export default function FormacionEmpresasPage() {
                     <div className="fe-pasos">
                         {[
                             { n: "01", titulo: "Antes de la primera sesión", d: "Recojo vuestros casos: qué herramientas ya tenéis contratadas, qué tareas comen más horas y qué datos sensibles maneja cada puesto." },
-                            { n: "02", titulo: "En clase", d: "Los ejercicios salen de vuestro trabajo real — no de una plantilla. Y las decisiones salen resueltas: qué se aprueba, qué no se pega nunca en una IA y quién revisa qué." },
+                            { n: "02", titulo: "En clase", d: "Los ejercicios salen de vuestro trabajo real — no de una plantilla. Y de la clase salen resueltas las decisiones importantes: qué se aprueba, qué no se pega nunca en una IA y quién revisa qué." },
                             { n: "03", titulo: "Lo que queda después", d: "Certificado nominal por participante, registro formativo fechado, el material del curso y los casos montados en clase — que el equipo sigue usando el lunes." },
                         ].map((p, i) => (
                             <div key={p.n} className="fe-paso">

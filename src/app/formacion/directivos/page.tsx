@@ -213,7 +213,7 @@ export default function DirectivosPage() {
                         </div>
                     </div>
                     <p className="di2-cifras-pie">
-                        Precio cerrado por sesión, no por asistente —{" "}
+                        No se paga por asistente, sino por sesión —{" "}
                         <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>

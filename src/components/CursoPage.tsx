@@ -212,7 +212,7 @@ export default function CursoPage(p: CursoPageProps) {
                         </div>
                     </div>
                     <p className="cp2-cifras-pie">
-                        Precio cerrado por sesión, no por alumno —{" "}
+                        No se paga por alumno, sino por sesión —{" "}
                         <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>

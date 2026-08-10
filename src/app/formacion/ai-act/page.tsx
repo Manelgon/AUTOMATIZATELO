@@ -266,7 +266,7 @@ export default function AiActPage() {
                                 Alfabetización suficiente, <span style={{ color: "#f6c39c" }}>proporcional al puesto</span>
                             </h2>
                             <p className="aa2-sub">
-                                Toda empresa que use sistemas de IA debe adoptar medidas para garantizar,
+                                Toda empresa que use sistemas de IA debe adoptar medidas para promover,
                                 en la mayor medida posible, un nivel suficiente de alfabetización en IA de
                                 su personal — proporcional al rol de cada persona y al riesgo del sistema.
                                 Obliga a quien desarrolla IA y también a quien solo la usa. Es un
@@ -349,7 +349,7 @@ export default function AiActPage() {
                         </div>
                     </div>
                     <p className="aa2-cifras-pie">
-                        Precio cerrado por sesión, no por alumno —{" "}
+                        No se paga por alumno, sino por sesión —{" "}
                         <Link href="/precios#formar">Ver la tabla de precios →</Link>
                     </p>
                 </div>

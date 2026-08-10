@@ -148,8 +148,8 @@ export default function FormacionIaPage() {
                         Y ya no es solo cuestión de productividad: usar IA sin formar al equipo es hoy
                         una <strong>obligación sin resolver</strong>: si tu organización usa IA, el
                         Art. 4 exige tomar medidas para que quien la utiliza tenga una
-                        alfabetización suficiente — y poder demostrarlo. La mayoría de pymes
-                        y centros españoles todavía no lo ha hecho.
+                        alfabetización suficiente — y poder demostrarlo. Muchas pymes y centros
+                        españoles todavía están dándole vueltas.
                     </p>
                 </div>
                 <p className="fpn-cabecera mono-label">¿Por qué formar ahora?</p>
@@ -285,8 +285,8 @@ export default function FormacionIaPage() {
                         </div>
                     </div>
                     <p className="fpr-cifras-pie">
-                        Precio cerrado por sesión, no por alumno; el importe final depende de
-                        participantes y modalidad y se cierra en la propuesta —{" "}
+                        No se paga por alumno, sino por sesión — y el precio de la sesión se
+                        cierra por escrito en la propuesta, según participantes y modalidad —{" "}
                         <Link href="/precios#formar">ver las ocho formaciones con su precio →</Link>
                     </p>
                 </div>
