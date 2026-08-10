@@ -9,6 +9,8 @@ import Link from "next/link";
 // Imán de leads: el visitante responde, ve su puntuación, y para llevarse el
 // plan por áreas deja nombre y email. El envío crea un lead en el panel
 // (flow_name 'diagnostico') con la puntuación y el detalle de respuestas.
+// Vive en el hero de /diagnostico, así que viste la misma ropa que la tarjeta
+// de "Pide información": tinta translúcida, filetes y melocotón.
 // =============================================================================
 
 type Area = "comercial" | "administracion" | "atencion" | "datos" | "ia";
@@ -134,20 +136,20 @@ const AREAS: Record<Area, { nombre: string; consejo: string; href: string; enlac
     comercial: {
         nombre: "Captación y ventas",
         consejo: "Cada contacto sin contestar es dinero que se va a otro. Un CRM conectado a tu web y presupuestos con plantilla lo arreglan en semanas.",
-        href: "/sistemas",
+        href: "/sistemas/ventas",
         enlace: "Automatización de ventas",
     },
     administracion: {
         nombre: "Administración y papeleo",
-        consejo: "Facturas, cobros y documentos que se procesan solos: es la automatización con el retorno más rápido y medible.",
-        href: "/sistemas",
-        enlace: "Automatización de procesos",
+        consejo: "Facturas, cobros y documentos que se procesan solos: es la automatización que antes se nota, porque el ahorro se ve en la mesa de alguien.",
+        href: "/sistemas/documentos",
+        enlace: "Facturas y documentos",
     },
     atencion: {
         nombre: "Atención al cliente",
         consejo: "Las preguntas repetidas y las citas no necesitan tu tiempo: un chatbot bien conectado responde 24/7 y agenda solo.",
         href: "/sistemas/chatbots-whatsapp",
-        enlace: "Chatbots",
+        enlace: "Chatbots de WhatsApp y web",
     },
     datos: {
         nombre: "Datos y herramientas",
@@ -158,8 +160,8 @@ const AREAS: Record<Area, { nombre: string; consejo: string; href: string; enlac
     ia: {
         nombre: "IA y cumplimiento",
         consejo: "El Reglamento de IA ya aplica y sanciona desde agosto de 2026. La formación del Art. 4 con certificados te pone en regla — y de paso el equipo aprende a usarla bien.",
-        href: "/formacion",
-        enlace: "Formación en IA",
+        href: "/formacion/ai-act",
+        enlace: "Alfabetización del Art. 4",
     },
 };
 
@@ -231,63 +233,235 @@ export default function QuizDiagnostico() {
         }
     };
 
-    const cajaEstilo = {
-        background: "var(--color-card-bg, #fff)",
-        border: "1px solid var(--color-border)",
-        borderRadius: "18px",
-        padding: "2rem",
-    } as const;
+    const estilos = (
+        <style>{`
+            .qz-caja {
+                background: rgba(28, 25, 23, 0.92);
+                border: 1px solid rgba(250, 246, 239, 0.12);
+                border-radius: 18px;
+                padding: 1.8rem 1.8rem 2rem;
+                width: 100%;
+                max-width: 560px;
+                justify-self: end;
+            }
+            @media (max-width: 960px) { .qz-caja { justify-self: start; } }
+            .qz-cabecera {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            .qz-paso { color: #f6c39c; }
+            .qz-atras {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-family: var(--font-mono, monospace);
+                font-size: 0.72rem;
+                font-weight: 600;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: rgba(250, 246, 239, 0.55);
+                padding: 0;
+                transition: color 0.2s ease;
+            }
+            .qz-atras:hover { color: #f6c39c; }
+            .qz-barra {
+                height: 2px;
+                background: rgba(250, 246, 239, 0.16);
+                margin-bottom: 1.8rem;
+            }
+            .qz-barra-avance {
+                height: 2px;
+                background: #f6c39c;
+                transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            }
+            .qz-pregunta {
+                font-family: var(--font-display, serif);
+                font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+                font-weight: 600;
+                color: #faf6ef;
+                line-height: 1.25;
+                margin: 0 0 1.4rem;
+            }
+            /* Las respuestas, como filas de índice: filete arriba y nada más */
+            .qz-opciones { display: flex; flex-direction: column; }
+            .qz-opcion {
+                display: flex;
+                align-items: baseline;
+                gap: 0.9rem;
+                width: 100%;
+                text-align: left;
+                background: none;
+                border: none;
+                border-top: 1px solid rgba(250, 246, 239, 0.14);
+                padding: 0.95rem 0.3rem;
+                font-family: inherit;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: rgba(250, 246, 239, 0.85);
+                cursor: pointer;
+                transition: color 0.2s ease, padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s ease;
+            }
+            .qz-opcion:last-child { border-bottom: 1px solid rgba(250, 246, 239, 0.14); }
+            .qz-opcion:hover, .qz-opcion:focus-visible {
+                color: #faf6ef;
+                background: rgba(250, 246, 239, 0.05);
+                padding-left: 0.9rem;
+                outline: none;
+            }
+            .qz-opcion-letra {
+                font-family: var(--font-mono, monospace);
+                font-size: 0.72rem;
+                font-weight: 700;
+                color: rgba(246, 195, 156, 0.65);
+                flex-shrink: 0;
+            }
+            .qz-opcion-elegida .qz-opcion-letra { color: #f6c39c; }
+            .qz-opcion-elegida { color: #f6c39c; }
+
+            .qz-titulo {
+                font-family: var(--font-display, serif);
+                font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+                font-weight: 600;
+                color: #faf6ef;
+                line-height: 1.2;
+                margin: 0.8rem 0 0.6rem;
+            }
+            .qz-texto {
+                color: rgba(250, 246, 239, 0.78);
+                line-height: 1.7;
+                font-size: 0.93rem;
+                margin: 0 0 1.4rem;
+            }
+            .qz-campo {
+                width: 100%;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid rgba(250, 246, 239, 0.3);
+                border-radius: 0;
+                padding: 0.6rem 0;
+                font-size: 0.9rem;
+                font-family: inherit;
+                color: #faf6ef;
+                outline: none;
+                transition: border-color 0.2s ease;
+            }
+            .qz-campo:focus { border-bottom-color: #f6c39c; }
+            .qz-campo::placeholder { color: rgba(250, 246, 239, 0.45); }
+            .qz-consent {
+                display: flex;
+                gap: 0.6rem;
+                align-items: flex-start;
+                font-size: 0.76rem;
+                color: rgba(250, 246, 239, 0.68);
+                line-height: 1.5;
+            }
+            .qz-consent a { color: #f6c39c; }
+            .qz-boton {
+                background: #f6c39c;
+                color: #1c1917;
+                border: none;
+                border-radius: 50px;
+                padding: 0.85rem 1rem;
+                width: 100%;
+                font-size: 0.95rem;
+                font-weight: 700;
+                font-family: inherit;
+                cursor: pointer;
+                transition: background 0.2s ease, transform 0.2s ease;
+            }
+            .qz-boton:hover { background: #faf6ef; transform: translateY(-1px); }
+            .qz-error { color: #fca5a5; font-size: 0.82rem; margin: 0; }
+
+            .qz-marcador {
+                font-family: var(--font-display, serif);
+                font-size: clamp(2.6rem, 7vw, 4rem);
+                font-weight: 700;
+                color: #f6c39c;
+                line-height: 1;
+                display: block;
+            }
+            .qz-area {
+                border-top: 1px solid rgba(250, 246, 239, 0.14);
+                padding: 1.2rem 0 0;
+                margin-top: 1.2rem;
+            }
+            .qz-area-nombre { color: #f6c39c; }
+            .qz-area p {
+                color: rgba(250, 246, 239, 0.78);
+                line-height: 1.65;
+                font-size: 0.92rem;
+                margin: 0.5rem 0 0.7rem;
+            }
+            .qz-area a {
+                color: #f6c39c;
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: inline-block;
+                transition: transform 0.25s ease, color 0.2s ease;
+            }
+            .qz-area a:hover { color: #faf6ef; transform: translateX(6px); }
+            .qz-cierre {
+                margin-top: 1.6rem;
+                padding-top: 1.4rem;
+                border-top: 1px solid rgba(250, 246, 239, 0.14);
+            }
+            .qz-cierre p {
+                color: rgba(250, 246, 239, 0.78);
+                line-height: 1.65;
+                font-size: 0.92rem;
+                margin: 0 0 1rem;
+            }
+            .qz-cta {
+                display: inline-block;
+                background: #f6c39c;
+                color: #1c1917;
+                font-weight: 700;
+                font-size: 0.92rem;
+                border-radius: 50px;
+                padding: 0.8rem 1.6rem;
+                transition: background 0.2s ease, transform 0.2s ease;
+            }
+            .qz-cta:hover { background: #faf6ef; transform: translateY(-2px); }
+        `}</style>
+    );
 
     // ── Fase 1: preguntas ─────────────────────────────────────────────────────
     if (fase === "preguntas") {
         const p = PREGUNTAS[paso];
         return (
-            <div style={cajaEstilo}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.2rem" }}>
-                    <span className="mono-label" style={{ color: "var(--color-primary)" }}>
+            <div className="qz-caja">
+                <div className="qz-cabecera">
+                    <span className="mono-label qz-paso">
                         {String(paso + 1).padStart(2, "0")} / {PREGUNTAS.length}
                     </span>
                     {paso > 0 && (
-                        <button onClick={() => setPaso(paso - 1)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--color-text-muted)", fontSize: "0.85rem" }}>
+                        <button type="button" onClick={() => setPaso(paso - 1)} className="qz-atras">
                             ← Anterior
                         </button>
                     )}
                 </div>
-                <div style={{ height: 4, background: "var(--color-border)", borderRadius: 2, marginBottom: "1.8rem" }}>
-                    <div style={{ height: 4, width: `${(paso / PREGUNTAS.length) * 100}%`, background: "var(--color-primary)", borderRadius: 2, transition: "width 0.3s ease" }} />
+                <div className="qz-barra">
+                    <div className="qz-barra-avance" style={{ width: `${(paso / PREGUNTAS.length) * 100}%` }} />
                 </div>
-                <p style={{
-                    fontFamily: "var(--font-display, serif)",
-                    fontSize: "clamp(1.25rem, 2.6vw, 1.7rem)",
-                    fontWeight: 600,
-                    color: "var(--color-text-main)",
-                    lineHeight: 1.3,
-                    margin: "0 0 1.6rem",
-                }}>
-                    {p.texto}
-                </p>
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+                <p className="qz-pregunta">{p.texto}</p>
+                <div className="qz-opciones">
                     {p.opciones.map((o, i) => (
                         <button
                             key={o.texto}
+                            type="button"
                             onClick={() => responder(i)}
-                            className="quiz-opcion"
-                            style={{
-                                textAlign: "left",
-                                padding: "1rem 1.2rem",
-                                borderRadius: "12px",
-                                border: respuestas[paso] === i ? "1.5px solid var(--color-primary)" : "1px solid var(--color-border)",
-                                background: respuestas[paso] === i ? "rgba(234,88,12,0.06)" : "transparent",
-                                color: "var(--color-text-main)",
-                                fontSize: "0.98rem",
-                                lineHeight: 1.5,
-                                cursor: "pointer",
-                            }}
+                            className={`qz-opcion ${respuestas[paso] === i ? "qz-opcion-elegida" : ""}`}
                         >
+                            <span className="qz-opcion-letra" aria-hidden="true">
+                                {String.fromCharCode(65 + i)}
+                            </span>
                             {o.texto}
                         </button>
                     ))}
                 </div>
+                {estilos}
             </div>
         );
     }
@@ -295,36 +469,31 @@ export default function QuizDiagnostico() {
     // ── Fase 2: datos para el plan ────────────────────────────────────────────
     if (fase === "datos") {
         return (
-            <div style={cajaEstilo}>
-                <span className="mono-label" style={{ color: "var(--color-primary)" }}>Resultado listo</span>
-                <p style={{
-                    fontFamily: "var(--font-display, serif)",
-                    fontSize: "clamp(1.4rem, 3vw, 2rem)",
-                    fontWeight: 600,
-                    color: "var(--color-text-main)",
-                    lineHeight: 1.25,
-                    margin: "0.8rem 0 0.6rem",
-                }}>
-                    Tu potencial de automatización: {porcentaje}%
+            <div className="qz-caja">
+                <span className="mono-label qz-paso">Resultado listo</span>
+                <span className="qz-marcador">{porcentaje}%</span>
+                <p className="qz-titulo" style={{ marginTop: "0.4rem" }}>
+                    de tu semana es automatizable
                 </p>
-                <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, marginBottom: "1.6rem" }}>
-                    Dime dónde te mando el plan por áreas — qué automatizaría primero en tu caso y por qué — y lo ves aquí mismo.
+                <p className="qz-texto">
+                    Dime dónde te mando el plan por áreas — qué automatizaría primero en tu caso
+                    y por qué — y lo ves aquí mismo, sin esperar a ningún correo.
                 </p>
-                <form onSubmit={enviar} style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+                <form onSubmit={enviar} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                     <input
                         value={form.nombre}
                         onChange={(e) => setForm({ ...form, nombre: e.target.value })}
-                        placeholder="Tu nombre"
-                        style={{ padding: "0.9rem 1.1rem", borderRadius: "12px", border: "1px solid var(--color-border)", fontSize: "0.95rem", background: "transparent", color: "var(--color-text-main)" }}
+                        placeholder="Tu nombre*"
+                        className="qz-campo"
                     />
                     <input
                         type="email"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        placeholder="tu@email.com"
-                        style={{ padding: "0.9rem 1.1rem", borderRadius: "12px", border: "1px solid var(--color-border)", fontSize: "0.95rem", background: "transparent", color: "var(--color-text-main)" }}
+                        placeholder="tu@empresa.com*"
+                        className="qz-campo"
                     />
-                    <label style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start", fontSize: "0.82rem", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
+                    <label className="qz-consent">
                         <input
                             type="checkbox"
                             checked={form.acepto}
@@ -332,72 +501,53 @@ export default function QuizDiagnostico() {
                             style={{ marginTop: "0.2rem" }}
                         />
                         <span>
-                            Acepto la <Link href="/proteccion-datos" style={{ color: "var(--color-primary)" }}>política de privacidad</Link>.
+                            Acepto la <Link href="/proteccion-datos">política de privacidad</Link>.
                             Usaré tu email para enviarte el plan y, como mucho, algún consejo útil — nada de spam.
                         </span>
                     </label>
-                    {error && <p style={{ color: "#b91c1c", fontSize: "0.88rem", margin: 0 }}>{error}</p>}
-                    <button type="submit" disabled={enviando} className="btn btn-primary" style={{ padding: "1rem 2rem", fontSize: "1rem", opacity: enviando ? 0.6 : 1 }}>
+                    {error && <p className="qz-error">{error}</p>}
+                    <button type="submit" disabled={enviando} className="qz-boton" style={{ opacity: enviando ? 0.6 : 1 }}>
                         {enviando ? "Guardando…" : "Ver mi plan de automatización"}
                     </button>
                 </form>
+                {estilos}
             </div>
         );
     }
 
     // ── Fase 3: resultado ─────────────────────────────────────────────────────
     return (
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-            <div style={cajaEstilo}>
-                <span className="mono-label" style={{ color: "var(--color-primary)" }}>Tu diagnóstico</span>
-                <p style={{
-                    fontFamily: "var(--font-display, serif)",
-                    fontSize: "clamp(1.5rem, 3.2vw, 2.2rem)",
-                    fontWeight: 600,
-                    color: "var(--color-text-main)",
-                    lineHeight: 1.25,
-                    margin: "0.8rem 0 0.4rem",
-                }}>
-                    {porcentaje}% — {titular}
-                </p>
-                <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, margin: 0 }}>
-                    {porcentaje >= 30
-                        ? "La buena noticia: casi todo lo que puntúa alto se resuelve con automatizaciones pequeñas, de precio cerrado, sobre las herramientas que ya usas."
-                        : "Tienes la base bien montada. Lo que queda son mejoras puntuales — y probablemente el cumplimiento del Reglamento de IA, que casi nadie tiene."}
-                </p>
-            </div>
+        <div className="qz-caja">
+            <span className="mono-label qz-paso">Tu diagnóstico</span>
+            <span className="qz-marcador">{porcentaje}%</span>
+            <p className="qz-titulo" style={{ marginTop: "0.4rem" }}>{titular}</p>
+            <p className="qz-texto">
+                {porcentaje >= 30
+                    ? "La buena noticia: casi todo lo que puntúa alto se resuelve con automatizaciones pequeñas, de precio cerrado, sobre las herramientas que ya usas."
+                    : "Tienes la base bien montada. Lo que queda son mejoras puntuales — y probablemente el cumplimiento del Reglamento de IA, que casi nadie tiene."}
+            </p>
 
             {principales.map(({ area }) => (
-                <div key={area} style={cajaEstilo}>
-                    <p style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--color-primary)", marginBottom: "0.6rem" }}>
+                <div key={area} className="qz-area">
+                    <span className="mono-label qz-area-nombre">
                         Dónde empezaría — {AREAS[area].nombre}
-                    </p>
-                    <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, margin: "0 0 1rem" }}>
-                        {AREAS[area].consejo}
-                    </p>
-                    <Link href={AREAS[area].href} style={{ color: "var(--color-primary)", fontWeight: 600 }}>
-                        {AREAS[area].enlace} →
-                    </Link>
+                    </span>
+                    <p>{AREAS[area].consejo}</p>
+                    <Link href={AREAS[area].href}>{AREAS[area].enlace} →</Link>
                 </div>
             ))}
 
-            <div style={{ ...cajaEstilo, background: "#f8dfc6", border: "none", textAlign: "center" }}>
-                <p style={{
-                    fontFamily: "var(--font-display, serif)",
-                    fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)",
-                    fontWeight: 600,
-                    color: "#1c1917",
-                    margin: "0 0 0.8rem",
-                }}>
-                    ¿Lo vemos sobre tu caso real?
+            <div className="qz-cierre">
+                <p>
+                    ¿Lo vemos sobre tu caso real? Media hora gratis: repasamos tu resultado y te
+                    digo qué automatizaría primero, qué costaría y qué no te compensa tocar.
                 </p>
-                <p style={{ color: "rgba(28,25,23,0.7)", marginBottom: "1.4rem", fontSize: "0.98rem" }}>
-                    30 minutos gratis: repasamos tu resultado y te digo qué automatizaría primero y qué costaría.
+                <Link href="/#contact" className="qz-cta">Pedir mis 30 minutos →</Link>
+                <p style={{ marginTop: "1rem", marginBottom: 0 }}>
+                    O mira antes <Link href="/precios" style={{ color: "#f6c39c", fontWeight: 600 }}>lo que cuesta cada pieza</Link>.
                 </p>
-                <Link href="/#contact" className="btn btn-primary" style={{ padding: "0.95rem 2.2rem" }}>
-                    Pedir mis 30 minutos
-                </Link>
             </div>
+            {estilos}
         </div>
     );
 }
