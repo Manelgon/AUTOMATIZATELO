@@ -3,6 +3,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Cumplimiento del AI Act para Empresas",
@@ -128,6 +130,7 @@ const implantacion = [
 export default function AuditoriaIAPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Cumplimiento del AI Act", url: "/cumplimiento" }])} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
             <Header />

@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
+import Esquema from "@/components/Esquema";
+import { migas, curso } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Cursos E-learning a Medida en SCORM",
@@ -116,6 +118,15 @@ const proceso = [
 export default function CursosAMedidaPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Cursos a medida (SCORM)", url: "/formacion/cursos-a-medida" }])} />
+            <Esquema datos={curso({
+                nombre: "Curso e-learning a medida en SCORM",
+                descripcion: "Vuestra formación producida como curso e instalada en vuestra plataforma, con registro individual por alumno. También en marca blanca.",
+                url: "/formacion/cursos-a-medida",
+                precioDesde: 1900,
+                modo: ["online"],
+                certificado: "Registro individual por alumno en vuestra plataforma",
+            })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
             <Header />

@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
+import Esquema from "@/components/Esquema";
+import { migas, curso } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Formación en IA in-company con certificado",
@@ -116,6 +118,15 @@ const catalogo = [
 export default function FormacionEmpresasPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Formación in-company", url: "/formacion/empresas" }])} />
+            <Esquema datos={curso({
+                nombre: "Alfabetización en IA + taller de vuestra herramienta",
+                descripcion: "El bloque de alfabetización del Art. 4 más un taller práctico con la herramienta que ya usáis, sobre vuestros casos reales.",
+                url: "/formacion/empresas",
+                precioDesde: 1200,
+                horas: 8,
+                certificado: "Certificado nominal y registro formativo fechado",
+            })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }} />
             <Header />

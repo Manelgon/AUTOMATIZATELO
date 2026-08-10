@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import SectorPage, { SectorPageProps } from "@/components/SectorPage";
 import { buildSectorSchema } from "@/lib/sectorSchema";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: { absolute: "Automatización para Selección de Personal y RRHH | IA" },
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
 
 const props: SectorPageProps = {
     sector: "Selección y RRHH",
-    sectorSlug: "automatizacion-reclutamiento-rrhh",
+    sectorSlug: "sectores/rrhh",
     icon: "fa-user-tie",
     color: "#10b981",
     heroKicker: "Selección de personal y RRHH",
@@ -81,6 +83,7 @@ const schema = buildSectorSchema(props);
 export default function Page() {
     return (
         <>
+            <Esquema datos={migas([{ nombre: "Recursos humanos", url: "/sectores/rrhh" }])} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <SectorPage {...props} />
         </>

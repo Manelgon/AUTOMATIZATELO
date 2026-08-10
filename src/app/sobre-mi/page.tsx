@@ -3,6 +3,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: { absolute: "Manel Méndez González · Quién soy y cómo trabajo" },
@@ -159,6 +161,7 @@ const faqJsonLd = {
 export default function SobreMiPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Sobre mí", url: "/sobre-mi" }])} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <Header />

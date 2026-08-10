@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
+import Esquema from "@/components/Esquema";
+import { migas, curso } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Formación en IA para Centros Educativos",
@@ -149,6 +151,15 @@ const bloques = [
 export default function CentrosEducativosPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Centros educativos", url: "/formacion/centros-educativos" }])} />
+            <Esquema datos={curso({
+                nombre: "Formación en IA para claustro",
+                descripcion: "Para colegios, institutos y FP: práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro.",
+                url: "/formacion/centros-educativos",
+                precioDesde: 900,
+                horas: 8,
+                certificado: "Certificado nominal y registro formativo fechado",
+            })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <Header />
 

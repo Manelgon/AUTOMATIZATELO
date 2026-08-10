@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
+import Esquema from "@/components/Esquema";
+import { migas, curso } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Formación en IA para Directivos",
@@ -76,6 +78,14 @@ const bloques = [
 export default function DirectivosPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Formación para dirección", url: "/formacion/directivos" }])} />
+            <Esquema datos={curso({
+                nombre: "Sesión ejecutiva de IA para dirección",
+                descripcion: "Qué implantar, qué exige la ley y cómo gobernar la IA en la empresa, en horas de directivo.",
+                url: "/formacion/directivos",
+                precioDesde: 600,
+                horas: 4,
+            })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <Header />
 

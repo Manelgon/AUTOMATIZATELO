@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SistemasTabs from "@/components/SistemasTabs";
 import FormularioCurso from "@/components/FormularioCurso";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Chatbots para Empresas: WhatsApp y Web",
@@ -111,6 +113,7 @@ const oficial = [
 export default function ChatbotsWhatsappPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Automatización y sistemas", url: "/sistemas" }, { nombre: "Chatbots y WhatsApp", url: "/sistemas/chatbots-whatsapp" }])} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
             <Header />

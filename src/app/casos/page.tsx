@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Casos de Éxito en Automatización con IA",
@@ -144,6 +146,7 @@ const pasos = [
 export default function CasosDeExitoPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Casos", url: "/casos" }])} />
             <Header />
 
             {/* Hero con foto + velo lateral */}

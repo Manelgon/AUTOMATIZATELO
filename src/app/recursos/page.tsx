@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Recursos Gratis de IA para Pymes",
@@ -91,6 +93,7 @@ const pilares = [
 export default function RecursosPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Recursos", url: "/recursos" }])} />
             <Header />
 
             {/* Hero con foto + velo lateral */}

@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
+import Esquema from "@/components/Esquema";
+import { migas, curso } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Taller de IA para Alumnado en Centros",
@@ -155,6 +157,13 @@ const razones = [
 export default function AlumnadoPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Taller para alumnado", url: "/formacion/alumnado" }])} />
+            <Esquema datos={curso({
+                nombre: "Taller de IA para alumnado",
+                descripcion: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. Sin cuentas de pago y con la protección de datos de menores por delante.",
+                url: "/formacion/alumnado",
+                precioDesde: 600,
+            })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
             <Header />

@@ -3,6 +3,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuizDiagnostico from "@/components/QuizDiagnostico";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Diagnóstico de Automatización Gratis",
@@ -29,6 +31,7 @@ const areas = [
 export default function DiagnosticoPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Diagnóstico", url: "/diagnostico" }])} />
             <Header />
 
             {/* Hero con foto + velo lateral y el test a la derecha */}

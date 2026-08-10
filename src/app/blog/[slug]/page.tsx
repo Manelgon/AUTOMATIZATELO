@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { supabaseServer } from "@/lib/supabase-server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const revalidate = 3600;
 
@@ -122,7 +124,9 @@ export default async function BlogPostPage(
         "@type": "Article",
         "headline": post.title,
         "description": post.meta_description || post.excerpt || undefined,
-        "image": post.cover_image || "https://automatizatelo.com/og-image.jpg",
+        "image": post.cover_image
+            ? (post.cover_image.startsWith("http") ? post.cover_image : `https://automatizatelo.com${post.cover_image}`)
+            : "https://automatizatelo.com/og-image.jpg",
         "datePublished": post.published_at || post.created_at,
         "dateModified": post.updated_at || post.published_at || post.created_at,
         "inLanguage": "es-ES",
@@ -145,6 +149,10 @@ export default async function BlogPostPage(
 
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([
+                { nombre: "Blog", url: "/blog" },
+                { nombre: post.title, url: `/blog/${post.slug}` },
+            ])} />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}

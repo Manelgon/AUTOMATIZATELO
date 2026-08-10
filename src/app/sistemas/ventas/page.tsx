@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SistemasTabs from "@/components/SistemasTabs";
 import FormularioCurso from "@/components/FormularioCurso";
+import Esquema from "@/components/Esquema";
+import { migas } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Automatización de Ventas para Pymes",
@@ -99,6 +101,7 @@ const piezasCiclo = [
 export default function AutomatizacionVentasPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Automatización y sistemas", url: "/sistemas" }, { nombre: "Ventas", url: "/sistemas/ventas" }])} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
             <Header />

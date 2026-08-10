@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
+import Esquema from "@/components/Esquema";
+import { migas, curso } from "@/lib/esquemas";
 
 export const metadata: Metadata = {
     title: "Formación Obligatoria del AI Act (Art. 4)",
@@ -202,6 +204,14 @@ const piezas = [
 export default function AiActPage() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+            <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Alfabetización del Art. 4", url: "/formacion/ai-act" }])} />
+            <Esquema datos={curso({
+                nombre: "Alfabetización en IA (Art. 4 del Reglamento Europeo de IA)",
+                descripcion: "Qué es la IA, qué riesgos tiene y cómo usarla con responsabilidad. El bloque con el que se cubren las medidas de alfabetización del Art. 4, con certificado nominal y registro formativo fechado.",
+                url: "/formacion/ai-act",
+                precioDesde: 600,
+                certificado: "Certificado nominal y registro formativo fechado",
+            })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <Header />
 
