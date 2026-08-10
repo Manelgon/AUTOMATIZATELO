@@ -145,7 +145,7 @@ export default function FormacionIaPage() {
                     </div>
                     <div className="fpn-item">
                         <span className="fpn-valor">35 M€ · 7%</span>
-                        <span className="fpn-texto">Techo sancionador del Reglamento (Art. 99). Para una pyme la multa se modula — pero la evidencia formativa es lo que te defiende.</span>
+                        <span className="fpn-texto">Techo sancionador del Reglamento (Art. 99). Para una pyme la multa se modula — pero la evidencia formativa es lo que puedes enseñar si preguntan.</span>
                     </div>
                 </div>
                 <p className="fpn-precio">

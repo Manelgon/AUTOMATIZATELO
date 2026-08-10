@@ -307,7 +307,7 @@ export default function AiActPage() {
                     <div className="tem-cabecera">
                         <span className="mono-label tem-kicker">Temario</span>
                         <h2 className="tem-titulo">El temario de la alfabetización, bloque a bloque</h2>
-                        <p className="tem-sub">Siete bloques, de qué es la IA a cómo dejar la evidencia que te defiende —
+                        <p className="tem-sub">Siete bloques, de qué es la IA a cómo dejar la evidencia que lo acredita —
                         adaptados al nivel del equipo y con vuestros ejemplos.</p>
                     </div>
                     {temario.map((b) => (

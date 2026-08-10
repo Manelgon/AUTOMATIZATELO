@@ -340,7 +340,7 @@ export default function PreciosPage() {
                         </h1>
                         <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: 0, maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                             Publico las tarifas porque es la primera pregunta de todo el mundo.
-                            Quince productos con su precio a la vista: <strong style={{ color: "#f6c39c" }}>formar</strong> desde
+                            Quince productos con su precio de partida a la vista: <strong style={{ color: "#f6c39c" }}>formar</strong> desde
                             600 €, <strong style={{ color: "#f6c39c" }}>cumplir</strong> desde 750 € y{" "}
                             <strong style={{ color: "#f6c39c" }}>automatizar</strong> desde 500 €. El precio final
                             se cierra por escrito antes de empezar y no hay permanencia.
