@@ -28,7 +28,7 @@ const faqs = [
     },
     {
         question: "¿Cuántas horas de formación exige la ley?",
-        answer: "Ninguna cifra concreta: el Reglamento no fija horas, fija proporcionalidad al rol de cada persona y al riesgo del sistema de IA que utiliza. Quien venda un curso diciendo que la ley obliga a un número exacto de horas se lo está inventando. Lo que hay que poder demostrar es que cada perfil recibió formación adecuada a lo que hace.",
+        answer: "Ninguna cifra concreta: el Reglamento no fija horas y, tras el Ómnibus de julio de 2026, tampoco un nivel que haya que alcanzar. Lo que pide son medidas adaptadas al conocimiento, la experiencia y el contexto de uso de cada perfil. Quien venda un curso diciendo que la ley obliga a un número exacto de horas se lo está inventando. Lo que hay que poder demostrar es que cada perfil recibió formación adecuada a lo que hace.",
     },
     {
         question: "¿Existe un certificado oficial del Art. 4? ¿Y una formación en IA con certificado?",
@@ -40,7 +40,7 @@ const faqs = [
     },
     {
         question: "¿No se había aplazado el AI Act? Me suena que hubo un aplazamiento.",
-        answer: "Se aplazó una parte — y quien te diga que 'ya no corre prisa' te está informando mal. El Ómnibus digital (Reglamento (UE) 2026/1744, en vigor desde julio de 2026) aplazó solo las obligaciones plenas de los sistemas de alto riesgo: las del Anexo III al 2 de diciembre de 2027 y las de productos regulados a 2028. Lo que NO se aplazó: la alfabetización del Art. 4 (aplicable desde febrero de 2025), la transparencia del Art. 50 (tu chatbot debe identificarse como IA desde agosto de 2026) ni la supervisión de las autoridades nacionales, que arranca esa misma fecha.",
+        answer: "Se aplazó una parte — y quien te diga que 'ya no corre prisa' te está informando mal. El Ómnibus digital (Reglamento (UE) 2026/1744, en vigor desde julio de 2026) aplazó las obligaciones plenas de los sistemas de alto riesgo: las del Anexo III al 2 de diciembre de 2027 y las de productos regulados a 2028. Y retocó el propio Art. 4: la alfabetización sigue siendo obligatoria, pero ya no se exige alcanzar un nivel «suficiente» — se exige tomar medidas. Lo que NO se aplazó: la alfabetización del Art. 4 (aplicable desde febrero de 2025), la transparencia del Art. 50 (tu chatbot debe identificarse como IA desde agosto de 2026) ni la supervisión de las autoridades nacionales, que arranca esa misma fecha.",
     },
     {
         question: "¿Qué tiene que hacer una pyme, en concreto?",
@@ -72,12 +72,12 @@ const pasos = [
     {
         num: "03",
         titulo: "Forma a cada perfil",
-        desc: "Formación práctica y adecuada a lo que cada persona hace — no un curso genérico igual para todos. Es lo que exige el artículo 4.",
+        desc: "Formación práctica y adecuada a lo que cada persona hace — no un curso genérico igual para todos. Es la forma razonable de aplicar el Art. 4 en una plantilla con perfiles y usos distintos.",
     },
     {
         num: "04",
         titulo: "Guarda la evidencia",
-        desc: "Registro formativo fechado, certificado nominal por participante y el material impartido. Ese expediente es lo que acredita el cumplimiento.",
+        desc: "Registro fechado con participantes, contenidos y materiales. El certificado nominal no lo exige la ley — lo pide la práctica, porque es lo que puedes enseñar el día que alguien pregunte.",
     },
 ];
 
@@ -87,7 +87,7 @@ const fechas = [
         texto: "El Art. 4 es aplicable: la obligación de alfabetización en IA ya está en vigor.",
     },
     {
-        fecha: "2 ago 2026",
+        fecha: "Ago. 2026",
         texto: "Empieza la supervisión: las autoridades nacionales pueden supervisar y hacer cumplir el Art. 4, y la transparencia del Art. 50 pasa a ser aplicable. El Ómnibus digital solo aplazó el alto riesgo, a diciembre de 2027.",
     },
     {
@@ -241,9 +241,10 @@ export default function AiActPage() {
                             <span style={{ color: "#f6c39c" }}>ya no es opcional</span>
                         </h1>
                         <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: 0, maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
-                            El artículo 4 del Reglamento Europeo de IA obliga desde febrero de 2025
-                            a que las empresas que usan IA — aunque solo sea ChatGPT — adopten medidas
-                            para formar a su personal. Aquí tienes lo que exige, sin humo.
+                            Desde febrero de 2025, el artículo 4 del Reglamento Europeo de IA exige a
+                            quien provee y a quien despliega sistemas de IA adoptar medidas para
+                            alfabetizar a su personal. Sí: también si lo único que usáis es ChatGPT.
+                            Aquí tienes lo que exige, sin humo.
                         </p>
                     </div>
 
@@ -263,19 +264,20 @@ export default function AiActPage() {
                         <div className="aa2-cuerpo">
                             <span className="mono-label" style={{ color: "#f6c39c" }}>Qué exige, en corto</span>
                             <h2 className="aa2-titulo">
-                                Alfabetización suficiente, <span style={{ color: "#f6c39c" }}>proporcional al puesto</span>
+                                Alfabetización <span style={{ color: "#f6c39c" }}>adaptada a cada puesto</span>
                             </h2>
                             <p className="aa2-sub">
-                                Toda empresa que use sistemas de IA debe adoptar medidas para promover,
-                                en la mayor medida posible, un nivel suficiente de alfabetización en IA de
-                                su personal — proporcional al rol de cada persona y al riesgo del sistema.
-                                Obliga a quien desarrolla IA y también a quien solo la usa. Es un
-                                <strong> deber de medios</strong>: se te pide adoptar medidas razonables y
-                                poder demostrarlo, no garantizar que cada persona alcance un nivel.
+                                Quien provee y quien despliega sistemas de IA debe adoptar medidas para
+                                apoyar el desarrollo de la alfabetización en IA de su personal y de quien
+                                maneja esos sistemas en su nombre. Obliga a quien desarrolla IA y también
+                                a quien solo la usa. Y desde el Ómnibus digital de julio de 2026 es un
+                                <strong> deber de medios</strong> aún más claro: ya no se exige alcanzar
+                                un nivel «suficiente», sino tomar medidas adaptadas al puesto y al uso —
+                                y poder demostrarlas.
                             </p>
                             <div className="aa2-datos">
                                 <span>Aplicable desde feb. 2025</span>
-                                <span>Sin horas mínimas ni certificado oficial</span>
+                                <span>Sin horas mínimas, nivel exigido ni certificado oficial</span>
                                 <span>Certificado nominal + registro fechado</span>
                                 <span className="aa2-dato-precio">Alfabetización desde 600 €</span>
                             </div>

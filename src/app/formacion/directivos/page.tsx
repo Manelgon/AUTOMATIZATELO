@@ -32,7 +32,7 @@ const faqs = [
     },
     {
         question: "¿Esto cuenta para el Art. 4 del AI Act?",
-        answer: "Sí — y para dirección con doble motivo: el Art. 4 pide alfabetización proporcional al rol, y el rol de dirección incluye decidir sobre los sistemas de IA de la empresa. La sesión queda registrada con certificado nominal, como el resto de la formación.",
+        answer: "Sí — y para dirección con doble motivo: el Art. 4 pide medidas adaptadas al puesto y al uso que hace cada perfil, y el de dirección incluye decidir sobre los sistemas de IA de la empresa. La sesión queda registrada con certificado nominal, como el resto de la formación.",
     },
     {
         question: "¿Me vas a intentar vender un proyecto después?",
