@@ -72,7 +72,7 @@ const serviceJsonLd = {
     "areaServed": "España",
     "description": "Implantación de CRM en pymes: elección sin comisiones, configuración, migración de datos, automatizaciones que lo alimentan solo y formación del equipo. Desde 1.200 €.",
     "offers": [
-        { "@type": "Offer", "name": "Puesta en marcha de CRM", "price": "900", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
+        { "@type": "Offer", "name": "Puesta en marcha de CRM", "price": "1200", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
     ],
 };
 

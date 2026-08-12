@@ -10,7 +10,7 @@ import { migas } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Formación en IA para Empresas y Centros",
     description:
-        "Forma a tu equipo o a tu claustro y cubre las medidas del Art. 4 del Reglamento de IA: alfabetización más herramienta, e IA en el aula. Desde 750 €.",
+        "Forma a tu equipo o a tu claustro con una formación que se integra en las medidas del Art. 4: alfabetización, herramienta e IA en el aula. Desde 750 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion" },
     openGraph: {
         title: "Formación en IA para Empresas y Centros Educativos",
@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta formar a mi equipo?",
-        answer: "El bloque de alfabetización del Art. 4, cuatro horas para toda la plantilla, desde 750 €. El curso estrella —ese bloque más un taller práctico con vuestra herramienta— desde 1.800 €. Un taller de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas, desde 3.500 €. Y un curso e-learning a medida en SCORM, desde 2.400 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
+        answer: "El bloque de alfabetización del Art. 4, cuatro horas para toda la plantilla, desde 750 €. El curso estrella —ese bloque más media jornada práctica con vuestra herramienta— desde 1.800 €. Si lo que os falta no es herramienta sino criterio, el mismo bloque más el módulo de vuestro oficio (puesto, aula o despacho), también desde 1.800 €. Un taller de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas, desde 3.500 €. Y un curso e-learning a medida en SCORM, desde 2.400 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
     },
     {
         question: "¿Qué evidencia documental me queda después?",

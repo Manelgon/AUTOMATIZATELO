@@ -162,7 +162,7 @@ export default function AlumnadoPage() {
                 nombre: "Taller de IA para alumnado",
                 descripcion: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. Sin cuentas de pago y con la protección de datos de menores por delante.",
                 url: "/formacion/alumnado",
-                precioDesde: 600,
+                precioDesde: 500,
             })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />

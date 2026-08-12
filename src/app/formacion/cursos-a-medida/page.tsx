@@ -123,7 +123,7 @@ export default function CursosAMedidaPage() {
                 nombre: "Curso e-learning a medida en SCORM",
                 descripcion: "Vuestra formación producida como curso e instalada en vuestra plataforma, con registro individual por alumno. También en marca blanca.",
                 url: "/formacion/cursos-a-medida",
-                precioDesde: 1900,
+                precioDesde: 2400,
                 modo: ["online"],
                 certificado: "Registro individual por alumno en vuestra plataforma",
             })} />

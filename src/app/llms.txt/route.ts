@@ -6,14 +6,14 @@ const content = `# Automatizatelo
 
 Datos clave:
 - Contacto: info@automatizatelo.com · +34 678 39 91 82
-- Precios públicos por línea: FORMAR al equipo desde 600 €, CUMPLIR el AI Act desde 750 €, AUTOMATIZAR desde 500 € (una automatización concreta), 900 € (poner en marcha), 2.000 € (un área completa) u 8.000 € (la empresa entera). Una automatización suelta y concreta, desde 500 €
+- Precios públicos por línea: FORMAR al equipo desde 750 €, CUMPLIR el AI Act desde 950 €, AUTOMATIZAR desde 500 € (una automatización concreta), 1.200 € (poner en marcha), 3.000 € (un área completa) u 8.000 € (la empresa entera)
 - El cliente conserva el código y los datos de todo lo que construyo
 - Herramientas según el caso: no dependemos de una sola plataforma
 
 ## Páginas principales
 
 - [Inicio](https://automatizatelo.com/): qué automatizo, cómo trabajo, precios y preguntas frecuentes
-- [Precios](https://automatizatelo.com/precios): todos los precios públicos — proyectos de automatización (500-8.000 €), formación en IA (600-2.400 €), qué hace variar el precio y FAQ de precios
+- [Precios](https://automatizatelo.com/precios): todos los precios públicos — proyectos de automatización (500-8.000 €), formación en IA (750-3.500 €), qué hace variar el precio y FAQ de precios
 - [Sobre mí](https://automatizatelo.com/sobre-mi): quién es Manel Méndez González y cómo trabaja — auditoría gratuita de 30 minutos, tres caminos (formar, cumplir, automatizar) con precio y plazo cerrados, acompañamiento con soporte incluido; sin permanencia y con el código en propiedad del cliente
 - [Recursos gratis](https://automatizatelo.com/recursos): guía del Art. 4 del AI Act, 10 prompts de IA para administradores de fincas y cheatsheet de herramientas — sin registro
 - [Blog](https://automatizatelo.com/blog): guías prácticas sobre automatización e IA para pymes
@@ -25,9 +25,9 @@ Datos clave:
 - [Automatización para administradores de fincas](https://automatizatelo.com/sectores/administradores-fincas): panel de incidencias, comunicaciones con vecinos y documentación, en uso diario en despachos reales desde enero de 2026
 - [Automatización para academias y formación online](https://automatizatelo.com/sectores/academias): panel de gestión académica (caso real: AFCademIA), bot de dudas y matrículas, facturación y certificados automáticos, y producción de cursos SCORM
 - [Automatización para selección de personal y RRHH](https://automatizatelo.com/sectores/rrhh): portal de empleo propio, criba asistida por IA con supervisión humana y candidatos siempre respondidos (caso real: Henkoaching)
-- [Formación en IA para centros educativos](https://automatizatelo.com/formacion/centros-educativos): formación de claustro para colegios, institutos y FP — talleres para docentes (900-1.400 €), política de uso de IA del centro, alfabetización art. 4 (desde 600 €) y curso SCORM (desde 1.900 €); no puntúa en baremos de oposiciones
+- [Formación en IA para centros educativos](https://automatizatelo.com/formacion/centros-educativos): formación de claustro para colegios, institutos y FP — formación de claustro (1.100-1.500 €), política de uso de IA del centro, alfabetización (desde 750 €) y curso SCORM (desde 2.400 €); no puntúa en baremos de oposiciones
 - [Formación en IA para despachos profesionales](https://automatizatelo.com/sectores/despachos): administradores de fincas, gestorías y asesorías — talleres con los casos del despacho, protección del secreto profesional y evidencia del art. 4
-- [Formación en IA para directivos](https://automatizatelo.com/formacion/directivos): sesión ejecutiva de medio día desde 600 € — qué implantar, qué exige el AI Act y cómo gobernar la IA; programa completo desde 1.200 €
+- [Formación en IA para directivos](https://automatizatelo.com/formacion/directivos): sesión estratégica para dirección desde 900 €, por alcance — qué usos de IA hay ya, qué decisiones están abiertas y qué necesita cada colectivo
 
 ## Servicios
 
@@ -39,9 +39,9 @@ Datos clave:
 - [Chatbot de WhatsApp (API oficial)](https://automatizatelo.com/sistemas/chatbots-whatsapp): citas, avisos y dudas 24/7 en WhatsApp Business API — número verificado, plantillas aprobadas, sin el motivo de bloqueo más común; el bot se identifica como IA (art. 50)
 - [Automatización de ventas](https://automatizatelo.com/sistemas/ventas): leads respondidos en minutos, seguimiento automático, propuestas en un clic y facturación sola; desde 500 € el flujo, ciclo completo desde 2.000 €
 - [Extracción de datos de documentos](https://automatizatelo.com/sistemas/documentos): facturas y albaranes leídos con OCR + IA y registrados solos en el sistema, con revisión humana donde toca; desde 500 €
-- [Producción de cursos SCORM](https://automatizatelo.com/formacion): cursos e-learning a medida — guion, materiales, evaluaciones y empaquetado compatible con cualquier LMS; desde 1.900 €/curso, también en marca blanca
+- [Producción de cursos SCORM](https://automatizatelo.com/formacion): cursos e-learning a medida — guion, materiales, evaluaciones y empaquetado compatible con cualquier LMS; desde 2.400 €/curso, también en marca blanca
 - [Paneles y dashboards a medida](https://automatizatelo.com/sistemas/paneles): la gestión del negocio en un solo sitio, integrada con las herramientas existentes; desde 2.000 €, código y datos del cliente
-- [Formación en IA para empresas](https://automatizatelo.com/formacion): curso estrella «Alfabetización + herramienta» (Art. 4 + taller práctico con ChatGPT/Copilot/Gemini, desde 1.200 €), talleres in-company (900-1.400 €), programas de 16 h (desde 2.400 €), alfabetización art. 4 (desde 600 €) y cursos e-learning SCORM (desde 1.900 €); con certificado nominal y registro formativo
+- [Formación en IA para empresas](https://automatizatelo.com/formacion): curso estrella «Alfabetización + herramienta» (base + media jornada práctica con ChatGPT/Copilot/Gemini/Claude, desde 1.800 €), «Alfabetización + vuestro trabajo» (base + módulo por función, desde 1.800 €), taller por herramienta de 1 día (1.400-2.000 €), programa in-company de 20 h (desde 3.500 €), alfabetización de 4 h (desde 750 €) y cursos e-learning SCORM (desde 2.400 €); con certificado nominal y registro formativo
 - [Curso de ChatGPT para empresas](https://automatizatelo.com/formacion/chatgpt): cuentas de empresa seguras, prompts con criterio, asistentes por puesto y tareas programadas; desde 900 €
 - [Curso de Microsoft Copilot 365](https://automatizatelo.com/formacion/copilot): la IA dentro de Word, Excel, Outlook y Teams, con licencias y gobernanza M365 bien montadas; desde 900 €
 - [Curso de Gemini y NotebookLM](https://automatizatelo.com/formacion/gemini): la IA de Google Workspace más NotebookLM para convertir la documentación interna en un experto consultable; desde 900 €

@@ -70,7 +70,7 @@ const catalogo = [
         foto: "/escribiendo-ventana.webp",
         badge: "Obligatoria · Art. 4",
         titulo: "Alfabetización en IA",
-        desc: "El bloque con el que se cubren las medidas del Art. 4: riesgos, marco jurídico y uso responsable.",
+        desc: "La base de alfabetización que se integra en las medidas del Art. 4: riesgos, marco jurídico y uso responsable.",
         datos: "4–8 h · toda la plantilla",
     },
     {
@@ -123,7 +123,7 @@ export default function FormacionEmpresasPage() {
                 nombre: "Alfabetización en IA + taller de vuestra herramienta",
                 descripcion: "El bloque de alfabetización del Art. 4 más un taller práctico con la herramienta que ya usáis, sobre vuestros casos reales.",
                 url: "/formacion/empresas",
-                precioDesde: 1200,
+                precioDesde: 1800,
                 horas: 8,
                 certificado: "Certificado nominal y registro formativo fechado",
             })} />
@@ -171,7 +171,7 @@ export default function FormacionEmpresasPage() {
                         </p>
                     </div>
 
-                    <FormularioCurso origen="Formación in-company" opciones={["Curso estrella: Alfabetización + herramienta", "Alfabetización del Art. 4", "Curso de ChatGPT", "Curso de Copilot 365", "Curso de Gemini + NotebookLM", "Curso de Claude", "Programa in-company (16 h)", "Curso e-learning a medida (SCORM)"]} />
+                    <FormularioCurso origen="Formación in-company" opciones={["Curso estrella: Alfabetización + herramienta", "Alfabetización + vuestro trabajo (por función)", "Alfabetización del Art. 4", "Curso de ChatGPT", "Curso de Copilot 365", "Curso de Gemini + NotebookLM", "Curso de Claude", "Programa in-company (20 h)", "Curso e-learning a medida (SCORM)"]} />
                 </div>
             </section>
 

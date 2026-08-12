@@ -22,7 +22,7 @@ const pilares = [
         num: "02",
         kicker: "Cumplir",
         titulo: "El Reglamento, sin sustos",
-        desc: "Diagnóstico del AI Act, política de uso redactada y un expediente completo que puedes enseñar en una inspección o a un cliente grande.",
+        desc: "Diagnóstico del AI Act, política de uso redactada y un expediente documentado que puedes enseñar en una inspección o a un cliente grande.",
         href: "/cumplimiento",
         cta: "Ver cumplimiento",
     },

@@ -10,7 +10,7 @@ import { migas, curso } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Formación en IA para Directivos",
     description:
-        "Formación en IA para dirección: decidir con criterio qué implantar, qué exige el AI Act y cómo gobernar la IA en tu empresa. Sesión ejecutiva desde 900 €.",
+        "Formación en IA para dirección: decidir con criterio qué implantar, qué exige el AI Act y cómo gobernar la IA en tu empresa. A medida, desde 900 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion/directivos" },
     openGraph: {
         title: "IA para dirección: criterio para decidir, no humo",
@@ -26,15 +26,15 @@ const faqs = [
     },
     {
         question: "¿Cuánto tiempo me va a quitar?",
-        answer: "El formato ejecutivo está pensado para agendas de dirección: una sesión de medio día (4 horas) cubre lo esencial — mapa de oportunidades, obligaciones del AI Act y plan de gobernanza. Si el comité quiere profundizar, se amplía a dos sesiones. Sin deberes absurdos ni cursos de meses.",
+        answer: "El formato está pensado para agendas de dirección: media jornada suele bastar para el mapa de oportunidades, las obligaciones del AI Act y las decisiones que tenéis abiertas. La duración se fija en la propuesta según lo que haya que cubrir. Sin deberes absurdos ni cursos de meses.",
     },
     {
         question: "¿Cuánto cuesta?",
-        answer: "La sesión ejecutiva de medio día para el equipo directivo, desde 900 €. El programa completo de dirección (dos sesiones más plan de gobernanza documentado), desde 1.800 €. Precio cerrado por escrito, como todo lo que hago.",
+        answer: "Desde 900 €, y el alcance se cierra por escrito en la propuesta: cuánta sesión, qué colectivos entran y qué se entrega. No es un módulo cerrado con temario fijo — es una sesión que se arma con lo que tu empresa tiene encima de la mesa.",
     },
     {
         question: "¿Esto cuenta para el Art. 4 del AI Act?",
-        answer: "Sí — y para dirección con doble motivo: el Art. 4 pide medidas adaptadas al puesto y al uso que hace cada perfil, y el de dirección incluye decidir sobre los sistemas de IA de la empresa. La sesión queda registrada con certificado nominal, como el resto de la formación.",
+        answer: "Puede formar parte de las medidas, pero por sí sola no las cubre: el Art. 4 pide medidas adaptadas a cada perfil, y quien usa la IA a diario necesita además su propia formación. Esta sesión sirve para decidir qué necesita cada colectivo. No lleva certificado de aprovechamiento — de la sesión sale un mapa de decisiones y una propuesta, no una acreditación.",
     },
     {
         question: "¿Me vas a intentar vender un proyecto después?",
@@ -80,11 +80,10 @@ export default function DirectivosPage() {
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Formación para dirección", url: "/formacion/directivos" }])} />
             <Esquema datos={curso({
-                nombre: "Sesión ejecutiva de IA para dirección",
-                descripcion: "Qué implantar, qué exige la ley y cómo gobernar la IA en la empresa, en horas de directivo.",
+                nombre: "Sesión estratégica de IA para dirección",
+                descripcion: "Qué usos de IA hay ya, qué decisiones están abiertas y qué necesita cada colectivo. Alcance a medida.",
                 url: "/formacion/directivos",
-                precioDesde: 600,
-                horas: 4,
+                precioDesde: 900,
             })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <Header />
@@ -135,14 +134,14 @@ export default function DirectivosPage() {
 
                     {/* Captura en el hero: el curso viaja como origen del lead */}
                     <FormularioCurso
-                        origen="Sesión ejecutiva para dirección"
+                        origen="Sesión estratégica para dirección"
                         etiquetaPersonas="Personas en el comité"
                         etiquetaOpciones="¿Qué necesitas decidir?*"
                         opciones={[
                             "Qué implantar y en qué orden",
                             "Qué nos obliga el AI Act",
                             "Cómo gobernar el uso de IA",
-                            "El programa completo de dirección",
+                            "Qué formación necesita cada equipo",
                             "Aún no lo tengo claro",
                         ]}
                     />
@@ -163,16 +162,16 @@ export default function DirectivosPage() {
                                 Medio día para decidir <span style={{ color: "#f6c39c" }}>con criterio</span>
                             </h2>
                             <p className="di2-sub">
-                                El mapa real de la IA en tu empresa, lo que exige el AI Act y el plan
-                                de gobernanza — en formato de agenda de dirección. Impartida por quien
+                                El mapa real de la IA en tu empresa, lo que exige el AI Act y las
+                                decisiones que tenéis abiertas — en formato de agenda de dirección. Impartida por quien
                                 construye los sistemas, no por un divulgador: lo que se cuenta son
                                 casos que funcionan a diario en negocios reales.
                             </p>
                             <div className="di2-datos">
-                                <span>Medio día · 4 h</span>
+                                <span>Media jornada orientativa</span>
                                 <span>Presencial o en remoto</span>
-                                <span>Certificado nominal + registro</span>
-                                <span className="di2-dato-precio">Desde 900 € · programa 1.800 €</span>
+                                <span>Mapa de decisiones + propuesta</span>
+                                <span className="di2-dato-precio">Desde 900 € · alcance en la propuesta</span>
                             </div>
                             <div className="di2-enlaces">
                                 <a href="#programa" className="di2-enlace">Ver qué cubre ↓</a>
@@ -207,19 +206,19 @@ export default function DirectivosPage() {
                     <div className="di2-cifras">
                         <div className="di2-cifra">
                             <span className="di2-cifra-num">desde 900 €</span>
-                            <span className="di2-cifra-lab">Sesión ejecutiva de medio día</span>
+                            <span className="di2-cifra-lab">Sesión estratégica, por alcance</span>
                         </div>
                         <div className="di2-cifra">
-                            <span className="di2-cifra-num">desde 1.800 €</span>
-                            <span className="di2-cifra-lab">Programa con plan de gobernanza</span>
+                            <span className="di2-cifra-num">a medida</span>
+                            <span className="di2-cifra-lab">Duración según lo que haya que cubrir</span>
                         </div>
                         <div className="di2-cifra">
-                            <span className="di2-cifra-num">4 h</span>
-                            <span className="di2-cifra-lab">Lo que dura la sesión esencial</span>
+                            <span className="di2-cifra-num">0 €</span>
+                            <span className="di2-cifra-lab">Los 30 minutos previos, para encajarla</span>
                         </div>
                         <div className="di2-cifra">
                             <span className="di2-cifra-num">Art. 4</span>
-                            <span className="di2-cifra-lab">Incluido en la sesión, para dirección</span>
+                            <span className="di2-cifra-lab">Qué exige, traducido a decisiones</span>
                         </div>
                     </div>
                     <p className="di2-cifras-pie">

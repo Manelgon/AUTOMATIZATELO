@@ -101,7 +101,7 @@ const sistemas = [
     { href: "/sistemas/documentos", titulo: "Documentos que se leen solos", d: "Facturas, escrituras y expedientes extraídos con IA y registrados sin picar datos." },
     { href: "/sistemas/chatbots-whatsapp", titulo: "Atención que no interrumpe", d: "Las dudas repetidas de clientes, resueltas 24/7 por WhatsApp — con escalado al equipo." },
     { href: "/sistemas/integracion", titulo: "Herramientas conectadas", d: "El programa del despacho, el correo y la facturación pasándose los datos solos." },
-    { href: "/cumplimiento", titulo: "El despacho, en regla", d: "Política de uso de IA y la documentación de las medidas del Art. 4 — con el secreto profesional por delante." },
+    { href: "/cumplimiento", titulo: "El despacho, con sus papeles", d: "Política de uso de IA y la documentación de las medidas del Art. 4 — con el secreto profesional por delante." },
 ];
 
 export default function DespachosPage() {

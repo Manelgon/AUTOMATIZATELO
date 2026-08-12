@@ -34,7 +34,7 @@ const faqs = [
     },
     {
         question: "¿Existe un certificado oficial del Art. 4? ¿Y una formación en IA con certificado?",
-        answer: "Certificado oficial, no: no hay ningún esquema oficial de certificación de la alfabetización en IA, y conviene desconfiar de quien venda un 'sello de cumplimiento'. Formación con certificado, sí — pero nominal y privado: lo defendible ante una inspección es el expediente completo (registro formativo con contenidos y horas, certificado nominal por participante y material fechado), que es exactamente lo que entrega la formación de alfabetización.",
+        answer: "Certificado oficial, no: no hay ningún esquema oficial de certificación de la alfabetización en IA, y conviene desconfiar de quien venda un 'sello de cumplimiento'. Formación con certificado, sí — pero nominal y privado: lo que puedes enseñar ante una inspección es el expediente documental (registro formativo con contenidos y horas, certificado nominal por participante y material fechado), que es exactamente lo que entrega la formación de alfabetización.",
     },
     {
         question: "¿Qué pasa si no formo a mi equipo?",
@@ -207,9 +207,9 @@ export default function AiActPage() {
             <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Alfabetización del Art. 4", url: "/formacion/ai-act" }])} />
             <Esquema datos={curso({
                 nombre: "Alfabetización en IA (Art. 4 del Reglamento Europeo de IA)",
-                descripcion: "Qué es la IA, qué riesgos tiene y cómo usarla con responsabilidad. El bloque con el que se cubren las medidas de alfabetización del Art. 4, con certificado nominal y registro formativo fechado.",
+                descripcion: "Qué es la IA, qué riesgos tiene y cómo usarla con responsabilidad. La base de alfabetización, pensada para integrarse en las medidas del Art. 4, con certificado nominal y registro formativo fechado.",
                 url: "/formacion/ai-act",
-                precioDesde: 600,
+                precioDesde: 750,
                 certificado: "Certificado nominal y registro formativo fechado",
             })} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

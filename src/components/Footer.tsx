@@ -23,7 +23,7 @@ const serviciosFormacion = [
     { href: "/formacion/cursos-a-medida", label: "Cursos e-learning a medida (SCORM)", sub: true },
     { href: "/formacion/centros-educativos", label: "Formación para centros educativos", sub: true },
     { href: "/formacion/alumnado", label: "Taller de IA para alumnado", sub: true },
-    { href: "/formacion/directivos", label: "Sesión ejecutiva para dirección", sub: true },
+    { href: "/formacion/directivos", label: "Sesión estratégica para dirección", sub: true },
 ];
 
 const serviciosSistemas = [

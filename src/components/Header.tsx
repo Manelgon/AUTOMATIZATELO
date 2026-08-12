@@ -53,7 +53,7 @@ const sectorLinks = [
     { href: "/formacion/centros-educativos", num: "03", label: "Centros Educativos", desc: "Formación del claustro y política de IA." },
     { href: "/sectores/academias", num: "04", label: "Academias y Formación Online", desc: "Matrículas, alumnos y cursos SCORM." },
     { href: "/sectores/rrhh", num: "05", label: "Selección de Personal y RRHH", desc: "Portal de empleo y criba con IA." },
-    { href: "/formacion/directivos", num: "06", label: "Equipos Directivos", desc: "Sesión ejecutiva: qué decidir y por qué." },
+    { href: "/formacion/directivos", num: "06", label: "Equipos Directivos", desc: "Sesión estratégica: qué decidir y por qué." },
 ];
 
 type Menu = "formacion" | "sistemas" | "sector" | null;

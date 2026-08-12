@@ -66,7 +66,7 @@ export default function CursoPage(p: CursoPageProps) {
             courseMode: ["onsite", "online"],
             location: "España",
         }],
-        offers: [{ "@type": "Offer", price: "900", priceCurrency: "EUR", description: "Taller de un equipo, precio desde; se cierra en la propuesta." }],
+        offers: [{ "@type": "Offer", price: "1400", priceCurrency: "EUR", description: "Taller de un equipo, precio desde; se cierra en la propuesta." }],
     };
 
     return (

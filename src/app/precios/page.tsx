@@ -37,7 +37,7 @@ const formar: Fila[] = [
     {
         nombre: "Alfabetización en IA (Art. 4)",
         formato: "4 h · toda la plantilla",
-        incluye: "El bloque con el que se cubren las medidas del Art. 4: qué es la IA, riesgos y uso responsable. Certificado nominal y registro formativo fechado.",
+        incluye: "La base común de alfabetización, pensada para integrarse en las medidas del Art. 4: qué es la IA, riesgos y uso responsable. Certificado nominal y registro formativo fechado.",
         precio: "desde 750 €",
         min: 750,
         href: "/formacion/ai-act",
@@ -45,11 +45,19 @@ const formar: Fila[] = [
     {
         nombre: "Alfabetización + herramienta",
         formato: "4 + 4 h · adaptable por equipo",
-        incluye: "El bloque de alfabetización del Art. 4 más un taller práctico con la herramienta que ya usáis, sobre vuestros casos reales.",
+        incluye: "La base de alfabetización más media jornada práctica con la herramienta que ya usáis, sobre vuestros casos reales. Si os falta manejo de la herramienta, este es el vuestro.",
         precio: "desde 1.800 €",
         min: 1800,
         href: "/formacion/empresas",
         estrella: true,
+    },
+    {
+        nombre: "Alfabetización + vuestro trabajo",
+        formato: "4 + 3 h · por función",
+        incluye: "La base de alfabetización más el módulo del trabajo real del grupo: puesto de trabajo, aula o despacho profesional. Si lo que os falta no es herramienta sino criterio —qué se puede y qué no con vuestros datos—, este es el vuestro.",
+        precio: "desde 1.800 €",
+        min: 1800,
+        href: "/formacion/empresas",
     },
     {
         nombre: "Taller por herramienta",
@@ -61,32 +69,32 @@ const formar: Fila[] = [
         href: "/formacion",
     },
     {
-        nombre: "Programa in-company",
-        formato: "20 h · 4 semanas",
-        incluye: "Para mandos y equipos completos, con trabajo real aplicado entre sesión y sesión y evidencia documental completa.",
+        nombre: "Programa in-company de formación",
+        formato: "20 h · varios grupos",
+        incluye: "Itinerarios distintos por función, con trabajo real aplicado entre sesión y sesión y un plan de continuidad: dirección decide, operaciones se quita trabajo y RRHH guarda la evidencia. Para organizaciones con equipos o contextos de uso diferentes.",
         precio: "desde 3.500 €",
         min: 3500,
         href: "/formacion/empresas",
     },
     {
-        nombre: "In-company a medida",
-        formato: "4 – 40 h · varios departamentos",
-        incluye: "Un itinerario distinto por departamento: dirección decide, operaciones se quita trabajo y RRHH guarda la evidencia. Las horas se reparten según el peso de cada área.",
-        precio: "por alcance",
-        min: 0,
-        href: "/formacion/empresas",
-    },
-    {
-        nombre: "Sesión ejecutiva para dirección",
-        formato: "medio día · 4 h",
-        incluye: "Qué implantar, qué exige la ley y cómo gobernarlo, en horas de directivo. El programa completo de dirección, desde 1.800 €.",
+        nombre: "Sesión estratégica para dirección",
+        formato: "a medida · alcance en la propuesta",
+        incluye: "Qué usos de IA hay ya, qué decisiones están abiertas y qué necesita cada colectivo, en horas de directivo. Sales con un mapa de decisiones y una propuesta.",
         precio: "desde 900 €",
         min: 900,
         href: "/formacion/directivos",
     },
     {
+        nombre: "Sesión de dirección de centro",
+        formato: "3 h · equipo directivo del centro",
+        incluye: "Para titularidad, jefatura y coordinación digital: inventario de lo que ya se usa, decisiones sobre herramientas y cuentas, datos de menores, límites de lo automatizado y una base de política para que el centro la revise. No sustituye la formación de quienes usan la IA en el aula.",
+        precio: "desde 900 €",
+        min: 900,
+        href: "/formacion/centros-educativos",
+    },
+    {
         nombre: "Formación de claustro",
-        formato: "1 día · 8 h (o 4 + 4)",
+        formato: "7 h · 4 + 3, en uno o dos días",
         incluye: "Para colegios, institutos y FP: práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro. Presencial, en remoto o SCORM.",
         precio: "1.100 – 1.500 €",
         min: 1100,
@@ -121,13 +129,21 @@ const cumplir: Fila[] = [
         href: "/cumplimiento",
     },
     {
-        nombre: "Pack cumplimiento",
+        nombre: "Pack AI Act Base",
         formato: "diagnóstico + política + formación",
-        incluye: "Todo el diagnóstico, la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados nominales. El expediente completo.",
+        incluye: "Todo el diagnóstico, la política de uso de IA redactada para tu empresa, la alfabetización con certificados nominales y el mapa de qué colectivos necesitan una ampliación. Una base ordenada y documentada, no un certificado de cumplimiento.",
         precio: "desde 2.400 €",
         min: 2400,
         href: "/cumplimiento",
         estrella: true,
+    },
+    {
+        nombre: "Programa de empresa",
+        formato: "varios roles o sedes · por alcance",
+        incluye: "El Pack AI Act Base más la formación de cada grupo que lo necesite, seguimiento y plan de continuidad. Aquí la gobernanza va delante: primero el mapa de colectivos, después se decide qué formación recibe cada uno.",
+        precio: "desde 3.500 €",
+        min: 3500,
+        href: "/cumplimiento",
     },
     {
         nombre: "Implantación segura de herramientas",
@@ -225,7 +241,7 @@ const faqs = [
     },
     {
         question: "¿Y la formación para colegios y para el alumnado?",
-        answer: "La formación de claustro tiene la misma tarifa que la de empresas: un día de 8 horas entre 1.100 € y 1.500 €, o el bloque de alfabetización del Art. 4 desde 750 €. El taller para alumnado se cobra por grupo, 500 € cada uno, con un mínimo de 1.200 € por jornada en el centro — con varios grupos seguidos sale mejor —, y el curso completo, desde 2.000 €.",
+        answer: "La formación de claustro tiene la misma tarifa que la de empresas: 7 horas (4 de base y 3 de aula) entre 1.100 € y 1.500 €, o el bloque de alfabetización del Art. 4 desde 750 €. El taller para alumnado se cobra por grupo, 500 € cada uno, con un mínimo de 1.200 € por jornada en el centro — con varios grupos seguidos sale mejor —, y el curso completo, desde 2.000 €.",
     },
     {
         question: "¿El código y los datos son míos?",
@@ -244,8 +260,8 @@ function oferta(f: Fila) {
         "description": f.incluye,
         "url": SITIO + f.href,
         "priceCurrency": "EUR",
-        // el in-company a medida se presupuesta por alcance: no lleva precio,
-        // y declarar 0 € sería declarar algo falso
+        // guarda para filas sin suelo de precio: hoy no hay ninguna, pero si
+        // vuelve a haberla, declarar 0 € sería declarar algo falso
         ...(f.min > 0 ? {
             "priceSpecification": {
                 "@type": "PriceSpecification",
@@ -391,7 +407,7 @@ export default function PreciosPage() {
                         </h1>
                         <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: 0, maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                             Publico las tarifas porque es la primera pregunta de todo el mundo.
-                            Dieciséis productos con su precio de partida a la vista: <strong style={{ color: "#f6c39c" }}>formar</strong> desde
+                            {formar.length + cumplir.length + automatizar.length} productos con su precio de partida a la vista: <strong style={{ color: "#f6c39c" }}>formar</strong> desde
                             750 €, <strong style={{ color: "#f6c39c" }}>cumplir</strong> desde 950 € y{" "}
                             <strong style={{ color: "#f6c39c" }}>automatizar</strong> desde 500 €. El precio final
                             se cierra por escrito antes de empezar y no hay permanencia.
@@ -456,11 +472,12 @@ export default function PreciosPage() {
                 id="formar"
                 num="01 · Formar"
                 titulo="Que tu equipo use la IA con criterio"
-                resumen="9 formaciones · desde 750 €"
+                resumen={`${formar.length} formaciones · desde 750 €`}
                 sub="Para empresas, despachos y centros educativos. El precio final depende del número de participantes y de la modalidad, y se cierra en la propuesta."
                 filas={formar}
                 pie={<>
-                    Itinerarios y evidencia documental, en{" "}
+                    Seguimiento de aplicación de 45 min: <strong>+250 € por grupo</strong>, o incluido
+                    expresamente en un programa a medida. Itinerarios y evidencia documental, en{" "}
                     <Link href="/formacion">formación en IA</Link>; el detalle del Art. 4, en la{" "}
                     <Link href="/formacion/ai-act">guía del AI Act</Link>.
                 </>}
@@ -470,7 +487,7 @@ export default function PreciosPage() {
                 id="cumplir"
                 num="02 · Cumplir"
                 titulo="Que la ley no te pille a contrapié"
-                resumen="3 servicios · desde 950 €"
+                resumen={`${cumplir.length} servicios · desde 950 €`}
                 sub="Para saber dónde está tu empresa y qué le falta — con evidencia documental, no con miedo."
                 filas={cumplir}
                 pie={<>
@@ -483,7 +500,7 @@ export default function PreciosPage() {
                 id="automatizar"
                 num="03 · Automatizar"
                 titulo="Que el trabajo repetitivo se haga solo"
-                resumen="4 proyectos · desde 500 €"
+                resumen={`${automatizar.length} proyectos · desde 500 €`}
                 sub="Cada proyecto se compone a medida — panel, chatbot, CRM o automatizaciones — en la combinación que tu negocio necesite."
                 filas={automatizar}
                 pie={<>

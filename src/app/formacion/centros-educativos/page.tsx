@@ -10,7 +10,7 @@ import { migas, curso } from "@/lib/esquemas";
 export const metadata: Metadata = {
     title: "Formación en IA para Centros Educativos",
     description:
-        "Formación de claustro en IA para colegios, institutos y FP: talleres para docentes, política de uso del centro y cumplimiento del Art. 4 del AI Act.",
+        "Formación de claustro en IA para colegios, institutos y FP: talleres para docentes, política de uso del centro y las medidas del Art. 4 del AI Act.",
     alternates: { canonical: "https://automatizatelo.com/formacion/centros-educativos" },
     openGraph: {
         title: "IA para tu claustro: formación práctica para centros educativos",
@@ -38,7 +38,7 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta formar al claustro?",
-        answer: "Las tarifas son las mismas que para empresas: taller de claustro de un día (8 horas) entre 1.100 € y 1.500 €; bloque de alfabetización del Art. 4 desde 750 € en su formato esencial de 4 horas; curso e-learning a medida en SCORM desde 2.400 €. El precio final depende del tamaño del claustro y la modalidad, y se cierra en la propuesta.",
+        answer: "Las tarifas son las mismas que para empresas: itinerario de claustro de 7 horas (4 de base + 3 de aula) entre 1.100 € y 1.500 €; bloque de alfabetización del Art. 4 desde 750 € en su formato esencial de 4 horas; curso e-learning a medida en SCORM desde 2.400 €. El precio final depende del tamaño del claustro y la modalidad, y se cierra en la propuesta.",
     },
     {
         question: "¿Qué evidencia queda para el centro?",
@@ -113,7 +113,7 @@ const temario = [
             "Alucinaciones, sesgos y deepfakes: los riesgos reales, sin alarmismo",
             "La política de uso del centro: qué incluir, cómo redactarla y cómo comunicarla",
             "Evaluar en un mundo con ChatGPT: criterios que sobreviven",
-            "El registro formativo: cómo queda acreditado el Art. 4",
+            "El registro formativo: cómo se documentan las medidas del Art. 4",
         ],
     },
 ];
@@ -156,7 +156,7 @@ export default function CentrosEducativosPage() {
                 nombre: "Formación en IA para claustro",
                 descripcion: "Para colegios, institutos y FP: práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro.",
                 url: "/formacion/centros-educativos",
-                precioDesde: 900,
+                precioDesde: 1100,
                 horas: 8,
                 certificado: "Certificado nominal y registro formativo fechado",
             })} />
@@ -200,8 +200,8 @@ export default function CentrosEducativosPage() {
                     </h1>
                     <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
                         Formación práctica en IA para colegios, institutos y centros de FP:
-                        talleres para docentes, política de uso del centro y el cumplimiento
-                        del Art. 4 del AI Act — con la evidencia documental que lo acredita.
+                        talleres para docentes, política de uso del centro y las medidas de
+                        alfabetización del Art. 4 — con la evidencia documental que las respalda.
                     </p>
                     </div>
 
@@ -222,12 +222,12 @@ export default function CentrosEducativosPage() {
                             <span className="mono-label" style={{ color: "#f6c39c" }}>El curso de claustro</span>
                             <h2 className="ce2-titulo">Un día para poner al claustro <span style={{ color: "#f6c39c" }}>al día</span></h2>
                             <p className="ce2-sub">
-                                Un solo curso que cubre el bloque de alfabetización del Art. 4 y la
+                                Un solo itinerario que reúne la base de alfabetización y la
                                 práctica real de aula — cada docente sale con cosas montadas para SU
                                 asignatura, y el centro con la formación documentada.
                             </p>
                             <div className="ce2-datos">
-                                <span>1 día · 8 h (o 4 + 4)</span>
+                                <span>7 h · 4 + 3, en uno o dos días</span>
                                 <span>Presencial · remoto · SCORM</span>
                                 <span>Certificado nominal + registro formativo</span>
                                 <span className="ce2-dato-precio">1.100 – 1.500 € · cerrado en la propuesta</span>
@@ -250,7 +250,7 @@ export default function CentrosEducativosPage() {
                                     <span className="ce2-badge">Art. 4 incluido</span>
                                 </div>
                                 <h3>Fundamentos y marco legal</h3>
-                                <p>Qué es la IA, el Reglamento Europeo y el RGPD en el aula — la alfabetización del Art. 4, cubierta.</p>
+                                <p>Qué es la IA, el Reglamento Europeo y el RGPD en el aula — los contenidos de alfabetización del Art. 4.</p>
                             </div>
                             <div className="ce2-sesion ce2-sesion-2">
                                 <div className="ce2-cab">

@@ -71,8 +71,8 @@ const serviceJsonLd = {
     "areaServed": "España",
     "description": "Auditoría de cumplimiento del AI Act para pymes: inventario de IA, clasificación de riesgos, informe, plan de acción, política de uso de IA y formación del artículo 4.",
     "offers": [
-        { "@type": "Offer", "name": "Diagnóstico con informe y plan de acción", "price": "750", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
-        { "@type": "Offer", "name": "Pack completo: auditoría + política de uso + formación Art. 4", "price": "1800", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
+        { "@type": "Offer", "name": "Diagnóstico con informe y plan de acción", "price": "950", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
+        { "@type": "Offer", "name": "Pack AI Act Base: diagnóstico + política de uso + alfabetización", "price": "2400", "priceCurrency": "EUR", "description": "Precio desde; se cierra en la propuesta." },
     ],
 };
 
@@ -184,7 +184,7 @@ export default function AuditoriaIAPage() {
                         etiquetaOpciones="¿Qué necesitas?*"
                         opciones={[
                             "Diagnóstico con informe y plan",
-                            "Pack completo (política + formación)",
+                            "Pack AI Act Base (política + formación)",
                             "Implantación segura de herramientas",
                             "Aún no lo tengo claro",
                         ]}
