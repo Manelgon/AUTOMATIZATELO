@@ -27,7 +27,7 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
     etiquetaOpciones?: string;
     etiquetaPersonas?: string;
 }) {
-    const [form, setForm] = useState({ nombre: "", email: "", empresa: "", prefijo: "+34", telefono: "", personas: "", curso: "", mensaje: "", acepto: false });
+    const [form, setForm] = useState({ nombre: "", email: "", empresa: "", prefijo: "+34", telefono: "", personas: "", curso: "", mensaje: "", acepto: false, website: "" });
     const [estado, setEstado] = useState<"idle" | "enviando" | "ok" | "error">("idle");
 
     const cursoFinal = opciones ? form.curso : origen;
@@ -51,6 +51,7 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
                     tamano_empresa: form.personas || null,
                     mensaje: [form.empresa && `Empresa/centro: ${form.empresa}`, form.mensaje].filter(Boolean).join("\n"),
                     acepto: form.acepto,
+                    website: form.website,
                     source: "formulario-curso",
                     flow_name: "formacion",
                 }),
@@ -76,6 +77,16 @@ export default function FormularioCurso({ origen, opciones, etiquetaOpciones, et
 
     return (
         <form onSubmit={enviar} className="fc-card">
+            <input
+                type="text"
+                name="website"
+                value={form.website}
+                onChange={(e) => setForm({ ...form, website: e.target.value })}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }}
+            />
             <p className="fc-titulo">Pide información</p>
             <p style={{ color: "rgba(250,246,239,0.65)", fontSize: "0.82rem", margin: "0 0 0.9rem" }}>
                 Te respondo en menos de 24 h laborables.

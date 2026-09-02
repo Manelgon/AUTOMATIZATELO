@@ -59,7 +59,7 @@ export default function CursoPage(p: CursoPageProps) {
         "@type": "Course",
         name: `Curso de ${p.herramienta} para empresas`,
         description: p.enCorto,
-        provider: { "@type": "ProfessionalService", name: "Automatizatelo", url: "https://automatizatelo.com" },
+        provider: { "@type": "Organization", name: "Automatizatelo", url: "https://automatizatelo.com" },
         inLanguage: "es",
         hasCourseInstance: [{
             "@type": "CourseInstance",

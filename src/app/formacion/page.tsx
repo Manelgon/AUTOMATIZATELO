@@ -73,7 +73,7 @@ const serviceJsonLd = {
     "url": "https://automatizatelo.com/formacion",
     "areaServed": "ES",
     "provider": {
-        "@type": "ProfessionalService",
+        "@type": "Organization",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
         "telephone": "+34678399182",

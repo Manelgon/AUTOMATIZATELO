@@ -80,10 +80,46 @@ export const metadata: Metadata = {
   },
 };
 
-// Identidad del sitio: nombre, editor y a quién pertenece. Ayuda a que Google
-// muestre "Automatizatelo" como nombre del sitio en los resultados.
+// Automatizatelo no recibe clientes en un establecimiento: trabaja online y se
+// desplaza al cliente. Por eso se describe como Organization y no como
+// LocalBusiness/ProfessionalService, que exigiría publicar una ubicación física.
+const organizationJsonLd = {
+  "@type": "Organization",
+  "@id": "https://automatizatelo.com/#organization",
+  "name": "Automatizatelo",
+  "alternateName": "Automatizatelo · Implantación de IA",
+  "description": "Implantación de IA para pymes: formación de equipos, cumplimiento del AI Act y automatización de procesos.",
+  "url": "https://automatizatelo.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://automatizatelo.com/og-image.jpg"
+  },
+  "image": "https://automatizatelo.com/og-image.jpg",
+  "telephone": "+34678399182",
+  "email": "info@automatizatelo.com",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Barcelona"
+    },
+    {
+      "@type": "City",
+      "name": "Vilanova i la Geltrú"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Manel Méndez González",
+    "url": "https://automatizatelo.com/sobre-mi"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/automatizatelo",
+    "https://www.instagram.com/automatizatelo.ia"
+  ]
+};
+
+// Identidad del sitio: nombre y relación inequívoca con la organización.
 const webSiteJsonLd = {
-  "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://automatizatelo.com/#website",
   "url": "https://automatizatelo.com",
@@ -92,60 +128,13 @@ const webSiteJsonLd = {
   "description": "Implantación de IA para pymes: formación de equipos, cumplimiento del AI Act y automatización de procesos.",
   "inLanguage": "es-ES",
   "publisher": {
-    "@type": "Organization",
-    "name": "Automatizatelo",
-    "url": "https://automatizatelo.com",
-    "founder": {
-      "@type": "Person",
-      "name": "Manel Méndez González",
-      "url": "https://automatizatelo.com/sobre-mi",
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/automatizatelo",
-      "https://www.instagram.com/automatizatelo.ia",
-    ],
-  },
+    "@id": "https://automatizatelo.com/#organization"
+  }
 };
 
-const jsonLd = {
+const siteIdentityJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Automatízatelo",
-  "priceRange": "$$",
-  "areaServed": "ES",
-  "image": "https://automatizatelo.com/og-image.jpg",
-  "@id": "https://automatizatelo.com",
-  "url": "https://automatizatelo.com",
-  "telephone": "+34678399182",
-  "email": "info@automatizatelo.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Barcelona",
-    "addressRegion": "Cataluña",
-    "postalCode": "08001",
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 41.3851,
-    "longitude": 2.1734
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "09:00",
-    "closes": "18:00"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/automatizatelo-automatizaciones-de-procesos-con-ia-4422523a6/",
-    "https://www.instagram.com/automatizatelo.ia"
-  ]
+  "@graph": [organizationJsonLd, webSiteJsonLd]
 };
 
 export default function RootLayout({
@@ -161,11 +150,7 @@ export default function RootLayout({
       <body className={`${outfit.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteIdentityJsonLd) }}
         />
         <link
           rel="stylesheet"

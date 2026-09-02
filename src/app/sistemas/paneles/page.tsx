@@ -61,7 +61,7 @@ const serviceJsonLd = {
     "@type": "Service",
     "name": "Paneles y dashboards de gestión a medida",
     "provider": {
-        "@type": "ProfessionalService",
+        "@type": "Organization",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
     },

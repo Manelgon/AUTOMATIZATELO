@@ -6,6 +6,7 @@ import { supabaseServer } from "@/lib/supabase-server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Esquema from "@/components/Esquema";
+import PreferredSourceLink from "@/components/PreferredSourceLink";
 import { migas } from "@/lib/esquemas";
 
 export const revalidate = 300;
@@ -207,6 +208,8 @@ export default async function BlogPostPage(
                     dangerouslySetInnerHTML={{ __html: quitarFichaDuplicada(sanearEncabezados(post.content, post.title)) }}
                 />
             </article>
+
+            <PreferredSourceLink />
 
             {/* Los pilares, en tira */}
             <nav aria-label="Secciones" className="nav-barra">

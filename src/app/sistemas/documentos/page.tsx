@@ -61,7 +61,7 @@ const serviceJsonLd = {
     "@type": "Service",
     "name": "Extracción y generación de documentos con IA (OCR + IA)",
     "provider": {
-        "@type": "ProfessionalService",
+        "@type": "Organization",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
     },

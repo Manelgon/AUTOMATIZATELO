@@ -57,7 +57,7 @@ const courseJsonLd = {
     "url": "https://automatizatelo.com/formacion/empresas",
     "areaServed": "ES",
     "provider": {
-        "@type": "ProfessionalService",
+        "@type": "Organization",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
         "telephone": "+34678399182",

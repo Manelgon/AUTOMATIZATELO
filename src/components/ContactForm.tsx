@@ -30,6 +30,7 @@ export default function ContactForm() {
         tamano_empresa: "",
         mensaje: "",
         acepto: false,
+        website: "",
     });
 
     const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -141,28 +142,10 @@ export default function ContactForm() {
         setStatusMessage("Procesando información y enviando solicitud...");
 
         try {
-            // Fetch geolocation data from free API
-            let geoData = { city: 'Desconocida', country: 'Desconocido' };
-            try {
-                const geoRes = await fetch('https://ipapi.co/json/');
-                if (geoRes.ok) {
-                    const geo = await geoRes.json();
-                    geoData = {
-                        city: geo.city || 'Desconocida',
-                        country: geo.country_name || 'Desconocido'
-                    };
-                }
-            } catch { /* Geolocation is optional, continue without it */ }
-
             const payload = {
                 ...formData,
                 telefono: `${formData.prefijo.replace('+', '')}${formData.telefono}`,
                 fecha_envio: new Date().toISOString(),
-                navegador: navigator.userAgent,
-                idioma: navigator.language,
-                pantalla: `${window.screen.width}x${window.screen.height}`,
-                ciudad: geoData.city,
-                pais: geoData.country,
             };
 
 
@@ -202,7 +185,8 @@ export default function ContactForm() {
                     sector_otro: "",
                     tamano_empresa: "",
                     mensaje: "",
-                    acepto: false
+                    acepto: false,
+                    website: "",
                 });
 
                 // Allow a new submission after 5 minutes in UI state
@@ -279,6 +263,16 @@ export default function ContactForm() {
                 </motion.div>
 
                 <form id="form-automatizatelo" onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
+                    />
                     <div className="form-grid">
                         <div>
                             <label htmlFor="nombre" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: 'var(--color-text-main)' }}>Nombre <span style={{ color: 'var(--color-primary)' }}>*</span></label>

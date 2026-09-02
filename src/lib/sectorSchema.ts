@@ -7,7 +7,7 @@ export function buildSectorSchema(p: SectorPageProps) {
         "name": `Automatización con IA para ${p.sector}`,
         "description": p.heroSubtitle,
         "provider": {
-            "@type": "ProfessionalService",
+            "@type": "Organization",
             "name": "Automatizatelo",
             "url": "https://automatizatelo.com",
             "telephone": "+34678399182",

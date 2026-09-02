@@ -65,7 +65,7 @@ const serviceJsonLd = {
     "@type": "Service",
     "name": "Chatbot de WhatsApp para empresas (API oficial)",
     "provider": {
-        "@type": "ProfessionalService",
+        "@type": "Organization",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
     },

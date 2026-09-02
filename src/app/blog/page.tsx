@@ -4,6 +4,7 @@ import { supabaseServer } from "@/lib/supabase-server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Esquema from "@/components/Esquema";
+import PreferredSourceLink from "@/components/PreferredSourceLink";
 import { migas } from "@/lib/esquemas";
 
 export const revalidate = 60;
@@ -103,6 +104,8 @@ export default async function BlogListingPage() {
                     <Link href="/diagnostico" className="nav-barra-item">Diagnóstico</Link>
                 </div>
             </nav>
+
+            <PreferredSourceLink />
 
             {posts.length === 0 ? (
                 <section style={{ padding: "5rem 0", background: "#1c1917", flexGrow: 1 }}>

@@ -64,7 +64,7 @@ const serviceJsonLd = {
     "@type": "Service",
     "name": "Auditoría de cumplimiento del Reglamento Europeo de IA (AI Act)",
     "provider": {
-        "@type": "ProfessionalService",
+        "@type": "Organization",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
     },

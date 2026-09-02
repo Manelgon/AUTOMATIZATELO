@@ -46,7 +46,7 @@ export function curso(c: FichaCurso) {
         description: c.descripcion,
         url: SITIO + c.url,
         inLanguage: "es",
-        provider: { "@type": "ProfessionalService", name: "Automatizatelo", url: SITIO },
+        provider: { "@type": "Organization", name: "Automatizatelo", url: SITIO },
         ...(c.certificado ? { educationalCredentialAwarded: c.certificado } : {}),
         hasCourseInstance: [{
             "@type": "CourseInstance",

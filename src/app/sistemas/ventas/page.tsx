@@ -61,7 +61,7 @@ const serviceJsonLd = {
     "@type": "Service",
     "name": "Automatización de ventas para pymes",
     "provider": {
-        "@type": "ProfessionalService",
+        "@type": "Organization",
         "name": "Automatizatelo",
         "url": "https://automatizatelo.com",
     },

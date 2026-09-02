@@ -69,7 +69,7 @@ export default function ProteccionDatos() {
                         </div>
                         <div className="data-item">
                             <span className="label">Datos técnicos de navegación:</span>
-                            <span className="value">Dirección IP, geolocalización aproximada (ciudad/país), tipo de dispositivo, navegador y páginas visitadas.</span>
+                            <span className="value">Los registros técnicos del alojamiento pueden incluir la dirección IP. El navegador, dispositivo y páginas visitadas se tratan con fines analíticos únicamente cuando has dado tu consentimiento. El formulario no consulta servicios externos de geolocalización.</span>
                         </div>
                         <div className="data-item">
                             <span className="label">Cookies:</span>
