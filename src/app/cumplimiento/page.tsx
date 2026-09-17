@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import Esquema from "@/components/Esquema";
 import { migas } from "@/lib/esquemas";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 export const metadata: Metadata = {
     title: "Cumplimiento del AI Act para Empresas",
@@ -200,7 +201,8 @@ export default function AuditoriaIAPage() {
                         { href: "/formacion/ai-act", label: "Alfabetización · Art. 4" },
                         { href: "/formacion/empresas", label: "Formación para empresas" },
                         { href: "/sectores/despachos", label: "Despachos profesionales" },
-                        { href: "/formacion/centros-educativos", label: "Centros educativos" },
+                        // Puerta educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts)
+                        ...(EDUCACION_VISIBLE ? [{ href: "/formacion/centros-educativos", label: "Centros educativos" }] : []),
                         { href: "/formacion/directivos", label: "Dirección" },
                     ].map((t, i) => (
                         <Link key={t.href} href={t.href} className="nav-barra-item">

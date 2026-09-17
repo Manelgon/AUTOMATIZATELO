@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
@@ -12,6 +14,8 @@ export const metadata: Metadata = {
     description:
         "Formación de claustro en IA para colegios, institutos y FP: talleres para docentes, política de uso del centro y las medidas del Art. 4 del AI Act.",
     alternates: { canonical: "https://automatizatelo.com/formacion/centros-educativos" },
+    // Oferta educativa retirada: fuera del índice mientras EDUCACION_VISIBLE sea false
+    robots: { index: false, follow: false },
     openGraph: {
         title: "IA para tu claustro: formación práctica para centros educativos",
         description: "Talleres para docentes, política de uso de IA y alfabetización del Art. 4, con evidencia documental.",
@@ -149,6 +153,10 @@ const bloques = [
 ];
 
 export default function CentrosEducativosPage() {
+    // Línea educativa retirada de producción: la página sigue aquí entera,
+    // pero no se sirve. Para recuperarla, ver src/lib/flags.ts.
+    if (!EDUCACION_VISIBLE) notFound();
+
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Centros educativos", url: "/formacion/centros-educativos" }])} />

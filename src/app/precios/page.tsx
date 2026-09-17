@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import Esquema from "@/components/Esquema";
 import { migas } from "@/lib/esquemas";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 export const metadata: Metadata = {
     title: "Precios: Implantación de IA para Pymes",
@@ -54,7 +55,7 @@ const formar: Fila[] = [
     {
         nombre: "Alfabetización + vuestro trabajo",
         formato: "4 + 3 h · por función",
-        incluye: "La base de alfabetización más el módulo del trabajo real del grupo: puesto de trabajo, aula o despacho profesional. Si lo que os falta no es herramienta sino criterio —qué se puede y qué no con vuestros datos—, este es el vuestro.",
+        incluye: "La base de alfabetización más el módulo del trabajo real del grupo: " + (EDUCACION_VISIBLE ? "puesto de trabajo, aula o despacho profesional" : "puesto de trabajo o despacho profesional") + ". Si lo que os falta no es herramienta sino criterio —qué se puede y qué no con vuestros datos—, este es el vuestro.",
         precio: "desde 1.800 €",
         min: 1800,
         href: "/formacion/empresas",
@@ -84,15 +85,15 @@ const formar: Fila[] = [
         min: 900,
         href: "/formacion/directivos",
     },
-    {
+    // Filas de la línea educativa: ocultas con EDUCACION_VISIBLE (src/lib/flags.ts)
+    ...(EDUCACION_VISIBLE ? [{
         nombre: "Sesión de dirección de centro",
         formato: "3 h · equipo directivo del centro",
         incluye: "Para titularidad, jefatura y coordinación digital: inventario de lo que ya se usa, decisiones sobre herramientas y cuentas, datos de menores, límites de lo automatizado y una base de política para que el centro la revise. No sustituye la formación de quienes usan la IA en el aula.",
         precio: "desde 900 €",
         min: 900,
         href: "/formacion/centros-educativos",
-    },
-    {
+    }, {
         nombre: "Formación de claustro",
         formato: "7 h · 4 + 3, en uno o dos días",
         incluye: "Para colegios, institutos y FP: práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro. Presencial, en remoto o SCORM.",
@@ -100,15 +101,14 @@ const formar: Fila[] = [
         min: 1100,
         max: 1500,
         href: "/formacion/centros-educativos",
-    },
-    {
+    }, {
         nombre: "Taller de IA para alumnado",
         formato: "2 h por grupo · mínimo 1.200 € por jornada",
         incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El curso completo, desde 2.000 €. Sin cuentas de pago y con la protección de datos de menores por delante.",
         precio: "500 € por grupo",
         min: 500,
         href: "/formacion/alumnado",
-    },
+    }] : []),
     {
         nombre: "Curso e-learning a medida (SCORM)",
         formato: "producción única",
@@ -239,10 +239,11 @@ const faqs = [
         question: "¿Cuánto cuesta la auditoría de cumplimiento del AI Act?",
         answer: "El diagnóstico — inventario de la IA en uso, clasificación de riesgos, informe y plan de acción — desde 950 €. El pack completo, que añade la política de uso de IA redactada para tu empresa y la formación del Art. 4 con certificados, desde 2.400 €. El precio final depende del tamaño de la empresa y de las herramientas en uso.",
     },
-    {
+    // Pregunta de la línea educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts)
+    ...(EDUCACION_VISIBLE ? [{
         question: "¿Y la formación para colegios y para el alumnado?",
         answer: "La formación de claustro tiene la misma tarifa que la de empresas: 7 horas (4 de base y 3 de aula) entre 1.100 € y 1.500 €, o el bloque de alfabetización del Art. 4 desde 750 €. El taller para alumnado se cobra por grupo, 500 € cada uno, con un mínimo de 1.200 € por jornada en el centro — con varios grupos seguidos sale mejor —, y el curso completo, desde 2.000 €.",
-    },
+    }] : []),
     {
         question: "¿El código y los datos son míos?",
         answer: "Sí, siempre. Todo lo que se construye para tu empresa — paneles, bots, automatizaciones — queda en tu propiedad, con sus datos y su código. Si mañana quieres cambiar de proveedor, te lo llevas todo.",
@@ -473,7 +474,9 @@ export default function PreciosPage() {
                 num="01 · Formar"
                 titulo="Que tu equipo use la IA con criterio"
                 resumen={`${formar.length} formaciones · desde 750 €`}
-                sub="Para empresas, despachos y centros educativos. El precio final depende del número de participantes y de la modalidad, y se cierra en la propuesta."
+                sub={EDUCACION_VISIBLE
+                    ? "Para empresas, despachos y centros educativos. El precio final depende del número de participantes y de la modalidad, y se cierra en la propuesta."
+                    : "Para empresas y despachos. El precio final depende del número de participantes y de la modalidad, y se cierra en la propuesta."}
                 filas={formar}
                 pie={<>
                     Seguimiento de aplicación de 45 min: <strong>+250 € por grupo</strong>, o incluido

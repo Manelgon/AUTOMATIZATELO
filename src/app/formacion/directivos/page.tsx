@@ -6,6 +6,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
 import Esquema from "@/components/Esquema";
 import { migas, curso } from "@/lib/esquemas";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 export const metadata: Metadata = {
     title: "Formación en IA para Directivos",
@@ -273,7 +274,8 @@ export default function DirectivosPage() {
                         { href: "/formacion/ai-act", label: "Art. 4" },
                         { href: "/cumplimiento", label: "Cumplimiento" },
                         { href: "/sectores/despachos", label: "Despachos" },
-                        { href: "/formacion/centros-educativos", label: "Centros" },
+                        // Puerta educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts)
+                        ...(EDUCACION_VISIBLE ? [{ href: "/formacion/centros-educativos", label: "Centros" }] : []),
                     ].map((t, i) => (
                         <Link key={t.href} href={t.href} className="nav-barra-item">
                             {t.label}

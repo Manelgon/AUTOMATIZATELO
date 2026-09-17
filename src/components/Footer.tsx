@@ -1,4 +1,5 @@
 import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 const explora = [
     { href: "/", label: "Inicio" },
@@ -21,8 +22,11 @@ const serviciosFormacion = [
     { href: "/formacion/gemini", label: "Curso de Gemini + NotebookLM", sub: true },
     { href: "/formacion/claude", label: "Curso de Claude", sub: true },
     { href: "/formacion/cursos-a-medida", label: "Cursos e-learning a medida (SCORM)", sub: true },
-    { href: "/formacion/centros-educativos", label: "Formación para centros educativos", sub: true },
-    { href: "/formacion/alumnado", label: "Taller de IA para alumnado", sub: true },
+    // Oferta educativa: oculta mientras EDUCACION_VISIBLE sea false (src/lib/flags.ts)
+    ...(EDUCACION_VISIBLE ? [
+        { href: "/formacion/centros-educativos", label: "Formación para centros educativos", sub: true },
+        { href: "/formacion/alumnado", label: "Taller de IA para alumnado", sub: true },
+    ] : []),
     { href: "/formacion/directivos", label: "Sesión estratégica para dirección", sub: true },
 ];
 
@@ -40,7 +44,7 @@ const serviciosSistemas = [
 const porSector = [
     { href: "/sectores/administradores-fincas", label: "Administradores de fincas" },
     { href: "/sectores/despachos", label: "Despachos profesionales" },
-    { href: "/formacion/centros-educativos", label: "Centros educativos" },
+    ...(EDUCACION_VISIBLE ? [{ href: "/formacion/centros-educativos", label: "Centros educativos" }] : []),
     { href: "/sectores/academias", label: "Academias y formación online" },
     { href: "/sectores/rrhh", label: "Selección de personal y RRHH" },
     { href: "/formacion/directivos", label: "Equipos directivos" },

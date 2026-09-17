@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Esquema from "@/components/Esquema";
 import { migas } from "@/lib/esquemas";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 export const metadata: Metadata = {
     title: "Casos de Éxito en Automatización con IA",
@@ -103,7 +104,7 @@ const casos: Caso[] = [
         ],
         siguiente: [
             { href: "/sistemas/chatbots-whatsapp", texto: "Chatbot de WhatsApp" },
-            { href: "/formacion/centros-educativos", texto: "Formación en IA para centros educativos" },
+            ...(EDUCACION_VISIBLE ? [{ href: "/formacion/centros-educativos", texto: "Formación en IA para centros educativos" }] : []),
         ],
     },
     {
@@ -133,7 +134,7 @@ const sectores = [
     { href: "/sectores/despachos", t: "Despachos" },
     { href: "/sectores/academias", t: "Academias" },
     { href: "/sectores/rrhh", t: "RRHH" },
-    { href: "/formacion/centros-educativos", t: "Centros educativos" },
+    ...(EDUCACION_VISIBLE ? [{ href: "/formacion/centros-educativos", t: "Centros educativos" }] : []),
 ];
 
 // Lo que se repite en todos: el mismo camino, con distinta pieza al final

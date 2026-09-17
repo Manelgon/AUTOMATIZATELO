@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 // =============================================================================
 // LOS 3 PILARES — paneles a sangre con foto y velo tinta (como las puertas
@@ -9,7 +10,8 @@ import { motion } from "framer-motion";
 
 const pilares = [
     {
-        foto: "/claustro.webp",
+        // La foto de claustro solo se usa con la línea educativa visible (src/lib/flags.ts)
+        foto: EDUCACION_VISIBLE ? "/claustro.webp" : "/escribiendo-ventana.webp",
         num: "01",
         kicker: "Formar",
         titulo: "Alfabetización + tu herramienta",

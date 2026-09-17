@@ -6,6 +6,7 @@ import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
 import Esquema from "@/components/Esquema";
 import { migas, curso } from "@/lib/esquemas";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 export const metadata: Metadata = {
     title: "Formación en IA in-company con certificado",
@@ -318,7 +319,8 @@ export default function FormacionEmpresasPage() {
                     <span className="nav-barra-etiqueta mono-label">¿Tu caso es más concreto?</span>
                     <Link href="/sectores/despachos" className="nav-barra-item">Despachos profesionales</Link>
                     <Link href="/formacion/directivos" className="nav-barra-item">Dirección</Link>
-                    <Link href="/formacion/centros-educativos" className="nav-barra-item">Centros educativos</Link>
+                    {/* Puerta educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts) */}
+                    {EDUCACION_VISIBLE && <Link href="/formacion/centros-educativos" className="nav-barra-item">Centros educativos</Link>}
                     <Link href="/sectores/academias" className="nav-barra-item">Academias</Link>
                     <Link href="/formacion/cursos-a-medida" className="nav-barra-item">Cursos a medida · SCORM</Link>
                 </div>

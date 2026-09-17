@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 // =============================================================================
 // NAVEGACIÓN v2 — los pilares al aire
@@ -15,11 +16,14 @@ import Image from "next/image";
 // =============================================================================
 
 const formacionLinks = [
-    { href: "/formacion", num: "01", title: "Formación en IA", desc: "La portada: las dos puertas, empresas y educación." },
+    { href: "/formacion", num: "01", title: "Formación en IA", desc: EDUCACION_VISIBLE ? "La portada: las dos puertas, empresas y educación." : "La portada: el catálogo completo y las modalidades." },
     { href: "/formacion/empresas", num: "02", title: "In-company para empresas", desc: "El curso estrella, el catálogo y los precios." },
     { href: "/formacion/ai-act", num: "03", title: "Alfabetización del Art. 4", desc: "La obligatoria desde 2025 — supervisada desde ago-2026." },
-    { href: "/formacion/centros-educativos", num: "04", title: "Centros educativos", desc: "Formación de claustro y política de IA del centro." },
-    { href: "/formacion/alumnado", num: "05", title: "Alumnado", desc: "Taller de IA para estudiantes: estudiar y buscar empleo." },
+    // Oferta educativa: oculta mientras EDUCACION_VISIBLE sea false (src/lib/flags.ts)
+    ...(EDUCACION_VISIBLE ? [
+        { href: "/formacion/centros-educativos", num: "04", title: "Centros educativos", desc: "Formación de claustro y política de IA del centro." },
+        { href: "/formacion/alumnado", num: "05", title: "Alumnado", desc: "Taller de IA para estudiantes: estudiar y buscar empleo." },
+    ] : []),
 ];
 
 const cursosLinks = [
@@ -47,14 +51,17 @@ const sistemasPiezas = [
 // El visitante se reconoce por lo que es ("soy un despacho"), no por el
 // servicio que acabará comprando. Centros y directivos viven en formación
 // pero se llega también desde aquí.
+// `edu: true` marca la puerta educativa: se oculta con EDUCACION_VISIBLE y el
+// resto se renumera solo para que no queden huecos en la lista.
 const sectorLinks = [
-    { href: "/sectores/administradores-fincas", num: "01", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
-    { href: "/sectores/despachos", num: "02", label: "Despachos Profesionales", desc: "Gestorías, asesorías y abogados." },
-    { href: "/formacion/centros-educativos", num: "03", label: "Centros Educativos", desc: "Formación del claustro y política de IA." },
-    { href: "/sectores/academias", num: "04", label: "Academias y Formación Online", desc: "Matrículas, alumnos y cursos SCORM." },
-    { href: "/sectores/rrhh", num: "05", label: "Selección de Personal y RRHH", desc: "Portal de empleo y criba con IA." },
-    { href: "/formacion/directivos", num: "06", label: "Equipos Directivos", desc: "Sesión estratégica: qué decidir y por qué." },
-];
+    { href: "/sectores/administradores-fincas", label: "Administradores de Fincas", desc: "Incidencias y vecinos en un panel." },
+    { href: "/sectores/despachos", label: "Despachos Profesionales", desc: "Gestorías, asesorías y abogados." },
+    { href: "/formacion/centros-educativos", label: "Centros Educativos", desc: "Formación del claustro y política de IA.", edu: true },
+    { href: "/sectores/academias", label: "Academias y Formación Online", desc: "Matrículas, alumnos y cursos SCORM." },
+    { href: "/sectores/rrhh", label: "Selección de Personal y RRHH", desc: "Portal de empleo y criba con IA." },
+    { href: "/formacion/directivos", label: "Equipos Directivos", desc: "Sesión estratégica: qué decidir y por qué." },
+].filter((l) => EDUCACION_VISIBLE || !l.edu)
+    .map((l, i) => ({ ...l, num: String(i + 1).padStart(2, "0") }));
 
 type Menu = "formacion" | "sistemas" | "sector" | null;
 

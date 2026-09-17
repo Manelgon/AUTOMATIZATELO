@@ -6,15 +6,20 @@ import FormularioCurso from "@/components/FormularioCurso";
 import FormacionTabs from "@/components/FormacionTabs";
 import Esquema from "@/components/Esquema";
 import { migas } from "@/lib/esquemas";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 export const metadata: Metadata = {
-    title: "Formación en IA para Empresas y Centros",
-    description:
-        "Forma a tu equipo o a tu claustro con una formación que se integra en las medidas del Art. 4: alfabetización, herramienta e IA en el aula. Desde 750 €.",
+    // Los textos con mención educativa solo se sirven con EDUCACION_VISIBLE (src/lib/flags.ts)
+    title: EDUCACION_VISIBLE ? "Formación en IA para Empresas y Centros" : "Formación en IA para Empresas y Despachos",
+    description: EDUCACION_VISIBLE
+        ? "Forma a tu equipo o a tu claustro con una formación que se integra en las medidas del Art. 4: alfabetización, herramienta e IA en el aula. Desde 750 €."
+        : "Forma a tu equipo con una formación que se integra en las medidas del Art. 4: alfabetización y práctica con vuestra herramienta. Desde 750 €.",
     alternates: { canonical: "https://automatizatelo.com/formacion" },
     openGraph: {
-        title: "Formación en IA para Empresas y Centros Educativos",
-        description: "Dos puertas: alfabetización + tu herramienta para empresas, e IA en el aula para centros educativos. El AI Act ya exige tomar medidas.",
+        title: EDUCACION_VISIBLE ? "Formación en IA para Empresas y Centros Educativos" : "Formación en IA para empresas y despachos",
+        description: EDUCACION_VISIBLE
+            ? "Dos puertas: alfabetización + tu herramienta para empresas, e IA en el aula para centros educativos. El AI Act ya exige tomar medidas."
+            : "Alfabetización del Art. 4 más práctica con la herramienta que ya usa tu equipo. El AI Act ya exige tomar medidas.",
         url: "https://automatizatelo.com/formacion",
     },
 };
@@ -38,16 +43,17 @@ const faqs = [
     },
     {
         question: "¿Cuánto cuesta formar a mi equipo?",
-        answer: "El bloque de alfabetización del Art. 4, cuatro horas para toda la plantilla, desde 750 €. El curso estrella —ese bloque más media jornada práctica con vuestra herramienta— desde 1.800 €. Si lo que os falta no es herramienta sino criterio, el mismo bloque más el módulo de vuestro oficio (puesto, aula o despacho), también desde 1.800 €. Un taller de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas, desde 3.500 €. Y un curso e-learning a medida en SCORM, desde 2.400 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
+        answer: "El bloque de alfabetización del Art. 4, cuatro horas para toda la plantilla, desde 750 €. El curso estrella —ese bloque más media jornada práctica con vuestra herramienta— desde 1.800 €. Si lo que os falta no es herramienta sino criterio, el mismo bloque más " + (EDUCACION_VISIBLE ? "el módulo de vuestro oficio (puesto, aula o despacho)" : "el módulo de vuestro oficio (puesto o despacho)") + ", también desde 1.800 €. Un taller de un día por herramienta, entre 1.400 € y 2.000 €. Un programa in-company de 20 horas, desde 3.500 €. Y un curso e-learning a medida en SCORM, desde 2.400 €. El precio es por sesión, no por alumno, y se cierra por escrito en la propuesta según participantes y modalidad.",
     },
     {
         question: "¿Qué evidencia documental me queda después?",
         answer: "Certificado nominal por participante y registro formativo fechado con contenidos, horas y asistentes, más el material impartido. Ese expediente es lo que documenta las medidas del Art. 4 — no existe ningún certificado oficial del Reglamento, y quien te venda un 'sello de cumplimiento' te está engañando.",
     },
-    {
+    // Pregunta de la línea educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts)
+    ...(EDUCACION_VISIBLE ? [{
         question: "¿Podéis formar también al alumnado, no solo al claustro?",
         answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 500 € por grupo en el centro. Muchos centros contratan las dos en la misma jornada.",
-    },
+    }] : []),
     {
         question: "¿Podéis producirlo como curso para nuestra propia plataforma?",
         answer: "Sí: la formación se produce como curso e-learning en formato SCORM y se instala en vuestra plataforma para siempre, con registro individual por alumno. Se paga la producción una vez y el curso es vuestro, sin licencias recurrentes. También en marca blanca para academias.",
@@ -67,9 +73,11 @@ const faqJsonLd = {
 const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Formación en IA para empresas y centros educativos",
+    "name": EDUCACION_VISIBLE ? "Formación en IA para empresas y centros educativos" : "Formación en IA para empresas y despachos",
     "serviceType": "Formación y alfabetización en Inteligencia Artificial",
-    "description": "Formación in-company para empresas, formación de claustro para centros educativos, gobernanza de IA y cursos e-learning (SCORM) a medida.",
+    "description": EDUCACION_VISIBLE
+        ? "Formación in-company para empresas, formación de claustro para centros educativos, gobernanza de IA y cursos e-learning (SCORM) a medida."
+        : "Formación in-company para empresas y despachos, gobernanza de IA y cursos e-learning (SCORM) a medida.",
     "url": "https://automatizatelo.com/formacion",
     "areaServed": "ES",
     "provider": {
@@ -92,7 +100,7 @@ export default function FormacionIaPage() {
             <section style={{ position: "relative", overflow: "hidden", padding: "10rem 0 4rem" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/claustro.webp"
+                    src={EDUCACION_VISIBLE ? "/claustro.webp" : "/escribiendo-ventana.webp"}
                     alt=""
                     aria-hidden="true"
                     fetchPriority="high"
@@ -120,16 +128,16 @@ export default function FormacionIaPage() {
                         margin: "1rem 0 1.2rem",
                         textShadow: "0 2px 30px rgba(28,25,23,0.45)",
                     }}>
-                        Formación en IA para{" "}<br /><span style={{ color: "#f6c39c" }}>tu empresa, tu despacho o tu claustro</span>
+                        Formación en IA para{" "}<br /><span style={{ color: "#f6c39c" }}>{EDUCACION_VISIBLE ? "tu empresa, tu despacho o tu claustro" : "tu empresa o tu despacho"}</span>
                     </h1>
                     <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, marginBottom: "2rem", maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
-                        Equipos, docentes y directivos usando la IA con criterio — y tu organización
+                        {EDUCACION_VISIBLE ? "Equipos, docentes y directivos" : "Equipos, mandos y directivos"} usando la IA con criterio — y tu organización
                         cumpliendo la normativa europea.
                     </p>
                     </div>
 
                     {/* Captura en el hero: el curso viaja como origen del lead */}
-                    <FormularioCurso origen="Formación (portada)" opciones={["Formación para mi empresa", "Formación para mi centro educativo", "Curso de una herramienta concreta", "Curso e-learning a medida (SCORM)", "Aún no lo tengo claro"]} />
+                    <FormularioCurso origen="Formación (portada)" opciones={["Formación para mi empresa", ...(EDUCACION_VISIBLE ? ["Formación para mi centro educativo"] : []), "Curso de una herramienta concreta", "Curso e-learning a medida (SCORM)", "Aún no lo tengo claro"]} />
                 </div>
             </section>
 
@@ -142,7 +150,7 @@ export default function FormacionIaPage() {
                     <div>
                         <span className="mono-label" style={{ color: "#f6c39c" }}>Qué es · por qué ahora</span>
                         <p className="fqe-capsula">
-                            La formación en IA capacita a equipos y claustros para usar herramientas
+                            La formación en IA capacita {EDUCACION_VISIBLE ? "a equipos y claustros" : "a los equipos"} para usar herramientas
                             de inteligencia artificial con criterio, seguridad y resultados medibles en su
                             trabajo diario.
                         </p>
@@ -151,8 +159,7 @@ export default function FormacionIaPage() {
                         Y ya no es solo cuestión de productividad: usar IA sin formar al equipo es hoy
                         una <strong>obligación sin resolver</strong>: si tu organización usa IA, el
                         Art. 4 exige tomar medidas para que quien la utiliza tenga una
-                        alfabetización suficiente — y poder demostrarlo. Muchas pymes y centros
-                        españoles todavía están dándole vueltas.
+                        alfabetización suficiente — y poder demostrarlo. {EDUCACION_VISIBLE ? "Muchas pymes y centros españoles" : "Muchas pymes españolas"} todavía están dándole vueltas.
                     </p>
                 </div>
                 <p className="fpn-cabecera mono-label">¿Por qué formar ahora?</p>
@@ -196,27 +203,30 @@ export default function FormacionIaPage() {
                             <span className="fd-puerta-cta">Ver formación para empresas →</span>
                         </span>
                     </Link>
-                    <Link href="/formacion/centros-educativos" className="fd-puerta">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img className="fd-puerta-fondo" src="/claustro.webp" alt="" aria-hidden="true" loading="lazy" />
-                        <span className="fd-puerta-velo" aria-hidden="true"></span>
-                        <span className="fd-puerta-marca" aria-hidden="true">02</span>
-                        <span className="fd-puerta-cuerpo">
-                            <span className="fd-puerta-num mono-label">Centros educativos</span>
-                            <span className="fd-puerta-titulo">IA en el aula y para el claustro</span>
-                            <span className="fd-puerta-desc">
-                                Formación de claustro con criterios claros de uso, política de IA
-                                del centro, y la IA llevada al aula con criterio — para que docentes
-                                y alumnado aprendan a usarla, no a esconderla.
+                    {/* Puerta educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts) */}
+                    {EDUCACION_VISIBLE && (
+                        <Link href="/formacion/centros-educativos" className="fd-puerta">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img className="fd-puerta-fondo" src="/claustro.webp" alt="" aria-hidden="true" loading="lazy" />
+                            <span className="fd-puerta-velo" aria-hidden="true"></span>
+                            <span className="fd-puerta-marca" aria-hidden="true">02</span>
+                            <span className="fd-puerta-cuerpo">
+                                <span className="fd-puerta-num mono-label">Centros educativos</span>
+                                <span className="fd-puerta-titulo">IA en el aula y para el claustro</span>
+                                <span className="fd-puerta-desc">
+                                    Formación de claustro con criterios claros de uso, política de IA
+                                    del centro, y la IA llevada al aula con criterio — para que docentes
+                                    y alumnado aprendan a usarla, no a esconderla.
+                                </span>
+                                <span className="fd-puerta-chips">
+                                    {["Claustro", "Política del centro", "Aula", "RGPD y datos"].map((c) => (
+                                        <span key={c} className="fd-chip">{c}</span>
+                                    ))}
+                                </span>
+                                <span className="fd-puerta-cta">Ver formación para centros →</span>
                             </span>
-                            <span className="fd-puerta-chips">
-                                {["Claustro", "Política del centro", "Aula", "RGPD y datos"].map((c) => (
-                                    <span key={c} className="fd-chip">{c}</span>
-                                ))}
-                            </span>
-                            <span className="fd-puerta-cta">Ver formación para centros →</span>
-                        </span>
-                    </Link>
+                        </Link>
+                    )}
                 </div>
             </section>
 
@@ -226,8 +236,8 @@ export default function FormacionIaPage() {
                     <span className="nav-barra-etiqueta mono-label">¿Tu caso es más concreto?</span>
                     <Link href="/sectores/despachos" className="nav-barra-item">Despachos profesionales</Link>
                     <Link href="/formacion/directivos" className="nav-barra-item">Dirección</Link>
-                    <Link href="/formacion/centros-educativos" className="nav-barra-item">Centros educativos</Link>
-                    <Link href="/formacion/alumnado" className="nav-barra-item">Alumnado</Link>
+                    {EDUCACION_VISIBLE && <Link href="/formacion/centros-educativos" className="nav-barra-item">Centros educativos</Link>}
+                    {EDUCACION_VISIBLE && <Link href="/formacion/alumnado" className="nav-barra-item">Alumnado</Link>}
                     <Link href="/sectores/academias" className="nav-barra-item">Academias</Link>
                     <Link href="/formacion/cursos-a-medida" className="nav-barra-item">Cursos a medida · SCORM</Link>
                 </div>

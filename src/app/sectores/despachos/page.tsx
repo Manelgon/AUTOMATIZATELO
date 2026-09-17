@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import Esquema from "@/components/Esquema";
 import { migas } from "@/lib/esquemas";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 export const metadata: Metadata = {
     title: "Formación en IA para Despachos",
@@ -176,7 +177,8 @@ export default function DespachosPage() {
                     {[
                         { href: "/sectores/administradores-fincas", label: "Fincas" },
                         { href: "/sectores/despachos", label: "Despachos" },
-                        { href: "/formacion/centros-educativos", label: "Centros" },
+                        // Puerta educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts)
+                        ...(EDUCACION_VISIBLE ? [{ href: "/formacion/centros-educativos", label: "Centros" }] : []),
                         { href: "/sectores/academias", label: "Academias" },
                         { href: "/sectores/rrhh", label: "RRHH" },
                         { href: "/formacion/directivos", label: "Dirección" },

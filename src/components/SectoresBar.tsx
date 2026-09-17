@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 // =============================================================================
 // BARRA DE SECTORES — tinta, estilo tabs de formación. Componente propio para
@@ -10,7 +11,8 @@ const sectores = [
     { label: "Despachos", href: "/sectores/despachos" },
     { label: "Academias", href: "/sectores/academias" },
     { label: "RRHH", href: "/sectores/rrhh" },
-    { label: "Centros educativos", href: "/formacion/centros-educativos" },
+    // Oferta educativa: oculta mientras EDUCACION_VISIBLE sea false (src/lib/flags.ts)
+    ...(EDUCACION_VISIBLE ? [{ label: "Centros educativos", href: "/formacion/centros-educativos" }] : []),
     { label: "Directivos", href: "/formacion/directivos" },
 ];
 

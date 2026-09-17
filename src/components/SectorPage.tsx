@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
 import FormularioCurso from "./FormularioCurso";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 
 // =============================================================================
 // PLANTILLA DE SECTOR — lenguaje editorial v3
@@ -52,7 +53,7 @@ export interface SectorPageProps {
 export const SECTORES = [
     { href: "/sectores/administradores-fincas", label: "Fincas" },
     { href: "/sectores/despachos", label: "Despachos" },
-    { href: "/formacion/centros-educativos", label: "Centros" },
+    ...(EDUCACION_VISIBLE ? [{ href: "/formacion/centros-educativos", label: "Centros" }] : []),
     { href: "/sectores/academias", label: "Academias" },
     { href: "/sectores/rrhh", label: "RRHH" },
     { href: "/formacion/directivos", label: "Dirección" },

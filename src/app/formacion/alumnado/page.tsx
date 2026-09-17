@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { EDUCACION_VISIBLE } from "@/lib/flags";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
@@ -12,6 +14,8 @@ export const metadata: Metadata = {
     description:
         "Taller de IA para alumnado de 4º ESO, Bachillerato y FP: usar la IA para estudiar mejor — no para copiar — y preparar CV, entrevistas y perfil profesional.",
     alternates: { canonical: "https://automatizatelo.com/formacion/alumnado" },
+    // Oferta educativa retirada: fuera del índice mientras EDUCACION_VISIBLE sea false
+    robots: { index: false, follow: false },
     openGraph: {
         title: "IA para el alumnado: aprender mejor y preparar el primer empleo",
         description: "Una sesión en el centro, por grupos: estudiar con IA sin copiar, y usarla para el CV, las entrevistas y el perfil profesional.",
@@ -155,6 +159,10 @@ const razones = [
 ];
 
 export default function AlumnadoPage() {
+    // Línea educativa retirada de producción: la página sigue aquí entera,
+    // pero no se sirve. Para recuperarla, ver src/lib/flags.ts.
+    if (!EDUCACION_VISIBLE) notFound();
+
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <Esquema datos={migas([{ nombre: "Formación en IA", url: "/formacion" }, { nombre: "Taller para alumnado", url: "/formacion/alumnado" }])} />

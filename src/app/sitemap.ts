@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { supabaseServer } from '@/lib/supabase-server'
+import { EDUCACION_VISIBLE } from '@/lib/flags'
 
 export const revalidate = 60;
 
@@ -24,8 +25,11 @@ const PAGINAS: { ruta: string; freq: 'weekly' | 'monthly' | 'yearly'; prio: numb
     { ruta: '/formacion/copilot', freq: 'monthly', prio: 0.8 },
     { ruta: '/formacion/gemini', freq: 'monthly', prio: 0.8 },
     { ruta: '/formacion/claude', freq: 'monthly', prio: 0.8 },
-    { ruta: '/formacion/centros-educativos', freq: 'monthly', prio: 0.8 },
-    { ruta: '/formacion/alumnado', freq: 'monthly', prio: 0.7 },
+    // Oferta educativa: fuera del sitemap mientras EDUCACION_VISIBLE sea false
+    ...(EDUCACION_VISIBLE ? [
+        { ruta: '/formacion/centros-educativos', freq: 'monthly' as const, prio: 0.8 },
+        { ruta: '/formacion/alumnado', freq: 'monthly' as const, prio: 0.7 },
+    ] : []),
     { ruta: '/formacion/directivos', freq: 'monthly', prio: 0.8 },
     { ruta: '/formacion/cursos-a-medida', freq: 'monthly', prio: 0.8 },
     // Pilar 2 — Cumplimiento
