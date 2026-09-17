@@ -22,3 +22,22 @@
 // Tipado como `boolean` (y no como el literal `false`) a propósito: así ni
 // TypeScript ni ESLint marcan como codigo muerto las ramas del flag.
 export const EDUCACION_VISIBLE: boolean = false;
+
+/**
+ * FORMACION_FINCAS_VISIBLE controla la oferta FORMATIVA dirigida a
+ * administradores de fincas: las menciones a ese público en /sectores/despachos
+ * y /recursos, las dos frases que usan "la formación de AFCademIA para
+ * administradores" como credencial, y sus líneas en llms.txt.
+ *
+ * NO afecta a la línea de SISTEMAS para fincas: /sectores/administradores-fincas,
+ * los casos de cliente y las menciones en /sistemas/* siguen visibles. Tampoco
+ * afecta a AFCademIA como CLIENTE (panel de academia en /casos y
+ * /sectores/academias), que es trabajo propio de Automatizatelo.
+ *
+ * Está en `false` para no competir con el catálogo de AFCademIA, que vende
+ * formación en ese mismo nicho. El código sigue intacto.
+ *
+ * PARA REACTIVARLA: poner `true` aquí. No hay redirecciones que deshacer: esta
+ * puerta no oculta ninguna ruta entera, solo textos y menciones.
+ */
+export const FORMACION_FINCAS_VISIBLE: boolean = false;

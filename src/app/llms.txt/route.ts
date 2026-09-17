@@ -1,4 +1,4 @@
-import { EDUCACION_VISIBLE } from "@/lib/flags";
+import { EDUCACION_VISIBLE, FORMACION_FINCAS_VISIBLE } from "@/lib/flags";
 
 export const dynamic = "force-static";
 
@@ -7,6 +7,13 @@ export const dynamic = "force-static";
 const lineaCentrosEducativos = EDUCACION_VISIBLE
     ? "- [Formación en IA para centros educativos](https://automatizatelo.com/formacion/centros-educativos): formación de claustro para colegios, institutos y FP — formación de claustro (1.100-1.500 €), política de uso de IA del centro, alfabetización (desde 750 €) y curso SCORM (desde 2.400 €); no puntúa en baremos de oposiciones\n"
     : "";
+
+// La formacion dirigida a administradores de fincas solo se le cuenta a los
+// modelos cuando esa puerta esta abierta (src/lib/flags.ts). La linea de
+// SISTEMAS para fincas no depende de este interruptor y sigue siempre visible.
+const publicoDespachos = FORMACION_FINCAS_VISIBLE
+    ? "administradores de fincas, gestorías y asesorías"
+    : "gestorías, asesorías y abogados";
 
 const content = `# Automatizatelo
 
@@ -33,7 +40,7 @@ Datos clave:
 - [Automatización para administradores de fincas](https://automatizatelo.com/sectores/administradores-fincas): panel de incidencias, comunicaciones con vecinos y documentación, en uso diario en despachos reales desde enero de 2026
 - [Automatización para academias y formación online](https://automatizatelo.com/sectores/academias): panel de gestión académica (caso real: AFCademIA), bot de dudas y matrículas, facturación y certificados automáticos, y producción de cursos SCORM
 - [Automatización para selección de personal y RRHH](https://automatizatelo.com/sectores/rrhh): portal de empleo propio, criba asistida por IA con supervisión humana y candidatos siempre respondidos (caso real: Henkoaching)
-${lineaCentrosEducativos}- [Formación en IA para despachos profesionales](https://automatizatelo.com/sectores/despachos): administradores de fincas, gestorías y asesorías — talleres con los casos del despacho, protección del secreto profesional y evidencia del art. 4
+${lineaCentrosEducativos}- [Formación en IA para despachos profesionales](https://automatizatelo.com/sectores/despachos): ${publicoDespachos} — talleres con los casos del despacho, protección del secreto profesional y evidencia del art. 4
 - [Formación en IA para directivos](https://automatizatelo.com/formacion/directivos): sesión estratégica para dirección desde 900 €, por alcance — qué usos de IA hay ya, qué decisiones están abiertas y qué necesita cada colectivo
 
 ## Servicios

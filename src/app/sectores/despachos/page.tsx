@@ -5,12 +5,14 @@ import Footer from "@/components/Footer";
 import FormularioCurso from "@/components/FormularioCurso";
 import Esquema from "@/components/Esquema";
 import { migas } from "@/lib/esquemas";
-import { EDUCACION_VISIBLE } from "@/lib/flags";
+import { EDUCACION_VISIBLE, FORMACION_FINCAS_VISIBLE } from "@/lib/flags";
 
 export const metadata: Metadata = {
     title: "Formación en IA para Despachos",
     description:
-        "Formación en IA para administradores de fincas, gestorías, asesorías y abogados: con los casos del despacho y el secreto profesional a salvo.",
+        FORMACION_FINCAS_VISIBLE
+            ? "Formación en IA para administradores de fincas, gestorías, asesorías y abogados: con los casos del despacho y el secreto profesional a salvo."
+            : "Formación en IA para gestorías, asesorías y abogados: con los casos del despacho y el secreto profesional a salvo.",
     alternates: { canonical: "https://automatizatelo.com/sectores/despachos" },
     openGraph: {
         title: "IA para tu despacho: formación práctica con tus casos reales",
@@ -26,7 +28,10 @@ const faqs = [
     },
     {
         question: "¿La formación es genérica o adaptada al despacho?",
-        answer: "Adaptada — y esa es la gracia. Los ejercicios se hacen con los casos del despacho: redactar comunicaciones a clientes o comunidades, resumir documentación, preparar reuniones, plantillas de respuesta. Conozco el sector desde dentro: construyo paneles que despachos de administración de fincas usan a diario desde enero de 2026, y he producido la formación de AFCademIA para administradores de fincas. Y para un despacho de abogados aplica igual: mismos riesgos de confidencialidad, mismos flujos de documentación — con sus escritos y su jerga.",
+        // Puerta de fincas formativa: oculta con FORMACION_FINCAS_VISIBLE (src/lib/flags.ts)
+        answer: FORMACION_FINCAS_VISIBLE
+            ? "Adaptada — y esa es la gracia. Los ejercicios se hacen con los casos del despacho: redactar comunicaciones a clientes o comunidades, resumir documentación, preparar reuniones, plantillas de respuesta. Conozco el sector desde dentro: construyo paneles que despachos de administración de fincas usan a diario desde enero de 2026, y he producido la formación de AFCademIA para administradores de fincas. Y para un despacho de abogados aplica igual: mismos riesgos de confidencialidad, mismos flujos de documentación — con sus escritos y su jerga."
+            : "Adaptada — y esa es la gracia. Los ejercicios se hacen con los casos del despacho: redactar comunicaciones a clientes, resumir documentación, preparar reuniones, plantillas de respuesta. Conozco el sector desde dentro: construyo sistemas que despachos profesionales usan a diario desde enero de 2026. Y para un despacho de abogados aplica igual: mismos riesgos de confidencialidad, mismos flujos de documentación — con sus escritos y su jerga.",
     },
     {
         question: "¿Cuánto cuesta?",
@@ -148,10 +153,10 @@ export default function DespachosPage() {
                             <span style={{ color: "#f6c39c" }}>sin jugarte los datos de nadie</span>
                         </h1>
                         <p style={{ fontSize: "1.1rem", color: "rgba(250,246,239,0.88)", lineHeight: 1.7, margin: 0, maxWidth: 620, textShadow: "0 1px 20px rgba(28,25,23,0.4)" }}>
-                            Formación práctica para administradores de fincas, gestorías, asesorías
-                            y abogados: con vuestros casos reales, con el secreto profesional por
-                            delante y con la documentación de las medidas del Art. 4 que un
-                            despacho debe poder enseñar.
+                            {/* Puerta de fincas formativa: oculta con FORMACION_FINCAS_VISIBLE (src/lib/flags.ts) */}
+                            {FORMACION_FINCAS_VISIBLE
+                                ? "Formación práctica para administradores de fincas, gestorías, asesorías y abogados: con vuestros casos reales, con el secreto profesional por delante y con la documentación de las medidas del Art. 4 que un despacho debe poder enseñar."
+                                : "Formación práctica para gestorías, asesorías y abogados: con vuestros casos reales, con el secreto profesional por delante y con la documentación de las medidas del Art. 4 que un despacho debe poder enseñar."}
                         </p>
                     </div>
 
@@ -236,7 +241,10 @@ export default function DespachosPage() {
                             <div className="de2-caso">
                                 <span className="mono-label" style={{ color: "#f6c39c" }}>No vengo de fuera del sector</span>
                                 <h3>Construyo lo que enseño</h3>
-                                <p>Los paneles con los que despachos de administración de fincas trabajan a diario desde enero de 2026 son míos — y la formación de AFCademIA para administradores, también.</p>
+                                {/* Puerta de fincas formativa: oculta con FORMACION_FINCAS_VISIBLE (src/lib/flags.ts) */}
+                                <p>{FORMACION_FINCAS_VISIBLE
+                                    ? "Los paneles con los que despachos de administración de fincas trabajan a diario desde enero de 2026 son míos — y la formación de AFCademIA para administradores, también."
+                                    : "Los sistemas con los que despachos profesionales trabajan a diario desde enero de 2026 son míos — los construyo yo, y enseño exactamente eso."}</p>
                             </div>
                             <div className="de2-caso de2-caso-2">
                                 <span className="mono-label" style={{ color: "#f6c39c" }}>Y aplica igual</span>
@@ -283,8 +291,10 @@ export default function DespachosPage() {
                         <span className="mono-label" style={{ color: "#f6c39c" }}>¿Te suena?</span>
                         <h2 className="de2-h2">Lo que pasa en un despacho con la IA</h2>
                         <p className="de2-h2-sub">
-                            Cuatro situaciones que veo en gestorías, asesorías y administraciones de
-                            fincas. Probablemente reconozcas más de una.
+                            {/* Puerta de fincas formativa: oculta con FORMACION_FINCAS_VISIBLE (src/lib/flags.ts) */}
+                            {FORMACION_FINCAS_VISIBLE
+                                ? "Cuatro situaciones que veo en gestorías, asesorías y administraciones de fincas. Probablemente reconozcas más de una."
+                                : "Cuatro situaciones que veo en gestorías, asesorías y despachos. Probablemente reconozcas más de una."}
                         </p>
                     </div>
                     <div>
