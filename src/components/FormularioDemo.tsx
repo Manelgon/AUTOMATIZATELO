@@ -11,7 +11,7 @@ import Link from "next/link";
 // Mismo lenguaje visual que FormularioCurso: tarjeta tinta sobre crema.
 // =============================================================================
 
-const DESTINO = "/demo-curso/curso/u1/index.html";
+const DESTINO = "/demo/ia-para-la-pyme/curso/u1/index.html";
 
 export default function FormularioDemo() {
     const [email, setEmail] = useState("");

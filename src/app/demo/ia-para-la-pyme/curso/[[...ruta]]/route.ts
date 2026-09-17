@@ -36,7 +36,7 @@ export async function GET(
         : null;
 
     if (!sesion) {
-        return NextResponse.redirect(new URL('/demo-curso', request.url), 302);
+        return NextResponse.redirect(new URL('/demo/ia-para-la-pyme', request.url), 302);
     }
 
     const { ruta } = await context.params;

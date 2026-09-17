@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   // La demo del curso vive fuera de public/ para que no se sirva sin puerta.
   // Vercel no la ve al trazar el bundle: hay que decírselo a mano.
   outputFileTracingIncludes: {
-    '/demo-curso/curso/[[...ruta]]': ['./private/demo-curso/**/*'],
+    '/demo/ia-para-la-pyme/curso/[[...ruta]]': ['./private/demo-curso/**/*'],
   },
   async redirects() {
     // Mapa completo v1 -> v2: ninguna URL del sitio viejo muere en 404.
@@ -44,6 +44,10 @@ const nextConfig: NextConfig = {
       { source: '/servicios/produccion-cursos-scorm', destination: '/formacion', permanent: true },
       // Fusion ago-2026: como-trabajo vive dentro de sobre-mi
       { source: '/como-trabajo', destination: '/sobre-mi', permanent: true },
+      // La demo nació en /demo-curso y se mudó a /demo/<curso>: los enlaces
+      // que ya se enviaron a clientes siguen funcionando.
+      { source: '/demo-curso', destination: '/demo/ia-para-la-pyme', permanent: true },
+      { source: '/demo-curso/curso/:ruta*', destination: '/demo/ia-para-la-pyme/curso/:ruta*', permanent: true },
     ];
   },
   images: {

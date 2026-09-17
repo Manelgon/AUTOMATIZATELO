@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            // /demo-curso está detrás de clave: no tiene nada que hacer en Google.
-            disallow: ['/private/', '/demo-curso'],
+            // /demo está detrás de clave: no tiene nada que hacer en Google.
+            disallow: ['/private/', '/demo'],
         },
         sitemap: 'https://automatizatelo.com/sitemap.xml',
     }

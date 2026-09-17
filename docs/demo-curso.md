@@ -8,14 +8,18 @@ enseñarla a clientes concretos sin publicarla en internet.
 - Los archivos del curso están en `private/demo-curso/u1/` — **fuera de `public/`**,
   así que no se sirven solos. `next.config.ts` los mete en el bundle de Vercel con
   `outputFileTracingIncludes`.
-- `/demo-curso` es la página de entrada: correo, clave y casilla de consentimiento.
+- `/demo/ia-para-la-pyme` es la página de entrada: correo, clave y casilla de
+  consentimiento.
 - `POST /api/demo-acceso` comprueba la clave, registra el acceso en Supabase y
   emite la cookie firmada `demo_acceso` (HttpOnly, Secure, SameSite=Lax,
-  `Path=/demo-curso`, 7 días).
-- `GET /demo-curso/curso/<ruta>` sirve cada archivo solo si la cookie es válida.
-  Sin cookie, redirige a `/demo-curso`.
-- La página no se indexa (`robots: index:false`), `/demo-curso` está excluida en
+  `Path=/demo/ia-para-la-pyme`, 7 días).
+- `GET /demo/ia-para-la-pyme/curso/<ruta>` sirve cada archivo solo si la cookie
+  es válida. Sin cookie, redirige a `/demo/ia-para-la-pyme`.
+- La página no se indexa (`robots: index:false`), `/demo` está excluido en
   `src/app/robots.ts` y no aparece en el sitemap.
+- La demo nació en `/demo-curso` y se mudó a `/demo/ia-para-la-pyme`: las dos
+  rutas viejas (la página y `/demo-curso/curso/...`) redirigen con 301 desde
+  `next.config.ts`, así que los enlaces ya enviados siguen valiendo.
 
 ## Claves por cliente
 

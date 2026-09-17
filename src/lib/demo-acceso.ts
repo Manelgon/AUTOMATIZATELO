@@ -5,14 +5,15 @@ import { createHmac, timingSafeEqual } from 'crypto';
 // =============================================================================
 // La demo no vive en public/: la sirve un route handler que antes comprueba
 // esta cookie. Aquí está lo único que comparten la API que la emite
-// (/api/demo-acceso) y el handler que la lee (/demo-curso/curso/[[...ruta]]).
+// (/api/demo-acceso) y el handler que la lee
+// (/demo/ia-para-la-pyme/curso/[[...ruta]]).
 //
 // Formato: base64url(JSON{email, cliente, exp}) + "." + HMAC-SHA256(payload)
 // firmado con DEMO_SECRET. Sin sesión en base de datos: la cookie se basta.
 // =============================================================================
 
 export const COOKIE_DEMO = 'demo_acceso';
-export const COOKIE_PATH = '/demo-curso';
+export const COOKIE_PATH = '/demo/ia-para-la-pyme';
 export const DURACION_DIAS = 7;
 const DURACION_MS = DURACION_DIAS * 24 * 60 * 60 * 1000;
 
