@@ -47,6 +47,7 @@ window.AFC_UNIDAD = {
     { titulo: "Documentos", items: [
       { nombre: "Versión PDF de la unidad", detalle: "el contenido completo para consultar sin conexión", enlace: "recursos/version-imprimible.pdf" },
       { nombre: "Chuleta de una página", detalle: "las cinco piezas, los cuatro trucos y lo que compruebo antes de enviar", enlace: "recursos/u1-chuleta-y-mis-tres-tareas.pdf" },
+      { nombre: "Apps de escritorio · enlaces oficiales", detalle: "dónde descargar ChatGPT, Copilot, Gemini y Claude para Windows y Mac, y a quién pedir la instalación si tu empresa administra las cuentas", enlace: "recursos/u1-apps-de-escritorio-enlaces-oficiales.pdf" },
       { nombre: "Plantilla «Mis tres tareas»", detalle: "tarea · minutos/semana · material que necesita · quién revisa. Es el reto de esta semana", enlace: "recursos/u1-chuleta-y-mis-tres-tareas.pdf" }
     ]},
     { titulo: "Prompts con huecos", items: [
