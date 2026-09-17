@@ -124,15 +124,16 @@ window.AFC_UNIDAD = {
       lead: "Dos ideas mueven toda la unidad: el resultado depende del encargo, y lo que sale con tu nombre lo decides tú." },
 
     /* ───────── 6 · Prólogo ───────── */
-    { type: "content", section: "0. Prólogo", overline: "Qué le pasó a Talleres Vega", // NUEVO
+    { type: "video", section: "0. Prólogo",
+      videoKey: "video0", overline: "Qué le pasó a Talleres Vega", // NUEVO
       title: "Meses pidiendo, meses <em>borrando</em>.",
       lead: "Talleres Vega: instalaciones y mantenimiento de climatización y pequeñas reformas, 18 personas. Marta es la gerente. Pablo lleva lo comercial. Ana y Luis, la administración.",
       body: [
         "Cada semana entran solicitudes de presupuesto por correo. Las recibe Ana, se las pasa a Pablo y Pablo contesta a mano. Unos veinte minutos cada una, porque cada respuesta se parece a la anterior pero nunca es igual.",
         "Hace meses Pablo abrió ChatGPT desde su cuenta personal, pegó un correo y escribió «responde a este correo». Lo que salió sonaba a banco. Lo borró. Lo ha repetido una docena de veces, con el mismo final. Ana lo probó una vez y no volvió.",
-        "Marta lo ve y se hace la pregunta de quien decide: ¿esto sirve para algo o es otra cosa que quita tiempo? Quiere saberlo antes de dedicarle una tarde."
-      ],
-      callout: { label: "Caso preparado", text: "Talleres Vega y sus personas son ficticias. Los hechos están preparados para el curso. Al final de la unidad verás qué decidió Marta." } },
+        "Marta lo ve y se hace la pregunta de quien decide: ¿esto sirve para algo o es otra cosa que quita tiempo? Quiere saberlo antes de dedicarle una tarde.",
+        "Caso preparado: Talleres Vega y sus personas son ficticias; Los hechos están preparados para el curso. Al final de la unidad verás qué decidió Marta."
+      ] },
 
     /* ───────── 7-12 · Bloque 1 · La demo y el ayudante con labia ───────── */
     { type: "content", section: "1. La demo y el ayudante con labia", overline: "Antes de tocar nada",

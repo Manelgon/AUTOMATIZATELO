@@ -1,0 +1,46 @@
+AUTOMATIZATELO · IA PARA LA PYME · UNIDAD 1
+Tres prompts de «Mensajes y atención» con [HUECOS]
+Tutor: Manel Méndez González · automatizatelo.com
+
+Biblioteca inicial de la casa (M1). Copia, rellena los huecos, no pegues datos
+reales de clientes en una herramienta que la empresa no haya autorizado.
+
+===============================================================================
+3.1 · RESPUESTA TIPO CON TRES BORRADORES
+===============================================================================
+
+Con esta [PLANTILLA O CASO FICTICIO], prepara tres borradores para [DESTINATARIO]. Objetivo: [OBJETIVO]. Tono: [TONO]. No afirmes [LÍMITES] ni inventes datos. Devuelve un texto de máximo [NÚMERO] palabras y una lista de datos que una persona debe comprobar antes de enviarlo.
+
+===============================================================================
+3.2 · REESCRIBIR UN TEXTO YA VALIDADO
+===============================================================================
+
+Reescribe este texto ya validado para que sea claro para [DESTINATARIO]. Conserva solo los hechos aportados, no añadas compromisos y termina con [SIGUIENTE PASO]. Si falta un dato, marca [PENDIENTE].
+
+===============================================================================
+3.3 · RESPUESTAS TIPO A PREGUNTAS FRECUENTES
+===============================================================================
+
+A partir de esta lista de preguntas frecuentes autorizadas, prepara respuestas tipo de máximo [NÚMERO] palabras. Si la consulta exige un dato de un caso concreto, indica que debe responder una persona responsable.
+
+===============================================================================
+Y EL DE LA UNIDAD, EL DE PABLO, PARA UNA SOLICITUD DE PRESUPUESTO
+===============================================================================
+
+Eres [ROL: el comercial de una empresa de CLIMATIZACIÓN / REFORMAS / …] de [NÚMERO] personas. Redacta la respuesta a esta solicitud de presupuesto, pegada abajo. Lo que sabemos: [CONTEXTO: no hemos visitado el local; las visitas las agenda NOMBRE; no damos precio sin ver el equipo]. Tono [TONO: cercano y directo, de tú, sin frases hechas]. Máximo [NÚMERO] palabras. Separa lo confirmado de lo pendiente de confirmar. No indiques precio, fechas ni resultados: donde falte un dato, escribe [POR CONFIRMAR]. Antes de redactar, pregúntame lo que necesites saber. Termina con tres preguntas para preparar la visita.
+
+[SOLICITUD DEL CLIENTE, SIN DATOS QUE IDENTIFIQUEN]
+
+===============================================================================
+CÓMO USARLOS
+===============================================================================
+
+1. Copia el encargo, rellena los huecos que sepas y deja los que no.
+2. Añade el truco 2: «antes de redactar, pregúntame lo que te falte».
+3. Pasa la lista «Lo que compruebo antes de enviar».
+4. Si el encargo funciona, guárdalo con los huecos tal cual: en la unidad 6 se
+   convierte en ficha de la biblioteca de la empresa.
+
+-------------------------------------------------------------------------------
+Recordatorio: no pegues datos de clientes y no envíes nada sin leerlo entero.
+La IA prepara opciones; la persona responsable decide qué se envía.
