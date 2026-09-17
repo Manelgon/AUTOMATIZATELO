@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- La descripción, el título y el h1 los rellena el motor desde contenido.js -->
+  <meta name="description" content="Automatizatelo">
+  <title>Automatizatelo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="course-shell">
+    <aside id="course-menu" class="course-menu" aria-label="Índice de la unidad">
+      <div class="brand-mark"><img src="assets/logo.png" alt="Automatizatelo"></div>
+      <p class="menu-kicker">Índice</p>
+      <h1></h1>
+      <nav id="section-nav" class="section-nav"></nav>
+      <div class="menu-footer"><span class="dot"></span> Progreso guardado</div>
+    </aside>
+
+    <main class="course-main">
+      <header class="topbar">
+        <button id="menu-toggle" class="menu-toggle" type="button" aria-controls="course-menu" aria-expanded="true" aria-label="Ocultar índice">☰</button>
+        <div><span class="eyebrow"></span><span id="crumb" class="crumb"></span></div>
+        <div class="topbar-fin">
+          <div id="step-count" class="step-count"></div>
+          <div id="topbar-acciones" class="topbar-acciones"></div>
+        </div>
+      </header>
+      <div class="progress-track" aria-label="Progreso de la unidad"><div id="progress-fill" class="progress-fill"></div></div>
+      <article id="screen" class="screen" aria-live="polite"></article>
+      <footer class="nav-footer">
+        <button id="prev" class="button button-quiet" type="button">← Anterior</button>
+        <span id="screen-position" class="screen-position"></span>
+        <button id="next" class="button button-primary" type="button">Siguiente →</button>
+      </footer>
+    </main>
+  </div>
+
+  <div id="anexo" class="anexo" role="dialog" aria-modal="true" aria-labelledby="anexo-titulo" hidden>
+    <div class="anexo-caja">
+      <header><h2 id="anexo-titulo"></h2><button id="anexo-cerrar" type="button" aria-label="Cerrar">×</button></header>
+      <div id="anexo-cuerpo" class="anexo-cuerpo"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="contenido.js"></script>
+  <script src="vimeo-config.js"></script>
+  <script src="tutor-audio-config.js"></script>
+  <script src="consejos-audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

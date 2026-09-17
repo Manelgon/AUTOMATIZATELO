@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  // La demo del curso vive fuera de public/ para que no se sirva sin puerta.
+  // Vercel no la ve al trazar el bundle: hay que decírselo a mano.
+  outputFileTracingIncludes: {
+    '/demo-curso/curso/[[...ruta]]': ['./private/demo-curso/**/*'],
+  },
   async redirects() {
     // Mapa completo v1 -> v2: ninguna URL del sitio viejo muere en 404.
     return [
