@@ -24,6 +24,8 @@ const TIPOS: Record<string, string> = {
     '.jpeg': 'image/jpeg',
     '.mp3': 'audio/mpeg',
     '.woff2': 'font/woff2',
+    '.pdf': 'application/pdf',
+    '.txt': 'text/plain; charset=utf-8',
 };
 
 export async function GET(
