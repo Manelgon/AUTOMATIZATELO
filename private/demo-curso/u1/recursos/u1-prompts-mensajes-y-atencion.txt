@@ -35,10 +35,10 @@ Eres [ROL: el comercial de una empresa de CLIMATIZACIÓN / REFORMAS / …] de [N
 CÓMO USARLOS
 ===============================================================================
 
-1. Copia el encargo, rellena los huecos que sepas y deja los que no.
+1. Copia el prompt, rellena los huecos que sepas y deja los que no.
 2. Añade el truco 2: «antes de redactar, pregúntame lo que te falte».
 3. Pasa la lista «Lo que compruebo antes de enviar».
-4. Si el encargo funciona, guárdalo con los huecos tal cual: en la unidad 6 se
+4. Si el prompt funciona, guárdalo con los huecos tal cual: en la unidad 6 se
    convierte en ficha de la biblioteca de la empresa.
 
 -------------------------------------------------------------------------------

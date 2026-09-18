@@ -8,7 +8,7 @@
      TCG = F/talleres/chatgpt/_fuente/contenido.js (B03 cinco piezas e iterar)
      FP  = F/talleres/_fuente/fichas-practicas.js (TCG-02 Talleres Vega, TCP-02 [POR CONFIRMAR], TGM-01 correos ficticios)
      DK  = C/deck/contenido-deck.js (solo tono)
-   Lo marcado // NUEVO no está en las fuentes: caso preparado de Talleres Vega, ejemplos, preguntas y ejercicios.
+   Lo marcado // NUEVO no está en las fuentes: caso práctico de Talleres Vega, ejemplos, preguntas y ejercicios.
    Los MP3 de audioId se generan después; aquí solo se declaran.
    Verificación de fuentes pantalla a pantalla (2026-09-17): fuentes-por-pantalla.md. Lo que no tenía fuente se quitó o se reescribió; el detalle está en RESUMEN.md. */
 window.AFC_UNIDAD = {
@@ -19,12 +19,12 @@ window.AFC_UNIDAD = {
 
   resultados: {
     inicial: {
-      alto: "Ya lo intuyes: el problema no es la herramienta, es el encargo. Y lo que sale con tu nombre lo decides tú. Esta unidad te da el método para que eso te cueste dos minutos, no una tarde.",
+      alto: "Ya lo intuyes: el problema no es la herramienta, es el prompt. Y lo que sale con tu nombre lo decides tú. Esta unidad te da el método para que eso te cueste dos minutos, no una tarde.",
       bajo: "Normal: casi todo el mundo empieza pidiendo «responde a este correo» y borrando el resultado. Al terminar la unidad sabrás por qué pasa y cómo se arregla con cinco piezas y un hueco."
     },
     final: {
       pendiente: "Completa las cinco preguntas para ver tu resultado.",
-      alto: "Sabes encargar, sabes iterar y sabes qué no se delega. Ahora toca medirlo en tu empresa: el reto de esta semana.",
+      alto: "Sabes escribir un prompt, sabes iterar y sabes qué no se delega. Ahora toca medirlo en tu empresa: el reto de esta semana.",
       medio: "Tienes el método. Repasa lo que ningún prompt arregla antes de hacer el reto: ahí está el error caro.",
       bajo: "Vuelve a las cinco piezas y a la pantalla de los huecos [POR CONFIRMAR]. Sin eso, el ahorro se convierte en un disgusto."
     }
@@ -32,14 +32,14 @@ window.AFC_UNIDAD = {
 
   glosario: [
     { termino: "Borrador", definicion: "Texto que la IA prepara y que una persona revisa, completa y decide si envía. Un borrador nunca sale tal cual." },
-    { termino: "Caso preparado", definicion: "Talleres Vega es una empresa inventada para el curso. Sus personas y sus cifras son ficticias." },
-    { termino: "Cinco piezas", definicion: "Lo que lleva un encargo completo: rol, tarea, contexto, tono y límite." },
+    { termino: "Caso práctico", definicion: "Talleres Vega es una empresa inventada para el curso. Sus personas y sus cifras son ficticias." },
+    { termino: "Cinco piezas", definicion: "Lo que lleva un prompt completo: rol, tarea, contexto, tono y límite." },
     { termino: "Contexto", definicion: "Lo que la herramienta necesita saber de tu caso y no puede adivinar: a quién va, qué se ha hablado, qué se ha decidido ya." },
     { termino: "Iterar", definicion: "Corregir la respuesta dentro de la misma conversación en vez de reescribir la petición desde cero." },
     { termino: "Límite", definicion: "Extensión, formato y, sobre todo, qué no debe hacer: no inventar datos, no prometer plazos, no poner precio." },
     { termino: "[POR CONFIRMAR]", definicion: "Marca que se deja en el borrador donde falta un dato que solo una persona puede decidir: precio, fecha, disponibilidad, compromiso. Lleva dueño." },
     { termino: "Predecir la siguiente palabra", definicion: "Lo que hace por dentro un modelo de lenguaje: completa el texto con lo más probable. No sabe, no comprueba, no entiende." },
-    { termino: "Prompt", definicion: "La petición escrita. Una palabra incómoda para algo que ya sabes hacer: encargar un trabajo." },
+    { termino: "Prompt", definicion: "Lo que le escribes a la herramienta para pedirle un trabajo. Un buen prompt se parece a cómo se lo pedirías a alguien que acaba de entrar." },
     { termino: "Rol", definicion: "Quién quieres que sea la herramienta al responder: el comercial, la persona de administración, la de atención al cliente." }
   ],
 
@@ -63,7 +63,7 @@ window.AFC_UNIDAD = {
     { title: "Prueba de nivel", start: 3 },
     { title: "0. Prólogo", start: 6 },
     { title: "1. La demo y el ayudante con labia", start: 7 },
-    { title: "2. Las cinco piezas del encargo", start: 13 },
+    { title: "2. Las cinco piezas del prompt", start: 13 },
     { title: "3. Iterar y lo que no delega el borrador", start: 20 },
     { title: "Ideas clave", start: 27 },
     { title: "Test de autoevaluación", start: 28 }
@@ -81,7 +81,7 @@ window.AFC_UNIDAD = {
       lead: "¿Cuántos minutos a la semana se te van en textos que se parecen entre sí? Correos, respuestas a solicitudes, avisos al equipo. Ahí está la primera hora.",
       body: [
         "La IA prepara borradores rápido. Eso es lo que hace bien y lo que se paga solo. Pero un borrador no sabe tu precio, tu plazo ni lo que le prometiste al cliente el mes pasado. Eso lo pones tú.",
-        "En esta unidad aprendes a encargarle el trabajo como se lo encargarías a alguien que acaba de entrar: con cinco piezas. Y aprendes qué no se delega nunca, para que la hora ahorrada no se convierta en un error caro.",
+        "En esta unidad aprendes a escribirle el prompt como le pedirías el trabajo a alguien que acaba de entrar: con cinco piezas. Y aprendes qué no se delega nunca, para que la hora ahorrada no se convierta en un error caro.",
         "Da igual en qué mesa te sientes. Sirve para quien contesta solicitudes, para quien lleva la agenda y para quien decide si esto merece una tarde."
       ],
       callout: { label: "Criterio antes que herramienta", text: "Da igual si usáis ChatGPT, Copilot, Gemini o Claude. El método es el mismo. Qué herramienta y con qué cuenta se decide en la unidad 4." } },
@@ -90,7 +90,7 @@ window.AFC_UNIDAD = {
       title: "Tres bloques y un <em>reto</em>.",
       cards: [
         ["①", "La demo y el ayudante con labia", "Dos reglas de emergencia, qué hace bien, qué hace mal y por qué. Tus tres tareas, y las tres de Ana."],
-        ["②", "Las cinco piezas del encargo", "Rol, tarea, contexto, tono y límite sobre la solicitud de presupuesto que le llega a Talleres Vega."],
+        ["②", "Las cinco piezas del prompt", "Rol, tarea, contexto, tono y límite sobre la solicitud de presupuesto que le llega a Talleres Vega."],
         ["③", "Iterar y lo que no delega el borrador", "Cuatro trucos para no empezar de cero, quién decide cada hueco y la lista de treinta segundos antes de enviar."]
       ],
       callout: { label: "El reto de la semana", text: "Al cerrar, haces una tarea de texto de tu empresa con el método y anotas los minutos de antes y de después. No la envías: se revisa en la unidad 2." } },
@@ -106,7 +106,7 @@ window.AFC_UNIDAD = {
         "Escribe la petición demasiado corta; con más adjetivos saldría bien."
       ],
       correct: 1, key: "initial-1",
-      explanation: "La herramienta no conoce la empresa, ni al cliente, ni lo que se ha hablado. Si no se lo cuentas, rellena con lo más probable y sale genérico. No es el plan ni los adjetivos: es el encargo." },
+      explanation: "La herramienta no conoce la empresa, ni al cliente, ni lo que se ha hablado. Si no se lo cuentas, rellena con lo más probable y sale genérico. No es el plan ni los adjetivos: es el prompt." },
 
     { type: "quiz", section: "Prueba de nivel", overline: "Prueba de nivel · 2 de 2", // NUEVO
       title: "El borrador trae un <em>precio</em>.",
@@ -122,7 +122,7 @@ window.AFC_UNIDAD = {
 
     { type: "initial-result", section: "Prueba de nivel", overline: "Resultado de partida",
       title: "Tu punto de <em>partida</em>.",
-      lead: "Dos ideas mueven toda la unidad: el resultado depende del encargo, y lo que sale con tu nombre lo decides tú." },
+      lead: "Dos ideas mueven toda la unidad: el resultado depende del prompt, y lo que sale con tu nombre lo decides tú." },
 
     /* ───────── 6 · Prólogo ───────── */
     { type: "video", section: "0. Prólogo",
@@ -131,9 +131,9 @@ window.AFC_UNIDAD = {
       lead: "Talleres Vega: instalaciones y mantenimiento de climatización y pequeñas reformas, 18 personas. Marta es la gerente. Pablo lleva lo comercial. Ana y Luis, la administración.",
       body: [
         "Cada semana entran solicitudes de presupuesto por correo. Las recibe Ana, se las pasa a Pablo y Pablo contesta a mano. Unos veinte minutos cada una, porque cada respuesta se parece a la anterior pero nunca es igual.",
-        "Hace meses Pablo abrió ChatGPT desde su cuenta personal, pegó un correo y escribió «responde a este correo». Lo que salió sonaba a banco. Lo borró. Lo ha repetido una docena de veces, con el mismo final. Ana lo probó una vez y no volvió.",
+        "Hace meses Pablo abrió ChatGPT desde su cuenta personal, pegó un correo y escribió «responde a este correo». Lo que salió sonaba a correo formal. Lo borró. Lo ha repetido una docena de veces, con el mismo final. Ana lo probó una vez y no volvió.",
         "Marta lo ve y se hace la pregunta de quien decide: ¿esto sirve para algo o es otra cosa que quita tiempo? Quiere saberlo antes de dedicarle una tarde.",
-        "Caso preparado: Talleres Vega y sus personas son ficticias; Los hechos están preparados para el curso. Al final de la unidad verás qué decidió Marta."
+        "Caso práctico: Talleres Vega y sus personas son ficticias. Los hechos están preparados para el curso. Al final de la unidad verás qué decidió Marta."
       ] },
 
     /* ───────── 7-12 · Bloque 1 · La demo y el ayudante con labia ───────── */
@@ -159,10 +159,10 @@ window.AFC_UNIDAD = {
       callout: { label: "La proporción", text: "Eso que acabas de ver es la mayor parte de lo que vas a usar. El resto de la unidad es hacerlo bien y sin meter a la empresa en un lío." } },
       // Fuente: A0 B0 (la demo: resumir, responder, ordenar, traducir; «el noventa por ciento de lo que vais a usar»); FP TGM-01 (cinco correos ficticios; comprobar destinatario, datos y compromiso).
 
-    { type: "table", section: "1. La demo y el ayudante con labia", overline: "Qué se le encarga y qué no",
+    { type: "table", section: "1. La demo y el ayudante con labia", overline: "Qué se le pide y qué no",
       title: "Bien, mal y <em>por qué</em>.",
-      lead: "La pregunta no es «qué sabe hacer», es «qué le encargo». Esta tabla la contesta. Busca tu tarea en ella.",
-      headers: ["Tarea", "¿Se lo encargas?", "Por qué"],
+      lead: "La pregunta no es «qué sabe hacer», es «qué le pido». Esta tabla la contesta. Busca tu tarea en ella.",
+      headers: ["Tarea", "¿Se lo pides?", "Por qué"],
       rows: [
         ["Redactar o reescribir un correo, un aviso, un resumen", "Sí", "Es lo que mejor hace. Te ahorra el arranque."],
         ["Ordenar notas sueltas y sacar lo importante", "Sí", "Estructura bien un texto desordenado."],
@@ -183,7 +183,7 @@ window.AFC_UNIDAD = {
       ],
       reveals: [
         { audioId: "capsula-si-no-lo-sabes-tu", label: "La consecuencia para ti", title: "Si no lo sabes tú, no puedes saber si lo que te ha dicho está bien", text: "Por eso el ahorro está en las tareas donde tú conoces la respuesta correcta y la herramienta te ahorra escribirla. No en las tareas donde esperas que ella sepa algo que tú no sabes." },
-        { audioId: "capsula-lavadora-ayudante", label: "¿Entonces qué me he comprado?", title: "La lavadora y el ayudante con labia", text: "Una lavadora hace siempre lo mismo: metes la ropa, eliges el programa y sabes qué sale. No hace falta revisar. Esto se parece más a un ayudante nuevo: muy leído, muy rápido, con mucha labia. Hará lo que le pidas y no te dirá que no sabe algo. Con un ayudante así se encarga bien y se revisa siempre." }
+        { audioId: "capsula-lavadora-ayudante", label: "¿Entonces qué me he comprado?", title: "La lavadora y el ayudante con labia", text: "Una lavadora hace siempre lo mismo: metes la ropa, eliges el programa y sabes qué sale. No hace falta revisar. Esto se parece más a un ayudante nuevo: muy leído, muy rápido, con mucha labia. Hará lo que le pidas y no te dirá que no sabe algo. Con un ayudante así se le pide bien y se revisa siempre." }
       ] },
       // Fuente: A0 B1 (predice la siguiente palabra; por qué inventa; «si no lo sabes tú…»; la lavadora y el ayudante). El jueves de Pablo: NUEVO.
 
@@ -199,7 +199,7 @@ window.AFC_UNIDAD = {
       callout: { label: "Qué te ahorra", text: "Saber por dónde empezar. La primera tarea que hagas con IA debe ser de texto, frecuente y con una persona que la revisa. Las de números y las de decisiones llegan en unidades siguientes." } },
       // Fuente: M1 B0 (tres tareas, material, quién revisa, muestra si exige datos reales); A0 («cuanto más pequeñas, reversibles y comprobables, mejor»).
 
-    { type: "quiz", section: "1. La demo y el ayudante con labia", overline: "Las tres de Ana", // NUEVO (las tres tareas de Ana y sus minutos son del caso preparado)
+    { type: "quiz", section: "1. La demo y el ayudante con labia", overline: "Las tres de Ana", // NUEVO (las tres tareas de Ana y sus minutos son del caso práctico)
       title: "¿Cuál va <em>primero</em>?",
       question: "Ana ha escrito sus tres tareas. A: responder solicitudes de presupuesto, 12 a la semana, 20 minutos cada una, revisa Pablo. B: pasar los partes de los técnicos a la hoja de Excel, 90 minutos a la semana, revisa Luis. C: reclamar facturas vencidas, 3 a la semana, 15 minutos cada una, nadie revisa. ¿Cuál es la candidata a la primera hora ahorrada?",
       options: [
@@ -211,32 +211,32 @@ window.AFC_UNIDAD = {
       correct: 1, key: "activity-0",
       explanation: "La B es de tablas y números: se trabaja en la unidad 5, con comprobación. La C no tiene quien revise y lleva importes y fechas de clientes. La A es texto, se repite doce veces por semana, la tarifa y la agenda están a mano y Pablo revisa antes de enviar. Cuatro horas semanales de arranque de correo: ahí está la primera que vuelve." },
 
-    /* ───────── 13-19 · Bloque 2 · Las cinco piezas del encargo ───────── */
-    { type: "content", section: "2. Las cinco piezas del encargo", overline: "El encargo", // NUEVO (solicitud del cliente ficticio)
-      title: "«Prompt» es una palabra incómoda para <em>encargar</em>.",
-      lead: "Ya sabes encargar un trabajo. Lo haces cada día con la gente del taller. A la IA se le encarga igual que a alguien capaz y rápido que acaba de entrar y no conoce la empresa.",
+    /* ───────── 13-19 · Bloque 2 · Las cinco piezas del prompt ───────── */
+    { type: "content", section: "2. Las cinco piezas del prompt", overline: "El prompt", // NUEVO (solicitud del cliente ficticio)
+      title: "Un prompt es un trabajo bien <em>pedido</em>.",
+      lead: "Ya sabes pedir un trabajo. Lo haces cada día con la gente del taller. Un prompt es eso mismo: lo que le escribes a la IA, como se lo pedirías a alguien capaz y rápido que acaba de entrar y no conoce la empresa.",
       body: [
         "La solicitud que Ana le pasa a Pablo, preparada para el curso (cliente inventado: Laura Campos, del restaurante La Brisa de Papel). Laura escribe: «Buenas, el aire de la sala no enfría bien desde julio. Queremos saber si compensa reparar o cambiar el equipo y cuánto tardaríais. ¿Podéis venir a verlo la semana que viene?»",
         "Lo que Pablo sabe y la herramienta no: que la agenda de visitas la lleva Sonia, que no se da precio sin ver el local, que a un restaurante se le habla de tú y que Marta no quiere que se prometa un plazo antes de la visita.",
-        "Si nada de eso entra en el encargo, la respuesta sale genérica. Y Pablo la borra."
+        "Si nada de eso entra en el prompt, la respuesta sale genérica. Y Pablo la borra."
       ] },
       // Fuente: A0 B2 y TCG B03 (encargar como a una persona nueva). La solicitud del restaurante es material nuevo.
 
-    { type: "content", section: "2. Las cinco piezas del encargo", overline: "La estructura", // NUEVO (frases de Pablo)
+    { type: "content", section: "2. Las cinco piezas del prompt", overline: "La estructura", // NUEVO (frases de Pablo)
       title: "Las cinco <em>piezas</em>.",
       lead: "Abre cada pieza. Debajo va la frase que Pablo escribe para esta solicitud.",
       explorables: [
         { audioId: "explore-rol", label: "Rol", title: "Rol · quién quieres que sea", text: "«Eres el comercial de una empresa de climatización y pequeñas reformas de 18 personas.» Le dice desde qué puesto responde." },
         { audioId: "explore-tarea", label: "Tarea", title: "Tarea · qué hace, con un verbo", text: "«Redacta la respuesta a esta solicitud de presupuesto.» Un verbo claro: redacta, resume, compara, ordena." },
         { audioId: "explore-contexto", label: "Contexto", title: "Contexto · lo que necesita saber", text: "«La solicitud va pegada abajo. No hemos visitado el local. Las visitas las agenda Sonia. No damos precio sin ver el equipo.» A quién va, qué se ha hablado, qué se ha decidido ya. Es lo que la herramienta no puede adivinar." },
-        { audioId: "explore-tono", label: "Tono", title: "Tono · cómo tiene que sonar", text: "«Cercano y directo, de tú, sin frases hechas.» Sin esto sale el correo de banco que Pablo llevaba meses borrando." },
+        { audioId: "explore-tono", label: "Tono", title: "Tono · cómo tiene que sonar", text: "«Cercano y directo, de tú, sin frases hechas.» Sin esto sale el correo formal que Pablo llevaba meses borrando." },
         { audioId: "explore-limite", label: "Límite", title: "Límite · extensión y qué no hacer", text: "«Máximo 150 palabras. No indiques precio, fechas ni plazos: deja [POR CONFIRMAR]. Separa lo confirmado de lo pendiente.» Es la pieza que te evita el error caro." }
       ],
       callout: { label: "Qué te ahorra", text: "Las vueltas. Con las cinco piezas, la misma petición pasa de devolver un texto genérico a devolver un borrador que se puede usar. No es magia: le has dado la información que le faltaba." } },
       // Fuente: A0 B2 (ROL · TAREA · CONTEXTO · TONO · LÍMITE); TCG B03; FP TCG-02 (separar confirmado de pendiente, sin precio ni fechas).
 
-    { type: "table", section: "2. Las cinco piezas del encargo", overline: "Versión mala y versión buena", // NUEVO (comparación sobre el caso)
-      title: "La misma solicitud, dos <em>encargos</em>.",
+    { type: "table", section: "2. Las cinco piezas del prompt", overline: "Versión mala y versión buena", // NUEVO (comparación sobre el caso)
+      title: "La misma solicitud, dos <em>prompts</em>.",
       lead: "A la izquierda, lo que Pablo escribía. A la derecha, lo que escribe ahora. Mira qué pieza falta en cada fila.",
       headers: ["Pieza", "«Responde a este correo»", "Con las cinco piezas"],
       rows: [
@@ -248,7 +248,7 @@ window.AFC_UNIDAD = {
       ] },
       // Fuente: A0 B2 (el mal prompt y el bueno comparados sobre la misma tarea).
 
-    { type: "content", section: "2. Las cinco piezas del encargo", overline: "La pieza que más ahorra",
+    { type: "content", section: "2. Las cinco piezas del prompt", overline: "La pieza que más ahorra",
       title: "El <em>límite</em>: confirmado, pendiente y nada de precio.",
       lead: "Si solo vas a añadir una cosa a una petición corta, añade esto. Es lo que separa un borrador útil de un borrador peligroso.",
       body: [
@@ -259,9 +259,9 @@ window.AFC_UNIDAD = {
       callout: { label: "El límite de Pablo, tal cual", text: "«Separa lo confirmado de lo pendiente de confirmar. No indiques precio, fechas ni resultados. Donde falte un dato, escribe [POR CONFIRMAR]. Termina con tres preguntas para preparar la visita.»" } },
       // Fuente: FP TCG-02 (prompt: separa confirmado de pendiente; no indiques precio, fechas ni resultados garantizados; termina con preguntas de descubrimiento); FP TCP-02 ([POR CONFIRMAR]).
 
-    { type: "content", section: "2. Las cinco piezas del encargo", overline: "Lo que te devuelve", // NUEVO (resultado del caso)
+    { type: "content", section: "2. Las cinco piezas del prompt", overline: "Lo que te devuelve", // NUEVO (resultado del caso)
       title: "Un borrador con tres <em>huecos</em>.",
-      lead: "Esto es lo que Pablo recibe con el encargo completo. Léelo como quien lo va a firmar: ¿qué te ahorra y qué sigue siendo tuyo?",
+      lead: "Esto es lo que Pablo recibe con el prompt completo. Léelo como quien lo va a firmar: ¿qué te ahorra y qué sigue siendo tuyo?",
       body: [
         "«Gracias por escribirnos. Para decirte si compensa reparar o cambiar el equipo tenemos que verlo: en una visita corta comprobamos el estado y te damos las dos opciones con su coste. Podemos pasar el [POR CONFIRMAR]; Sonia, que lleva la agenda, te confirma hora. La visita cuesta [POR CONFIRMAR]. Mientras tanto: ¿de qué año es el equipo? ¿Tenéis la factura o la marca a mano? ¿Cuántas plazas tiene la sala?»",
         "Lo que te ahorra: la estructura, el tono y las preguntas. Diez minutos de los veinte.",
@@ -270,7 +270,7 @@ window.AFC_UNIDAD = {
       callout: { label: "La cuenta", text: "Pablo pasa de veinte minutos a diez por respuesta. Con doce solicitudes a la semana son dos horas. La primera hora, y la segunda. Y sin un solo dato que él no haya decidido. Haz la misma cuenta con tu tarea: ahí está tu hora." } },
       // Fuente: FP TCG-02 (borrador de una página + lista de datos por confirmar). Cifras del caso: material nuevo.
 
-    { type: "video", section: "2. Las cinco piezas del encargo", overline: "Vídeo · 6 min", videoKey: "video1",
+    { type: "video", section: "2. Las cinco piezas del prompt", overline: "Vídeo · 6 min", videoKey: "video1",
       title: "Del buzón al <em>borrador</em>.",
       body: [
         "Pablo recibe la solicitud de Laura, del restaurante La Brisa de Papel (cliente inventado). Primero pide mal: «responde a este correo». Después con las cinco piezas. Se ve la diferencia lado a lado.",
@@ -279,9 +279,9 @@ window.AFC_UNIDAD = {
       ] },
       // Guion del vídeo según 01-PROGRAMA.md · Unidad 1. Clase pendiente de producir.
 
-    { type: "match", section: "2. Las cinco piezas del encargo", overline: "Actividad de aprendizaje 1", // NUEVO
+    { type: "match", section: "2. Las cinco piezas del prompt", overline: "Actividad de aprendizaje 1", // NUEVO
       title: "¿Qué pieza es cada <em>frase</em>?",
-      lead: "Seis frases del encargo de Pablo, desordenadas. Di a qué pieza pertenece cada una. Una pieza aparece dos veces.",
+      lead: "Seis frases del prompt de Pablo, desordenadas. Di a qué pieza pertenece cada una. Una pieza aparece dos veces.",
       key: "activity-1", selectLabel: "Elige la pieza",
       items: [
         ["«Eres el comercial de una empresa de climatización y pequeñas reformas.»", "Rol"],
@@ -307,7 +307,7 @@ window.AFC_UNIDAD = {
       title: "Cuatro movimientos que ahorran <em>vueltas</em>.",
       lead: "Abre cada uno. Primero cómo se estropea; después cómo lo usa Pablo con la respuesta al restaurante.",
       explorables: [
-        { audioId: "explore-ejemplo-estilo", label: "Un ejemplo de tu estilo", title: "Dale un correo tuyo anterior", text: "Se estropea: pegar un correo real con el nombre y el historial del cliente «para que aprenda el tono». Se usa: Pablo pega una respuesta suya de hace un mes, con los datos quitados, y dice «así escribimos nosotros». Cambia más que cualquier adjetivo. Se acabó el correo de banco." },
+        { audioId: "explore-ejemplo-estilo", label: "Un ejemplo de tu estilo", title: "Dale un correo tuyo anterior", text: "Se estropea: pegar un correo real con el nombre y el historial del cliente «para que aprenda el tono». Se usa: Pablo pega una respuesta suya de hace un mes, con los datos quitados, y dice «así escribimos nosotros». Cambia más que cualquier adjetivo. Se acabó el correo formal." },
         { audioId: "explore-que-pregunte", label: "Que te pregunte", title: "Pídele que te pregunte lo que le falte", text: "Se estropea: no usarlo y dejar que rellene los huecos por su cuenta. Se usa: «antes de redactar, pregúntame lo que necesites saber». Es el truco menos conocido y el que más mejora. Lo que le preguntó a Pablo, en la siguiente pantalla." },
         { audioId: "explore-tres-opciones", label: "Tres opciones", title: "Pide tres versiones y elige", text: "Se estropea: pedir tres y dejar que la herramienta diga cuál es «la mejor». Elegir por la empresa no es su trabajo. Se usa: Pablo pide dos tonos, directo y consultivo, los lee y se queda con uno. Elegir es más rápido que corregir." },
         { audioId: "explore-que-no", label: "Di qué no te ha gustado", title: "Corrige lo concreto, no empieces de nuevo", text: "Se estropea: borrar el chat y reescribirlo todo. Se usa: «Sobra la primera frase.» «No te disculpes.» «Esa palabra no la usamos.» Una línea sobre lo que ya tienes, y la siguiente versión la respeta." }
@@ -326,7 +326,7 @@ window.AFC_UNIDAD = {
       callout: { label: "Fíjate", text: "Dos preguntas las contesta con lo que sabe. Dos las contesta con «no lo digas». Las dos respuestas sirven igual: la primera da contexto; la segunda pone límite. Preguntar antes cuesta un minuto; descubrirlo después de enviar cuesta bastante más." } },
       // Fuente: A0 B2 («pídele que te pregunte lo que le falte»); M1 B1 (si falta un dato, que lo señale en lugar de completarlo). Diálogo de Pablo: nuevo.
 
-    { type: "table", section: "3. Iterar y lo que no delega el borrador", overline: "Lo que ningún prompt arregla", // NUEVO (el reparto de quién decide qué en Talleres Vega es del caso preparado)
+    { type: "table", section: "3. Iterar y lo que no delega el borrador", overline: "Lo que ningún prompt arregla", // NUEVO (el reparto de quién decide qué en Talleres Vega es del caso práctico)
       title: "Cuatro cosas que decide una <em>persona</em>.",
       lead: "Si la tarea necesita un dato que la herramienta no tiene, no hay forma de pedirlo bien: hay que dárselo. Y si es una decisión, no se delega. La IA prepara opciones; la persona responsable decide qué se envía. Así se reparte en Talleres Vega. ¿Y en tu empresa, quién es quién?",
       headers: ["Lo que no delega el borrador", "Quién lo decide en Talleres Vega", "Qué pone Pablo mientras tanto"],
@@ -351,7 +351,7 @@ window.AFC_UNIDAD = {
       ] },
       // Fuente: FP TCP-02 («deja [POR CONFIRMAR]; no inventes enlaces, horarios, condiciones»); M1 B1 (si falta un dato, que lo señale en lugar de completarlo).
 
-    { type: "table", section: "3. Iterar y lo que no delega el borrador", overline: "Antes de enviar", // NUEVO (la columna de Vega es del caso preparado)
+    { type: "table", section: "3. Iterar y lo que no delega el borrador", overline: "Antes de enviar", // NUEVO (la columna de Vega es del caso práctico)
       title: "Lo que sale con tu nombre lo <em>firmas</em> tú.",
       lead: "Que lo redactara una herramienta no cambia quién responde de lo que dice. Por eso se lee entero. Esta es la lista de treinta segundos, con lo que le podía pasar a Vega en cada punto. ¿Cuál te ha pasado a ti?",
       headers: ["Qué miro", "Qué podía salir mal en Vega", "Qué hago"],
@@ -359,7 +359,7 @@ window.AFC_UNIDAD = {
         ["Hechos", "El borrador daba por hecho que la sala tenía preinstalación. El restaurante no lo había dicho", "Comparo cada afirmación con el correo original. Lo que no está, fuera o [POR CONFIRMAR]"],
         ["Cifras", "«Unos 1.900 euros» que no están en ninguna tarifa", "Ninguna cifra sale sin la tarifa delante. Cada una, decidida por alguien o marcada"],
         ["Condiciones", "Un «sin compromiso» que nadie había decidido", "Solo las condiciones que la empresa aplica. Lo demás se quita"],
-        ["Tono", "«Estimado cliente, quedamos a su entera disposición»", "¿Suena a nosotros o a un banco? Si suena a banco, un ejemplo de nuestro estilo"],
+        ["Tono", "«Estimado cliente, quedamos a su entera disposición»", "¿Suena a nosotros o a correo formal? Si suena a correo formal, un ejemplo de nuestro estilo"],
         ["Destinatario", "Un borrador reutilizado con el saludo del cliente anterior", "Nombre y tratamiento los pongo yo, al final, con lo que ese cliente ya sabe"],
         ["Compromiso y siguiente paso", "«Podemos ir el jueves»: nadie había mirado la agenda", "Qué prometemos y quién lo cumple. Si no lo sé, no está terminado"]
       ] },
@@ -375,7 +375,7 @@ window.AFC_UNIDAD = {
         "Borra el chat y empieza de cero con una petición más larga."
       ],
       correct: 2, key: "activity-2",
-      explanation: "El plazo de obra no estaba en el encargo, así que la herramienta lo completó con lo que suena bien. «En pocos días» sigue siendo una promesa que nadie ha hecho. El hueco con dueño y la corrección dentro de la misma conversación arreglan las dos cosas: el dato y la siguiente vuelta." },
+      explanation: "El plazo de obra no estaba en el prompt, así que la herramienta lo completó con lo que suena bien. «En pocos días» sigue siendo una promesa que nadie ha hecho. El hueco con dueño y la corrección dentro de la misma conversación arreglan las dos cosas: el dato y la siguiente vuelta." },
 
     /* ───────── 27 · Ideas clave ───────── */
     { type: "keys", section: "Ideas clave", overline: "Ideas clave",
@@ -383,7 +383,7 @@ window.AFC_UNIDAD = {
       items: [
         "Dos reglas de emergencia desde hoy: no pegues datos de clientes y no envíes nada sin leerlo entero.",
         "Predice la siguiente palabra. No sabe, no comprueba, no entiende. Por eso inventa, y lo inventado suena igual de bien.",
-        "Se le encarga como a un ayudante nuevo: rol, tarea, contexto, tono y límite. Sin contexto sale genérico; sin límite, inventa.",
+        "Se le pide como a un ayudante nuevo: rol, tarea, contexto, tono y límite. Sin contexto sale genérico; sin límite, inventa.",
         "Itera, no repitas: un ejemplo de tu estilo sin datos, que te pregunte, tres opciones que eliges tú, di qué no te ha gustado.",
         "El precio, el plazo, la disponibilidad y el compromiso los decide una persona con nombre. [POR CONFIRMAR] donde falte un dato, y con dueño.",
         "Lo que sale con tu nombre lo firmas tú. El borrador tarda dos minutos; la decisión sigue siendo tuya."
@@ -400,7 +400,7 @@ window.AFC_UNIDAD = {
         "Porque es el plazo por defecto que trae la herramienta."
       ],
       correct: 1, key: "final-1", final: true,
-      explanation: "Predice la siguiente palabra. Si el plazo no está en el encargo, lo rellena con lo que encaja. No es un fallo puntual ni una configuración: es cómo funciona. Por eso se prohíbe en el límite y se marca [POR CONFIRMAR]." },
+      explanation: "Predice la siguiente palabra. Si el plazo no está en el prompt, lo rellena con lo que encaja. No es un fallo puntual ni una configuración: es cómo funciona. Por eso se prohíbe en el límite y se marca [POR CONFIRMAR]." },
 
     { type: "quiz", section: "Test de autoevaluación", overline: "Pregunta 2 de 5", // NUEVO
       title: "Por dónde <em>empezar</em>.",
