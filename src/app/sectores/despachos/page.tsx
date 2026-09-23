@@ -38,7 +38,7 @@ const faqs = [
         answer: "Las tarifas generales de formación: el bloque de alfabetización del Art. 4, cuatro horas para toda la plantilla, desde 750 €. Un taller intensivo de un día adaptado al despacho, entre 1.400 € y 2.000 €. Un programa de 20 horas en cuatro semanas, desde 3.500 €. Con certificado nominal y registro formativo fechado siempre incluidos.",
     },
     {
-        question: "¿Esto cubre la obligación del Art. 4 del AI Act?",
+        question: "¿A un despacho le aplica el Art. 4 del AI Act?",
         answer: "Sí. Si el equipo del despacho usa IA — aunque sea por su cuenta — el despacho actúa como responsable del despliegue y debe adoptar medidas para la alfabetización de su personal desde febrero de 2025. Es un deber de medios, no de resultado: no se exige garantizar un nivel concreto en cada persona, sino poder demostrar que se hizo lo razonable. La formación deja esa evidencia: certificados nominales y registro formativo fechado.",
     },
     {
