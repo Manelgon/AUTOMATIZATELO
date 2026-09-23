@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const faqs = [
     {
         question: "¿Cuánto cuesta formar a mi equipo?",
-        answer: "Un taller intensivo de un día (8 horas) cuesta entre 1.400 € y 2.000 €. Un programa in-company de 20 horas repartidas en cuatro semanas, desde 3.500 €. El bloque de alfabetización del Art. 4, desde 750 € en su formato esencial de 4 horas y desde 1.200 € en jornada completa. Y un curso e-learning a medida en SCORM para tu plataforma, desde 2.400 €. El precio final depende del número de participantes y la modalidad, y se cierra en la propuesta.",
+        answer: "Un taller intensivo de un día (8 horas) cuesta entre 1.400 € y 2.000 €. Un programa in-company de 20 horas repartidas en cuatro semanas, desde 3.500 €. El bloque de alfabetización del Art. 4, cuatro horas para toda la plantilla, desde 750 €; con media jornada práctica de vuestra herramienta —el curso estrella—, desde 1.800 €. Y un curso e-learning a medida en SCORM para tu plataforma, desde 2.400 €. El precio final depende del número de participantes y la modalidad, y se cierra en la propuesta.",
     },
     {
         question: "¿Qué evidencia queda para acreditar el Art. 4?",
@@ -72,7 +72,7 @@ const catalogo = [
         badge: "Obligatoria · Art. 4",
         titulo: "Alfabetización en IA",
         desc: "La base de alfabetización que se integra en las medidas del Art. 4: riesgos, marco jurídico y uso responsable.",
-        datos: "4–8 h · toda la plantilla",
+        datos: "4 h · toda la plantilla",
     },
     {
         href: "/formacion/chatgpt",
@@ -80,7 +80,7 @@ const catalogo = [
         badge: "El más pedido",
         titulo: "ChatGPT",
         desc: "GPTs por puesto, proyectos y tareas programadas. De básico a avanzado.",
-        datos: "1 día · 8 h",
+        datos: "8 h · o media jornada de 4 h",
     },
     {
         href: "/formacion/copilot",
@@ -88,7 +88,7 @@ const catalogo = [
         badge: "Microsoft 365",
         titulo: "Copilot 365",
         desc: "Si vivís en Word, Excel, Outlook y Teams: la IA dentro del flujo de oficina.",
-        datos: "1 día · 8 h",
+        datos: "8 h · o media jornada de 4 h",
     },
     {
         href: "/formacion/gemini",
@@ -96,7 +96,7 @@ const catalogo = [
         badge: "Google Workspace",
         titulo: "Gemini + NotebookLM",
         desc: "Para equipos en Workspace, con NotebookLM para el conocimiento interno.",
-        datos: "1 día · 8 h",
+        datos: "8 h · o media jornada de 4 h",
     },
     {
         href: "/formacion/claude",
@@ -104,7 +104,7 @@ const catalogo = [
         badge: "Documentos y agentes",
         titulo: "Claude",
         desc: "Documentos largos, proyectos y agentes. La herramienta con la que construyo mis propios sistemas.",
-        datos: "1 día · 8 h",
+        datos: "8 h · o media jornada de 4 h",
     },
     {
         href: "/formacion/cursos-a-medida",
@@ -187,8 +187,8 @@ export default function FormacionEmpresasPage() {
                             <span className="mono-label" style={{ color: "#f6c39c" }}>Curso estrella</span>
                             <h2 className="fe-titulo">Alfabetización IA + <span style={{ color: "#f6c39c" }}>vuestra herramienta</span></h2>
                             <p className="fe-sub">
-                                El formato que mejor funciona: una sesión cubre la obligación del Art. 4
-                                y la otra domina la herramienta que ya usa tu equipo. Se adapta por
+                                El formato que mejor funciona: una sesión asienta la base de alfabetización
+                                del Art. 4 y la otra domina la herramienta que ya usa tu equipo. Se adapta por
                                 departamento y nivel.
                             </p>
                             <div className="fe-datos">
@@ -252,7 +252,7 @@ export default function FormacionEmpresasPage() {
                         </div>
                         <div className="fe-cifra">
                             <span className="fe-cifra-valor">desde 1.800 €</span>
-                            <span className="fe-cifra-etiqueta">★ Curso estrella · 4+4 h</span>
+                            <span className="fe-cifra-etiqueta">★ Curso estrella · 4 + 4 h</span>
                         </div>
                     </div>
                     <p className="fe-cifras-pie">

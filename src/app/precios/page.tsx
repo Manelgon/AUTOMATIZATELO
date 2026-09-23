@@ -104,7 +104,7 @@ const formar: Fila[] = [
     }, {
         nombre: "Taller de IA para alumnado",
         formato: "2 h por grupo · mínimo 1.200 € por jornada",
-        incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El curso completo, desde 2.000 €. Sin cuentas de pago y con la protección de datos de menores por delante.",
+        incluye: "Estudiar con IA sin copiar, y usarla para el CV, las entrevistas y la presencia profesional. El itinerario completo de 10 h en el centro, desde 2.000 €. Sin cuentas de pago y con la protección de datos de menores por delante.",
         precio: "500 € por grupo",
         min: 500,
         href: "/formacion/alumnado",

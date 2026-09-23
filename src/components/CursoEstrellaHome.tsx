@@ -17,7 +17,7 @@ export default function CursoEstrellaHome() {
                         <span className="mono-label" style={{ color: "#f6c39c" }}>Curso estrella</span>
                         <h2 className="ces-titulo">Alfabetización IA + vuestra herramienta</h2>
                         <p className="ces-sub">
-                            El formato que mejor funciona: una sesión cubre la obligación del Art. 4
+                            El formato que mejor funciona: una sesión asienta la base de alfabetización del Art. 4
                             y la otra pone a tu equipo a trabajar con la herramienta que ya usa — con vuestros casos reales.
                         </p>
                         <div className="ces-datos">

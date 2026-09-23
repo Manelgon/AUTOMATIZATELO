@@ -52,7 +52,7 @@ const faqs = [
     // Pregunta de la línea educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts)
     ...(EDUCACION_VISIBLE ? [{
         question: "¿Podéis formar también al alumnado, no solo al claustro?",
-        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro; el alumnado, un taller de 2 a 4 horas por grupo sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 500 € por grupo en el centro. Muchos centros contratan las dos en la misma jornada.",
+        answer: "Sí, y son dos cosas distintas. El claustro trabaja práctica de aula, política de uso y la documentación de las medidas del Art. 4 del centro; el alumnado, un taller de 2 horas por grupo y etapa sobre estudiar con IA sin copiar y usarla para el CV y las entrevistas, desde 500 € por grupo en el centro. Muchos centros contratan las dos en la misma jornada.",
     }] : []),
     {
         question: "¿Podéis producirlo como curso para nuestra propia plataforma?",
@@ -204,6 +204,30 @@ export default function FormacionIaPage() {
                         </span>
                     </Link>
                     {/* Puerta educativa: oculta con EDUCACION_VISIBLE (src/lib/flags.ts) */}
+                    {/* Sin la línea educativa, la segunda puerta lleva al Art. 4 para que la mitad no quede vacía */}
+                    {!EDUCACION_VISIBLE && (
+                        <Link href="/formacion/ai-act" className="fd-puerta">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img className="fd-puerta-fondo" src="/auditoria.webp" alt="" aria-hidden="true" loading="lazy" />
+                            <span className="fd-puerta-velo" aria-hidden="true"></span>
+                            <span className="fd-puerta-marca" aria-hidden="true">02</span>
+                            <span className="fd-puerta-cuerpo">
+                                <span className="fd-puerta-num mono-label">AI Act · Art. 4</span>
+                                <span className="fd-puerta-titulo">La formación obligatoria, explicada</span>
+                                <span className="fd-puerta-desc">
+                                    A quién obliga, desde cuándo, qué sanciones hay y qué evidencia
+                                    necesita tu empresa para demostrar que su equipo tiene una
+                                    alfabetización suficiente en IA.
+                                </span>
+                                <span className="fd-puerta-chips">
+                                    {["Obligatorio desde 2025", "Sanciones", "Evidencia", "Certificado"].map((c) => (
+                                        <span key={c} className="fd-chip">{c}</span>
+                                    ))}
+                                </span>
+                                <span className="fd-puerta-cta">Ver qué exige el Art. 4 →</span>
+                            </span>
+                        </Link>
+                    )}
                     {EDUCACION_VISIBLE && (
                         <Link href="/formacion/centros-educativos" className="fd-puerta">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -286,7 +310,7 @@ export default function FormacionIaPage() {
                         </div>
                         <div className="fpr-cifra">
                             <span className="fpr-cifra-valor">desde 1.800 €</span>
-                            <span className="fpr-cifra-etiqueta">★ Curso estrella · 4 + 4 h</span>
+                            <span className="fpr-cifra-etiqueta">★ Los dos itinerarios · 4 + 4 h o 4 + 3 h</span>
                         </div>
                         <div className="fpr-cifra">
                             <span className="fpr-cifra-valor">1.400 – 2.000 €</span>
